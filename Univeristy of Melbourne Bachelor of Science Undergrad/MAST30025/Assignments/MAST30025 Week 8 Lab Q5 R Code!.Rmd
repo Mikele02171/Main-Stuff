@@ -1,0 +1,179 @@
+---
+title: "MAST30025 Week 8 Lab Q5 R Code"
+output: word_document
+---
+
+
+#Question 5
+
+#Part a: Use the read.csv function to read the data. Then convert the type component into a factor
+```{r}
+setwd("~/Desktop/UNIMELB 2021 Material/UNIMELB S1 2021 (Currently)/MAST30025/Tutorials /Tutorials/Rfile/data")
+filters = read.csv("filters.csv")
+
+#More to add how to convert into a factor! #Slide 63 Less than full rank model!
+filters$type = factor(filters$type)
+```
+
+
+#Part b: Construct X and y matrices for this linear model!
+```{r}
+#Attempt 1
+
+#y matrix
+y = filters$life
+
+#X matrix
+n = dim(filters)
+k = length(levels(filters$type))
+X = matrix(0,n,k+1)
+#Add all ones in the first column
+X[,1] = 1
+#Add all ones for each tao factor
+
+#2nd column
+X[filters$type==1,2] = 1
+#3rd column
+X[filters$type==2,3] = 1
+#4th column
+X[filters$type==3,4] = 1
+#5th column
+X[filters$type==4,5] = 1
+#6th column
+X[filters$type==5,6] = 1
+```
+
+
+
+```{r}
+y
+
+
+```
+
+```{r}
+X
+```
+
+```{r}
+
+#Actual X matrix should works out exactly above
+X1 = matrix(0,30,6)
+X1[,1] = 1
+for (i in 1:5){X1[filters$type==i,i+1] = 1}
+X1
+```
+
+
+#Part c: Using the algorithm given in the lecture slides, find a conditional inverse for t(X)%*%X!
+```{r}
+#Actual X matrix should works out exactly above
+t(X)%*%X
+```
+
+
+
+```{r}
+#finding the rank in t(X)%*%X which is 5 
+#Using Theorem 6.2 it is a 5 by 5 matrix and it has to be full rank and it is invertiable 
+M = 6*diag(5)
+M
+```
+
+
+```{r}
+
+#finding the inverse
+U = solve(M)
+
+#then getting the conditional inverse
+CI = data.frame(U)
+R = rbind(c(0,0,0,0,0,0),CI)
+C = cbind(X0= 0, R)
+C
+```
+
+```{r}
+#If you want it to convert into a matrix form!
+#finding the inverse
+XtXc = matrix(0,6,6)
+XtXc[2:6,2:6] = solve((t(X)%*%X)[2:6,2:6])
+XtXc
+```
+
+#Part d: Use ginv to find another conditional inverse for t(X)%*%X
+```{r}
+#Finding another conditional inverse (Open the MASS Package)
+library(MASS)
+XtXc2 = ginv(t(X)%*%X)
+XtXc2
+```
+
+#Part e: Verify that X(t(X)%*%X)^c%*%t(X) is the same for your two conditional inverses
+```{r}
+#Attempt 1
+#Case 1 from Part c!
+X%*%XtXc%*%t(X)
+
+```
+
+
+```{r}
+#Attempt 1
+#Case 2 from Part c!
+X%*%XtXc2%*%t(X)
+
+```
+
+```{r}
+#Actual Answer
+sum((X%*%XtXc%*%t(X)-X%*%XtXc2%*%t(X))^2)
+
+#Calculate the difference, in this case the difference here is very little. Safely assume that these computations are the same!
+
+```
+
+
+#Part f: Find two solutions for the normal equations
+```{r}
+#Attempt 1 for the first conditional inverse
+b1 = XtXc%*%t(X)%*%y
+b1
+```
+
+
+```{r}
+#Attempt 1 for the second conditional inverse
+b2 = XtXc2%*%t(X)%*%y
+b2
+```
+
+#Part g: Express one of your solutions in terms of the other.
+```{r}
+#From slide 72/137 Less than the full rank model
+#Sorry 1 step at a time
+b2 = diag(6) - XtXc%*%t(X)%*%X
+b2
+
+```
+
+
+
+
+#Part h: Write down a form for all solutions to the normal equations
+```{r}
+#ASK ABOUT IT, #All solutions to the normal equation are of the form b + (I-(t(X)%*%X)^c%*%t(X)%*%X)%*%z for arbitary z!
+
+```
+
+
+
+
+
+
+
+
+
+
+
+

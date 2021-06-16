@@ -1,0 +1,220 @@
+---
+title: "MAST30025 LAB 2 (Week 3 Lab)"
+output: word_document
+---
+
+NOTE: The following are taken from Chapter 3 of spuRs (Introduction to Scientific Programming and Simulation Using R).
+#Question 1. Consider the function y = f(x) defined by 
+x ≤0 ∈(0,1] >1
+ f(x) −x3 x2 √x
+#Supposing that you are given x, write an R expression for y using if statements.
+#Add your expression for y to the following program, then run it to plot the function f.
+
+
+NOTE: Clarify what happened in line 9 ASK YOUR DEMONSTRATOR!!
+```{r}
+# input
+x.values <- seq(-2, 2, by = 0.1)
+# for each x calculate y
+n <- length(x.values)
+y.values <- rep(0, n)
+for (i in 1:n) {
+    x <- x.values[i]
+    # your expression for y goes here
+    y.values[i] <- y.values # What happened here? Why y.values work not y? 
+}
+
+# output
+plot(x.values, y.values, type = "l")
+#Your plot should look like Figure 1. Do you think f has a derivative at 1? What about at 0?
+
+```
+
+
+#Question 1. Consider the function y = f(x) defined by
+        x≤0  x∈(0,1] x>1
+ f(x)  −x^3   x^2     √x
+
+```{r}
+#Now we add in values
+x = 0.5
+if (x<=0) {
+    a = -x^3
+} else if (x>0 & x<=1) {
+    a=x^2
+} else if (x>=1) {
+    a=sqrt(x)
+}
+a
+
+```
+
+
+#Question 2. Let h(x,n) = 1+x+x^2 +···+x^n = sigma(i = 0 to n)xi. Write an R program to calculate h(x, n) using a for loop.
+#Do I need to know this for the exam above? ASK TUTOR/LAB DEMONSTRATOR 
+```{r}
+n = 10
+x = 2
+hxn = 0  #Our inital value is 0 because our variables for x and n has not we been added into the function yet!!!!
+for(i in 0:n) {    #We increment the values from 0 to n in our i-th value 
+  hxn = hxn + x^i  
+  
+}
+
+#returns the output here if for loop fails to excecute above, immediately shows the output in the show function below
+show(hxn)
+
+```
+
+#Question 3. The function h(x,n) from Exercise 2 is the finite sum of a geometric se- quence.
+#It has the following explicit formula, for x!= 1,
+
+h(x,y) = (1−x^(n+1))/(1−x) 
+ y.values 02468
+#Test your program from Exercise 2 against this formula using the following
+#values
+x     n             h(x,n) 
+0.3  55          1.428571
+6.6   8    4243335.538178
+#You should use the computer to calculate the formula rather than doing it
+#yourself.
+
+
+#From Exercise 2!!
+```{r}
+n = 55
+x = 0.3
+hxn = 0  #Our inital value is 0 because our variables for x and n has not we been added into the function yet!!!!
+for(i in 0:n) {    #We increment the values from 0 to n in our i-th value 
+  hxn = hxn + x^i  
+  
+}
+
+#returns the output here if for loop fails to excecute above, immediately shows the output in the show function below
+show(hxn)
+
+```
+
+
+#For the different values from Excerise 2 
+```{r}
+n = 8
+x = 6.6
+hxn = 0  #Our inital value is 0 because our variables for x and n has not we been added into the function yet!!!!
+for(i in 0:n) {    #We increment the values from 0 to n in our i-th value 
+  hxn = hxn + x^i  
+  
+  
+}
+
+#returns the output here if for loop fails to excecute above, immediately shows the output in the show function below
+show(hxn)
+
+```
+
+
+#Now we compare in Exercise 3 
+```{r}
+
+#Attempt 1 
+n = 8
+x = 6.6
+hxn = (1-x^(n+1))/(1-x)
+
+#returns the output here if for loop fails to excecute above, immediately shows the output in the show function below
+show(hxn)
+
+```
+
+
+
+```{r}
+n = 55
+x = 0.3
+#Actual Answer 
+if(x == 1){
+  h = n + 1
+}else{
+  h = (1-x^(n+1))/(1-x)
+}
+print(h)
+```
+
+
+## Question 4. First write a program that achieves the same result as in Exercise 2 but using a while loop. Then write a program that does this using vector operations (and no loops). If it doesn’t already, make sure your program works for the case x = 1.
+
+
+```{r}
+n = 55
+x = 0.3
+while(x>0 & x<1){
+  h = (1-x^(n+1))/(1-x)
+  
+}
+print(h)
+h
+```
+#Actual answer
+```{r}
+# using a while loop
+h <- 0
+i <- 0
+while (i <= n) {
+ h<-h + x^i
+ i<-i +1
+ }
+print(h)
+
+  # vectorised
+(h <- sum(x^(0:n)))
+
+```
+
+
+
+## Question 5  To rotate a vector (x, y)T anticlockwise by θ radians, you premultiply it by the matrix. See lab sheet
+
+#Write a program in R that does this for you.
+```{r}
+x.old <- matrix(c(1, 0), 2, 1) #c(1,0)? Is it a unit vector (i.e. unit circle)? 2 by 1 matrix 
+theta <- pi/4 # in radians 
+A <- matrix(c(cos(theta), sin(theta), -sin(theta), cos(theta)), 2, 2)
+(x.new <- A %*% x.old) 
+```
+
+
+#Question 6. Given a vector x, calculate its geometric mean using both a for loop and vector operations. (The geometric mean of x1,...,xn is (product i = 0 to n (xi))^(1/n)
+
+#You might also like to have a go at calculating the harmonic mean, (Gamma i=1 to n 1/xi)^−1, and then check that if the xi are all positive, the harmonic mean is always less than or equal to the geometric mean, which is always less than or equal to the arithmetic mean.
+```{r}
+ x <- c(2, 1, 3, 5, 1, 3)
+   # geometric mean using a loop
+   mg <- 1
+   for (xi in x) mg <- mg*xi
+   (mg <- mg^(1/length(x)))
+
+   # geometric mean vectorised
+   (mg <- prod(x)^(1/length(x)))
+
+   # harmonic mean
+   (hm <- 1/sum(1/x))
+  
+   # arithmetic mean
+   mean(x)
+
+```
+
+#Question 7. A room contains 100 toggle switches, originally all turned off. 100 people enter the room in turn. The first toggles every switch, the second toggles every second switch, the third every third switch, and so on, to the last person who toggles the last switch only. At the end of this process, which switches are turned on?
+```{r}
+ x <- rep(FALSE, 100) # the state of the switches
+ for (i in 1:100) { # we go once round the loop for each person
+   for (j in seq(i, 100, i)) { # the switches toggled by person i are the j's
+     x[j] <- !x[j]  
+    }
+ }
+ which(x)
+
+```
+
+You might speculate (correctly) that if you have n switches and n people, then the switches left on would correspond to the square numbers. The proof depends on the number of distinct factors of a number
+

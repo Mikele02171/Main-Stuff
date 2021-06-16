@@ -1,0 +1,299 @@
+---
+title: "MAST30025 Week 11 Lab R Code"
+output: word_document
+---
+
+#Question 1:
+#Part a: Express this as a two factor model with no interaction in matrix form. 
+```{r}
+y = c(18.8,21.2,16.7,19.8,23.9,22.3,15.9,19.2,21.8)
+#Need a shortcut version for this
+X1 = matrix(c(rep(1,9),1,1,1,1,1,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,0,0,0,1,0,0,0,0,0,1,0,0,0,1,1,0,0,0,0,1,1,0,0,0,1),9,6)
+X1
+
+#Where error terms are obvious!
+```
+
+
+
+#Part b: Express this as a two factor model with interaction in matrix form. 
+```{r}
+y = c(18.8,21.2,16.7,19.8,23.9,22.3,15.9,19.2,21.8)
+#Need a shortcut version for this
+X = matrix(c(rep(1,9),1,1,1,1,1,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,0,0,0,1,0,0,0,0,0,1,0,0,0,1,1,0,0,0,0,1,1,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,1),9,12)
+X
+```
+
+## Part c: Express the hypothesis that there is no interaction in terms of your parmeters. Eliminate any redundancies.
+
+#Using Theorem 7.5 from the less than full rank model page 60!
+
+#Part d: Input this data into R. Plot an interaction plot between breed and diet.
+```{r}
+#Attempt 1: Create Dataframe
+Breed = c('breed1','breed1','breed1','breed1','breed1','breed2','breed2','breed2','breed2')
+Diet = c('diet1','diet1','diet2','diet3','diet3','diet1','diet2','diet2','diet3')
+milkyield = c(18.2,21.2,16.7,19.8,23.9,22.3,15.9,19.2,21.8)
+cow = data.frame(milkyield,Breed,Diet)
+str(cow)
+```
+
+
+```{r}
+# However we want Breed and Diet to become factors!
+BreedType = factor(cow$Breed)
+DietType= factor(cow$Diet)
+newcow = data.frame(milkyield,BreedType,DietType) #This we want to recreate our dataframe!
+str(newcow)
+```
+
+```{r}
+with(newcow, interaction.plot(BreedType,DietType,milkyield))
+```
+
+
+#Actual solution
+```{r}
+with(newcow, interaction.plot(DietType,BreedType,milkyield)) #Switch tao with beta
+```
+
+
+#Part e: Test for the presense of interaction
+```{r}
+library(Matrix)
+library(MASS)
+#Use Matrix package!
+r = rankMatrix(X)[1]
+r
+```
+
+```{r}
+library(Matrix)
+library(MASS)
+XtXc = ginv(t(X)%*%X)
+b = XtXc%*%t(X)%*%y
+b
+s2 = sum((y-X%*%b)^2)/(length(y)-r)
+s2
+```
+
+
+```{r}
+#To compute our C matrix!
+C = matrix(0,2,12)
+C[1,c(7,8,10,11)] = c(1,-1,-1,1)
+C[2,c(7,9,10,12)] = c(1,-1,-1,1)
+C[,-(1:6)]
+```
+
+
+```{r}
+Fstat = (t(C%*%b)%*%solve(C%*%XtXc%*%t(C))%*%C%*%b/2/s2)
+Fstat
+```
+
+```{r}
+pf(Fstat,2,9-6,lower = F)
+```
+
+#There is no interaction (without the lm function)
+#Now with the lm
+
+```{r}
+model = lm(milkyield~BreedType*DietType, data = newcow)
+anova(model)
+
+```
+
+#There is no interaction, values are sightly different :(.
+
+
+#Part f: What is the degrees of freedom used for the interaction test?
+#We use 2 and 3 degrees of freedom! from the F distribution
+
+#Part g: From the interaction model, what is the estimated amount of milk produced from breed 2 and diet 3 
+```{r}
+
+#Actual Method (#Slight value difference compared to the solutions!)
+model$coefficients
+
+```
+
+```{r}
+#Actual Method
+c(1,1,0,1,0,1)%*%model$coefficients
+
+```
+
+
+#Part i: Test the hypothesis (under the additive model)
+#Using Matrix theory Method 1 
+```{r}
+#Use Matrix package!
+r1 = rankMatrix(X1)[1]
+r1
+```
+
+```{r}
+XtXc2 = ginv(t(X1)%*%X1)
+b = XtXc2%*%t(X1)%*%y
+b
+s2a = sum((y-X1%*%b)^2)/(length(y)-r1)
+s2a
+```
+```{r}
+#To compute our C matrix! #Attempt 1 
+C1 = matrix(0,1,6)
+C1[1,c(1,5,6)] = c(0,1,-1)
+C1
+```
+
+```{r}
+Fstat = (t(C1%*%b)%*%solve(C1%*%XtXc2%*%t(C1))%*%C1%*%b/1/s2a)
+Fstat
+```
+```{r}
+pf(Fstat,1,9-length(r1),lower = F)
+```
+#2nd Method: Use the car package (Correct)
+
+```{r}
+model2 = lm(milkyield~BreedType+DietType, data = newcow)
+library(car)
+linearHypothesis(model2,c(0,0,1,-1),0)
+
+```
+#We reject the null hypothesis at 5% signifiance level. Conclude the 2nd and 3rd diets are equivalent in terms of milk produced.
+
+
+#Part h: Fit the additive model. What is the estimated amount of milk produced from breed 2 and diet 3 now?
+```{r}
+
+#Additive model
+model2 = lm(milkyield~1+BreedType+DietType, data = newcow)
+anova(model2)
+
+```
+
+
+```{r}
+
+model2$coefficients
+
+```
+
+
+
+```{r}
+
+c(1,1,0,1)%*%model2$coefficients #We select the intercept, Breed Type 2 and Diet Type 3
+
+```
+
+
+#Part j: Find a 95% Confidence Interval, under the additive model, for the amount of milk produced from breed 2 and diet 3. Use both matrix calculations and the estimable function from the gmodels package.
+
+```{r}
+#Attempt 1
+library(gmodels)
+ci =estimable(model2,c(1,1,0,1),conf.int = 0.95) #NOTE from c(1,1,0,1) 
+#We select the intercept, Breed Type 2 and Diet Type 3
+c(ci$Lower,ci$Upper)
+```
+
+#Part k: Find the same confidence interval under the interaction model 
+
+
+```{r}
+#Attempt 1
+library(gmodels)
+ci =estimable(model,c(1,1,0,1,0,1),conf.int = 0.95) #NOTE: More to add
+#We select the intercept, Breed Type 2 and Diet Type 3
+c(ci$Lower,ci$Upper)
+
+```
+
+
+#Part l: Why is the second interval wider than the first?
+#Demonstrator Answer: The second interval is wider than the first because we are attributing some degrees of freedom to the interaction term(s). The resulting loss in degrees of freedom for the residuals leads to greater error in our estimations
+
+#Question 2:
+#Part a: Fit an additive model with all variables: Then repeat without the block variables. Does the fitted model change? Are the block variables significant?
+```{r}
+str(npk)
+```
+
+```{r}
+#Attempt 1
+#Additive Model with blocks
+adb = lm(yield~1+N+P+K+block, data = npk)
+summary(adb)
+```
+
+```{r}
+#Attempt 1
+#Additive Model without blocks
+adnb = lm(yield~1+N+P+K, data = npk)
+summary(adnb)
+```
+
+#MORE TO ADD! 
+```{r}
+anova(adnb,adb)
+```
+
+#We reject the null for both models conclue that the block variables are significant.
+
+#Demonstrator comment: The fitted model does not change, in the sense that the parameters corresponding to N, P and K are the same for the two models. This is because the design is balanced and complete: the overall effect of the predictors of interest are observed in each individual block. However, the blocks themselves are significant: there is a difference in the yield of each block. Because the blocks have been carefully designed, this does not affect the fitted model itself when the blocks are removed from consideration.
+
+
+#Part b:  Fit a model with the fertilizer variables and all pairwise interaction terms. Are the interaction terms significant?
+```{r}
+#Attempt 1
+imodel = lm(yield~1+N+P+K+N*P+N*K+P*K,data = npk)
+summary(imodel)
+
+```
+```{r}
+#Attempt 1
+anova(adnb,imodel) #no blocks
+
+```
+
+#We do not reject the null. The interaction terms are not significant!
+
+#Part c: Perform variable selection using stepwise selection with AIC, starting from the model with no interaction terms (but considering them for inclusion). What do you find?
+
+```{r}
+#Attempt 1
+noimodel = step(adnb,scope =~.+N+P+K)
+```
+#We find that our final model includes the variables corresponding to nitrogen and potassium, but not phosphate.
+
+
+```{r}
+#Attempt 1
+withimodel = step(imodel,scope =~.+N+P+K+N*P+N*K+P*K)
+```
+
+#Similar with the interaction model
+
+
+#Part d: What is the best treatment for peas, according to your final model? Find a 95% confidence interval for the yield of this treatment.
+```{r}
+#Attempt 1 No interaction
+finalmodel = lm(yield~N+K, data = npk)
+finalmodel$coefficients
+
+```
+
+
+```{r}
+
+#Actual solution: ASK FOR HELP!
+ib = estimable(finalmodel, c(1,1,0),conf.int = 0.95)
+c(ib$Lower,ib$Upper)
+
+
+```
+

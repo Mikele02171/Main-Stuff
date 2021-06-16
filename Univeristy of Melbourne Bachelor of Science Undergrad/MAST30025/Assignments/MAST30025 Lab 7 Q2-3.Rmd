@@ -1,0 +1,279 @@
+---
+title: "MAST30025 LAB 7 Q2-3"
+output: word_document
+---
+
+
+#Question 2:
+#Part a) Using pairs to plot the data. Is there any evidence of non-linearity or heteroskedasticity?
+```{r}
+setwd("~/Desktop/UNIMELB 2021 Material/UNIMELB S1 2021 (Currently)/MAST30025/Tutorials /Tutorials/Rfile/data")
+beef = read.csv("beef.csv")
+```
+
+```{r}
+pairs(beef)
+```
+#There is non-linearity between big vs. yes however there is heteroskedasticity in yes. We can take the logs on yes and live for example. And show that it is a best fit. (This from my understanding) Dunno if we continue to do this for all non linear models from we were given in the pairs model. Because there are other transformations depending on what non linear model you are trying to apply into a best fit model.
+
+
+#Part b) Using  the add1 and drop1 commands, use forward and backward selection to find parsimonious models for yes.
+
+#Forward selection
+
+```{r}
+str(beef)
+basemodel = lm(beef$yes~1, data = beef)
+add1(basemodel,scope = ~. + beef$big + beef$prin + beef$size+beef$val+beef$live+beef$sale, test = "F")
+```
+
+
+```{r}
+basemodel1 = lm(beef$yes~beef$size, data = beef)
+add1(basemodel1,scope = ~. + beef$big + beef$prin +beef$val+beef$live+beef$sale, test = "F")
+```
+#Should have end here since Pr(>F) values are all above 0.05!!!!
+
+#Opps :( oh dear!!
+```{r}
+basemodel2 = lm(beef$yes~beef$size + beef$live, data = beef)
+add1(basemodel2,scope = ~. + beef$big + beef$prin +beef$val+beef$sale, test = "F")
+```
+
+
+```{r}
+basemodel3 = lm(beef$yes~beef$size + beef$live +beef$sale , data = beef)
+add1(basemodel3,scope = ~. + beef$big + beef$prin +beef$val, test = "F")
+```
+
+
+#We use size, live and sale in our final model! Taken 5% significant level!!
+
+#ACTUAL ANSWER!! Look above!!!
+#We use beef size in the final model!!
+
+
+#Now we do it for the backward elimination!!
+
+```{r}
+fullmodel = lm(yes~., data = beef)
+drop1(fullmodel, scope = ~.,test = "F")
+
+```
+
+```{r}
+model2 = lm(yes~ prin+size+val+live+sale, data = beef)
+drop1(model2, scope = ~.,test = "F")
+
+```
+
+```{r}
+model3 = lm(yes~ prin+size+live+sale, data = beef)
+drop1(model3, scope = ~.,test = "F")
+
+```
+
+
+```{r}
+model4 = lm(yes~ size+live+sale, data = beef)
+drop1(model4, scope = ~.,test = "F")
+
+```
+#Were using size, live and sale in our final model!!
+#Actual answer --> I did above in the first attempt!
+
+#Part c) Using the step command, starting from a model with just an intercept, use AIC and stepwise selection to choose a model. 
+```{r}
+model2 = step(basemodel, scope = ~.+big+prin+size+val+live+sale) #Removing step = 1 reveals mutiple steps!!
+```
+## 
+```{r}
+lm(formula = yes ~ prin + live + sale + size, data = beef)
+```
+
+
+#Part d) Show that the model found in 2c can be improved by adding the interaction term size*sale. 
+#IMPORTANT HERE IS HOW YOU JUDGE "IMPROVED"
+#Use stepwise selection again to see if adding size*sale can let you remove any other variables from the model.
+
+
+```{r}
+model3 = step(basemodel, scope = ~.+big+prin+size+val+live+sale+size*sale)
+```
+
+#In this case our final model includes live and size*sale
+
+#yes = beta(intercept) + beta1*live + beta2*size*sale + e 
+
+#Actual answer 
+IMPORTANT NOTE: Forgot to change the base model this then becomes my new model!!
+
+```{r}
+newmodel = lm(yes~big+prin+size+val+live+sale+size*sale, data = beef)
+model3 = step(newmodel, scope = ~.)
+```
+
+#In comparsion the AIC from Q2c was 256.80 here the AIC in Q2d with size*sale is 249.20. #removing prin would improve the AIC in the final model! for this part of the question!--->ASK
+
+
+#yes = beta0 + beta1*size + beta2*sale + beta3*live + beta12*size*sale + e 
+
+#Question 2e) Suppose that beta1,beta2 and beta3 are the coefficients of x1 = size, x2 = sale and x12 = size*sale (interaction term). In the model from 2d.Plot beta1*x1 + beta2*x2 + beta12*x1*x2 as a function of (x1,x2), to see the combined effect of these variables on the yes vote. You may need the wireframe function from the lattice library, and also expand.grid.
+
+
+#ASK: Why we didn't use the lattice library and expand.grid example in the lectures!!
+
+```{r}
+library(lattice)
+model5 = lm(yes~big+prin+size+val+live+sale, data = beef)
+df = expand.grid(size = beef$size, sale = beef$sale)
+f = function(x,y)
+sum(model5$coefficients[c(2,4,5)]*c(x,y,x*y))
+df$effect = mapply(f, df$size, df$sale)
+wireframe(effect ~ size + sale, data = df, drape = T, scales = list(arrows = F), screen = list(z=30, x = -90, y = -60))
+```
+
+
+#Question 2f) Repeat the above question using the model with no size*sale interaction term from 2c. 
+```{r}
+df = expand.grid(size = beef$size, sale = beef$sale)
+f = function(x,y) sum(model5$coefficients[c(2,4)]*c(x,y))
+df$effect = mapply(f, df$size, df$sale)
+wireframe(effect ~ size + sale, data = df, drape = T, scales = list(arrows = F), screen = list(z=30, x = -90, y = -60))
+```
+
+
+
+#Question 2g) Use the diagnostic plots provided by R to assess the model from 2d. Refer back to 2a; do you need to transform the data and start again?
+
+
+#yes = beta0 + beta1*size + beta2*sale + beta3*live + beta12*size*sale + e 
+```{r}
+model2g = lm(yes~ 1 + size + sale + live + size*sale, data = beef)
+plot(model2g, which = 1)
+```
+
+
+
+```{r}
+plot(model2g, which = 2)
+```
+
+```{r}
+plot(model2g, which = 3)
+```
+
+```{r}
+plot(model2g, which = 5)
+```
+
+
+#Depends on our response variable since we only choosen yes, we could have chosen a different responsible variable. But we only interested in transforming non linearity to a linear model (into a best fit)!! This means we have to keep changing our response and design variables for big, prin,size,val,live and sale!!! 
+
+#There is some evidence of heteroskedasticity in the plot of the square root of the absolute standardised residuals against fitted values. 
+
+
+
+#Question 2h) Which are the most important variables when it comes to predicting the yes vote? In deciding this, take into account the average size of the variables as well as the size of the fitted coefficients.
+```{r}
+#Solution: Significance is not the same as importance. The average contribution of each variable to the overall mean can be calculated as follows!!
+
+mean(beef$size)*model3$coefficients[2]
+mean(beef$live)*model3$coefficients[3]
+mean(beef$sale)*model3$coefficients[4]
+mean(beef$size*beef$sale)*model3$coefficients[5]
+
+```
+#So size has the most influence, followed by sale because of the interaction term.
+
+#Question 3 Load & Examine the dataset trees using
+```{r}
+data("trees")
+?trees
+pairs(trees)
+```
+
+
+
+#We will model the volume of the black tree as a function of its girth and height.
+#Part a. By calculating R(r1|r2) and SSRes from the data y and design matrix X, use an F test to determine if including the variable Height significantly improves the model fitted using only Girth (and an intercept). 
+```{r}
+treesdata = trees
+y = trees$Volume
+X = cbind(1,trees$Girth,trees$Height)
+b = solve(t(X)%*%X,t(X)%*%y)
+n = length(y)
+p = dim(X)[2]
+SSTotal = sum(y^2)
+SSRes = sum((y-X%*%b)^2)
+SSRes
+
+```
+
+```{r}
+SS_reg = sum((X %*% b)^2)
+X2 = X[,-3]
+b2 = solve(t(X2) %*% X2, t(X2) %*% y)
+SS_reg2 = sum((X2 %*% b2)^2)
+R_g1g2 = SS_reg - SS_reg2
+R_g1g2
+
+```
+
+
+```{r}
+Fstat = (R_g1g2/1)/(SSRes/(n-3))
+Fstat
+
+```
+
+```{r}
+pf(Fstat,1,n-3,lower.tail = F)
+
+```
+
+
+```{r}
+model1 = lm(Volume~Girth, data = trees)
+model2 = lm(Volume~Girth+Height, data = trees)
+anova(model1,model2)
+
+```
+
+
+#(b) Add variables Girth squared and Girth squared times Height to the model, then use stepwise selection to simplify the model. (You can use step for this step.)
+#Comment on the form of your final model.
+
+```{r}
+model3 = lm(Volume~Girth+Height+Girth^2+Girth^2*Height, data = trees)
+
+#Now using stepwise selection!
+model3 = step(model3,scope = ~.)
+
+```
+```{r}
+trees$GirthSq = trees$Girth^2 #Ensure to add to the trees dataframe!
+model3 = lm(Volume~Girth+Height+GirthSq+GirthSq*Height, data = trees)
+
+#Now using stepwise selection!
+model3 = step(model3,scope = ~.)
+
+```
+
+#Height*GirthSq are in the final model!
+
+#Part c: Use diagnostic plots to check the fit of your final model.
+```{r}
+finalmodel = lm(Volume~1+ GirthSq*Height,data= trees)
+plot(finalmodel, which= 1)
+```
+```{r}
+plot(finalmodel, which= 2)
+```
+```{r}
+plot(finalmodel, which= 3)
+```
+```{r}
+plot(finalmodel, which= 5)
+```
+#From the third plot we see that the residuals get larger as the fitted values increase. Perhaps, rather than including the girth squared term, we should take logs. The only way to be sure is to try and see if the residuals look better. If you do this you will see that the diagnostic plots are much the same for the transformed model as for the previous one, making it hard to choose between them. (Note that because we have transformed the response, we can’t meaningfully compare the AIC scores for the two models.)

@@ -1,0 +1,271 @@
+---
+title: "Assignment 2 2020 MAST30025 Code"
+output: word_document
+---
+## Question 2:
+#Part a:
+
+
+```{r}
+y = c(5.5,5.9,6.5,5.9,8,9,10,10.8)
+X = matrix(c(rep(1,8),7.2,10,9,5.5,9,9.8,14.5,8,8.7,9.4,10,9,12,11,12,13.7,5.5,4.4,4,7,5,6.2,5.8,3.9),8,4)
+b = solve(t(X)%*%X,t(X)%*%y)
+b #estimates of the parameters
+```
+
+
+```{r}
+n=8
+p=4
+e = y - X%*%b
+SSRes = sum(e^2)
+s2 = SSRes/(n-p)
+s2 #Sample variance 
+```
+
+
+
+#Part b: Calculate 95% CI for the model parameters 
+
+
+#for b0:
+```{r}
+s = sqrt(s2)
+c00 = solve(t(X)%*%X)[1,1]
+alpha = 0.05
+ta = qt(1-alpha/2, df = n-p)
+c(b[1] - ta*s*sqrt(c00),b[1] + ta*s*sqrt(c00))
+
+```
+
+
+#for b1:
+
+```{r}
+s = sqrt(s2)
+c11 = solve(t(X)%*%X)[2,2]
+alpha = 0.05
+ta = qt(1-alpha/2, df = n-p)
+c(b[2] - ta*s*sqrt(c11),b[2] + ta*s*sqrt(c11))
+```
+
+
+#For b2:
+```{r}
+s = sqrt(s2)
+c22 = solve(t(X)%*%X)[3,3]
+alpha = 0.05
+ta = qt(1-alpha/2, df = n-p)
+c(b[3] - ta*s*sqrt(c22),b[3] + ta*s*sqrt(c22))
+```
+
+
+
+#For b3:
+```{r}
+s = sqrt(s2)
+c33 = solve(t(X)%*%X)[4,4]
+alpha = 0.05
+ta = qt(1-alpha/2, df = n-p)
+c(b[4] - ta*s*sqrt(c33),b[4] + ta*s*sqrt(c33))
+```
+
+
+
+#Part c: In a year with 8% unemployment rate and 3.5% interest rate, we price a car at $12,000 and observe that 7,000 cars are sold. Is this an atypical year (according to your model)?
+NOTE: It's asking for 95% Prediction Interval not 95% Condifience Interval!
+
+#95% PI:
+
+```{r}
+s = sqrt(s2)
+xst = c(1,12,8,3.5)
+ta = qt(0.975,df = 8-4)
+xst%*%b + c(-1,1)*ta*s*sqrt(1+t(xst)%*%solve(t(X)%*%X)%*%xst)
+```
+#Higher Bound for 95% PI:
+```{r}
+s = sqrt(s2)
+xst = c(1,12,8,3.5)
+ta = qt(0.975,df = 8-4)
+xst%*%b + ta*s*sqrt(1+t(xst)%*%solve(t(X)%*%X)%*%xst)
+```
+
+7 does not lie in the Prediction Interval, so it a typical year with 95% with Confidence!
+
+
+#Part d: Using your answer from question 1, find and draw a joint 95% confidence region for the parameters corresponding to unemployment rate and interest rate. Superimpose a rectangle corresponding to the confidence intervals from in (b).
+```{r}
+b2 = seq(-2,5,.2)
+b3 = seq(0.1,0.6,.1)
+f = function(beta2,beta3){
+  b = matrix(c(1.1174846,0.3861206),2,1)
+  XTX = matrix(c(6,86,86,1316),2,2)
+  f.out = rep(0,length(beta2))
+  for (i in 1:length(beta2)){
+    beta = matrix(c(beta2[i], beta3[i]),2,1)
+    f.out[i] = t(b - beta)%*%XTX%*%(b-beta)
+  }
+  return(f.out)
+}
+
+z = outer(b2,b3,f)
+contour(b2,b3,z,levels = 2*0.3955368*qf(0.95,4,8))
+```
+
+#Actual answer!
+```{r}
+b2 <- seq(0.4,1.8,length=100)
+b3 <- seq(-0.5,1.3,length=100)
+A <- solve(t(X)%*%X)[3:4,3:4]
+f = function(beta2,beta3){
+  f.out = rep(0,length(beta2))
+  for (i in 1:length(beta2)) {
+    beta = matrix(c(beta2[i], beta3[i]),2,1)
+    f.out[i] = t(c(b[3],b[4]) - beta)%*%solve(A)%*%(c(b[3],b[4])-beta)
+  }
+  return(f.out)
+}
+
+z = outer(b2,b3,f)
+contour(b2,b3,z,levels = 2*0.3955368*qf(0.95,2,4), xlab ='beta_2',ylab='beta_3')
+
+#What's wrong with this code? Suppose to draw out the red rectangle!
+rect(beta2[1],beta3[1],beta2[2],beta3[2],border='red')
+```
+
+
+#Part e: Do you expect the confidence region to be larger or smaller than the rectangle? Justify your answer. 
+
+Larger than the rectangle from observation, 
+Demonstrator Answer: Assuming the parameter estimators are independen, you would expect the true parameters to lie in the rectangle 0.952 ≈ 90.2% of the time, while they should lie in the region 95% of the time. The estimators are not independent, but the correction factor involved is usually quite small.
+
+#Part f: (Bonus) What is the probability that the true parameters for unemployment rate and interest rate (jointly) lie in the rectangle you drew in (d)?
+```{r}
+library(mvtnorm)
+#Dunno this line can run or not?
+pmvt(lower=c(ci3[1],ci4[1])-b[3:4],upper=c(ci3[2],ci4[2])-b[3:4],sigma=A*s2,df=n-p)
+
+#[1] 0.9134779
+
+attr(,"error")
+#[1] 1e-15
+
+attr(,"msg")
+#[1] "Normal Completion"
+```
+
+
+
+
+## Question 4:
+#Part a: Fit a linear model using all the variables (except ID).
+```{r}
+setwd("~/Desktop/UNIMELB S1 2021 (Currently)/MAST30025/Tutorials /Tutorials/Rfile/data")
+UCD = read.csv("UCD.csv")
+UCD = UCD[,-1] #removes ID column 
+model = lm(height~.,data = UCD) #We also include the intercept!
+summary(model)
+```
+
+#Part b: Test for model relevance, using a corrected sum of squares
+```{r}
+basemodel = lm(height~0, data = UCD) #Opps assume we have no intercept but there is unfortunately! 
+newmodel = lm(height~alcohol + exercise + male + dadht + momht, data = UCD) #Again we remove ID as we continue for the importance for this question!
+anova(basemodel,newmodel)
+```
+
+#Actual answer
+```{r}
+basemodel = lm(height~1, data = UCD) #We include the intercept
+newmodel = lm(height~alcohol + exercise + male + dadht + momht, data = UCD) #NO ID
+anova(basemodel,newmodel)
+```
+We strongly reject the null hypothesis of model irrelvance!
+
+
+
+#Part c: Use the forward selection with F tests to select the variables for your model!
+#Attempt 1: (Correcto!)
+
+```{r}
+add1(basemodel, scope = ~. + alcohol + exercise + male + dadht + momht, test = "F")
+```
+
+
+
+```{r}
+model2 = lm(height~male, data = UCD)
+add1(model2, scope = ~. + alcohol + exercise + dadht + momht, test = "F")
+```
+
+
+```{r}
+model3 = lm(height~male+dadht, data = UCD)
+add1(model3, scope = ~. + alcohol + exercise + momht, test = "F")
+```
+
+```{r}
+model4 = lm(height~male+dadht+momht, data = UCD)
+add1(model4, scope = ~. + alcohol + exercise, test = "F")
+```
+
+#We use variables male,dadht and momht in our final model! 
+
+#height = b0 + b1*male + b4*dadht + b5*momht + e
+
+
+#Part d: Starting from a full model, use stepwise selection with AIC to select variables for your model. Use this as your final model; comment briefly on the variables included. (Correct)
+
+```{r}
+nexttopmodel = step(basemodel, scope=~. + alcohol + exercise + male + dadht + momht) #remove step = 1 gives us multiple steps
+
+```
+#TUTOR COMMENT: We select the previous variables, together with the alcohol variable. It makes complete sense that gender and parents’ heights affect one’s height. We also have the humorous inference that drinking more makes you taller, which means it is time to pull out that old maxim “correlation does not equal causation”!
+
+
+
+#Part e: Using your final model, test whether the parameters corresponding to father’s and mother’s heights are equal.
+
+#Attempt 1
+```{r}
+null1 = lm(height~.+dadht+momht, data = UCD)
+anova(null1,model)
+
+```
+
+#Actual solution:
+```{r}
+library(car)
+linearHypothesis(nexttopmodel,c(0,0,0,1,-1),0)
+```
+#We cannot reject the hypothesis that they are equal!
+
+
+#Part f: Comment on the suitablity on the final model, using diagnostic plots.
+```{r}
+plot(nexttopmodel, which = 1)
+```
+
+
+```{r}
+plot(nexttopmodel, which = 2)
+```
+
+
+
+```{r}
+plot(nexttopmodel, which = 3)
+```
+
+
+```{r}
+plot(nexttopmodel, which = 5)
+```
+
+
+
+My comment, It looks like a linear normal fit (or best fit)! There is a small number of outliers with over and under estimations. 
+
+#TUTOR COMMENT: Apart from point 125, which looks somewhat like an outlier and a potential candidate for removal, the model assumptions seem well satisfied. 
+

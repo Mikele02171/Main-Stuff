@@ -1,0 +1,303 @@
+---
+title: "MAST30025 Assignment 2 2017 and 2019 R Questions"
+output: word_document
+---
+
+#Question 2. An experiment is conducted to estimate the annual demand for cars, based on their cost, the current unemployment rate, and the current interest rate. A survey is conducted and the following measurements obtained.
+
+
+#Part a) Fit a linear model to the data and estimate the parameters and variance
+```{r}
+y = c(5.5,5.9,6.5,5.9,8,9,10,10.8)
+X = matrix(c(rep(1,8),7.2,10,9,5.5,9,9.8,14.5,8,8.7,9.4,10,9,12,11,12,13.7,5.5,4.4,4,7,5,6.2,5.8,3.9),8,4)
+b = solve(t(X)%*%X,t(X)%*%y)
+b #estimates of the parameters
+```
+#beta parameters 
+
+
+```{r}
+n=8
+p=4
+e = y - X%*%b
+SSRes = sum(e^2)
+s2 = SSRes/(n-p)
+s2 #Sample variance 
+```
+
+
+#Part b) Which two of the parameters have the highest (in magnitude) covariance in their estimators? 
+```{r}
+#The unemployment rate and the Interest rate. 
+#Actual answer!!
+#The intercept term and the Interest rate!(Forgot to account the intercept)
+C = solve(t(X)%*%X)
+C
+
+
+```
+
+#Part c) Find a 99% confidence interval for the avarage number of $8,000 cars sold in a year which has unemployment rate 9% and interest rate 5%
+```{r}
+xst = c(1,8,9,5)
+s = sqrt(s2)
+s
+xst%*%b
+
+
+
+```
+
+#99% t quantile
+
+```{r}
+ta = qt(0.995,df=8-4)
+ta
+
+```
+
+
+#Lower Bound 
+```{r}
+xst%*%b - ta*s*sqrt(t(xst)%*%solve(t(X)%*%X)%*%xst)
+```
+
+#Upper Bound
+```{r}
+xst%*%b + ta*s*sqrt(t(xst)%*%solve(t(X)%*%X)%*%xst)
+```
+
+
+
+#Part d) A prediction interval for the number of cars sold in such a year is calculated to be (4012,7087). Find the confidence level used!
+```{r}
+LB = 4.012
+UB = 7.087
+xst%*%b
+s*sqrt(1 + t(xst)%*%solve(t(X)%*%X)%*%xst)
+#To help us solve for ta
+
+```
+```{r}
+ta = 2.1325
+```
+
+#guessing the confidence interval 
+```{r}
+ta = qt(0.95,df=8-4)
+ta
+
+#Can do for the upper bound gives us the same result
+#alpha level is 0.10 
+#It is a 90% Confidence interval!! QED!!
+```
+
+
+
+
+#Part e) Test for model relevance using a corrected sum of squares.
+```{r}
+SSTotal = sum(y^2)
+SSReg = SSTotal - SSRes
+SSReg
+SSRes
+
+
+```
+#There is a strong linear signal in the data.
+
+
+```{r}
+MSReg = SSReg/4
+MSRes = SSRes/(8-4)
+Fstat = MSReg/MSRes
+Fstat
+
+```
+
+
+```{r}
+qf(0.95,8,4)
+pf(Fstat,4,4,lower.tail = FALSE)
+
+```
+
+#We test for model relevance when H0: beta = 0 (We reject the null hypothesis for model irrelvance)!!
+
+
+#Question 4. In this question, we study a dataset of 50 US states. This dataset contains the variables:
+ Population: population estimate as of July 1, 1975�   Income: per capita income (1974)
+ Illiteracy: illiteracy (1970, percent of population)
+ Life.Exp: life expectancy in years (1969–71)
+ Murder: murder and non-negligent manslaughter rate per 100,000 population (1976)
+ HS.Grad: percentage of high-school graduates (1970)
+ Frost: mean number of days with minimum temperature below freezing (1931–1960) in capital or large city
+ Area: land area in square miles
+#The dataset is distributed with R. Open it with the following commands:
+
+```{r}
+data(state)
+statedata = data.frame(state.x77, row.names=state.abb, check.names=TRUE)
+
+```
+
+
+#We wish to use a linear model to model the murder rate in terms of the other variables.
+
+#Part a) Plot the data and comment. Should we consider any variable transformations?
+
+
+```{r}
+pairs(statedata,cex = 0.5)
+#Actual
+statedata$logPopulation <- log(statedata$Population)
+statedata$logArea <- log(statedata$Area)
+```
+
+#Looking at murder rate against the other variables, there is evidence of a linear relationship with income, illiteracy, life expectancy, high school grad and frost. There is no obvious relationship with population and area.
+#Population and area both have distributions heavily skewed to the right. log(population) and log(area) would be less skewed and might fit better with the other variables.
+#There is potential heteroskedasticity in high school grad, and non-linearity in illiteracy, but neither enough for immediate concern.
+
+
+NOTE: Key things to understand this part is to observe any non linear relationships between the two variables, and check for any heteroskedasticity!
+
+
+#Part b) Perform model selection using forward selection, using all the variable transformations which may be relevant. 
+```{r}
+basemodel = lm(statedata$Murder~1, data = statedata)
+add1(basemodel, scope = ~ .+statedata$Population + statedata$Income+statedata$Illiteracy+statedata$Life.Exp+statedata$HS.Grad+statedata$Frost+statedata$Area, test = "F") 
+
+```
+#The highest F value is Life.Exp 
+
+
+```{r}
+model2 = lm(statedata$Murder~statedata$Life.Exp, data = statedata)
+add1(model2, scope = ~ .+statedata$Population + statedata$Income+statedata$Illiteracy+statedata$HS.Grad+statedata$Frost+statedata$Area, test = "F") 
+
+```
+#Now Frost has the highest F value
+
+
+```{r}
+model3 = lm(statedata$Murder~statedata$Life.Exp + statedata$Frost, data = statedata)
+add1(model3, scope = ~ .+statedata$Population + statedata$Income+statedata$Illiteracy+statedata$HS.Grad+statedata$Area, test = "F") 
+
+```
+#Population 
+```{r}
+model4 = lm(statedata$Murder~statedata$Life.Exp + statedata$Frost+statedata$Population, data = statedata)
+add1(model4, scope = ~ .+statedata$Income+statedata$Illiteracy+statedata$HS.Grad+statedata$Area, test = "F") 
+
+```
+#Area
+
+
+
+```{r}
+model5 = lm(statedata$Murder~statedata$Life.Exp + statedata$Frost+statedata$Population+statedata$Area, data = statedata)
+add1(model5, scope = ~ .+statedata$Income+statedata$Illiteracy+statedata$HS.Grad, test = "F") 
+
+```
+
+#Our final model will be we use Population,Life Expectancy,Frost and Area 
+#murder = beta0 + beta1*Population + beta4*Life Expectancy + beta6*Frost+beta7*Area
+
+
+#Actual Answer!!!
+#Forgot to add in log(Population) & log(Area) you need to add in from part (a)!! Ensure you observe for any non linearities relationships requires any transformation. To ensure it is the 'BEST FIT FOR THE MODEL".
+
+```{r}
+basemodel = lm(statedata$Murder~1, data = statedata)
+add1(basemodel, scope = ~ .+statedata$Population + statedata$Income+statedata$Illiteracy+statedata$Life.Exp+statedata$HS.Grad+statedata$Frost+statedata$Area+statedata$logArea+statedata$logPopulation, test = "F") 
+
+```
+
+#Wait wouldn't just give us the same result (just to add in the other design variables to create a BEST FIT?!) -->getting more marks?!
+#Our final model will be we use Population,Life Expectancy,Frost, log(Area) and Illiteracy 
+
+#Part c) Starting from the full model, perform model selection using stepwise selection with the AIC.
+```{r}
+fullmodel = lm(statedata$Murder~1, data = statedata)
+model2 = step(fullmodel,scope = ~ .+statedata$Population + statedata$Income+statedata$Illiteracy+statedata$Life.Exp+statedata$HS.Grad+statedata$Frost+statedata$Area+statedata$logArea+statedata$logPopulation)
+
+
+```
+#Actual Answer:The model is the same from the forward selection!
+
+
+```{r}
+lm(formula = statedata$Murder ~ statedata$Frost + statedata$Illiteracy + statedata$Population+statedata$logArea +statedata$Life.Exp, data = statedata)
+```
+
+
+#Part d) Write down your final fitted model (including any variable transformations used).
+#murder = beta0 + beta1*Population + beta3*Illiteracy + beta4*Life Expectancy + beta6*Frost+beta8*log(Area) 
+#murder = 108.713249  + 0.000162*Population + 1.474305 *Illiteracy -1.542284*Life Expectancy  -0.011293*Frost + 0.632740*log(Area)
+
+
+#Part e) Produce diagnostic plots for your final model and comment.
+```{r}
+plot(model2, which = 1)
+
+```
+
+
+
+```{r}
+plot(model2, which = 2)
+
+```
+
+
+```{r}
+plot(model2, which = 3)
+
+```
+
+```{r}
+plot(model2, which = 5)
+
+```
+
+#Demonstator comment: It looks like a linear normal fit (or best fit)! There is a slight negative trend for higher fitted values and moderate leverages.
+
+
+#Question 5b) Calculate the ridge regression estimates for the data from Q2 with penalty parameter λ = 0.5. In order to avoid penalising some parameters unfairly, we must first scale every predictor variable so that it is standardised (mean 0, variance 1), and centre the response variable (mean 0), in which case an intercept parameter is not used. (Hint: This can be done with the scale function).
+```{r}
+Xs <- scale(X[,-1],center=T,scale=T)
+ys <- scale(y,center=T,scale=F)
+p = 4
+p <- p-1
+solve(t(Xs)%*%Xs + diag(rep(0.5,p)),t(Xs)%*%ys)
+```
+
+#Question 5c) One way to calculate the optimal value for the penalty parameter is to minimise the AIC. Since the number of parameters p does not change, we use a slightly modified version:
+
+AIC=n*ln(SSRes/n) +2df,
+
+#where df is the “effective degrees of freedom” defined by
+
+df = tr(H) = tr(X(XT X + λI)^−1*XT).
+
+#For the data from Q2, construct a plot of λ against AIC. Thereby find the optimal value for λ.
+```{r}
+n = 8
+lambda <- seq(0,1,0.001)
+aic <- c()
+for (l in lambda) {
+        b <- solve(t(Xs)%*%Xs + diag(rep(l,p)),t(Xs)%*%ys)
+        ssres <- sum((ys-Xs%*%b)^2)
+        H <- Xs %*% solve(t(Xs)%*%Xs + diag(rep(l,p))) %*% t(Xs)
+        aic <- c(aic, n*log(ssres/n) + 2*sum(diag(H)))
+}
+lambda[which.min(aic)] 
+```
+
+```{r}
+plot(lambda,aic,type='l')
+
+```
+
+
+

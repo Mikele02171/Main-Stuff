@@ -1,0 +1,202 @@
+---
+title: "MAST30025 Week 9 Lab"
+output: word_document
+---
+
+
+#Question 1: Reusing the data from Q5 from the last lab!
+```{r}
+setwd("~/Desktop/UNIMELB 2021 Material/UNIMELB S1 2021 (Currently)/MAST30025/Tutorials /Tutorials/Rfile/data")
+filters = read.csv("filters.csv")
+
+#More to add how to convert into a factor! #Slide 63 Less than full rank model!
+filters$type = factor(filters$type)
+```
+
+
+
+
+```{r}
+#Attempt 1
+
+#y matrix
+y = filters$life
+
+#X matrix
+n = dim(filters)
+k = length(levels(filters$type))
+X = matrix(0,n,k+1)
+#Add all ones in the first column
+X[,1] = 1
+#Add all ones for each tao factor
+
+#2nd column
+X[filters$type==1,2] = 1
+#3rd column
+X[filters$type==2,3] = 1
+#4th column
+X[filters$type==3,4] = 1
+#5th column
+X[filters$type==4,5] = 1
+#6th column
+X[filters$type==5,6] = 1
+```
+
+
+
+```{r}
+y
+
+```
+
+
+```{r}
+X
+```
+
+
+
+```{r}
+#Actual X matrix should works out exactly above
+t(X)%*%X
+```
+
+
+
+```{r}
+#If you want it to convert into a matrix form!
+#finding the inverse
+XtXc = matrix(0,6,6) #converts all zeros for all elements in the first row and the first column in a 6 by 6 matrix
+XtXc[2:6,2:6] = solve((t(X)%*%X)[2:6,2:6]) #Selects 2nd to 6th row and 2nd to 6th column respectively!
+XtXc
+
+```
+
+
+
+#For Question 1a and 1b if they are estimable?
+```{r}
+onea = c(1,-1,0,0,0,1)
+round(onea%*%XtXc%*%t(X)%*%X)
+
+#They are not estimable according to Theorem 6.10
+
+```
+
+
+```{r}
+oneb = c(0,1,0,-0.5,-0.5,0)
+round(oneb%*%XtXc%*%t(X)%*%X)
+
+#They are estimable according to Theorem 6.10
+
+```
+
+
+
+#Part c: In the week 8 Lab you were asked to find two solutions to the normal equations. Verify that they produce the same estimate of tao4 - tao5?
+
+```{r}
+#Attempt 1
+dtao4tao5 = c(0,0,0,0,1,-1) #difference of tao 4 and tao 5
+
+b1 = XtXc%*%t(X)%*%y
+dtao4tao5%*%b1
+```
+
+
+
+```{r}
+#Attempt 1
+library(MASS)
+dtao4tao5 = c(0,0,0,0,1,-1) #difference of tao 4 and tao 5
+XtXc2 = ginv(t(X)%*%X)
+b2 = XtXc2%*%t(X)%*%y
+dtao4tao5%*%b2
+```
+
+
+#They produce the same estimate. According to Theorem 6.11, that regardless of any conditional inverse you are using produces exactly the same estimate. Thus this estimator is unique. Derived from the lectures!
+
+
+#Part d: Do your two solutions produce the same estimate of 2mew + tao1?
+```{r}
+#Attempt 1
+twomewtaoone = c(2,1,0,0,0,0) # 2mew + tao1 
+
+twomewtaoone%*%b1
+```
+```{r}
+#Attempt 1
+twomewtaoone = c(2,1,0,0,0,0) # 2mew + tao1 
+
+twomewtaoone%*%b2
+```
+
+#They are not the same. Using Theorem 6.11 the estimator is NOT UNIQUE!
+
+
+#Part e: 
+
+#Part i:
+```{r}
+tt <- c(1,1,0,0,0,0)
+t(tt) %*% XtXc %*% t(X) %*% X
+tt%*%b1
+```
+
+#Part ii:
+```{r}
+tt <- c(0,0,1,-1,0,0)
+round(t(tt) %*% XtXc %*% t(X) %*% X)
+tt%*%b1
+```
+
+#Part iii:
+```{r}
+tt <- c(0,-.2,-.2,-.2,.8,-.2)
+round(t(tt) %*% XtXc %*% t(X) %*% X)
+tt%*%b1
+```
+
+#Part iv:
+```{r}
+tt <- c(5,1,1,1,1,1)
+round(t(tt) %*% XtXc %*% t(X) %*% X)
+tt%*%b1
+
+```
+
+
+
+
+#Part f: 
+```{r}
+filters$type <- factor(filters$type)
+model <- lm(life ~ type, data = filters)
+mu <- model$coefficients + c(0, 1, 1, 1, 1)*model$coefficients[1]
+names(mu)[1] <- "type1"
+(mubar <- mean(mu))
+
+```
+
+```{r}
+mu - mubar
+
+```
+
+
+
+```{r}
+contrasts(filters$type) <- contr.sum(5)
+model2 <- lm(life ~ type, data = filters)
+summary(model2)
+
+```
+
+```{r}
+-sum(model2$coefficients[-1]) # mu_5 - bar(mu)
+
+```
+
+
