@@ -1,0 +1,258 @@
+---
+title: "MAST30025 Assignment 3 2020"
+output: word_document
+---
+
+
+#Question 2)
+#Part a: Plot an interaction plot for the data. Does there appear to be interaction?
+#Attempt 1
+```{r}
+potato = data.frame(potato = c(13,11,3,10,4,7,15,2,7,26,19,24,15,22,18,20,24,8),oxygen = factor(c(1,1,1,2,2,2,3,3,3,1,1,1,2,2,2,3,3,3)),temp = factor(c(1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2)))
+```
+
+# 
+
+
+```{r}
+with(potato, interaction.plot(oxygen,temp,potato))
+```
+
+## Actual solution
+```{r}
+with(potato, interaction.plot(temp,oxygen,potato))
+```
+
+#DO NOT USE lm in the actual assignment
+```{r}
+imodel = lm(potato~temp*oxygen, data = potato)
+anova(imodel)
+```
+
+#There is clearly no interaction. 
+
+
+#Part b) Fit an additive model, outputting your design matrix. Estimate the common variance. 
+#Attempt 1
+```{r}
+library(MASS)
+library(Matrix)
+n = 18
+y = potato$potato
+X = matrix(0,n,6)
+X[,1] = 1
+X[cbind(1:n,as.numeric(potato$temp)+1)] = 1
+X[cbind(1:n,as.numeric(potato$oxygen)+3)] = 1
+X
+XtXc = ginv(t(X)%*%X)
+b = XtXc%*%t(X)%*%y
+r = rankMatrix(X)
+s2 = sum((y - X%*%b)^2)/(n-r)
+s2
+```
+
+
+#Part c) Calculate a 95% confidence interval for the difference between the temperature effects.
+
+#Attempt 1: DO NOT RUN THIS CODE
+```{r}
+#C = matrix(c(1,-1,-1,0,0,0),6,1)
+#mu12 = t(C)%*%b
+#wdth = qt(.975, n-r)*sqrt(s2*t(t)%*%XtXc%*%t)
+#wdth
+#(mu12-wdth, mu12,mu12 + wdth)
+
+```
+
+#Actual solution
+```{r}
+C = matrix(c(0,1,-1,0,0,0),6,1)
+mu12 = t(C)%*%b
+wdth = qt(.975, n-r)*sqrt(s2*t(C)%*%XtXc%*%C)
+wdth
+c(mu12-wdth, mu12,mu12 + wdth)
+```
+
+#Part d) Test the hypothesis that oxygen level has no effect on rotting!
+```{r}
+C = matrix(c(0,0,0,1,-1,0,0,0,0,0,1,-1),2,6)
+numer = t(C%*%b)%*%solve(C%*%ginv(t(X)%*%X)%*%t(C))%*%C%*%b
+e = y - X%*%b
+s2 = sum(e^2)/(n-r)
+Fstat = (numer/2)/s2
+Fstat
+pf(Fstat,2,n-r,lower = F)
+```
+
+#Actual solution
+```{r}
+XtXc = ginv(t(X)%*%X)
+C = matrix(c(0,0,0,1,-1,0,0,0,0,0,1,-1),2,6,byrow=T)
+numer = t(C%*%b)%*%solve(C%*%XtXc%*%t(C))%*%C%*%b
+Fstat = (numer/2)/s2
+pf(Fstat,2,n-r,lower = F)
+```
+
+#NOTE/TASK: Recompute your Design Matrix and compute again!
+
+
+#Question 2e) Suppose we are interested in the effect of oxygen level only, but know that temperature affects the results, so we include it in our model. What type of design would this study be? 
+#A complete complete design (What else?) Refer from slide 36 from Experimental Modulue!
+
+
+#Question 4)
+#(a) Plot the data, using different colours and/or symbols for each tree. What do you observe?
+```{r}
+setwd("~/Desktop/UNIMELB 2021 Material/UNIMELB S1 2021 (Currently)/MAST30025/Tutorials /Tutorials/Rfile/data")
+heli = read.csv("heli.csv")
+str(heli)
+
+#Actual solution
+plot(Velocity ~ Load, pch=as.character(Tree), col=Tree+1, data=heli)
+
+```
+#Demonstrator comment: There appears to be a clear linear relationship between velocity and disk loading. It’s not clear if the tree has an effect, either directly or through interaction.
+```{r}
+str(heli)
+```
+
+
+
+#Without using the lm!
+#(b) Test for the presence of interaction between disk loading and tree.
+#Attempt 1
+```{r}
+library(MASS)
+library(Matrix)
+y = heli$Velocity
+n = length(heli$Velocity)
+X = matrix(c(rep(1,n),rep(0,n*7)),n,8)
+X[cbind(1:n,heli$Tree+1)]=1
+X[,5]=heli$Load
+X[cbind(1:n,heli$Tree+5)]=heli$Load
+r = rankMatrix(X)[1]
+XtXc = ginv(t(X)%*%X)
+XtXc
+b = XtXc%*%t(X)%*%y
+XtXc
+s2 = sum((y-X%*%b)^2)/(n-r)
+C = matrix(c(0,0,0,0,0,1,-1,0,0,0,0,0,0,1,0,-1),2,8,byrow = T)
+Fstat  = t(b)%*%t(C)%*%solve(C%*%XtXc%*%t(C))%*%C%*%b/2/s2
+pf(Fstat,2,n-r,lower=F)
+
+```
+#The interaction is not signifiancant, a little above at 5%!
+
+
+#(c) Use backward elimination from the model with interaction to select variables for the data.
+
+#Attempt 1
+```{r}
+fullmodel = lm(y~Load + factor(Tree)+ Load*factor(Tree),data = heli)
+drop1(fullmodel, scope = ~., test = "F")
+
+
+```
+
+```{r}
+model2 = lm(y~Load + factor(Tree),data = heli)
+drop1(model2, scope = ~., test = "F")
+```
+
+
+```{r}
+model3 = lm(y~Load,data = heli)
+drop1(model3, scope = ~., test = "F")
+```
+
+#We include Load in our final model! Despite the Tree is dropped during the elimation which also mean the interaction term has droppped!
+
+
+
+#Part d: Add lines corresponding to model from part (c), and the full model with interaction, to the plot from question (a).
+```{r}
+setwd("~/Desktop/UNIMELB 2021 Material/UNIMELB S1 2021 (Currently)/MAST30025/Tutorials /Tutorials/Rfile/data")
+heli = read.csv("heli.csv")
+str(heli)
+
+
+plot(Velocity ~ Load, pch=as.character(Tree), col=Tree+1, data=heli)
+#Actual solution
+with(heli, lines(Load, fitted(model3)))
+for (i in 1:3) {with(heli, lines(Load[Tree==i], fitted(fullmodel)[Tree==i], col=i+1))}
+
+```
+
+
+
+
+#Part e: In the full model with interaction, test the hypothesis that a samara from tree 2 with a disk loading of 0.2 has an average descent velocity of 1.
+```{r}
+#My Method
+library(car)
+heli$Tree = factor(heli$Tree)
+imodel = lm(Velocity~Tree*Load, data = heli)
+linearHypothesis(imodel, c(1,1,0,0.2,0.2,0),1)
+
+```
+
+#Question 5 (JUST TRY TO UNDERSTAND IT)
+#Part a
+```{r}
+#Attempt 1
+#We use a completely randomised design. The plots can be oriented horizontally or vertically — we choose horizontally. Here is one possible allocation:
+alloc = sample(16,16) #plot allocation, ( a rondom allocation.)
+alloc
+```
+
+
+```{r}
+talloc = as.vector(rbind(2*alloc-1,2*alloc))
+talloc
+```
+
+```{r}
+talloc2 = c()
+for (i in 1:4){talloc2[talloc[(8*i-7):(8*i)]] = i}
+matrix(talloc2,4,8,byrow = T) #tree allocation
+```
+
+
+
+
+```{r}
+X = matrix(0,32,5)
+X[,1] = 1
+X[cbind(1:32,talloc2+1)] = 1
+X
+
+```
+
+#Part b
+
+```{r}
+alloc = c()
+for (i in 1:4) { alloc = c(alloc,sample(4,4)) }
+malloc = matrix(alloc,4,4) #plot allocation
+ #tree allocation
+```
+
+
+
+```{r}
+talloc = rep(as.vector(t(malloc)),each=2)
+matrix(talloc, 4,8, byrow=T) #tree allocation
+
+```
+
+
+
+```{r}
+X = matrix(0,32,9)
+X[,1] = 1
+X[cbind(1:32,rep(1:4,4,each=2)+1)] = 1 
+X[cbind(1:32,talloc+5)] = 1
+X
+#An alternate formulation would be to have 8 block effects.
+
+```

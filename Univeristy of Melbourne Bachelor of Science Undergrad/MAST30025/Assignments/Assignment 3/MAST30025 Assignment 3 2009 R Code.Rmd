@@ -1,0 +1,175 @@
+---
+title: "MAST30025 Assignment 3 2009 R Code"
+output: word_document
+---
+
+
+#Question 1, 
+#Creating a data frame first
+#Part a: Find a conditional inverse t(X)%*%X, using the algorrithm given in the lecture slides.
+```{r}
+yield = c(43,45,47,46,48,33,37,38,35,54,54,57)
+fertiliser = c(1,1,1,1,1,2,2,2,2,3,3,3)
+typefert = factor(fertiliser)
+```
+
+
+```{r}
+tomato = data.frame(yield,typefert)
+tomato
+```
+
+```{r}
+#Response variable
+y = tomato$yield
+#Our Design Matrix
+X = matrix(0,12,4)
+X[,1]=1
+for (i in 1:3){X[typefert == i, i +1] = 1}
+X
+```
+
+```{r}
+#Finding the Condition Inverse according from the lectures!
+XtXc = matrix(0,4,4)
+XtXc[2:4,2:4] = solve((t(X)%*%X)[2:4,2:4])
+XtXc
+```
+
+
+
+
+
+#Part b:Find two solutions to the normal equations, using only the conditional inverse you found in question 1a,
+```{r}
+#First from the tutorials we find another Conditional inverse using the ginv function
+library(MASS)
+library(Matrix)
+XtXc2 = ginv(t(X)%*%X)
+XtXc2
+
+```
+
+
+```{r}
+b = XtXc%*%t(X)%*%y
+b
+```
+
+```{r}
+b2 = XtXc2%*%t(X)%*%y
+b2
+```
+
+```{r}
+I = diag(c(rep(1,4)))
+I - XtXc%*%t(X)%*%X
+```
+
+# One solution to the normal equation is b.
+# Another solution to the normal equation is b2 = b + (I - XtXc %*% t(X) %*% X) %*% z, Where z is an arbitrary 4*1 vector.
+
+
+```{r}
+b2 = b + (I - XtXc %*% t(X) %*% X) %*% as.vector(c(1,0,0,0))
+b2
+```
+
+
+#Part c: Is μ + τ1 - τ2 + τ3 estimable?
+```{r}
+library(MASS)
+library(Matrix)
+tt = c(1,1,-1,1)
+tt%*%ginv(t(X)%*%X)%*%t(X)%*%X
+
+```
+#Yes it is estimable because it is a linear combination of μ + τ1, μ + τ2 and μ + τ3, which are all elements of Xβ and therefore estimable!
+
+
+#Part d: Find a 95% confidence interval for the estimable quantity  τ2 - τ3. 
+```{r}
+#Attempt 1
+library(Matrix)
+n = 12
+SSRes = sum((y-X%*%b)^2)
+s2 = SSRes/(n-rankMatrix(X)[1])
+tt = c(0,0,1,-1) #treatment difference of fertiliser 2 and 3
+ta = qt(0.975,n-rankMatrix(X)[1])
+s = sqrt(s2)
+
+#Creating our Confidence Interval
+halfwidth = ta*s*sqrt(t(tt)%*%ginv(t(X)%*%X)%*%tt)
+c(tt%*%b-halfwidth,tt%*%b+halfwidth)
+```
+
+#Part e: Test the hypothesis that fertiliser has no effect on yield.
+```{r}
+#Attempt 1
+library(Matrix)
+C = matrix(c(1,0,-1,0,1,0,0,-1),2,4)
+m = rankMatrix(C)[1]
+num = t(C%*%b)%*%solve(C%*%ginv(t(X)%*%X)%*%t(C))%*%C%*%b
+Fstat = (num/m)/s2
+Fstat
+pf(Fstat,m,n-rankMatrix(X)[1], lower = F)
+
+```
+#We reject the null hypothesis
+
+#Actual solution!
+```{r}
+library(Matrix)
+C = matrix(c(0,1,-1,0,0,0,1,-1),2,4)
+m = rankMatrix(C)[1]
+num = t(C%*%b)%*%solve(C%*%ginv(t(X)%*%X)%*%t(C))%*%C%*%b
+Fstat = (num/m)/s2
+Fstat
+pf(Fstat,m,n-rankMatrix(X)[1], lower = F)
+```
+
+
+#Question 2.
+#Part a) What information do you gather about the parameters of the model in equation 1, from the coefficients of the fitted R model?
+
+#rot = -10.222 - 3.333*oxygen.f2 - #3.333*oxygen.f3 + 11.556*temp.f16 + error(ijk)
+
+#Intercept corresponds to mew + tao1 + beta1, oxygen.f2 corresponds tao2-tao1, oxygen.f3 corresponds tao3-tao1 and temp.f16 is beta2-beta1!
+
+
+#Part b) Should we accept or reject the hypothesis that oxygen level has no effect on rot?
+#Since the p value is 0.4481124 we do not reject the null hypothesis.
+
+#Part c) Should we accept or reject the hypothesis that temperature has no effect on rot?
+#Since the p value is 0.0002849 we reject the null hypothesis.
+
+
+#Part d) What hypothesis is the linear.hypothesis function testing, given in terms of the parameters of the model in equation 1?
+#The hypothesis is testing tao2-tao1 = beta2 - beta1; in other words, whether the difference in effect between the temperature levels is equal to the difference in effect between the first two oxygen levels. 
+
+
+#Part e) Using R, test for the presense of interaction between the factors
+```{r}
+potato = data.frame(potato = c(13,11,3,10,4,7,15,2,7,26,19,24,15,22,18,20,24,8),oxygen = factor(c(1,1,1,2,2,2,3,3,3,1,1,1,2,2,2,3,3,3)),temp = factor(c(1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2)))
+```
+
+```{r}
+imodel = lm(potato~temp*oxygen, data = potato)
+anova(imodel)
+```
+
+
+#There is no interaction so the p value is 0.76
+
+
+
+
+
+
+
+
+
+
+
+
+

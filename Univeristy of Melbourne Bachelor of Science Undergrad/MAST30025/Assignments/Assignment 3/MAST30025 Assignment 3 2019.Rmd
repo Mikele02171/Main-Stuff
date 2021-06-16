@@ -1,0 +1,287 @@
+---
+title: "MAST30025 Assignment 3 2019 R Code"
+output: word_document
+---
+#Question 2 
+#Part a: Find a conditional inverse t(X)%*%X, using the algorrithm given in Theorem 6.2 
+
+#Creating a data frame first
+```{r}
+yield = c(43,45,47,46,48,33,37,38,35,56,54,57)
+fertiliser = c(1,1,1,1,1,2,2,2,2,3,3,3)
+typefert = factor(fertiliser)
+```
+
+
+```{r}
+tomato = data.frame(yield,typefert)
+tomato
+```
+
+
+```{r}
+#Response variable
+y = tomato$yield
+#Our Design Matrix
+X = matrix(0,12,4)
+X[,1]=1
+for (i in 1:3){X[typefert == i, i +1] = 1}
+X
+```
+
+
+```{r}
+#Finding the Condition Inverse according from the lectures!
+XtXc = matrix(0,4,4)
+XtXc[2:4,2:4] = solve((t(X)%*%X)[2:4,2:4])
+XtXc
+```
+
+
+
+#Part b: Characterise all solutions to the normal equations.  
+```{r}
+#First from the tutorials we find another Conditional inverse using the ginv function
+library(MASS)
+library(Matrix)
+XtXc2 = ginv(t(X)%*%X)
+XtXc2
+
+```
+
+```{r}
+b = XtXc%*%t(X)%*%y
+b
+```
+
+```{r}
+b2 = XtXc2%*%t(X)%*%y
+b2
+```
+#More to add below
+#According to Theorem 6.7 
+```{r}
+I = diag(c(rep(1,4)))
+I - XtXc%*%t(X)%*%X
+```
+# One solution to the normal equation is b.
+# Another solution to the normal equation is b2 = b + (I - XtXc %*% t(X) %*% X) %*% z, Where z is an arbitrary 4*1 vector.
+
+
+#Part c: Is 4μ + 2τ1 + τ2 + τ3 estimable?
+#Attempt 1 
+```{r}
+library(MASS)
+library(Matrix)
+tt = c(4,2,1,1)
+tt%*%ginv(t(X)%*%X)%*%t(X)%*%X
+
+```
+#It is estimable which satisfies Theorem 6.10
+# Tutor Comment: Yes, as it is a linear combination of μ + τ1, μ + τ2 and μ + τ3, which are all elements of Xβ and therefore estimable
+
+
+#Part d: Find a 95% prediction interval for the yield of a tomato plant grown on fertiliser 1.
+```{r}
+library(Matrix)
+n = 12
+SSRes = sum((y-X%*%b)^2)
+s2 = SSRes/(n-rankMatrix(X)[1])
+#Attempt 1
+tt = c(1,1,0,0) #yield from fertiliser 1
+ta = qt(0.975,n-rankMatrix(X)[1])
+s = sqrt(s2)
+
+#Creating our Prediction Interval
+halfwidth = ta*s*sqrt(1+t(tt)%*%ginv(t(X)%*%X)%*%tt)
+c(tt%*%b-halfwidth,tt%*%b+halfwidth)
+```
+
+#Actual Solution (Correct from above)
+
+#Part e: Test the hypothesis that fertilisers 2 and 3 have no difference in yield.
+```{r}
+#Attempt 1
+library(Matrix)
+C = matrix(c(1,0,-1,0,1,0,0,-1),2,4)
+m = rankMatrix(C)[1]
+num = t(C%*%b)%*%solve(C%*%ginv(t(X)%*%X)%*%t(C))%*%C%*%b
+Fstat = (num/m)/s2
+Fstat
+pf(Fstat,m,n-rankMatrix(X)[1], lower = F)
+
+```
+
+#We can reject the null, conclude there is no differenece in yield between fertilisers 2 and 3.
+
+```{r}
+#Actual Solution
+library(Matrix)
+C = matrix(c(0,0,1,-1),1,4)
+m = rankMatrix(C)[1]
+num = t(C%*%b)%*%solve(C%*%ginv(t(X)%*%X)%*%t(C))%*%C%*%b
+Fstat = (num/m)/s2
+Fstat
+pf(Fstat,m,n-rankMatrix(X)[1], lower = F)
+
+```
+
+
+#Question 4
+#Part a: Plot the data, using different colours and/or symbols for male and female records. Without drawing diagnostic plots, do you think that this data satisfies the assumptions of the linear model? Why or why not?
+
+```{r}
+#Setting the directory
+setwd("~/Desktop/UNIMELB 2021 Material/UNIMELB S1 2021 (Currently)/MAST30025/Tutorials /Tutorials/Rfile/data")
+mile = read.csv("mile.csv")
+str(mile)
+
+```
+```{r}
+#Ensure you convert gender into your Factor Type. 
+genderfactor = factor(mile$Gender)
+plot(Time ~ Year, pch=as.character(genderfactor), col=genderfactor, data=mile)
+
+```
+
+#The data looks linear, but its decreasing as the years gone by. 
+#They are not independant and does not satisfy the linear model assumptions. 
+
+
+
+#Part b: Test the hypothesis that there is no interaction between the two predictor variables. Interpret the result in the context of the study.
+
+#Attempt 1
+```{r}
+
+#Remember we still dealing with the additive model with interaction!
+library(MASS)
+library(Matrix)
+y = mile$Time
+n = length(mile$Time)
+X = matrix(c(rep(1,n),rep(0,n*5)),n,6)
+X[cbind(1:n,as.numeric(genderfactor)+1)]=1
+X[cbind(1:n,as.numeric(genderfactor)+3)]=1
+#Trickest part since Year in this case we do not account them as integers
+X
+
+
+
+r = rankMatrix(X)[1]
+XtXc = ginv(t(X)%*%X)
+b = XtXc%*%t(X)%*%y
+b
+s2 = sum((y-X%*%b)^2)/(n-r)
+C = matrix(c(0,0,0,1,-1,0,0,0,0,1,0,-1),2,6,byrow = T)
+Fstat  = t(b)%*%t(C)%*%solve(C%*%XtXc%*%t(C))%*%C%*%b/2/s2
+Fstat
+pf(Fstat,2,n-r,lower=F)
+```
+
+
+
+#Using the lm
+```{r}
+imodel = lm(Time~Year*Gender, data = mile)
+summary(imodel)
+```
+
+```{r}
+amodel = lm(Time~Year+Gender,data = mile)
+summary(amodel)
+```
+
+
+
+#anova
+```{r}
+anova(imodel,amodel)
+```
+#We can reject the H0 and conclude that there is a significant interaction between two predict variables.
+
+
+#Part c: Write down the final fitted models for the male and female records. Add lines corresponding to these models to your plot from part (a).
+```{r}
+imodel = lm(Time~Year*Gender, data = mile)
+imodel$coefficients
+```
+
+
+
+#Actual solution 
+```{r}
+imodel$coef[c(1,2)] + imodel$coef[c(3,4)]
+```
+
+```{r}
+plot(Time ~ Year, data = mile, col=as.numeric(genderfactor)+1,pch=as.character(genderfactor))
+for (i in 1:2) { with(mile, lines(Year[as.numeric(genderfactor)==i],fitted(imodel)[as.numeric(genderfactor)==i], col=i+1))}
+```
+
+
+#One for Females
+#Time = 2309 -1.034*Year
+
+#One for Males
+#Time = 954 - 0.366*Year
+
+
+
+#(d) Calculate a point estimate for the year when the female world record will equal the male world record. Do you expect this estimate to be accurate? Why or why not?
+
+```{r}
+-imodel$coef[3]/imodel$coef[4]
+```
+
+#We expect that the world records will be equal around the year 2031. However this is unlikely to be an accurate estimate, as we are extrapolating well beyond the range of the data.
+
+
+
+#Part e. Is the year when the female world record will equal the male world record an estimable quantity? Is your answer consistent with part (d)?
+
+#This is not an estimable quantity; it is not expressible as a linear function of the parameters. This is consistent with part (d), because "estimable" really means linearly estimable. So we can estimate a value for this quantity even though it is not estimable.
+
+
+#Part f.Calculate a 95% confidence interval for the amount by which the gap between the male and female world records narrow every year.
+```{r}
+confint(imodel)[4,]
+```
+
+
+#Part g. Test the hypothesis that the male world record decreases by 0.3 seconds each year.
+```{r}
+library(car)
+linearHypothesis(imodel, c(0,1,0,1), -0.3)
+```
+
+
+#Question 5
+#Part b: Perform the random allocation. You must use R for randomisation and include your R com- mands and output.
+```{r}
+x = sample(50,50)
+x[1:9]
+```
+
+
+
+```{r}
+
+x[10:23]
+```
+
+
+
+```{r}
+
+x[24:50]
+```
+
+
+
+
+
+
+
+
+
+
