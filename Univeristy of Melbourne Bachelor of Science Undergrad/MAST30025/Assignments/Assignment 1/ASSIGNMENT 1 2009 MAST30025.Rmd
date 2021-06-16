@@ -1,0 +1,91 @@
+---
+title: "MAST30025 ASSIGNMENT 1 2009"
+output: word_document
+---
+
+
+#Question 2 
+```{r}
+A = matrix(c(2,-2,2,-2,5,1,2,1,5),3,3)/6
+B = matrix(c(-2,5,3,5,1,-4,3,-4,0),3,3)
+
+```
+
+```{r}
+A 
+
+```
+
+
+```{r}
+
+B 
+
+```
+
+
+#Part a)
+```{r}
+mu = matrix(c(1,-3,-2),3,1)
+V = 4*diag(3)
+
+# E[y^T Ay]
+
+sum(diag(A%*%V)) + t(mu)%*%A%*%mu
+
+```
+
+
+#Part b)
+```{r}
+t(mu)%*%A%*%mu/8 #Our non centrality parameter with 2 degrees of freedom where A is symmetric and idempotent
+
+```
+
+#Part c)
+```{r}
+A%*%V%*%B
+
+```
+#No A and B are not independant since AVB is a non zero matrix according to Theorem 3.11!
+
+
+
+#Question 3 
+
+
+#Part a) 
+```{r}
+y = c(8.5,8,7.5,10,11,15,13.5,14.5)
+X = matrix(c(rep(1,8),1.35,1.33,2,1.4,1.4,1.2,1.3,1.28,34,36,38,34,31,31,33,41),8,3)
+#Obvious for beta and eplison parameters!
+
+```
+
+
+#Part c) Finding the least squares estimator 
+```{r}
+b = solve(t(X)%*%X,t(X)%*%y)
+b
+
+```
+
+
+#Part b) Find the normal equations!
+
+```{r}
+t(X)%*%X #times beta parmeter equals 
+t(X)%*%y
+
+```
+
+
+
+
+
+
+
+
+
+
+

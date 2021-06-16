@@ -1,0 +1,173 @@
+---
+title: "Assignment 1 S1 2019 Question 4 and 5"
+output: word_document
+---
+
+
+
+
+#Question 4 
+#Part a: Describe the distribution of Ay
+```{r}
+A = matrix(c(4,-2,0,-2,1,0,0,0,10)/10,3,3)
+A
+```
+
+
+#Ay ~ MVN(A*mu,AVt(A)) 
+```{r}
+mu = matrix(c(3,0,-2),3,1)
+mu
+
+```
+
+
+#mean distribution A%*%mu
+```{r}
+A%*%mu
+ 
+```
+#variance distribution A%*%V%*%t(A)
+```{r}
+V = matrix(c(2,0,0,0,2,0,0,0,1),3,3)
+A%*%V%*%t(A)
+ 
+```
+
+
+
+
+
+#Part b:Find E[t(y)Ay]
+```{r}
+sum(diag(A%*%V)) + t(mu)%*%A%*%mu
+ 
+```
+#Part c:Describe the distribution of t(y)%*%A%*%y
+```{r}
+rankMatrix(A)[1] 
+ 
+```
+
+#AV is idempotent has a noncentral chi squared distribution with 2 degrees of freedom
+# and has a non centrality parameter.
+
+```{r}
+lamba = 0.5*t(mu)%*%A%*%mu
+lamba
+ 
+```
+
+#Part d: Find all linear combinations of y elements which are independent of t(y)%*%A%*%y
+```{r}
+A 
+ 
+```
+
+```{r}
+rref(A) #install pracma package 
+ 
+```
+
+columns 1 and 2 are mutiples of each other c1 + 2c2 = 0 and c3 = 0
+
+
+
+#Question 5: 
+#Part a: The linear model is of the form y = X*beta + e (where e is epilson). Write down the matrices and vectors involved in this equation. 
+```{r}
+y = matrix(c(27.3,42.4,38.7,4.5,23,166.3,109.7,80.1,150.7,20.3,189.7,131.3,404.2,149),14,1)
+y
+```
+
+
+
+```{r}
+X = matrix(c(rep(1,14),13.1,15.3,25.8,1.8,4.9,55.4,39.3,26.7,47.5,6.6,94.7,61.1,135.6,47.6),14,2)
+X
+```
+
+
+#Part b: Find the least squares estimates of the parameters 
+```{r}
+b = solve(t(X)%*%X, t(X)%*%y)
+b
+```
+
+
+#b0 and b1 respectively for each row 
+
+
+
+
+#Part c: Calculate the sample variance s2.
+```{r}
+e = y - X%*%b
+e #Residual errors
+
+```
+
+
+```{r}
+n = 14 #sample size
+p = 2 #number of parameters
+SSRes = sum(e^2)
+ssquared = SSRes/(n-p)
+ssquared
+
+
+```
+
+
+#Part d: A fisherman sold ocean trout for 18 cents per round in 1970. Predict the price for ocean trout in 1980.
+```{r}
+c(1,18)%*%b
+```
+
+
+#Part e: Calculate the standardised residual for the sea scallops.
+```{r}
+X
+
+```
+
+
+```{r}
+a = solve(t(X)%*%X)
+a
+```
+
+```{r}
+H = X%*%a%*%t(X)
+H
+
+```
+
+
+```{r}
+z = e/sqrt(ssquared * (1 - diag(H)))
+z[13]
+```
+
+
+
+
+#Part f: Calculate the Cook’s distance for sea scallops.
+```{r}
+k = 1
+D = z^2 * (diag(H)/(1-diag(H))) * 1/(k+1)
+D[13]
+```
+#Part g:Does sea scallops fit the linear model? Justify your argument
+
+```{r}
+plot(X[,2],y)
+abline(b[1],b[2])
+
+```
+
+Full explaination: The Cook’s distance certainly indicates it should be of some concern; however looking at the plot, it seems that the fit is actually okay. There is considerable evidence for heteroskedasticity — the variance increases with x (the design variable). Sea scallops has (by far) the largest x and so may be prone to a larger variance than the remaining points. The high Cook’s distance therefore comes primarily from a very high leverage, rather than a bad fit to the model.
+
+
+
+
