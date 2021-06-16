@@ -1,0 +1,210 @@
+---
+title: "ASSIGNMENT 2 MAST30025 2021 R CODE"
+output: word_document
+---
+
+
+#Question 2 Part a:
+```{r}
+n = 7
+p = 4
+X = matrix(c(rep(1,n),32,19.5,13.3,13.3,5,7.1,34.5,84.9,306.6,562,562,390.6,2175,623.5,10,9,5,5,5,3,7),n,p)
+X
+y = c(37.9,42.2,47.3,43.1,54.8,47.1,40.3)
+b = solve(t(X)%*%X,t(X)%*%y)
+b
+```
+
+
+```{r}
+s2 = sum((y-X%*%b)^2)/(n-p)
+s2
+```
+#Question 2 Part b:
+
+```{r}
+xst = as.vector(c(1,10,100,6))
+xst %*% b + c(-1,1)*qt(0.95,df=n-p)*sqrt(s2 * t(xst) %*% solve(t(X)%*%X) %*% xst)
+```
+
+#Question 2 Part c:
+```{r}
+#From Slide 33 from the Test Statistic Inference for the full rank model!
+C = matrix(c(0,1,0,-1),1,4)
+#Calculating the Sample Standand Derivation!
+s = sqrt(s2)
+n = 7
+#Standand error for beta1 - beta3
+V = C%*%solve(t(X)%*%X)%*%t(C)%*%s2 #Our new sample variance (s2)
+se = sqrt(V)
+se
+```
+
+
+#Question 2 Part d:
+```{r}
+library(MASS)
+C = matrix(c(0,1,0,0),1,4)
+r = 1
+delta = -1
+Fstat = (t(C%*%b-delta)*solve(C%*%solve(t(X)%*%X)%*%t(C))*(C%*%b-delta)/r)/s2
+#Fstat 
+Fstat
+#p value
+pf(Fstat, df1= r, df2 = n-p, lower.tail = FALSE)
+
+```
+
+
+```{r}
+#Attempt 1
+model = lm(y~X[,-1])
+summary(model)
+```
+
+
+#Question 2 Part e:
+
+#Slide 61-63 IFTFRM
+```{r}
+SSReg = t(y) %*% X %*% b - sum(y)^2 / n
+SSRes = s2*(n-p)
+Fstat = (SSReg/(p-1))/(SSRes/(n-p)) 
+Fstat
+```
+
+```{r}
+
+pf(Fstat, p-1, n-p, lower.tail = FALSE)
+```
+#We do not reject the null hypothesis of the model relevance!
+
+
+#Question 4 Part a:
+```{r}
+data(mtcars)
+mtcars = log(mtcars[, c(1,3:7)])
+pairs(mtcars,cex=0.5)
+```
+#COMMENT HERE: Looking at miles per gallon against the other variables, there is evidence of a linear relationship with displacement,gross horsepower,rear axle ratio,weight and a quarter mile time!
+
+#Question 4 Part b:
+```{r}
+model0 = lm(mpg ~ 1, data=mtcars)
+add1(model0, scope = ~.+disp+hp+drat+wt+qsec, test = "F")
+```
+
+#We take out the displacement variable
+```{r}
+model1 = lm(mpg ~ 1+disp, data=mtcars)
+add1(model1, scope = ~.+hp+drat+wt+qsec, test = "F")
+```
+#Take out the weight variable
+
+```{r}
+model2 = lm(mpg ~ 1+disp+wt, data=mtcars)
+add1(model2, scope = ~.+hp+drat+qsec, test = "F")
+```
+```{r}
+
+#We take out horsepower
+model3 = lm(mpg ~ 1+disp+wt+hp, data=mtcars)
+add1(model3, scope = ~.+drat+qsec, test = "F")
+```
+#The final variables are disp,wt and hp!
+
+
+#Question 4 Part c:
+```{r}
+model = step(model0, scope = ~ .+disp+hp+drat+wt+qsec)
+```
+
+#AIC is -139.83
+
+
+#Question 4 Part d:
+```{r}
+model
+```
+#Were are dealing with a log transformation!
+#Final model is log(mpg) = 4.8347 - 0.2553log(hp) - 0.5623log(wt) + e
+#Take the exponential on both sides of the linear model
+# mpg = exp(4.8347)hp^(-0.2553)wt^(-0.5623)e'
+# Where e' is exp(e)
+
+#Question 4 Part e:
+```{r}
+plot(model, which=1)
+```
+```{r}
+plot(model, which=2)
+```
+
+
+
+```{r}
+plot(model, which=3)
+```
+
+
+
+
+```{r}
+plot(model, which=5)
+```
+#Diagnostic plots show a reasonable fit to linear model assumptions. About the only area of concern is a slight positive trend for higher fitted values and moderate leverages, but this does not appear to be too alarming.
+
+
+
+#Question 5 Part c:
+```{r}
+
+#Using Data from Question 2
+n = 7
+p = 4
+X = matrix(c(rep(1,n),32,19.5,13.3,13.3,5,7.1,34.5,84.9,306.6,562,562,390.6,2175,623.5,10,9,5,5,5,3,7),n,p)
+y = c(37.9,42.2,47.3,43.1,54.8,47.1,40.3)
+
+#Extracting data
+X = scale(X[,-1],center=T,scale=T)
+y = scale(y,center=T,scale=T)
+p = 3
+
+
+lambda.seq = seq(0,5,0.001)
+aic.seq = c()
+
+#generate a plot for lambda vs. AIC
+for (lambda in lambda.seq){
+  b = solve(t(X)%*%X + lambda*diag(p), t(X)%*%y)
+  e = y - X%*%b
+  SSRes = sum(e^2)
+  H = X%*%solve(t(X)%*%X + lambda*diag(p))%*%t(X)
+  trace = sum(diag(H))
+  aic = n*log(SSRes/n)+ 2*trace
+  aic.seq = c(aic.seq,aic)
+}
+
+plot(lambda.seq,aic.seq,type = "l")
+
+```
+
+
+
+```{r}
+min(aic.seq)
+#Minimum AIC
+index = which.min(aic.seq)
+
+#Lambda value
+lambda.seq[index]
+```
+
+
+
+
+
+
+
+
+
