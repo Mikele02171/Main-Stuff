@@ -1,0 +1,358 @@
+\documentclass[10.5pt,a4paper]{article}
+
+\usepackage{arxiv}
+
+\usepackage[utf8]{inputenc} 
+\usepackage[T1]{fontenc}    
+\usepackage{hyperref}
+\usepackage{url}     
+\usepackage{booktabs}
+
+\usepackage{nicefrac}
+\usepackage{microtype}
+\usepackage{todonotes}
+\usepackage{footnote}
+\usepackage{adjustbox}
+\usepackage{courier}
+\usepackage[font=small,skip=0pt]{caption}
+\usepackage{floatrow}
+\usepackage[section]{placeins}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{listings}
+
+\usepackage{longtable}
+
+
+
+\title{A Comprehensive Analysis on The Prosocial Behavior of Chimpanzees}
+
+
+\author{
+  Calvin Zhuoqun Huang\\
+  908525 | Tutorial information: Anubhav Kaphle, Thur 9-10\\
+  The University of Melbourne\\
+  Parkville, VIC 3010  \\
+  \texttt{calvin.huang@unimelb.edu.au} \\
+  \texttt{zhuoqunh@student.unimelb.edu.au} \\
+  \texttt{calvinyeye0627@gmail.com} \\
+}
+\makesavenoteenv{tabular}
+\makesavenoteenv{table}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Prosocial behaviour as a means of benefiting others is a social behaviour that is widely demonstrated in Homo sapiens. However, whether it is observed in the population of the chimpanzee is an unknown but interesting question. This totally (not) novel paper performs comprehensive analysis on a chimpanzee dataset to evaluate the prosocial preference of 7 individual entities. By demonstrating the effect of having a controlled experiment, with the assist of modern applied statistical tools, such as GLM and Interaction Test, we conclude that chimpanzee typically will not behave prosocially.
+\end{abstract}
+
+\keywords{Chimpanzee \and joke \and analysis}
+
+\section{Introduction}
+
+I do not bother writing a whole chunk of background information, just going to copy-paste assignment spec \small{and some memes :)} \\
+> \texttt{When human students participate in an experiment like this, they nearly always choose the lever linked to two pieces of food, the prosocial option, but only when another student sits on the opposite side of the table. The question is whether a focal chimpanzee behaves similarly, choosing the prosocial option more often when another animal is present.}\\
+\includegraphics[width=0.3\linewidth]{chimphelp.jpg}
+\includegraphics[width=0.3\linewidth]{catmeme.jpg}
+\includegraphics[width=0.3\linewidth]{monkey.jpeg}
+
+
+\section{Study Goal/Procedure}
+> \texttt{The question is whether a focal chimpanzee behaves similarly, choosing the prosocial option more often when another animal is present. If you conclude that chimpanzees behave differently, describe their behaviour (i.e., interpret your final model).}\\
+
+The significance of each attribute are summarised below:\\
+\begin{tabular}{c|c}
+    Attribute & Significance\\
+    \hline \hline
+    pulled\_prosocial & (prosoc\_leftt == pulled\_left) response of interest\\
+    actor & high change there exists difference between each individual \\
+    condition & the primary attribute of interest, does this have influence of prosocial choice?\\
+    pulled\_left & also used to decide handedness (same side/same condition, what choice is taken) \\
+    prosoc\_left & used to study handedness \\
+\end{tabular}\\
+
+
+The analysis of this dataset is divided into the following stages
+\begin{enumerate}
+    \item Preprocess the dataset.
+    \item Does each chimpanzee has handedness? Alternatively, in other words, is there a difference between the portion of left/right choices between each chimpanzee?
+    \item Does condition affect the prosocial choice (like it does for human)?
+    \item Does chimpanzee have tendency of choosing the procosial option regardless of the other individual? That is, how does their choice compare to completely random choice (p=0.5)?
+\end{enumerate}
+
+\section{Preprocessing and Summary statistics}
+\subsection{Preprocessing}
+The preprocessing carried out is very basic as shown below. Check inline comments for explanation.
+%%begin novalidate
+<<echo=FALSE, message=FALSE, warning=FALSE>>=
+library(dplyr)
+library(ggplot2)
+@
+<<cache=TRUE>>=
+## Read data
+data = read.csv("assign2.txt", sep=" ")
+## Process data
+# Create new column on if prosocial
+data$pulled_prosocial = as.numeric(data$prosoc_left == data$pulled_left)
+# Create new column of 1s for faster aggregation
+data$const = 1
+# Aggregate data based on each individual
+data.aggregated = aggregate(.~actor+condition+pulled_prosocial, sum, d=data)
+@
+%%end novalidate
+
+\subsection{Summary Statistics}
+
+%%begin novalidate
+<<>>=
+aggregate(.~actor+condition+prosoc_left, sum, d=data)
+@
+%%end novalidate
+The above summary shows that the experiment design is balanced; all types of condition has the same count of the data point.
+
+\section{Handedness}
+\subsection{Plot}
+Begin investigation by plotting the factor level interaction plot of this dataset.
+%%begin novalidate
+<<handedness1, fig.height=4, fig.width=8, fig.cap="Factor Plot for Handedness">>=
+# Investigate if the side of lever the chimpanzee pulled depends on the condition*prosoc_left
+## Plot 1: individual/condition*prosoc_left
+ggplot(data = data,
+       aes(x = interaction(factor(condition), factor(prosoc_left)), 
+       y = pulled_left, colour = factor(actor),
+       group=factor(actor))) +
+       stat_summary(fun.y=mean, geom="point")+
+       stat_summary(fun.y=mean, geom="line") + xlab("Condition, Prosoc_left") +
+       ylab("p(pulled_left)") + ylim(0, 1)
+@
+%%end novalidate
+From this plot we see there are certainly tendency for each chimpanzee to favour lever on different sides (or in other words, having handedness). Especially individual 2 and 7, who almost always pulls left lever. And having the prosocial option on the left hand side seems to significantly impact the decision making of some of the chimpanzees.
+\subsection{Model and verification}
+%%begin novalidate
+<<>>=
+# Full model
+data.handedness.bmodel = glm(pulled_left ~ factor(actor)+factor(condition)
+                             +factor(prosoc_left), data = data, family=poisson)
+summary(data.handedness.bmodel)
+@
+%%end novalidate
+Our result from visualisation is confirmed from this fitted model. The impact of the condition is shallow, while some individuals have some preference compared with others.\\
+The strange observation is that the prosocial side also have a significant impact on the choice but not the condition.\\
+
+We progress our investigation by refining the model with step function
+%%begin novalidate
+<<>>=
+# Step model
+data.handedness.bmodel.step = step(data.handedness.bmodel)
+summary(data.handedness.bmodel.step)
+@
+%%end novalidate
+Again, after the selection using AIC with step function, the result is as expected, the condition got dropped, leaving only the other two factors being significant. Based on this model and the above plot, we will devide the chimpanzee into two groups: The neutral group (6), the left handedness group (2, 7) and the right handedness group (1, 3,4,5)\\
+
+\section{Inference on Prosocial Choice}
+\subsection{Plot}
+Plot the relation between condition and mean value of $p(pulled\_prosocial)$ grouped by each actor
+%%begin novalidate
+<<fig.height=4, fig.width=8>>=
+# Plot the individual plot
+ggplot(data = data,
+       aes(x = condition, 
+       y = pulled_prosocial, colour = factor(actor),
+       group=factor(actor))) +
+       stat_summary(fun.y=mean, geom="point",  
+                    position=position_dodge(width=0.08)) +
+       stat_summary(fun.y=mean, geom="line",  
+                    position=position_dodge(width=0.08)) + 
+       xlab("condition") +
+       ylab("p(pulled_prosocial)")
+@
+%%end novalidate
+There are three individuals having increased prosocial choice when there is another individual on the other side, while one individual have decreased rate. And the rest having non changing rate. It suggests there aren't lots of interaction between those two attributes, suggesting initially chimpanzee is not prosocial.\\
+
+Additionally, the relation between prosoc\_left and pulled\_prosocial is also plotted. The reason is prosoc\_left has demonstrated great effect on pulled\_left in the handedness test. It might also be significant for this relation.
+%%begin novalidate
+<<fig.height=4, fig.width=8>>=
+ggplot(data = data,
+       aes(x = prosoc_left, 
+       y = pulled_prosocial, colour = factor(actor),
+       group=factor(actor))) +
+       stat_summary(fun.y=mean, geom="point",  
+                    position=position_dodge(width=0.08)) +
+       stat_summary(fun.y=mean, geom="line",  
+                    position=position_dodge(width=0.08)) + 
+       xlab("prosoc_left") +
+       ylab("p(pulled_prosocial)")
+@
+%%end novalidate
+There is a much stronger relation between those two than between the condition and pulled\_prosocial
+
+\subsection{Contingency Test}
+Start by testing independence using contingency table and we chose a three way test.
+%%begin novalidate
+<<>>=
+# Phrase test like this:
+#     Factor1: isProsocial
+#     Factor2: Conditioned
+#     Factor3: The chimp ID
+data.aggregated.pmodel1 = glm(const ~ actor + condition + pulled_prosocial, 
+                              data = data.aggregated, family=poisson)
+summary(data.aggregated.pmodel1)
+# Test independence
+deviance(data.aggregated.pmodel1)
+df.residual(data.aggregated.pmodel1)
+pchisq(deviance(data.aggregated.pmodel1), 
+       df=df.residual(data.aggregated.pmodel1), lower.tail = FALSE)
+# Close to 1, so we conclude independent
+
+# Use table
+data.aggregated.xtabs1 <- xtabs(const ~ actor + pulled_prosocial + condition, 
+                                data = data.aggregated)
+summary(data.aggregated.xtabs1) 
+@
+%%end novalidate
+
+\subsection{Reduce from Full Interaction Model (with prosocial side)}
+We start the model fitting with all the interactions and gradually step it down. Binomial model is chosen as it evaluating the chance of picking prosocial options. Or in other words, it's a Bernoulli Random variable $Ber(y_i|\theta_{x_i})$, so binomial model makes sense.
+%%begin novalidate
+<<>>=
+# The binomial model (full interaction)
+# Try with all factors, (not including pulled_left as it's not something we want to study)
+data.bmodel1 = glm(cbind(pulled_prosocial, 1-pulled_prosocial)~factor(actor)*
+                  factor(condition)*factor(prosoc_left), data=data, 
+                  family = "binomial")
+summary(data.bmodel1)
+@
+%%end novalidate
+Checking the model parameter and p-value carefully, one can easily observe that lots of interaction terms are not significant. Thus a step function will certainly be ideal for reducing the number of noise parameters in the model. Additionally, from the significance of interaction between actor and condition, we can see that except for actor 7, other actors all seems indifferent to if anyone is on the other side.\\
+
+\subsubsection{Reduced model}
+The variable selection is carried out with AIC, we choose AIC as it has scales well with smaller datasets and can either add or remove parameters and genuinally does not stuck in a BAD local optimum.
+%%begin novalidate
+<<>>=
+data.bmodel1.step = step(data.bmodel1)
+summary(data.bmodel1.step)
+@
+%%end novalidate
+Only attribute actor, prosoc\_left and the interaction between those two attributes are left. If we compare the result with previous figure (Because Knitr with autoref doesn't seem to work for me, so instead of a hyperlink I will put the figure here for easier comparison)
+%%begin novalidate
+<<echo=FALSE, fig.height=4, fig.width=8>>=
+ggplot(data = data,
+       aes(x = prosoc_left, 
+       y = pulled_prosocial, colour = factor(actor),
+       group=factor(actor))) +
+       stat_summary(fun.y=mean, geom="point",  
+                    position=position_dodge(width=0.08)) +
+       stat_summary(fun.y=mean, geom="line",  
+                    position=position_dodge(width=0.08)) + 
+       xlab("prosoc_left") +
+       ylab("p(pulled_prosocial)")
+@
+%%end novalidate
+Because here, we are using actor 1 as our \texttt{contr.treatment}, so all measurement are relative to actor 1. From the p-values, it's not hard to observe only actor 1, 6, 7 has some significance. We will analyse the reason below.\\
+Observe prosoc\_left1 has p value of 0.15, this indicates there are switching side of prosoc\_option has some significance to actor 1. From the plot, the baseline and trend of individual 3,4,5's behavior closely resembles actor 1, this is the reason why they don't get significance for either actor or the interaction of prosoc\_side. The same analysis can be applied to individual 7 and 2. And individual 6 is different from the rest of the groups. And these corresponds with the handedness analysis we have above.\\
+The model also suggests condition have no importance on the model.\\
+\subsubsection{Diagnostics}
+There are some diagnostics produced in my code, but they are not important for the final conclusion, so I will not put it here. Only dispersion is listed below:
+%%begin novalidate
+<<>>=
+# Check overdispersion
+# Estimate Phi
+n = dim(data)[1]
+p = 2
+(data.bmodel1.step.phihat = sum(residuals(data.bmodel1.step, type = 
+ "pearson")^2)/(n-p))
+@
+%%end novalidate
+The value is less than 1, so no overdispersion
+
+\subsection{Reduce from Full Interaction Model (without prosocial side)}
+We now remove the prosoc\_left as it's not important to our analysis (only significant because we want to see how much the handedness affects the prosocial choice).
+%%begin novalidate
+<<>>=
+# The binomial model (full interaction)
+# Try with all factors, (not including pulled_left as it's not something we want to study)
+data.bmodel2 = glm(cbind(pulled_prosocial,1-pulled_prosocial)~
+                   factor(actor)*factor(condition), data=data,
+                   family = "binomial")
+summary(data.bmodel2)
+@
+%%end novalidate
+Non of the attributes are significant.\\
+
+Step the model:
+%%begin novalidate
+<<>>=
+data.bmodel2.step = step(data.bmodel2)
+summary(data.bmodel2.step)
+@
+%%end novalidate
+There is only intercept term left. And this suggests neither actor nor condition have an effect on the prosocial choice of chimpanzee.
+
+\subsubsection{Diagnostics}
+%%begin novalidate
+<<>>=
+# Check residuals
+ggplot(data = data,
+       aes(x = predict(data.bmodel2.step, type="link", data=data), 
+       y = residuals(data.bmodel2.step, data=data, type="pearson"), 
+       colour=factor(actor),
+       group=factor(actor))) + 
+       geom_point(position=position_dodge(width=0.01)) +
+       xlab(expression(hat(eta))) +
+       ylab("Deviance residuals") +
+       xlim(0.2, 0.3)
+@
+%%end novalidate
+Because the residual plots will only have two points, it's boring to look at, so I will just put it here and give no additional comment ;)
+%%begin novalidate
+<<>>=
+# Check overdispersion
+# Estimate Phi
+n = dim(data)[1]
+p = 2
+(data.bmodel2.step.phihat = sum(residuals(data.bmodel2.step, type = 
+ "pearson")^2)/(n-p))
+@
+%%end novalidate
+The value is exactly 1, so no overdispersion.\\
+
+In addition we also check confidence interval:
+%%begin novalidate
+<<>>=
+# Check mean
+data.bmodel2.step.predict = predict(data.bmodel2.step, type="link", se.fit=TRUE)
+# Check conf interval (link)
+critval <- 1.96 ## approx 95% CI
+upr <- data.bmodel2.step.predict$fit + (critval * data.bmodel2.step.predict$se.fit)
+lwr <- data.bmodel2.step.predict$fit - (critval * data.bmodel2.step.predict$se.fit)
+fit <- data.bmodel2.step.predict$fit
+distinct(data.frame(upr, fit, lwr))
+# Check conf interval (response)
+f = data.bmodel2$family$linkinv
+distinct(data.frame(f(upr), f(fit), f(lwr)))
+@
+%%end novalidate
+The predicted value and confidence interval is around 0.55 and doesn't include 0.5. This indicates chimpanzee population have the more chance of picking the prosocial option compared to the non-prosocial option regardless if there is an individual on the other side. As the CI not including 0.5 is equivalent to significance test, We won't conduct a separate test.
+
+\section{Summary}
+In essence, from the fitted binomial models/independence tests and all diagnostics. We here answer the questions above:
+\begin{itemize}
+    \item Chimpanzee individuals does have strong handedeness.
+    \item Chimpanzee individuals' choice of prosocial option is affected by the position of the prosocial option. (left:2,7; right:1,3,4,5; no obvious preference:6)
+    \item Chimpanzee individuals' choice of prosocial option is independent of existence of individual on the other side (or the condition predictor).
+    \item Chimpanzee have the tendency of choosing more prosocial option (0.55) than the non-prosocial option in general. And is statistically significant compared to random choice (0.5)
+\end{itemize}
+Ideally more indicative bar plot with CI should be made.\\
+\begin{center}
+    \includegraphics[width=0.5\linewidth]{monkey.jpeg}
+\end{center}
+
+\end{document}
