@@ -1,0 +1,178 @@
+---
+title: "Assignment 1 MAST20005 S2 2020 MICHAEL LE (998211)"
+output: word_document
+---
+#Question 1: Tingjin runs a plant experiment. He creates thitry pots, plants an identical seed in
+#each one, and leaves them in the same spot in the sun. After six weeks he measures the
+#height of each plant (in cm),
+
+#a) Give basic summary statistics for these data and produce a box plot. Briefly comment on center, spread and shape of the distribution
+```{r}
+x = c(173.1, 61.5,123.3,100.4,20.4,20.9,228.4,1,6.8,11.4,7.7,40.7,15.8,422.4,58.2,19.9,38.8,121,118.6,174.9,87.9,14,204.7,81.9,57.3, 177,14.1,137,76.4,330.2)
+summary(x)
+
+sd(x)
+
+```
+The above provides the standard five-number summary, sample mean and sample standard derivation. 
+
+```{r}
+par(mar = c(3,1,1,1)) # compact margins 
+boxplot(x,horizontal = TRUE, col = "red")
+
+```
+The distribution of claims is centred around the median 68.95 and has pronounced variablity with sample standard derivation also around 100.5059 and has pronounced variabilty with sample standard derivation also around 100.5059. The distribution is asymmetric with a long right tail and one observation much higher than the others (as marked on the plot). 
+
+#b) Assuming an exponential distribution, compute maximum likelihood estimate for
+# the parameter.
+```{r}
+library(MASS)
+expfit = fitdistr(x,densfun="exponential")
+expfit
+```
+This gives the rate parameter x.bar = 1/0.010184336 = 98.19 is the MLE.
+
+
+#c) Tom thinks that the data follow X ∼ Exp(100) with the density function
+
+
+#f(x) = e^(−x/100)/100.
+
+
+#Draw a QQ plot to compare the data against the exponential distribution Exp(100).
+#Include a reference line. Comment on the fit of the model to the data. (Use ‘Type
+#6’ quantiles for the sample quantiles.)
+
+
+```{r}
+x1 = quantile(x,type=6)
+summary(x1)
+```
+
+
+```{r}
+x1 = quantile(x,type=6)
+n = length(x1)
+p = (1:n)/(n + 1) #probabilties 
+theoretical = qexp(p, rate = expfit$estimate["rate"])
+empirical = sort(x1) # order statistics
+plot(theoretical,empirical, main = "QQ plot for exponential")
+abline(0,1,col='red') # add reference line 
+
+```
+Using the type 6 quantiles the Median 68.95 is right on the reference line where the minimum, the first quantile and the 3rd quantile are closer to the reference line. Whereas the maximum point is not near the 
+reference line and it is fairly likely due to the right distribution. 
+
+
+```{r}
+curve(dexp(x,rate = 100),0,0.1,ylim=c(0,100),lwd = 2, col = 4)
+```
+
+
+
+#d) Jen also thinks that the data follow X ∼ Exp(100). However, Jen draws a QQ plot
+#to compare the data against the exponential distribution Exp(1). Will the above
+#approach work? If Jen’s hypothesis is correct, what will be the approximate slope
+#and intercept of the best fitting line?
+
+```{r}
+curve(dexp(x,rate = 1),0,10,ylim=c(0,1),lwd = 2, col = 4)
+```
+
+In this case we have lamba to be 1 instead of 100 the slope gets narrower and the intercept with 1 stays the same. 
+
+
+
+#Question 2ci) Calculate the standard error of λˆ.
+```{r}
+x = c(12.9, 2.3, 2.4,65,6.7,1.8,1.5,1.7,248.7,1,2,4.9,3.6,4.1,6.8)
+fit2 = fitdistr(x, densfun = "log-normal")
+fit2
+n = length(x)
+
+#Now to compute the standard error 
+#where given 
+sdlog.lambahat = 1.444357
+
+se.lambahat = sdlog.lambahat/length(x)
+se.lambahat
+
+# 0.09629047
+```
+
+
+
+#Question 2cii) Assuming a lognormal distribution is an appropriate model for these data, compute the maximum likelihood estimate of λ and give a 95% CI.
+
+```{r}
+x = c(12.9, 2.3, 2.4,65,6.7,1.8,1.5,1.7,248.7,1,2,4.9,3.6,4.1,6.8)
+n = length(x) #sample size 
+lamba.hat = (1/n)*(n-1)*var(log(x)) #MLE
+lamba.hat
+#[1] 2.086394
+
+a = qchisq(0.025, n-1) #quantiles 
+b = qchisq(0.975, n-1)
+lamba.hat*c(1/b,1/a)*n # 95% CI
+
+#[1] 1.198207 5.560036
+```
+
+
+
+
+
+#Question 4: Silmulating from a standard normal distribution:
+
+```{r}
+B = 100000 # simulation runs 
+t1 = numeric(B)
+t2 = numeric(B)
+for (i in 1:B){
+  x = rnorm(20) # size 20
+  t1[i] = 0.5*(min(x) + max(x)) #Damjan's estimator 
+  t2[i] = mean(x)               #Allan's estimator
+}
+mean(t1)
+## [1] 0.000958396 
+
+mean(t2)
+## [1] 0.0004218873
+
+sd(t1)
+## [1] 0.3776807
+
+sd(t2)
+## [1] 0.2238058
+
+sd(t1)/sd(t2)
+##[1] 1.694131
+```
+
+
+Both estimators appear to be unbiased, but Damjan's estimator has much greater standard deviation (above 69% greater).
+
+
+
+```{r}
+par(mar = c(3,4,1,1)) # compact margins 
+boxplot(t1,t2,names = c("Damjan","Allan"),horizontal = TRUE, col = "lightblue")
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
