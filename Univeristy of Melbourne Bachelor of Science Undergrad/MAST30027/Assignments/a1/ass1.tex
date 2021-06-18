@@ -1,0 +1,396 @@
+\documentclass[15pt,a4paper]{article}\usepackage[]{graphicx}\usepackage[]{color}
+%% maxwidth is the original width if it is less than linewidth
+%% otherwise use linewidth (to make sure the graphics do not exceed the margin)
+\makeatletter
+\def\maxwidth{ %
+  \ifdim\Gin@nat@width>\linewidth
+    \linewidth
+  \else
+    \Gin@nat@width
+  \fi
+}
+\makeatother
+
+\definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
+\newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
+\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
+\newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
+\newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
+\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
+\newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
+\newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
+\newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
+\newcommand{\hlkwd}[1]{\textcolor[rgb]{0.737,0.353,0.396}{\textbf{#1}}}%
+\let\hlipl\hlkwb
+
+\usepackage{framed}
+\makeatletter
+\newenvironment{kframe}{%
+ \def\at@end@of@kframe{}%
+ \ifinner\ifhmode%
+  \def\at@end@of@kframe{\end{minipage}}%
+  \begin{minipage}{\columnwidth}%
+ \fi\fi%
+ \def\FrameCommand##1{\hskip\@totalleftmargin \hskip-\fboxsep
+ \colorbox{shadecolor}{##1}\hskip-\fboxsep
+     % There is no \\@totalrightmargin, so:
+     \hskip-\linewidth \hskip-\@totalleftmargin \hskip\columnwidth}%
+ \MakeFramed {\advance\hsize-\width
+   \@totalleftmargin\z@ \linewidth\hsize
+   \@setminipage}}%
+ {\par\unskip\endMakeFramed%
+ \at@end@of@kframe}
+\makeatother
+
+\definecolor{shadecolor}{rgb}{.97, .97, .97}
+\definecolor{messagecolor}{rgb}{0, 0, 0}
+\definecolor{warningcolor}{rgb}{1, 0, 1}
+\definecolor{errorcolor}{rgb}{1, 0, 0}
+\newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
+
+\usepackage{alltt}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{bm}
+\usepackage{listings}
+\usepackage{fancyhdr}
+\newtheorem{thm}{Theorem}
+\pagestyle{fancy}
+\lhead{Zhuoqun Huang (Calvin) 908525}
+\rhead{Tutor: Anubhav Kaphle}
+\author{Zhuoqun Claivin Huang (908525)}
+\title{Assignment1}
+
+\makeatletter
+\def\class#1{\gdef\@class{#1}}
+\def\@maketitle{%
+  \newpage \null  \vskip 2em%
+  \begin{flushright}%
+  \let\footnote\thanks
+    \vskip 1.5em%
+    {\large  \lineskip .5em%
+      \begin{tabular}[t]{r@{}}%
+        \@author    
+     \end{tabular}\par 
+      \begin{tabular}[t]{r@{}}%
+      {\sffamily \@class}   
+     \end{tabular}\par 
+  \par}%
+    \vskip .5em%
+   {\small\@date}\par\bigskip%
+    {\LARGE\scshape \@title \par\bigskip\hrule}%
+  \end{flushright}%
+  \par   \vskip 1.5em}
+\makeatother
+
+
+\title{MAS Assignment 1 Submission\\ \large revision 2}
+
+\class{Tutorial information: Anubhav Kaphle, Thur 9-10} 
+\author{Zhuoqun Huang (Calvin) 908525}
+\date{\today}
+
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\begin{document}
+\maketitle
+\newpage
+\section{Question1}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlcom{# Load data}
+\hlkwd{library}\hlstd{(faraway)}
+\hlkwd{data}\hlstd{(orings)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+\subsection{(a) Parameter estimates}
+The estimated value for $\beta$ is:
+\[\hat{\beta}=\begin{bmatrix}
+5.5917242 \\ 
+-0.1058088
+\end{bmatrix}  \]
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlcom{## (a)}
+\hlcom{# Define functions}
+\hlstd{probit} \hlkwb{=} \hlstd{pnorm}     \hlcom{# Link}
+\hlstd{logLoss} \hlkwb{=} \hlkwa{function}\hlstd{(}\hlkwc{beta}\hlstd{,} \hlkwc{orings}\hlstd{) \{}
+  \hlstd{eta} \hlkwb{=} \hlkwd{cbind}\hlstd{(}\hlnum{1}\hlstd{, orings}\hlopt{$}\hlstd{temp)} \hlopt{%*%} \hlstd{beta}
+  \hlstd{p} \hlkwb{=} \hlkwd{probit}\hlstd{(eta)}
+  \hlkwd{return}\hlstd{(}\hlopt{-}\hlkwd{sum}\hlstd{(orings}\hlopt{$}\hlstd{damage} \hlopt{*} \hlkwd{log}\hlstd{(p}\hlopt{/}\hlstd{(}\hlnum{1}\hlopt{-}\hlstd{p))} \hlopt{+} \hlnum{6} \hlopt{*} \hlkwd{log}\hlstd{(}\hlnum{1} \hlopt{-} \hlstd{p)))}
+\hlstd{\}}
+
+\hlcom{# fit parameters}
+\hlcom{# Initialiise with the parameter used on class}
+\hlstd{betahat} \hlkwb{=} \hlkwd{optim}\hlstd{(}\hlkwd{c}\hlstd{(}\hlnum{10}\hlstd{,} \hlopt{-}\hlnum{0.1}\hlstd{), logLoss,} \hlkwc{orings}\hlstd{=orings)}
+\hlstd{(betahat.loss} \hlkwb{=} \hlstd{betahat}\hlopt{$}\hlstd{value)}
+\end{alltt}
+\begin{verbatim}
+## [1] 27.98886
+\end{verbatim}
+\begin{alltt}
+\hlstd{(betahat} \hlkwb{=} \hlstd{betahat}\hlopt{$}\hlstd{par)}
+\end{alltt}
+\begin{verbatim}
+## [1]  5.5917242 -0.1058008
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
+\subsection{(b)}
+The 95\% ci for $\beta_1, \beta_2$ respectively is:
+\begin{align*}
+\beta_1&: [2.239762, 8.943686]\\
+\beta_2&: [-0.15784670, -0.05375481]
+\end{align*}\\
+
+The Derivation for the CI is:
+\begin{proof}[Fisher Information Matrix for Probit Link]
+    \begin{align*}
+    L_i(p_i|y_i) &= P(y_i|p_i)\\
+                 &= \begin{pmatrix}
+                 6 \\
+                 y_i
+                 \end{pmatrix} p_i^{y_i}(1-p_i)^{6-y_i}\\
+    l_i(p_i|y_i) &= log(L)\\
+                 &= c + y_ilog(p_i) + (6-y_i)log(1-p_i)\\
+    l &= \sum_i{l_i}\ and\ p_i = \Phi(\eta_i) = \Phi(X_i\beta)\\
+    \noalign{\text{In the following section $\phi$, $\Phi$ stands for the pdf and cdf of }}\\
+    \noalign{\text{standard normal distribution respectively}}
+    \frac{\partial l_i}{\partial \beta} &= \frac{\partial l_i}{\partial \Phi} \frac{\partial \Phi}{\partial \eta} \frac{\partial \eta}{\partial \beta}\\
+                                        &= (\frac{y_i}{\Phi} - \frac{6-y_i}{1-\Phi}) \phi(\eta_i)X_i\\
+    \frac{\partial^2 l_i}{\partial \beta \partial \beta^T} &= (y_i\frac{\phi'(\eta_i)\Phi(\eta_i)-\phi^2(\eta_i)}{\Phi^2(\eta_i)} - (6-y_i)\frac{\phi'(\eta_i)(1-\Phi(\eta_i))+\phi^2(\eta_i)}{(1-\Phi(\eta_i))^2})X_iX_i^T\\
+    \noalign{\text{Substitute $\hat{\eta}$ thus $\hat{p}$ for $E(y_i)$}}\\
+    \hat{F_i} &= (6\hat{p}\frac{\phi'(\hat{\eta_i})\Phi(\hat{\eta_i})-\phi^2(\hat{\eta_i})}{\Phi^2(\hat{\eta_i})} - (6-6\hat{p})\frac{\phi'(\hat{\eta_i})(1-\Phi(\hat{\eta_i}))+\phi^2(\hat{\eta_i})}{(1-\Phi(\hat{\eta_i}))^2})X_iX_i^T\\
+    \hat{F} &= \sum_i\hat{F_i}\\
+    \end{align*}
+\end{proof}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlcom{## (b)}
+\hlstd{dnorm.deriv} \hlkwb{=} \hlkwa{function}\hlstd{(}\hlkwc{eta}\hlstd{) \{}
+\hlkwd{return}\hlstd{(}\hlopt{-} \hlnum{1}\hlopt{/}\hlkwd{sqrt}\hlstd{(}\hlnum{2}\hlopt{*}\hlstd{pi)} \hlopt{*} \hlkwd{exp}\hlstd{(}\hlopt{-}\hlstd{eta}\hlopt{^}\hlnum{2}\hlopt{/}\hlnum{2}\hlstd{)} \hlopt{*} \hlstd{eta)}
+\hlstd{\}}
+
+\hlstd{information} \hlkwb{=} \hlkwa{function}\hlstd{(}\hlkwc{beta}\hlstd{,} \hlkwc{orings}\hlstd{) \{}
+    \hlstd{finfo} \hlkwb{=} \hlnum{0}
+    \hlkwa{for} \hlstd{(i} \hlkwa{in} \hlnum{1}\hlopt{:}\hlkwd{dim}\hlstd{(orings)[}\hlnum{1}\hlstd{]) \{}
+        \hlstd{xi} \hlkwb{=} \hlkwd{c}\hlstd{(}\hlnum{1}\hlstd{, orings}\hlopt{$}\hlstd{temp[i])}
+        \hlstd{yi} \hlkwb{=} \hlstd{orings}\hlopt{$}\hlstd{damage[i]}
+        \hlstd{eta} \hlkwb{=} \hlstd{xi} \hlopt{%*%} \hlstd{beta}
+        \hlstd{Eyi} \hlkwb{=} \hlnum{6} \hlopt{*} \hlkwd{probit}\hlstd{(eta)}
+        \hlstd{part.1} \hlkwb{=} \hlstd{Eyi} \hlopt{*} \hlstd{((}\hlkwd{dnorm.deriv}\hlstd{(eta)}\hlopt{*}\hlkwd{pnorm}\hlstd{(eta)}\hlopt{-}\hlkwd{dnorm}\hlstd{(eta)}\hlopt{^}\hlnum{2}\hlstd{)}\hlopt{/}\hlkwd{pnorm}\hlstd{(eta)}\hlopt{^}\hlnum{2}\hlstd{)[}\hlnum{1}\hlstd{]}
+        \hlstd{part.2} \hlkwb{=} \hlopt{-}\hlstd{((}\hlnum{6} \hlopt{-} \hlstd{Eyi)} \hlopt{*} \hlstd{((}\hlkwd{dnorm.deriv}\hlstd{(eta)}\hlopt{*}
+                   \hlstd{(}\hlnum{1}\hlopt{-}\hlkwd{pnorm}\hlstd{(eta))}\hlopt{+}\hlkwd{dnorm}\hlstd{(eta)}\hlopt{^}\hlnum{2}\hlstd{)} \hlopt{/} \hlstd{(}\hlnum{1}\hlopt{-}\hlkwd{pnorm}\hlstd{(eta))}\hlopt{^}\hlnum{2}\hlstd{)[}\hlnum{1}\hlstd{])}
+        \hlstd{finfo.i} \hlkwb{=} \hlopt{-}\hlstd{(part.1} \hlopt{+} \hlstd{part.2)[}\hlnum{1}\hlstd{]} \hlopt{*} \hlkwd{matrix}\hlstd{(xi,} \hlkwc{nrow}\hlstd{=}\hlnum{2}\hlstd{)} \hlopt{%*%} \hlkwd{matrix}\hlstd{(xi,} \hlkwc{nrow}\hlstd{=}\hlnum{1}\hlstd{)}
+        \hlstd{finfo} \hlkwb{=} \hlstd{finfo} \hlopt{+} \hlstd{finfo.i}
+    \hlstd{\}}
+    \hlkwd{return}\hlstd{(finfo)}
+\hlstd{\}}
+
+\hlstd{fisher.info.est} \hlkwb{=} \hlkwd{information}\hlstd{(betahat, orings)}
+\hlstd{alpha} \hlkwb{=} \hlnum{0.05}
+\hlcom{# Compute CI for the two values}
+\hlstd{betahat[}\hlnum{1}\hlstd{]} \hlopt{+} \hlkwd{qnorm}\hlstd{(}\hlkwd{c}\hlstd{(alpha}\hlopt{/}\hlnum{2}\hlstd{,} \hlnum{1}\hlopt{-}\hlstd{alpha}\hlopt{/}\hlnum{2}\hlstd{))} \hlopt{*}
+                   \hlkwd{sqrt}\hlstd{(}\hlkwd{diag}\hlstd{(}\hlkwd{solve}\hlstd{(fisher.info.est))[}\hlnum{1}\hlstd{])}
+\end{alltt}
+\begin{verbatim}
+## [1] 2.239762 8.943686
+\end{verbatim}
+\begin{alltt}
+\hlstd{betahat[}\hlnum{2}\hlstd{]} \hlopt{+} \hlkwd{qnorm}\hlstd{(}\hlkwd{c}\hlstd{(alpha}\hlopt{/}\hlnum{2}\hlstd{,} \hlnum{1}\hlopt{-}\hlstd{alpha}\hlopt{/}\hlnum{2}\hlstd{))} \hlopt{*}
+                   \hlkwd{sqrt}\hlstd{(}\hlkwd{diag}\hlstd{(}\hlkwd{solve}\hlstd{(fisher.info.est))[}\hlnum{2}\hlstd{])}
+\end{alltt}
+\begin{verbatim}
+## [1] -0.15784670 -0.05375481
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
+\subsection{(c) a likelihood ratio test for the significance of the temperature coefficient}
+Hypothesis:\\
+\begin{gather*}
+H0: \beta_2=0 \\
+H1: \beta_2\neq0
+\end{gather*}
+As shown below, the test yield a p-value of $5.186684e-06 < 0.05$. So the null hypothesis H0 is rejected.\\
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlcom{# Make model without temperature}
+\hlstd{logLossMLE} \hlkwb{=} \hlkwa{function}\hlstd{(}\hlkwc{beta}\hlstd{,} \hlkwc{orings}\hlstd{) \{}
+\hlstd{eta} \hlkwb{=} \hlstd{beta}
+\hlstd{p} \hlkwb{=} \hlkwd{probit}\hlstd{(eta)}
+\hlkwd{return}\hlstd{(}\hlopt{-}\hlkwd{sum}\hlstd{(orings}\hlopt{$}\hlstd{damage} \hlopt{*} \hlkwd{log}\hlstd{(p}\hlopt{/}\hlstd{(}\hlnum{1}\hlopt{-}\hlstd{p))} \hlopt{+} \hlnum{6} \hlopt{*} \hlkwd{log}\hlstd{(}\hlnum{1} \hlopt{-} \hlstd{p)))}
+\hlstd{\}}
+\hlstd{betahat.null} \hlkwb{=} \hlkwd{optimise}\hlstd{(logLossMLE,} \hlkwd{c}\hlstd{(}\hlopt{-}\hlnum{5}\hlstd{,} \hlnum{1}\hlstd{),} \hlkwc{orings}\hlstd{=orings,} \hlkwc{maximum}\hlstd{=}\hlnum{FALSE}\hlstd{)}
+\hlstd{(betahat.null.loss} \hlkwb{=} \hlstd{betahat.null}\hlopt{$}\hlstd{objective)}
+\end{alltt}
+\begin{verbatim}
+## [1] 38.3724
+\end{verbatim}
+\begin{alltt}
+\hlstd{(betahat.null} \hlkwb{=} \hlstd{betahat.null}\hlopt{$}\hlstd{minimum)}
+\end{alltt}
+\begin{verbatim}
+## [1] -1.407027
+\end{verbatim}
+\begin{alltt}
+\hlcom{# Now compute the likelihood ratio test}
+\hlstd{lr} \hlkwb{=} \hlnum{2} \hlopt{*} \hlstd{betahat.null.loss} \hlopt{-} \hlnum{2} \hlopt{*} \hlstd{betahat.loss}
+\hlstd{(p.value} \hlkwb{=} \hlkwd{pchisq}\hlstd{(lr,} \hlkwc{df}\hlstd{=}\hlnum{1}\hlstd{,} \hlkwc{lower.tail} \hlstd{=} \hlnum{FALSE}\hlstd{))}
+\end{alltt}
+\begin{verbatim}
+## [1] 5.186684e-06
+\end{verbatim}
+\begin{alltt}
+\hlcom{# p value < 0.05 so we reject null hypothesis.}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+\subsection{(d) an estimate of the probability of damage when the temperature equals 31 Fahrenheit
+(your estimate should come with a 95\% CI, as all good estimates do)}
+As computed by the code below:
+\[
+\hat{p} = 0.9896084
+\]
+\[
+CI = [0.7108229, 0.9999763]
+\]
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlcom{## (d)}
+\hlstd{xnew} \hlkwb{=} \hlkwd{c}\hlstd{(}\hlnum{1}\hlstd{,} \hlnum{31}\hlstd{)}
+\hlstd{etanew} \hlkwb{=} \hlstd{xnew} \hlopt{%*%} \hlstd{betahat}
+\hlcom{# Point estimate}
+\hlstd{(ynew} \hlkwb{=} \hlkwd{probit}\hlstd{(etanew))}
+\end{alltt}
+\begin{verbatim}
+##           [,1]
+## [1,] 0.9896084
+\end{verbatim}
+\begin{alltt}
+\hlcom{# CI estiamte}
+\hlstd{(}\hlkwd{probit}\hlstd{(etanew[}\hlnum{1}\hlstd{]} \hlopt{+} \hlkwd{qnorm}\hlstd{(}\hlkwd{c}\hlstd{(alpha}\hlopt{/}\hlnum{2}\hlstd{,} \hlnum{1}\hlopt{-}\hlstd{alpha}\hlopt{/}\hlnum{2}\hlstd{))} \hlopt{*}
+ \hlkwd{sqrt}\hlstd{(xnew} \hlopt{%*%} \hlkwd{solve}\hlstd{(fisher.info.est)} \hlopt{%*%} \hlstd{xnew)[}\hlnum{1}\hlstd{]))}
+\end{alltt}
+\begin{verbatim}
+## [1] 0.7108229 0.9999763
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
+\subsection{(e) a plot comparing the fitted probit model to the fitted logit model. To obtain the fitted
+logit model, you are allowed to use the glm function.}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlcom{## (e)}
+\hlkwd{library}\hlstd{(ggplot2)}
+\end{alltt}
+
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Registered S3 methods overwritten by 'ggplot2':\\\#\#\ \  method\ \ \ \ \ \ \ \  from \\\#\#\ \  [.quosures\ \ \ \  rlang\\\#\#\ \  c.quosures\ \ \ \  rlang\\\#\#\ \  print.quosures rlang}}\begin{alltt}
+\hlstd{xs} \hlkwb{=} \hlkwd{seq}\hlstd{(}\hlkwc{from}\hlstd{=}\hlnum{30}\hlstd{,} \hlkwc{to}\hlstd{=}\hlnum{90}\hlstd{,} \hlkwc{length.out}\hlstd{=}\hlnum{500}\hlstd{)}
+\hlstd{ps.probit} \hlkwb{=} \hlkwd{probit}\hlstd{(}\hlkwd{cbind}\hlstd{(}\hlnum{1}\hlstd{, xs)} \hlopt{%*%} \hlstd{betahat)}
+\hlstd{model} \hlkwb{=} \hlkwd{glm}\hlstd{(}\hlkwd{cbind}\hlstd{(damage,}\hlnum{6}\hlopt{-}\hlstd{damage)} \hlopt{~} \hlstd{temp,} \hlkwc{data}\hlstd{=orings,} \hlkwc{family} \hlstd{=} \hlkwd{binomial}\hlstd{())}
+\hlstd{ps.logit} \hlkwb{=} \hlkwd{predict}\hlstd{(model,} \hlkwc{newdata}\hlstd{=}\hlkwd{data.frame}\hlstd{(}\hlkwc{temp}\hlstd{=xs),} \hlkwc{type}\hlstd{=}\hlstr{"response"}\hlstd{)}
+\hlstd{(}\hlkwd{ggplot}\hlstd{()}
+ \hlopt{+}\hlkwd{geom_line}\hlstd{(}\hlkwc{data} \hlstd{=} \hlkwd{data.frame}\hlstd{(}\hlkwc{xs}\hlstd{=xs,} \hlkwc{ps}\hlstd{=ps.probit),} \hlkwd{aes}\hlstd{(}\hlkwc{x}\hlstd{=xs,} \hlkwc{y}\hlstd{=ps,} \hlkwc{col}\hlstd{=}\hlstr{"blue"}\hlstd{))}
+ \hlopt{+}\hlkwd{geom_line}\hlstd{(}\hlkwc{data} \hlstd{=} \hlkwd{data.frame}\hlstd{(}\hlkwc{xs}\hlstd{=xs,} \hlkwc{ps}\hlstd{=ps.logit),} \hlkwd{aes}\hlstd{(}\hlkwc{x}\hlstd{=xs,} \hlkwc{y}\hlstd{=ps,} \hlkwc{col}\hlstd{=}\hlstr{"red"}\hlstd{))}
+ \hlopt{+}\hlkwd{scale_color_discrete}\hlstd{(}\hlkwc{name}\hlstd{=}\hlstr{"P-hat values"}\hlstd{,} \hlkwc{labels} \hlstd{=} \hlkwd{c}\hlstd{(}\hlstr{"probit link"}\hlstd{,} \hlstr{"logit link"}\hlstd{))}
+ \hlopt{+}\hlkwd{geom_point}\hlstd{(}\hlkwc{data} \hlstd{= orings,} \hlkwd{aes}\hlstd{(}\hlkwc{x}\hlstd{=temp,} \hlkwc{y}\hlstd{=damage}\hlopt{/}\hlnum{6}\hlstd{)))}
+\end{alltt}
+\end{kframe}
+\includegraphics[width=\maxwidth]{figure/unnamed-chunk-6-1} 
+
+\end{knitrout}
+
+
+\section{Question2}
+\begin{proof}
+    \begin{align*}
+    log(o) &= logit = g\\
+    g(p) &= g(g^{-1}(X\beta)) = X\beta = \beta_1 + \beta_2 X\\
+    \noalign{\text{When X(bmi) increrase by 10. g(p) increase by $10\ \beta_2$}}
+    \end{align*}
+\end{proof}
+According to the R code below:\\
+(a) $estimate = 0.9971684$\\
+(b) $95\% CI = [0.6976052, 1.2967316]$\\
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{load}\hlstd{(}\hlstr{"assign1.Robj"}\hlstd{)}
+
+\hlstd{model} \hlkwb{=} \hlkwd{glm}\hlstd{(}\hlkwd{cbind}\hlstd{(test,} \hlnum{1}\hlopt{-}\hlstd{test)}\hlopt{~}\hlstd{bmi,} \hlkwc{data}\hlstd{=pima_subset,} \hlkwc{family} \hlstd{=} \hlkwd{binomial}\hlstd{())}
+
+\hlcom{# Easily shown log odd is logit is g. Thus g(g-1(x\textbackslash{}beta)) = x\textbackslash{}beta}
+\hlcom{# log(o) = b0 + b1x}
+\hlstd{betahat} \hlkwb{=} \hlstd{model}\hlopt{$}\hlstd{coefficients}
+\hlstd{(}\hlnum{10} \hlopt{*} \hlstd{betahat[}\hlnum{2}\hlstd{])}
+\end{alltt}
+\begin{verbatim}
+##       bmi 
+## 0.9971684
+\end{verbatim}
+\begin{alltt}
+\hlstd{ilogit} \hlkwb{<-} \hlkwa{function}\hlstd{(}\hlkwc{x}\hlstd{)} \hlkwd{exp}\hlstd{(x)}\hlopt{/}\hlstd{(}\hlnum{1}\hlopt{+}\hlkwd{exp}\hlstd{(x))}
+\hlstd{phat} \hlkwb{<-} \hlkwd{ilogit}\hlstd{(betahat[}\hlnum{1}\hlstd{]} \hlopt{+} \hlstd{pima_subset}\hlopt{$}\hlstd{bmi}\hlopt{*}\hlstd{betahat[}\hlnum{2}\hlstd{])}
+\hlstd{I11} \hlkwb{<-} \hlkwd{sum}\hlstd{(phat}\hlopt{*}\hlstd{(}\hlnum{1} \hlopt{-} \hlstd{phat))}
+\hlstd{I12} \hlkwb{<-} \hlkwd{sum}\hlstd{(pima_subset}\hlopt{$}\hlstd{bmi}\hlopt{*}\hlstd{phat}\hlopt{*}\hlstd{(}\hlnum{1} \hlopt{-} \hlstd{phat))}
+\hlstd{I22} \hlkwb{<-} \hlkwd{sum}\hlstd{(pima_subset}\hlopt{$}\hlstd{bmi}\hlopt{^}\hlnum{2}\hlopt{*}\hlstd{phat}\hlopt{*}\hlstd{(}\hlnum{1} \hlopt{-} \hlstd{phat))}
+\hlstd{Iinv} \hlkwb{<-} \hlkwd{solve}\hlstd{(}\hlkwd{matrix}\hlstd{(}\hlkwd{c}\hlstd{(I11, I12, I12, I22),} \hlnum{2}\hlstd{,} \hlnum{2}\hlstd{))}
+\hlstd{alpha}\hlkwb{=}\hlnum{0.05}
+\hlcom{# The constant term is zero, so it's ignored}
+\hlnum{10} \hlopt{*} \hlstd{betahat[}\hlnum{2}\hlstd{]} \hlopt{+} \hlkwd{qnorm}\hlstd{(}\hlkwd{c}\hlstd{(alpha}\hlopt{/}\hlnum{2}\hlstd{,} \hlnum{1}\hlopt{-}\hlstd{alpha}\hlopt{/}\hlnum{2}\hlstd{))} \hlopt{*} \hlkwd{sqrt}\hlstd{(}\hlnum{10}\hlopt{^}\hlnum{2} \hlopt{*} \hlkwd{diag}\hlstd{(Iinv)[}\hlnum{2}\hlstd{])}
+\end{alltt}
+\begin{verbatim}
+## [1] 0.6976052 1.2967316
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
+
+\section{Question3}
+\subsection{(a) Show that the gamma distribution is an exponential family.}
+I claim the gamma distribution is of exponential family with:
+\begin{align*}
+f(y; \lambda, \phi) &= exp(\frac{x\lambda - b(\lambda)}{a(\phi)} + c(y, \phi))\\
+\theta &= -\frac{\lambda}{v}\\
+\phi &= v\\
+a(\phi) &= \frac{1}{\phi}\\
+b(\theta) &= -log(-\theta)\\
+c(\phi) &= \phi log(\phi) - log(\Gamma(\phi)) + (\phi-1)log(y)
+\end{align*}
+With the following proof:
+\begin{proof}[Exponential Family Equivalence Proof]
+    \begin{align*}
+    f(x;\lambda, v) &= exp(log(f)) \\
+      &= exp(vlog(\frac{\lambda}{v}) + vlog(v) -\lambda x + (v-1)log(x) - log(\Gamma(v)))\\
+      &= exp(\frac{x(-\frac{\lambda}{v}) - (-log(-(-\frac{\lambda}{v})))}{\frac{1}{v}} + v log(v) - log(\Gamma(v)) + (v-1)log(x))\\
+      \noalign{\text{Now let the above conditions be applied we get:}}\\
+      f(x;\lambda, v) &= exp(\frac{x\lambda - b(\lambda)}{a(\phi)} + c(x, \phi))
+    \end{align*}
+\end{proof}
+
+\subsection{(b) Obtain the canonical link and the variance function.}
+Because Exponential Family and such such.
+\begin{align*}
+    \noalign{\text{Canonical Link}}
+    b'(\theta) &= - \frac{1}{-\theta}(-1) = -\frac{1}{\theta}\\
+    g(\theta) &= (b')^{-1}(\theta) = -\frac{1}{\theta}\\
+    g(\mu) &= -\frac{1}{\mu}\\
+    \noalign{\text{Variance Function}}
+    b''(\mu) &= \frac{1}{\mu^2}\\
+    b''\circ (b')^{-1}(\mu) &= \frac{1}{((b')^{-1})^2}\\
+                               &= \mu^2
+\end{align*}
+
+
+\end{document}
