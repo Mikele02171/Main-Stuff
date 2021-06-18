@@ -1,0 +1,346 @@
+---
+title: "MAST30025 LAB 6 (WEEK 6)"
+output: word_document
+---
+#Questions 1–7 use the ‘sleep’ dataset, which you can download from the course website. This dataset contains (among other things) data on the body weight (kg) and brain weight (g) of 62 mammals. Use the following commands to read the data:
+```{r}
+setwd("~/Desktop/UNIMELB 2021 Material/UNIMELB S1 2021 (Currently)/MAST30025/Tutorials /Tutorials/Rfile/data")
+mammals <- read.csv("sleep.csv") 
+mammals$BodyWt = log(mammals$BodyWt)
+mammals$BrainWt = log(mammals$BrainWt)
+```
+
+#Question 1. Fit a linear model explaining brain weight from body weight, using the lm command.
+#Display the summary of the fitted model, and then create a scatter plot of the data and superimpose
+#the fitted regression line on it. Does it look like a reasonable fit? Use diagnostic plots to assess if the model assumptions are satisfied.
+
+
+```{r}
+plot(mammals$BodyWt,mammals$BrainWt,xlim = c(-5,20), ylim = c(-5,20))
+ 
+abline(lm(mammals$BrainWt~mammals$BodyWt),col = 'red')
+
+```
+
+#Looks best fit 
+
+
+```{r}
+m = lm(mammals$BrainWt~mammals$BodyWt, data = mammals)
+m
+```
+
+
+
+#Diagonistic plots
+```{r}
+plot(m, which = 1)
+
+```
+#Some of the residuals appear more under the line than above!
+
+
+
+```{r}
+
+plot(m, which = 2)
+
+```
+
+#Looks normally distributed and linear
+```{r}
+
+plot(m, which = 3)
+
+```
+
+#There are many residuals over and under the line. Unable to determine how many they are in both sides!
+
+
+```{r}
+
+plot(m, which = 5)
+
+```
+#Seems decent alright!
+
+#Question 2. Using the fitted model or otherwise, obtain: 
+
+#Case 1 and 2 without lm and with lm respectively!!
+
+#(a) The least squares estimator of the parameters, b;
+
+
+```{r}
+y = mammals$BrainWt
+X = matrix(c(rep(1,62),mammals$BodyWt),62,2)
+```
+
+
+
+#Solving for b 
+```{r}
+b = solve(t(X)%*%X,t(X)%*%y)
+b
+```
+
+#(b) The vector of residuals, e;
+```{r}
+e = y - X%*%b
+e
+
+```
+
+#(c) The residual sum of squares, SSRes;
+```{r}
+SSRes = sum(e^2)
+SSRes
+
+```
+
+
+#(d) The regression sum of squares, SSReg;
+```{r}
+SSTotal = sum(y^2)
+SSReg = SSTotal - SSRes
+SSReg
+
+```
+
+
+#(e) The regression sum of squares, SSReg;
+```{r}
+s2 = SSRes/(62-2) # p = k + 1, hence p = 2 
+s2
+```
+
+
+
+
+#(f) The standardised residuals;
+#Using lm
+```{r}
+str(rstandard(m)) 
+```
+
+
+
+
+#(g) The leverages of the points; 
+# Using lm
+
+```{r}
+str(lm.influence(m)$hat) 
+```
+
+
+# (h) The leverages of the points; 
+# Using lm
+```{r}
+str(cooks.distance(m))
+```
+
+#(i) 95% confidence intervals for each of the parameters.
+#Using lm 
+
+(More to be added)
+
+#Without lm
+#For b0 
+```{r}
+c00 = solve(t(X)%*%X)[1,1]
+s = sqrt(s2)
+alpha = 0.05
+ta <- qt(1-alpha/2, df=62-1) #One because one of the estimators is unbiased 
+c(b[1] - ta*s*sqrt(c00), b[1] + ta*s*sqrt(c00))
+```
+
+#For b1
+```{r}
+c11 = solve(t(X)%*%X)[2,2]
+s = sqrt(s2)
+alpha = 0.05
+ta = qt(1-alpha/2, df=62-1) # One because one of the estimators is unbiased 
+c(b[2] - ta*s*sqrt(c11), b[2] + ta*s*sqrt(c11))
+```
+
+
+#Question 3. Find a 95% confidence interval for a mammal weighing 50 kg
+```{r}
+xst = c(1,log(50))
+xst%*%b
+
+```
+
+
+#Lower Bound 
+```{r}
+
+xst%*%b - ta*s*sqrt(t(xst)%*%solve(t(X)%*%X)%*%xst)
+
+
+```
+
+
+
+#Upper Bound
+```{r}
+
+xst%*%b + ta*s*sqrt(t(xst)%*%solve(t(X)%*%X)%*%xst)
+
+
+```
+
+
+
+#Question 4. Find a 95% prediction interval for a mammal weighing 50 kg
+
+#Lower Bound
+```{r}
+xst%*%b - ta*s*sqrt(1 + t(xst)%*%solve(t(X)%*%X)%*%xst)
+```
+
+#Upper Bound 
+```{r}
+xst%*%b + ta*s*sqrt(1 + t(xst)%*%solve(t(X)%*%X)%*%xst)
+```
+#Question 5. Find and draw a 95% joint confidence region for the parameters.
+
+#Ask the demonstator 
+```{r}
+b1 = seq(1.8,2.5,.2)
+b2 = seq(0,2,.1)
+f = function(beta1,beta2){
+  b = matrix(c(2.134,0.7517),2,1)
+  XTX = matrix(c(62,82.93,82.93,705.91),2,2)
+  f.out = rep(0,length(beta1))
+  for (i in 1:length(beta1)){
+    beta = matrix(c(beta1[i], beta2[i]),2,1)
+    f.out[i] = t(b - beta) %*% XTX %*% (b - beta)
+  }
+  return(f.out)
+}
+
+z = outer(b1,b2,f)
+
+contour(b1, b2, z, levels=2*0.4820452*qf(0.95, 2, 60))
+
+```
+
+
+#Question 6. Test the following hypotheses, using the anova function.
+
+#(a) H0 :β=0 
+```{r}
+n = 62
+p = 2
+SSTotal = sum(y^2)
+SSRes = sum((y - X%*%b)^2)
+SSReg = SSTotal - SSRes
+Fstat = (SSReg/p)/(SSRes/(n-p))
+pf(Fstat,p, n-p, lower.tail = FALSE)
+
+
+```
+```{r}
+m1 = lm(mammals$BrainWt~0, data = mammals)
+m = lm(mammals$BrainWt~mammals$BodyWt, data = mammals)
+anova(m1,m)
+
+
+```
+#Reject the null 
+
+
+#(b) H0: β1 =0 
+```{r}
+null = lm(mammals$BrainWt~1, data = mammals) #1 is just temporarily because we 
+anova(null,m)
+
+```
+
+#(c) H0 :β0 =0
+```{r}
+X2 = X[,-1]
+b2 = solve(t(X2)%*%X2, t(X2)%*%y)
+SSRes2 = sum((y - X2%*%b2)^2)
+Rg2 = SSTotal - SSRes2
+Rg2
+
+
+```
+
+```{r}
+Rg2 = t(y)%*%X2%*%b2
+Rg2
+
+```
+
+```{r}
+Rg1g2 = SSReg - Rg2
+Rg1g2
+
+```
+
+```{r}
+r = 1 #Rank 1 (C*beta  = 0, C = 1)
+Fstat = (Rg1g2/r)/(SSRes/(n-p))
+Fstat
+pf(Fstat, r, n-p, lower.tail = FALSE)
+
+```
+
+
+
+```{r}
+null = lm(mammals$BrainWt~0+mammals$BodyWt, data = mammals)
+anova(null,m)
+
+```
+
+
+
+#(d) H0 :β=(2,1)
+```{r}
+bst = as.vector(c(2,1))
+Fstat = (t(b-bst)%*%t(X)%*%X%*%(b-bst))/p/(SSRes/(n-p)) 
+
+Fstat
+pf(Fstat,p,n-p,lower.tail = FALSE)
+
+
+```
+
+
+```{r}
+h0 = X%*%bst
+basemodel = lm(mammals$BrainWt~0, data=mammals, offset = h0)
+anova(basemodel,m)
+
+```
+#Reject all hypothesis!!
+
+
+#Question 7. By visualising the raw data, justify the use of a double logarithmic transformation. Write down the final model for the (untransformed) brain weight vs. body weight.
+
+```{r}
+
+hist(mammals$BrainWt,breaks=50)
+
+```
+
+
+```{r}
+
+hist(mammals$BodyWt,breaks=50)
+
+```
+
+
+```{r}
+
+plot(log(BrainWt)~log(BodyWt),data=mammals)
+
+```
+
+#The final model see my annotation in MAST30025 Lab 6!! first find beta0 and beta1!

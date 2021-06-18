@@ -1,0 +1,304 @@
+---
+title: "MAST30025 Lab 5"
+output: word_document
+---
+#Question 1. Consider the dataset from the Week 4 lab. As before, do the following using both matrix calculations and R’s lm commands.
+
+
+#Part a: Calculate 95% confidence intervals for the model parameters.
+```{r}
+y = c(8,15,16,20,25,40)
+X = matrix(c(rep(1,6),8,12,14,16,16,20),6,2)
+
+```
+
+```{r}
+b = solve(t(X)%*%X, t(X)%*%y)
+df = 6 - 2
+e = y - X%*%b
+s = sqrt(sum(e^2)/df)
+
+```
+
+#Confidence interval for b0!
+```{r}
+
+c00 = solve(t(X)%*%X)[1,1]
+alpha = 0.05
+ta = qt(1-alpha/2, df=df)
+c(b[1]-ta*s*sqrt(c00),b[1]+ta*s*sqrt(c00))
+
+```
+
+
+
+#Confidence interval for b1!
+```{r}
+c11 = solve(t(X)%*%X)[2,2]
+alpha = 0.05
+ta = qt(1-alpha/2, df=df)
+c(b[2]-ta*s*sqrt(c11),b[2]+ta*s*sqrt(c11))
+
+```
+
+
+#Part b: Calculate a 95% confidence interval for the average income of a person who has had 18 years of formal education.
+```{r}
+xst = c(1,18)
+xst%*%b
+ta = qt(0.975, df = 6-2)
+```
+
+
+```{r}
+xst%*%b - ta*s*sqrt(t(xst)%*%solve(t(X)%*%X)%*%xst) #Lower bound
+
+xst%*%b + ta*s*sqrt(t(xst)%*%solve(t(X)%*%X)%*%xst) #Upper bound
+
+
+
+```
+
+
+
+
+#Part c:Calculate a 95% prediction interval for the income of a single person who has had 18 years of formal education.
+```{r}
+xst%*%b - ta*s*sqrt(1+t(xst)%*%solve(t(X)%*%X)%*%xst) #Lower bound
+
+xst%*%b + ta*s*sqrt(1+t(xst)%*%solve(t(X)%*%X)%*%xst) #Upper bound
+```
+
+
+#Question 3. We can generate some data for a simple linear regression as follows:
+```{r}
+n = 30
+x = 1:n
+y = x + rnorm(n)
+```
+MAIN TASK
+#Construct 95% CI’s for Ey and 95% PI’s for y, when x = 1, 2, . . . , n. Join them up and plot them on a graph of y against x.
+
+
+
+MAIN QUESTION!
+#What proportion of the y’s should you expect to lie beyond the outer lines?
+# Tough without actual examples in the lectures
+```{r}
+fit = lm(y~x)
+newdata = data.frame(x=x)
+CI_u = predict(fit,newdata,interval = 'confidence',level = 0.95)[,3]
+CI_l = predict(fit,newdata,interval = 'confidence',level = 0.95)[,2]
+PI_u = predict(fit,newdata,interval = 'prediction',level = 0.95)[,3]
+PI_l = predict(fit,newdata,interval = 'prediction',level = 0.95)[,2]
+plot(x,y)
+abline(fit$coeff[1], fit$coeff[2])
+lines(x,CI_u, col = "blue")
+lines(x,CI_l, col = "blue")
+lines(x,PI_u, col = "red")
+lines(x,PI_l, col = "red")
+
+```
+# Expect about 5% of the y's to lie beyond the PI's.
+
+#Question 5:
+#Overfitting exercise.
+#Generate some observations from a simple linear regression:
+```{r}
+set.seed(3)
+X <- cbind(rep(1,100), 1:100)
+beta <- c(0, 1)
+y <- X %*% beta + rnorm(100)
+
+
+```
+
+
+
+#Put aside some of the data for testing and some for fitting:
+```{r}
+ Xfit <- X[1:50,]
+ yfit <- y[1:50]
+ Xtest <- X[51:100,]
+ ytest <- y[51:100]
+```
+
+(a) Using only the fitting data, estimate β and hence the residual sum of squares. Also calculate
+the residual sum of squares for the test data, that is, 􏰆100 i=51
+Solution:
+```{r}
+betafit <- solve(t(Xfit)%*%Xfit, t(Xfit)%*%yfit)
+SSfit <- sum((yfit - Xfit%*%betafit)^2) 
+SSfit
+ 
+```
+
+
+```{r}
+
+SStest <- sum((ytest - Xtest%*%betafit)^2)
+SStest
+```
+
+```{r}
+
+#Now add 10 extra predictor variables which we know have nothing to do with the response:
+X <- cbind(X, matrix(runif(1000), 100, 10))
+Xtest <- X[51:100,]
+Xfit <- X[1:50,]
+Xfit
+```
+
+
+
+Again using only the fitting data, fit the linear model y = Xβ+ε, and show that the residual sum of squares has reduced (this has to happen). Then show that the residual sum of squares for the test data has gone up (this happens most of the time).
+Explain what is going on.
+
+
+```{r}
+betafit <- solve(t(Xfit)%*%Xfit, t(Xfit)%*%yfit) 
+betafit
+```
+
+
+
+```{r}
+SSfit <- sum((yfit - Xfit%*%betafit)^2)
+SSfit
+
+```
+
+
+
+```{r}
+SStest <- sum((ytest - Xtest%*%betafit)^2) 
+SStest
+```
+
+
+#With the training data, we can match some of the noise (the ε term) using the new predictor variables. However, this is of no use when applied to the test data, as there is no systematic relationship between the noise and the new variables.
+
+
+#Question 5(b) Repeat the above, but this time add x2, x3 and x4 terms:
+
+```{r}
+X <- cbind(X[, 1:2], (1:100)^2, (1:100)^3, (1:100)^4)
+```
+
+
+```{r}
+Xfit <- X[1:50,]
+ 
+```
+
+
+```{r}
+Xtest <- X[51:100,]
+```
+
+```{r}
+betafit <- solve(t(Xfit)%*%Xfit, t(Xfit)%*%yfit) 
+betafit
+```
+
+```{r}
+SSfit <- sum((yfit - Xfit%*%betafit)^2)
+SSfit
+```
+```{r}
+SStest <- sum((ytest - Xtest%*%betafit)^2)
+SStest
+```
+#Here the fit for the test data is absolutely horrendous. The problem is that the term β2x2 + β3 x3 + β4 x4 is small for the training data, where it is fitting the noise term ε, but for the test data this term becomes very large, resulting in a very poor fit. So overfitting is generally a bad thing, but overfitting with polynomials can be a very bad thing, in particular when you try and apply the fit beyond the range of the fitting data.
+
+
+
+
+
+#Programming questions
+#1. What will be the output of the following code? Try to answer this without typing it up.
+
+
+```{r}
+   fb <- function(n) {
+         if (n == 1 || n == 2) {
+             return(1)
+         } else {
+             return(fb(n - 1) + fb(n - 2))
+         }
+} 
+fb(8)
+```
+
+
+#2. Suppose you needed all 2n binary sequences of length n. One way of generating them is with nested for loops. For example, the following code generates a matrix binseq, where each row is a different binary sequence of length three.
+```{r}
+binseq <- matrix(nrow = 8, ncol = 3)
+r <- 0 # current row of binseq
+for (i in 0:1) {
+  for (j in 0:1) {
+    for (k in 0:1) {
+      r = r + 1
+      binseq[r,] = c(i,j,k)
+    
+    }
+  }
+}
+binseq
+
+```
+#Clearly this approach will get a little tedious for large n. An alternative is to use recursion. Suppose that A is a matrix of size 2n × n, where each row is a different binary sequence of length n. Then the following matrix contains all binary sequences of length n + 1:
+
+#matrix(c(0,A,1,A),2,2) ?!
+
+#Here 0 is a vector of zeros and 1 is a vector of ones.
+#Use this idea to write a recursive function binseq, which takes as input an integer n and returns a matrix containing all binary sequences of length n, as rows of the matrix. You should find the functions cbind and rbind particularly useful.
+
+
+
+```{r}
+
+binseq <- function(n) {
+  # all binary sequences of length n, where n is a +ve integer
+   if (n == 1) {
+     A <- matrix(0:1, nrow=2, ncol=1)
+     return(A)
+   } else {
+     A <- binseq(n-1)
+     B <- rbind(cbind(0, A), cbind(1, A))
+     return(B)
+   }
+}
+binseq(3)
+```
+
+
+#Question 3. Let A = (ai,j)n (top) i,j=1 (bottom) be a square matrix, and denote by A(−i,−j) the matrix with row i and column j removed. If A is a 1 × 1 matrix then det(A), the determinant of A, is just a(1,1). For n × n matrices we have, for any i,
+det(A) = sigma�(j = 1 to n) (-1)^(i+j)ai,j det(A(−i,−j)).
+
+
+#Use this to write a recursive function to calculate det(A).
+
+```{r}
+  my_det <- function(X) {
+    if (length(X) == 1) {
+      return(X)
+     } else {
+       S=0
+       for (i in 1:dim(X)[1]) {
+         S = S + X[1, i]*(-1)^(1+i)*my_det(X[-1, -i])
+       }
+       return(S)
+    }
+ }
+X <- matrix(runif(25), nrow=5, ncol=5) 
+my_det(X)
+```
+
+
+```{r}
+det(X) # R's built in version [1] 0.07874474
+```
+
+
+

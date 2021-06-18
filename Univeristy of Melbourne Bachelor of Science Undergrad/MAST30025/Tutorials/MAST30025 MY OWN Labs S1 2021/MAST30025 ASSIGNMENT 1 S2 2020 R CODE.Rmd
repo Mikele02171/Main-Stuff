@@ -1,0 +1,117 @@
+---
+title: "MAST30025 Assignment 1 S1 2020"
+output: word_document
+---
+## Question 3
+
+#Part a: Describe the distribution of Ay.
+```{r}
+
+A = matrix(c(2,0,-1,0,3,0,-1,0,2)/3,3,3)
+V = matrix(c(2,0,1,0,1,0,1,0,2),3,3)
+mu = t(matrix(c(1,-1,0),1,3))
+```
+
+## 
+
+
+#Mean of the Ay distribution 
+```{r}
+A%*%mu
+```
+
+#Variance of the Ay distribution
+```{r}
+A%*%V%*%t(A)
+
+```
+
+
+
+
+## Question 3
+
+#Part b: Find E[t(y)Ay].
+
+#Using Theorem 3.2
+```{r}
+sum(diag(A%*%V)) + t(mu)%*%A%*%mu
+```
+
+
+## Question 3
+
+#Part c: Describe the distribution of t(y)%*%A%*%y
+```{r}
+lamba = 0.5%*%t(mu)%*%A%*%mu
+lamba  #Our noncentrality parameter 
+```
+
+
+
+
+## Question 5
+
+#Part a: 
+```{r}
+y = matrix(c(8.5,8,7.5,10,11,15,13.5,14),8,1)
+y
+```
+
+
+```{r}
+X = cbind(rep(1,8),c(1.35,1.33,2,1.4,1.43,1.2,1.3,1.28),c(50,55,60,52,47,45,49,63))
+X
+```
+
+# Part b: Least square estimators 
+```{r}
+b = solve(t(X)%*%X, t(X)%*%y)
+b #b0,b1 and b2 from each row respectively 
+```
+
+#Part c: Calculate the residual sum of squares SSres and sample variance s^2. 
+```{r}
+e = y - X%*%b 
+e
+
+```
+
+#Now t o find s2
+```{r}
+N=8
+P=3
+SSRES = sum(e^2)
+s2 = SSRES/(N-P)
+s2
+```
+
+#Part d: Predict (using a point estimate) the average fuel mileage of a car which weighs 1.8 tons and is driven at 59 km/hr.
+```{r}
+c(1,1.8,59)%*%b
+
+
+```
+
+
+
+
+# Part b: Least square estimators 
+```{r}
+
+t(X)%*%X
+
+
+```
+
+
+```{r}
+
+t(X)%*%y
+
+
+```
+
+
+
+

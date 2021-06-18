@@ -1,0 +1,462 @@
+---
+title: "MAST30025 Assignment 3 2015"
+output: word_document
+---
+
+#Question 1 
+```{r}
+setwd("~/Desktop/UNIMELB 2021 Material/UNIMELB S1 2021 (Currently)/MAST30025/Tutorials /Tutorials/Rfile/data")
+douglas = read.csv("douglas.csv")
+str(douglas)
+
+```
+
+#Part a: What sort of experimental design has been used?
+#How has randomisation been used, if at all?
+
+#Complete block design (CRBD)
+```{r}
+#Not sure if I have seen this in the lectures
+idx = order(douglas$SeedLot, douglas$RootVolume)
+douglas = douglas[idx,]
+head(douglas)
+```
+
+## Including Plots
+
+#Part b) Generate two interaction plots for the data. Is there any evidence of an interaction?
+#Read from slide 62-67 from the Inference for the less than full rank model.
+```{r}
+#Attempt 1
+with(douglas,interaction.plot(factor(douglas$RootVolume),factor(douglas$SeedLot),douglas$Height))
+
+```
+#From factor J052 and A567 there is a little interaction at the center from this plot.
+
+
+```{r}
+#Attempt 1
+with(douglas,interaction.plot(factor(douglas$SeedLot),factor(douglas$RootVolume),douglas$Height))
+
+```
+#All the lines are parallel so there is no interaction from this plot.
+
+
+
+#Part c: Specify a model for the data, including main effects and an interaction, and write down the design matrix X. Hence, calculate a solution to the normal equations, and use it to find the fitted means for each combination of factors levels. You may not use the ginv command for this question.
+
+```{r}
+library(MASS)
+library(Matrix)
+y = douglas$Height
+n = length(y)
+X = matrix(c(rep(1,n),rep(0,n*15)),n,16)
+X[cbind(1:n,as.numeric(factor(douglas$SeedLot))+1)] = 1
+X[cbind(1:n,as.numeric(factor(douglas$RootVolume))+4)] = 1
+X[cbind(1:n,as.numeric(factor(douglas$RootVolume))*3 + as.numeric(factor(douglas$SeedLot))+4)] = 1
+X
+```
+
+
+```{r}
+#Finding the Condition Inverse according from the lectures!
+XtXc = matrix(0,16,16)
+XtXc[8:16,8:16] = solve((t(X)%*%X)[8:16,8:16])
+XTXC = XtXc[-(1:6),-(1:6)]
+XTXC
+```
+
+
+```{r}
+library(MASS)
+#Now we can find one of our least sqaures estimator b,
+b = XtXc%*%t(X)%*%y
+b[-(1:7),]
+#46.50500 49.58833 48.22667 53.50500 55.87500 53.56667 54.85000 59.34167 56.95000
+```
+
+
+```{r}
+I = diag(16)
+b2 = b + (I - XtXc %*% t(X) %*% X) %*% as.vector(c(1,rep(0,14),1))
+b2
+#as.vector() is an arbitary vector!
+#b2[-(1:7),]
+#[1] 45.50500 48.58833 47.22667 52.50500 54.87500 52.56667 53.85000 58.34167 55.95000
+```
+
+```{r}
+#In the actual solution
+colMeans(matrix(douglas$Height, nrow = 6))
+
+
+```
+
+
+
+#Part d: Give a 95% confidence interval for the difference in height between a seedling with large root volume (RV3) and a seedling with small root volume (RV1). Suppose that the seedling came from lot A567
+```{r}
+library(MASS)
+library(Matrix)
+y = douglas$Height
+n = length(y)
+r = rankMatrix(X)[1]
+s2 = sum((y-X%*%b)^2)/(n-r)
+s2
+
+```
+
+
+
+#Fixing the design Matrix from the previous part!
+
+
+```{r}
+#Testing with our C martix 
+
+#C = matrix(0,1,16) 
+#C[1,c(2,3,8,10)] = c(1,1,-1,1)
+
+#Actual solution: 
+t = c(0,0,0,0,-1,0,1,-1,0,1,0,0,0,0,0,0)
+
+q = qt(0.975,n-r)
+s = sqrt(s2)
+width = s*q*sqrt(t(t)%*%XtXc%*%t)
+m = t%*%b
+m
+c(m-width,m+width)
+#CI is wrong
+
+```
+
+
+#Fixing the Design Matrix 
+```{r}
+library(MASS)
+library(Matrix)
+options(width=100)
+X <- matrix(0, nrow = 54, ncol = 16)
+X[,1] = 1
+X[,2] = douglas$SeedLot == "A567"
+X[,3] = douglas$SeedLot == "B349"
+X[,4] <- douglas$SeedLot == "J052"
+X[,5] <- douglas$RootVolume == "RV1"
+X[,6] <- douglas$RootVolume == "RV2"
+X[,7] <- douglas$RootVolume == "RV3"
+X[,8] <- X[,2]*X[,5]
+X[,9] <- X[,2]*X[,6]
+X[,10] <- X[,2]*X[,7]
+X[,11] <- X[,3]*X[,5]
+X[,12] <- X[,3]*X[,6]
+X[,13] <- X[,3]*X[,7]
+X[,14] <- X[,4]*X[,5]
+X[,15] <- X[,4]*X[,6]
+X[,16] <- X[,4]*X[,7]
+X
+```
+
+
+```{r}
+library(MASS)
+library(Matrix)
+XTXc2 = matrix(0, nrow = 16, ncol = 16)
+XTXc2[8:16,8:16] = diag(9)/6
+t <- c(0,0,0,0,-1,0,1,-1,0,1,0,0,0,0,0,0)
+r <- qt(0.975, 45)*sqrt(s2 * t(t) %*% XTXc2 %*% t)
+m <- t(t) %*% b
+ cat("(", m - r, ",", m + r, ")\n")
+
+```
+
+#Part e: Test for the presence of an interaction at the 5% significance level.Would it be meaningful to check the significance of the main effects? Why?
+You may not use the lm command for this question.
+
+```{r}
+#Actual solution
+library(Matrix)
+library(MASS)
+C = matrix(c(0,0,0,0,0,0,0, 1,-1,0, -1,1,0, 0,0,0,0,0,0,0,0,0,0, 1,-1,0, 0,0,0,-1,1,0,0,0,0,0,0,0,0, 0,1,-1, 0,0,0,0,-1,1,0,0,0,0,0,0,0, 0,0,0, 1,0,-1, -1,0,1), nrow = 4, byrow =TRUE)
+rankMatrix(C)
+check = C %*% XtXc %*% t(X) %*% X
+round(C - check, 10)
+```
+
+
+```{r}
+Fstat <- t(b) %*% t(C) %*% solve( C %*% XtXc %*% t(C), C %*% b) /4 /s2
+Fstat
+```
+
+```{r}
+pf(Fstat, 4, 45, lower.tail = FALSE)
+```
+
+#Tutor comment: The large p-value indicates that we should retain the null hypothesis that there is no interac- tion.
+#In the absence of an interaction it does make sense to test for the significance of the main effects (we would have to refit the model without the interaction first)
+
+
+#Part f: Fit an additive model to the data using the lm command, and produce plots to justify the model assumption that the errors are normal and homoskedastic.
+```{r}
+model <- lm(Height ~ SeedLot + RootVolume, data = douglas)
+opar <- par(mfrow=c(2,2),mar=c(4,4,3,1))
+plot(model, which = 1)
+plot(model, which = 2)
+plot(model, which = 3)
+plot(model, which = 5)
+par = opar
+```
+
+```{r}
+
+plot(model, which = 5)
+
+```
+
+#From the second plot the residuals look normal. In the other three there is no sign of heteroskedasticity or outliers.
+
+
+
+#Part g: Suppose that you are to repeat the experiment, except that this time you source seeds from four seed lots, and you only have the resources to plant out 36 seedlings.
+
+#Give a design for this experiment, showing which combination of root volume and seed lot is used for each plot (one seedling is planted in each plot). Explain the experimental design principle(s) you have used.
+
+```{r}
+#Actual Solution
+#We use a complete balanced block design. SeedLot is the blocking factor with four levels, and RootVolume is the treatment factor with three levels. With 36 plots we have three replications. We assign plots at random to each factor combination
+design = data.frame(Plot = sample(36), SeedLot=rep(1:4,c(9,9,9,9)), RootVolume = rep(rep(1:3, c(3,3,3)), 4))
+
+design
+```
+
+#Each factor combination will get three plots, and we need to assign three seedlings to these plots at random. This can be achieved using the randomised plots. We just assign the three seedlings in the order indicated by the plot numbers, e.g. (low, med, high), (low, high, med), (med, low, high), etc.
+
+#This design uses blocking to control the effect of SeedLot, as well as balance and replication to increase the precision. Randomisation has been used to mitigate any effects due to the physical location of the seedlings (as indicated by the plot number).
+
+
+
+#Question 2
+#From the Latin square slides (Experimental design this is to test your understanding how to define your function and generate different latinsquares)
+
+#Part a: DefineA=(aij)byaij =(i+j−2 modn)+1.
+```{r}
+library(magic)
+rlatin(5)
+
+```
+
+#Actual solution
+```{r}
+rlatinsquare = function(n){
+  #generate an n*n latin square by row and col permuations
+  A = matrix(1:n, nrow = n, ncol = n)
+  A = ((A + t(A) - 2)%%n)+1
+  L = A[sample(n),sample(n)]
+  return(L)
+}
+set.seed(30025)
+
+
+rlatinsquare(4) #Obtain B (Trail and Error)
+#Obtain B by permuting the rows of A randomly.
+
+
+rlatinsquare(4) #Obtain L (Trail and Error)
+#Obtain L by permuting the columns of B randomly
+
+```
+
+#Question 3
+#Part a:  Create a scatterplot of the data, to illustrate the relationships between tree, loading and velocity.
+```{r}
+setwd("~/Desktop/UNIMELB 2021 Material/UNIMELB S1 2021 (Currently)/MAST30025/Tutorials /Tutorials/Rfile/data")
+heli = read.csv("heli.csv")
+str(heli)
+
+```
+
+```{r}
+
+#Actual solution
+plot(Velocity ~ Load, pch=as.character(Tree), col=Tree+1, data=heli)
+
+```
+
+
+
+
+#There appears to be a clear linear relationship between velocity and disk loading. It’s not clear if the tree has an effect, either directly or through interaction.
+
+
+
+#Part b: Fit a model to the data. You may use the lm command. You should consider a variety of models and indicate which you prefer and why.
+
+
+#From my understanding 
+#Using backwards elimation refer from Question 4 Assignment 3 2020, and also it refers from the diagnostic plots from earlier this semester!
+
+```{r}
+#Actual solution 
+fullmodel = lm(Velocity~Load + Tree+ Load*Tree,data = heli)
+model3 = lm(Velocity~Load,data = heli)
+plot(Velocity ~ Load, pch=as.character(Tree), col=Tree+1, data=heli)
+with(heli, lines(Load, fitted(model3)))
+for (i in 1:3) {with(heli, lines(Load[Tree==i], fitted(fullmodel)[Tree==i], col=i+1))}
+
+```
+
+
+
+```{r}
+#Actual solution 
+heli$Tree = factor(heli$Tree)
+model3 = lm(Velocity~Load,data = heli)
+summary(model3)
+
+```
+
+#The test for the interaction term 
+
+#Without lm function
+```{r}
+str(heli)
+library(MASS)
+library(Matrix)
+y = heli$Velocity
+n = length(heli$Velocity)
+X = matrix(c(rep(1,n),rep(0,n*7)),n,8)
+X[cbind(1:n,as.numeric(heli$Tree)+1)]=1
+X[,5]=heli$Load
+X[cbind(1:n,as.numeric(heli$Tree)+5)]=heli$Load
+r = rankMatrix(X)[1]
+XtXc = ginv(t(X)%*%X)
+XtXc
+b = XtXc%*%t(X)%*%y
+s2 = sum((y-X%*%b)^2)/(n-r)
+C = matrix(c(0,0,0,0,0,1,-1,0,0,0,0,0,0,1,0,-1),2,8,byrow = T)
+Fstat  = t(b)%*%t(C)%*%solve(C%*%XtXc%*%t(C))%*%C%*%b/2/s2
+pf(Fstat,2,n-r,lower=F)
+
+```
+#Were given 0.0511 as our p value from the interaction term, going from the first model to the final model using backwards elimation. We have load in our final model. If we consider to keep the interaction term between the Tree and Load we use AIC using stepwise selection.
+
+```{r}
+fullmodel = lm(y~Load + factor(Tree)+ Load*factor(Tree),data = heli)
+drop1(fullmodel, scope = ~., test = "F")
+
+
+```
+
+```{r}
+model2 = lm(y~Load + factor(Tree),data = heli)
+drop1(model2, scope = ~., test = "F")
+```
+
+
+```{r}
+model3 = lm(y~Load,data = heli)
+drop1(model3, scope = ~., test = "F")
+```
+
+
+```{r}
+summary(model3)
+```
+
+
+#Using the diagnostic plots using the first model to check if it satisfies our model assumptions
+
+```{r}
+plot(fullmodel,which = 1)
+```
+
+```{r}
+plot(fullmodel,which = 2)
+```
+```{r}
+plot(fullmodel,which = 3)
+```
+
+```{r}
+plot(fullmodel,which = 5)
+```
+
+
+#Similiar thing using the final model
+```{r}
+plot(model3,which = 1)
+```
+
+
+```{r}
+plot(model3,which = 2)
+```
+
+
+
+```{r}
+plot(model3,which = 3)
+```
+
+
+```{r}
+plot(model3,which = 5)
+```
+
+#Demonstrator Comment: The residuals look slightly better for model1, in particular the QQ plot is a little nicer, but the residuals for model3 are still quite acceptable: they are reasonably normal, there are no outliers, and they look homoskedastic. For the purposes of this question, either model1 or model3 would be acceptable. If forced to choose I would go for model1.
+
+
+#Part c: What assumptions are you making with your model?
+#Provide some diagnostic plots to indicate that these assumptions are justified
+
+#It seems reasonable that all the plots from above are normally distributed
+#Model 1:
+#Residuals vs. fitted values: Most points have large residuals, seems to be unbiased and there is zero correlation. May imply that all the residuals are independant.
+
+#Normal QQ Plot: There consists a small number of outliners, Looks normally distributed
+
+#Absolute Values of standardised residuals against the fitted values:
+#There are some points with high residuals, variance is not constant hence there is Heteroskedasticity. 
+
+#leverge vs. standardarised residuals:
+#Unequal variance, there is high leverge, Lower Cook's distance and some points may be correlated!
+
+#Final Model:
+#Residuals vs. fitted values:
+#Most points have large residuals, seems to be biased and there may be correlated indiciate that these residuals are not independant.
+
+#Normal QQ Plot:There consists a small number of outliners, Looks normally distributed
+
+#Absolute Values of standardised residuals against the fitted values:
+#There are some points with high residuals, variance is not constant hence there is Heteroskedasticity. 
+
+#leverge vs. standardarised residuals:
+#Unequal variance, there is high leverge, Lower Cook's distance and some points may be correlated!
+
+#Part d: Is the effect of the tree significant? 
+#From all three models except the last one, all models with p values are
+#0.05154 and 0.4319 from model1 and model2,both indeed are not significant above alpha=0.05 (Assume 5% it is always the case and yet very common)!
+
+#Part e: If you want to get a slow samara, which tree would you take it from? Explain how your answer is consistent to your answer to the previous question.
+
+#This tests your understanding from the slopes/gradients in your plot you see in part b: After calcalating each gradient the slowest (lowest magnitude/gradient) would be Tree 3.
+
+#Part f: Give a 95% prediction interval for the velocity of a samura from tree 2 with a loading of 0.2
+
+```{r}
+#My Attempt, what is wrong with my hypothesis?!
+tt = c(0,0,0,0,0.2,0,0,0)
+halfwidth = qt(0.975,df = n-r)*sqrt(s2)*sqrt(1+t(tt)%*%XtXc%*%tt)
+c(tt%*%b-halfwidth,tt%*%b+halfwidth)
+
+```
+
+```{r}
+#Actual solution
+newdata = data.frame(Tree=factor(2,levels=levels(heli$Tree)), Load = 0.2)
+predict(fullmodel, newdata, interval = "prediction")
+
+```
+
+
+

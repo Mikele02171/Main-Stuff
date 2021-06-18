@@ -1,0 +1,152 @@
+---
+title: "MAST30025 Week 4 Lab"
+output: word_document
+---
+
+
+
+
+# Question 3 from the tutorial 
+# Find the normal equations for this model.
+```{r}
+y = c(8,15,16,20,25,40)
+(X = matrix(c(rep(1,6),8,12,14,16,16,20),6,2))
+
+
+```
+
+
+## 
+
+```{r}
+t(X)%*%X
+
+
+
+```
+
+```{r}
+t(X)%*%y
+
+
+
+```
+#Now find the normal equations
+
+
+
+##Question 4 Solving for b and use regression curve to fit the model!!
+
+```{r}
+
+(b = solve(t(X)%*%X, t(X)%*%y))
+```
+
+```{r}
+
+
+#where given b0 and b1 from each row respective from the b vector!!
+#The rest of the question solution i dunno (I wish they given a few more examples of this!!)
+n = 6
+p = 2
+
+
+plot(X[,2],y)
+curve(b[1] + b[2]*x, add = TRUE, col = "red")  
+
+
+
+```
+NOTE: This may answer for Question 1. Write down a sentence to what you observed!!
+
+## Didn't add this in the first place
+#2nd method 
+```{r}
+income = data.frame(income=y, education=X[,2])
+model = lm(income ~ education,data = income) #lm(response variable~design variable(s), data)
+model$coefficients #selecting the coefficients in the simple linear regression 
+
+```
+
+
+
+
+
+#Question 5 
+```{r}
+b1 = (mean(X[,2]*y) - mean(X[,2])*mean(y))/(mean(X[,2]^2) - mean(X[,2])^2)
+        #Take from the second column whereas the first column only consists of ones 
+        #Challenge what do we do if instead of 2 parameters we have at least 3 parameters? in the 
+        #X matrix. 
+
+b1
+
+```
+
+
+
+
+```{r}
+b0 = mean(y) - b1*mean(X[,2])
+
+
+b0
+
+```
+
+
+#Question 6 From slide 44-48 The full rank model
+```{r}
+b = solve(t(X)%*%X, t(X)%*%y)
+e = y - X%*%b 
+e  #where we calculate the residual errors 
+
+
+```
+
+
+
+
+
+
+```{r}
+SSRes = sum(e^2)
+s2 = SSRes/(6-2) #n - k, where n is the total size and k is the total number of parameters
+
+s2
+
+```
+
+
+#2nd Method (from Q4)
+```{r}
+
+s2 = deviance(model)/model$df.residual
+s2
+```
+
+
+
+
+
+#Question 7
+```{r}
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

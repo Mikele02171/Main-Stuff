@@ -1,0 +1,373 @@
+---
+title: "ASSIGNMENT 2 2015 MAST30025"
+output: word_document
+---
+
+# Question 1: 
+# Part a: Write down a linear model for cars sold in terms of the other variables. Calculate the least squares estimator, b. 
+```{r}
+y = c(5.5,5.9,6.5,5.9,8,9,10,10.8)
+X = matrix(c(rep(1,8),7.2,10,9,5.5,9,9.8,14.5,8,8.7,9.4,10,9,12,11,12,13.7,5.5,4.4,4,7,5,6.2,5.8,3.9),8,4)
+b = solve(t(X)%*%X,t(X)%*%y)
+b #estimates of the parameters
+```
+
+# Question 1: 
+# Part b: Calculate the variance of the least squares estimator. You may express this in terms of the variance of the errors, sigma^2. 
+
+```{r}
+n=8
+p=4
+e = y - X%*%b
+SSRes = sum(e^2)
+s2 = SSRes/(n-p)
+s2 #Sample variance 
+```
+
+# Question 1: 
+# Part c: A confidence interval is found for the average number of $10,000 cars sold in a year which has unemployment rate 8.5% and interest rate 7%, and is calculated to be (4062,7947). Find the confidence level used.
+
+```{r}
+xst = c(1,10,8.5,7)
+xst%*%b
+s = sqrt(s2)
+```
+
+```{r}
+4.062-xst%*%b
+-1*s*sqrt(t(xst)%*%solve(t(X)%*%X)%*%xst)
+```
+
+
+```{r}
+#Now finding the t quantile!
+-1.94263/-0.5184413
+```
+
+#Trail and Error.
+```{r}
+qt(0.99,df=4)
+```
+
+#The confidence interval was 98% 
+
+# Question 1: 
+# Part d: The joint 95% Confidence region for all the parameters is an ellipsoid. Find the center of this ellipsoid.
+
+
+```{r}
+
+b1 = seq(-50,20,.2)
+b2 = seq(0,5,.1)
+f = function(beta1,beta2){
+  b = matrix(c(-7.4044796,0.1207646,1.1174846,0.3861206),4,1)
+  XTX = t(X)%*%X
+  f.out = rep(0,length(beta1))
+  for (i in 1:length(beta1)){
+    beta = matrix(c(beta1[i],beta2[i]),4,1)
+    f.out[i] = t(b-beta)%*%XTX%*%(b - beta)
+  }
+  return(f.out)
+   
+}
+z = outer(b1,b2,f)
+contour(b1,b2,z,levels = 2*0.3955368*qf(0.95,2,4))
+
+```
+#In centre you supposed to get is b, the least squares estimator. 
+
+
+# Question 1: 
+# Part e: Test for the model relevance (H0:beta = 0).
+
+
+```{r}
+SSTotal = sum(y^2)
+SSTotal
+
+```
+
+
+```{r}
+SSRes = sum((y-X%*%b)^2)
+SSRes
+
+```
+
+
+```{r}
+SSReg = SSTotal - SSRes
+SSReg
+
+```
+
+```{r}
+Fstat = (SSReg/4)/(SSRes/4) #Work on your parentheses
+Fstat
+
+```
+
+```{r}
+pf(Fstat,4,4,lower.tail = FALSE)
+
+```
+#The Model is clearly relevant!
+
+# Question 1: 
+# Part f: Perform one step of backward elimation on the full model. (You do not need to check the intercept term.) #Opps!! I did all the steps :(
+
+```{r}
+CarsSold = c(5.5,5.9,6.5,5.9,8.0,9.0,10.0,10.8)
+cost = c(7.2,10,9,5.5,9,9.8,14.5,8)
+UnemploymentRate = c(8.7,9.4,10,9,12,11,12,13.7)
+InterestRate = c(5.5,4.4,4,7,5,6.2,5.8,3.9)
+demandcars.data = data.frame(CarsSold,cost,UnemploymentRate,InterestRate)
+damandcarsdata = str(demandcars.data)
+```
+
+
+
+```{r}
+basemodel = lm(CarsSold~0+cost+UnemploymentRate+InterestRate, data = damandcarsdata)
+drop1(basemodel,scope=~.,test = "F")
+
+```
+
+#Here we remove the cost variable!
+```{r}
+basemodel2 = lm(CarsSold~-1+UnemploymentRate+InterestRate, data = damandcarsdata)
+drop1(basemodel2,scope=~.,test = "F")
+
+```
+
+
+
+```{r}
+basemodel3 = lm(CarsSold~-1+UnemploymentRate, data = damandcarsdata)
+drop1(basemodel3,scope=~.,test = "F")
+
+```
+
+#In the final model we use Unemployment Rate as our design variable!
+
+
+# Question 1: 
+# Part g: Calculate the difference in Akaike’s information criterion between the full model and the model that results from question 1f. Something i'm not sure if this is from our study DESIGN!!
+```{r}
+AICfull <- n * log(SSRes / n) + 2*p
+Xnew <- X[,c(1,3,4)]
+bnew <- solve(t(Xnew) %*% Xnew) %*% t(Xnew) %*% y
+SSResnew <- sum((y - Xnew %*% bnew)^2)
+AICnew <- n * log(SSResnew / n) + 2*3
+AICfull - AICnew
+```
+# Question 1: 
+# Part h: Use lm, predict and anova to check your answers above. Use R’s diagnostic plots to check that your model assumptions are justified.
+```{r}
+newbasemodel = lm(CarsSold~cost+UnemploymentRate+InterestRate,data = damandcarsdata)
+newbasemodel
+```
+
+```{r}
+predict(newbasemodel,newdata = damandcarsdata)
+```
+
+#Actual Answer
+```{r}
+predict(newbasemodel, newdata=list(cost=10, UnemploymentRate=8.5, InterestRate=7),interval="confidence",level=0.98)
+```
+
+```{r}
+null = lm(CarsSold~0,data = damandcarsdata)
+anova(null,newbasemodel)
+```
+
+```{r}
+newmodel11 <- lm(CarsSold ~ UnemploymentRate + InterestRate, data=cars)
+plot(newmodel11 ,which =1)
+```
+
+
+
+```{r}
+
+plot(newmodel11,which =2)
+```
+
+
+```{r}
+plot(newmodel11,which =3)
+```
+
+
+```{r}
+plot(newmodel11,which =5)
+```
+
+
+#TUTOR/DEMONSTATOR Comment: There are no evident outliers, and no notable patterns in the residual plots. Given we only have eight observations, the Q-Q plot is also OK.
+
+#Question 2: For this question we use a dataset distributed with R. Create the dataframe statedata and read about it using the following commands.
+
+```{r}
+data(state)
+statedata = data.frame(state.x77, row.names=state.abb, check.names=TRUE)
+str(statedata)
+```
+
+
+
+```{r}
+pairs(statedata,cex = 0.5)
+#Actual
+statedata$logPopulation <- log(statedata$Population)
+statedata$logArea <- log(statedata$Area)
+```
+
+NOTE: We are not given what exactly our design variable is?
+#Forward selection 
+```{r}
+model0 <- lm(Life.Exp ~ 1, data=statedata)
+add1(model0, scope= ~ . + Population + Income + Illiteracy + Murder + HS.Grad + Frost + Area + logPopulation + logArea, test="F")
+```
+
+
+```{r}
+model1 <- lm(Life.Exp ~ 1 + Murder, data=statedata)
+add1(model1, scope= ~ . + Population + Income + Illiteracy+ HS.Grad + Frost + Area + logPopulation + logArea, test="F")
+
+```
+
+```{r}
+model2 <- lm(Life.Exp ~ 1 + Murder + HS.Grad, data=statedata)
+add1(model2, scope= ~ . + Population + Income + Illiteracy + Frost + Area + logPopulation + logArea, test="F")
+
+```
+```{r}
+model4 <- lm(Life.Exp ~ 1 + Murder + HS.Grad + logPopulation, data=statedata)
+add1(model4, scope= ~ . + Population + Income + Illiteracy + Frost + Area + logArea, test="F")
+
+```
+
+```{r}
+model5<- lm(Life.Exp ~ 1 + Murder + HS.Grad + logPopulation + Frost, data=statedata)
+add1(model5, scope= ~ . + Population + Income + Illiteracy + Area + logArea, test="F")
+
+```
+
+#We include the intercept, Murder, HS.Grad,logPopulation and Frost in our final model!
+
+
+
+
+#Backward selection 
+```{r}
+fullmodel = lm(Life.Exp~., data = statedata)
+drop1(fullmodel, scope = ~.,test = "F")
+
+```
+
+
+```{r}
+fullmodel2 = lm(Life.Exp~ 1 + Income + Illiteracy + Murder + HS.Grad + Frost + Area + logPopulation + logArea, data = statedata)
+drop1(fullmodel2, scope = ~.,test = "F")
+
+```
+
+
+```{r}
+fullmodel3 = lm(Life.Exp~1 + Illiteracy + Murder + HS.Grad + Frost + Area + logPopulation + logArea, data = statedata)
+drop1(fullmodel3, scope = ~.,test = "F")
+
+```
+```{r}
+fullmodel4 = lm(Life.Exp~1 + Illiteracy + Murder + HS.Grad + Frost + logPopulation + logArea, data = statedata)
+drop1(fullmodel4, scope = ~.,test = "F")
+
+```
+
+```{r}
+fullmodel5 = lm(Life.Exp~1 + Murder + HS.Grad + Frost + logPopulation + logArea, data = statedata)
+drop1(fullmodel5, scope = ~.,test = "F")
+
+```
+```{r}
+fullmodel6 = lm(Life.Exp~1 + Murder + HS.Grad + Frost + logPopulation, data = statedata)
+drop1(fullmodel6, scope = ~.,test = "F")
+
+```
+
+
+#Taking 5% Signifiance level! The variables inside fullmodel6 are the same variables used in the forward selection for the final model.
+
+
+#Stepwise selection
+
+```{r}
+stepmodel = step(fullmodel,scope~.+ Population + Income + Illiteracy + Murder + HS.Grad + Frost + Area + logPopulation + logArea)
+
+```
+
+#AIC is -29 with the design variables with -'s are used in the final model, just like in the forward selection and backward elimation process.
+
+
+#For the dignostic plots
+```{r}
+model <- lm(Life.Exp ~ Murder + HS.Grad + logPopulation + Frost, data = statedata) #Add every design variable including the intercept
+plot(model, which = 1)
+
+```
+
+
+```{r}
+model <- lm(Life.Exp ~ Murder + HS.Grad + logPopulation + Frost, data = statedata) #Add every design variable including the intercept
+plot(model, which = 2)
+
+```
+
+```{r}
+model <- lm(Life.Exp ~ Murder + HS.Grad + logPopulation + Frost, data = statedata) #Add every design variable including the intercept
+plot(model, which = 3)
+
+```
+```{r}
+model <- lm(Life.Exp ~ Murder + HS.Grad + logPopulation + Frost, data = statedata) #Add every design variable including the intercept
+plot(model, which = 5)
+
+```
+
+
+#TUTOR COMMENT: Including log(population) in the model instead of population degrades the fit, with the residuals looking a bit less normal. If we include neither log(population) nor population in the model then the residuals are less normal again, though they still show no sign of trend or heteroskedasticity, and in this case plots are still acceptable.
+
+
+#Question 3 Part B Solution: This one I need help with!!
+
+
+```{r}
+upper_tri = function(A,b){
+  #solve A %*% x == b assuming A is an n*n upper triangular matrix of full rank
+  n = sqrt(length(A))
+  if (n==1){
+    return(b/A)
+  } else{
+    x_n = b[n]/A[n,n]
+    x_1 = upper_tri(A[-n,-n], b[-n] - A[-n,n]*x_n)
+    return(c(x_1, x_n))
+  }
+  
+}
+
+A = matrix(c(1,0,0, 1, 2, 0, 3, 3, 1), 3, 3)
+b = c(3,4,2)
+solve(A, b)
+
+```
+
+```{r}
+upper_tri(A,b)
+
+```
+
+
+
+

@@ -1,0 +1,235 @@
+---
+title: "MAST30025 LAB 1"
+output: word_document
+---
+
+#The following are taken from Chapter 2 of spuRs (Introduction to Scientific Programming and Simulation Using R). 
+#NOTE: The rest of the questions above are done by hand!
+
+#Question 1. Give R assignment statements that set the variable z to
+NOTE: This lab test how much programming experience you have been taught from previous/other subjects prior to this may come in handy. 
+#(a) x^a^b
+```{r}
+# Accidently formed a and b values into vectors 
+# Compute any values to assign the following variables to output variable z Q1a to Q1e 
+b = 5
+a = 2
+x = 3
+w = a^b
+z = x^w
+z
+```
+
+## R Markdown
+
+
+
+#(b) x^(a*b)
+```{r}
+z = (x^(a))^b 
+z
+```
+
+
+#(c) 3x^3 + 2x^2 + 6x + 1 (try to minimise the number of operations required)
+```{r}
+z = 3*x^3 + 2*x^2 + 6*x + 1 #8 operations (My answer)
+z2 = (3*x+2)*(x^2 + 2) - 3 # 6 operations 
+z3 = sum((x^(3:0))*c(3,2,6,1)) #vectorised
+```
+
+
+#(d) the second-to-last digit of x before the decimal point (hint: use floor(x) and/or %%)
+```{r}
+x = 356 #Use the best 3 digit value that satisifies the following operations and a positive z value. 
+y = abs(x)
+z = (y %% 100 - y%%10)/10
+z
+```
+
+
+#(e) z + 1
+
+```{r}
+z = z + 1
+z
+```
+
+
+#Question 2. Give R expressions that return the following matrices and vectors
+#(a) (1,2,3,4,5,6,7,8,7,6,5,4,3,2,1)
+```{r}
+c(1:8,7:1) #Actual answer READ CHAPTER 2 spuRs
+```
+
+#(b) (1,2,2,3,3,3,4,4,4,4,5,5,5,5,5)
+```{r}
+c(1,rep(2,2),rep(3,3),rep(4,4),rep(5,5)) #My answer reading from CHAPTER 2 spuRs
+rep(1:5,1:5) #Actual answer (THIS WORKS AS WELL)
+```
+
+#(c) [0,1,1; 1 0 1; 1 1 0] MATLAB SYNTAX 
+#First answer from the lecture notes
+```{r}
+A = c(0,1,1,1,0,1,1,1,0)
+dim(A) = c(3,3)
+A
+
+```
+
+#My Second answer from the lecture notes
+```{r}
+A = matrix(c(0,1,1,1,0,1,1,1,0),3,3)
+A
+```
+
+#Lab answer
+```{r}
+A = matrix(1,3,3) - diag(3)
+A
+```
+
+
+#(d) [0,2,3; 0 5 0; 7 0 0] MATLAB SYNTAX 
+```{r}
+A = matrix(c(0,2,3,0,5,0,7,0,0),3,3)
+A
+```
+
+
+
+
+
+
+
+#Question 3. Suppose vec is a strictly positive vector of length 2. Interpreting vec as the coordinates of a point in R^2 (BOLD), use R to express it in polar coordinates. You will need (at least one of) the inverse trigonometric functions: acos(x), asin(x), and atan(x).
+```{r}
+vec = c(1,1) #Recall Calculus 1 or Introduction Mathematics UNIMELB subject (It has to be strictly positive x>0 & y>0)
+
+acos(vec)
+asin(vec)
+atan(vec)
+
+x = vec[1]
+y = vec[2]
+R = sqrt(x^2 + y^2) #Radius
+
+theta.rad = atan(y/x) #arctangent (finding the angle in radians)
+```
+
+#Question 4. Use R to produce a vector containing all integers from 1 to 100 that are not divisible by 2, 3, or 7
+
+```{r}
+x = 1:100
+v = (x%%2 != 0)&(x%%3 != 0)&(x%%7 != 0) #!= not equal to mutiples of 2,3,7  
+x[v] #take out indexes with muiltiples of 2,3,7
+
+
+```
+#Question 5. Suppose that queue <- c("Steve", "Russell", "Alison", "Liam") and that queue represents a supermarket queue with Steve first in line. Using R expressions update the supermarket queue as successively:
+
+
+#(a) Barry arrives;
+```{r}
+queue <- c("Steve", "Russell", "Alison", "Liam")
+queue[5] = "Barry"
+queue
+
+```
+
+
+#(b) Steve is served;
+```{r}
+queue[-1]
+
+```
+
+
+
+#(c) Pam talks her way to the front with one item;
+```{r}
+queue[1] = "Pam"
+queue
+```
+
+#(d) Barry gets impatient and leaves;
+```{r}
+queue[-5]
+```
+
+#(e) Alison gets impatient and leaves;
+#For the last case you should not assume that you know where in the queue Alison is standing. Finally, using the function which(x), find the position of Russell in the queue.
+#Note that when assigning a text string to a variable, it needs to be in quotes
+```{r}
+e = queue[-5]
+
+#Option 1 to figure out where Alison is in the queue without using indexes or knowing her location
+which(e == "Alison")
+# 3 (The location where Alison is in the queue)
+e[-3]
+
+#Lab Answer Option 2 
+e[e != "Alison"]
+
+#Now we find Russell
+which(e == "Russell")
+
+
+```
+
+
+
+#Question 6. Which of the following assignments will be successful? What will the vectors x, y, and z look like at each stage?
+#rm(list = ls())
+#x <- 1
+#x[3] <- 3
+#y <- c()
+#y[2] <- 2
+#y[3] <- y[1]
+#y[2] <- y[4]
+#z[1] <- 0
+```{r}
+rm(list = ls())
+x <- 1
+x[3] <- 3 
+#[1]  1 NA  3
+y=c()
+y[2] <- 2
+y[2]    
+#[1] 2
+ y[3] <- y[1]
+ y[3]
+ #[1] NA
+ y[2] <- y[4]
+ y[2]
+  #[1] NA
+ z[1] <- 0
+ #Error in z[1] <- 0 : object 'z' not found
+
+```
+
+#NA removing z[1] = 0 
+
+
+
+
+#Question 7. Build a 10 × 10 identity matrix. Then make all the non-zero elements 5. Do this latter step in at least two different ways.
+
+#Ask during lab/tutor/consultation for further interpretation for this question!!
+```{r}
+
+D = 5*diag(10)
+E = D*0
+E
+
+
+```
+
+
+
+
+
+
+
+
+

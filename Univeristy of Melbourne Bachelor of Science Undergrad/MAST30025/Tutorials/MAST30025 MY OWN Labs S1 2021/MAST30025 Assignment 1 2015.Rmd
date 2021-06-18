@@ -1,0 +1,35 @@
+---
+title: "ASSIGNMENT 1 2015 MAST30025"
+output: word_document
+---
+
+
+## Question 8)
+
+#Part a)
+```{r}
+X = matrix(c(rep(1,14),13.1,15.3,25.8,1.8,4.9,55.4,39.3,26.7,47.5,6.6,94.7,61.1,135.6,47.6),14,2)
+y = c(27.3,42.4,38.7,4.5,23,166.3,109.7,80.1,150.7,20.3,189.7,131.3,404.2,149)
+#Easy guess for betas and epilsons done in LaTex
+
+```
+
+#Part b) Normal equations 
+
+```{r}
+t(X)%*%X
+
+```
+
+
+```{r}
+t(X)%*%y
+
+```
+#Part c) Least squares estimator 
+
+
+```{r}
+b = solve(t(X)%*%X, t(X)%*%y)
+b
+```
