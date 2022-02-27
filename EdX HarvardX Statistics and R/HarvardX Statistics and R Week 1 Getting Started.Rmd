@@ -1,0 +1,309 @@
+---
+title: "Untitled"
+output: word_document
+---
+
+```{r}
+library(downloader) 
+url <- "https://raw.githubusercontent.com/genomicsclass/dagdata/master/inst/extdata/femaleMiceWeights.csv"
+filename <- "femaleMiceWeights.csv" 
+download(url, destfile=filename)
+```
+```{r}
+this = read.csv(filename)
+View(this)
+
+#Introduction to dplyr (uses pipe)
+controls = filter(this,Diet=="chow")
+View(controls)
+select(controls, Bodyweight)
+unlist(controls)
+
+controls = filter(this, Diet=="chow") %>% 
+  select(Bodyweight)%>%unlist
+
+mean(controls)
+
+#23.81333
+
+```
+
+#Exercise #1
+#0 points possible (ungraded)
+#Please note that this question does not count toward your grade, but it is important to make sure that you are using an appropriate version of R.
+
+#What version of R are you using?
+
+#3.6.3
+
+
+
+#Exercise #2
+#1/1 point (graded)
+#Create a numeric vector containing the numbers 2.23, 3.45, 1.87, 2.11, 7.33, 18.34, 19.23.
+
+What is the average of these numbers?
+7.794286
+
+#Exercise #3
+1/1 point (graded)
+Use a for loop to determine the value of sum i = 1 to 25 i^2
+
+5525
+
+#Exercise #4
+1/1 point (graded)
+The cars dataset is available in base R. You can type cars to see it. Use the class() function to determine what type of object is cars.
+
+data.frame
+
+#Exercise #5
+1/1 point (graded)
+How many rows does the cars object have?
+
+50
+
+#Exercise #6
+1/1 point (graded)
+What is the name of the second column of cars?
+
+dist
+
+#Exercise #7
+1/1 point (graded)
+The simplest way to extract the columns of a matrix or data.frame is using [. For example you can access the second column with cars[,2].
+
+What is the average distance traveled in this dataset?
+42.98
+
+#Exercise #8
+1/1 point (graded)
+Familiarize yourself with the which() function. Which row of cars has a a distance of 85?
+
+50
+
+
+
+## Getting Started Exercises #1
+
+```{r}
+this = read.csv(filename)
+this
+```
+
+##  Getting Started Exercises #2
+
+```{r}
+
+this[12,2]
+
+```
+
+##  Getting Started Exercises #3
+
+```{r}
+
+this$Bodyweight[11]
+
+```
+
+
+##  Getting Started Exercises #4
+
+```{r}
+
+weights <- this$Bodyweight
+length(weights)
+```
+
+
+
+##  Getting Started Exercises #5
+
+```{r}
+
+View(this) 
+weights <- this$Bodyweight
+mean(weights[13:24])
+
+```
+
+
+##  Getting Started Exercises #6
+
+```{r}
+sample(this$Bodyweight[13:24])
+set.seed(1)
+
+```
+
+```{r}
+      set.seed(1)
+i <- sample(13:24, 1)
+this$Bodyweight[i]
+
+```
+
+
+#dplyr Exercises
+
+```{r}
+
+library(downloader) #Check Install and type in downloader and ensure you have the right Rstusio version
+url="https://raw.githubusercontent.com/genomicsclass/dagdata/master/inst/extdata/msleep_ggplot2.csv"
+filename <- basename(url)
+download(url,filename)
+```
+#dplyr Exercises #1
+#1 point possible (graded)
+#Read in the msleep_ggplot2.csv file with the function read.csv() and use the function class() to determine what type of object is returned.
+```{r}
+
+this1 = read.csv(filename)
+this1
+class(this1) #data.frame
+```
+
+
+#dplyr Exercises #2
+1 point possible (graded)
+Now use the filter() function to select only the primates.
+
+How many animals in the table are primates?
+Hint: the nrow() function gives you the number of rows of a data frame or matrix
+
+
+```{r}
+lenprime = filter(this1,order == "Primates")
+View(lenprime)
+nrow(lenprime)
+```
+
+
+#dplyr Exercises #3
+1 point possible (graded)
+What is the class of the object you obtain after subsetting the table to only include primates?
+
+ANSWER: data.frame
+
+#dplyr Exercises #4
+1/1 point (graded)
+Now use the select() function to extract the sleep (total) for the primates.
+
+What class is this object?
+Hint: use %>% to pipe the results of the filter() function to select().
+
+ANSWER: data.frame
+
+#dplyr Exercises #5
+1 point possible (graded)
+Now we want to calculate the average amount of sleep for primates (the average of the numbers computed above). One challenge is that the mean() function requires a vector so, if we simply apply it to the output above, we get an error. Look at the help file for unlist() and use it to compute the desired average.
+
+What is the average amount of sleep for primates?
+
+```{r}
+controls1 = filter(this1, order == "Primates") %>% 
+  select(sleep_total)%>%unlist
+
+mean(controls1)
+#10.5
+
+```
+
+
+
+
+#dplyr Exercises #6
+1 point possible (graded)
+For the last exercise, we could also use the dplyr summarize() function. We have not introduced this function, but you can read the help file and repeat exercise 5, this time using just filter() and summarize() to get the answer.
+
+What is the average amount of sleep for primates calculated by summarize()
+
+```{r}
+ filter(dat, order=="Primates") %>% summarize( mean( sleep_total) )
+#10.5
+
+```
+
+
+#Introduction to Exploratory Data Analysis
+
+```{r}
+
+load("C:/Users/mikel/Downloads/skew (2).RData")
+dim(dat)
+par(mfrow = c(1,1))
+for (i in 1:9){ 
+  x=dat[,i]
+  qqnorm(x)
+  qqline(x)
+}
+
+
+```
+
+#QQ-plot Exercises #1
+1/1 point (graded)
+#Which column has positive skew (a long tail to the right)?
+
+```{r}
+for (i in 1:9) {
+    qqnorm(dat[,i])
+    qqline(dat[,i])
+}
+    
+    hist(dat[,4]) #Answer is 4 
+
+```
+
+
+#QQ-plot Exercises #2
+1/1 point (graded)
+#Which column has negative skew (a long tail to the left)?
+```{r}
+
+for (i in 1:9) {
+    qqnorm(dat[,i])
+    qqline(dat[,i])
+}
+    
+    hist(dat[,9]) #Answer is 9
+
+```
+
+
+
+
+#Box-plot Exercises #1
+```{r}
+
+head(InsectSprays)
+x = head(InsectSprays)
+values = x$count
+factor = x$spray
+
+
+#1 using split
+boxplot(split(values,factor))
+
+```
+
+```{r}
+
+#2 formula
+boxplot(values ~ factor)
+
+```
+
+
+#More to add
+```{r}
+#library(dplyr)
+#data(nym.2002)
+#males <- filter(nym.2002, gender=="Male") %>% select(time) %>% unlist
+#females <- filter(nym.2002, gender=="Female") %>% select(time) %>% unlist
+#boxplot(females, males)
+#hist(females,xlim=c(range( nym.2002$time)))
+#hist(males,xlim=c(range( nym.2002$time)))
+```
+
