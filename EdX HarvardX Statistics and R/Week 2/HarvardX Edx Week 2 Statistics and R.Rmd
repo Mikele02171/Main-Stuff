@@ -1,0 +1,70 @@
+---
+title: "Week 2 HarvardX Statistics and R"
+output: word_document
+---
+
+## Random Variables Excercises 
+
+
+
+
+
+```{r}
+library(downloader) 
+url <- "https://raw.githubusercontent.com/genomicsclass/dagdata/master/inst/extdata/femaleControlsPopulation.csv"
+filename <- basename(url)
+download(url, destfile=filename)
+x <- unlist( read.csv(filename) )
+
+```
+
+## Random number generator (RNG)
+
+```{r}
+RNGkind("Mersenne-Twister", "Inversion", "Rejection")
+
+```
+
+
+## Question 1
+#What is the average of these weights?
+
+```{r}
+mean(x)
+
+```
+#Set the seed to 1.
+
+```{r}
+set.seed(1)
+
+```
+
+
+## Question 2
+
+```{r}
+
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
