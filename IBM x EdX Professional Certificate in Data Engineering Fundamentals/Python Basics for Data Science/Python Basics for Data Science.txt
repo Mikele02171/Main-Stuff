@@ -1,0 +1,720 @@
+IBM: Python Basics for Data Science 
+Module 1-Python Basics: 
+Practise Quiz: Types 
+Question 1
+1/1 point (ungraded)
+What is the type of the following: 0
+
+Answer: int
+
+Question 2
+1/1 point (ungraded)
+What is the type of the following number: 3.12323
+
+Answer: Float
+
+
+Question 3
+1/1 point (ungraded)
+What is the result of the following: int(3.99)
+
+Answer: 3
+
+Module 1-Python Basics: Expressions and Variables
+
+NOTE: Will be using Python 3 (or later version)
+
+Module 1-Python Basics: Practise Quiz: Expressions and Variables
+Question 1
+1 point possible (ungraded)
+What is the result of the following operation: 11//2
+
+Answer: 5
+
+Question 2
+1 point possible (ungraded)
+
+What is the value of x after the following is run:
+x=4
+x=x/2
+
+Answer: 2.0
+
+
+Module 1-Python Basics: Expressions and Variables
+M i c h a e l   J a  c  k  s  o  n
+0 1 2 3 4 5 6 7 8 9 10 11 12 13 14
+-13 -12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1
+
+What is the result of the following: Name[0]
+Answer: "M"
+
+Question 2
+1/1 point (ungraded)
+What is the result of the following: Name[-1]
+Answer: "n"
+
+Question 3
+1 point possible (ungraded)
+What is the output of the following: print("AB\nC\nDE")
+Answer:
+AB
+C
+DE
+
+What is the result of following?
+"hello Mike".find("Mike")
+
+If you are unsure, copy and paste the code into Jupyter Notebook and check.
+Answer: 6
+
+Graded Quiz: Python Basics
+Question 1
+1 point possible (graded)
+What is the type of the following: 1
+
+#type(1) = 1
+
+
+Question 2
+1 point possible (graded)
+What is the result of the following code segment: 1//2?
+
+Answer: 0
+
+Question 3
+1 point possible (graded)
+In Python, if you executed name = 'Lizz' , what would be the output of print(name[0:2])?
+
+Answer: Li
+
+Question 4
+1/1 point (graded)
+Consider the string Name="Michael Jackson" , what is the result of the following operation Name.find('el')?
+
+Answer: 5
+
+Question 5
+1 point possible (graded)
+What is the result of the following: "123".replace("12", "ab") ?
+
+Answer: 'ab3'
+
+
+Module 2-Python Data Structures:
+Practice Quiz: Lists and Tuples
+Question 1
+1 point possible (ungraded)
+
+Consider the following tuple:
+say_what=('say',' what', 'you', 'will')
+What is the result of the following say_what[-1]?
+
+Answer: 'will'
+
+Question 2
+1 point possible (ungraded)
+Consider the following tuple A=(1,2,3,4,5), what is the result of the following:A[1:4]:
+
+Answer: (2,3,4)
+
+Question 3
+1 point possible (ungraded)
+Consider the following tuple A=(1,2,3,4,5). What is the result of the following: len(A)
+
+Answer: 5
+
+
+Question 4
+1 point possible (ungraded)
+Consider the following list B=[1,2,[3,'a'],[4,'b']]. What is the result of the following: B[3][1]
+
+Answer: "b"
+
+Question 5
+1 point possible (ungraded)
+What is the result of the following operation?
+[1,2,3]+[1,1,1]
+
+Answer: [1,2,3,1,1,1]
+
+Question 6
+1 point possible (ungraded)
+What is the length of the list A = [1] after the following operation: A.append([2,3,4,5])
+
+Answer: 5
+
+Actual Solution: 2
+
+Question 7
+1/1 point (ungraded)
+What is the result of the following: "Hello Mike".split()
+
+Answer; ["Hello","Mike"]
+
+
+Practice Quiz: Dictionaries
+Question 1
+1/1 point (ungraded)
+What are the keys of the following dictionary: {"a":1,"b":2}
+
+Answer: "a","b"
+
+Question 2
+1/1 point (ungraded)
+Consider the following Python Dictionary: Dict={"A":1,"B":"2","C":[3,3,3],"D":(4,4,4),'E':5,'F':6} What is the result of the following operation: Dict["D"]
+
+Answer: (4,4,4)
+
+
+Practice Quiz: Sets
+Question 1
+1/1 point (ungraded)
+Consider the following set: {"A","A"}. What will the result be when the set is created?
+
+Answer: {"A"}
+
+Question 2
+1/1 point (ungraded)
+What is the result of the following: type(set([1,2,3]))
+
+
+Answer: set
+Question 3
+0/1 point (ungraded)
+What method do you use to add an element to a set?
+
+Answer: add
+
+Question 4
+1/1 point (ungraded)
+What is the result of the following operation: {'a','b'} & {'a'}
+
+Answer: {'a'}
+
+Graded Quiz: Python Data Structures
+
+Question 1
+1 point possible (graded)
+Consider the tuple tuple1=("A","B","C" ), what is the result of the following operation tuple1[-1]?
+
+Answer: "C"
+
+Question 2
+1 point possible (graded)
+Consider the tuple A=((1),[2,3],[4]), that contains a tuple and list. What is the result of the following operation A[2] ?
+
+Answer:[4]
+
+Question 3
+1 point possible (graded)
+Consider the following dictionary:
+{ "The Bodyguard":"1992", "Saturday Night Fever":"1977" }
+select the values
+
+Answers: "1977","1992"
+
+
+Question 4
+1 point possible (graded)
+The variable release_year_dict is a Python Dictionary, what is the result of applying the following method: release_year_dict.keys()?
+
+Answer: retrieve the keys of the dictionary
+
+Question 5
+1/1 point (graded)
+What is the result of the following: '1' in {'1','2'}?
+
+Answer: True
+
+
+Module 3-Python Programming Fundementals
+Practice Quiz: Python Programming Fundamentals
+Question 1
+1/1 point (ungraded)
+What is the result of the following: 1=2
+
+Answer: SyntaxError:can't assign to literal
+
+
+Question 2
+1/1 point (ungraded)
+What is the output of the following code segment:
+
+i=6
+i<5
+
+Answer: False
+
+Question 3
+1/1 point (ungraded)
+What is the result of the following: 5!=5
+
+Answer: False
+
+
+Question 4
+1/1 point (ungraded)
+What is the output of the following code segment:'a'=='A'
+
+Answer: False
+
+Question 5
+1/1 point (ungraded)
+In the video, if age=18 what would be the result.
+
+Answer: Move on
+
+Question 6
+1/1 point (ungraded)
+In the video what would be the result if we set the variable age as follows: age= -10
+
+Answer: 
+go see Meat Loaf
+move on
+
+Question 7
+1/1 point (ungraded)
+What is the result of the following: True or False
+Answer: True, an or statement is only False if all the Boolean values are False
+
+
+
+Practice Quiz: Loops
+Question 1
+1/1 point (ungraded)
+What will be the output of the following:
+for x in range(0,3):
+print(x)
+
+Solution:
+0
+1
+2
+
+Question 2
+1/1 point (ungraded)
+What is the output of the following:
+for x in ['A','B','C']:
+print(x+'A')
+
+Solution:
+AA
+BA
+CA
+
+Question 3
+1/1 point (ungraded)
+What is the output of the following:
+for i,x in enumerate(['A','B','C']):
+print(i,x)
+
+Solution:
+0 A
+1 B
+2 C
+
+Practice Quiz: Functions
+Question 1
+1/1 point (ungraded)
+What does the following function return: len(['A','B',1])?
+
+Solution: 3
+
+Question 2
+1/1 point (ungraded)
+What does the following function return: len([sum([0,0,1])]) ?
+
+Solution: 1
+
+Question 3
+1/1 point (ungraded)
+What is the value of list L after the following code segment is run?
+L=[1,3,2]
+
+sorted(L)
+
+Solution: 
+L=[1,3,2] ?!
+
+
+Question 4
+0/1 point (ungraded)
+From the video what is the value of c after the following?
+c=add1(2)
+c=add1(10)
+
+Solution: 11
+
+Question 5
+1/1 point (ungraded)
+What is the output of the following lines of code?
+
+def Print(A):
+for a in A:
+print(a+'1')
+Print(['a','b','c'])
+
+
+Solution:
+a1
+b1
+c1
+
+Practice Quiz: Exception Handling
+Question 1
+1/1 point (ungraded)
+Why do we use exception handlers?
+
+Solution: Catch Errors within a program
+
+
+Question 2
+1/1 point (ungraded)
+What is the purpose of a try…except statement?
+
+Solution: Catch and handle exceptions when an error occurs
+
+Practice Quiz: Objects and Classes
+Question 1
+1/1 point (ungraded)
+What is the type of the following?
+["a"]
+
+Answer: list
+
+Question 2
+1/1 point (ungraded)
+What does a method do to an object?
+
+Answer: Changes or interacts with the object.
+
+Question 3
+1/1 point (ungraded)
+We create the object:
+
+Circle(3,'blue')
+
+What is the color attribute set to?
+Answer: 'blue'
+
+Question 4
+1/1 point (ungraded)
+What is the radius attribute after the following code block is run?
+RedCircle=Circle(10,'red')
+
+RedCircle.radius=1
+
+Answer: 1
+
+Question 5
+1/1 point (ungraded)
+What is the radius attribute after the following code block is run?
+BlueCircle=Circle(10,'blue')
+BlueCircle.add_radius(20)
+
+Answer: 30
+
+Graded Quiz: Python Programming Fundamentals
+Question 1: 
+What value of x will produce the output?
+Hello
+
+Mike
+
+x = 
+if(x=="A");
+  
+   print("Hello")
+
+else:
+   
+   print("Hi")
+
+print("Mike")
+
+
+Solution: 
+x = "A"
+
+
+Question 2
+1 point possible (graded)
+
+A = [1,2,3]
+
+for a in A:
+  
+  print(2*a)
+
+Solution:
+2
+4
+6
+
+Question 3
+1/1 point (graded)
+Consider the function step, when will the function return a value of 1?
+
+def step(x);
+    if x>0:
+        y=1
+
+    else:
+        y=0
+
+    return y
+
+Solution: if x is larger than 0.
+
+Question 4
+1/1 point (graded)
+Why is the “finally” statement used?
+
+Execute the remaining code no matter the end result.
+
+
+Question 5
+1/1 point (graded)
+Consider the class Points, what are the data attributes?
+
+class Point(object);
+
+  def___int___(self,x,y):
+
+
+    self.x = x
+    self.y = y
+
+  def print_point(self):
+
+    print('x=',self.x,'y=',self.y)
+
+
+Answer: self.x self.y
+
+Module 4-Working with Data in Python:
+Practice Quiz: Reading & Writing Files with Open
+
+Question 1
+1/1 point (ungraded)
+What are the most common modes used when opening a file?
+
+Solution: (a)ppend, (r)ead,(w)rite
+
+
+Question 2
+1/1 point (ungraded)
+What is the data attribute that will return the title of the file?
+
+Solution: File1.name
+
+Question 3
+1/1 point (ungraded)
+What is the command that tells Python to begin a new line?
+
+Solution: \n
+
+
+Question 4
+1/1 point (ungraded)
+What attribute is used to input data into a file?
+
+Solution: File1.write()
+
+Practice Quiz: Pandas
+Question 1
+1/1 point (ungraded)
+What python object do you cast to a dataframe?
+
+Answer: Dictionary 
+
+Question 2
+1/1 point (ungraded)
+How would you access the first-row and first column in the dataframe df?
+
+Answer: df.ix[0,0]
+
+Question 3
+1/1 point (ungraded)
+What is the proper way to load a CSV file using pandas?
+
+Answer: pandas.read_csv("data.csv")
+
+
+Question 4
+1/1 point (ungraded)
+Use this dataframe to answer the question.
+How would you select the Genre disco?
+
+Answer: df.iloc[6,4]
+
+
+Question 5
+
+Use this dataframe to answer the question.
+Which will NOT evaluate to 20.6, select all that apply?
+
+Answer(s): ?! 
+df.loc[4,’Music Recording Sales’]
+df.iloc[6, ‘Music Recording Sales (millions)’]
+
+Question 6
+1/1 point (ungraded)
+How do we select Albums The Dark Side of the Moon to Their Greatest Hits (1971-1975)? Select all that apply.
+
+Answer: df.iloc[2:6,1] and df.loc[2:5,'Album']
+
+Practice Quiz: Numpy in Python
+Question 1
+1/1 point (ungraded)
+What is the Python library used for scientific computing and is a basis for Pandas?
+
+Solution: Numpy
+
+Question 2
+1/1 point (ungraded)
+What attribute is used to retrieve the number of elements in an array?
+
+Solution: a.size
+
+Question 3
+1/1 point (ungraded)
+How would you change the first element to "10" in this array? c:array([100,1,2,3,0])
+
+Solution: c[0]=10
+
+Question 4
+1 point possible (ungraded)
+What attribute is used to return the number of dimensions in an array?
+
+Solution: a.ndim
+
+
+Graded Quiz: Working with Data in Python
+Question 1
+1/1 point (graded)
+Consider the following text file: Example1.txt:
+This is line 1
+
+This is line 2
+
+This is line 3
+
+What is the output of the following lines of code?
+Solution: This is line 1.
+
+Question 2
+1/1 point (graded)
+Consider the file object: File1. How would you read the first line of text?
+
+Solution: File1.readline()
+
+
+Question 3
+1/1 point (graded)
+What is the result of applying the following method df.head(), to the dataframe df ?
+
+Solution: prints the first 5 rows of the dataframe.
+
+Question 4
+1/1 point (graded)
+Consider the dataframe df. How would you access the element in the 1st row 3rd column? 
+
+Solution: df.iloc[0,2]
+
+Question 5
+1/1 point (graded)
+What is the result of the following lines of code?
+
+Solution: array([0,0,0,0,0])
+
+
+Module 5-APIs and Data Collection: 
+Practise Quiz: Simple API's
+Question 1
+1/1 point (ungraded)
+What does API stand for?
+Answer: Application Programming Interface
+
+
+Question 2
+1/1 point (ungraded)
+The chart used to plot the cryptocurrency data in the lab is a...
+Answer: Candlestick Chart
+
+
+Question 3
+1/1 point (ungraded)
+What information are we trying to find for each day in the lab for the chart?
+
+Answer: Open (First), High (Max), Low (Min), Close (Last)
+
+
+Practice Quiz: REST APIs, Webscraping, and Working with Files
+Question 1
+1/1 point (ungraded)
+What is the function of "GET" in HTTP requests?
+
+Answer: Carries the request to the client from the requestor
+
+Question 2
+1/1 point (ungraded)
+What does URL stand for?
+
+Answer: Uniform Resource Locator
+
+Question 3
+1/1 point (ungraded)
+What does the file extension “csv” stand for?
+
+Answer: Comma Separated Values
+
+Question 4
+1/1 point (ungraded)
+What is webscraping?
+
+Answer: The process to extract data from a particular website.
+
+Graded Quiz: Working with Numpy Arrays
+Question 1
+1/1 point (graded)
+What does REST stand for?
+
+Answer: Representational State Transfer
+
+Question 2
+In what data structure do HTTP responses generally return?
+Answer: JSON or Lists ?!
+
+Question 3
+1/1 point (graded)
+What are the 3 parts to a URL?
+
+Answer: Scheme, internet address, and route
+
+Question 4
+1/1 point (graded)
+What are the 3 parts to a response message?
+
+Answer: Start or status line, header, and body
+
+
+Question 5
+1/1 point (graded)
+What is the purpose of this line of code "table_row=table.find_all(name=’tr’)" used in webscraping?
+Answer: It will find all of the data within the table marked with a tag “tr”
+
+
+
+
+
+
+
+
+
+
+
+
+
+
