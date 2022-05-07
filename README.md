@@ -1,2 +1,2 @@
 # Main-Stuff
-Undergraduate studies and Online Courses 
+Undergraduate studies and Some Online Courses 
