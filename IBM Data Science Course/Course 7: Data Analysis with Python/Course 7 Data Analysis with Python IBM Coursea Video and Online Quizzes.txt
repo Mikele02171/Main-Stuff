@@ -1,0 +1,572 @@
+Course 7: Data Analysis with Python Video and Video Quizzes
+Week 1:
+
+UNDERSTANDING THE DATA
+Video Question 1: 
+What does each line in the csv file represent.
+
+Answer: row
+
+Video Question 2:
+What is the name of the attribute what we want to predict. 
+
+Answer: target (label)
+
+Practise Quiz: 
+REQUIREMENT: MUST VIDEO VIDEOS THE PROBLEM AND UNDERSTANDING THE DATA.
+
+Question 1:
+How many columns does the dataset have?
+
+Answer: 26
+
+PYTHON PACKAGES FOR DATA SCIENCE 
+Video Question 1: 
+What is the primary instrument used in Pandas?
+Answer: Dataframes
+
+SOMETHING TO KNOW: 
+1. Scienctifics Computing Libraries---> Pandas, NumPy and SciPy
+2. Visualisation Libraries--->Matplotlib, Seaborn
+3. Algorithmic libaries--> Scikit-learn, Statsmodels
+
+Video Question 2: 
+What libraries do you use for data visualization?
+Answer: matplotlib
+
+Practise Quiz: Python Packages for Data Science 
+REQUIREMENT: MUST WATCH PYTHON PACKAGES FOR DATA SCIENCE BEFORE ATTEMPTING. 
+
+Question 1: What desciption best describes the library Pandas?
+Answer: Offers data structure and tools for effective data manipulation and analysis. It provides 
+fast access to structured data. The primary instrument of Pandas is a two-dimensional table consisting
+of columns and rows labels which are called a DataFrame. 
+It is designed to provide an easy indexing function.
+
+IMPORTING AND EXPORTING DATA IN PYTHON
+Video Question 1: 
+What is missing from the following code: 
+
+import pandas as pd
+# read the online file by the URL provided above, and assign it to variable "df"
+path="https://archive.ics.uci.edu/ml/machine-learning-database/autos/imports-85.data"
+
+df = read_csv(path,header=None)
+
+ANSWER: read_csv should be pd.read_csv 
+
+Video Question 2:
+what method was applied on the dataframe df to get the following output:
+
+Answer: df.head()
+
+
+Practice Quiz:Importing and Exporting Data in Python
+Requirement must watch Importing and Exporting Data in Python
+Question 1: What does the following method do to the dataframe? df: df.head(12)
+
+Answer: Show the first 12 rows of dataframe.
+
+
+GETTING STARTED ANALYSISING DATA IN PYTHON
+Video Question 1:
+What data type do you expect the column that contains price to be.
+
+Answer: float64
+
+Video Question 2:
+How would you generate descriptive statistics for all the columns for the dataframe df.
+
+Answer: df.describe(include = "all")
+
+Practice Quiz: Getting Started Analyzing Data in Python
+1. To enable a summary of all the columns,
+ what must the parameter include be set to for the method describe?
+
+Answer: df.describe(include="all")
+
+GRADED QUIZ: 
+NOTE: Some questions may change for each attempt
+Question 1. What does csv stand for?
+
+ANSWER: Comma Separated Values
+
+Question 2. What library is primarily used for machine learning
+Answer: Tensorflow ?
+
+Question 3.We have the list headers_list:
+headers_list=['A','B','C']
+
+ANSWER: df.columns = headers_list
+
+Question 4: What attribute or method will give you the data type of each column
+ANSWER: dtype?
+
+Question 5: If you use the method describe() without changing any of the arguments you
+will get a statisical summary of all the columns of type object?
+
+ANSWER: false
+
+Week 2:
+how would you deal with missing values for categorical data 
+Answers:
+replace the missing value with the mode of the particular column.
+replace the missing value with the value that appears most often of the particular column.
+
+
+what does the following line of code do to the dataframe df:
+df.dropna(axis=0)
+
+Answer: 
+drops all rows that contain a nan
+
+what task does the  following line of code perform:  
+df[["price"]] = df[["price"]].astype("float")
+
+Answer: cast the column price to a float
+
+Video Question 1: 
+z-score values typically range between 0 to 1 
+Answer: False
+
+Week 3:
+Descriptive Statistics
+Video Question 1:
+What happens if the method describe is applied to a dataframe with NaN values
+Answer: NaN values will be excluded.
+
+Video Question 2:
+select the correct code segment to generate the following  plot:
+(See Figure 1)
+
+Answer: sns.boxplot(x="body-style", y="price", data=df)
+
+Practise Quiz:
+Question 1
+What plot would you see after running the following lines of code?
+
+x=df[“engine-size”]
+y=df[“price”]
+plt.scatter(x,y)
+plt.title(“Scatterplot of Engine Size vs Price”)
+plt.xlabel(“Engine Size”) 
+plt.ylabel(“Price”) 
+
+(See Figure 2)
+
+GroupBy in Python:
+Video Question 1:
+How would you use the groupby function to 
+find the average "price" of each car based on "body-style"?
+
+Answer: df[['price','body-style']].groupby(['body-style'],as_index= False).mean()
+
+Practice Quiz: GroupBy in Python
+Question 1:
+Select the appropriate description of a pivot table: 
+
+Answer: A pivot table has one variable displayed along the columns and 
+the other variable displayed along the rows. 
+
+Correlation:
+Practise Quiz:
+Question 1
+Select the scatter plot with weak correlation:
+
+Answer: b (See Figure 3)
+
+Practice Quiz: Correlation - Statistics
+Question 1
+Select the plot with a negative correlation:
+
+Graded Quiz: Exploratory Data Analysis
+NOTE: Questions may vary
+
+Question 1
+Consider the dataframe df; what method provides the summary statistics?
+
+Answer: describe()
+
+
+Question 2
+What is the largest possible element resulting in the operation df.corr()?
+
+Answer: 1
+
+Question 3
+If the p-value of the Pearson Correlation is 1, then ...
+
+Answer: None of the above (It is neither correlated nor not correlated)
+
+
+Question 4. 
+Consider the dataframe df;what method displays the first five rows of a dataframe? 
+
+Answer: df.head()
+
+Question 5. 
+What is the Pearson Correlation between variables X and Y, if X=Y?
+
+Answer: 1
+
+
+Week 4
+Linear Regression and Multiple Linear Regression:
+Video Question 1: What kind of relationship would we like
+between the predictor variable x and the dependent variable y.
+
+Answer: Linear
+
+Video Question 2:
+from sklearn.linear_model import LinearRegression 
+
+lm=LinearRegression()
+X = df[['highway-mpg']]
+Y = df['price']
+
+Answer: lm.fit(X,Y)
+
+Practise Quiz: Linear Regression and Multiple Linear Regression
+Question 1:
+Consider the following lines of code, what variable contains the predicted values:
+
+Answer: Yhat
+
+Question 2:
+Consider the following equation:
+(See Figure 1 WK4)
+what is the parameter b_0 (b subscript 0)
+
+Answer: the intercept.
+
+Model Evaluation using Visualisation:
+Video Question 1: 
+consider the following residuals plot, is the linear assumption correct:
+(See Figure 2 WK4)
+
+Answer: No. 
+
+Practise Quiz: Model Evaluation using Visualisation
+Question 1:
+Consider the following Residual Plot, is our linear model correct :
+
+Answer: yes
+(See Figure 3 WK4)
+
+Polynomial Regression and Pipelines:
+Video Question 1:
+How would you create a second order polynomial transform object pr: 
+
+Answer: pr=PolynomialFeatures(degree=2)
+
+Practise Quiz: Polynomial Regression and Pipelines.
+Question 1
+What functions are used to generate Polynomial Regression with more than one dimension
+
+Answer: 
+pr=PolynomialFeatures(degree=2)
+ pr.fit_transform([1,2], include_bias=False)
+
+Measures for In-Sample Evaluation
+Video Question 1: 
+How would you calculate the mean squared error between your predicted 
+values Yhat and actual values Y?
+
+Answer:
+from  sklearn.metrixs import mean_squared_error
+mean_squared_error(Y,Yhat)
+
+Video Question 2:
+Consider the following lines of code:
+X = df[['highway-mpg']]
+Y = df['price']
+lm.fit(X, Y)
+
+How would you calculate the R^2 for X and Y?
+Answer: lm.score(X,Y)
+
+Practice Quiz: Measures for In-Sample Evaluation
+Question 1:
+Of the following answer values, which one is the minimum value of R^2? 
+
+Answer: 0
+
+Prediction and Decision Making:
+Video Question 1:
+Consider the plots a and b below; red is the sample data and the
+blue line is the predicted value. Which plot has a higher means square error?
+
+Answer: a
+
+Graded Quiz: Model Development 
+
+Question 1: What does the following line of code do? 
+lm = LinearRegression()
+Answer: Create a linear regression object. 
+
+Question 2:
+What is the maximum value of R^2 that can be obtained?
+Answer: 1
+
+Question 3: 
+If X is a dataframe with 100 rows and 5 columns, and y is the target with 100 samples, 
+and assuming all the relevant libraries 
+and data have been imported, and the following line of code has been executed:
+
+LR = LinearRegression()
+LR.fit(X, y)
+yhat = LR.predict(X)
+
+Answer: 
+100
+
+Question 4: 
+Which statement is true about Polynomial linear regression?
+
+Answer: Although the predictor variables of Polynomial linear regression 
+are not linear the relationship between the parameters or coefficients is linear.
+
+Question 5:Consider the following equation:
+y = b_0 + b_1x
+
+What is the parameter b_0 (b subscript 0)?
+Answer: The intercept
+
+Week 5:
+Model Evaluation and Refinement:
+Video Question 1:
+Consider the following lines of code:
+x_train, x_test, y_train, y_test = train_test_split(x_data, y_data, test_size=0.3, random_state=0)
+ 
+what does the variable y_data contain.
+Answer: dataset target
+
+Video Question 2:
+Consider the following lines of code, 
+how may partitions or folds are used in the function cross_val_score:
+
+from sklearn.model_selection import cross_val_sc
+scores= cross_val_score(lr, x_data, y_data, cv=10)
+
+Answer: 10
+
+Practise Quiz: Model Evulation 
+Question 1:
+What function randomly splits a
+dataset into training and testing subsets.
+
+Answer: train_test_split    
+
+Overfitting, Underfitting and Model Selection:
+Video Question 1:
+select the plot a, b or c that best demonstrates overfitting: 
+(See Figure 1 WK5)
+
+Answer: C
+
+Video Question 2:
+True or False, the following plot shows that as the order of the polynomial increases 
+the mean square error of our model decreases on the test data:
+(See Figure 2 WK5)
+
+Answer: False
+
+Practice Quiz: Overfitting, Underfitting and Model Selection
+Question 1: what model should you select.
+
+(See Figure 3 WK5)
+
+Answer: b
+
+Ridge Regression:
+Video Question 1:
+Consider the following fourth order polynomial, 
+fitted with Ridge Regression; should we increase or decrease the parameter alpha?
+
+(See Figure 4 WK5)
+
+Answer: Decrease
+
+Video Question 2:
+Create a Ridge object using the constructor; set the  parameter alpha to 1.
+
+(See Figure 5 WK5)
+
+Answer: Ridge(alpha=1)
+
+Practise Quiz: Ridge Regression 
+1.
+Question 1
+the following models were all 
+trained on the same data, select the model with the highest value for alpha:
+
+(See Figure 6 WK5)
+
+Answer: c
+
+Grid Search:
+Video Question 1:What data do we use to pick the best hyperparameter.
+
+Answer: Validation data
+
+Video Question 2:
+How many types of parameters does the following dictionary contain:
+parameters= [{'alpha': [0.001,0.1,1, 10, 100], 'normalize' : [True, False] }] 
+
+Answer: 2
+
+Graded Quiz: Model Refinement
+NOTE: Questions may change
+
+Question 1:What is the output of the following code?
+
+cross_val_predict (lr2e, x_data, y_data, cv=3)
+
+Answer: The predicted values of the test data using cross-validation
+
+Question 2
+What dictionary value would we use to perform a grid search to determine if normalization 
+should be used and for testing the following values of alpha? 1,10, 100
+
+Answer:[{'alpha':[1,10,100],'normalize':[True,False]} ]
+
+
+Question 3 
+You have a linear model; the average R^2 value on your training data is 0.5, you perform a 100th order polynomial transform on your data then use these values to train another model. 
+After this step, your average R^2 is 0.99; which of the following comments is correct?
+
+Answer: 
+The results on your training data is not the best indicator of how your model performs; 
+you should use your test data to get a better idea
+
+Question 4
+The following is an example of what?
+
+(See Figure 7 WK5)
+
+Answer: Overfitting 
+
+Question 5
+The following is an example of what?
+
+(See Figure 8 WK5)
+
+Answer: Underfitting
+
+Week 6:
+Final Exam:
+NOTE: Questions may vary
+
+First Attempt
+Question 1
+What type of file allows data to be saved in a tabular format?
+
+Answer: csv
+
+Question 2
+Scikit-learn is used for?
+
+Answer: Statistical modelling including regression and classification.
+
+
+Question 3
+What path tells us where the data is stored?
+
+Answer: File path
+
+Question 4
+What attribute or function returns the data types of each column?
+
+Answer: dtypes
+
+
+Question 5
+The Pandas library allows us to read what?
+
+Answer: Various datasets into a data frame
+
+Question 6
+What library is primarily used for data analysis?
+
+
+Answer: pandas
+
+Question 7
+What would return the first 10 rows of dataframe df?
+
+Answer: df.head(10)
+
+Question 9
+How would you multiply each element in the column df["a"] by 2 and assign it back to the column df["a"]?
+
+Answer: df["a"]=2*df["a"] 
+
+
+Question 10
+What function returns the maximum of the values requested for the requested column?
+
+Answer: max()
+
+Second Attempt 
+Question 1
+What does csvfile stand for?
+
+Answer: comma separated values
+
+Question 2
+What Python library is used forfast array processing?
+
+Answer: Numpy
+
+Question 3
+What tells us the way the data is encoded?
+
+Answer: Encoding scheme 
+
+Question 4
+In Dataframes what does “dtypes” return?
+
+Answer: 
+It returns the data types of each column
+
+Question 5
+In a dataset what is the name of the columns?
+
+Answer: Type
+
+Question 6
+What library is primarily used for data analysis?
+
+Answer: pandas
+
+Question 7
+What would the following code segment output from a dataframe df?
+
+Answer: 
+It would return the first 5 rows of the dataframe
+
+Question 8.
+How would you replace the missing values in the column "normalized-losses" with the mean of that column?
+
+Answer:
+mean = df["normalized-losses"].mean() df["normalized-losses"].replace(np.nan, mean) 
+
+Question 9.
+How would you multiply each element in the column df["a"] by 2 and assign it back to the column df["a"]?
+
+Answer: 	
+df["a"]=2*df["a"] 
+
+Question 10.
+What does the below code segment give an example of for the column “length”?
+
+df["length"] = (df["length"]-df["length"].mean())/df["length"].std()
+
+Answer: 
+It gives an example of the z-score or standard score.
+
+Question 11.
+Consider the following image: what is the name of the operation that transformed the column fuel into quantitative variables?
+
+(See Figure 9 WK5)
+
