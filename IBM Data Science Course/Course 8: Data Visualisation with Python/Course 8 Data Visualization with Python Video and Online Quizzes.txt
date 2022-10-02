@@ -1,0 +1,361 @@
+Week 1: Syllabus 
+Quiz 
+NOTE: Questions may vary
+Question 1. 
+Matplotlib was created by John Hunter, 
+an American neurobiologist, and was originally developed as an EEG/ECoG visualization tool.
+
+Answer: True
+
+Question 2. (First Attempt)
+Using the inline backend, you can modify a figure after it is rendered.
+
+Answer: False
+
+Question 2 (Second Attempt)
+Using the notebook backend, you can modify a figure after it is rendered.
+
+Answer: True
+
+Question 3.
+#matplotlib notebook is an example of Matplotlib magic functions.
+
+Answer: False
+
+Week 2: 
+Basic Visualization Tools Quiz (Graded)
+NOTE: Questions may vary
+
+Question 1 (First Attempt)
+Area plots are stacked by default.
+Answer: True
+
+Question 1 (Third Attempt)
+Area plots are unstacked by default.
+Answer: False
+
+
+Question 2
+Given a pandas series, series_data, which of the following will create a histogram of series_data and align the 
+bin edges with the horizontal tick marks?
+
+count, bin_edges = np.histogram(series_data)
+series_data.plot(kind='hist', xticks = bin_edges)
+
+Question 3 (First Attempt)
+The following code will create a horizontal bar 
+chart of the data in a pandas dataframe, question.
+
+question.plot(type='bar', rot=90)
+
+Answer: False
+
+Question 3 (Second Attempt)
+The following code will create a horizontal bar chart of the 
+data in a pandas dataframe, question.
+
+question.plot(kind='barh')
+
+Answer: True
+
+Specialized Visualization Tools Quiz (Graded)
+
+Question 1
+(See C8WK2 Figure 1)
+What do the letters in the box plot above represent?
+
+Answer: A = Median, B = Third Quartile, C = First Quartile, D = Inter Quartile Range, E = Minimum, and F = Outliers.
+
+Question 2
+What is the correct combination of function and parameter to create a box plot in Matplotlib?
+
+Answer: 
+Function = plot, and Parameter = kind with value = "box"
+
+Question 3
+Which of the lines of code below will create the following scatter plot, given the pandas dataframe, df_total?
+
+(See C8WK2 Figure 2)
+
+Answer: 
+import matplotlib.pyplot as plt
+
+df_total.plot(kind='scatter', x='year', y='total')
+
+plt.title('Total Immigrant population to Canada from 1980 - 2013')
+plt.xlabel ('Year')
+plt.ylabel('Number of Immigrants')
+
+Week 3:
+Advanced Visualization Tools Quiz (Graded)
+NOTE: Questions may vary
+
+Question 1. (Attempt 1) 
+Seaborn is a Python visualization library that provides a high-level interface for visualizing geospatial data.
+
+Answer: False
+
+Question 1. (Attempt 2)
+Seaborn is a Python visualization library that is built on top of Matplotlib.
+
+Answer: True
+
+
+Question 2
+The following code. 
+
+import seaborn as sns
+ax = sns.regplot(x="year", y="total", data=data_df, color="green", marker="+")
+
+(See C8WK3 Figure 1)
+
+Answer: True
+
+import seaborn as sns
+ax = sns.regplot(x="year", y="total", data=data_df, color="green")
+
+(See C8WK3 Figure 1)
+
+Answer: False
+
+
+Question 3 (Attempt 1)
+The easiest way to create a waffle chart in Python is using the Python package, PyWaffle.
+
+Answer: True
+
+Question 3 (Attempt 2)
+In Python, creating a waffle chart is straightforward since we can easily create one using the scripting layer of Matplotlib.
+
+Answer: False
+
+Visualizing Geospatial Data Quiz (Graded)
+NOTE: Questions may vary
+
+Question 1.
+You cluster markers, superimposed onto a map in Folium, using a marker cluster object.
+
+Answer: True
+
+Question 2
+If you are interested in generating a map of Spain to visualize its hill shading and natural vegetation, which of the following lines of code will create the right map for you?  
+(Try and code yourself before answering this question.)
+
+Answer: 
+folium.Map(location=[40.4637, -3.7492], zoom_start=6, tiles='Stamen Terrain')
+
+Question 3
+A choropleth map is a thematic map in which areas are shaded or patterned in proportion to the measurement 
+of the statistical variable being displayed on the map.
+
+Answer: True
+
+
+Week 4:
+Practise Quiz
+Question 1. 
+Dashboards can provide real-time visuals. 
+
+Answer: True
+
+Graded Quiz:
+NOTE: Questions may vary
+Question 1
+Plotly express is a ________ wrapper
+
+Answer: High-level
+
+
+Question 2
+@app_callback is the callback decorator.
+
+Answer: False
+
+Question 3
+Choose correct way of adding callback decorator
+
+Answer: 
+@app.callback( Output(component_id='bar-plot', component_property='figure’), 
+ Input(component_id='input-yr', component_property='value')) 
+
+Week 5:
+Final Exam 
+NOTE: Questions may vary
+
+Question 1. * (Attempt 1)
+According to the author in the video, what does Dark Horse Analytics state are the 3 best practices for creating a visual?
+
+Answer: Less is more effective; Less is not attractive; Less is more impactive.
+
+Question 1. * (Attempt 2)
+Which of the following is not true regarding data visualizations?
+
+Answer: Supports recommendations to different stakeholders.
+
+Question 1. * (Attempt 3)
+What is data visualization used for?
+-Exploring a given data set.
+-Sharing unbiased representations of data.
+-Supporting recommendations to different stakeholders.
+
+Answer: All of the above
+
+Question 2. (Attempt 1)
+What are the layers that make up the Matplotlib architecture?
+
+Answer: Backend Layer, Artist Layer, and Scripting Layer.
+
+Question 2. (Attempt 2)
+Which of the following is not a layer in the Matplotlib architecture?
+
+Answer: Figure Layer
+
+Question 3.* (Attempt 1)
+Which of the following codes uses the scripting layer to create a stacked area plot of the data in the pandas dataframe, area_df?
+
+Answer: 
+ax = area_df.plot(kind='area', figsize=(20, 10)) ax.title('Plot Title') ax.ylabel('Vertical Axis Label') ax.xlabel('Horizontal Axis Label') 
+
+Question 3 * (Attempt 3)
+The following code uses what layer to create a stacked area plot of the data in the pandas dataframe, area_df?
+
+Answer: Scripting layer
+
+
+Question 4. (Attempt 1)
+Which of the following code will create a stacked area plot of the data in the pandas dataframe, area_df, with a transparency value of 0.15?
+
+Answer: import matplotlib.pyplot as plt transparency = 0.15 area_df.plot(kind='area', alpha=transparency, figsize=(20, 10)) plt.title('Plot Title') plt.ylabel('Vertical Axis Label') plt.xlabel('Horizontal Axis Label') plt.show() 
+
+Question 4 * (Attempt 3)
+Which of the following codes will create an unstacked area plot of the data in the pandas dataframe, area_df, with a transparency value of 0.55?
+
+Answer: transparency = 0.55 ax = area_df.plot(kind='area', alpha=transparency, stacked=False, figsize=(20, 10)) ax.set_title('Plot Title') ax.set_ylabel('Vertical Axis Label') ax.set_xlabel('Horizontal Axis Label') 
+
+Question 5. (Attempt 1)
+Pie charts are less confusing than bar charts and should be your first attempt when creating a visual.
+
+Answer: False
+
+Question 5. (Attempt 2)
+What is a way of statistically representing the distribution of the data through five main dimensions?
+
+Answer:Box Plot
+
+Question 5. (Attempt 3)
+What is a circular graphic that displays numeric proportions by dividing a circle into proportional slices?
+
+Answer: Pie Chart
+
+
+Question 6. * (Attempt 1)
+Which of the following is true regarding scatter plots?
+
+Answer: 
+The data in it is considered to express a trend.
+
+Question 6. (Attempt 3)
+What is a variation of the scatter plot that displays three dimensions of data?
+Answer: A  bubble plot
+
+Question 7. (Attempt 1)
+What is a great way to visualize data in relation to a whole, or to highlight progress against a given threshold?
+
+Answer: A Waffle Chart.
+
+Question 7. (Attempt 2)
+A waffle chart is a great way to visualize data in relation to a whole, or to highlight progress against a given threshold. 
+
+Answer: True
+
+Question 7. (Attempt 3)
+A waffle chart is what?
+
+Answer: 
+A great way to visualize data in relation to a whole, or to highlight progress against a given threshold.
+
+Question 8. (Attempt 1)
+A word cloud (choose all that apply)
+
+Answer(s): 
+-can be generated in Python using the word_cloud package that was developed by Andreas Mueller.
+-is a depiction of the meaningful words in some textual data, where the more a specific word appears in the text, bigger and bolder it appears in the word cloud.
+-is a depiction of the frequency of different words in some textual data.
+
+Question 8 (Attempt 2)
+A word cloud is a depiction of the meaningful words in some textual data, where the more a specific word appears in the text, the ____________________.
+
+Answer: The bigger and bolder it appears in the word cloud.
+
+
+Question 9. (Attempt 1)
+Which of the following are tile styles of Folium maps?
+-OpenStreetMap
+-Mapbox Control Room
+-Stamen Watercolor
+-Stamen Terrain
+
+Answer: All of the above
+
+Question 9. (Attempt 2)
+Which of the following is NOT a tile style of Folium maps?
+
+Answer: River Coastal
+
+Question 9. (Attempt 3)
+Which of the following is an incorrect statement regarding Folium?
+
+Answer: 
+Folium is available by default and does not need to be installed.
+
+Question 10.* (Attempt 1)
+What is the correct tile style for maps that are high contrast black and white, that are perfect for data mashups and exploring river meanders and coastal zones?
+
+Answer: 
+Stamen Terrain
+
+Question 10 * (Attempt 2)
+Which of the following is NOT true regarding the Stamen Terrain tile style for Folium maps?
+
+Answer: 
+Is perfect for data mashups and exploring river meanders and coastal zones.
+
+
+Question 11. (Attempt 1)
+Plotly is an interactive, open-source plotting library that supports over 40 unique chart types, including statistical, financial, maps, scientific, and 3-dimensional.
+
+Answer: True
+
+Question 11. (Attempt 2)
+Plotly visualizations cannot be displayed in which of the following ways
+-Displayed in Jupyter notebook
+-Saved to HTML files
+-Served as a pure python-build applications using Dash
+Answer: 
+None of the above
+
+Question 11.* (Attempt 3)
+Which of the following statements is true for Plotly?
+-Includes chart types like statistical, financial, maps, scientific, and 3-dimensional.
+-Supports over 40 unique chart types.
+-An interactive, open-source plotting library.
+Answer: All of above
+
+Question 12. (Attempt 1)
+Which of the following statements is true for Dash?
+-Easy to build GUI.
+-Rendered in web browser and can be deployed to servers.
+-An open-source user interface Python library from Plotly.
+-Declarative and Reactive.
+
+Answer: 
+All of the above
+
+NOTE: * Answers not final
+
+
+
+
+
+
+
