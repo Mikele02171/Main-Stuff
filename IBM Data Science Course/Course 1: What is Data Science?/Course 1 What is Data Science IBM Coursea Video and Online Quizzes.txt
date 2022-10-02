@@ -1,0 +1,234 @@
+Week 1.
+What is Data Sciencee? Video Question
+Data science is the field of exploring, manipulating, and analyzing data, and using data to answer questions or make recommendations.
+
+Answer: True
+
+The Many Paths to Data Science Video Question
+Which of the following statements is correct?
+
+Answer: 
+As data science is not a discipline traditionally taught at universities, contemporary data scientists 
+come from diverse backgrounds such as engineering, statistics, and physics.
+
+Advice for New Data Scientists Video Question
+According to professor Haider, the three important qualities to possess in order to succeed as a data scientist are:
+
+Answer(s): Curious, Judgemental,Argumentative
+
+
+Data Science: The Sexiest Job in the 21st Century Quiz:
+NOTE: Questions may vary
+Question 1
+Walmart addressed its analytical needs by approaching Kaggle to host a competition for analyzing
+its proprietary data.
+
+Answer: True 
+
+Question 2
+What is the average base salary of a data scientist reported by the New York Times?
+
+Answer: $112,000
+
+Question 3
+According to professor Haider, the three important qualities to possess in order to succeed as a data scientist are:
+
+Answer(s): Judgemental, Good Story Teller (Argumentative), Curious 
+
+
+A day in the life of a Data Scientist Video Question 
+As a data scientist. You get to work on a broad spectrum of projects. Which of the following were projects discussed in the video?
+
+Answer(s): 
+Building a recommendation engine, Analyzing hundreds of thousands of complaints filed with the Toronto Transit Commission.
+
+Data Science Topics and Algorithms Video Question 
+Using complicated machine learning algorithms does not always guarantee achieving a better performance. 
+Occasionally, a simple algorithm such as k-nearest neighbor can yield a satisfactory performance 
+comparable to the one achieved using a complicated algorithm. It all depends on the data.
+
+Answer: True
+
+
+What Makes Someone a Data Scientist?
+NOTE: Questions may vary
+Question 1.*
+According to the reading, how does the author define data science?
+
+Answer: 
+Data science is the art of uncovering the hidden secrets in data.
+
+Question 2. 
+What is admirable about Dr. Patil’s definition of a data scientist is that it limits data science to activities involving machine learning.
+
+Answer: False
+
+Question 2 
+According to the reading, what is admirable about Dr. Patil’s definition of a data scientist?
+Answer: His definition is inclusive of individuals from various academic backgrounds and training.
+
+
+Question 3.
+According to the reading, the characteristics exhibited by the best data scientists are those who are curious, ask good questions, and are O.K. dealing with unstructured situations.
+
+Answer: True
+
+
+Week 2
+
+What is Hadoop? Video Question 
+According to Dr. White, most of the components of data science, such as probability, statistics, linear algebra, and programming, have been around for many decades
+but now we have the computational capabilities to apply combine them and come up with new techniques and learning algorithms.
+
+Answer: True
+
+Data Science Skills and Big Data Video Question 
+According to Dr. White, his students, who are mostly aspiring data scientists,
+need to learn many tools such as Python, UNIX commands, pandas, and Jupyter notebook.
+
+Answer: True
+
+Data Scientists at New York University 
+Video Question 1.
+Data science and business analytics have always been very hot subjects.
+
+Answer: False
+
+Video Question 2.
+According to Dr. White, which of the following statements are correct about big data.
+
+Answer(s): Big data was started by Google when Google tried to figure out how how to solve their PageRank algorithm., 
+Big data is is data that is large enough and has enough volume and velocity that you cannot handle it with traditional data database systems.
+
+
+Data Mining Quiz:
+NOTE: Questions may vary 
+
+Question 1.
+What is an example of a data reduction algorithm?
+
+Answer: Principal Component Analysis.
+
+Question 2. 
+After the data are appropriately processed, transformed, and stored, machine learning and non-parametric methods 
+are a good starting point for data mining.
+
+Answer: False
+
+Question 3. In-sample forecast is the process of formally evaluating the predictive capabilities of the models 
+developed using observed data to see how effective the algorithms are in reproducing data.
+
+Answer: True
+
+Neural Networks and Deep Learning:
+Video Question 1.
+Neural networks have been around for decades, but due to religious reasons, 
+people decided not to develop them any more because a neural network mimics the brain in the way it learns the data.
+
+Answer: False
+
+
+Video Question 2.
+Which of the following are use cases for deep learning?
+
+Answer(s): Classifying images at a large scale, Speech recognition.
+
+
+Applications of Machine Learning 
+Video Question 
+Netflix uses machine learning to recommend movies to you based on movies that you have already watched and liked or disliked.
+
+Answer: True
+
+Regression Quiz:
+NOTE: Questions may vary
+
+Question 1.
+Regression is a statistical technique developed by Blaise Pascal.
+
+Answer: False
+
+Question 2.
+The author discovered that houses located more than 2.5 kms to shopping centres sold for less than the rest.
+
+Answer: False
+
+Question 3.
+"What are typical land taxes in a house sale?" is a question that can be put to regression analysis.
+
+Answer: False
+
+Week 3
+How Should Companies Get Started in Data Science?
+Video Question 
+What are some of the first steps that companies need to take to get started in data science?
+
+Answer(s): Start collecting data, Put together a team of data scientists.
+
+
+
+The Final Deliverable Quiz:
+NOTE: Questions may vary
+
+Question 1. 
+The Untied States Economic Forecast is a publication by McKinsey University Press.
+
+Answer: False
+
+Question 2
+The report discussed in the reading successfully did the job of:
+
+Answer: 
+Using data and analytics to generate the likely economic scenarios.
+
+Question 3. 
+According to the reading, it is recommended that a team waits until the results of analytics are out before they can decide on the final deliverable.
+
+Answer: False 
+
+
+How Can Someone Become a Data Scientist?
+According to Dr. White, if someone is coming into a data science team, the first skills they would need are:
+
+Answer: Knowing how to program, at least have some computational thinking, 
+Understanding relational databases, Knowing basic probability and some basic statistics, Knowing some algebra and some calculus.
+
+Recruiting for Data Science:
+Video Question 1
+Curiosity is one of the most important skills that a data scientist should possess.
+
+Answer: True
+
+Video Question 2
+When hiring a data scientist, you need to ensure that the candidate is passionate about your field of work.
+
+Answer: True
+
+High School Students and Data Science Careers
+Video Question 
+According to Dr. White, the industrial world is shifting to a new trend,
+and for high school students to be on the right side of this new trend, his advice to them is:
+
+Answer(s): Learn some math,To learn how to program,Learn statistics,Take a course in probability,
+Try to start experimenting with building small systems that work and are useful. 
+
+The Report Structure Quiz:
+NOTE: Questions may vary
+
+Question 1. 
+The results section is where you present:
+
+Answer: The empirical findings 
+
+
+Question 2. 
+The discussion section is where you introduce the research methods and data sources used for the analysis.
+
+Answer: False
+
+
+Question 3. 
+According to the reading, what is an example of housekeeping?
+
+Answer: Adding a list of references.
+
