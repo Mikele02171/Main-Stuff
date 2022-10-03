@@ -1,0 +1,1458 @@
+Week 1:
+Types:
+Video Question 1.
+What is the type of the following: 0 
+
+Answer: int 
+
+Video Question 2. 
+What is the type of the following number: 3.12323 
+
+Answer: float
+
+Video Question 3.
+What is the result of the following: int(3.99) 
+
+Answer: 3
+
+Practise Quiz: 
+Question 1. 
+What is the type of the following: 0
+
+Answer: int
+
+Question 2.
+What is the type of the following number: 3.12323
+
+Answer: Float
+
+Question 3.
+What is the result of the following: int(3.99)
+
+Answer: 3
+
+Expressions and Variables 
+Video Question 1.
+What is the result of the following operation:  11//2
+
+Answer: 5
+
+Video Question 2.
+What is the value of x after the following is run:
+x=4
+
+x=x/2 
+Answer: 2.0
+
+Video Question 3.
+
+Practice Quiz.
+Question 1.
+What is the result of the following operation:  11//2
+Answer: 5
+
+Question 2.
+What is the value of x after the following is run:
+
+x=4
+x=x/2 
+
+Answer: 2.0
+
+String Operations
+Video Question 1.
+What is the result of the following: Name[0]. 
+
+(See Figure1C4WK1)
+
+Answer: "M"
+
+Video Question 2.
+What is the result of the following: Name[-1]
+
+(See Figure2C4WK1)
+
+Answer: "n"
+
+Video Question 3.
+What is the output of the following: print("AB\nC\nDE")
+
+Answer: 
+AB
+
+C
+
+DE
+
+Video Question 4.
+What is the result of following: "hello Mike".find("Mike")
+
+Answer: 6
+
+Practise Quiz.
+Question 1.
+What is the result of the following: Name[0]
+
+(See Figure1C4WK1)
+
+Answer: "M"
+
+Question 2.
+What is the result of the following: Name[-1]
+(See Figure1C4WK1)
+
+Answer: "n"
+
+Question 3. 
+What is the output of the following: print("AB\nC\nDE")
+
+Answer: 
+
+AB
+
+C
+
+DE
+
+
+Question 4. 
+What is the result of following? 
+
+"hello Mike".find("Mike") 
+
+If you are unsure, copy and paste the code into Jupyter Notebook and check.
+
+Answer: 6
+
+Module 1 Graded Quiz
+NOTE: Questions may vary.
+
+Question 1.
+What is the value of x after the following lines of code?
+
+x=2
+
+x=x+2
+
+Answer: 4
+
+Question 2.
+What is the result of the following operation 1+3*2 ?
+
+Answer: 7
+
+Question 3.
+What is the result of the following code segment: type(int(12.3))
+
+Answer: int
+
+Question 4.
+What is the result of the following code segment: int(True)
+
+Answer: 1
+
+Question 5.
+In Python, what is the result of the following operation: '1'+'2' ?
+
+Answer: '12'
+
+Question 6.
+What is the result of the following: 'hello'.upper() ?
+
+Answer: 'HELLO'
+
+Question 7.
+What is the result of the following : str(1+1)?
+
+Answer: '2'
+
+Question 8.
+What is the result of the following: "ABC".replace("AB", "ab") ?
+
+Answer: 'abC'
+
+Question 9
+In Python 3, what is the type of the variable x after the following: x=2/2?
+
+Answer: float
+
+
+
+
+Week 2: 
+List and Tuples. 
+Video Question 1.
+Consider the following tuple: what is the result of the following say_what[-1]
+say_what=('say',' what', 'you', 'will')
+
+Answer: 'will'
+
+Video Question 2. 
+Consider the following tuple A=(1,2,3,4,5), what is the result of the following:A[1:4]:
+
+Answer: 
+(2, 3, 4)
+
+
+Video Question 3. 
+Consider the following tuple A=(1,2,3,4,5), what is the result of the following: len(A)
+
+Answer: 5
+
+Video Question 4. 
+Consider the following list B=[1,2,[3,'a'],[4,'b']], what is the result of the following:B[3][1]
+
+Answer: "b"
+
+Video Question 5. 
+What is the result of the following operation 
+[1,2,3]+[1,1,1]
+
+Answer: 
+[1, 2, 3, 1, 1, 1]
+
+Video Question 6.
+What is the length of the list A = [1] after the following operation: A.append([2,3,4,5])
+Answer: 2
+
+Video Question 7.
+What is the result of the following: "Hello
+Mike".split()
+
+Answer: ["Hello","Mike"]
+
+Practise Quiz:
+Question 1. 
+Consider the following tuple:
+say_what=('say',' what', 'you', 'will') 
+what is the result of the following say_what[-1]
+
+Answer: 'will'
+
+Question 2.
+Consider the following tuple A=(1,2,3,4,5). What is the result of the following: A[1:4]:
+
+Answer: (2,3,4)
+
+Question 3.
+Consider the following tuple A=(1,2,3,4,5), what is the result of the following: len(A)
+
+Answer: 5
+
+Question 4. 
+Consider the following list B=[1,2,[3,'a'],[4,'b']], what is the result of the following:B[3][1]
+
+Answer: "b"
+
+Question 5.
+What is the result of the following operation?
+
+Answer: [1,2,3,1,1,1]
+
+Question 6.
+What is the length of the list A = [1] after the following operation: A.append([2,3,4,5])
+
+Answer: 2
+
+
+Question 7
+What is the result of the following: "Hello
+Mike".split()
+
+Answer: 
+["Hello","Mike"]
+
+Dictionaries 
+Video Question 1. 
+What are the keys of the following dictionary: {"a":1,"b":2}
+
+Answer: "a","b"
+
+Video Question 2. 
+Consider the following Python Dictionary:
+Dict={"A":1,"B":"2","C":[3,3,3],"D":(4,4,4),'E':5,'F':6}  
+
+What is the result of the following operation:  Dict["D"]
+Answer: (4,4,4)
+
+Practise Quiz
+Question 1.
+What are the keys of the following dictionary: {"a":1,"b":2}
+
+Answer: "a","b"
+
+
+Question 2
+Consider the following Python Dictionary:
+Dict={"A":1,"B":"2","C":[3,3,3],"D":(4,4,4),'E':5,'F':6}
+What is the result of the following operation: Dict["D"]
+
+Answer: (4,4,4)
+
+Sets
+Video Question 1.
+Consider the following set: {"A","A"}, what will the result be  when the set is created 
+
+Answer: {"A"}, to ensure there are no duplicates of the same element. 
+
+Video Question 2.
+What is the result of the following: type(set([1,2,3]))
+
+Answer: set
+
+Video Question 3.
+what method do you use to add an element to a set 
+
+Answer: add
+
+Video Question 4. 
+what is the result of the following operation : {'a','b'} &{'a'}
+
+Answer: {'a'}
+
+Practice Quiz:
+Question 1. 
+Consider the following set: {"A","A"}, what will the result be when the set is created? 
+
+Answer: {"A"} 
+
+Question 2. 
+What is the result of the following: type(set([1,2,3]))
+
+Answer: set
+
+Question 3.
+What method do you use to add an element to a set?
+Answer: add
+
+Question 4.
+What is the result of the following operation : {'a','b'} &{'a'}
+
+Answer: {'a'}
+
+Module 2 Graded Quiz
+NOTE: Questions may vary 
+Question 1.
+Consider the tuple A=((1),[2,3],[4]),
+that contains a tuple and list. What is the result of the following operation A[2] ?
+
+Answer: [4]
+
+Question 2.
+Consider the tuple A=((11,12),[21,22]), that contains a tuple and list.
+What is the result of the following operation A[0][1]?
+
+Answer: 12
+
+Question 3
+True or false: after applying the following method,
+L.append(['a','b']), the following list will only be one element longer.
+
+Answer: True
+
+
+Question 4.
+Consider the following list : A=["hard rock",10,1.2]
+What will list A contain affter the following command is run: del(A[1]) ?
+
+Answer: 
+["hard rock",1.2]
+
+
+Question 5
+If A is a list what does the following syntax do: B=A[:] ?
+
+Answer: 
+variable B references a new copy or clone of the original list A
+
+Question 6.
+What is the result of the following: len(("disco",10,1.2, "hard rock",10)) ?
+
+Answer: 5
+
+Question 7
+Consider the following dictionary:
+
+{ "The Bodyguard":"1992", "Saturday Night Fever":"1977"}
+
+Answer(s):
+-"1977"
+-"1992"
+
+Question 8
+The variable  release_year_dict is a Python Dictionary, what is the result of applying the following method: release_year_dict.values() ?
+
+Answer: 
+retrieves, the values of the dictionary
+
+Question 9 
+Consider the Set: V={'A','B'}, what is the result of V.add('C')?
+
+Answer: 
+{'A','B','C'}
+
+Question 10
+What is the result of the following: '1' in {'1','2'} ?
+
+Answer: True 
+
+
+Week 3: 
+Conditions and Branching 
+Video Question 1. 
+what is the result of the following: 1=2
+
+Answer: 
+SyntaxError:can't assign to literal
+
+Video Question 2.
+
+What is the output of the following code segment:
+i=6
+i<5
+
+Answer: False
+
+Video Question 3. 
+What is the result of the following: 5!=5
+
+Answer: False
+
+Video Question 4.
+What is the output of the following code segment: 'a'=='A'
+
+Answer: False
+
+Video Question 5. 
+in the video, if age=18 what would be the result 
+
+Answer: move on
+
+Video Question 6.
+in the video what would be the result if we set the variable age as follows: age= -10
+
+Answer: 
+go see Meat Loaf
+
+move on
+
+Video Question 7. 
+what is the result of the following:True  or False 
+
+Answer: 
+True, an or statement is only False if all the Boolean values are False
+
+Practise Quiz.
+Question 1. 
+what is the result of the following: 1=2
+
+Answer: 
+SyntaxError:can't assign to literal
+
+Question 2.
+What is the output of the following code segment:
+
+Answer: False
+
+Question 3. 
+What is the result of the following: 5!=5
+
+Answer: False
+
+
+Question 4. 
+What is the output of the following code segment: 'a'=='A'
+
+Answer: False
+
+Question 5.
+in the video, if age=18 what would be the result 
+
+
+Answer: move on
+
+Question 6.
+in the video what would be the result if we set the variable age as follows: age= -10
+
+Answer: 
+go see Meat Loaf
+
+move on
+
+Question 7. what is the result of the following: True or False. 
+
+Answer: True, an or statement is only False if all the Boolean values are False
+
+Loops:
+Video Question 1. 
+what will be the output of the following:
+for x in range(0,3):
+     print(x)
+
+Answer: 
+0
+
+1
+
+2
+
+
+Video Question 2.
+what is the output of the following:
+for x in ['A','B','C']:
+
+  print(x+'A')
+
+Answer: 
+AA
+
+BA
+
+CA
+
+Video Question 3.
+what is the output of the following:
+for i,x in enumerate(['A','B','C']):
+    print(i,x)
+
+Answer: 
+
+0 A
+
+1 B
+
+2 C
+
+Practise Quiz:
+Question 1.
+what will be the output of the following:
+
+for x in range(0,3):     
+
+print(x)
+
+Answer: 
+0
+
+1
+
+2
+
+Question 2
+what is the output of the following:
+
+for x in ['A','B','C']:
+  print(x+'A')
+
+Answer: 
+
+
+AA
+
+BA
+
+CA
+
+Question 3
+what is the output of the following:
+
+for i,x in enumerate(['A','B','C']):    
+
+print(i,x)
+
+Answer: 
+
+0 A
+
+1 B
+
+2 C
+
+
+Functions:
+Video Question 1.
+what does the following function return: len(['A','B',1])
+
+Answer: 3
+
+Video Question 2.
+what does the following function return: len([sum([0,0,1])])
+
+Answer: 1
+
+Video Question 3.
+What is the value of list L after the following code segment is run:
+
+L=[1,3,2]
+sorted(L)
+L
+
+Answer: L:[1,3,2] (NOTE: sorted is a function and returns a new list, it does not change the list L)
+
+
+Video Question 4. 
+from the video what is the value of c after the following:
+
+c=add1(2)
+c=add1(10)
+
+Answer: 11
+
+Video Question 5. 
+what is the output of the following lines of code:
+def Print(A):
+    for a in A:
+        print(a+'1')
+        
+Print(['a','b','c'])
+
+Answer: 
+
+a1
+
+b1
+
+c1
+
+Practise Quiz:
+Question 1.
+What does the following function return: len(['A','B',1])?
+
+Answer: 3
+
+Question 2.
+What does the following function return: len([sum([0,0,1])])?
+
+Answer: 1
+
+Question 3.
+What is the value of list L after the following code segment is run:
+
+L=[1,3,2]
+
+sorted(L)
+
+Answer: 
+L:[1,3,2]
+
+
+Question 4.
+From the video what is the value of c after the following:
+
+c=add1(2)
+
+c=add1(10)
+
+Answer: 11
+
+
+Question 5
+what is the output of the following lines of code:
+
+def Print(A):   
+
+ for a in A: 
+
+    print(a+'1')
+
+Print(['a','b','c'])
+
+Answer: 
+
+a1
+
+b1
+
+c1
+
+Exception Handling Practise Quiz:
+Question 1.
+Why do we use exception handlers?
+
+Answer: Catch errors within a program.
+
+Question 2. 
+What is the purpose of a try…except statement?
+
+Answer: 
+Catch and handle exceptions when an error occurs
+
+Objects and Classes:
+Video Question 1.
+what is the type of the following: 
+["a"]
+
+Answer: list
+
+
+Video Question 2. 
+what does a method do to an object 
+
+Answer: 
+changes or interacts with the object
+
+Video Question 3. 
+we create the object
+
+Circle(3,'blue')
+what is the color attribute set to
+
+Answer: 
+'blue'
+
+Video Question 4.
+what is the radius attribute after the following code block is run:
+
+RedCircle=Circle(10,'red')
+RedCircle.radius=1
+
+Answer: 1
+
+Video Question 5. 
+what is the radius attribute
+after the following code block is run:
+
+BlueCircle=Circle(10,'blue')
+BlueCircle.add_radius(20)
+
+Answer: 30
+
+Practise Quiz: 
+Question 1
+What is the type of the following?
+
+["a"]
+
+Answer: list
+
+Question 2
+What does a method do to an object? 
+
+Answer: Changes or interacts with the object
+
+Question 3
+We create the object:
+
+Circle(3,'blue')
+
+
+What is the color attribute set to?
+Answer: 'blue'
+
+Question 4
+What is the radius attribute after the following code block is run?
+RedCircle=Circle(10,'red')
+RedCircle.radius=1
+
+Answer: 1
+
+
+Question 5
+What is the radius attribute
+after the following code block is run?
+
+BlueCircle=Circle(10,'blue')
+
+BlueCircle.add_radius(20)
+
+Answer: 30
+
+
+
+Module 3 Graded Quiz:
+NOTE: Questions may vary
+
+Question 1. 
+What is the output of the following code?
+
+x="Go"
+
+if(x=="Go"):
+
+  print('Go ')
+
+else:
+
+  print('Stop')
+
+print('Mike')
+
+Answer: Go Mike
+
+Question 2. 
+What is the result of the following lines of code?
+
+x=1
+x>-5
+
+Answer: True 
+
+
+Question 3. 
+What is the output of the following few lines of code?
+
+x=5
+while(x!=2):
+  print(x)
+  x=x-1
+
+Answer: 
+
+5
+
+4
+
+3
+
+Question 4.
+What is the result of running the following lines of code?
+class Points(object):
+  def __init__(self,x,y):
+
+    self.x=x
+    self.y=y
+
+  def print_point(self):
+
+    print('x=',self.x,' y=',self.y)
+
+p1=Points(1,2)
+p1.print_point()
+
+Answer: x=1 y=2
+
+Question 5.
+What is the output of the following few lines of code?
+for i,x in enumerate(['A','B','C']):
+    print(i+1,x)
+
+Answer: 
+
+1 A
+
+2 B
+
+3 C
+
+
+Question 6.
+What is the result of running the following lines of code?
+
+class Points(object):
+
+  def __init__(self,x,y):
+
+    self.x=x
+    self.y=y
+
+  def print_point(self):
+
+    print('x=',self.x,' y=',self.y)
+
+p2=Points(1,2)
+
+p2.x='A'
+
+p2.print_point()
+
+Answer: x= A  y=2
+
+
+Question 7. 
+Consider the function step, when will the function return a value of 1?
+
+def step(x):
+    if x>0:
+        y=1
+    else:
+        y=0
+    return y
+
+Answer: 
+if x is larger than 0
+
+
+Question 8.
+What is the output of the following lines of code?
+a=1
+
+def do(x):
+    a=100
+    return(x+a)
+
+print(do(1))
+
+Answer: 101
+
+Question 9
+Write a function name add that takes two parameter a and b, then return the output of  a + b (Do not use any other variable!
+You do not need to run it. Only write the code about how you define it.)
+
+def add(a,b):
+    a+b
+    return(a+b)
+
+add(1,2) 
+
+3 #Output 
+
+
+Question 10
+Why is it best practice to have multiple except statements with each type of error labeled correctly?
+
+Answer: 
+In order to know what type of error was thrown and the
+location within the program. 
+
+
+Week 4: 
+Reading Files with Open:
+Video Question 1. 
+What does the attribute name of the file object display ?
+
+Answer: The name of the file 
+
+Video Question 2. 
+What is the advantage of using the with statement to open a file
+
+Answer: 
+it automatically closes the
+file object 
+
+Writing Files with Open
+Video Question. 
+Consider the file object File1 in write mode, 
+what would the following  line of code write to the file:
+
+File1.write("Hello\n world")
+
+Answer: 
+Hello
+
+world
+
+Practise Quiz: 
+
+Question 1.
+What are the most common modes used when opening a file?
+
+Answer: 
+(a)ppend, (r)ead, (w)rite
+
+Question 2. 
+What is the data attribute that will return the title of the file?
+
+Answer: 
+File1.name
+
+Question 3. 
+What is the command that tells Python to begin a new line?
+
+Answer: 
+\n
+
+Question 4
+What attribute is used to input data into a file?
+
+Answer: 
+File1.write()
+
+Loading Data with Pandas:
+Video Question 1. 
+What python object do you cast to a dataframe?
+
+Answer: 
+dictionary
+
+Video Question 2.
+How would you access the first-row and first column in the dataframe df?
+Answer: df.ix[0,0]
+
+
+Practise Quiz. 
+Question 1. 
+What python object do you cast to a dataframe?
+
+Answer: dictionary 
+
+Question 2. 
+How would you access the first-row and first column in the dataframe df?
+
+Answer: 
+df.ix[0,0]
+
+Question 3.
+What is the proper way to load a CSV file using pandas?
+
+Answer: pandas.read_csv(‘data.csv’)
+
+Question 4. (*NOT FINAL)
+
+(See Figure1C4WK4)
+How would you select the Genre disco? Select all that apply.
+
+Answer(s):
+df.iloc[6, 4],df.iloc[6, ‘genre’]
+
+Question 5.
+Use this dataframe to answer the question.
+(See Figure1C4WK4)
+Which will NOT evaluate to 20.6? Select all that apply.
+
+Answer: df.loc[4,’Music Recording Sales’], 
+df.iloc[6, ‘Music Recording Sales (millions)’]
+
+Question 6. 
+(See Figure1C4WK4)
+Use this dataframe to answer the question.
+
+How do we select Albums The Dark Side of the Moon to Their Greatest Hits
+(1971-1975)? Select all that apply.
+
+Answer(s): 
+
+-df.loc[2:5, ‘Album’]
+-df.iloc[2:6, 1]
+
+One Dimensional Numpy: 
+Video Question 1. 
+what is the type of the following array:
+a=np.array([0,1,7,3, 7])
+
+Answer: numpy.ndarray
+
+Video Question 2. 
+
+consider the following lines of code:
+c=np.array([20,1,2,3,4])
+c[0]=100
+c[0]=2
+
+what is the value of c[0]
+
+Answer: 2
+
+
+Video Question 3. 
+consider the numpy array u how would you multiply each element in the numpy array by 2
+
+Answer: 
+2*u
+
+
+Video Question 4.
+how would you perform the dot product between the numpy arrays u and v
+
+Answer: np.dot(u,v)
+
+
+Two Dimensional Numpy: 
+Video Question 1. 
+what is the shape of the following array:
+A=np.array([[1,0,1],[0,1,1]])
+
+Answer: (2,3)
+
+Video Question 2. 
+consider the following array:
+A=np.array([[1,0,1],[2,2,2]])
+
+what is the value in A[0,1]
+
+Answer: 0 
+
+
+Video Question 3. 
+What is the result of the following operation:
+Y=np.array([[2,1],[1,2]])
+Z=2*Y
+
+Answer: 
+array([[4, 2],[2, 4]])
+
+Practise Quiz: 
+
+Question 1. 
+What is the Python library used for scientific computing and
+is a basis for Pandas?
+
+Answer: Numpy
+
+Question 2.
+What attribute is used to retrieve the number of elements in an array?
+
+Answer: a.size 
+
+
+Question 3
+How would you change the first element to "10" in this array c:array([100,1,2,3,0])?
+
+Answer: 
+c[0]=10
+
+Question 4
+What attribute is used to return the number of dimensions in an array?
+Answer: 
+a.ndim
+
+Module 4 Graded Quiz:
+NOTE: Questions may vary 
+Question 1.
+What is the result of the following lines of code?
+a=np.array([-1,1])
+b=np.array([1,1])
+np.dot(a,b) 
+
+Answer: 0 
+
+Question 2.
+What is the value of Z after the following code is run?
+X=np.array([[1,0],[0,1]])
+Y=np.array([[0,1],[1,0]])
+Z=X+Y
+
+
+Answer: 
+array([[1,1],[1,1]])
+
+Question 3. 
+What values does the variable out take if the following lines of code are run?
+
+
+X=np.array([[1,0,1],[2,2,2]]) 
+out=X[0:2,2]
+out
+
+Answer: array([1,2])
+
+Question 4
+What is the value of  Z after the following code is run?
+X=np.array([[1,0],[0,1]])
+Y=np.array([[2,2],[2,2]])
+Z=np.dot(X,Y)
+
+Answer: array([[2,2],[2,2]])
+
+
+Question 5. (* NOT FINAL)
+Consider the following text file:  Example1.txt:
+This is line 1
+
+This is line 2
+
+This is line 3
+
+What is the output of the following lines of code?
+
+
+with open("Exampl1.txt","r") as File1:
+
+    file_stuff=File1.readline ()
+
+    print(file_stuff)
+
+
+Answer: 
+
+This is line 1
+
+This is line 2
+
+
+Question 6. 
+What do the following lines of code do?
+with open("Example1.txt","r") as file1:
+  
+  FileContent=file1.readlines()
+
+  print(FileContent)
+
+
+Answer: Read the file "Example1.txt"
+
+
+Question 7.
+What do the following lines of code do?
+with open("Example.txt","a") as writefile:
+  
+  writefile.write("This is line A\n")
+  writefile.write("This is line B\n")
+
+Answer: 
+Append the file "Example.txt"
+
+Question 8. What task do the following lines of code perform?
+with open('Example2.txt','r') as readfile:
+    with open('Example3.txt','w') as writefile:
+          for line in readfile:
+                writefile.write(line)
+
+Answer: 
+Copy the text from Example2.txt to Example3.txt.
+
+Question 9. Consider the dataframe df. How would you access the element in the 2nd row and 1st column?
+
+Answer: 
+df.iloc[1,0]
+
+Question 10.
+What method gets the unique elements of the following: df['Length'] ?
+
+Answer: unique 
+
+
+Week 5:
+Practise Simple API's:
+Question 1. 
+What does API stand for?
+
+Answer: Application Programming Interface
+
+Question 2.
+The chart used to plot the cryptocurrency data in the lab is a
+
+Answer: 
+Candlestick Chart
+
+Question 3. 
+What information are we trying to find for each day in the lab for the chart?
+
+Answer: 
+Open (First), High (Max), Low (Min), Close (Last)
+
+REST APIs, Webscraping, and Working with Files
+Practise Quiz:  
+Question 1: (* NOT FINAL)
+What is the function of "GET" in HTTP requests?
+
+Answer: 
+Sends data to create or update a resource 
+
+Question 2. 
+What does URL stand for?
+
+Answer: 
+Uniform Resource Locator
+
+Question 3. 
+What does the file extension “csv” stand for?
+
+Answer: Comma Separated Values
+
+Question 4. 
+What is webscraping?
+
+Answer: 
+The process to extract data from a particular website
+
+Module 5 Graded Quiz:
+NOTE: Questions may vary 
+
+Question 1 (* NOT FINAL)
+What are the 3 parts to a response message?
+
+Answer: Encoding, body, and cache
+
+Question 2 
+What is the purpose of this line of code "table_row=table.find_all(name=’tr’)" used in webscraping?
+
+Answer: 
+It will find all of the data within the table marked with a tag “tr”
+
+
+Question 3
+In what data structure do HTTP responses generally return?
+
+Answer: Lists
+
+Question 4
+The Python library we used to plot the chart in the lab is
+
+Answer: MatPlotLib
+
+Final Exam Graded Quiz:
+NOTE: Questions may vary 
+Question 1.
+When slicing in Python what does the “2” in this statement [0:2] specify?
+
+Answer: 
+It specifies the position to end the slice
+
+Question 2.
+When slicing in Python what does the “2” in [::2] specify?
+Answer: 
+It specifies the step of the slicing
+
+
+Question 3.
+Consider the string Name="ABCDE",
+what is the result of the following operation Name.find("B")?
+
+Answer: 1
+
+
+Question 4.
+In Python what data type is used to represent text and not numbers?
+
+Answer: str
+
+Question 5.
+What is the result of the following code segment: float(3)?
+
+Answer: 3.0
+
+Question 6.
+What following code segment would produce an output of “0”?
+
+Answer: 1//2
+
+Question 7..
+In Python 3 what following code segment will produce a float?
+
+Answer: 1/2
+
+Question 8.
+A dictionary must have what type of keys?
+
+Answer: Unique
+
+Question 9..
+What will this code segment “A[0]” obtain from a list or tuple?
+
+Answer: 
+The first element of a list or tuple
+
+Question 10.
+What is the result of the following operation: '1,2,3,4'.split(',') ?
+
+Answer: 
+['1','2','3','4']
+
+Question 11. 
+What is an important difference between lists and tuples?
+
+Answer: Lists are mutable tuples are not 
+
+Question 12. (* NOT FINAL)
+What happens with this segment of code: a=set(A) ?
+
+Answer: 
+It casts the list “A” to the set “a”
+
+Question 13. 
+What value of x will produce the following output?
+
+How are you?
+x= 
+if(x!=1): 
+ print('How are you?') 
+else: 
+ print('Hi')
+
+Answer:
+x = 6
+
+Question 14. (* NOT FINAL)
+Why is the “finally” statement used?
+
+Answer: 
+Only execute the remaining code if one condition is false
+
+
+Question 15. What add function would return ‘4’?
+Answer: def add(x): return(x+x) add(2) 
+
+Question 16. 
+What function returns a sorted list?
+
+Answer: sorted()
+
+Question 17. 
+What is the output of the following few lines of code?
+
+ A=['1','2','3'] for a in A: print(2*a) 
+
+Answer: 
+
+11
+
+22
+
+33
+
+Question 18.
+What code segment would output the following?
+
+2
+
+Answer: 
+for i in range(1,5): if (i==2): print(i)
+
+
+Question 19.
+What is the height of the rectangle in the class Rectangle?
+
+Answer: 
+class Rectangle(object): def __init__(self,width=2,height =3,color='r'):
+self.height=height self.width=width self.color=color def drawRectangle(self): import matplotlib.pyplot as plt plt.gca().add_patch(plt.Rectangle((0, 0),self.width, self.height ,fc=self.color)) plt.axis('scaled') plt.show() 
+
+Answer: 3
+
+Question 20.
+What is the result of the following lines of code?
+
+ a=np.array([0,1,0,1,0]) b=np.array([1,0,1,0,1]) a+b 
+
+Answer: array([1, 1, 1, 1, 1])
+
+Question 21.
+What is the result of the following lines of code?
+
+ a=np.array([10,9,8,7,6]) a+1
+
+Answer: array([11,10,9,8,7])
+
+
+Question 22.
+How would you select the columns with the headers: Artist, Length and Genre from the dataframe
+df and assign them to the variable y?
+
+Answer: y=df[['Artist','Length','Genre']]
+
+
+
+Question 23. 
+What is the method readline() used for?
+
+Answer: 
+It helps to read one complete line from a given text file
+
+Question 24. (* NOT FINAL)
+What mode will write text at the end of the existing text in a file?
+
+Answer: 
+Read “r”
+
+Question 25. 
+What is scheme, internet address and route a part of?
+
+Answer: URL
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
