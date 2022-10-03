@@ -1,0 +1,473 @@
+Week 1:
+Practise Quiz-Languages 
+Question 1.
+Which of the following statements is true?
+-Python is the most popular language in data science.
+-80% of data scientists worldwide use Python.
+-Python is useful for AI, machine learning, web development, and IoT.
+-Keras, Scikit-learn, Matplotlib, Pandas, and TensorFlow are all Python libraries
+
+Answer(s): All of the above
+
+Question 2.
+Which of the following are SQL databases? (Select all that apply.)
+
+Answer(s): MariaDB, MySQL and PostgreSQL
+
+
+Question 3. (Still incomplete)
+Which statements are true about Open Source and Free Software? (Select all that apply.)
+
+Answer(s): 
+
+-Free Software can always be run, studied, modified and redistributed with or without changes.
+-Most of Free Software licenses also qualify for Open Source.
+-Open Source Software can be modified without sharing the modified source code depending on the Open Source license.
+
+Question 4. 
+Is the following statement true or false: R integrates well with other computer languages 
+like C++, Java, C, .Net and Python.
+
+Answer: True
+
+Question 5.
+Which of the following languages can be used for data science?
+R
+Julia
+Java
+Javascript
+Scala
+SQL
+
+Answer: All of above
+
+Question 6.
+Which of the following is used to make Artificial Intelligence
+and Machine Learning possible? (Select all that apply.)
+
+Answer: PyTorch, TensorFlow.js, Apache Spark, Caffe
+
+
+Practice Quiz-Tools
+Question 1.
+Which of the following are common tasks in data science? (Select all that apply)
+
+Answer(s): Data Management, Data Integration and Transformation, 
+Data Visualization, Model Building,Model Deployment, 
+Model Monitoring and Assessment
+
+Question 2
+Which of the following are data management tools? (Select all that apply.)
+Answer(s): MySQL and PostgreSQL
+
+Question 3
+Which of the following are Data Integration and Transformation tools? (Select all that apply.)
+Answer(s): Apache Kafka, Apache Nifi and Apache AirFlow
+
+Question 4 
+Which statement about JupyterLab is correct?
+Answer: JuypterLab can run R and Python code in addition to other programming languages.
+
+Question 5
+Which statement about RStudio is correct?
+Answer: RStudio is the primary choice for development in the R programming language.
+
+Question 6
+Which statements about IBM Watson Studio and OpenScale are correct? (Select all that apply.)
+Answer: 
+-Watson Studio together with Watson OpenScale covers the complete development life cycle for all data science, machine learning and AI tasks.
+-Watson Studio together with Watson OpenScale is available as a Cloud offering as well as a package running on top of Kubernetes/RedHat OpenShift in a local data center called IBM Cloud Pak for Data.
+
+Practice Quiz - Packages, APIs, Data Sets, Models:
+Question 1. Which scientific computing library provides data structures and data analysis tools for Python?
+
+Answer: Pandas 
+
+Question 2.
+What does the acronym API stand for?
+
+Answer: Application Programming Interface
+
+Question 3
+True or False: Open data is always distributed under a Community Data License Agreement.
+
+Answer: False
+
+Question 4
+Which of the following is not a type of Machine Learning?
+
+Answer: Supervised teaching
+
+Question 5
+Which of the following is NOT a deep learning framework?
+
+Answer: Tommy
+
+Question 6
+Fill in the blank: The MAX model-serving microservices expose a _________________ that applications use to consume a model.
+
+Answer: REST API
+
+Graded Quiz
+NOTE: Questions may vary 
+
+Question 1.
+Which are the three most used languages for data science? (Select all that apply.)
+
+Answer: R,SQL and Python
+
+Question 2.
+Is it possible to use machine learning within a web browser with Javascript?
+Answer: Yes
+
+Question 3. 
+Comma Separated Values (CSV) is a commonly used format to store:
+Answer: Tabular data
+
+Question 4
+Classification models can be used to determine whether:
+-An email is likely spam.
+-A video contains a specific sound.
+-An image contains a dog.
+Answer: All of the above
+
+Question 5. *
+Fill in the blank:   ________________ is the heart of every organization.
+Answer: The cloud (Open Source)
+
+Question 6.
+What does the “BI” in BI Tools stand for?
+
+Answer: Business Intelligence
+
+Week 2:
+Practise Quiz-Jupyter Notebook
+Question 1. 
+Which of the following functions do Jupyter Notebook unify?
+-Editing and execution of source code.
+-Editing and display of documentation.
+-Visualization of charts.
+Answer: All of the above
+
+Question 2. 
+Which statement is true about Jupyter Notebook?
+Answer: 
+Jupyter Notebook is free and open source.
+
+Question 3. 
+What is a Jupyter Notebook kernel?
+
+Answer: 
+It is a wrapper running on the Jupyter server encapsulating the programming language interpreter.
+
+Practice Quiz - RStudio IDE
+Question 1.
+Which of the following functions does RStudio unify? (Select all that apply.)
+Answer(s): 
+Editing and execution of source code., Display of the R Console.,
+Visualization of plots.,  
+Visualization of data in table form.
+
+Question 2
+Which statement is true about the RStudio IDE?
+Answer: RStudio is free and open source.
+
+Question 3
+Which statement about R packages is correct?
+Answer: R currently supports more than 15,000 packages which can be installed to extend R's functionality.
+
+Practice Quiz - GitHub
+Question 1. Which of the following statements are true? (Select all that apply.)
+Answer(s): 
+-Git is a system for version control of source code.
+-Git is very useful for data science as well, since data science often involves a lot of source code to be written and managed. 
+
+Question 2. 
+Which of the following statements about repositories are correct? (Select all that apply.)
+Answer(s): The local repository is only accessible by myself, 
+The staging is only accessible by myself, The remote repository is accessible by all contributors.
+
+Question 3.
+What is the best process for contributing a bugfix to a foreign repository?
+Answer: Fork the repository, update the fork and create a pull request.
+
+Graded Quiz:
+NOTE: Questions may vary 
+
+Question 1. What tool do most Python developers use?
+Answer: Jupyter Notebooks / JupyterLab
+
+Question 2.
+True or false? Jupyter Notebooks / JupyterLab support development in R.
+Answer: True
+
+Question 3. 
+Which tool unifies documentation, source code and data visualizations into a single document?
+Answer: Jupyter Notebooks / JupyterLab
+
+Question 4.
+Which command is used to install packages in R?
+
+Answer: 
+install.packages("package name")
+
+Question 5. 
+True or False: The Jupyter Notebook kernel must be installed on a local server.
+
+Answer: False
+
+Question 6. 
+True or false? RStudio supports development in Python.
+
+Answer: True
+
+Practice Quiz-Watson Studio
+Question 1.
+Fill in the blank: In Watson Studio, a ____________ is how you organize your resources to achieve a particular goal. 
+Resources can include data, collaborators, and analytic assets like notebooks and models. 
+
+Answer: Project
+
+
+Question 2.
+Fill in the blank: It's a best practice to remove or replace _____________ before publishing to GitHub.
+
+Answer: Credentials 
+
+Question 3. 
+Which of the following do you need to create in order to publish a notebook to your GitHub repository?
+
+Answer: Access token 
+
+Question 4. 
+Fill in the blank: If you'd like to schedule a notebook in Watson Studio to run at a different time you can create a(n) _____________.
+
+Answer: Job
+
+Question 5.
+Fill in the blank: On the environments tab you can define the _________________.
+-Hardware size.
+-Runtime configuration for notebook editor.
+-Software configuration.
+-Runtime configuration for flow editor.
+
+Answer: All of the above 
+
+Question 6.
+Fill in the blank: When sharing a  read only version of a notebook, you can  choose to share __________________.
+
+-Only text and output.
+-All content, excluding sensitive code cells.
+-All content including code.
+-A permalink.
+
+Answer: All of the above 
+
+Question 7.
+Fill in the blank: When working in a Jupyter Notebook, before returning to a project, it's important to ________________________.
+
+Answer: Save your notebook.
+
+Question 8. * (Not final)
+Fill in the blank: Before running a notebook, it's a best practice to ____________ to describe what the notebook does.
+
+Answer: 
+Insert a cell at the bottom of the notebook.
+
+Question 9.
+Fill in the blank: In the _____________ tab you can define the hardware size and software configuration for the runtime associated with Watson Studio tools such as notebooks.
+
+Answer: Environments 
+
+
+Question 10
+Fill in the blank: IBM Cloud uses ______________ as a way for you to organize your account resources in customizable groupings so that you can quickly assign users access to more than one resource at a time.
+
+Answer: Resource groups
+
+
+
+Practice Quiz - Other IBM Tools
+Question 1
+Which products (of those we covered) allow you to build data pipelines using graphical user interface and no coding?
+
+
+Answer: IBM SPSS Modeler and Modeler Flows in Watson Studio.
+
+
+Question 2. 
+Which features of Data Refinery help save hours and days of data preparation?
+-Flexibility of using Intuitive user interface and coding templates enabled with powerful operations to shape and clean data.
+-Data visualization and profiles to spot the difference and guide data preparation steps.
+-Incremental snapshots of the results allowing the user to gauge success with each iterative change.
+-Saving, editing and fixing the steps provide ability to iteratively fix the steps in the flow.
+
+Answer: All of the above
+
+Question 3. 
+Watson Knowledge Catalog provides what functionality?
+
+Answer: Catalog data and ML assets, help to find relevant assets, keep track of asset lineage, enforce data governance.
+
+Question 4.
+Fill in the blank: PMML, PFA, and ONNX are __________________.
+
+Answer: Open standards for predictive model serialization, exchange, and deployment.
+
+
+Question 5. 
+Which node must be used in Modeler flows before any modeling node?
+Answer: Type node
+
+
+Question 6. 
+Fill in the blank: Auto Classification node can be used for data with ______________.
+
+Answer: A categorical target variable. 
+
+
+Question 7
+Fill in the blank: Auto Numeric node can be used for data with __________________.
+
+Answer: A continuous target variable. 
+
+
+Question 8. 
+IBM SPSS Modeler evolved from which product?
+
+Answer: Clementine 
+
+
+Question 9.
+Fill in the blank: IBM SPSS Statistics syntax can be created using ___________.
+
+Answer: Graphical user interface of IBM SPSS Statistics product or syntax editor. 
+
+Question 10
+AutoAI provides which of the following services?
+
+Answer: Automatic finding of optimal data preperation steps, model selection, and hyperparameter optimization. 
+
+Question 11.
+OpenScale provides which of the following services?
+
+Answer: Monitoring for fairness, bias, and model fit
+
+Question 12. 
+Predictive Model Markup Language (PMML) was created by which entity?
+
+Answer: The Data Mining Group.
+
+
+Graded Quiz:
+NOTE: Questions may vary 
+
+Question 1. 
+Data Refinery provides which of the following services?
+
+Answer: 
+Visualize and prepare data.
+
+
+Question 2.
+IBM SPSS Modeler includes what kind of models?
+-Classification models (for data with a categorical target).
+-Regression models (for data with a continuous target).
+-Clustering models (for data with no target variables).
+-Other kinds of models.
+
+Answer: All of the above
+
+
+Question 3
+Open Neural Network eXchange (ONNX) was originally created for what models?
+
+Answer: Deep learning models.
+
+
+Question 4. 
+Fill in the blank: If you'd like to schedule a notebook in Watson Studio to run at a different time, you can create a(n) ________.
+
+Answer: job
+
+Question 5.
+Fill in the blank: In the __________ tab you can define the hardware size and software configuration 
+for the runtime associated with Watson Studio tools such as Notebook.
+
+Answer: environments
+
+Question 6.
+Fill in the blank: It's a best practice to remove or replace _____________ before publishing to GitHub.
+
+Answer: credentials 
+
+Week 4:
+Final Exam
+Question 1:
+SQL is what type of database management system?
+
+Answer: Relational 
+
+Question 2:
+PyTorch is what type of Python library?
+
+Answer: Machine Learning
+
+Question 3:* (NOT FINAL)
+What type of model is used to predict a target variable with two classes?
+Answer: Clustering model
+
+Question 4.
+What is Data Asset Management also known as?
+
+Answer: Data governance
+
+Question 5.
+When learning data science what open source tools are the most used?
+
+Answer(s): 
+-Jupyter Notebooks/JupyterLab
+-Rstudio
+
+Question 6.
+How is the R programming language different than Python?
+
+Answer: It was built by statisticians and their specific language
+
+
+Question 7. (* NOT FINAL)
+Editing and execution of R code is best done in what tool?
+
+Answer: RStudio 
+
+Question 8. 
+Which of the following does Jupyter notebooks support?
+-Github
+-Numerous programming languages 
+-Data visualizations 
+Answer: All of the above 
+
+Question 9.
+Which feature lets you discover Machine Learning assets in Watson Studio?
+
+Answer: Watson Knowledge Catalog
+
+Question 10.
+What are some of the Data Refinery abilities when working with data?
+
+Answer: Analyzes and transforms data quickly 
+
+Question 11. 
+What type of node is used to prepare the data for modeling in Modeler flows?
+
+Answer: Auto data prep node
+
+Question 12. 
+What feature of IBM SPSS Statistics allows easy saving and modifying of previous tasks?
+
+Answer: SPSS syntax
+
+
+
+
+
