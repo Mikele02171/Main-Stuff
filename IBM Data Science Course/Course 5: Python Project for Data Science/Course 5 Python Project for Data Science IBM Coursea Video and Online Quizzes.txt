@@ -1,0 +1,36 @@
+Week 1: 
+Extracting Stock Data Using a Python Library. Graded Quiz
+NOTE: Questions may vary 
+
+
+Question 1.
+From the lab exercise, in which country is AMD (Advanced Micro Devices) situated?
+Answer: United States
+
+
+Question 2.
+In the lab exercise, to which sector does AMD (Advanced Micro Devices) belong?
+Answer: Techonology 
+
+Question 3. (* Not Final)
+In the lab exercise, what is the Volume of AMD traded on the first day (first row)?
+
+Answer: ?
+
+
+Extracting Stock Data Using a Web Scraping Graded Quiz.
+Question 1. 
+In the lab exercise, what is the content of the title attribute from the object soup?
+
+Answer: <title>Amazon.com, Inc. (AMZN) Stock Historical Prices &amp; Data - Yahoo Finance</title>
+
+Question 2. 
+In the lab exercise, what are the correct names of the columns of the dataframe?
+
+Answer:
+'Date', 'Open', 'High', 'Low', 'Close', 'Volume', 'Adj Close'
+
+Question 3. 
+In the lab exercise, what is the Open of the last row in the amazon_data dataframe?
+
+Answer: 656.29
