@@ -1,0 +1,280 @@
+Week 1:
+Business Understanding 
+Video Question:
+Establishing a clearly defined question starts with
+understanding the goal of the person asking the question.
+
+Answer: True
+
+Analytic Approach
+Video Question:
+Although the analytics approach is the second stage of the data science methodology,
+it is still independent of the business understanding stage.
+
+Answer: False
+
+Graded Quiz From Problem to Approach:
+NOTE: Questions may vary 
+
+Question 1. 
+Select the correct statement.
+
+Answer: The first stage of the data science methodology is Business Understanding.
+
+Question 2. 
+The main purpose of the analytic approach is identifying what type of patterns will be
+needed to address the posed question most effectively.
+
+Answer: True 
+
+Question 3.
+For the case study, a decision tree classification model was used to identify the
+combination of conditions leading to each patient's outcome.
+
+Answer: True
+
+Data Requirements 
+Video Question: 
+Congestive heart failure patients with other significant medical conditions were included in the study in order to increase
+the sample size of the patients included in the study.
+
+Answer: False
+
+Data Collection: 
+When collecting data, it is alright to defer decisions about unavailable data,
+and attempt to acquire it at a later stage. 
+
+Answer: True
+
+Graded Quiz From Requirements to Collection:
+
+Question 1.
+The Data Requirements stage of the data science methodology involves identifying the necessary data content,
+formats and sources for initial data collection.
+
+Answer: True.
+
+Question 2.
+Which of the following statements are correct?
+Answer(s): 
+Data scientists determine how to collect the data, 
+Data scientists identify the data that is required for data modeling,
+Data scientists determine how to prepare the data.
+
+Question 3. 
+In the Data Collection stage, the data requirements are revised and decisions are made as to whether or not more data is needed.
+
+Answer: True
+
+
+Week 2:
+Data Understanding 
+Video Question: The Data Understanding stage encompasses sorting the data.
+
+Answer: False
+
+Data Preparation- Concepts
+Video Question 
+The Data Preparation stage is the least time-consuming phase of a data science project,
+typically taking between 5 to 10 percent of the overall project time.
+Answer: False
+
+Data Preparation - Case Study
+Video Question 
+In the case study, the target variable was congestive heart failure (CHF)
+with 45 days following discharge from CHF hospitalization.
+
+Answer: False
+
+
+Graded Quiz From Understanding to Preparation:
+Question 1. 
+In the case study, working through the Data Preparation stage, it was revealed that the initial definition was not capturing all of the congestive heart failure admissions
+that were expected, based on clinical experience.
+
+Answer: False
+
+Question 2.
+During the Data Preparation stage, clients and stakeholders aggregate the data and merge them from different sources,
+enabling data scientists to use clean data in the analysis.
+
+Answer: False
+
+Question 3.
+The Data Preparation stage is a very iterative and complicated stage that cannot be accelerated through automation.
+
+Answer: False
+
+Modeling-Concepts
+Video Question:
+A training set is used to build a predictive model.
+
+Answer: True
+
+Modeling-Case Study
+Video Question: 
+In the case study, the best performing model was the second model,
+with a relative cost of 4:1 and an overall accuracy of 85%.
+
+Answer: False
+
+Evaluation 
+Video Question:
+Model evaluation can have two main phases: a diagnostic measures phase and statistical significance testing. 
+
+Answer: True
+
+
+From Modeling to Evaluation Graded Quiz: 
+Question 1. 
+The Modeling stage is followed by the Analytic Approach stage.
+
+Answer: False
+
+Question 2.
+Model Evaluation includes ensuring that the data are properly handled and interpreted.
+
+Answer: True 
+
+Question 3.
+Select the correct statements about the ROC curve.
+
+Answer(s): 
+-The ROC curve is a useful diagnostic tool for determining the optimal classification model. 
+-ROC stands for Receiver Operating Characteristic curve, which was originally developed to detect enemy aircrafts on radar.
+-By plotting the true-positive rate against the false-positive rate for different values of the relative misclassification cost,
+the ROC curve can be used to select the optimal model.
+
+Week 3:
+Deployment
+Video Question: 
+Before the model is evaluated and the data scientist is confident it will work, it is deployed and put to the ultimate test.
+Answer: False
+
+Feedback
+Video Question:
+The data science methodology is highly iterative,
+ensuring the refinement at each stage in the game.
+
+Answer: True 
+
+Graded Quiz From Deployment to Feedback:
+NOTE: Questions may vary 
+Question 1.
+Feedback is not required once the model is deployed because the Model Evaluation stage would have assessed the model and made sure that it performed well.
+
+Answer: False
+
+Question 2. * (NOT FINAL)
+A data scientist determines that building a recommender system is the solution for a particular business problem at hand.
+What stage of the data science methodology does this represent?
+
+Answer: Modeling
+
+Question 3.
+A car company asked a data scientist to determine what type of customers are more likely to purchase their vehicles. However, the data comes from several sources and is in a relatively “raw format”. What kind of processing can the data scientist
+perform on the data to prepare it for the Modeling stage?
+
+A. Feature Engineering.
+B. Transforming the data into more useful variables.
+C. Combining the data from the various sources.
+D. Addressing missing invalid values.
+Answer: All of the options are correct.
+
+Question 4.
+Data scientists may frequently return to a previous stage to make adjustments,
+as they learn more about the data and the modeling.
+
+Answer: True
+
+Question 5. 
+For predictive models, a test set, which is similar to – but independent of – the training set, is used to determine how well the model predicts outcomes.
+This is an example of what step in the methodology?
+
+Answer: Model Evaluation 
+
+Question 6. 
+What are three important reasons that data scientists should maintain
+continuous communication with business sponsors throughout a project?
+
+Answer(s):
+-So that business sponsors can ensure the work remains on track to generate the intended solution.
+-So that business sponsors can review intermediate findings.
+-So that business sponsors can provide domain expertise.
+
+Final Exam Graded Quiz:
+NOTE: Questions may vary. 
+
+Question 1.
+The first state of the ________________ is Business Understanding.
+
+Answer: Data science methodology
+
+
+Question 2.
+What is an important stage in the data science methodology because it clearly defines
+the problem and the needs from a business perspective?
+
+Answer: Business Understanding 
+
+Question 3.
+Which of the following analogies is used in the videos to explain the Data Requirements and Data Collection stages of the data science methodology?
+
+Answer: 
+You can think of the Data Requirements and Data Collection stages as a cooking task, where the problem at hand is a recipe,
+and the data to answer the question is the ingredients.
+
+Question 4.
+In what stage can techniques such as descriptive statistics and visualization applied to the data set, to assess the content,
+quality, and initial insights about the data?
+
+Answer: The Data Collection stage.
+
+Question 5. 
+A training set is used for what?
+
+Answer: Predictive modeling 
+
+Question 6 (* NOT FINAL)
+A false-positive is what type of error?
+
+Answer: Type I error
+
+
+Question 7.
+What stage encompasses all activities related to constructing the dataset?
+
+
+Answer: The Data Understanding stage.
+
+Question 8. 
+In what stage would you correct invalid values and address outliers?
+
+Answer: 
+The Data Preparation stage
+
+Question 9. 
+The final stages of the data science methodology are an iterative cycle
+between Modeling, Evaluation, Deployment, and ___________.
+
+Answer: Feedback
+
+Question 10
+Deploying a model into production represents the beginning of an iterative process from Feedback, then Model Refinement, and to what?
+
+Answer: Redeployment 
+
+Question 11. (* NOT FINAL)
+Select the correct sentence about the data science methodology as explained in the course.
+-The data science methodology does not depend on a specific set of technologies or tools.
+-The data science methodology always starts with Business Understanding.
+-The data science methodology is an iterative process.
+Answer: All of the above
+
+Question 12
+Support vector machines and neural networks are what type of algorithms?
+Answer: Classification 
+
+
+
+
