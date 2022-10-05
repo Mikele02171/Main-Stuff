@@ -8,6 +8,7 @@ import plotly.graph_objects as go
 import plotly.express as px
 from dash import no_update
 
+#NOTE: My Attempt in this assignment, formatting and structure needs improvement and ensure terminal is running properly.
 
 # Create a dash application
 app = dash.Dash(__name__)
