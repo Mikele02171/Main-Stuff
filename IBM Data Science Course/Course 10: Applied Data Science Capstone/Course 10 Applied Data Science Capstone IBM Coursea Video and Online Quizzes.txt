@@ -1,0 +1,156 @@
+Week 1:
+Graded Quiz: Data Collection API with Webscraping
+Question 1.
+After you performed a GET request on the Space X API and convert the response  to a dataframe using pd.json_normalize. 
+What year is located in the first row in the column static_fire_date_utc?
+
+Answer: 2006
+
+Question 2.
+Using the API, how many Falcon 9 launches are there after we remove Falcon 1 launches?
+
+Answer: 90
+
+Question 3.
+At the end of the API data collection process, how many missing values are there for the column landingPad?
+
+Answer: 26
+
+Question 4. (* Not Final)
+After making a request to the Falcon9 Launch Wiki page and creating a BeautifulSoup object what is the output of:
+
+soup.title
+
+Answer: <title> List of Falcon 9 and Falcon Heavy launches - Wikipedia </title>
+
+
+Graded Quiz: Data Wrangling Quiz
+Question 1. 
+Question 1
+How many launches came from CCAFS SLC 40?
+
+Answer: 55
+
+Question 2
+What was the success rate?
+
+Answer: 67%
+
+Question 3.
+In the lab you used the method .value_counts() to determine the number and occurrence of each orbit in the column Orbit.
+What was the value for Orbit with the column name GTO.
+
+Answer: 27
+
+Question 4.
+How many landing outcomes in the column landing_outcomes had  a value of none 
+
+Answer: 19
+
+Week 2:
+Exploratory Data Analysis using SQL Quiz:
+Question 1. 
+Which of the following will retrieve the most recent date from the spacex table?
+
+Answer: 
+SELECT max(Date) from SPACEXTBL
+
+Question 2.
+Which of the following queries display the minimum payload mass?
+Answer: select min(payload_mass__kg_) from SPACEXTBL 
+
+Question 3.
+You are writing a query that will give you the total payload_mass_kg carried by the booster versions. The mass  should be  stored in the mass column. You want the result column to be called “Total_Payload_Mass”.
+Which of the following SQL queries is correct?
+
+Answer: SELECT sum(PAYLOAD_MASS__KG_) as Total_Payload_Mass from SPACEXTBL 
+
+.
+Question 4.
+Which of the following query to display 5 records launched  on Friday?
+
+Answer: SELECT * FROM SPACEXTBL where DAYNAME(DATE)='Friday' LIMIT 5
+
+Question 5.
+What are the unique launch sites mentioned in the Spacex table?
+
+Answer: 
+CCAFS LC-40,KSC LC-39A
+
+Question 1.
+What type of data does a Bar Chart best represent?
+
+Answer: Categorical 
+
+Question 2.
+What are the total number of columns in the features dataframe after applying one hot encoding to columns Orbits, LaunchSite, LandingPad and Serial .
+Here the features  dataframe consists of the following columns FlightNumber', 'PayloadMass', 'Orbit', 'LaunchSite', 'Flights', 'GridFins', 'Reused', 'Legs', 'LandingPad', 'Block', 'ReusedCount', 'Serial
+
+Answer: 80
+
+Question 3.
+The catplot code to show the scatterplot of  FlightNumber vs LaunchSite with x as FlightNumber,
+and y to Launch Site and hue to 'Class’ is
+
+Answer: 
+
+sns.catplot(y="LaunchSite",x="FlightNumber",hue="Class", data=df, aspect = 1)
+plt.ylabel("Launch Site",fontsize=15)
+plt.xlabel("Flight Number",fontsize=15)
+plt.show()
+
+
+Week 3: 
+Question 1 (* Not final)
+How can you add marking objects such as circles, markers, or lines on a Folium map? (Click all choices that apply) (2 pts)
+
+Answer(s): 
+
+-object.add_to(map)
+-map.add_child(object)
+
+Question 2
+If you want to add multiple markers with similar coordinates on the Folium map, which Folium plugin you should use? (2 pts)
+
+Answer: MarkerCluster
+
+
+Question 3
+Which attribute is used to provide available selections
+(such as a list of launch sites) for a Plotly DropDown input? (2 pts)
+
+Answer: options
+
+Question 4.
+How can we associate the result of a callback function (like a Ploty figure) to an element defined in the application layout (2 pts)?
+
+Answer: Using a unique component id
+
+
+Question 5
+Can we add multiple input components to a dash callback function (2 pts)?
+
+Answer: Yes
+
+
+Week 4:
+Graded Quiz: Predictive Analysisis
+
+Question 1.
+How many records were there in the test sample ?
+
+Answer: 18
+
+
+Question 2.
+For Support Vector Machines, what kernel has the best result on the validation dataset.
+
+Answer: sigmoid
+
+
+Question 3.
+After selecting the best hyperparameters for the decision tree classifier using the validation data, what was the accuracy achieved on the test data 
+
+Answer: 83.33%
+
+
