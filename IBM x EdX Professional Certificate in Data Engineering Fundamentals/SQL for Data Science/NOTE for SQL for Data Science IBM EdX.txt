@@ -1,2 +1,0 @@
-See Course 6: Databases and SQL for Data Science with Python from IBM Data Science Course from Coursea
-For EdX: There is no Modulue 6
