@@ -1,0 +1,523 @@
+Course 1: Introduction to Data Analytics
+Week 1 (Defining Data Analytics)
+Modern Data Ecosystem and the Role of Data Analytics
+
+Practise Quiz:
+Q1. Which emerging technology has made it possible for every enterprise to have access to
+limitless storage and high-performance computing?
+
+Answer: Cloud Computing
+
+Q2. 
+Which of the data roles is responsible for extracting, integrating, and
+organizing data into data repositories?
+
+Answer: Data Engineer 
+
+
+Q3. 
+When you analyze historical data to predict future outcomes what type of
+Data Analytics are you performing?
+
+Answer: Predictive Analytics 
+
+
+Graded Quiz:
+Question 1.
+A modern data ecosystem includes a network of continually evolving entities. It includes: 
+
+Answer: 
+Data sources, enterprise data repository, business stakeholders, and tools, applications, 
+and infrastructure to manage data. 
+
+Question 2
+Data Analysts work within the data ecosystem to:
+
+Answer: 
+Gather, clean, mine, and analyze data for deriving insights 
+
+
+Question 3 (NOT FINAL)
+When we analyze data in order to understand why an event took place, 
+which of the four types of data analytics are we performing?
+
+Answer: Diagnostic Analysis
+
+Question 4.
+The first step in the data analysis process is to gain an in-depth understanding of the problem and the desired outcome.
+What are you seeking answers to at this stage of the data analysis process?
+
+Answer: Where you are and where you need to be.
+
+Question 5
+From the provided list, select the three emerging technologies that
+are shaping today’s data ecosystem. 
+
+Answer: 
+Cloud Computing, Machine Learning, and Big Data. 
+
+
+The Data Analyst Role:
+Practise Quiz:
+Q1. Which of these skills is essential to the role of a Data Analyst? 
+
+Answer: Statistics
+
+Q2. Question 2
+What, according to Sivaram Jaladi, goes a long way in lending credibility to your data analysis findings?
+
+Answer: Sharing your process of arriving at the findings with your stakeholders
+
+Graded Quiz:
+Question 1.
+Why is proficiency in Statistics an important skill for a Data Analyst?
+
+Answer: 
+For identifying patterns and correlations in data 
+
+Question 2. (NOT FINAL)
+Which of these is one of the soft skills required to be a successful Data Analyst?
+
+Answer: Work collaboratively with cross-functional teams 
+
+
+Question 3. 
+Which of the data analyst functional skills helps research and interpret data, theorize, and make forecasts?
+
+Answer: Analytical skills 
+
+
+Question 4.
+In “A day in the life of a Data Analyst”, what according to Sivaram 
+Jaladi forms a large part of a Data Analyst’s job?
+
+Answer: Cleaning and preparing data 
+
+
+Question 5. 
+In “A day in the life of a Data Analyst”, what are some of the data points that 
+were useful in analyzing the use case. (Select all that apply)
+
+Answer(s):
+-Serial number of the meters
+-Average billing amount of complainants
+
+Week 2: (The Data Ecosystem and Languages for Data Professionals)
+Practice Quiz:
+Question 1. 
+What data type is typically found in databases and spreadsheets?
+
+Answer: Structured data
+
+Question 2.
+Which of these data sources is an example of semi-structured data?
+
+Answer: Emails.
+
+Question 3.
+Which one of the provided file formats is commonly used by APIs and Web Services
+to return data? 
+
+Answer: JSON
+
+Question 4.
+What is one example of the relational databases discussed in the video?
+
+Answer: SQL Server.
+
+Question 5. 
+Which of the following languages is one of the most popular querying languages in use today?
+
+Answer: SQL 
+
+
+Graded Quiz: 
+Question 1. 
+In the data analyst’s ecosystem, languages are classified by type.
+What are shell and scripting languages most commonly used for? 
+
+Answer: Automating repetitive operational tasks 
+
+
+Question 2
+Which of the following is an example of unstructured data? 
+
+Answer: 
+Video and audio files
+
+
+Question 3. 
+Which one of these file formats is independent of software, hardware,
+and operating systems, and can be viewed the same way on any device? 
+
+Answer:
+PDF
+
+Question 4.
+Which data source can return data in plain text, XML, HTML, or JSON among others?
+
+Answer: 
+API
+
+Question 5.
+According to the video “Languages for Data Professionals,” which of the programming languages supports multiple programming paradigms, such as object-oriented, imperative, functional,
+and procedural, making it suitable for a wide variety of use cases?   
+
+Answer: Python
+
+
+Understanding Data Repositories and Big Data Platforms
+Practise Quiz
+Question 1.
+Structured Query Language, or SQL, is the standard querying language for what type of data repository?
+
+Answer: RDBMS
+
+Question 2
+In use cases for RDBMS, what is one of the reasons that relational databases are so well suited for OLTP applications?
+
+Answer: Support the ability to insert, update, or delete small amounts of data  
+
+Question 3
+Which NoSQL database type stores each record and its associated data within a single document and also works well with Analytics platforms?
+
+Answer: Document-based
+
+Question 4.
+What type of data repository is used to isolate a subset of data for a particular business function, purpose, or community of users?
+
+Answer: Data Mart
+
+
+Question 5
+What does the attribute “Velocity” imply in the context of Big Data?
+
+Answer: The speed at which data accumulates.
+
+Question 6
+Which of the Big Data processing tools provides distributed storage and processing of Big Data?
+
+Answer: Hadoop
+
+Graded Quiz:
+Question 1.
+Data Marts and Data Warehouses have typically been relational, but the emergence of what technology has helped to let these be used for non-relational data?
+
+Answer: NoSQL
+
+Question 2
+What is one of the most significant advantages of an RDBMS? 
+
+Answer: ACID-Compliant 
+
+Question 3. 
+Which one of the NoSQL database types uses a graphical model to represent and store data, and is particularly useful for visualizing, analyzing, 
+and finding connections between different pieces of data? 
+
+Answer: Graph-based
+
+Question 4.
+Which of the data repositories serves as a pool of raw data and stores large amounts of structured, semi-structured, and unstructured data in their native formats?  
+
+
+Answer: Data Lakes
+
+Question 5.
+What does the attribute “Veracity” imply in the context of Big Data?
+
+Answer: Accuracy and conformity of data to facts
+ 
+Question 6. (NOT FINAL)
+Apache Spark is a general-purpose data processing engine designed to extract and process Big Data for a wide range of applications. What is one of its key use cases?
+
+Answer: Consolidate data across the organization
+
+Week 3: Gathering Data 
+Practise Quiz (Introduction to Data Analytics)
+
+Question 1
+What are the requirements in order for data to be reliable? (Select all that apply)
+-Data should be free of all errors   
+-Data should be relevant 
+
+Question 2
+What type of data is produced by wearable devices, smart buildings, and medical devices? 
+
+Answer: 
+Sensor data
+
+Question 3.
+What type of data is semi-structured and has some organizational properties but not a rigid schema?
+
+Answer: Emails
+
+Graded Quiz (Introduction to Data Analytics)
+Question 1.
+What are some of the steps in the process of “Identifying Data”? (Select all that apply) 
+
+Answer(s): Define a plan for collecting data, Determine the information you want to collect. 
+
+
+Question 2.
+What type of data refers to information obtained directly from the source? 
+
+Answer: Primary data
+
+Question 3. (Not Final)
+Web scraping is used to extract what type of data? 
+
+Answer: 
+Text, videos, and data from relational databases 
+
+
+Question 4.
+Data obtained from an organization’s internal CRM, HR, and workflow applications is classified as:
+
+Answer: Primary data
+
+Question 5
+Which of the provided options offers simple commands to specify what is to be retrieved from a relational database?
+
+Answer: SQL
+
+Practice Quiz (What is Data Wrangling?):
+Question 1. 
+What is one of the common structural transformations used for combining data from one or more tables? 
+
+Answer: Joins 
+
+Question 2.
+What tool allows you to discover, cleanse, and transform data with built-in operations?
+
+Answer: Watson Studio Refinery 
+
+Question 3.
+What is data called that does not fit within the context of the use case? 
+
+Answer: Irrelevant data 
+
+
+Graded Quiz.
+Question 1. 
+What does a typical data wrangling workflow include? 
+
+Answer: Validating the quality of the transformed data.
+
+Question 2.
+OpenRefine is an open-source tool that allows you to: 
+
+Answer: Transform data into a variety of formats such as TSV, CSV, XLS, XML, and JSON 
+
+Question 3. (NOT FINAL)
+What is one of the steps in a typical data cleaning workflow? 
+
+Answer: Inspecting data to detect issues and errors 
+
+Question 4.
+When you’re combining rows of data from multiple source tables into a single table, what kind of data transformation are you performing? 
+
+Answer: Unions 
+
+Question 5
+When you detect a value in your data set that is vastly different from other observations in the same data set, what would you report that as? 
+
+Answer: Outliner
+
+
+Week 4 
+(Analyzing and Mining Data)
+Practise Quiz 
+Question 1
+What is one of the common measures of Central Tendency? 
+
+Answer: Mean
+
+Question 2.
+What technique is used to help identify the nature of the relationship between two variables? 
+
+Answer: Regression
+
+Question 3.
+What Python libraries are commonly used for data mining?  
+
+Answer: Numpy, Pandas
+
+Graded Quiz
+Question 1
+What is a branch of mathematics dealing with the collection, analysis, interpretation, and presentation of numerical or quantitative data?
+
+Answer: Statistics
+
+
+Question 2
+Data Mining is defined as the process of:
+
+Answer: 
+Extracting knowledge from data
+
+Question 3.
+What type of data mining operations was R specifically built to handle? 
+
+Answer: 
+Classification of data 
+
+Question 4. 
+When you’re calculating the middle value of a data field in a data set, what are you really calculating? 
+
+Answer: Median
+
+Question 5. 
+What is the general tendency of a set of data to change over time called?
+
+Answer: Trend
+
+(Communicating Data Analysis Findings)
+Practise Quiz
+Question 1. 
+Data visualizations such as graphs and charts are a great way to bring data to life. 
+
+Answer: True
+
+Question 2. 
+You can use dashboards to present operational data such as daily progress data, as well as analytical data, such as the overall health of a business function.  
+
+Answer: True
+
+Question 3.
+What spreadsheet software is preferred when multiple users need to collaborate?
+
+Answer: Google Sheets
+
+Graded Quiz.
+Question 1
+"A presentation is not a data dump”. What is the one thing you would do to ensure your presentation is not a data dump?
+
+Answer: 
+Include only that information as is needed to address the business problem.
+
+Question 2.
+What is the discipline of communicating information through the use of visual elements?
+
+Answer:Data visualization 
+
+Question 3. 
+Matplotlib is a widely used Python data visualization library.
+
+Answer: True
+
+Question 4
+What is the goal of Data Visualization? 
+
+Answer: Make information easy to comprehend, interpret and retain.
+
+
+Question 5 
+What can you do to help your audience trust you?
+
+Answer: Share your data sources, hypotheses, and validations 
+
+
+Week 5 (Opportunities and Learning Paths)
+Practise Quiz
+
+Question 1.
+On the Data Analyst Specialist path, you could be starting your career as an Associate or Junior Data Analyst and working 
+your way up to a Principal Analyst role. What are some of the factors that influence your growth on this path? 
+
+Answer: The experience and exposure you gain in the different areas within Data Analysis
+
+Question 2. 
+Skills such as problem-solving, communication, and storytelling are critical to the role of a Data Analyst.
+And like most soft skills, you’re either good at them, or you’re not; these skills cannot be acquired over time. 
+
+Answer: False
+
+
+Graded Quiz.
+Question 1. 
+Which of the following statement describes Data Analyst Specialist Roles? 
+
+Answer: 
+Analysts who advance technical, statistical, and analytical skills, over time, to expert levels 
+
+Question 2. (*Not Final)
+A Principal Data Analyst is responsible for: 
+
+Answer: 
+Establishing processes in the team  
+
+Question 3
+Job roles such as Project Managers, Marketing Managers, and HR Managers, can achieve greater efficiency and effectiveness in their
+current roles by acquiring data analysis skills, and are therefore known as analytics-enabled job roles.
+
+Answer: True
+
+Question 4
+Which of these is essential for getting started and growing as a Data Analyst?
+
+Answer: 
+Love for numbers, a curious mind, and openness to learn
+
+
+Question 5
+What Data Analysis roles may be best suited for people with little or no technical training? 
+
+Answer: 
+Functional Analyst  
+
+
+Peer Assessment Final
+1. List at least 5 (five) data points that are required for the analysis and detection of a credit card fraud. (3 marks)
+
+1.       Card holder / Customer Id
+
+2.       Transaction date
+
+3.       Transaction time
+
+4.       Transaction value
+
+5.       Shipping address
+
+6.       IP address
+
+7.       Device model
+
+8.       Location
+
+ 
+
+ 
+
+ 
+
+2. Refer to the data table below and identify 3 (three) errors/issues that could impact the accuracy of your findings. (3 marks)
+
+Missing transaction value
+Missing IP Address
+Date format inconsistency
+ 
+
+ 
+
+3. Refer to the data table below and identify 2 (two) anomalies or unexpected behaviors, that would lead you to believe the transaction may be suspect. (2 marks)
+
+Significantly higher Transaction Value where Shipping Address has been changed from home/office address to P.O. Box.
+Higher Transaction Value and increased frequency of transactions.
+IP Address change and significantly higher Transaction Value.
+IP Address change and Shipping Address change
+ 
+
+ 
+
+4. Briefly explain your key take-away from the provided data visualization chart. (1 mark)
+
+The visualization depicts the transaction values per transaction for all three users. The key take-away from this visualization is the sharp rise in the transaction values for users johnp and ellend, which may be indicative of an anomaly.
+ 
+
+ 
+
+5. dentify the type of analysis that you are performing when you are analyzing historical credit card data to understand what a fraudulent transaction looks like. 
+
+Descriptive Analytics
+
