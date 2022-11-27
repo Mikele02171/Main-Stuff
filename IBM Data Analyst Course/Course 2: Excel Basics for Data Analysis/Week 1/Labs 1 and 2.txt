@@ -1,0 +1,4 @@
+link to labs 1 and 2 respectively
+
+https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%201%20-%20Access%20to%20the%20environment%20-%20Excel%20for%20the%20web/instructions.md.html?origin=www.coursera.org
+https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0130EN-SkillsNetwork/Hands-on%20Labs/Lab%202%20-%20Spreadsheet%20basics/instructions.md.html?origin=www.coursera.org
