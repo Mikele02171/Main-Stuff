@@ -1,0 +1,372 @@
+Week 1 
+(Introduction to Spreadsheets for Data Analysis)
+Practise Quiz 
+
+Question 1.
+Of the following, which one would be considered a core capability of spreadsheets? 
+
+Answer: Statistical analysis 
+
+Question 2. 
+When you open an Excel workbook or spreadsheet, what kind of file is it?
+
+Answer: 
+.xlsx
+
+Question 3. 
+According to the video, on the Excel Home tab what groups are listed? 
+
+Answer: 
+Font, Alignment, Number, Styles 
+
+Graded Quiz:
+Question 1.
+Which of the following key Data Analyst tasks is typically done last?
+
+Answer: 
+Visualizing data 
+
+Question 2.
+How are Excel worksheet cells referenced?  
+
+Answer: Column letter first then row number 
+
+Question 3.  
+Which of the following Excel keyboard shortcuts could be used to find how many rows of data you have in a worksheet,
+assuming you have no empty rows in your data? Select all that apply.
+
+Answer(s): CTRL+Down, 
+CTRL+End 
+
+
+Week 2. (Getting Started Using Spreadsheets)
+Practise Quiz
+
+Question 1.
+How can you zoom to a specific area of data in an Excel spreadsheet? 
+
+Answer: 
+Use the Zoom to Selection button
+
+
+Question 2.
+What do you use the AutoFill feature for?
+
+Answer: 
+Automatically fill cells with data in a sequential series or pattern.
+
+Question 3.
+What is one of the key components of a typical formula?
+
+Answer: Reference 
+
+Question 4.
+What happens when you use the median calculation but select an even number of values in a range?
+
+Answer: Returns middle figure between the two middle values in the selected range.
+
+
+Question 5.
+What are Excel cell references by default?
+
+Answer: Relative references
+
+Question 6.
+When creating formulas, what is a mixed reference? 
+
+Anwser: One cell reference is absolute, the other one is relative
+
+Graded Quiz:
+Question 1.
+Which of the following is a valid way of editing existing data in a cell? Select all that apply
+
+Answer(s): 
+Select the cell you want to edit and then click in the formula bar, Press F2 
+
+Question 2.
+In Excel for the web, how can you format data in cells to use a currency? Select all that apply
+
+Answer(s): 
+Right-click on a cell and select Number Format, Select "More Number Formats" from the Number Format drop-down list in the Number group
+
+Question 3.
+What character do you type first when you want to start writing a formula?
+
+Answer: Equal sign '=' 
+
+Question 4.
+What is one of the functions found in the AutoSum drop-down list?
+
+Answer: Count Numbers
+
+
+Question 5.
+In Excel Desktop, what is one of the function categories on the Formulas tab, in the Function Library group?
+
+Answer: Lookup & Reference 
+
+Question 6.
+How do you make a cell reference absolute in a formula?
+
+Answer: 
+Put a dollar sign ($) in front of the column and/or row identifiers in the formula
+
+Question 7
+Formula errors in Excel are preceded by a hash symbol (#). What does it mean when multiple hash symbols exist in a cell? 
+
+Answer: Column isn't wide enough or it contains negative date or time values 
+
+
+Week 3. (Cleaning & Wrangling Data Using Spreadsheets)
+Practise Quiz.
+
+Question 1. 
+What is the first and most significant part of data quality?
+Answer: Accuracy 
+
+Question 2. 
+Which data quality trait refers to the availability and accessibility of the data?
+Answer: Timeliness
+
+Question 3. 
+What is a delimited file?  
+Answer: file with data fields separated by characters like commas or tabs 
+
+Graded Quiz.
+Question 1.
+Which data quality trait can be summarized by asking if the data is really necessary? 
+
+Answer: Relevance 
+
+Question 2
+Which data quality trait refers to the availability and accessibility of the data?
+
+Answer: Timeliness
+
+Question 3
+After importing a text file into Excel, you find some columns aren't showing all data. How can you fix all column widths at the same time?
+
+Answer: select all columns and double-click one of the selected column dividers 
+
+
+(Cleaning Data)
+Practise Quiz 
+
+Question 1.
+According to the video, what's one of the easiest common errors or inconsistencies to fix when importing data?  
+
+
+Answer: Spelling mistakes 
+
+
+Question 2.
+What is the first thing you should do when checking spelling errors in Excel?  
+
+Answer: Select the data you want to check for spelling
+
+
+Question 3.
+What feature can you use to fix text that appears in mixed case? 
+
+Answer: Functions 
+
+
+Question 4. 
+What is one of the functions you can use to change the text case in your data?  
+
+Answer: LOWER
+
+Question 5. 
+What does the Flash Fill feature have in common with the UPPER, LOWER, and PROPER functions? 
+
+Answer: Requires a helper column or row.
+
+Question 6
+Which of the following tasks can Flash Fill do? Select all that apply.
+
+Answer(s): Combine two columns of data into one, Split one column into two
+
+Graded Quiz.
+Question 1
+What is one of the issues that empty rows cause in your spreadsheet?
+
+Answer: Formula errors
+
+Question 2.
+How can you remove all empty rows at the same time in your imported spreadsheet?
+
+Answer: Select all rows and then filter for Blanks, select these and then delete 
+
+Question 3. 
+There are two methods to locate and remove duplicated rows in Excel, what is the easiest way? 
+
+Answer: Select all data and click the Remove Duplicates button
+
+
+Question 4.
+What does the PROPER function do?
+
+Answer: Changes text to sentence case. 
+
+
+Question 5.
+Why do you need to use the Paste Values option when you paste contents from a helper row to the original row?
+
+Answer: 
+Makes sure formulas aren’t also copied 
+
+
+Question 6.
+What is one of the ways to apply new data formats to the rest of a column?
+
+Answer: Format Painter tool. 
+
+
+Question 7
+What tools or features can we use to split a single column with two names in,
+into two separate columns with a name in each? Select all that apply.
+
+Answer(s): 
+
+Text to Columns feature, 
+Flash Fill feature 
+
+
+Week 4 (Data Analysis Basics, Filtering and Sorting Data)
+Practise Quiz.
+
+Question 1.
+Which of the following are valid sorting orders you can choose when adding
+sorting levels to your data? Select all that apply.
+
+Answer(s): Z to A, 
+Smallest to Largest, 
+Oldest to Newest. 
+
+
+Question 2.
+After filtering a column and getting the results, in which two ways can you return to showing all the data in a column? Select two answers.
+
+Answer(s): 
+clear the filter, turn filtering off
+
+Question 3.
+What do custom filters provide that AutoFilters don't?
+
+Answer: 
+filter a column to see only above or below a certain value  
+
+Question 4.
+According to the video 'Useful Functions for Data Analysis', what is one of the most common functions a Data Analyst might use?  
+
+Answer: Countif
+
+Question 5.
+What does VLOOKUP stand for? 
+
+Answer: Vertical Lookup 
+
+Graded Quiz.
+Question 1.
+If you have multiple filters set, how can you clear all of them at once?
+
+Answer: 
+Data tab > Sort & Filter group > Clear 
+
+Question 2.
+After enabling Filtering, where can you see and access the filter controls?  
+
+Answer: 
+Each column header now has a filter control 
+
+Question 3.
+The IF function applies to one or two conditions, but what if you need to apply multiple conditions?
+
+Answer: Use the nesting capabilities of the IF function 
+
+
+Question 4. 
+When you use nested functions, what is required for each of the functions?
+Answer: 
+A set of parentheses for each function 
+
+
+Question 5. 
+The difference between HLOOKUP, VLOOKUP, and XLOOKUP is how they look for data. How does each look for data?
+
+Answer: 
+
+HLOOKUP = by column
+
+VLOOKUP = by row
+
+XLOOKUP = in all directions 
+
+
+(Pivot Tables)
+Practise Quiz. (Questions may vary)
+Question 1.
+Before creating a pivot table, how should you format your data?  
+
+Answer: As a table
+
+Question 2.
+How can you add more filters to the pivot table?
+
+Answer: 
+drag a field to the Filters area of the PivotTable Fields pane
+
+
+Question 3
+What are slicers?
+
+Answer: 
+on-screen graphical filter objects
+
+
+Question 4
+What do timelines provide in pivot tables?
+
+Answer: 
+lets you filter specifically on date-related data
+
+Graded Quiz.
+Question 1.
+According to the video checklist, what should you remove before making a Pivot Table?
+
+Answer: 
+Blank rows, columns, and cells 
+
+Question 2.
+What is automatically added after formatting data as a table?
+
+Answer: Filter drop-downs at top of columns 
+
+Question 3.
+After creating a pivot table and selecting it, what pane appears to the right of the pivot table? 
+
+Answer: 
+The PivotTable Fields pane
+
+Question 4.
+What do Timelines provide in pivot tables?
+
+Answer: 
+Lets you filter specifically on date-related data 
+
+Question 5. 
+What is one way to remove a slicer or timeline?
+
+Answer: 
+Right-click it and select cut 
+
+
+
+
+
+
+
+
+
+
+
