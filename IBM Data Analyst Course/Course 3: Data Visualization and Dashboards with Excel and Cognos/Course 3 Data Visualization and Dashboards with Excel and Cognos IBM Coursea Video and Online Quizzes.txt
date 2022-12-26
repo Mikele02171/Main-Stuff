@@ -1,0 +1,197 @@
+Week 1: 
+Creating Charts 
+Practise Quiz
+
+
+Question 1.
+What is the difference between Bar and Column charts?
+Answer: One uses vertical bars, and one uses horizontal bars 
+
+Question 2.
+Which chart uses nested rectangles?
+Answer: Treemaps
+
+Question 3.
+Which two charts typically have categories arranged on the horizontal axis and values on the vertical axis?
+
+Answer: 
+Column and line charts 
+
+Question 4.
+When you add a filter to a pivot chart,
+how do you update the data in the original source pivot table?
+
+Answer: 
+You do not need to do anything, as changes are immediately reflected in the pivot table data too
+
+Graded Quiz. 
+
+
+Question 1
+What is a capability of line charts?
+
+Answer: 
+Compare different, but related data sets 
+
+Question 2
+Each portion of a pie chart represents static values or categories. What is the sum of the categories equal to?  
+
+Answer: 100%
+
+Question 3
+According to the ‘Introduction to Charts’ video, which chart is one of the most commonly used?
+
+Answer: Bar chart 
+
+Question 4
+In the ‘Expert Viewpoints: Using Visualizations to Tell a Data Story’ video, one expert mentioned two software programs that help highlight the important information. Which were the two software programs? 
+Answer: 
+PowerPoint and Excel 
+
+Question 5
+In the ‘Creating Basic Charts in Excel’ video, which type of chart shows the relative contribution of unit sales from Ford car models?
+
+Answer: Pie chart
+
+Question 6. **Not Final
+How does a pivot chart differ from a standard chart in Excel? 
+Answer: A pivot chart uses data from a pivot table 
+
+Question 7
+What is the main difference between Area and Column charts? 
+
+Answer: 
+A column chart uses vertical bars, and an area chart uses data points 
+
+Week 2
+Creating Advanced Charts.
+Practise Quiz.
+
+Question 1.
+What are scatter charts commonly used for? 
+
+Answer: 
+To compare statistical, scientific, and engineering data values 
+
+Question 2.
+When you are creating a sparklines visualization, which two methods can you use to specify where the sparklines should appear on a worksheet? (Select two answers)
+
+Answer(s): 
+-On the worksheet select a cell and Excel will add the cell reference to the Location Range box for you.
+-Enter the cell reference in the Location Range box.
+
+Question 3.
+What's one data type intended for waterfall charts?
+
+Answer: 
+Financial data 
+
+Graded Quiz.
+Question 1.
+What do treemaps use to represent hierarchical data categories? 
+
+Answer: 
+Treemaps use color, size, and closeness of shapes.
+
+Question 2.
+Histograms can look like a bar chart, what’s the key difference? 
+
+Answer: Bar charts compare data and histograms display the distribution of data.
+
+Question 3.
+What kind of data works best with filled map charts?  
+
+Answer: Data containing geographical regions.
+
+Question 4.
+What are sparklines typically used for?
+
+Answer: To show data trends.
+
+Creating Dashboards Using Spreadsheets.
+Practise Quiz.
+
+Question 1.
+Which of the following applications would be considered an advanced data analysis and visualization application? 
+(Select all that apply)
+
+Answer(s): Tableau, Cognos Analytics and Bokeh (in Python).
+
+
+Question 2.
+According to the ‘Creating a Simple Dashboard using Excel’ video, which of the following should you have already done prior to creating a dashboard? (Select all that apply) 
+
+Answer(s): Created pivot tables to help analyze data, 
+Verified data is clean and error free, Formatted the data as a table.
+
+Graded Quiz.
+Question 1.
+Which of the following, do dashboards provide in a data analysis application? (Select all that apply)
+
+Answer(s): 
+Key performance indicators (KPIs),
+A controllable self-service business intelligence (BI) interface., A consolidated view of business data.
+
+Question 2
+According to the ‘Creating a Simple Dashboard using Excel’ video, what did subject matter experts advise when building dashboards?
+Answer: 
+Displaying too much information means your key points can get lost.
+
+Week 3
+Creating Dashboards Using IBM Cognos Analytics
+Practise Quiz.
+
+Question 1. 
+Which URL do you navigate to, in order to sign up for a trial of Cognos Analytics?
+
+Answer: IBM.BIZ/TRY_COGNOS 
+
+Question 2. 
+In Cognos Analytics, which are the two main navigational areas of the interface? 
+
+Answer: Left pane and top bar
+
+Question 3. 
+What happens first when you use the Cognos Assistant to help create a dashboard?
+
+Answer: You can either ask a question directly or ask the Assistant to suggest some questions to ask.
+
+Question 4.
+What are the two ways to create calculations in Cognos Analytics? (Select two answers) 
+Answer(s):
+-Select operators and functions from the left pane.
+-Start typing in the Expression box.
+
+Graded Quiz. 
+Question 1
+When signing up for a trial of Cognos Analytics, which item in the account form is the key one to take note of? 
+
+Answer: Your closest data center 
+
+Question 2.
+In Cognos Analytics what is the first step to build a dashboard?
+
+Answer: Choose a template 
+
+Question 3.
+Which of the following methods can be used in Cognos Analytics to create visualizations? (Select all that apply)
+
+Answer(s): 
+-By manually populating by dragging and dropping
+-By using the Assistant to suggest questions and suggested visualizations
+-By automatic recommended visualizations.
+
+Question 4. (NOT FINAL)
+How can you create infographics in Cognos Analytics?
+
+Answer: Modify navigation paths.
+
+
+
+
+
+
+
+
+
+
