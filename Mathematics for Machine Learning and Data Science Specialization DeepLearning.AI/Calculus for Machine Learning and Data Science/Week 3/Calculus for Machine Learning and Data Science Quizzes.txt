@@ -1,0 +1,513 @@
+Week 1.
+Motivation to Derivatives Video Question 1.
+Is the car moving at a constant speed?
+
+Answer: No
+
+Motivation to Derivatives Video Question 2.
+Can you use the information presented to determine your velocity at exactly t = 12.5 seconds?
+
+Answer: No, I need more information.
+
+Why? While you do not have enough data to determine the velocity at t=12.5 seconds, you can only tell the average velocity between 10 and 15s!
+
+
+Motivation to Derivatives Video Question 3.
+What was the average velocitu of the car on the interval from 10 to 15 seconds?
+
+Answer: Velocity = 16m/s
+
+
+Motivation to Derivatives Video Question 4.
+
+Can you find a good estimate of the velocity of the car at time t = 12.5 seconds using this data?
+
+Answer: Velocity = 15m/s
+
+Slopes, Maxima and Minima Video Question 1.
+Where was the velocity of your car zero?
+
+Answer(s):
+t = 10 min
+t = 16 min
+t = 22 min
+t = 34 min
+t = 40 min
+
+Slopes, Maxima and Minima Video Question 2.
+At what time was the car farthest from its starting point?
+
+Answer: t = 10 min
+
+Existance of the derivative Video Question 1. 
+See Screenshots Week 1. 32. Existance of the derivative Part 2
+
+At which point in this function does the derivative not exist?
+
+Answer: x = 1
+
+Existance of the derivative Video Question 2.
+See Screenshots Week 1. 33.. Existance of the derivative Part 3
+
+At which point in this function does the derivative not exist?
+Answer: x = -1
+
+Properties of the derivative: The sum rule Video Question 1.
+See Screenshots Week 1. 38.. Propeties of the derivative: The sum rule Part 2
+
+Answer: Speed = 0.65 m/s
+ 
+
+Properties of the derivative: The sum rule Video Question 2.
+See Screenshots Week 1. 41. Properties of the derivative the Sum rule Part 5 
+
+Answer: 2 + 2x
+
+Properties of the derivative The Product Rule Video Question.
+See Screenshots Week 1. 44. Properties of the derivative The product rule 
+
+Answer: e^x + xe^x
+
+Properties of the derivative The Chain Rule Video Question.
+See Screenshots Week 1. 48. Properties of the derivative The Chain Rule Part 4
+
+Answer: 2e^2x
+
+Practise Quiz. Derivatives
+
+Question 1.
+See Screenshots Week 1. 49. Derivatives Quiz Q1
+
+Answer: Slope(Line 1) < Slope(Line 2).
+
+Question 2.
+See Screenshots Week 1. 50. Derivatives Quiz Q2
+
+Answer: 2
+
+Question 3.
+Consider the graphs below
+
+See Screenshots Week 1. 51. Derivatives Quiz Q3
+
+What can be said about the curve’s slopes at the red point, which we will call P1, P2, P3 and P4, corresponding to the red points in the graphs 1, 2, 3 and 4, respectively?
+
+Answer: Slope(P1) < 0, Slope(P2) = 0, Slope(P3) does not exist, Slope(P4) does not exist.
+
+Question 4.
+See Screenshots Week 1. 51. Derivatives Quiz Q4
+
+Answer(s):
+- The slope of y1 is a.
+- If a>c then the slope of y1 is greater than the slope of y2.
+- The slope of y1 does not depend on b.
+
+Question 5.
+Which of the following sentences are true (check all that apply)?
+
+Answer: 
+-Let f be a real function. If f'(x) > 0 for every x in R, then f is increasing.
+
+
+Optimization of squared loss - The three powerline problem Video Question 1.
+What is the cost function of this problem?
+
+Answer: (x-a)^2 + (x-b)^2 + (x-c)^2
+
+Optimization of squared loss - The three powerline problem Video Question 2.
+Where should you put the house to minimize the cost?
+
+Answer: 
+x = (a+b+c)/3
+
+Optimization of log-loss - Part 1 Video Question 
+Which of the three coins would you choose to maximize yout chances of winning?
+
+Answer: Coin 1
+
+Quiz: Derivatives and Optimization
+Question 1. 
+See Screenshots Week 1. 67. Derivatives and Optimization Q1
+
+Question 2.
+See Screenshots Week 1. 68. Derivatives and Optimization Q2
+
+Answer(s):
+-f'(x) has three zeros, i.e., f'(x) = 0 three times. 
+-f'(1) < 0
+-f'(4) > 0
+
+Question 3. 
+What is the derivative of 3x^3-2x+1?
+
+Answer: 9x^2 - 2
+
+
+Question 4.
+Suppose you have a game where you toss a coin 
+20 times and win if you get, in this exact order, 16 heads and 4 tails. However, in this game, you can choose any coin and toss it 20 times. 
+
+Which of the following functions you need to maximize in order to find the best coin for this game? Consider 
+p being the probability of a given coin being heads.
+
+Answer: 16lop(p) + 4log(1-p)
+
+Question 5.
+See Screenshots Week 1. 68. Derivatives and Optimization Q5
+
+Let f(x) be a real valued function with the following graph.In the interval [0,7],
+how many zeros has its derivative f'(x)?
+
+Answer: 5
+
+Question 6. 
+If f(x) and g(x) are differentiable functions, then the derivative of f(x)g(x) is given by:
+
+Answer: f'(x).g(x) + g'(x).f(x)
+
+Question 7. 
+The rate of change of f(x) = x^2 + 3 at x = 6 is:
+
+Answer: 12
+
+Question 8. Let f(x) be a positive real function and g(x) = logf(x).
+Check all apply.
+Answer(s):
+-If f(x) is differentiable, then so is g(x).
+-If xmax is a point where f(xmax) is a local maximum, then g(xmax) is also a local maximum.
+
+Question 9. Using the chain rule, the derivative of e^-x is:
+Answer: -e^-x
+
+Week 2.
+Partial Derivatives Part 2 Video Question 1.
+
+See Screenshots Week 2. 5.Partial derivatives Part 2 Quiz 1
+
+Answer: 6xy^3
+
+Partial Derivatives Part 2 Video Question 2.
+
+See Screenshots Week 2. 6.Partial derivatives Part 2 Quiz 2
+
+Answer: 9x^2 y^2
+
+Gradients Video Question 1.
+
+See Screenshots Week 2. 7.Gradients Quiz 1
+
+Answer: 6xy^3
+
+Gradients Video Question 2. 
+
+See Screenshots Week 2. 7.Gradients Quiz 2
+
+Answer: 9x^2 y^2
+
+Optimization with gradients: An example Video Question 1.
+
+See Screenshots Week 2. 14. Optimization with gradients An example Quiz 1
+
+Answer: 
+-1/30 * x^2y^3 + 1/10 * x^2y^2 + 2/15 * x*y^3 - 2/5 *x*y^3
+
+
+Optimization with gradients: An example Video Question 2.
+
+See Screenshots Week 2. 14. Optimization with gradients An example Quiz 1
+
+Answer: -1/30 * x^3y^2 + 1/15 * x^3y + 1/5 * x^2y^2 - 3/5 * x^2y^2
+
+Optimization using gradients - Analytical method Video Question 1.
+
+See Screenshots Week 2. 20. Optimization using gradients Analytical Method Quiz 1. 
+
+Answer: ∂m/∂E =28m+12b−42
+
+Optimization using gradients - Analytical method Video Question 2. 
+
+See Screenshots Week 2. 21. Optimization using gradients Analytical Method Quiz 2.
+
+Answer: ∂m/∂E =6b+12m−20
+
+Practice Quiz: Partial Derivatives and Gradient 
+Question 1. 
+Given that f(x,y) = x^2*y + 3*x^2, find the derivative with respect to x, i.e., find ∂f/∂x.
+
+Note: Please use * to indicate the product in the answer. So, if we would write the entire function 
+f as an answer, it would be x^2 * y + 3 * x^2.
+
+Answer: 2*x*y + 6*x
+
+Question 2. 
+Given that f(x,y) = x*y^2 + 2*x + 3*y its gradient, i.e., 
+∇f(x,y) is: 
+
+[y^2+2
+2xy + 3]
+
+Question 3. 
+Let f(x,y) = x^2 + 2*y^2 + 8*y. The minimum value of f is:
+
+Answer: -8
+
+Question 4. 
+
+The gradient of f(x,y,z) = x^2 + 2*x*y*z + z^2 is:
+
+Answer: 
+[2x + 2yz
+2xz
+2xy + 2z]
+
+Graded Quiz: Partial Derivatives and Gradient Descent 
+Question 1.*
+About the Gradient Descent method, choose all that are true:
+Answer(s):
+-The result may vary depending on the initial point.
+-It always converges to a local minimum. 
+-It only works for differentiable functions.
+
+Question 2. 
+Given the Initial Point on the following graph, to which point will the Gradient Descent method converge?
+
+See Screenshots Week 2. 39. Partial Derivatives Quiz 2
+
+Answer: P1.
+
+Question 3. 
+Given that f(x,y) = x^3*y^2 + 3*y^3
+find its derivative with respect to 
+y, i.e., find ∂f/∂y.
+Note: Please use * to indicate the product in the answer. So, if we wrote the entire function $f$ as an answer, it would be x^3 * y^2 + 3 * y^3.
+
+Answer: 
+2*x^3*y+9*y^2
+
+Question  4.
+Let f(x,y) = 2*x^2 + 3*y^2 - 2*x*y - 10x, the minimum value of f(x,y) is
+
+Answer: -15
+
+Question 5.
+What are the parameters that the Gradient Descent algorithm has? (check all that apply)
+
+Answer(s):
+-Initial point
+-Learning rate
+-Number of iterations
+
+Question 6. 
+
+
+Let f(x,y) = x^2 + y^2 - 6*x and 
+∇f(x,y) =
+[2x - 6
+2y]
+
+and let the initial point 
+x0 = (0,1). Performing the gradient descent algorithm with learning rate = 0.1, the first iteration will lead us the point 
+x1 which is:
+
+x1 = (0.6,0.8)
+
+How? 
+Learn the following formula below.
+f(0,1) - learning rate* ∇f(0,1) to get the following result.
+
+NOTE learning rate is a scalar/multiple or constant. 
+
+Week 3.
+Regression with a perceptron Video Question.
+For our optimization purpose, the predicted value defined as
+
+y^ = w1*x1 + w2*x2 + b
+
+will be treated as a function of (select all that apply):
+
+Answer(s): w1,w2 and b.
+
+Classification with a Neural Network Video Question.
+The values for z,z1 and z2: 
+Answer:
+z1 = w11x1 + w21x2 + b1
+z2 = w12x1 + w22x2 + b2
+z = w1a1 + w2a2 + c
+
+Practise Quiz: Optimization in Neural Networks 
+
+Question 1. 
+Given the Single Layer Perceptron described in the lectures:
+
+See Screenshots Week 3 47. Practise Quiz for Optimization in Neural Networks Q1
+
+What should be replaced in the question mark?
+
+Answer: w1x1 + w2x2 + b
+
+Question 2. 
+For a Regression using a Single Layer Perceptron, select all that apply:
+
+Answer(s)
+-The loss Function used is L(y,y^) = 1*(y-y^)^2/2.
+-To minimize the Loss Function, we consider L(y,y^) as a function of w1,w2 and b.
+
+Question 3. 
+Consider the problem of Classification using a Single Layer Perceptron as discussed in the lectures.
+
+See Screenshots for Week 3 48. Practise Quiz for Optimization in Neural Networks Q2.
+
+Answer: 
+z = w1x1 + w2x2 + b and σ(z) = 1/(1+e^-z)
+
+Question 4. 
+In the 2,2,1 Neural Network described below
+
+See Screenshots for Week 3 49. Practise Quiz for Optimization in Neural Networks Q4.
+
+How many parameters must be tuned to minimize the Loss Function?
+
+Answer: 9
+
+Why? 
+Correct! We have 2 inputs, which will generate 2 constant terms (b1 and b2), since the next layer has 2 neurons, each input must have 2 parameters,
+therefore the first layer has 2 + 2*2 = 6 parameters. The hidden layer, 
+therefore, has three more parameters since there are 2 neurons. We also must add another constant term 
+c. In total there are 9 parameters.
+
+
+Question 5
+About Backpropagation, check all that apply:
+
+Answer(s)
+-It is a method to update the parameters of a neural network.
+-It is a method that starts in the output layer and finishes in the input layer.
+
+Newton's Method Video Question 
+The value for 
+x (k+1) is given by 
+
+Answer: x(k+1) = xk - (f(xk)/f'(xk))
+
+The second derivative Video Question. 
+Before we formalize the ideas in this lesson, try to answer the following question:
+If the second derivative of a function f(x), i.e., f''(x) or d^2/dx^2 f(x) is equal to
+0 for every value of x, what can we say about f(x)? 
+
+Answer: f(x) is a line.
+
+Why? 
+ If f′′(x)=0, then 
+f ′(x) is constant! From Week 1 we know that if the derivative of a function is constant, then it must be a line (either horizontal or not)!
+
+The Hessian Video Question.
+If f(x,y) = x^2 + y^2 then, the Hessian Matrix is:
+[2 0 
+0 2]
+
+Why? 
+See Screenshots for Week 3 73. The Hessian Part 6
+
+Graded Quiz: Optimization in Neural Networks and Newton's Method
+Question 1. 
+Using Newton’s method, find an approximation recursive formula for sqrt(2). 
+
+NOTE: sqrt means square root. 
+To help you, remember that sqrt(2) is the positive solution for 
+x^2 - 2, so you can use for f(x) = x^2 - 2.
+
+Answer: 
+x(k+1) = xk - (xk^2-2)/2xk
+
+Question 2. 
+Regarding the previous question, suppose you don't know any approximation for sqrt(2) and only that it is a positive
+real number such that x^2 = 2. Which value from the list below will result in the fastest convergence?
+
+Answer: 2
+
+Question 3. Let's continue investigating the method we are developing to compute the sqrt(2). Remember that we
+used the fact that sqrt(2) is one of the roots of x^2 -2. What would happen if we have chosen a negative
+value as initial point?
+
+Answer: The algorithm would converge to the negative root of x^2-2.
+
+Question 4. 
+Did you know that it is possible to calculate the reciprocal of any number without performing division?
+(The reciprocal of a non-zero real number a is 1/a). 
+
+Setting a non-zero real number a, use the function f(x) = a - 1/x = a - x^-1 to find such formula. 
+This method was in fact used in older IBM computers to implement division in hardware!
+
+So, the iteration formula to find the reciprocal of 
+a, in this case, is:
+
+Answer: x(k+1) = 2xk-a(xk)^2
+
+Question 5. Suppose we want to find the minimum value (suppose we already know that the minimum exists and is unique) of xlog(x) where
+x ∈ (0,+∞). Using Newton's method, what recursion formula we must use?
+
+Hint: f(x) = xlog(x), f'(x) = log(x) + 1 and f''(x) = 1/x
+
+Answer: x(k+1) = xk - xk*(log(xk)+1)
+
+Question 6. 
+Regarding the Second Derivative Test to decide whether a point with 
+f’(x) = 0 is a local minimum or local maximum, check all that apply.
+
+Answer(s):
+-If f''(x) > 0 then x is a local minimum.
+-If f''(x) = 0 then the test is inconclusive.
+
+Question 7. Let f(x,y) = x^2 + y^3, then the Hessian matrix, H(x,y) is:
+
+Answer:
+H(x,y) = 
+[2 0
+0 6y]
+
+Question 8
+How many parameters has a Neural Network with:
+
+Input layer of size 3
+
+One hidden layer with 3 neurons
+
+One hidden layer with 2 neurons
+
+Output layer with size 1
+
+An image is provided below:
+
+See Screenshots for Week 3 for 88. Optimization in Neural Networks and Newtons Method Quiz 8
+
+Answer: 23
+
+
+Question 9. 
+Given the following Single Layer Perceptron with Sigmoid function as activation function, and log-loss as Loss Function
+(L), the value for ∂L/∂w1 is:
+
+See Screenshots for Week 3 for 89. Optimization in Neural Networks and Newtons Method Quiz 9
+
+Answer: -(y-y^)x1
+
+Question 10. Suppose you have a function f(x,y) with ∇f(x0,y0) = (0,0) and such that
+H(x0,y0) =
+[2 0
+0 10]
+
+Then the point (x0,y0) is a:
+
+Answer: Local minimum.
+
+
+
+
+
+
+
+
+
+
+
+
