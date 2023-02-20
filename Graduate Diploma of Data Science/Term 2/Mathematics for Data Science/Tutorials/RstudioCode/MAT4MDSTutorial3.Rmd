@@ -1,0 +1,72 @@
+---
+title: "MAT4MDS Tutorial 3 Code"
+output: word_document
+date: '2023-02-20'
+---
+
+
+#Question 9c 
+```{r}
+J_13 = matrix(c(rep(1,169)),13,13)
+J_13
+```
+
+
+#Creating the identity matrix. 
+```{r}
+I_13 = diag(13)
+I_13
+```
+
+
+#Computing C_13 (centring matrix)
+```{r}
+C_13 = I_13 - (1/13)*(J_13)
+C_13
+```
+
+#Now, we compute C_13 * D
+```{r}
+D = matrix(c(5,4.4,4.9,5.4,4.8,4.8,4.3,5.8,5.7,5.4,5.1,5.7,4.7,3.4,2.9,3.1,3.7,3.4,3,3,4,4.4,3.9,3.5,3.8,3.2,1.5,1.4,1.5,1.5,1.6,1.4,1.1,1.2,1.5,1.3,1.4,1.7,1.6,.2,.2,.1,.2,.2,.1,.1,.2,.4,.4,.3,.3,.2),13,4)
+D
+```
+
+
+
+
+```{r}
+C_13%*%D
+```
+
+
+
+
+
+
+
+
+#Question 10b) 
+```{r}
+C_13 = I_13 - (1/13)*(J_13)
+C_13%*%C_13
+```
+
+
+#Question 12 Computing inverse for Martix F
+
+```{r}
+
+F = matrix(c(1,7,4,0,5,-2,0,-3,1),3,3)
+F
+
+```
+
+
+#solve function built in this version 
+```{r}
+solve(F)
+
+```
+
+
+
