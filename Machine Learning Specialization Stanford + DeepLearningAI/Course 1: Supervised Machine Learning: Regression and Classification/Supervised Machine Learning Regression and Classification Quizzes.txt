@@ -1,0 +1,392 @@
+Week 1: Introduction to Machine Learning 
+
+What is Machine Learning Video Question.
+
+If Arthur Samuel's checkers-playing program had been allowed to play only 10 games (instead of tens of thousands games) against itself, how would this have affected its performance?
+
+Answer: Would have made it worse
+Why? In general, the more opportunities you give a learning algorithm to learn, the better it will perform.
+
+Machine Learning Algorithms 
+-Supervised Learning (rapid advancements used most in real-world applications)
+-Unsupervised Learning
+-Recommender systems 
+-Reinforcement Learning
+ 
+Supervised Learning part 2 Video Question.
+Supervised learning is when we give our learning algorithm the right answer y  for each example to learn from.  
+Which is an example of supervised learning?
+
+Answer: Spam filtering 
+Why? For instance, emails labeled as "spam" or "not spam" are examples used for training a supervised learning algorithm. The trained algorithm will then be able to predict with some
+degree of accuracy whether an unseen email is spam or not.
+
+UnSupervised Learning part 2 Video Question.
+
+Of the following examples, which would you address using an unsupervised learning algorithm?  (Check all that apply.)
+
+Answer(s)
+-Given a set of news articles
+found on the web, group them into sets of articles about the same stories.
+
+-Given a database of customer data, automatically discover market segments
+and group customers into different market segments.
+
+Practice quiz: Supervised vs unsupervised learning
+Question 1.
+Which are the two common types of supervised learning? (Choose two)
+
+Answer(s): Regression and Classification
+
+Question 2.
+Which of these is a type of unsupervised learning?
+
+Answer: Clustering
+
+Linear regression model part 2 Video Question.
+For linear regression, the model is represented by 
+
+fw,b(x)=wx+b.  
+Which of the following is the output or "target" variable?
+
+Answer: y.
+
+Cost function formula Video Quiz.
+Which of these are the parameters of the model that can be adjusted?
+
+Answer: See screenshots in Week 1 (4.)
+
+Cost function intuition Video Quiz.
+When does the model fit the data relatively well, compared to other choices for parameter w?
+
+Answer: 
+When the cost J is at or near a minimum.
+
+
+Question 1.
+
+For linear regression, the model is 
+
+f w,b(x)=wx+b.
+
+Which of the following are the inputs, or features,
+that are fed into the model and with which the model is expected to make a prediction?
+
+Answer: x
+
+Question 2.
+For linear regression, if you find parameters 
+w and 
+b so that 
+J(w,b) is very close to zero, what can you conclude?
+
+Answer: The selected values of the parameters 
+w and 
+b cause the algorithm to fit the training set really well.
+
+Implementing gradient descent Video Question.
+Gradient descent is an algorithm for finding values of parameters w and b that minimize the cost function J.  What does this update statement do? (Assume
+α is small.) 
+
+Answer: Updates parameter w by a small amount 
+(See screenshots in Week 1 21. to see the image)
+
+Gradient descent intuition Video Question.
+Gradient descent is an algorithm for finding values of parameters w and b that minimize the cost function J.
+Assume the learning rate 
+α is a small positive number. When alpha is a positive number (greater than zero) -- as in the example in the upper part of the slide shown above -- what happens to 
+w after one update step?
+
+Answer: w decreases
+
+Practice quiz: Train the model with gradient descent
+See screenshots in Week 1 (33. and 34.)
+
+Week 2: Multiple features 
+Multiple features Video Question. 
+In the training set below, what is 
+x1^(4)? 
+Please type in the number below (this is an integer such as 123, no decimal points).
+
+See Screenshot 1 in Week 2
+
+Answer: 852
+
+Vectorization Part 1 Video Question.
+Which of the following is a vectorized implementation for computing a linear regression model’s prediction?
+
+See Screenshot 2 in Week 2
+
+Answer: 
+f = np.dot(w,x) + b
+
+Vectorization Part 2 Video Question.
+Which of the following is a vectorized implementation for computing a linear regression model’s prediction?
+
+Answer: f = np.dot(w,x) + b
+
+Practise Quiz: Multiple linear regression
+Question 1.
+In the training set below, what is 
+x4(3)? 
+
+See Screenshot 3 in Week 2
+
+Please type in the number below
+(this is an integer such as 123, no decimal points).
+
+Answer: 30
+
+Question 2.
+Which of the following are potential benefits of vectorization? Please choose the best option.
+
+-It makes your code run faster
+-It makes your code shorter
+-It allows your code to run more easily on parallel compute hardware
+
+Answer: All of the above
+
+Question 3.
+True/False? To make gradient descent converge about twice as fast, a technique that almost always works
+is to double the learning rate alpha. 
+
+Answer: False
+
+Feature scaling part 2 Video Question
+Which of the following is a valid step used during feature scaling? 
+
+See Screenshots 11 and 12 in Week 2
+
+Answer: 
+Divide each value by the maximum value for that feature
+
+
+Choosing the learning rate Video Question
+See Screenshots 13 and 14 in Week 2
+
+You run gradient descent for 15 iterations with 
+α=0.3 and compute 
+J(w) after each iteration. You find that the value of 
+J(w) increases over time.  How do you think you should adjust the learning rate 
+α?
+
+Feature Engineering Video Question 
+If you have measurements for the dimensions of a swimming pool (length, width, height),
+which of the following two would be a more useful engineered feature?
+
+Answer: length x width x height
+
+Practise Quiz: Gradient descent in practise
+
+
+Question 1.
+Which of the following is a valid step used during feature scaling? 
+
+See Screenshot 20 in Week 2
+
+Answer: 
+Subtract the mean (average) from each value and then divide by the (max - min).
+
+Question 2.
+Suppose a friend ran gradient descent three separate times with three choices of the learning rate 
+α and plotted the learning curves for each (cost J for each iteration).
+
+See Screenshot 21 in Week 2
+
+Answer: 
+case B only
+
+Question 3.
+Of the circumstances below, for which one is feature scaling particularly helpful?
+
+Answer: 
+Feature scaling is helpful when one feature is much larger (or smaller) than another feature.
+
+Question 4.
+You are helping a grocery store predict its revenue, and have data on its items sold per week, and price per item. What could be a useful engineered feature?
+
+Answer: 
+For each product, calculate the number of items sold times price per item.
+
+Question 5.
+True/False? With polynomial regression, the predicted values f_w,b(x) does not necessarily have to be a straight line (or linear) function of the input feature x.
+
+Answer: True
+
+Week 3: Motivations 
+Motivations Video Question 
+Which of the following is an example of a classification task?
+
+Answer: Decide if an animal is a cat or not a cat.
+
+Why? Correct: This is an example of binary classification where there are two possible classes (True/False or Yes/No or 1/0).
+
+Logistic Regression Video Question. 
+
+See Week 3, 6. Logistic regression Part 3
+
+Recall the sigmoid function is g(z) = 1/(1+e^(-z))
+If z is a large negative number then:
+
+Answer: g(z) is near zero.
+
+Decision boundary Video Question
+Let’s say you are creating a tumor detection algorithm. Your algorithm will be used to flag potential tumors for future inspection by a specialist.
+What value should you use for a threshold?
+
+Answer: 
+Low, say a threshold of 0.2?
+
+Why? You would not want to miss a potential tumor, so you will want a low threshold. 
+A specialist will review the output of the algorithm which reduces the possibility of a ‘false positive’.
+The key point of this question is to note that the threshold value does not need to be 0.5.
+
+Practise Quiz: 
+Classification with logistic regression
+
+Question 1.
+Which is an example of a classification task?
+
+Answer: 
+Based on the size of each tumor, determine if each tumor is malignant (cancerous) or not.
+
+Question 2. 
+Recall the sigmoid function is g(z) = 1/(1+e^(-z))
+
+See Screenshot 12. Quiz Classification with logistic regression Q2 in Week 3.
+
+Answer: g(z) is near one(1)
+
+Question 3.
+See Screenshot 13. Quiz Classification with logistic regression Q3 in Week 3.
+
+A cat photo classification model predicts 1 if it's a cat, and 0 if it's not a cat.
+For a particular photograph, the logistic regression model outputs 
+g(z) (a number between 0 and 1). Which of these would be a reasonable criteria to decide whether to predict if it’s a cat?
+
+Answer: 
+Predict it is a cat if g(z) >= 0.5 
+
+Question 4.
+True/False? No matter what features you use (including if you use polynomial features), the decision boundary learned by logistic regression will be a linear decision boundary. 
+
+Answer: False
+
+Cost function for logistic regression Video Question. 
+Why is the squared error cost not used in logistic regression?
+
+Answer: 
+The non-linear nature of the model results in a “wiggly”, non-convex cost function with many potential local minima.
+
+Simplified Cost Function for Logistic Regression Video Question. 
+For the simplified loss function:
+
+See Screenshots Week 3. 21. Simplified Cost Function for Logistic Regression Part 3
+
+if the target y(i) = 1, then what does this expression simplify to?
+
+Answer: -log(fw,b(x(i)))
+
+Practise quiz: Cost function for logistic regression 
+Question 1. 
+
+See Screenshots Week 3 for 22. Practise Quiz Cost Function for logistic regression Q1
+In this lecture series, "cost" and "loss" have distinct meanings. Which one applies to a single training example?
+
+Answer: Loss
+
+
+Question 2. 
+See Screenshots Week 3 for 23. Practise Quiz Cost Function for logistic regression Q2
+
+For the simplified loss function, if the label 
+y(i)=0, then what does this expression simplify to?
+
+Answer: -log(1-fw,b(x(i))
+
+Practise quiz: Gradient descent for logistic regression
+
+See Screenshots Week 3 for 26. Practise Quiz Gradient descent for logistic regression Q1
+
+Which of the following two statements is a more accurate statement about gradient descent for logistic regression?
+Answer: 
+The update steps look like the update steps for linear regression, but the definition of 
+fw,b(x(i)) is different.
+
+The problem of overfitting Video Question.
+Our goal when creating a model is to be able to use the model to predict outcomes correctly for new examples. A model which does this is said to generalize well. 
+
+When a model fits the training data well but does not work well with new examples that are not in the training set, this is an example of:
+
+Answer: Overfitting (high variance)
+
+Addressing overfitting Video Question.
+Applying regularization, increasing the number of training examples, or selecting a subset of the most relevant features are methods for…
+
+Answer: 
+Addressing overfitting (high variance)
+
+Cost function with regularization Video Question.
+For a model that includes the regularization parameter 
+λ (lambda), increasing 
+λ will tend to…
+
+Answer: 
+Decrease the size of parameters 
+w1,w2,...,wn.
+
+Why? Increasing the regularization parameter lambda
+lambda reduces overfitting by reducing the size of the parameters. 
+For some parameters that are near zero, this reduces the effect of the associated features.
+​
+Regularized linear regression Video Question.
+Recall the gradient descent algorithm utilizes the gradient calculation:
+
+
+See Screenshots Week 3 for 38. Regularized linear regression Part 4
+
+Where each iteration performs simultaneous updates on 
+wj for all j.
+
+See Screenshots Week 3 for 39. Regularized linear regression Part 5
+
+Assuming 
+α, the learning rate, is a small number like 
+0.001, 
+λ is 1, and
+m=50, what is the effect of the 'new part' on updating wj?
+
+Answer:
+The new part decreases the value of 
+wj each iteration by a little bit.
+
+Regularized logistic regression Video Question. 
+See Screenshots Week 3 fo 44. Regularized logistic regression Part 3
+For regularized **logistic** regression, how do the gradient descent update steps compare to the steps for linear regression?
+
+Answer: They look very similar, but the 
+f(x) is not the same.
+
+Practise quiz: The Problem of overfitting
+Question 1. 
+Which of the following can address overfitting?
+
+Answer(s): 
+-Select a subset of the more relevant features.
+-Collect more training data
+-Apply regularization
+
+Question 2. 
+You fit logistic regression with polynomial features to a dataset, and your model looks like this. 
+See Screenshots Week 3 for 40. Practice quiz The problem of overfitting Q2
+
+What would you conclude? (Pick one)
+Answer: The model has high variance (overfit). Thus, adding data is likely to help
+
+Question 3. 
+See Screenshots Week 3 for 41. Practice quiz The problem of overfitting Q3.
+
+Suppose you have a regularized linear regression model.  If you increase the regularization parameter 
+λ, what do you expect to happen to the parameters w1,w2,....,wn. 
+
+Answer: This will reduce the size of the parameters w1,w2,...,wn.
