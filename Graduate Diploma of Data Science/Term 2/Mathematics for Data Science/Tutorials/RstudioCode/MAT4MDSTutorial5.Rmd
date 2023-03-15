@@ -1,0 +1,358 @@
+---
+title: "MAT4MDSTutorial5"
+output: word_document
+date: '2023-02-22'
+---
+
+#Question 1 Part a.
+#Creating the dataframe for ice core samples 
+
+```{r}
+#Depth (in meters)
+Depth_m = c(127,303,376,474,602,748,853,976)
+
+#CO2 (ppm)
+CO2_ppm = c(275,259,245,195,223,179,201,201)
+
+df = data.frame(Depth_m,CO2_ppm)
+df
+```
+
+#Now to estimate the linear least squares line of best fit for estimating CO2 level from depth.
+```{r}
+xval = df$Depth_m
+xval
+```
+
+
+```{r}
+yval = df$CO2_ppm
+yval
+```
+### Linear least squares Regression: Matrix Method
+### Refer using LLSR using R
+
+### Getting the values for the coffients Matrix A
+# evaluate sum of the x-values
+```{r}
+x_total = sum(xval)
+x_total
+```
+
+# evaluate sum of the squared x-values
+```{r}
+x_sq_total = sum(xval^2)
+x_sq_total
+```
+# set n as number of entries in the vector 'xval'.
+```{r}
+n = length(xval)
+n
+
+```
+
+### get the values for the constants Matrix B. 
+
+# evaluate sum of the y-values.
+```{r}
+y_total = sum(yval)
+y_total
+```
+
+
+# evaluate sum of x-values*y-values.
+```{r}
+prod_x_y = sum(xval*yval)
+prod_x_y
+```
+
+# Set the coefficients matrix
+```{r}
+A = matrix(c(x_sq_total,x_total,x_total,n),2,2)
+A
+```
+
+
+# Set the constants matrix
+
+```{r}
+B = matrix(c(prod_x_y,y_total))
+B
+```
+
+
+# Solve the system AX=B, where X = (alpha,beta) from the linear regression
+# yval = alpha*xval + beta
+
+```{r}
+X = solve(A,B)
+X
+```
+
+## My answer: yval =  -0.09698511*xval + 276.30707791
+
+
+#Question 1b. Use your answer to (a) to estimate the CO2 concentration at a depth of 1050m. 
+```{r}
+x = 1050
+y_1050m = -0.09698511*x + 276.30707791
+y_1050m
+```
+
+#See the plot for visualisation
+
+```{r}
+linmod  = lm(yval~xval, data=df)
+linmod
+```
+
+# plot dotplot (scatter plot) for the original points: xval, yval
+
+```{r}
+plot(xval,yval,xlab = 'Depth in meters',ylab = ' CO2 in ppm (parts per million)')
+abline(linmod,col='red')
+
+```
+
+
+
+#Question 1c. Refering to the alpha value, According the our model we 
+# gradually decrease the level concentration CO2
+# as we increase the depth during the last 60,000 years. 
+
+#Acutal Answer:  The slope −0.097 means that for every 1 m increase in depth, the CO2 concentration decreases by 0.097 ppm 
+#on average. You can also say that for every metre further below the surface, the CO2 concentration decreases by 
+#an average of 0.097 ppm. 
+
+
+#Question 2.
+#Part a. 
+#Estimate the depth at which an ice core sample was obtained if
+# is known that its CO2 concentration is 200 ppm. 
+
+
+```{r}
+y = 200  
+x = (y - 276.30707791)/(-0.09698511)
+x
+```
+
+#Actual Solution:
+#Change the x and y parameters 
+#sum of xi is 1778, sum of xi^2 is 403328, sum of yi is 4459
+```{r}
+A = matrix(c(403328,1778,1778,8),2,2)
+A
+```
+
+
+```{r}
+B = matrix(c(933719,4459))
+B
+```
+#You should get, alpha = -7.015 and beta = 2116.424
+# y = -7.015x + 2116.424
+
+#Part b. Explain carefully why you needed a different line of best fit in Question 2a from the one derived in Question 1.
+
+```{r}
+
+summary(linmod)
+
+```
+
+#Because it determines whether the model describes 
+#how good the model can properly fit. 
+#How many number of data points can it pass through.
+
+#It will require to modify between the dependent 
+# variables and independent variables. 
+
+#Actual Answer: The least squares line of best fit minimises the sum of the squares of the residuals, and the residuals are the 
+#distances in the dependent (𝑦) direction which in this question is along the “depth” axis. The line found in 
+#Question 1 minimises the sum of squares of residuals along the “CO2 concentration” axis which is perpendicular 
+#to the “depth” axis.
+
+
+#Question 4
+#Part a
+```{r}
+#Snow cover (10^6*km^2)
+Snowc = c(6.6,7.7,8.1,18.2,26.6,29.4)
+
+#Wind Stress (N/m2)
+Ws= c(.125,.155,.196,.106,.062,.024)
+
+df = data.frame(Snowc,Ws)
+df
+```
+
+
+
+```{r}
+xval = df$Snowc
+yval = df$Ws
+```
+
+
+```{r}
+x_total = sum(xval)
+x_total
+```
+
+```{r}
+x_sq_total = sum(xval^2)
+x_sq_total
+```
+
+```{r}
+n = length(xval)
+n
+```
+
+```{r}
+y_total = sum(yval)
+y_total
+```
+```{r}
+prod_x_y = sum(xval*yval)
+prod_x_y
+```
+
+```{r}
+A = matrix(c(x_sq_total,x_total,x_total,n),2,2)
+A
+```
+
+```{r}
+B = matrix(c(prod_x_y,y_total))
+B
+```
+
+
+
+```{r}
+X = solve(A,B)
+X
+```
+
+
+#yval = -0.005547874*xval+0.200654098
+
+
+#Question 4b.
+#What does this model reveal about the nature and strength of the effect of decreasing snow cover on wind stress?
+
+#The model reveals the prediction for the best estimate for the effect of decreasing snow cover on wind stress.
+#Actual Answer:  The slope of −0.0055 (and the data) indicates that on average, as the snow cover increases the wind stress 
+#decreases. Turning this the other way around we see that the wind stress is increasing as the snow cover is 
+#getting less.
+
+
+#Question 5a. 
+
+```{r}
+#Year (Year-1951)
+year = c(0,10,20,30,40,50,60)
+
+#Population (in millions)
+pop = c(361,439,548,683,846,1029,1211)
+
+df = data.frame(year,pop)
+df
+```
+
+
+
+
+```{r}
+xval = df$year
+yval = df$pop
+```
+
+
+
+```{r}
+x_total = sum(xval)
+x_total
+```
+
+
+```{r}
+x_sq_total = sum(xval^2)
+x_sq_total
+```
+
+
+```{r}
+n = length(xval)
+n
+```
+
+#Transform your y data (Incorrect y value just corrected)
+```{r}
+y_total = sum(log(yval))
+y_total
+```
+
+```{r}
+prod_x_y = sum(xval*log(yval))
+prod_x_y
+```
+
+```{r}
+A = matrix(c(x_sq_total,x_total,x_total,n),2,2)
+A
+```
+
+
+
+```{r}
+B = matrix(c(prod_x_y,y_total))
+B
+```
+
+
+```{r}
+X = solve(A,B)
+X
+```
+
+#Substitute into the exponential model. 
+#yval = 299.42857*exp(14.38571*xval)
+
+#Take the natural logarithm of the exponential model. 
+
+#Final model. 
+#yval = log(299.42857)+14.38571*xval
+
+#NOTE: log() in R takes the function of natural logarithm (base e).
+
+#Actual Answer: yval = 0.0206*xval + 5.894
+#with Po = exp(5.894) = 362.854
+#gives the exponential model P = 362.854*exp(0.0206*xval)
+
+
+
+#Question 5b.  According to this model, what is the estimate of the population in 2011? Compare that value to the actual population. [In this case, the discrepancy is due to the lower growth rate from 2001 to 2011 than in the period 1951 to 2001.
+
+```{r}
+xval = 2011-1951
+yval = log(299.42857)+14.38571*xval
+yval
+
+```
+
+#868.8445 in millions people (0.868 billion people)
+#The actual value is (1.211 billion people)
+
+#Teacher can have further comment here.
+
+#Actual answer: P = 362.854*exp(0.0206*60) = 1248.9 million
+#About the same from 2011 even through the growth rate had decreased
+#in the previous decade or two.
+
+
+
+
+
