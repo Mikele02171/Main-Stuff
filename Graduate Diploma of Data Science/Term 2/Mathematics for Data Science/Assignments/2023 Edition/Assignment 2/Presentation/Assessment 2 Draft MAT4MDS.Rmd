@@ -1,0 +1,762 @@
+---
+title: "MAT4MDS Assessment 2"
+output: word_document
+date: '2023-03-13'
+---
+
+#Ratio-Scores Matrix
+#Case 1: D_10
+```{r}
+D_10 = matrix(c(rep(0,2),77/107,104/91,66/69,80/70,rep(0,3),80/90,
+                82/47,0,80/92,0,138/72,88/35,0,121/61,
+                
+                rep(0,6),
+                76/54,97/71,0,93/55,68/36,82/69,91/81,0,99/70,
+                120/53,112/38,100/53,107/77,rep(0,4),89/113,0,
+                60/71,87/102,rep(0,2),61/75,109/68,0,105/47,
+                112/92,121/58,86/75,91/104,rep(0,3),80/44,
+                91/98,86/113,51/99,0,102/85,0,115/90,0,100/58,
+                93/82,0,74/87,0,69/66,rep(0,2),44/80,rep(0,4),97/62,
+                55/65,0,33/69,0,83/82,107/59,88/54,102/47,102/24,
+                70/80,0,113/89,98/91,rep(0,6),80/69,132/80,112/117,
+                102/66,97/75,0,105/30,156/48,0,54/76,0,113/86,
+                rep(0,3),99/61,101/76,84/117,rep(0,2),117/94,
+                82/101,80/48,109/73,165/56,rep(0,2),71/97,71/60,99/51,
+                rep(0,2),61/99,0,90/102,0,69/86,106/87,0,62/63,103/71,
+                rep(0,2),139/71,rep(0,2),102/87,0,62/97,0,76/101,102/90,
+                rep(0,2),94/91,62/92,74/73,116/68,0,105/75,0,114/64,
+                90/80,55/93,0,85/102,65/55,0,117/84,rep(0,3),42/43,
+                87/61,142/73,90/69,0,77/60,rep(0,2),47/82,36/68,rep(0,3),
+                69/80,0,86/69,91/94,43/42,rep(0,2),56/120,92/96,rep(0,2),
+                117/33,115/46,0,69/82,75/61,90/115,69/33,80/132,0,87/106,
+                92/62,61/87,rep(0,5),57/83,107/80,0,92/80,81/91,68/109,
+                rep(0,2),117/112,94/117,0,73/74,73/142,120/56,rep(0,3),81/108,
+                rep(0,2),78/58,rep(0,3),58/100,82/83,66/102,101/82,63/62,
+                68/116,
+                69/90,96/92,rep(0,3),99/103,54/113,rep(0,2),72/138,
+                70/99,47/105,82/93,59/107,75/97,48/80,71/103,rep(0,4),
+                108/81,103/99,rep(0,4),35/88,53/120,92/112,0,54/88,
+                0,73/109,0,75/105,60/77,0,83/57,0,113/54,rep(0,2),138/86,
+                rep(0,2),38/112,58/121,87/74,47/102,30/105,56/165,rep(0,3),
+                33/117,80/107,rep(0,3),86/138,0,59/74,61/121,53/100,75/86,
+                0,24/102,48/156,0,71/139,64/114,0,46/115,0,58/78,
+                rep(0,3),74/59,0),18,18,byrow=TRUE)
+colnames(D_10) = c("Geelong","Melbourne","Sydney","Collingwood","Fremantle",
+                   "Brisbane","Richmond","Western Bulldogs",
+                   "Carlton","St Kilda","Port Adelaide","Gold Coast Suns",
+                   "Hawthorn","Adelaide","Essendon","GWS","West Coast",
+                   "North Melbourne")
+rownames(D_10) = c("Geelong","Melbourne","Sydney","Collingwood","Fremantle",
+                   "Brisbane","Richmond","Western Bulldogs",
+                   "Carlton","St Kilda","Port Adelaide","Gold Coast Suns",
+                   "Hawthorn","Adelaide","Essendon","GWS","West Coast",
+                   "North Melbourne")
+D_10
+```
+
+
+
+#Computing the first,second orders and higher order ranking for AFL Round 10, 2022
+```{r}
+J_18by1 = matrix(1,18,1)
+r1_10 = D_10%*%J_18by1-t(D_10)%*%J_18by1
+r2_10 = (D_10%^%2)%*%J_18by1-t((D_10%^%2))%*%J_18by1
+r3_10 = (D_10%^%3)%*%J_18by1-t((D_10%^%3))%*%J_18by1
+r4_10 = (D_10%^%4)%*%J_18by1-t((D_10%^%4))%*%J_18by1
+
+```
+
+
+
+#Computing r for AFL Round 10, 2022
+```{r}
+r_10 = r1_10 + 0.4*r2_10 + 0.1*r3_10
+#To compare 3 out of 18
+rank(r_10)
+sort(rank(r_10),decreasing = TRUE)
+
+```
+
+
+#Ratio-Scores Matrix
+#Case 2: D_19
+#NOTE: After 19 rounds most teams played each other twice. We average the 
+#values whenever there is a rematch. 
+
+```{r}
+D_19 = matrix(c(0,91/63,77/107,104/91,66/69,80/70,89/86,83/70,85/55,80/90,
+                mean(c(82/47,106/94)),0,80/92,97/55,138/72,88/35,81/63,
+                mean(c(121/61,144/32)),
+                
+                63/91,0,73/61,56/82,56/94,117/53,76/54,mean(c(97/71,100/110)),
+                0,93/55,mean(c(68/36,83/69)),82/69,
+                91/81,94/65,99/70,120/53,
+                112/38,100/53,
+                
+                107/77,73/61,rep(0,2),82/65,89/113,106/100,
+                mean(c(60/71,120/67)),87/102,83/32,59/82,61/75,109/68,118/85,
+                mean(c(105/47,95/86)),112/92,121/58,86/75,
+                
+                91/104,82/56,rep(0,2),80/44,
+                91/98,86/113,51/99,79/75,102/85,0,mean(c(115/90,67/62)),72/68,
+                mean(c(100/58,91/86)),
+                mean(c(93/82,80/76)),88/77,74/87,88/81,
+                
+                69/66,94/56,65/82,44/80,0,99/85,52/52,0,mean(c(97/62,50/81)),
+                mean(c(55/65,111/70)),99/91,33/69,95/82,83/82,107/59,88/54,
+                102/47,102/24,
+                
+                
+                70/80,53/117,113/89,98/91,85/99,rep(0,2),108/67,0,78/57,
+                80/69,mean(c(132/80,110/93)),112/117,
+                102/66,mean(c(97/75,90/100)),mean(c(110/96,99/59)),
+                105/30,156/48,
+                
+                86/89,54/76,100/106,113/86,
+                52/52,rep(0,2),99/61,101/76,84/117,77/65,92/94,117/94,
+                82/101,80/48,109/73,mean(c(128/93,165/56)),88/92,
+                
+                70/83,mean(c(110/100,71/97)),mean(c(71/60,67/120)),99/51,
+                0,67/108,61/99,0,90/102,84/56,69/86,106/87,125/83,62/63,103/71,
+                125/105,161/60,139/71,
+                
+                55/85,0,102/87,75/79,mean(c(62/97,81/50)),0,
+                mean(c(76/101,66/81)),
+                102/90,0,78/93,
+                94/91,62/92,74/73,116/68,80/54,mean(c(105/75,90/54)),116/53
+                ,114/64,
+                
+                
+                90/80,55/93,32/83,85/102,mean(c(65/55,70/111)),57/78,117/84,
+                56/84,93/78,0,42/43,
+                87/61,142/73,90/69,72/107,77/60,90/62,103/50,
+                
+                mean(c(94/106,47/82)),mean(c(69/83,36/68)),82/59,0,91/99,
+                69/80,65/77,86/69,91/94,43/42,0,93/91,56/120,92/96,66/50,84/29,
+                117/33,115/46,
+                
+                0,69/82,75/61,mean(c(90/115,62/67)),69/33,
+                mean(c(80/132,93/110)),94/92,87/106,
+                92/62,61/87,91/93,0,121/54,116/73,55/103,57/83,107/80,109/47,
+                
+                
+                92/80,81/91,68/109,68/72,82/95,117/112,94/117,83/125,
+                73/74,73/142,120/56,54/121,0,86/54,81/108,
+                50/72,102/77,mean(c(78/58,121/75)),
+                
+                55/97,65/94,118/85,mean(c(58/100,86/91)),
+                82/83,66/102,101/82,63/62,68/116,
+                69/90,96/92,73/116,54/86,0,99/103,54/113,88/57,115/58,
+                
+                72/138,
+                70/99,mean(c(47/105,95/86)),mean(c(82/93,76/80)),
+                59/107,75/97,48/80,71/103,54/80,107/72,50/66,103/55,
+                108/81,103/99,rep(0,2),97/107,0,
+                
+                35/88,53/120,92/112,77/88,54/88,
+                mean(c(96/110,59/99)),73/109,105/125,mean(c(75/105,54/90)),
+                60/77,29/84,83/57,72/50,113/54,rep(0,2),138/86,
+                102/53,
+                
+                63/81,38/112,58/121,87/74,47/102,30/105,mean(c(56/165,93/128))
+                ,60/161,116/53,62/90,33/117,80/107,77/102,57/88,107/97,86/138,0
+                ,59/74,
+                
+                mean(c(61/121,32/144)),53/100,75/86,
+                81/88,24/102,48/156,92/88,71/139,64/114,50/103,46/115,47/109
+                ,mean(c(58/78,75/121)),
+                58/115,0,53/102,74/59,0),18,18,byrow=TRUE)
+colnames(D_19) = c("Geelong","Melbourne","Sydney","Collingwood","Fremantle",
+                   "Brisbane","Richmond","Western Bulldogs",
+                   "Carlton","St Kilda","Port Adelaide","Gold Coast Suns",
+                   "Hawthorn","Adelaide","Essendon","GWS","West Coast",
+                   "North Melbourne")
+rownames(D_19) = c("Geelong","Melbourne","Sydney","Collingwood","Fremantle",
+                   "Brisbane","Richmond","Western Bulldogs",
+                   "Carlton","St Kilda","Port Adelaide","Gold Coast Suns",
+                   "Hawthorn","Adelaide","Essendon","GWS","West Coast",
+                   "North Melbourne")
+D_19
+```
+
+
+#Computing the first,second and higher orders ranking for AFL Round 19, 2022
+```{r}
+J_18by1 = matrix(1,18,1)
+r1_19 = D_19%*%J_18by1-t(D_19)%*%J_18by1
+r2_19 = (D_19%^%2)%*%J_18by1-t(D_19%^%2)%*%J_18by1
+r3_19 = (D_19%^%3)%*%J_18by1-t(D_19%^%3)%*%J_18by1
+r4_19 = (D_19%^%4)%*%J_18by1-t(D_19%^%4)%*%J_18by1
+
+```
+
+#Computing r for AFL Round 19, 2022
+```{r}
+#7 out of 18
+r_19 = r1_19 + 0.8*r2_19 + 0.5*r3_19 + 0.01*r4_19
+rank(r_19)
+sort(rank(r_19),decreasing = TRUE)
+
+```
+
+
+#Ratio-Scores Matrix 
+#Case 3: D_22
+#NOTE: After 22 rounds almost teams played each other twice. We average the 
+#values whenever there is a rematch.
+```{r}
+D_22 = matrix(c(0,91/63,77/107,104/91,66/69,80/70,89/86,mean(c(94/66,83/70)),
+                mean(c(85/55,110/65)),80/90,
+                mean(c(82/47,106/94)),119/59,80/92,97/55,138/72,88/35,81/63,
+                mean(c(121/61,144/32)),
+                
+                63/91,0,73/61,mean(c(89/96,56/82)),mean(c(85/39,56/94))
+                ,117/53,76/54,mean(c(97/71,100/110)),
+                79/74,93/55,mean(c(68/36,83/69)),82/69,
+                91/81,94/65,99/70,120/53,
+                112/38,100/53,
+                
+                107/77,73/61,0,77/50,82/65,89/113,106/100,
+                mean(c(60/71,120/67)),87/102,83/32,59/82,61/75,109/68,118/85,
+                mean(c(105/47,95/86)),mean(c(112/92,112/39)),121/58,
+                mean(c(126/88,86/75)),
+                
+                91/104,mean(c(82/56,96/89)),50/77,0,80/44,
+                91/98,86/113,51/99,79/75,102/85,88/82,
+                mean(c(115/90,67/62)),72/68,
+                mean(c(100/58,91/86)),
+                mean(c(93/82,80/76)),88/77,74/87,88/81,
+                
+                69/66,mean(c(39/85,94/56)),65/82,44/80,0,99/85,52/52,95/78,
+                mean(c(97/62,50/81)),
+                mean(c(55/65,111/70)),99/91,33/69,95/82,83/82,107/59,88/54,
+                mean(c(102/47,71/47)),102/24,
+                
+                
+                70/80,53/117,113/89,98/91,85/99,0,97/104,108/67,114/81,
+                mean(c(78/57,81/66)),
+                80/69,mean(c(132/80,110/93)),112/117,
+                102/66,mean(c(97/75,90/100)),mean(c(110/96,99/59)),
+                105/30,156/48,
+                
+                86/89,54/76,100/106,113/86,
+                52/52,104/97,0,99/61,101/76,84/117,mean(c(72/65,109/71)),
+                92/94,mean(c(117/94,128/67)),
+                82/101,80/48,109/73,mean(c(128/93,165/56)),88/92,
+                
+                mean(c(70/83,66/94)),mean(c(110/100,71/97)),
+                mean(c(71/60,67/120)),99/51,
+                78/95,67/108,61/99,0,90/102,84/56,69/86,106/87,125/83,62/63
+                ,103/71,mean(c(125/105,62/157)),161/60,139/71,
+                
+                55/85,74/79,102/87,75/79,mean(c(62/97,81/50)),81/114,
+                mean(c(76/101,66/81)),
+                102/90,0,78/93,
+                94/91,62/92,74/73,mean(c(116/68,84/55)),80/54,
+                mean(c(105/75,90/54)),
+                116/53,114/64,
+                
+                
+                mean(c(65/110,90/80)),55/93,32/83,85/102,mean(c(65/55,70/111)),
+                mean(c(57/78,66/81)),117/84,
+                56/84,93/78,0,42/43,
+                87/61,mean(c(142/73,75/63)),90/69,72/107,77/60,90/62,103/50,
+                
+                mean(c(94/106,47/82)),mean(c(69/83,36/68)),82/59,82/88,91/99,
+                69/80,mean(c(65/77,71/109)),86/69,91/94,43/42,0,
+                93/91,56/120,92/96,mean(c(146/62,66/50)),84/29,
+                117/33,115/46,
+                
+                59/119,69/82,75/61,mean(c(90/115,62/67)),69/33,
+                mean(c(80/132,93/110)),94/92,87/106,
+                92/62,61/87,91/93,0,mean(c(63/70,121/54)),116/73,55/103,
+                57/83,mean(c(107/80,107/104)),109/47,
+                
+                
+                92/80,81/91,68/109,68/72,82/95,117/112,mean(c(94/117,67/128)),
+                83/125,73/74,
+                mean(c(73/142,63/75)),120/56,mean(c(54/121,70/63)),
+                0,86/54,81/108,
+                50/72,102/77,mean(c(78/58,121/75)),
+                
+                55/97,65/94,118/85,mean(c(58/100,86/91)),
+                82/83,66/102,101/82,63/62,mean(c(84/55,68/116)),
+                69/90,96/92,73/116,54/86,0,99/103,54/113,mean(c(88/57,102/86))
+                ,mean(c(115/58,103/74)),
+                
+                72/138,
+                70/99,mean(c(47/105,95/86)),mean(c(82/93,76/80)),
+                59/107,75/97,48/80,71/103,54/80,107/72,mean(c(62/146,50/66))
+                ,103/55,
+                108/81,103/99,0,69/96,97/107,114/66,
+                
+                35/88,53/120,mean(c(92/112,39/112)),77/88,54/88,
+                mean(c(96/110,59/99)),73/109,mean(c(105/125,57/62)),
+                mean(c(75/105,54/90)),
+                60/77,29/84,83/57,72/50,113/54,96/69,0,138/86,
+                102/53,
+                
+                63/81,38/112,58/121,87/74,mean(c(47/102,47/71)),30/105,
+                mean(c(56/165,93/128))
+                ,60/161,116/53,62/90,33/117,mean(c(80/107,104/107)),77/102,
+                mean(c(57/88,86/102)),107/97,86/138,0
+                ,59/74,
+                
+                mean(c(61/121,32/144)),53/100,mean(c(75/86,88/126)),
+                81/88,24/102,48/156,92/88,71/139,64/114,50/103,46/115,47/109
+                ,mean(c(58/78,75/121)),mean(c(74/103,58/115)),
+                66/114,53/102,74/59,0),18,18,byrow=TRUE)
+colnames(D_22) = c("Geelong","Melbourne","Sydney","Collingwood","Fremantle",
+                   "Brisbane","Richmond","Western Bulldogs",
+                   "Carlton","St Kilda","Port Adelaide","Gold Coast Suns",
+                   "Hawthorn","Adelaide","Essendon","GWS","West Coast",
+                   "North Melbourne")
+rownames(D_22) = c("Geelong","Melbourne","Sydney","Collingwood","Fremantle",
+                   "Brisbane","Richmond","Western Bulldogs",
+                   "Carlton","St Kilda","Port Adelaide","Gold Coast Suns",
+                   "Hawthorn","Adelaide","Essendon","GWS","West Coast",
+                   "North Melbourne")
+D_22
+```
+
+
+#Computing the first,second and higher orders ranking for AFL Round 22, 2022
+```{r}
+J_18by1 = matrix(1,18,1)
+r1_22 = D_22%*%J_18by1-t(D_22)%*%J_18by1
+r2_22 = (D_22%^%2)%*%J_18by1-t(D_22%^%2)%*%J_18by1
+r3_22 = (D_22%^%3)%*%J_18by1-t(D_22%^%3)%*%J_18by1
+
+```
+
+
+
+#Computing r for AFL Round 22, 2022
+```{r}
+#7 out of 18
+r_22 = r1_22 + 0.5*r2_22 + 0.5*r3_22
+rank(r_22)
+sort(rank(r_22),decreasing = TRUE)
+
+```
+
+
+#Ratio-Scores Matrix 
+#Case 4: D_15
+#NOTE: After 15 rounds some teams played each other twice. We average the 
+#values whenever there is a rematch.
+```{r}
+D_15 = matrix(c(0,0,77/107,104/91,66/69,80/70,89/86,83/70,0,80/90,
+                82/47,0,80/92,97/55,138/72,88/35,81/63,
+                121/61,
+                
+                0,0,73/61,56/82,56/94,117/53,76/54,97/71,
+                0,93/55,68/36,82/69,
+                91/81,0,99/70,120/53,
+                112/38,100/53,
+                
+                107/77,73/61,rep(0,2),82/65,89/113,106/100,
+                60/71,87/102,83/32,59/82,61/75,109/68,0,
+                105/47,112/92,121/58,86/75,
+                
+                91/104,82/56,rep(0,2),80/44,
+                91/98,86/113,51/99,79/75,102/85,0,115/90,72/68,
+                100/58,
+                93/82,88/77,74/87,0,
+                
+                69/66,94/56,0,44/80,0,99/85,0,0,mean(c(97/62,50/81)),
+                55/65,0,33/69,95/82,83/82,107/59,88/54,
+                102/47,102/24,
+                
+                
+                70/80,53/117,113/89,98/91,85/99,rep(0,4),78/57,
+                80/69,132/80,112/117,
+                102/66,97/75,110/96,
+                105/30,156/48,
+                
+                86/89,54/76,100/106,113/86,
+                rep(0,3),99/61,101/76,84/117,77/65,0,117/94,
+                82/101,80/48,109/73,165/56,0,
+                
+                70/83,71/97,71/60,99/51,
+                rep(0,2),61/99,0,90/102,0,69/86,106/87,125/83,62/63,103/71,
+                125/105,161/60,139/71,
+                
+                rep(0,2),102/87,75/79,62/97,0,
+                mean(c(76/101,66/81)),
+                102/90,rep(0,2),
+                94/91,62/92,74/73,116/68,80/54,105/75,0,114/64,
+                
+                
+                90/80,55/93,32/83,85/102,65/55,57/78,117/84,
+                rep(0,3),42/43,
+                87/61,142/73,90/69,72/107,77/60,0,103/50,
+                
+                47/82,36/68,82/59,rep(0,2),
+                69/80,65/77,86/69,91/94,43/42,0,93/91,56/120,92/96,66/50,0,
+                117/33,115/46,
+                
+                0,69/82,75/61,90/115,69/33,
+                80/132,0,87/106,
+                92/62,61/87,91/93,0,121/54,116/73,0,57/83,107/80,109/47,
+                
+                
+                92/80,81/91,68/109,68/72,82/95,117/112,94/117,83/125,
+                73/74,73/142,120/56,54/121,rep(0,2),81/108,
+                rep(0,2),78/58,
+                
+                55/97,rep(0,2),58/100,
+                82/83,66/102,101/82,63/62,68/116,
+                69/90,96/92,73/116,rep(0,2),99/103,54/113,88/57,115/58,
+                
+                72/138,
+                70/99,47/105,82/93,
+                59/107,75/97,48/80,71/103,54/80,107/72,50/66,0,
+                108/81,103/99,rep(0,2),97/107,0,
+                
+                35/88,53/120,92/112,77/88,54/88,
+                96/110,73/109,105/125,75/105,
+                60/77,0,83/57,0,113/54,rep(0,2),138/86,
+                102/53,
+                
+                63/81,38/112,58/121,87/74,47/102,30/105,56/165
+                ,60/161,rep(0,2),33/117,80/107,0,57/88,107/97,86/138,0
+                ,59/74,
+                
+                61/121,53/100,75/86,
+                0,24/102,48/156,0,71/139,64/114,50/103,46/115,47/109
+                ,58/78,
+                58/115,0,53/102,74/59,0),18,18,byrow=TRUE)
+
+colnames(D_15) = c("Geelong","Melbourne","Sydney","Collingwood","Fremantle",
+                   "Brisbane","Richmond","Western Bulldogs",
+                   "Carlton","St Kilda","Port Adelaide","Gold Coast Suns",
+                   "Hawthorn","Adelaide","Essendon","GWS","West Coast",
+                   "North Melbourne")
+rownames(D_15) = c("Geelong","Melbourne","Sydney","Collingwood","Fremantle",
+                   "Brisbane","Richmond","Western Bulldogs",
+                   "Carlton","St Kilda","Port Adelaide","Gold Coast Suns",
+                   "Hawthorn","Adelaide","Essendon","GWS","West Coast",
+                   "North Melbourne")
+D_15
+```
+
+
+#Computing the first,second and higher order ranking for AFL Round 15, 2022
+```{r}
+J_18by1 = matrix(1,18,1)
+r1_15 = D_15%*%J_18by1-t(D_15)%*%J_18by1
+r2_15 = (D_15%^%2)%*%J_18by1-t(D_15%^%2)%*%J_18by1
+r3_15 = (D_15%^%3)%*%J_18by1-t(D_15%^%3)%*%J_18by1
+
+```
+
+
+#Computing r for AFL Round 15, 2022
+```{r}
+#5 out of 18
+r_15 = r1_15 + 0.1*r2_15 + 0.5*r3_15
+rank(r_15)
+sort(rank(r_15),decreasing = TRUE)
+
+```
+
+
+#Win lose Matrix
+#Case 1: D_10
+```{r}
+D_10 = matrix(c(rep(0,3),4,0,4,rep(0,4),4,rep(0,3),rep(4,2),0,4,
+                rep(0,6),rep(4,2),0,rep(4,4),0,rep(4,5),
+                rep(0,11),4,0,rep(4,4),rep(0,4),4,rep(0,4),4,0,4,0
+                ,rep(4,2),rep(0,3),4,rep(0,7),4,rep(0,4),rep(4,5),rep(0,2),
+                rep(4,2),rep(0,6),rep(4,2),0,rep(4,2),0,rep(4,2),rep(0,3),
+                4,rep(0,3),4,rep(0,4),4,0,rep(4,3),rep(0,3),
+                rep(4,2),rep(0,7),4,rep(0,2),4,rep(0,2),4,rep(0,2),
+                4,rep(0,3),rep(4,2),rep(0,2),4,rep(0,2),4,0,4,0,rep(4,2),
+                rep(0,3),4,0,4,rep(0,4),rep(4,3),0,4,rep(0,9),4,0,4,rep(0,6),
+                rep(4,2),rep(0,2),4,0,4,rep(0,3),4,rep(0,7),4,0,4,rep(0,4),4,
+                rep(0,2),4,0,4,rep(0,6),4,rep(0,5),rep(4,3),rep(0,2),4,
+                rep(0,19),rep(4,2),rep(0,15),4,0,4,rep(0,2),4,rep(0,4),
+                4,rep(0,30),4,0),18,18,byrow=TRUE)
+colnames(D_10) = c("Geelong","Melbourne","Sydney","Collingwood","Fremantle",
+                   "Brisbane","Richmond","Western Bulldogs",
+                   "Carlton","St Kilda","Port Adelaide","Gold Coast Suns",
+                   "Hawthorn","Adelaide","Essendon","GWS","West Coast",
+                   "North Melbourne")
+rownames(D_10) = c("Geelong","Melbourne","Sydney","Collingwood","Fremantle",
+                   "Brisbane","Richmond","Western Bulldogs",
+                   "Carlton","St Kilda","Port Adelaide","Gold Coast Suns",
+                   "Hawthorn","Adelaide","Essendon","GWS","West Coast",
+                   "North Melbourne")
+D_10
+```
+
+
+
+#Computing the first, second and higher order ranking for AFL Round 10, 2022
+```{r}
+J_18by1 = matrix(1,18,1)
+r1_10 = D_10%*%J_18by1-t(D_10)%*%J_18by1
+r2_10 = (D_10%^%2)%*%J_18by1-t(D_10%^%2)%*%J_18by1
+r3_10 = (D_10%^%3)%*%J_18by1-t(D_10%^%3)%*%J_18by1
+
+```
+
+
+
+#Computing rand comparison for AFL Round 10, 2022
+```{r}
+#4 out of 18
+r_10 = r1_10 + 0.5*r2_10 
+rank(r_10)
+sort(rank(r_10),decreasing = TRUE)
+
+```
+
+#Win lose Matrix
+#Case 2: D_19
+#NOTE: After 19 rounds all teams played each at least once. We average the 
+#values whenever there is a rematch. 
+```{r}
+D_19 = matrix(c(0,4,0,4,0,rep(4,4),0,mean(c(4,4)),rep(0,2),rep(4,4),
+                mean(c(4,4)),rep(0,3),4,0,rep(4,2),mean(c(0,4)),0,4,
+                mean(c(4,4)),rep(4,9),rep(0,2),4,0,rep(4,2),0,mean(c(4,4)),
+                rep(0,2),rep(4,2),mean(c(0,4)),rep(4,3),0,4,rep(0,2),4,0,
+                mean(c(0,4)),9,rep(4,2),0,mean(c(4,4)),0,mean(c(4,4)),
+                mean(c(4,4)),4,0,rep(4,2),0,4,rep(0,2),4,2,0,mean(c(0,4)),
+                mean(c(4,0)),mean(c(0,4)),0,rep(4,6),rep(0,2),rep(4,2),
+                rep(0,3),4,0,rep(4,2),mean(c(4,4)),0,4,mean(c(0,4)),
+                mean(c(0,4,0)),rep(4,2),rep(0,3),4,2,rep(0,2),4,mean(c(0,4)),
+                0,4,0,4,0,rep(4,2),mean(c(4,4)),rep(0,2),mean(c(0,4)),
+                mean(c(4,0)),4,rep(0,5),4,0,rep(4,2),0,rep(4,4),rep(0,2),4,0,
+                mean(c(0,4)),0,mean(c(4,0)),4,rep(0,2),4,rep(0,2),4,0,
+                mean(c(4,4)),rep(4,3),rep(0,3),mean(c(4,0)),0,4,rep(0,2),
+                mean(c(0,0)),0,rep(4,3),0,rep(4,3),mean(c(0,0)),mean(c(0,0)),
+                4,rep(0,4),4,0,4,0,4,rep(0,2),rep(4,4),rep(0,2),4,mean(c(0,0)),
+                4,mean(c(0,0)),4,0,4,rep(0,3),rep(4,2),rep(0,2),rep(4,2),4,
+                rep(0,4),4,rep(0,2),4,0,4,rep(0,2),4,rep(0,2),4,mean(c(4,4)),
+                0,4,rep(0,3),rep(4,3),rep(0,2),4,0,4,rep(0,4),4,rep(0,2),
+                mean(c(0,4)),mean(c(0,0)),0,mean(c(0,4)),rep(0,3),4,0,rep(4,3),
+                rep(0,4),rep(0,5),mean(c(0,0,0)),rep(0,2),mean(c(0,0)),rep(0,2),
+                rep(4,3),rep(0,2),rep(4,2),rep(0,3),4,rep(0,2),mean(c(0,0)),
+                rep(0,2),4,rep(0,4),4,rep(0,3),mean(c(0,0)),rep(0,5),4,rep(0,5),
+                mean(c(0,0)),rep(0,3),4,0
+               )
+                ,18,18,byrow=TRUE)
+colnames(D_19) = c("Geelong","Melbourne","Sydney","Collingwood","Fremantle",
+                   "Brisbane","Richmond","Western Bulldogs",
+                   "Carlton","St Kilda","Port Adelaide","Gold Coast Suns",
+                   "Hawthorn","Adelaide","Essendon","GWS","West Coast",
+                   "North Melbourne")
+rownames(D_19) = c("Geelong","Melbourne","Sydney","Collingwood","Fremantle",
+                   "Brisbane","Richmond","Western Bulldogs",
+                   "Carlton","St Kilda","Port Adelaide","Gold Coast Suns",
+                   "Hawthorn","Adelaide","Essendon","GWS","West Coast",
+                   "North Melbourne")
+D_19
+```
+
+
+
+#Computing the first,second and higher order ranking for AFL Round 19, 2022 (i.e. After 19 rounds)
+```{r}
+J_18by1 = matrix(1,18,1)
+r1_19 = D_19%*%J_18by1-t(D_19)%*%J_18by1
+r2_19 = (D_19%^%2)%*%J_18by1-t(D_19%^%2)%*%J_18by1
+r3_19 = (D_19%^%3)%*%J_18by1-t(D_19%^%3)%*%J_18by1
+r4_19 = (D_19%^%4)%*%J_18by1-t(D_19%^%4)%*%J_18by1
+r5_19 = (D_19%^%5)%*%J_18by1-t(D_19%^%5)%*%J_18by1
+r6_19 = (D_19%^%6)%*%J_18by1-t(D_19%^%6)%*%J_18by1
+r7_19 = (D_19%^%7)%*%J_18by1-t(D_19%^%7)%*%J_18by1
+r8_19 = (D_19%^%8)%*%J_18by1-t(D_19%^%8)%*%J_18by1
+r9_19 = (D_19%^%9)%*%J_18by1-t(D_19%^%9)%*%J_18by1
+r10_19 = (D_19%^%10)%*%J_18by1-t(D_19%^%10)%*%J_18by1
+```
+
+
+#Computing r and comparison for AFL Round 19, 2022
+```{r}
+#7 out of 18 are accurate
+r_19 = r1_19 + 0.5*r2_19 + 0.5*r3_19 + 
+  0.02*r4_19 
+rank(r_19)
+sort(rank(r_19),decreasing = TRUE)
+
+```
+
+
+#Win lose Matrix
+#Case 3: D_22
+#NOTE: After 22 rounds all teams played each other at least thrice. We average the 
+#values whenever there is a rematch.
+```{r}
+D_22 = matrix(c(0,4,0,4,0,rep(4,2),mean(c(4,4)),4,mean(c(0,4)),mean(c(4,4)),
+                4,0,rep(4,4),mean(c(4,4)),rep(0,3),mean(c(4,0)),mean(c(0,4)),
+                rep(4,2),mean(c(0,4)),rep(4,2),mean(c(4,4)),rep(4,9),0
+                ,rep(4,2),
+                0,mean(c(0,4)),mean(c(0,4)),0,mean(c(4,4)),rep(0,2),
+                rep(4,2),mean(c(0,4)),mean(c(4,4)),4,mean(c(4,4)),
+                0,mean(c(4,4)),rep(0,2),4,0,mean(c(0,4)),0,rep(4,3),
+                mean(c(4,4)),0,mean(c(4,4)),mean(c(4,4)),4,0,rep(4,2),
+                0,4,rep(0,2),4,2,4,mean(c(0,4)),mean(c(4,0)),4,
+                0,4,rep(4,3),mean(c(4,4)),4,rep(0,2),rep(4,2),
+                rep(0,3),rep(4,2),mean(c(4,4)),4,mean(c(4,4)),
+                0,4,mean(c(0,4)),mean(c(4,0)),rep(4,2),rep(0,3),4,0,4,0,4,
+                mean(c(0,4)),0,mean(c(4,4)),0,mean(c(4,4)),0,rep(4,2),
+                mean(c(4,4)),0,mean(c(0,0)),mean(c(0,4)),mean(c(4,0)),
+                4,rep(0,5),4,0,rep(4,2),0,4,mean(c(4,4)),rep(4,2),rep(0,2),
+                4,0,mean(c(0,4)),0,mean(c(0,4)),4,rep(0,2),4,rep(0,2),
+                mean(c(0,4)),0,mean(c(4,4)),rep(4,2),mean(c(0,4)),
+                rep(0,3),mean(c(0,4)),mean(c(0,0)),4,rep(0,4),4,mean(c(4,4)),
+                4,0,rep(4,3),mean(c(0,0)),mean(c(0,0)),4,rep(0,3),
+                mean(c(0,0)),4,0,4,0,4,rep(0,2),mean(c(0,4)),rep(4,3),rep(0,2),
+                4,mean(c(0,0)),4,mean(c(0,0)),4,0,4,rep(0,2),mean(c(0,4)),4,
+                rep(0,2),rep(4,3),rep(0,4),4,mean(c(0,0)),0,4,mean(c(0,0))
+                ,4,mean(c(0,4)),0,4,rep(0,2),4,mean(c(4,4)),0,4,0,mean(c(0,0)),
+                0,rep(4,3),mean(c(0,4)),0,4,0,4,rep(0,3),mean(c(0,4)),
+                mean(c(4,4)),rep(0,2),mean(c(0,4)),mean(c(0,0)),0,mean(c(0,4)),
+                rep(0,3),4,rep(0,2),rep(4,3),rep(0,3),4,rep(0,2),mean(c(0,0)),
+                rep(0,2),mean(c(0,0)),0,mean(c(0,0)),mean(c(0,0)),rep(0,2),
+                rep(4,4),0,rep(4,2),rep(0,3),4,mean(c(0,0)),0,mean(c(0,0)),
+                rep(0,2),4,0,mean(c(0,0)),0,mean(c(0,0)),4,rep(0,3),
+                mean(c(0,0)),0,mean(c(0,0)),rep(0,3),4,rep(0,5),mean(c(0,0)),
+                mean(c(0,0)),rep(0,2),4,0),18,18,byrow=TRUE)
+colnames(D_22) = c("Geelong","Melbourne","Sydney","Collingwood","Fremantle",
+                   "Brisbane","Richmond","Western Bulldogs",
+                   "Carlton","St Kilda","Port Adelaide","Gold Coast Suns",
+                   "Hawthorn","Adelaide","Essendon","GWS","West Coast",
+                   "North Melbourne")
+rownames(D_22) = c("Geelong","Melbourne","Sydney","Collingwood","Fremantle",
+                   "Brisbane","Richmond","Western Bulldogs",
+                   "Carlton","St Kilda","Port Adelaide","Gold Coast Suns",
+                   "Hawthorn","Adelaide","Essendon","GWS","West Coast",
+                   "North Melbourne")
+D_22
+```
+
+
+#Computing the first,second and higher order ranking for AFL Round 22, 2022 (i.e. After 22 rounds)
+```{r}
+J_18by1 = matrix(1,18,1)
+r1_22 = D_22%*%J_18by1-t(D_22)%*%J_18by1
+r2_22 = (D_22%^%2)%*%J_18by1-t(D_22%^%2)%*%J_18by1
+r3_22 = (D_22%^%3)%*%J_18by1-t(D_22%^%3)%*%J_18by1
+r4_22 = (D_22%^%4)%*%J_18by1-t(D_22%^%4)%*%J_18by1
+r5_22 = (D_22%^%5)%*%J_18by1-t(D_22%^%5)%*%J_18by1
+```
+
+
+
+
+#Computing r and comparing for AFL Round 22, 2022
+```{r}
+#6 out of 18
+r_22 = r1_22 + 0.5*r2_22 + 0.5*r3_22 + 0.5*r4_22+0.5*r5_22
+rank(r_22)
+sort(rank(r_22),decreasing = TRUE)
+
+```
+
+#Win lose Matrix
+#Case 4: D_15 
+```{r}
+D_15 = matrix(c(rep(0,3),4,0,rep(4,3),rep(0,2),
+                4,rep(0,2),rep(4,5),
+                
+                rep(0,2),4,rep(0,2),rep(4,3),
+                0,rep(4,4),0,rep(4,4),
+                
+                rep(4,2),rep(0,2),4,0,4,
+                rep(0,2),4,rep(0,2),4,0,
+                rep(4,4),
+                
+                0,4,rep(0,2),4,
+                rep(0,3),rep(4,2),0,rep(4,5),rep(0,2),
+                
+                rep(4,2),rep(0,3),4,rep(0,2),mean(c(4,0)),
+                rep(0,3),rep(4,6),
+                
+                
+                rep(0,2),rep(4,2),rep(0,5),rep(4,3),0,
+                rep(4,5),
+                
+                rep(0,3),4,
+                rep(0,3),rep(4,2),0,4,0,4,
+                0,rep(4,3),0,
+                
+                rep(0,2),rep(4,2),
+                rep(0,7),rep(4,2),0,rep(4,4),
+                
+                rep(0,2),4,rep(0,3),
+                mean(c(0,0)),
+                4,rep(0,2),
+                4,rep(0,2),rep(4,3),0,4,
+                
+                
+                4,rep(0,5),4,
+                rep(0,4),
+                rep(4,3),0,4,0,4,
+                
+                rep(0,2),4,rep(0,4),4,0,4,0,4,rep(0,2),4,0,
+                rep(4,2),
+                
+                rep(0,2),4,0,4,
+                rep(0,3),
+                4,rep(0,3),rep(4,2),rep(0,2),rep(4,2),
+                
+                
+                4,rep(0,4),4,rep(0,4)
+                ,4,rep(0,4),
+                rep(0,2),4,
+                
+                rep(0,6),rep(4,2),rep(0,2),
+                4,rep(0,5),rep(4,2),
+                
+                rep(0,9),4,rep(0,2),
+                rep(4,2),rep(0,4),
+                
+                rep(0,11),4,0,4,rep(0,2),rep(4,2),
+                
+                rep(0,3),4,rep(0,10),4,rep(0,3),
+                
+                rep(0,18)),18,18,byrow=TRUE)
+
+colnames(D_15) = c("Geelong","Melbourne","Sydney","Collingwood","Fremantle",
+                   "Brisbane","Richmond","Western Bulldogs",
+                   "Carlton","St Kilda","Port Adelaide","Gold Coast Suns",
+                   "Hawthorn","Adelaide","Essendon","GWS","West Coast",
+                   "North Melbourne")
+rownames(D_15) = c("Geelong","Melbourne","Sydney","Collingwood","Fremantle",
+                   "Brisbane","Richmond","Western Bulldogs",
+                   "Carlton","St Kilda","Port Adelaide","Gold Coast Suns",
+                   "Hawthorn","Adelaide","Essendon","GWS","West Coast",
+                   "North Melbourne")
+D_15
+```
+
+
+
+#Computing the first,second and higher order ranking for AFL Round 15, 2022 (i.e. After 15 rounds)
+```{r}
+J_18by1 = matrix(1,18,1)
+r1_15 = D_15%*%J_18by1-t(D_15)%*%J_18by1
+r2_15 = (D_15%^%2)%*%J_18by1-t(D_15%^%2)%*%J_18by1
+r3_15 = (D_15%^%3)%*%J_18by1-t(D_15%^%3)%*%J_18by1
+r4_15 = (D_15%^%4)%*%J_18by1-t(D_15%^%4)%*%J_18by1
+r5_15 = (D_15%^%5)%*%J_18by1-t(D_15%^%5)%*%J_18by1
+r6_15 = (D_15%^%6)%*%J_18by1-t(D_15%^%6)%*%J_18by1
+r7_15 = (D_15%^%7)%*%J_18by1-t(D_15%^%7)%*%J_18by1
+```
+
+
+#Computing r and comparison for AFL Round 15, 2022
+```{r}
+#6 out of 18
+r_15 = r1_15 + 0.5*r2_15 + 0.5*r3_15 + 0.5*r4_15 + 
+  0.005*r5_15 
+rank(r_15)
+sort(rank(r_15),decreasing = TRUE)
+
+```
+
+
