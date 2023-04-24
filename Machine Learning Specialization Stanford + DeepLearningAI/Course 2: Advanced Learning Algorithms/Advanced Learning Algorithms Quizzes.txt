@@ -1,0 +1,400 @@
+Week 1. Neural networks intuition
+ 
+See Screenshots 1. Practise Quiz Neural networks intuition Part 1
+
+Question 1. 
+Which of these are terms used to refer to components of an artificial neural network? (hint: three of these are correct)
+
+Answer(s):
+-layers
+-neurons 
+-activation function
+
+
+Question 2. 
+True/False? Neural networks take inspiration from, but do not very accurately mimic, how neurons in a biological brain learn.
+
+Answer: True
+
+More complex neural networks
+Video Question 1. 
+Can you fill in the superscripts and subscripts for the second neuron?
+
+See Screenshots Week 1. 1. 
+
+Answer: 
+a2[3]=g(w2[3]⋅a[2]+b2[3])
+
+Where w and a are vectors. 
+
+Practise Quiz: Neural Network Model
+
+Question 1. 
+See Screenshots Week 1. 3.
+Practice Quiz Neural Network Model Q1
+
+For a neural network, what is the expression for calculating the activation of the third neuron in layer 2? 
+Note, this is different from the question that you saw in the lecture video.
+
+Answer: a3[2]=g(w3[2]⋅a[1]+b3[2])
+
+Where w and a are vectors. 
+
+Question 2. 
+See Screenshots Week 1. 4.
+Practice Quiz Neural Network Model Q2
+For the handwriting recognition task discussed in lecture, what is the output a1[3]?
+
+Answer: The estimated probability that the input image is of a number 1, a number that ranges from 0 to 1.
+
+
+Practise quiz: TensorFlow implementation 
+
+Question 1. 
+For the the following code:
+
+model = Sequential([
+
+ Dense(units=25, activation="sigmoid"),
+
+ Dense(units=15, activation="sigmoid"),
+
+ Dense(units=10, activation="sigmoid"),
+
+ Dense(units=1, activation="sigmoid")])
+This code will define a neural network with how many layers?
+
+Answer: 4
+
+Question 2.
+See Screenshots Week 1. 3. Practise Quiz TensorFlow implementation Q2
+
+How do you define the second layer of a neural network that has 4 neurons and a sigmoid activation?
+
+Answer: Dense(units=4, activation=‘sigmoid’)
+
+
+Question 3. 
+
+See Screenshots Week 1. 4. Practise Quiz TensorFlow implementation Q3
+If the input features are temperature (in Celsius) and duration (in minutes), how do you write the code for the first feature vector x shown above?
+Answer: 
+
+x = np.array([[200.0, 17.0]])
+
+Practice quiz: Neural network implementation in Python
+Question 1. 
+See Screenshots Week 1. 6. Practice quiz: Neural Network implementation in Python
+
+According to the lecture, how do you calculate the activation of the third neuron in the first layer using NumPy?
+
+Answer: 
+z1_3 = np.dot(w1_3, x) + b1_3
+a1_3 = sigmoid(z1_3)
+
+Question 2. 
+See Screenshots Week 1. 7. Practice quiz: Neural Network implementation in Python Q2
+According to the lecture, when coding up the numpy array W, where would you place the w parameters for each neuron?
+
+Answer: In the columns of W. 
+
+
+Question 3. 
+See Screenshots Week 1. 8. Practice quiz: Neural Network implementation in Python Q3
+For the code above in the "dense" function that defines a single layer of neurons, how many times does the code go through the "for loop"? Note that W has 2 rows and 3 columns.
+
+Answer: 3 times
+
+Matrix multiplication rules.
+Video Question. 
+
+See Screenshots Week 1. 9.
+Can you calculate the value at row 2, column 3?
+
+Answer: (-1 x 7) + (-2 x 8) = -23
+
+Week 2. 
+Practice Quiz: Neural Network Traning 
+
+Question 1. 
+See Screenshots Week 2. 1. Q1 Practise Quiz Neural Network Training 
+
+For which type of task would you use the binary cross entropy loss function?
+Answer: binary classification (classification with exactly 2 classes)
+
+
+Question 2. 
+See Screenshots Week 2. 2. Q2 Practise Quiz Neural Network Training 
+Which line of code updates the network parameters in order to reduce the cost?
+
+Answer: model.fit(X,y,epochs=100)
+
+
+Practice Quiz: Activation Functions
+Question 1. 
+See Screenshots Week 2. 3. Practice quiz Activation Functions
+
+Which of the following activation functions is the most common choice for the hidden layers of a neural network?
+
+
+Answer: ReLU (reftified linear unit)
+Question 2.
+See Screenshots Week 2.4. Practice Quiz Activation Functions Q2
+
+For the task of predicting housing prices, which activation functions could you choose for the output layer? 
+Choose the 2 options that apply.
+
+Answer(s): linear, ReLU
+
+
+Question 3
+True/False? A neural network with many layers but no activation function (in the hidden layers) is not effective; that’s why we should instead use the linear activation function in every hidden layer. 
+
+Answer(s): False
+
+Softmax Video Question. 
+See Screenshots Week 2.5.
+What do you think a4 is equal to?
+
+Answer: 0.35
+
+Practice Quiz: Multiclass Classification
+Question 1. 
+
+See Screenshots Week 2.6.
+
+For a multiclass classification task that has 4 possible outputs, the sum of all the activations adds up to 1. 
+For a multiclass classification task that has 3 possible outputs, the sum of all the activations should add up to ….
+
+Answer: 1
+
+Question 2.
+
+See Screenshots Week 2.7.
+
+For multiclass classification, the cross entropy loss is used for training the model. If there are 4 possible classes for the output, 
+and for a particular training example, the true class of the example is class 3 (y=3), then what does the cross entropy loss simplify to? 
+[Hint: This loss should get smaller when a_3 gets larger.]
+
+Answer: -log(a_3)
+
+Question 3.
+For multiclass classification, the recommended way to implement softmax regression is to set from_logits=True
+in the loss function, and also to define the model's output layer with…
+
+See Screenshots Week 2.8.
+
+Answer: a "linear" activation
+
+Practice Quiz: Additional Neural Network Concepts 
+Question 1. 
+
+See Screenshots Week 2. 9.
+
+The Adam optimizer is the recommended optimizer for finding the optimal parameters of the model. How do you use the Adam optimizer in TensorFlow?
+
+Answer: When calling model.compile, set optimizer=tf.keras.optimizers.Adam(learning_rate=1e-3).
+
+Question 2.
+See Screenshots Week 2. 10.
+
+The lecture covered a different layer type where each single neuron of the layer does not look at all the values of the input vector that is
+fed into that layer. What is this name of the layer type discussed in lecture?
+
+Answer: convolutional layer
+
+Week 3. 
+Practice Quiz: Advice for applying machine learning 
+Question 1. 
+
+In the context of machine learning, what is a diagnostic?
+
+Answer: A test that you run to gain insight into what is/isn’t working with a learning algorithm.
+
+Question 2. 
+
+True/False? It is always true that the better an algorithm does on the training set, the better it will do on generalizing to new data. 
+
+Answer: False
+
+
+Question 3. 
+See Week 3. 1. Practice Quiz Advice for Machine Learning Q3
+For a classification task; suppose you train three different models using three different neural network architectures. 
+Which data do you use to evaluate the three models in order to choose the best one? 
+
+Answer: The cross validation set 
+
+
+Practice Quiz: Bias and Variance 
+Question 1. 
+See Screenshots Week 3. 1. Practice Quiz Bias and Variance
+
+If the model's cross validation error Jcv is much higher thant the training error Jtrain, this is 
+an indication that the model has...
+
+Answer: high variance 
+
+
+Question 2.
+
+See Screenshots Week 3. 2. Practice Quiz Bias and Variance Q2
+
+Which of these is the best way to determine whether your model has high bias (has underfit the training data)?
+
+Answer: 
+Compare the training error to the baseline level of performance.
+
+
+Question 3. 
+See Screenshots Week 3. 3. Practice Quiz Bias and Variance Q3
+
+You find that your algorithm has high bias. Which of these seem like good options for improving the algorithm’s performance? 
+Hint: two of these are correct. 
+
+Answer(s):
+-Collect additional features or add polynomial features 
+-Decrease the regularization parameter 
+λ (lambda).
+
+Question 4. 
+
+You find that your algorithm has a training error of 2%, and a cross validation error of 20% (much higher than the training error).
+Based on the conclusion you would draw about whether the algorithm has a high bias or high variance problem, which of these seem like good options
+for improving the algorithm’s performance? Hint: two of these are correct. 
+
+Answer(s): 
+-Collect more training data. 
+-Increase the regularization parameter  
+λ.
+
+Practise Quiz: Machine Learning development process
+Question 1. 
+
+See Screenshots Week 3. 4. Practice Quiz Machine Learning Development Process Q1
+
+Which of these is a way to do error analysis?
+
+Answer: Manually examine a sample of the training examples that the model misclassified in order to identify common traits and trends. 
+
+
+Question 2. 
+See Screenshots Week 3. 4. Practice Quiz Machine learning development process Q2
+
+We sometimes take an existing training example and modify it (for example, by rotating an image slightly)
+to create a new example with the same label. What is this process called?
+
+Answer: Data augmentation 
+
+
+Question 3. 
+See Screenshots Week 3. 4. Practice Quiz Machine learning development process Q3
+
+What are two possible ways to perform transfer learning? Hint: two of the four choices are correct.
+
+Answer(s):
+-You can choose to train all parameters of the model, including the output layers, as well as the earlier layers.
+-You can choose to train just the output layers' parameters and leave the other parameters of the model fixed.
+
+
+Week 4. 
+Practice Quiz: Decision trees
+Question 1. 
+See Screenshots Week 4. 1. Practice Quiz Machine learning development process Q1
+
+Based on the decision tree shown in the lecture, if an animal has floppy ears, a round face shape and has whiskers,
+does the model predict that it's a cat or not a cat?
+
+Answer: cat
+
+Question 2. 
+See Screenshots Week 4. 2. Practice Quiz Machine learning development process Q2
+
+Take a decision tree learning to classify between spam and non-spam email. There are 20 training examples at the root note,
+comprising 10 spam and 10 non-spam emails. If the algorithm can choose from among four features, resulting in four corresponding splits,
+which would it choose (i.e., which has highest purity)? 
+
+Answer: Left split: 10 of 10 emails are spam. Right split: 0 of 10 emails are spam. 
+
+Practice Quiz: Decision tree learning 
+Question 1. 
+See Screenshots Week 4. 3. Practice quiz Decision Tree Learning Q1
+
+Recall that entropy was defined in lecture as H(p_1) = - p_1 log_2(p_1) - p_0 log_2(p_0),
+where p_1 is the fraction of positive examples and p_0 the fraction of negative examples. 
+
+At a given node of a decision tree, , 6 of 10 examples are cats and 4 of 10 are not cats. Which expression calculates the entropy 
+H(p1) of this group of 10 animals?
+
+Answer: −(0.6)log2(0.6)−(0.4)log2(0.4)
+
+Question 2.
+See Screenshots Week 4. 4. Practice quiz Decision Tree Learning Q2
+
+Recall that information was defined as follows: 
+Answer: H(p1root) - (wleft*H(p1left)+wright*H(piright))
+
+Before a split, the entropy of a group of 5 cats and 5 non-cats is 
+H(5/10). After splitting on a particular feature, a group of 7 animals (4 of which are cats) has an entropy of 
+H(4/7). The other group of 3 animals (1 is a cat) and has an entropy of 
+H(1/3). What is the expression for information gain?
+
+Answer: H(0.5)−(7/10*H(4/7)+3/10*H(1/3))
+
+Question 3.
+
+See Screenshots Week 4. 5. Practice quiz Decision Tree Learning Q3
+To represent 3 possible values for the ear shape, you can define 3 features for ear shape: pointy ears, floppy ears, oval ears. For an animal whose ears are not pointy, not floppy, but are oval, how can you represent this information as a feature vector?
+
+Answer: [0,0,1]
+
+Question 4.
+See Screenshots Week 4. 6. Practice quiz Decision Tree Learning Q4
+
+For a continuous valued feature (such as weight of the animal), there are 10 animals in the dataset. According to the lecture, what is the recommended way to find the best split for that feature?
+
+Answer: Choose the 9 mid-points between the 10 examples as possible splits,
+and find the split that gives the highest information gain.
+
+
+Question 5
+
+Which of these are commonly used criteria to decide to stop splitting? (Choose two.)
+
+Answer(s):
+-When the number of examples in a node is below a threshold
+-When the tree has reached a maximum depth
+
+
+Practice Quiz: Tree ensembles
+Question 1. 
+See Screenshots Week 4. 7. Practice Quiz Decision Trees Q1
+
+For the random forest, how do you build each individual tree so that they are not all identical to each other?
+
+Answer: 
+Sample the training data with replacement.
+
+
+Question 2. 
+You are choosing between a decision tree and a neural network for a classification task where the input x
+is a 100x100 resolution image. Which would you choose?
+
+Answer: A neural network, because the input is unstructured data and neural
+networks typically work better with unstructured data.
+
+Question 3.
+What does sampling with replacement refer to?
+
+Answer: 
+Drawing a sequence of examples where, when picking the next example, first replacing all previously drawn examples into the set we are picking from. 
+
+
+ 
+
+
+
+
+
+
+
