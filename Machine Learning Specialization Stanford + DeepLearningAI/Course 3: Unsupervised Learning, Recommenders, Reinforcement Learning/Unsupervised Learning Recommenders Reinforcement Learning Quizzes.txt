@@ -1,0 +1,313 @@
+Unsupervised Learning, Recommenders, Reinforcement Learning Quizzes
+Week 1. 
+Practice Quiz: Clustering 
+
+Question 1. 
+Which of these best describes unsupervised learning? 
+
+Answer: A form of machine learning that finds patterns using unlabeled data (x). 
+
+
+Question 2.
+Which of these statements are true about K-means? Check all that apply.
+
+Answer(s):
+-The number of cluster assignment variables 
+c(i) is equal to the number of training examples.
+- If each example x is a vector of 5 numbers, then each cluster centroid
+μk is also going to be a vector of 5 numbers.
+- If you are running K-means with K = 3 clusters, then each
+c(i) should be 1, 2, or 3. 
+
+
+Question 3. 
+
+You run K-means 100 times with different initializations. How should you pick from the 100 resulting solutions?
+
+Answer: Pick the one with the lowest cost 
+J
+
+
+Question 4. 
+You run K-means and compute the value of the cost function 
+J(c(1),…,c(m),μ1,…,μK) after each iteration. Which of these statements should be true?
+
+Answer: The cost will either decrease or stay the same after each iteration.
+
+
+Question 5.
+In K-means, the elbow method is a method to 
+
+Answer: Choose the number of clusters K
+
+
+Practice Quiz: Anomaly detection 
+
+
+Question 1. 
+You are building a system to detect if computers in a data center are malfunctioning.
+You have 10,000 data points of computers functioning well, and no data from computers malfunctioning. What type of algorithm should you use?
+
+Answer: Anomaly detection
+
+
+Question 2. 
+You are building a system to detect if computers in a data center are malfunctioning.
+You have 10,000 data points of computers functioning well, and 10,000 data points of
+computers malfunctioning. What type of algorithm should you use?
+
+Answer: 
+Supervised learning 
+
+
+Question 3. 
+
+Say you have 5,000 examples of normal airplane engines, and 15 examples of anomalous engines.
+How would you use the 15 examples of anomalous engines to evaluate your anomaly detection algorithm?
+
+Answer:  Put the data of anomalous engines (together with some normal engines) in the cross-validation and/or test sets to measure if the learned model can correctly detect anomalous engines. 
+
+
+Question 4. 
+Anomaly detection flags a new input 
+x as an anomaly if 
+p(x)<ϵ. If we reduce the value of 
+ϵ, what happens?
+
+Answer: The algorithm is less likely to classify new examples as an anomaly.
+
+Question 5.
+You are monitoring the temperature and vibration intensity on newly manufactured aircraft engines. You have measured 100 engines and fit the Gaussian model described in the video lectures to the data. The 100 examples and the resulting distributions are shown in the figure below. 
+
+
+The measurements on the latest engine you are testing have a temperature of 17.5 and a vibration intensity of 48. These are shown in magenta on the figure below. What is the probability of an engine having these two measurements?
+
+
+Answer: 0.0738 * 0.02288 = 0.00169
+
+
+Week 2.
+Practice Quiz: Collaborative Filtering 
+Question 1. You have the following table of movie ratings:
+
+See Week 2 Screenshots 1. Graded Quiz Collaborative Filtering Q1 
+Refer to the table above for question 1 and 2. Assume numbering starts at 1 for this quiz, so the rating for Football Forever by Elissa is at (1,1)
+
+What is the value of
+n_u
+​
+NOTE: n_u (Is the notation for the number of users), in the solution
+Also note: n_m (Is the notation for the number of movies, which is 3).
+
+Answer: 4 
+
+
+Question 2. 
+What is the value of 
+r(2,2)?
+
+Answer: 0
+
+Question 3. 
+In which of the following situations will a collaborative filtering system be the
+most appropriate learning algorithm (compared to linear or logistic regression)?
+
+Answer: You run an online bookstore and collect the ratings of many users. 
+You want to use this to identify what books are "similar" to each other
+(i.e., if a user likes a certain book, what are other books that they might also like?)
+
+
+Question 4.
+For recommender systems with binary labels y, which of these are reasonable ways for defining when 
+y should be 1 for a given user 
+j and item
+i? (Check all that apply.) 
+
+Answer(s):
+-y is 1 if user 
+j fav/likes/clicks on item 
+i (after being shown the item)
+
+-y is 1 if user
+j purchases item
+i (after being shown the item) 
+
+Practice Quiz: Recommender systems implementation
+Question 1.
+Lecture described using ‘mean normalization’ to do feature scaling of the ratings.
+What equation below best describes this algorithm?
+
+Answer: 
+See Screenshots Week 2. 2. Practice Quiz Recommender systems implementation Q1
+
+
+Question 2.
+The implementation of collaborative filtering utilized a custom training loop in TensorFlow. Is it true that TensorFlow always requires a custom training loop?
+
+Answer: 
+No: TensorFlow provides simplified training operations for some applications.
+
+Question 3.
+Once a model is trained, the 'distance' between features vectors gives an indication of how similar items are. 
+The squared distance between the two vectors
+x(k)and x(i) is: 
+
+distance = ∥x(k)−x(i)∥^2 = ∑ (l=1 to n) (xl(k) - xl(i))^2
+
+Using the table See Screenshots Week 2. 3. Practice Quiz Recommender systems implementation Q2
+, find the closest item to the movie "Pies, Pies, Pies".
+
+Answer: Pies and You
+
+Question 4.
+Which of these is an example of the cold start problem? (Check all that apply.) 
+
+Answer(s):
+-A recommendation system is unable to give accurate rating predictions for a new product that no users have rated. 
+-A recommendation system is unable to give accurate rating predictions for a new user that has rated few products. 
+
+Practice Quiz: Content-based filtering 
+Question 1. 
+
+Vector 
+xu and vector 
+xm must be of the same dimension, where 
+xu is the input features vector for a user (age, gender, etc.)
+xm is the input features vector for a movie (year, genre, etc.) True or false?
+
+Answer: False
+
+Question 2. 
+If we find that two movies, 
+i and
+k, have vectors 
+vm(i) and
+vm(k) that are similar to each other (i.e., 
+∣∣vm(i)−vm(k)∣∣ is small), 
+then which of the following is likely to be true? Pick the best answer. 
+
+Answer: The two movies are similar to each other and will be liked by similar users.
+
+Question 3.
+Which of the following neural network configurations are valid for a content based filtering application? Please note carefully the dimensions of the neural network indicated in the diagram. Check all the options that apply:
+
+Answer(s)
+-See Screenshots Week 2. 4. Practice Quiz Content based filtering Q3 Answer 1
+-See Screenshots Week 2. 5. Practice Quiz Content based filtering Q3 Answer 2
+-See Screenshots Week 2. 6. Practice Quiz Content based filtering Q3 Answer 3
+
+Question 4. 
+You have built a recommendation system to retrieve musical pieces from a large database of music, and have an algorithm that uses separate retrieval and ranking steps. If you modify the algorithm to add more musical pieces to the retrieved list (i.e., the retrieval step returns more items), which of these are likely to happen? Check all that apply.
+
+Answer(s):
+-The quality of recommendations made to users should stay the same or improve.
+-The system’s response time might increase (i.e., users have to wait longer to get recommendations)
+
+Question 5. 
+
+To speed up the response time of your recommendation system, you can pre-compute the vectors v_m for all the items you might recommend. This can be done even before a user logs in to your website and even before you know the 
+x_u or v_u vector. True/False?
+
+Answer: True
+
+Week 3.
+Practice Quiz: Reinforcement learning introduction
+Quesiton 1. 
+You are using reinforcement learning to control a four legged robot. The position of the robot would be its _____.
+
+Answer: state
+
+Quesiton 2.
+You are controlling a Mars rover. You will be very very happy if it gets to state 1 (significant scientific discovery), slightly happy if it gets to state 2 (small scientific discovery), and unhappy if it gets to state 3 (rover is permanently damaged). To reflect this, choose a reward function so that:
+
+Answer: R(1) > R(2) > R(3), where R(1) and R(2) are positive and R(3) is negative. 
+
+Quesiton 3.
+You are using reinforcement learning to fly a helicopter. Using a discount factor of 0.75, your helicopter starts in some state and receives rewards -100 on the first step, -100 on the second step, and 1000 on the third and final step (where it has reached a terminal state). What is the return?
+
+Answer: -100 - 0.75*100 + 0.75^2*1000 
+
+
+Quesiton 4.
+
+
+Given the rewards and actions below, compute the return from state 3 with a discount factor of 
+γ= 0.25
+
+See Week 3 Screenshots. 1. Practice Quiz Reinforcement learning introduction Q4
+
+Answer: 6.25
+
+Practice Quiz: State-action value function
+Question 1.
+Which of the folllowing accurately describes the state-action value function Q(s,a)?
+
+Answer: It is the return if you start from state s, take action a (once), then behave optimally after that. 
+
+Question 2.
+
+You are controlling a robot that has 3 actions: ← (left), → (right) and STOP. From a given state 
+s, you have computed Q(s, ←) = -10, Q(s, →) = -20, Q(s, STOP) = 0.
+
+What is the optimal action to take in state s?
+
+Answer: STOP
+
+Question 3.
+For this problem, 
+γ=0.25. The diagram below shows the return and the optimal action from each state. 
+Please compute Q(5, ←). 
+
+See Screenshots Week 3. 2. Practice Quiz State-action value function Q3
+
+Answer: 0.625
+
+Why?
+Yes, we get 
+0 reward in state 5. Then 0 ∗ 0.25 discounted reward in state 4, since we moved left for our action.
+Now we behave optimally starting from state 4 onwards. So, we move right to state 5 from state 4 and receive 
+0∗0.25^2 discounted reward. Finally, we move right in state 5 to state 6 to receive a discounted reward of 
+40∗0.25^3. Adding these together we get 0.625.
+
+Practice Quiz: Continuous state spaces
+Question 1.
+The Lunar Lander is a continuous state Markov Decision Process (MDP) because:
+
+Answer: The state contains numbers such as position and velocity that are continuous valued.
+
+Question 2.
+In the learning algorithm described in the videos, we repeatedly create an artificial training set to which we apply supervised learning where the input 
+x=(s,a) and the target, constructed using Bellman’s equations, is y = _____? 
+
+Answer: 
+y = R(s)+γmaxQ(s',a') where s' is the state you get to after taking action a in state s.
+           a'
+
+Question 3.
+You have reached the final practice quiz of this class! What does that mean? (Please check all the answers, because all of them are correct!)
+Answer(s)
+-You deserve to celebrate!
+-What an accomplishment -- you made it! 
+-The DeepLearning.AI and Stanford Online teams would like to give you a round of applause! 
+-Andrew sends his heartfelt congratulations to you!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
