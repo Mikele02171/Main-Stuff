@@ -16,7 +16,7 @@ Coursera (online courses): <br/>
 IBM Data Science Professional (Completed) <br/>
 IBM Data Analyt Professional (Completed) <br/>
 Machine Learning from DeepLearning.Ai and Stanford Online (Completed) <br/>
-Mathematics for Data Science and Machine Learning from DeepLearning.Ai and Stanford Online (In Progress) <br/>
-Microsoft 365 Fundamentals Specialisation (In Progress) <br/>
+Mathematics for Data Science and Machine Learning from DeepLearning.Ai and Stanford Online (In Progress) 67% <br/>
+Microsoft 365 Fundamentals Specialisation (In Progress) 6% <br/>
 
 
