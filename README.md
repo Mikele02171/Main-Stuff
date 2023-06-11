@@ -9,13 +9,17 @@ Term 3 Subjects: <br/>
 Deep Learning (In Progress)<br/>
 Databases Fundamentals (In Progress)<br/>
 
+
+Term 4 Subjects (SOON APPROACHING): <br/>
+
+
 The Univerisity of Melbourne Bachelor of Science (2018-2023) (Completed)<br/>
 AIE: Certificate III in Information Technology (2019) (Completed) <br/>
 
 Coursera (online courses): <br/>
 IBM Data Science Professional (Completed) <br/>
 IBM Data Analyt Professional (Completed) <br/>
-Machine Learning from DeepLearning.Ai and Stanford Online (Completed) <br/>
+Machine Learning Specialisation from DeepLearning.Ai and Stanford Online (Completed) <br/>
 Mathematics for Data Science and Machine Learning from DeepLearning.Ai and Stanford Online (In Progress) 67% <br/>
 Microsoft 365 Fundamentals Specialisation (In Progress) 6% <br/>
 
