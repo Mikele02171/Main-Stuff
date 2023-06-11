@@ -1,5 +1,5 @@
 # All of my Educational Content and Materials
-I am currently in my first year in my Postgraduate Degree in Data Science at La Trobe University, completed my studies from the University of Melbourne with Bachelor of Science (Specialising Statistics and Stochastic Processes) with additional online Courses. <br/>
+I am currently in my Graduate Diploma of Data Science at La Trobe University, completed my studies from the University of Melbourne with Bachelor of Science (Specialising Statistics and Stochastic Processes) with additional online Courses. <br/>
 
 La Trobe University Graduate Diploma of Data Science (In Progress) (2023): <br/>
 The Univerisity of Melbourne Bachelor of Science (2018-2023) (Completed)<br/>
