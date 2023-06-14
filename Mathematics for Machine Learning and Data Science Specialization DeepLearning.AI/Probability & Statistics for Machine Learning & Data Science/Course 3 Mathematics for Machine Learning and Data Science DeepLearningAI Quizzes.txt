@@ -1,0 +1,410 @@
+Course 3: Mathematics for Machine Learning and Data Science Specialisation DeepLearningAI Quizzes
+Probability & Statistics for Machine Learning & Data Science
+
+Week 1:
+(INTRODUCTION TO PROBABILITY)
+Video Question Sum of Probabilites (Disjoint Events) 1
+See Screenshots Week 1 1. 
+At a school, kids can only play one sport. 
+
+What is the probability that a kid plays soccer or basketball?
+
+Answer: 
+0.7
+Correct! The explanation will come right after this quiz, but your intuition is correct!
+
+(Assume these events are independent and disjoint)
+
+Video Question Sum of Probabilites (Disjoint Events) 2
+Sum of Proabilities - Dice Example 1
+When throwing a 6-sided dice, what is the probability of obtaining an even number or a 5?
+
+Answer: 2/3
+
+
+Sum of Probabilities (Joint Events)
+Video Question 1.
+See Screenshots Week 1 5. 
+At a school, kids can play as many sports as they want. 
+
+What is the probability that a kid plays soccer or basketball?
+Answer: We cannot tell with the information given.
+
+
+Video Question 2.
+See Screenshots Week 1 7. 
+In the school there are 6 kids playing soccer, 5 kids playing basketball and 3 kids play both. 
+(Assume there is 10 children)
+
+How many kids play soccer or basketball?
+Answer: 8
+
+Video Question 3.
+See Screenshots Week 1 9.
+In a school, we know that the probability that a kid plays soccer is 0.6, the probability that a kid plays basketball is 0.5 and
+the probability that a kid plays both soccer and basketball is 0.3. What is the probability that a child plays soccer or basketball?
+Answer: 0.8
+
+Independence 
+Video Question 1. 
+See Screenshots Week 1 11.
+In a school with 100 kids, where 50 like soccer and 50 don't, if we randomly split the kids in two rooms with 50 kids each, what is your best estimate on the number of kids in room 1 that like soccer?
+
+Answer: 25
+
+
+Video Question 2.
+See Screenshots Week 1 13.
+In a school with 100 kids, where 40like soccer and 60 don't, if we randomly split the kids in two rooms with 30 kids in one room and 70 in other, what is your best estimate on the number of kids in room 1 that like soccer?
+
+Answer: 12
+
+
+Birthday Problem 
+Video Question 
+See Screenshots Week 1 16.
+You have 30 friends in a party. What do you think is more likely?
+Answer: There no two of them have the same birthday.
+
+
+Conditional Probability-Part 1 
+Video Question 1. 
+What is the probability of landing heads twice if the first coin flipped is head?
+See Screenshots Week 1 17.
+Answer: 1/2
+
+Video Question 2.
+When flipping a coin twice, what is the probability of getting two heads if the first coin lands in tails?
+See Screenshots Week 1 19.
+Answer: 0
+
+
+Conditional Probability-Part 2
+Video Question 1. 
+See Screenshots Week 1 21.
+In a school there are 100 kids, where 50 like footbal and 50 don't. 
+There are two rooms where in room 1 there is a TV playing a soccer match and in room 2 there
+is a TV playing a movie unrelated to soccer. Each room fits exactly 50 kids.
+How many kids that like soccer you expect to be in room 1?
+
+Answer: 50
+
+
+Video Question 2.
+In a school there are 100 kids. 40 play soccer and 60 don't. Among the 40 that play soccer, 80% of them wear running shoes. 
+See Screenshots Week 1 24.
+How many kids play soccer and wear running shoes?
+Answer: 32
+
+Bayes Theorem - Intuition Problem
+Video Question. 
+Do you think it is more likely for you to be actual sick or not?
+See Screenshots Week 1 26.
+
+Answer: 
+It is more likely I'm actually sick.
+
+Week 1 - Practice Quiz
+Question 1. 
+Suppose you flip a coin twice and observe the result. Which set below describes the sample space of this experiment? I.e., which set describes every possible outcome? Define: 
+H as heads and 
+T as tails.
+
+Answer: 
+{(H,T),(H,H),(T,H),(T,T)}
+
+Question 2. 
+Let's keep the same experiment: flipping a coin twice.
+What is the probability of obtaining one head and one tail in this experiment (the order doesn't matter)?
+
+Answer: 1/2
+
+
+Question 3.
+Consider the following experiment:
+You throw a dice 
+10 times and sum the results. What is the probability of getting a number higher than 
+10?
+
+Hint: Use the complement rule!
+
+Answer: (6^10 - 1)/10
+
+Question 4.
+If you throw a dice twice and sum the result, what is the probability of getting a 10?
+
+Answer: 1/12
+
+Question 5.
+Consider the following problem:
+
+In an experiment there are 100 ill persons. 50 of them have headache and 50 of them have fever. 
+
+The researchers want to find the probability of a random selected person in this experiment having headache or fever. One researcher provides the following argument:
+
+"Since 50 out of 100 have headache, the probability of having headache is 1/2. The same reasoning can be applied to having fever. Therefore, the probability that a random selected person has either fever or headache is 1."
+
+About their argument, choose the correct option.
+
+Answer: 
+It is incorrect, because it assumes that the events of having headache and fever are disjoint. This cannot be inferred by the experiment as it is stated.
+
+Week 1:
+Lesson 2 - Probability Distributions
+Binomial Distribution 
+Video Question.
+If X is the number of times we get a 1 when rolling a dice ten times, then 
+X~Binomial(n,p)
+
+Where n,p is equal to:
+n = 10
+p = 1/6
+
+Bernoulli Distribution 
+Video Question. 
+Throwing a 4-sided fair dice and observing if it lands in 2 or not might be modeled as a Bernoulli distribution with 
+p equals to: 1/4
+
+
+Week 1 - Summative quiz
+See Screenshots Week 1 49. - to Week 1 58.
+
+Week 2: Lesson 1-Describing Distributions 
+Practice Quiz
+Question 1.
+Which of the following best describes the purpose of a QQ plot?
+
+Answer: To test for normality of a dataset
+
+Question 2.
+Which of the following is true about a box plot with a long whisker on the upper end?
+
+Answer: The data is positively skewed.
+
+Question 3.
+Which of the following is a correct statement regarding a QQ plot?
+Answer(s):
+-If the points fall close to the diabonal line, the data is normally distributed
+-If the points fall far from the diagonal line, the data is not normally distributed
+ 
+
+Question 4.
+Consider the following box plot for the test scores of two classes, A and B: 
+See Screenshots Week 2 36.
+Which of the following statements is true? 
+Answer(s):
+-The median score of Class B is higher than the median score of Class A.
+-The interquartile range of Class A is larger than the interquartile range of Class B.
+
+
+Question 5.
+Consider the following QQ plot for a set of data:
+See Screenshots Week 2 37.
+Which of the following statements is true?
+
+Answer: The data looks normally distributed.
+
+Week 2: Probability Distributions with Multiple Variables 
+Summative Quiz.
+Question 1
+What is the expected value of rolling a fair six-sided dice? 
+
+Answer: 3.5
+
+
+Question 2
+ If we roll two fair six-sided dice, what is the probability that the sum of the dice is greater than or equal to 9?
+
+Answer: 5/18
+
+
+Question 3
+The box plot below shows the distribution of salaries for employees in three different departments of a company. Interpret the box plot and select all that apply.
+See Screenshots Week 2 109.
+
+Answer(s): 
+-The median salary of department 2 is higher than the median salary of  department 1.
+-The range of salaries in department 3 is larger than the range of salaries in department 2.
+
+Question 4
+Which of the following QQ plots represents a set of data that is more likely normally distributed?
+See Screenshots Week 2 110.
+
+Question 5
+A fair six-sided dice is rolled. What is the expected value of the square of the number rolled?
+
+Answer: 91/6
+
+Question 6.
+Suppose that the joint probability distribution of two random variables X and Y is given by the following table:
+
+See Screenshots Week 2 111.
+
+What is the probability that X and Y both take even values? 
+Answer: 0.1
+
+Question 7.
+If two dice are rolled, what is the probability that the sum of the numbers is greater than 
+9?
+
+Answer: 1/6
+
+
+Question 8
+Suppose that the joint probability distribution of two random variables X and Y is given by the following table: 
+
+See Screenshots Week 2 112.
+
+What is the covariance between X and Y? 
+Answer: 0.11
+
+See full working on Wee 2 Problem Q8 Summative Quiz Week 2.
+
+Week 3: Lesson 1 - Population and Sample
+Question 1.
+What is the difference between a sample and a population in statistics?
+
+Answer: A population is the entire group being studied, while a sample is a subset of that group.
+
+Question 2. 
+Which of the following statements best describes the law of large numbers?
+
+Answer: The law of large numbers states that as the sample size increases, the sample mean approaches the population mean with increasing accuracy.
+
+Question 3.
+Which of the following best describes the central limit theorem?
+
+Answer: 
+The central limit theorem states that as the sample size increases,
+the sampling distribution of the mean approaches a normal distribution, regardless of the distribution of the population.
+
+Week 3: Lesson 2 - Point Estimation
+Summative Quiz 
+Question 1. 
+What is the difference between sample mean and population mean?
+
+Answer: 
+Sample mean is the average of a subset of the population, while population mean is the average of the entire population.
+
+
+Question 2. 
+Which of the following method can be used to estimate the variance, mean, and proportion of a population?
+
+Answer: Point estimation 
+
+
+Question 3.
+Which of the following statements best describes the law of large numbers?
+
+Answer: (NOT FINAL)
+The law of large numbers states that as the sample size increases, the sample mean approaches the population mean with increasing accuracy.
+
+
+Question 4.
+Suppose you flip a coin 10 times and obtain 6 heads and 4 tails.
+What function needs to be maximized to find the maximum likelihood estimate of the probability of getting heads on a single coin toss?
+
+Answer: L(p) = p^6 (1-p)^4
+
+
+Question 5.
+What is the purpose of regularization in machine learning?
+
+Answer: 
+Regularization is used to prevent overfitting and reduce the complexity of a model,
+by adding a penalty term to the loss function that encourages smaller parameter values.
+
+
+Question 6.
+Consider the following population: 
+[−2,−1,0,1,2] and the following sample 
+[−1,0,2].
+
+What is the population mean?
+
+Answer: 0
+
+
+Question 7
+Consider the following population: 
+[−2,−1,0,1,2] and the following sample 
+[−1,0,2].
+
+What is the sample variance? (Use two decimal places in your answer)
+
+Answer: 2.33
+
+Week 4. 
+Lesson 1- Confidence Intervals 
+Practice Quiz
+Question 1 - 3
+
+See Screenshots Week 4 51.,52.,53. respectively.
+
+
+Week 4: Lesson 2- Hypothesis Testing
+Question 1.
+In statistical hypothesis testing, which of the following statements correctly defines Type I and Type II errors?
+
+Answer: 
+Type I error occurs when we reject a null hypothesis that is true, while Type II
+error occurs when we accept a null hypothesis that is false.
+
+
+
+Question 2.
+About the t distribution, select all that apply.
+Answer(s):
+-The t-distribution has thicker tails compared to the standard normal distribution.
+-The shape of the t-distribution depends on the degrees of freedom.
+-The t-distribution is used for testing population means.
+
+
+Question 3.
+When conducting a hypothesis test, what are the general steps to decide whether to reject the null hypothesis (H_0) or not? Select the correct sequence of steps. Suppose you have already defined the null hypothesis and the alternative hypothesis.
+
+ 
+Answer: 
+Set the significance level, calculate the test statistic, calculate the p-value, compare it with the significance level, and make a decision.
+
+Question 4.
+When defining the null hypothesis (H_0) and alternative hypothesis (H_1) 
+in a hypothesis test comparing the average sales before (μ_before) and after 
+(μ_after) implementing a marketing campaign, 
+which of the following options provides the best definition of 
+H_0 and H_1 for this scenario?
+
+
+Answer: 
+H_0:μ_before=μ_after.
+H_1:μ_before!=μ_after.
+
+NOTE: != Does not equal
+
+
+Question 5.
+Suppose you are conducting a hypothesis test to determine whether a new teaching method improves student performance. 
+
+The null hypothesis (H_0) states that the teaching method has no effect, while the alternative hypothesis (H_1) suggests that the teaching method leads to higher student performance. You collect data from a sample of 50 students and calculate a test statistic of 1.98. The critical value at a significance level of 0.05 is 1.96. Should you reject the null hypothesis?
+
+Answer: 
+Yes
+
+
+Question 6.
+A company claims that their new energy drink decreases reaction times. To investigate this claim, a researcher conducts a hypothesis test using a sample of 40 participants. The average reaction time in the sample is 0.95 seconds, with a standard deviation of 0.12 seconds. The company states that the average reaction time without their energy drink is 1.05 seconds. The researcher wants to determine whether there is sufficient evidence to support the company's claim. Assuming a significance level of 0.05, what is the test statistic for this hypothesis test?
+
+Answer: -5.27
+
+
+Correct! Using the formula 
+(xbar −μ)/(S/n^(1/2))
+you get the result!
+
+
+Question 7.
+In the question above, to find p-values for different levels of significance, which distribution would you have to work with?
+
+Answer: 
+t-Student Distribution with 39 degrees of freedom.
+
