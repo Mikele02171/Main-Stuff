@@ -2,7 +2,7 @@
 I am currently in my Graduate Diploma of Data Science at La Trobe University, completed my studies from the University of Melbourne with Bachelor of Science (Specialising Statistics and Stochastic Processes) with additional online Courses. <br/>
 
 La Trobe University Graduate Diploma of Data Science (In Progress) (2023-Present): <br/>
-The Univerisity of Melbourne Bachelor of Science (2018-2023) (Completed)<br/>
+The Univerisity of Melbourne Bachelor of Science (2018-2022) (Completed)<br/>
 AIE: Certificate III in Information Technology (2019) (Completed) <br/>
 
 Coursera (online courses): <br/>
