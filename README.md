@@ -11,7 +11,7 @@ IBM Data Science Professional (Completed) <br/>
 IBM Data Analyt Professional (Completed) <br/>
 Machine Learning Specialisation from DeepLearning.Ai and Stanford Online (Completed) <br/>
 Mathematics for Data Science and Machine Learning from DeepLearning.Ai and Stanford Online (Completed) <br/>
-Microsoft 365 Fundamentals Specialisation (In Progress) 6% <br/>
+Deep Learning Specialisation from DeepLearning.Ai and Stanford Online (Coming Soon) <br/>
 
 DataCamp: <br/>
 Data Analyst in Tableau (In Progress)  <br/>
