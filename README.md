@@ -8,7 +8,7 @@ AIE: Certificate III in Information Technology (2019) (Completed) <br/>
 (Online courses): <br/>
 Coursera: <br/>
 IBM Data Science Professional (Completed) <br/>
-IBM Data Analyt Professional (Completed) <br/>
+IBM Data Analyst Professional (Completed) <br/>
 Machine Learning Specialisation from DeepLearning.Ai and Stanford Online (Completed) <br/>
 Mathematics for Data Science and Machine Learning from DeepLearning.Ai and Stanford Online (Completed) <br/>
 Deep Learning Specialisation from DeepLearning.Ai and Stanford Online (Coming Soon) <br/>
