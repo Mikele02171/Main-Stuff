@@ -14,7 +14,7 @@ Mathematics for Data Science and Machine Learning from DeepLearning.Ai (Complete
 Deep Learning Specialisation from DeepLearning.Ai and Stanford Online (Coming Soon) <br/>
 
 DataCamp: <br/>
-Data Analyst in Tableau (In Progress)  <br/>
+Data Analyst in Tableau (In Progress) (3%) <br/>
 
 
 
