@@ -18,5 +18,8 @@ Data Analyst in Tableau (In Progress) (3%) <br/>
 Data Analyst with Python (In Progress) (25%) <br/>
 
 
+NOTE: Soon adding content <br/>
+
+
 
 
