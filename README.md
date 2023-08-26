@@ -15,9 +15,6 @@ Deep Learning Specialisation from DeepLearning.Ai and Stanford Online (Coming So
 
 DataCamp: <br/>
 Data Analyst with Python (Completed) <br/>
-Data Analyst in SQL (In Progress) <br/>
-Data Analyst in Tableau (In Progress) (3%) <br/>
-
 
 NOTE: Soon adding content <br/>
 
