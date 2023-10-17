@@ -1,0 +1,588 @@
+---
+title: "CSE5DEV Assessment 2 Michael Le 21689299"
+output:
+  html_document:
+    df_print: paged
+date: "2023-08-08"
+---
+
+### FOR THIS ASSESSMENT I USED R VERSION 4.3.1 IN WINDOWS TO APPLY
+### NESSARILY PACKAGES BELOW
+
+```{r}
+#Before starting the Assessment 
+#1. Familise with the directories
+#2. Understand what the packages do, you may need to change into the 
+# proper version of R to ultise later in this assessment
+
+#Packages for TASK 1
+library(tidyverse)
+library(tidyr)
+library(dplyr)
+library(readr)
+library(ggplot2)
+
+
+#Packages for TASK 2
+#Install the following packages below, Otherwise install the other packages 
+#including some dependencies.Last Resort, update the right version of R.
+
+library(DescTools)
+library(tidyselect)
+
+
+library(Hmisc)
+library(PerformanceAnalytics)
+library(corrplot)
+#GGPUBR
+#Go to this link https://cran.r-project.org/web/packages/ggplot2/index.html download 
+#and unzip the file, I am using Windows for example (ensure to download which browser you are currently using)
+#into the R directory, ensure to read which version of R you should be using
+library(ggpubr)
+
+
+```
+#packages you have to manually install
+```{r}
+#GGPUBR
+#Go to this link https://cran.r-project.org/web/packages/ggplot2/index.html download 
+#and unzip the file, I am using Windows for example (ensure to download which browser you are currently using)
+#into the R directory, ensure to read which version of R you should be using
+library(ggpubr)
+
+```
+
+### DATASET FOR TASK 1: STUDENT MARKS
+#TASK 1A and 1B
+#Step 1. We can now determine the dataset from Movies. 
+
+```{r}
+#START TASK 1A and TASK 1B
+dat_smarks = read.csv("C:/Users/mikel/OneDrive/Desktop/CSE5DEV Assessment 2 Code/Datasets/Studentmarks.csv",header = TRUE)
+names(dat_smarks)
+```
+#Step 2. Print the structure of the whole data
+```{r}
+str(dat_smarks)
+```
+
+
+#Step 3 Print out the Student Marks dataset to understand them later when performing 
+#further analysis. luckily we do not need to clean the data since we 
+#have all values filled in all of the columns.
+```{r}
+dat_smarks
+```
+#Step 4. Check if there are any missing values within the dataset for Student Marks.
+```{r}
+#Luckily there is no missing values in the Student Mark Dataset. 
+summary(dat_smarks)
+
+```
+#Step 5. Remove all row duplicate, since they do not impact on the overall 
+#data
+```{r}
+
+dat_smarks <- distinct(dat_smarks)
+dat_smarks 
+
+
+```
+
+# Step 6. We mutate and convert in Part A numeric,Part B integer and Part D integer 
+# to compute the columns for ages for ages1, ages 2 and total marks respectively. 
+
+```{r}
+dat_smarks <- dat_smarks %>% mutate(
+  dat_smarks, ages1 = as.numeric((Sys.Date() - as.Date(dob,format="%d/%m/%Y"))/365.25),
+  ages2 = as.integer((Sys.Date() - as.Date(dob,format="%d/%m/%Y"))/365.25),
+  total_marks = X2020 + X2021 + X2022)
+
+dat_smarks 
+#END OF TASK 1A and 1B
+
+```
+
+#TASK 1C
+#Step 1. Renaming the columns to Marks_2020, Marks_2021 and Marks_2022 to 
+#remember which year it was marked.
+
+```{r}
+#Start Task 1C
+dat_smarks <- dat_smarks %>% rename(Marks_2020 = X2020,Marks_2021=X2021,
+                                    Marks_2022 = X2022)
+dat_smarks 
+```
+#Step 2. Applying the gather function to ensure it is easlier to categorise between
+#Year and Mark.
+
+```{r}
+dat_smarks <- gather(dat_smarks,'Year','Mark',4:6)
+dat_smarks 
+```
+#Step 3. Using the seperate function to ensure we want the Year value by itself.
+
+```{r}
+dat_smarks <- separate(dat_smarks,Year,c('Character','Year'),sep='_')
+dat_smarks 
+```
+#Step 4. We want to remove the Character to avoid reduancy in the student dataset.
+
+```{r}
+dat_smarks <- dat_smarks %>% select(-Character)
+dat_smarks 
+```
+
+
+#Step 5. Using the Scatterplot using geom point() grouped by Year for
+#C. Create a scatter plot for Studentname versus Marks of all three years. 
+
+```{r}
+#END TASK 1C
+ggplot (data = dat_smarks, mapping = aes(x = Studentname,y=Mark,col=Year)) + geom_point (alpha = .7, 
+size = 3)  + labs(title = 'Scatterplot between Marks vs Students',subtitle = 'Grouped by Year', x= 'Student Name', y= 'Marks')
+  
+```
+#TASK 1D
+#Step 1.We want to filter the who got at least 200 marks in total and create a bar chart for students vs totalmarks in the descending order of their marks.
+
+
+```{r}
+#START TASK 1D
+dat_smarks_atl200 <- dat_smarks %>% filter(total_marks >=200)
+dat_smarks_atl200 <- dat_smarks_atl200 %>% arrange(desc(total_marks))
+ggplot(dat_smarks_atl200, aes(x= reorder(Studentname,-total_marks),y=total_marks)) + geom_bar(stat="identity", color='red',fill='red') + labs(title = 'Bar chart of Students who scored 200 or more',subtitle = 'in descending Order', x= 'Student Name', y= 'Total Mark')
+#END TASK 1D
+
+```
+
+### TASK 2: DATASET MOVIES
+
+#Data visualisation section
+
+#Step 1.Import data into RStudio
+#In this case, were given the required datasets.
+#MobliePhoneData, Movies and Studentmarks.
+
+#TASK 2A
+#Set the directory first, to locate your datasets 
+```{r}
+#Start Task 2A
+setwd("C:/Users/mikel/OneDrive/Desktop/CSE5DEV Assessment 2 Code/Datasets")
+
+```
+
+
+#Step 2. Were are now performing some data wrangling, by 
+#opening one of the datasets from the folder,
+#For instance we use the 
+#data for Movies
+```{r}
+dat_mov = read.csv("C:/Users/mikel/OneDrive/Desktop/CSE5DEV Assessment 2 Code/Datasets/Movies.csv",header = TRUE)
+
+```
+
+
+
+#Step 3. Check the name function to print the name of columns.
+```{r}
+names(dat_mov)
+```
+
+
+
+#Step 4. Check the head of the dataset for Movies for observation
+```{r}
+head(dat_mov)
+
+```
+
+#Step 5. Observe if there any missing values for the dataset for Movies.
+```{r}
+summary(dat_mov)
+
+```
+#Step 6. Count how many missing values overall movie dataset.
+```{r}
+#Counting the missing values for data-set movies
+#there is 101 in total.
+sum(is.na(dat_mov))
+
+
+```
+#Step 7. Missing values for all the columns we will compute or delete rows
+#Only if it has impact on the overall Movie data
+```{r}
+
+#Total missing values for Reviews
+sum(is.na(dat_mov$Reviews))
+
+#Total missing values for Duration
+sum(is.na(dat_mov$Duration))
+
+#Total missing values for Actor_3_facebook_likes
+sum(is.na(dat_mov$Actor_3_facebook_likes))
+
+#Total missing values for Actor_1_facebook_likes
+sum(is.na(dat_mov$Actor_1_facebook_likes))
+
+#Total missing values for Facenumber_in_poster
+sum(is.na(dat_mov$Facenumber_in_poster))
+
+#Total missing values for Actor_2_facebook_likes
+sum(is.na(dat_mov$Actor_2_facebook_likes))
+
+#Total missing values for Aspect_ratio
+sum(is.na(dat_mov$Aspect_ratio))
+
+```
+
+#Step 8. Remove all row duplicate, since they do not impact on the overall 
+#data
+```{r}
+
+dat_mov <- distinct(dat_mov)
+dat_mov
+
+
+```
+#STEP 9. If you decide to impute missing values 
+#Step 9a, Take the mean() of all missing columns
+#Step 9b, Take the median() of all missing columns
+#Step 9c, Take the Mode() of all missing columns
+
+#NOTE: If you decide not to impute the data if and only,
+#Option 1. Remove all rows or columns consist missing values, Proceed to Step 10.
+#Option 2. DO NOTHING Proceed to Step 12.
+
+#Step 9a. Impute all the missing values by taking the means
+#for each columns of missing data 
+```{r}
+
+dat_mov$Reviews[dat_mov$Reviews == mean(dat_mov$Reviews)] <- NA
+dat_mov$Duration[dat_mov$Duration==mean(dat_mov$Duration)] <- NA 
+dat_mov$Actor_3_facebook_likes[dat_mov$Actor_3_facebook_likes==mean(dat_mov$Actor_3_facebook_likes)] <- NA
+dat_mov$Actor_1_facebook_likes[dat_mov$Actor_1_facebook_likes==mean(dat_mov$Actor_1_facebook_likes)] <- NA
+dat_mov$Facenumber_in_poster[dat_mov$Facenumber_in_poster==mean(dat_mov$Facenumber_in_poster)] <- NA
+dat_mov$Actor_2_facebook_likes[dat_mov$Actor_2_facebook_likes==mean(dat_mov$Actor_2_facebook_likes)] <- NA
+dat_mov$Aspect_ratio[dat_mov$Aspect_ratio==mean(dat_mov$Aspect_ratio)] <- NA
+
+
+```
+
+#Step 9b. Impute all the missing values by taking the medians
+#for each columns of missing data (CHOSEN THIS ONE)
+```{r}
+
+dat_mov$Reviews[dat_mov$Reviews == median(dat_mov$Reviews)] <- NA
+dat_mov$Duration[dat_mov$Duration==median(dat_mov$dat_mov$Duration)] <- NA 
+dat_mov$Actor_3_facebook_likes[dat_mov$Actor_3_facebook_likes==median(dat_mov$Actor_3_facebook_likes)] <- NA
+dat_mov$Actor_1_facebook_likes[dat_mov$Actor_1_facebook_likes==median(dat_mov$Actor_1_facebook_likes)] <- NA
+dat_mov$Facenumber_in_poster[dat_mov$Facenumber_in_poster==median(dat_mov$Facenumber_in_poster)] <- NA
+dat_mov$Actor_2_facebook_likes[dat_mov$Actor_2_facebook_likes==median(dat_mov$Actor_2_facebook_likes)] <- NA
+dat_mov$Aspect_ratio[dat_mov$Aspect_ratio==median(dat_mov$Aspect_ratio)] <- NA
+
+
+```
+
+
+#Step 9c. Impute all the missing values by taking the modes
+#for each columns of missing data
+```{r}
+
+dat_mov$Reviews[dat_mov$Reviews == Mode(dat_mov$Reviews)] <- NA
+dat_mov$Duration[dat_mov$Duration==Mode(dat_mov$Duration)] <- NA 
+dat_mov$Actor_3_facebook_likes[dat_mov$Actor_3_facebook_likes==Mode(dat_mov$Actor_3_facebook_likes)] <- NA
+dat_mov$Actor_1_facebook_likes[dat_mov$Actor_1_facebook_likes==Mode(dat_mov$Actor_1_facebook_likes)] <- NA
+dat_mov$Facenumber_in_poster[dat_mov$Facenumber_in_poster==Mode(dat_mov$Facenumber_in_poster)] <- NA
+dat_mov$Actor_2_facebook_likes[dat_mov$Actor_2_facebook_likes==Mode(dat_mov$Actor_2_facebook_likes)] <- NA
+dat_mov$Aspect_ratio[dat_mov$Aspect_ratio==Mode(dat_mov$Aspect_ratio)] <- NA
+
+
+```
+
+
+
+#Step 10. We then proceed, if we confident with our new filled in Movie Dataset to omit all the 
+#the rows. 
+```{r}
+
+dat_mov <- na.omit(dat_mov)
+
+```
+
+
+#Step 11. Check if there is any more missing values and check the data types in the new updated data
+#for movies. 
+
+```{r}
+#End of TASK 2A
+summary(dat_mov)
+str(dat_mov)
+
+```
+
+#TASK 2B.
+#Step 1.  Based on the Dataset, calculate “Profit” and determine the relationship between 
+#“Profit” and other variables (e.g. IMDB score). Hint: Profit = Gross – Budget. Use line 
+#plot or scatter plot to find the relationship. Present a summary of your findings 
+
+```{r}
+#Starting TASK 2B.
+dat_mov <- dat_mov %>% mutate(dat_mov,Profit =Gross-Budget)
+
+```
+#Step 2. 
+#Plot all the nessarily ggplots scatterplots for profit vs (Imdb score, reviews,votes and Movie facebook likes) 
+
+```{r}
+
+#1.ggplot between Imdb_score vs. Profit
+g1 <- ggplot(data = dat_mov, mapping = aes(x = Imdb_score ,y=Profit)) + geom_point (alpha = .7, size = 3) + labs(title = 'Imdb Score vs Profit',x='Imdb Score',y='Profit') 
+
+#2.ggplot between Reviews vs. Profit
+g2<-ggplot(data = dat_mov, mapping = aes(x = Reviews,y=Profit)) + geom_point (alpha = .7, size = 3) + labs(title = 'Reviews vs Profit',x='Reviews',y='Profit')  
+
+#3.ggplot between Votes vs. Profit
+g3<-ggplot(data = dat_mov, mapping = aes(x = Votes,y=Profit)) + geom_point (alpha = .7, size = 3) + labs(title = 'Votes vs Profit',x='Reviews',y='Profit') 
+
+#4.ggplot between Movie Facebook Likes vs. Profit
+g4<-ggplot(data = dat_mov, mapping = aes(x = Movie_facebook_likes,y=Profit)) + geom_point (alpha = .7, size = 3) + labs(title = ' Movie facebook likes vs Profit',x='Movie facebook likes',y='Profit')
+
+
+```
+
+
+#Step 3. Keep all ggplots into 1 Figure.
+```{r}
+
+#End of Part B
+figure <- ggarrange(g1,g2,g3,g4,nrow=2,align="h",widths = c(1,1,1),ncol=2,heights=c(1,1,1))
+figure
+
+```
+
+
+#TASK 2C
+#Step 1. Calculate the correlation between the relevant variable(s) used in the Dataset. 
+#Present a summary of your findings 
+
+```{r}
+
+str(dat_mov)
+
+```
+#Step 2. Calculate the correlation between the relevant variable(s) used in the Dataset. 
+#Present a summary of your findings 
+
+```{r}
+#Start of Part C
+#To start were only interest in columns that has numeric 
+#values in the Movie Dataset
+
+dat_mov <- dat_mov %>% select(-Color) 
+dat_mov <- dat_mov %>% select(-Director) 
+dat_mov <- dat_mov %>% select(-Actor_2_name) 
+dat_mov <- dat_mov %>% select(-Genre)  
+dat_mov <- dat_mov %>% select(-Actor_1_name) 
+dat_mov <- dat_mov %>% select(-Title) 
+dat_mov <- dat_mov %>% select(-Actor_3_name) 
+dat_mov <- dat_mov %>% select(-Plot_keywords)
+dat_mov <- dat_mov %>% select(-Movie_imdb_link) 
+dat_mov <- dat_mov %>% select(-Language)
+dat_mov <- dat_mov %>% select(-Content_rating)
+dat_mov <- dat_mov %>% select(-Gross)
+dat_mov <- dat_mov %>% select(-Reviews)
+dat_mov <- dat_mov %>% select(-Duration)
+dat_mov <- dat_mov %>% select(-Director_facebook_likes)
+dat_mov <- dat_mov %>% select(-Actor_3_facebook_likes)
+dat_mov <- dat_mov %>% select(-Actor_1_facebook_likes)
+dat_mov <- dat_mov %>% select(-Votes)
+dat_mov <- dat_mov %>% select(-Cast_total_facebook_likes)
+dat_mov <- dat_mov %>% select(-Facenumber_in_poster)
+dat_mov <- dat_mov %>% select(-Year )
+dat_mov <- dat_mov %>% select(-Actor_2_facebook_likes)
+dat_mov <- dat_mov %>% select(-Movie_facebook_likes)
+
+#dat_mov <- dat_mov %>% select(-Budget)
+
+names(dat_mov)
+summary(dat_mov)
+
+
+
+
+```
+#Step 3. Check if there is any numeric values? 
+```{r}
+str(dat_mov)
+
+```
+
+#Step 4a. Visualise the numeric variables between Profit vs. other variables using scatterplots
+#Using ggscatter()
+```{r}
+#Plot 1.Imdb score vs Profit
+g5 <- ggscatter(dat_mov,x="Imdb_score",y="Profit",add="reg.line",cont.int=TRUE,xlab="Imdb Score",ylab="Profit")
+
+#Plot 2.Aspect Ratio vs Profit
+g6 <- ggscatter(dat_mov,x="Aspect_ratio",y="Profit",add="reg.line",cont.int=TRUE,xlab="Aspect ratio",ylab="Profit")
+
+#Plot 3.Budget vs Profit
+g7 <- ggscatter(dat_mov,x="Budget",y="Profit",add="reg.line",cont.int=TRUE,xlab="Budget ",ylab="Profit")
+
+#Visualise Plots 1 and 2. 
+figure_1 <- ggarrange(g5,g6,nrow=1,ncol=2,widths = c(1,1),align="v",heights=c(1,1))
+figure_1
+
+```
+#Step 4b.Visualise Plot 3 Only
+```{r}
+#Visualise 
+g7
+
+```
+
+#Step 5a. Implement Pearson correlation, Spearman correlation and Kendall correlation
+#On all the scatterplots demonstrated in Steps 4a and 4b.
+```{r}
+#Plot 1.Imdb score vs Profit
+g5 <- ggscatter(dat_mov,x="Imdb_score",y="Profit",add="reg.line",cont.int=TRUE,cor.coef=TRUE,cpr.method="pearson",xlab="Imdb Score",ylab="Profit",color="yellow")
+
+#Plot 2.Aspect Ratio vs Profit
+g6 <- ggscatter(dat_mov,x="Aspect_ratio",y="Profit",add="reg.line",cont.int=TRUE,cor.coef=TRUE,cpr.method="pearson",xlab="Aspect ratio",ylab="Profit",color="red")
+
+#Plot 3.Budget vs Profit
+g7 <- ggscatter(dat_mov,x="Budget",y="Profit",add="reg.line",cont.int=TRUE,cor.coef=TRUE,cpr.method="pearson",xlab="Budget ",ylab="Profit",color="lightblue")
+
+#Visualise Plots 1 and 2. 
+figure_1 <- ggarrange(g5,g6,nrow=1,ncol=2,widths = c(1,1),align="v",heights=c(1,1))
+figure_1
+
+```
+
+
+#Step 5b.Same thing for plot 3.
+```{r}
+
+g7
+
+```
+#Step 6. Apply the Shapiro-Wilk Test
+
+#Check the normality of Profit and Budget,Imdb Score and Aspect Ratio.
+```{r}
+shapiro.test(dat_mov$Profit)
+
+```
+
+```{r}
+shapiro.test(dat_mov$Budget)
+
+```
+
+
+```{r}
+shapiro.test(dat_mov$Imdb_score)
+
+```
+
+```{r}
+shapiro.test(dat_mov$Aspect_ratio)
+
+```
+#From the results, we can see that p-values are less than the significance level 
+#0.05. This means that H1 does not get rejected. Hence, we can assume
+#Profit and other numeric values are not normally distributed.
+
+#Step 7. Apply the Pearson correlation between Profit and other variables. 
+```{r}
+#1. Test Between Profit and Budget
+res_p1 <- cor.test(dat_mov$Profit, dat_mov$Budget, method = "pearson")
+res_p1
+
+```
+
+```{r}
+#2. Test Between Profit and Imdb_score
+res_p2 <- cor.test(dat_mov$Profit, dat_mov$Imdb_score, method = "pearson")
+res_p2
+
+```
+
+
+```{r}
+#3. Test Between Profit and Aspect Ratio
+res_p3 <- cor.test(dat_mov$Profit, dat_mov$Aspect_ratio, method = "pearson")
+res_p3
+
+```
+#Conclusion, Budget has a negative correlation compared to other variables where it has no correlation
+#since we can conclude that they are independant.
+
+#Step 8. Apply Spearman rank correlation coefficient between Profit and other variables.
+```{r}
+#1. Test Between Profit and Budget
+res_s1 <- cor.test(dat_mov$Profit, dat_mov$Budget, method = "spearman")
+res_s1
+
+```
+
+```{r}
+#2. Test Between Profit and Imdb_score
+res_s2 <- cor.test(dat_mov$Profit, dat_mov$Imdb_score, method = "spearman")
+res_s2
+
+```
+
+```{r}
+#3. Test Between Profit and Aspect Ratio
+res_s3 <- cor.test(dat_mov$Profit, dat_mov$Aspect_ratio, method = "spearman")
+res_s3
+
+```
+
+#Step 9. Lastly the Kendall rank correlation test
+```{r}
+#1. Test Between Profit and Budget
+res_k1 <- cor.test(dat_mov$Profit, dat_mov$Budget, method = "kendall")
+res_k1
+
+```
+
+```{r}
+#2. Test Between Profit and Imdb_score
+res_k2 <- cor.test(dat_mov$Profit, dat_mov$Imdb_score, method = "kendall")
+res_k2
+
+```
+
+```{r}
+#3. Test Between Profit and Aspect Ratio
+res_k3 <- cor.test(dat_mov$Profit, dat_mov$Aspect_ratio, method = "kendall")
+res_k3
+
+#END OF TASK 2C
+
+```
+#END TASK 2C
+
+
+#TASK 2D
+#Step 1. Compute the correlation matrix here Profit is the dependant variable (y)
+```{r}
+
+#Swap the columns putting the column variable profit in the front.
+dat_mov <- dat_mov[c("Profit","Budget","Imdb_score","Aspect_ratio")]
+M <-cor(dat_mov)
+corrplot(M,method="circle", addCoef.col = 1,number.cex = 0.5, tl.cex = 0.5)
+
+#END TASK 2D
+
+```
+
+#COMMENT ON TASK 2D:
+#Since we choosen Option 9b (after clearing duplicate rows and inputting only the means
+#for each column). The Strong Negative Correlation that occur between Profit and Budget with 
+#the correlation of -0.95. For Profit and imdb Score there is very weak correlation with the correlation of 0.04.
+#Lastly, for Profit vs. Aspect Ratio has no correlation or imply a very weak positive relationship. 
