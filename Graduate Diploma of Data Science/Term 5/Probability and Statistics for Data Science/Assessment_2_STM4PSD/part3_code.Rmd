@@ -1,0 +1,69 @@
+---
+title: "part3_code"
+output: word_document
+date: "2023-10-17"
+---
+
+```{r}
+bikes <- read.csv("C:/Users/mikel/OneDrive/Desktop/Assessment_2_STM4PSD/bikes.csv",header=TRUE)
+bikes
+
+```
+
+## OBJECTIVES
+## Only confidence intervals are needed. 
+
+#The confidence intervals must use the form we look at this week (Week 5). Interpretations are the same across Weeks 4 and 5, but the calculations in Week 5 are more precise. However, the functions that do these computations will do most of the work automatically.
+
+#Basically, you can use the t.test and prop.test functions to get all the required output - your task is to know when and how to use which variants of these functions. 
+
+
+```{r}
+#The average number of casual users, registered users, and total users per day
+avg_casual <- mean(bikes$casual)
+avg_reg <- mean(bikes$registered)
+avg_total <- mean(bikes$casual+bikes$registered)
+
+#Proportion of the registered users among all users
+prop_reg <- sum(bikes$registered)/(sum(bikes$registered)+sum(bikes$casual))
+
+
+```
+
+# Differences in usage by casual users versus registered users.
+```{r}
+
+
+
+```
+
+# Whether there are yearly differences in bikeshare usage.
+
+
+
+#OUR GOAL IS TO PERFORM A LOT OF CONFIDENCE INTERVALS
+
+#I.e. There are four types of Confidence Intervals 
+
+#Single Mean
+#Proportion
+#Difference in two means 
+#Unpaired Difference in two means
+
+
+#Single Mean
+```{r}
+
+
+
+```
+
+
+
+
+
+
+
+
+
+
