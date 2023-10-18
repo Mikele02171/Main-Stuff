@@ -1,0 +1,70 @@
+CSE5ML Check your understanding 
+Week 2
+
+1. What is machine learning?
+
+The autonomous acquisition of knowledge using computer programs
+
+
+2. What is the output of training process in machine learning?
+
+Machine learning model
+
+
+3. Machine learning is a subset of:
+
+artificial intelligence.
+
+
+4. Real-time decisions, game Al, learning tasks, skill acquisition,
+and robot navigation are applications of:
+
+reinforcement learning.
+
+
+5. Sigmoid is:
+
+-continuous
+-smooth
+-differentiable
+
+
+all of the options listed
+
+
+6.
+In neural networks, nonlinear activation functions such as sigmoid, tanh, and ReLU:
+
+
+help to learn nonlinear decision boundaries.
+
+
+7.What are the types of machine learning?
+
+-Unsupervised learning
+-Supervised learning
+-Reinforcement learning
+
+All of the options listed
+
+
+8. _____learn from test data that has not been labelled, classified, or categorised.
+
+
+Unsupervised
+
+9.Linear Regression is a supervised machine learning algorithm. True or False?
+
+True
+
+10. 
+What is called the average squared difference between classifier predicted output and actual output?
+
+Mean squared error
+
+
+
+
+
+
+
