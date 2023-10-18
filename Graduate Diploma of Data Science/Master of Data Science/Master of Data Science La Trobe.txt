@@ -1,0 +1,51 @@
+Master of Data Science La Trobe (2023-Present)
+
+FIRST YEAR (2023-present) (Graduate Diploma of Data Science)
+
+-Introduction to Programming CSE4IP (CORE) (61 C)
+-Mathematics for Data Science MAT4MDS (CORE)  (90 A)
+-Deep Learning CSE5DL (61 C)
+-Database Fundementals (CORE) CSE4DBF (Missing Result C) 
+-Machine Learning (In Progress)
+-Data Exploration and Analysis (CORE) (In Progress)
+-Big Data Management on the Cloud (CORE) 
+-Probability and Statistics for Data Science (CORE) 
+
+
+SECOND YEAR (NOT FINALISED)
+(CORE)
+-Professional Practises and Entrepreneurship in Information Technology (CORE) CSE5003
+
+(PATHWAYS)
+(COMPUTER SCIENCE INDUSTRY PROJECT)
+-Industry Development Project CSE5IDP (15 points)
+-Project Management CSE5PM (CORE) (15 points)
+(ELECTIVES)
+- Level 5 MAT,STA,STM (15 points)
+- Select Level 4 or 5 ELECTIVES
+
+
+(STATISTICS INDUSTRY BASED PROJECT)
+-INDUSTY PLACEMENT STM5IPL (30 points)
+(ELECTIVES)
+- Level 5 MAT,STA,STM (15 points)
+- Select Level 4 or 5 ELECTIVES
+
+(COMPUTER SCIENCE INDUSTRY BASED LEARNING)
+-Industry Based Learning CSE5IBL (30 points)
+(ELECTIVES)
+- Level 5 MAT,STA,STM (15 points)
+- Select Level 4 or 5 ELECTIVES
+
+(ELECTIVES to complete any of the specialisations)
+-Spatial Analysis STA5001 
+-Meta Analysis STA5MA 
+-Data Mining CSE5DMI (Big data and cloud computing and Data modelling and Analytics) 
+
+(MUST DECIDE two of them)
+-Cloud-Base Web Application CSE5006 (Big data and cloud computing)
+-Optimisation MAT5OPT (Mathematical data science)
+-Principles of Business Analytics BUS5PB (Business applications)
+-Principles of Sport Analytics SPE5SA (Principles of Sport Analytics)
+
+
