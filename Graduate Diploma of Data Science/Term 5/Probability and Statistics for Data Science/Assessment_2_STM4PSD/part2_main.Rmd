@@ -1,0 +1,174 @@
+---
+title: "part2_main"
+output: word_document
+date: "2023-10-14"
+---
+##Computing the nonzero-interval.
+```{r}
+## Distribution, I have chosen for PART II, the beta distribution.
+nonzero.interval <- function(x1,x2) { 
+  c(0,1)
+  }
+
+```
+
+##Computing the density 
+
+
+```{r}
+## gamma() in R computes the gamma function 
+
+density <- function(x,a,b) {
+  if (a <= x & x <= b) {
+    return(gamma(a+b)*x^(a-1)*(1-x)^(b-1)/(gamma(a)*gamma(b)))
+  } else {
+    return(0)
+  }
+}
+
+f <- Vectorize(density)
+
+```
+
+#Computing the distribution
+
+
+```{r}
+## Computing the cdf of the beta distribution 
+distribution <- function(x,a,b) {
+  if (x<a) {
+    return(0)
+  } else if (x<=b) {
+    return(integrate(f,lower = -Inf, upper = Inf)$value)
+  } else {
+    return(1)
+  }
+}
+
+
+```
+
+
+#Expected value
+
+```{r}
+expected_value <- function(a,b){
+  ifelse(a>0 & b>0, a/(a+b),0)
+  
+}
+
+#alpha/(alpha+beta)
+
+```
+
+
+#Variance
+
+```{r}
+variance <- function(a,b){
+  b/((a+b)^2*(a+b+1))
+}
+#(alpha*beta)/((alpha+beta)^2*(alpha+beta+1))
+
+```
+
+
+
+
+```{r}
+# quantile function
+quantile <- Vectorize(function(p,a,b) {
+  interval <- nonzero.interval(a,b)
+  objective <- function(x) {(distribution(x,a,b) - p)^2 }
+  optimise(objective, interval=c(interval[1], interval[2]))$minimum
+})
+
+# Now I can generate random numbers using the generate function.
+generate <- function(n,a,b) {
+  beta <- rbeta(n,a,b) 
+  quantile(beta,a,b)
+}
+
+```
+
+
+#Here we are generating some values from the beta distribution in R. 
+```{r}
+generate(1000,2,2)
+
+```
+
+
+```{r}
+
+generate(1000, 1, 3)
+
+```
+
+
+
+```{r}
+
+expected_value(2,2)
+expected_value(1,3)
+
+```
+
+
+
+```{r}
+
+variance(2,2)
+variance(1,3)
+
+```
+
+#Plotting the pdf of the Beta Distribution in R using alpha 2 and beta 2  
+```{r}
+#define range
+p = seq(0, 1, length=100)
+
+#create plot of Beta distribution with shape parameters 2 and 2
+plot(p, dbeta(p, 2, 2), type='l')
+
+```
+
+
+#Plotting the beta density distribution in R using alpha 1 and beta 3.
+```{r}
+#define range
+p = seq(0, 1, length=100)
+
+#create plot of Beta distribution with shape parameters 1 and 3.
+plot(p, dbeta(p, 1, 3), type='l')
+
+```
+#Creating the beta distribution density in R with parameters alpha=1 and beta = 3
+```{r}
+
+# Specify x-values for pbeta function
+x_pbeta <- seq(0, 1, by = 0.025)      
+ 
+# Apply pbeta() function
+y_pbeta <- pbeta(x_pbeta, shape1 = 1, shape2 = 3)  
+ 
+# Plot pbeta values
+plot(y_pbeta)
+
+
+```
+
+#Creating the beta distribution density in R with parameters alpha=2 and beta = 2
+```{r}
+# Specify x-values for pbeta function
+x_pbeta <- seq(0, 1, by = 0.025)      
+ 
+# Apply pbeta() function
+y_pbeta <- pbeta(x_pbeta, shape1 = 2, shape2 = 2)  
+ 
+# Plot pbeta values
+plot(y_pbeta)
+
+
+```
+
