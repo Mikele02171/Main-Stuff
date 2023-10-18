@@ -1,0 +1,190 @@
+---
+title: "Week4_Topic2"
+author: "Nameer"
+date: "2023-08-23"
+output: html_document
+---
+
+## Week4_Topic 2
+
+## Examples of time series data exploration processes
+
+```{r}
+library (tidyr)
+library (tidyverse)
+library (ggplot2)
+library (dplyr)
+```
+
+```{r}
+dat<-read.csv("eng-data.csv", header=TRUE)
+head(dat)
+```
+
+```{r}
+names(dat)
+str(dat)
+```
+
+```{r}
+dat$Date<-as.Date(dat$Date)
+str(dat$Date)
+```
+
+```{r}
+any (is.na (dat))
+dat<-na.omit(dat)
+any(is.na(dat))
+```
+
+```{r}
+summary(dat)
+dim(dat)
+```
+
+```{r}
+dat<-read.csv("eng-data.csv", header=TRUE)
+head(dat)
+ 
+ggplot(dat, mapping = aes(x=Date,y=Consumption, group=1)) +  
+  geom_line(alpha=0.5, linewidth=0.5, color="red")
+```
+
+```{r}
+dat<-read.csv("eng-data.csv", header=TRUE)
+a<-filter(dat,Wind>0)
+head(a)
+ ggplot(a, mapping = aes(x =Date ,  y =Wind, group=1 )) +  
+   geom_line(alpha=0.5, linewidth=0.3, color="blue")
+```
+
+```{r}
+dat<-read.csv("eng-data.csv", header=TRUE)
+a<-filter(dat,Solar>0)
+head(a)
+ ggplot(a, aes(x =Date ,  y =Solar , group=1)) +  geom_line(alpha=0.5, size=0.3)
+```
+
+```{r}
+library(ggpubr) 
+pl <- ggplot(dat, aes(x =Date , y =Consumption, group=1)) + 
+geom_line(alpha=0.5, size=0.5, color="red" ) + ggtitle ( "Consumption" ) 
+p2 <- ggplot(filter(dat,Wind>0), aes (x =Date , y =Wind ,group=1)) + 
+geom_line(alpha=0.5, size=0.3, color="blue" ) + ggtitle ( "Wind" ) 
+p3 <- ggplot(filter(dat,Solar>0), aes (x =Date , y =Solar, group=1 )) +                                   geom_line(alpha=0.5, size=0.3) + ggtitle ( "Solar" ) 
+ggarrange(pl, p2, p3 , ncol = 2 , nrow = 2)
+```
+
+```{r}
+x <-dat$Date
+dat$x= as.Date (x)
+# apply separate function to split x into Year 11 , "Month", "Day 
+dat_2 <- separate(dat, x, c("Year", "Month", "Day"))
+head(dat_2)
+```
+
+```{r}
+dat_3<-dat_2
+# change them into numeric
+dat_2$Year<- as.numeric (dat_2$Year)
+dat_2$Month<- as.numeric (dat_2$Month)
+dat_2$Day<- as.numeric (dat_2$Day)
+head (dat_2)
+
+```
+
+
+```{r}
+dy <- filter(dat_2, dat_2$Year==2016)
+dim(dy)
+## [1] 366  8
+ggplot(dy, aes(x =Date , y =Solar, group=1)) + geom_line(alpha=0.5 , linewidth=0.5, color="red")
+```
+
+```{r}
+dy <- filter (dat_2, dat_2$Year==2016 & Month==12 )
+dim (dy)
+## [1] 31 8
+ggplot (dy, aes(x =Date, y =Consumption, group=1)) + geom_line ( alpha=0.5 , size=0.5 , color="red" )+
+  geom_point()
+```
+
+```{r}
+dy <- filter(dat_2, dat_2$Year==2016 & Month==12 & Day >=23 & Day <=30 )
+dim (dy)
+## [1] 8 8
+ggplot (dy, aes(x =Date , y =Consumption, group=1)) + geom_line ( alpha=0.5 , size=0.5 , color="red" ) +
+geom_point()
+```
+
+```{r}
+pal<- ggplot (data = dat_3, mapping = aes (x =Month , y =Consumption, fill=Month)) +
+geom_boxplot (alpha=0.9 ) + theme (legend.position="none" )
+pa2<-ggplot (data = dat_3, mapping = aes (x =Month , y =Solar, fill=Month)) +
+geom_boxplot (alpha=0.9 ) + theme (legend.position = "none" )
+pa3<- ggplot (data = dat_3, mapping = aes (x =Month , y =Wind, fill=Month)) +
+geom_boxplot (alpha=0.9 ) + theme (legend.position="none" )
+ggarrange (pal, pa2, pa3 , ncol = 1 , nrow = 3 ) #Labeis = c("consumption", "wind", "Soiar")
+```
+
+```{r}
+dat_3$weekday<- weekdays(ymd(dat_3$Date))
+ggplot(data = dat_3, mapping = aes(x =weekday , y =Consumption, fill=weekday)) +
+geom_boxplot(alpha = 0.9) + theme(legend.position="none") 
+```
+
+```{r}
+dy2 <- filter(dat_2, Year==2016 & Month<=6)
+ggplot(dy2, aes(x=Date)) + geom_line(aes(y = Wind.Solar,group=1), color = "darkred" , size=0.8) +
+geom_line(aes(y = Consumption,group=1) , color="steelblue" , linetype="twodash") 
+```
+
+## Example : relationship between job and certificate
+
+```{r}
+library (tidyr)
+library (tidyverse)
+library (ggplot2)
+library (dplyr)
+```
+
+```{r}
+dat <- read.csv('data (1).csv',header=TRUE)
+head(dat)
+
+```
+
+```{r}
+prop.table (table (dat))
+
+tab1<-table(dat$Got.R.Certificate.,dat$Got.data.science.job.)
+tab1
+```
+
+```{r}
+rowSums (tab1)
+
+```
+
+```{r}
+colSums(tab1)
+my_table_Ol <- addmargins (tab1)
+my_table_Ol
+```
+
+
+```{r}
+prop.table (table (dat)) *100
+
+```
+
+
+
+
+
+
+
+
+
+
+

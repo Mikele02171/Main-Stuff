@@ -1,0 +1,249 @@
+---
+title: "Week_4"
+author: "Nameer"
+date: "2023-08-23"
+output: html_document
+---
+
+## Bivariate and mutlvariate analysis
+
+
+```{r}
+dat<-read.csv("d.csv", header = TRUE)
+z=t.test(dat$X , dat$Y, paired = TRUE, alternative = "two.sided") 
+print (z)
+```
+
+```{r}
+dat<-read.csv("weatherAUS.csv", header = TRUE)
+chisq <- chisq.test(dat$WindGustDir, dat$RainTomorrow) 
+print (chisq)
+```
+
+```{r}
+dat<-read.csv("weatherAUS.csv", header = TRUE) 
+dat<-na.omit(dat)
+dat$Rainfall <- as.numeric(dat$Rainfall) 
+chisq.test (dat$RainTomorrow, dat$MinTemp)
+```
+
+```{r}
+library (vtable)
+dat<-read.csv("weatherAUS.csv", header = TRUE)
+st(dat)
+```
+
+
+
+
+
+
+
+##Multi variate analysis
+
+```{r}
+library(ggplot2)
+diamonds <- read.csv("diamonds.csv")
+ggplot(data = diamonds, mapping = aes(x = carat,
+y = price)) + geom_point(color='darkblue')
+```
+
+```{r}
+library(ggplot2)
+diamonds <- read.csv("diamonds.csv")
+ggplot(data = diamonds, mapping = aes(x = carat,
+y = price)) + geom_point(color='darkblue',
+alpha = 1 / 100)
+```
+
+```{r}
+diamonds <- read.csv("diamonds.csv")
+ggplot(data = diamonds) + geom_bin2d(mapping
+= aes(x = carat, y = price))
+```
+
+
+```{r}
+library(dplyr)
+library(scales)
+diamonds <- read.csv("diamonds.csv") 
+plotdata <- diamonds %>%
+group_by(cut) %>% dplyr::summarize(mean_price = mean(price))
+mycols <- c("#CD534CFF", "#EFC400FF", "#0073C2FF", "#E077C2FF", "#A073C2FF")
+ggplot(plotdata, aes(x = factor(cut, labels = c("Fair", "Good", "Ideal", "Premium", "Very Good")),
+y = mean_price)) + geom_bar(stat = "identity" ,fill = mycols) + geom_text(aes(label = dollar(mean_price)),
+vjust = -0.25) + scale_y_continuous(breaks = seq(0, 130000, 20000),label = dollar) + theme_minimal()+
+labs(title = "Mean Price" , x = "" , y = "")
+```
+
+```{r}
+diamonds <- read.csv("diamonds.csv")
+ggplot(data =diamonds, mapping = aes(x = cut, y = price)) +geom_boxplot(fill='#A4A4A4', color="darkred")
+```
+
+```{r}
+diamonds <- read.csv("diamonds.csv")
+ggplot(data = diamonds, mapping = aes(x = price, y = ..density..)) +
+geom_freqpoly(mapping = aes(colour = cut), binwidth = 500)
+```
+
+```{r}
+diamonds <- read.csv("diamonds.csv")
+ggplot(data = diamonds) +
+geom_count(mapping = aes(x = cut, y = color))
+```
+
+```{r}
+diamonds <- read.csv("diamonds.csv")
+ggplot(diamonds, aes(x = cut, fill = color)) +
+  theme_minimal() + geom_bar(position =
+position_dodge(preserve = "single" ))
+```
+
+```{r}
+diamonds <- read.csv ("diamonds.csv")
+plotdata <- diamonds %>%
+group_by(cut, color) %>%
+dplyr::summarize(n = n()) %>%
+mutate(pct = n/sum(n),
+lbl = scales::percent(pct))
+ggplot(plotdata,aes(x = factor(cut),y = pct, fill = factor(color))) +
+geom_bar(stat = "identity",position = "fill") +
+scale_y_continuous(breaks = seq(0, 1 , .2), label = percent)+
+geom_text(aes(label = lbl), size = 3,position = position_stack(vjust = 0.5)) +
+scale_fill_brewer(palette = "Set2") +
+theme_minimal() +
+labs(y = "Percent" ,fill = "Color",X = "") +
+theme_minimal()
+```
+
+
+```{r}
+diamonds <- read.csv("diamonds.csv")
+ggplot(diamonds, aes(x = price, y =carat, color=cut)) +
+geom_point()
+```
+
+```{r}
+diamonds <- read.csv("diamonds.csv")
+ggplot(diamonds,
+aes(x = price,
+y = carat,
+color = color,
+shape = cut)) +
+geom_point(size = 3, alpha = .6) +
+theme_minimal() +
+labs(title = " Price by carat, color, and cut")
+```
+
+```{r}
+diamonds <- read.csv("diamonds.csv")
+ggplot(diamonds, aes(x = carat)) +
+geom_histogram(fill = "cornflowerblue",
+color = "white") +
+facet_wrap(~cut) +
+theme_minimal() +
+labs(title = "Price histograms by cut")
+```
+
+```{r}
+diamonds <- read.csv("diamonds.csv")
+ggplot(diamonds, aes(x= carat , y = price)) +
+geom_line(color="black") +
+geom_point(color="blue") +
+facet_wrap(~cut) +
+theme_minimal(base_size = 10)
+```
+
+```{r}
+library("plot3D")
+
+diamonds <- read.csv("diamonds.csv")
+x<-diamonds$carat
+y<-diamonds$price
+z<-diamonds$depth
+scatter3D(x, y, z , phi = 0 , bty ="g" , pch = 16 , cex = 1 , ticktype = "detailed")
+```
+
+
+
+## Examples of datra exploration
+
+```{r}
+library(tidyverse)
+library (ggplot2) 
+library (ggpubr) 
+dat <- read.csv("weatherAUS.csv", header = TRUE , sep = ",") 
+head(dat)
+str(dat)
+```
+
+```{r}
+any (is.na (dat))
+sapply(dat, function(x) sum(is.na(x)))
+```
+
+```{r}
+df = subset(dat, select = -c(Evaporation,RISK_MM) )
+names(df)
+summary(dat)
+
+```
+
+```{r}
+dat<-read.csv("weatherAUS.csv", header = TRUE) 
+any(is.na(dat))
+dat1<-dat
+dat<- na.omit(dat)
+ggplot(data = dat[1:100,], mapping = aes(x = MinTemp , y = WindGustSpeed)) + geom_line(color='darkblue') + geom_point(color='darkblue')
+```
+
+```{r}
+dat<-read.csv("weatherAUS.csv", header = TRUE)
+a<-filter(dat,WindSpeed9am>0)
+ggplot(data = a[1:200,], mapping = aes(x = Pressure9am , y = WindSpeed9am, shape = RainTomorrow)) +
+geom_line(color='darkblue') + geom_count(mapping = aes(x = Pressure9am, y = WindSpeed9am))
+
+```
+
+```{r}
+dat<-read.csv("weatherAUS.csv", header = TRUE)
+ggplot(dat, aes(x = RainToday, fill = RainTomorrow, color = RainTomorrow)) +
+geom_bar(aes(y = ((..count..) / sum(..count..))), position = "dodge") +
+scale_y_continuous(breaks = seq(0 , 1 , by = 0.05),
+labels = scales::percent) + 
+labs(x = "Rained Today",
+y = "Percentage" , title = "Bar plot of the distribution of the RainToday variable",
+color = "Rained the next day",
+fill = "Rained the next day"
+)+theme_minimal(base_size = 10)
+```
+
+```{r}
+dat<-read.csv("weatherAUS.csv", header = TRUE)
+#a <- filter(dat, dat$Rainfall < 100)
+ggplot(dat, aes(x = MaxTemp, y = Rainfall, color = RainTomorrow)) +
+scale_x_continuous(breaks = seq(0, 60 , by = 2),limits=c(0, 48)) + 
+scale_y_continuous(breaks = seq(0, 100 , by = 5),limits=c(0, 100)) +
+geom_point(alpha = 0.8) +
+labs(x = "Max-Temp", 
+y = "Amount of Rainfall (mm)",
+title = "Max-Temp vs Amount of Rainfall")
+```
+
+```{r}
+dat<-read.csv("weatherAUS.csv" , header = TRUE)
+ggplot(dat, aes(x =  Humidity3pm, y = Rainfall, color = RainTomorrow)) +
+scale_x_continuous(breaks = seq(0, 60, by = 2),limits=c(0, 60)) +
+scale_y_continuous(breaks = seq(0, 100, by = 5),limits=c(0, 100)) +
+geom_jitter(alpha = 0.8) +
+labs(x = "Humidity at 3PM" ,
+y = "Amount of Rainfall (mm)" ,
+title = "Humidity vs Amount of Rainfall")
+```
+
+
+
+
+
+

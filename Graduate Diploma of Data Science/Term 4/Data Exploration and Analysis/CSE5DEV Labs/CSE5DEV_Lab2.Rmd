@@ -1,0 +1,805 @@
+---
+title: "CSE5DEV_Lab2"
+output: word_document
+date: '2023-08-12'
+---
+#Topic 1: Data Wrangling using R.
+#First we must set up the directory first, 
+
+```{r}
+setwd("C:/Users/mikel/OneDrive/Desktop/CSE5DEV Labs")
+
+```
+
+## Reading the data csv file.
+
+```{r}
+dat <- read.csv("data.csv")
+dat
+
+```
+
+## 
+
+
+```{r}
+head(dat)
+```
+
+
+## Showing the column names
+```{r}
+names(dat)
+```
+
+
+
+## R: Conditional operators
+## 1. Conditional operators for the two variables: x and y. 
+```{r}
+x <- 4
+y <- 15
+x < y
+## [1] TRUE
+x > y
+
+## [1] FALSE
+
+x<=5
+
+## [1] TRUE
+
+y>=20
+
+## [1] FALSE
+
+y == 16
+
+## [1] FALSE
+
+x != 5
+
+## [1] TRUE
+
+```
+##2. Conditional operators for a vector x
+```{r}
+x <- c (3,5,1,2,7,6,4)
+            
+x < 5 # is x less than 5 
+
+## [1] TRUE FALSE TRUE TRUE FALSE FALSE TRUE 
+
+x <= 5 # is x less than or equal to 5
+
+## [1] TRUE TRUE TRUE TRUE FALSE FALSE TRUE
+
+x > 3 # is x greater than 3
+
+## [1] FALSE TRUE FALSE FALSE TRUE TRUE TRUE
+
+x >= 3 # is x greater than or equal to 3
+
+## [1] TRUE TRUE FALSE FALSE TRUE TRUE TRUE 
+
+x ==2 # is x equal to 2 
+
+## [1] FALSE FALSE FALSE TRUE FALSE FALSE FALSE
+
+x !=2 # is x not equal to 2
+
+## [1] TRUE TRUE TRUE FALSE TRUE TRUE TRUE 
+
+```
+
+## The all and any functions check whether all or at least some entries of a logical vector are TRUE respectively.
+
+
+```{r}
+x <- c(3,5,1,2,7,6,4)
+any(x == 2)
+## [1] TRUE
+all(x == 2)
+## [1] FALSE
+all(x < 10)
+## [1] TRUE
+
+```
+
+## R: Logical condition operators. 
+# The following example shows logical operators for a vector x
+
+```{r}
+X <- c (3 , 5 , 1 , 2 , 7 , 6 , 4 )
+(x > 2 ) & (x <= 6 ) # is x greater than 2 and less than or equal to 6
+## [1] TRUE TRUE FALSE FALSE FALSE TRUE TRUE
+(x < 2 ) | (x > 5 ) # is x less than 2 or greater than 5
+## [1] FALSE FALSE TRUE FALSE TRUE TRUE FALSE
+! (x > 3 ) # not [x greater than]
+## [1] TRUE FALSE TRUE TRUE FALSE FALSE FALSE
+```
+
+
+#Now consider this: x <- c (5, 3, 7, 9, 10).
+
+#We want to extract the values of the vector x that are greater than 5 (7, 9, 10). There are two methods we could apply.
+```{r}
+#Method 1
+x <- c(5, 3, 7, 9, 10)
+ind <- x > 5 # is x greater than 5
+print(ind)
+## [1] FALSE FALSE TRUE TRUE TRUE
+print(x[ind])
+## [1] 7 9 10
+```
+
+
+
+```{r}
+
+#Method 2
+X <- c(5, 3, 7, 9, 10)
+X[X > 5]
+## [1] 7 9 10
+```
+#Sometimes we may need to extract data that satisfy certain criteria.
+
+#For example, we may want to select data based on the disp value that is equal to or less than 160. We can use logical condition operators to select a subset of data.
+
+
+
+```{r}
+s <- dat[dat$disp<=160,]
+print(s)
+## Model mpg cyl disp hp drat wt qsec vs am gear carb
+## 1 Mazda RX4 21. 0 6 160.0 110 3.90 2.620 16.46 0 1 4 4
+## 2 Mazda RX4 Wag 21. 0 6 160.0 110 3.90 2.875 17.02 0 4 4
+## 3 Datsun 710 22.8 4 108.0 93 3.85 2.320 18.61 1 4 1
+## 8 Mere 240D 24.4 4 146.7 62 3.69 3.190 20.00 1 0 4 2
+## 9 Mere 230 22.8 4 140.8 95 3.92 3.150 22.90 1 0 4 2
+## 18 Fiat 128 32.4 4 78.7 66 4 .08 2 .200 19 . 47 1 4 1
+## 19 Honda Civic 30.4 4 75.7 52 4.93 1.615 18 .52 1 4 2
+## 20 Toyota Corolla 33.9 4 71.1 65 4.22 1.835 19.90 1 4 1
+## 21 Toyota Corona 21.5 4 120.1 97 3.70 2.465 20 . 01 1 0 3 1
+## 26 Fiat Xl-9 27.3 4 79.0 66 4.08 1.935 18.90 1 4 1
+## 27 Porsche 914-2 26.0 4 120.3 91 4.43 2.140 16.70 0 5 2
+## 28 Lotus Europa 30.4 4 95.1 113 3.77 1.513 16.90 1 5 2
+## 30 Ferrari Dino 19.7 6 145.0 175 3.62 2. 770 15.50 0 5 6
+## 32 Volvo 142E 21. 4 4 121.0 109 4 .11 2.780 18.60 1 4 2
+
+```
+
+#Alternatively, we may want to select data based on the disp value that is equal to or less than 160 AND hp less than 110.
+
+
+
+```{r}
+z <- dat[dat$disp<=160 & dat$hp<110,]
+print(z)
+## Model mpg cyl disp hp drat wt qsec vs am gear carb
+## 3 Datsun 710 22.8 4 108.0 93 3.85 2.320 18.61 1 1 4 1
+## 8 Mere 240D 24.4 4 146.7 62 3.69 3.190 20.00 1 0 4 2
+## 9 Mere 230 22.8 4 140.8 95 3.92 3.150 22.90 1 0 4 2
+## 18 Fiat 128 32.4 4 78.7 66 4.08 2.200 19.47 1 1 4 1
+## 19 Honda Civic 30.4 4 75.7 52 4.93 1.615 18.52 1 1 4 2
+## 20 Toyota Corolla 33.9 4 71.1 65 4 .22 1.835 19 . 90 1 1 4 1
+## 21 Toyota Corona 21. 5 4 120.1 97 3.70 2.465 20.01 1 0 3 1
+## 26 Fiat X1-9 27.3 4 79.0 66 4.08 1.935 18.90 1 1 4 1
+## 27 Porsche 914-2 26.0 4 120.3 91 4.43 2.140 16 . 70 0 1 5 2
+## 32 Volvo 142E 21.4 4 121.0 109 4.11 2.780 18.60 1 1 4 2
+
+```
+
+
+
+#Or we could select data based on the disp value that is equal to or less than 160 AND hp less than 110 for wt column.
+```{r}
+x <- dat[dat$disp<=160 & dat$hp<110, "Wt"]
+print (x)
+## [1] 2.320 3.190 3.150 2.200 1.615 1.835 2.465 1.935 2.140 2.780
+z <- dat[dat$disp<=160 & dat$hp<110 ,]
+print (z)
+## Model mpg cyl disp hp drat wt qsec vs am gear carb
+## 3 Datsun 710 22.8 4 108.0 93 3.85 2.320 18.61 1 1 4 1
+## 8 Mere 240D 24.4 4 146.7 62 3.69 3.190 20.00 1 0 4 2
+## 9 Mere 230 22.8 4 140.8 95 3.92 3.150 22.90 1 0 4 2
+## 18 Fiat 128 32.4 4 78.7 66 4.08 2.200 19.47 1 1 4 1
+## 19 Honda Civic 30.4 4 75.7 52 4.93 1.615 18.52 1 1 4 2
+## 20 Toyota Corolla 33.9 4 71.1 65 4.22 1 .835 19 .90 1 1 4 1
+## 21 Toyota Corona 21.5 4 120.1 97 3.70 2.465 20.01 1 0 3 1
+## 26 Fiat Xl-9 27.3 4 79.0 66 4.08 1.935 18.90 1 1 4 1
+## 27 Porsche 914-2 26.0 4 120.3 91 4.43 2.140 16.70 0 1 5 2
+## 32 Volvo 142E 21.4 4 121.0 109 4.11 2.780 18.60 1 1 4 2
+
+```
+
+#R: Conditional execution 
+
+```{r}
+team_A <- 8 # Number of goals scored by Team A
+team_B <- 6 # Number of goals scored by Team B
+if (team_A > team_B){
+print ( "Team A wins" )
+}
+## [1] "Team A wins"
+
+```
+
+
+#We can use multi-able else using else if as follows:
+```{r}
+team_A <- 4 # Number of goaLs scored by Team A
+team_B <- 4# Number of goaLs scored by Team B
+if (team_A > team_B){
+print ( "Team A won" )
+} else if (team_A < team_B){
+  print ( "Team B won" )
+} else {
+  print("Team A & B got the same number of goals")
+}
+
+## [1] "Team A & B got same number of goals"
+
+```
+
+
+
+#R: Repetitive execution-for loop, repeat, while
+
+```{r}
+for (i in 1 :4 )
+print (i)
+
+## [1] 1
+## [1] 2
+## [1] 3
+## [1] 4
+
+i <- 1
+for (i in seq ( 5 , 10 , 2))
+{ print (i)}
+
+## [1] 5
+## [1] 7
+## [1] 9
+
+X <- c (2 , 1 , 3 , 6 , 1)
+nr <- length (x) # vector Length
+print (nr)
+
+## [1] 5
+
+for (i in 1 :nr)
+{ print (x[i])} # print vector eLement
+
+## [1] 2
+## [1] 1
+## [1] 3
+## [1] 6
+## [1] 1
+
+fruit <- c ( 'Apple' , 'Orange' , 'Passion fruit' , 'Banana' )
+
+for (p in fruit)
+{
+print (p)
+}
+
+## [1] "Apple"
+## [1] "0range"
+## [1] "Passion fruit"
+## [1] "Banana"
+
+a <- matrix (10 : 15 , 3)
+print (a)
+
+## [,1] [' 2]
+## [1,] 10 13
+## [2,] 11 14
+## [3 ,] 12 15
+
+nrr <- nrow(a) # number of rows is a
+
+for (i in 1 :nrr) {print (a[i , 2])}
+
+## [1] 13
+## [1] 14
+## [1] 15
+
+```
+
+
+#Consider the following example for repeat loop:
+
+```{r}
+x <- 4
+repeat{
+  print(x);
+  x <- x + 2 ; 
+  if(x > 10) {break}
+  }
+
+## [1] 4
+## [1] 6
+## [1] 8
+## [1] 10
+
+result <- c("Hello CSE5APG")
+i <- 1
+# repeat Junction
+repeat {
+print(result)
+# update expression
+i <- i + 1
+# test condition
+if (i > 4) {break}
+}
+
+## [1] "Hello CSE5APG"
+## [1] "Hello CSE5APG"
+## [l] "Hello CSE5APG"
+## [l] "Hello CSE5APG"
+
+```
+#And consider the following example for while loop:
+
+```{r}
+X <- 0
+while (x < 5) {print (x); x <- x + 1}
+## [1] 0
+## [1] 1
+## [1] 2
+## [1] 3
+## [1] 4
+i <- 1
+j <- 1
+mat <- matrix(0,nrow = 3,ncol= 2)
+print(mat)
+##         [, 1] [, 2]
+## [1, ]       0     0
+## [2, ]       0     0
+## [3, ]       0     0
+
+
+while(i<=3){
+  j = 1
+  while(j<=2){
+    mat[i,j] <- i*2 + 1
+    j <- j + 1
+  }
+i<-i+1
+}
+print(mat)
+##       [, 1] [, 2]
+## [1, ]     3     3
+## [2, ]     5     5
+## [3, ]     7     7
+
+```
+
+
+
+#What are R: packages and how to install R: packages
+```{r}
+
+#Ensure you installed the following packages, and open up
+#in library. 
+library(dplyr)
+library(tidyr)
+library(tidyverse)
+
+```
+#How to use R programming packages
+#Step 1. Create a data frame
+```{r}
+df <- data.frame(color = c("blue", "black", "blue", "blue", "black"), value = 1:5)
+df
+```
+
+
+#Step 2: Perform the following functions:
+#filter()
+#arrange()
+#select()
+#mutate()
+
+#filter()
+```{r}
+filter(df,color=="blue")
+
+```
+
+#filter() - 2
+```{r}
+filter(df,value%in%c(1,4))
+
+```
+#arrange()
+```{r}
+arrange(df,color)
+
+```
+
+#arrange() - 2
+
+```{r}
+arrange(df,desc(color))
+
+```
+
+#select() 
+
+```{r}
+select(df,color)
+
+```
+
+
+
+
+
+#select() - 2
+
+```{r}
+select(df,-color)
+
+```
+
+#mutate()
+```{r}
+mutate(df,double=2*value)
+
+```
+
+
+
+#mutate() - 2
+```{r}
+mutate(df,double=2*value,quadruple = 2*double)
+
+```
+
+
+#Topic 2: Data Cleaning
+
+#Handing Dates.
+```{r}
+x <- c("2015-07-01","2015-08-01","2015-09-01")
+as.Date(x)
+#Output
+#[1] "2015-07-01" "2015-08-01" "2015-09-01"
+
+#example using "format "
+y <- c ("07/01/2017","07/01/2018","07/01/2015")
+as.Date(y, format = "%m/%d/%Y")
+#Output
+#[1] "2017-07-01" "2018-07-01" "2015-07-01"
+
+```
+
+#In this example we create a date, specify the format, use a different origin and take a difference.
+```{r}
+# create a date
+as.Date("2012-08-30")
+#[1] "2012-08-30"
+
+# specify the format
+as.Date("08/30/2012",format ="%m/%d/%Y")
+#[1] = "2012-08-30"
+
+# use a different origin, for instance importing values from Excel
+as.Date(41149,origin = "1900-01-01")
+#[1] "2012-08-30 "
+
+# take a difference
+Sys.Date() - as.Date("1970-01-01")
+#[1] Time difference of 19582 days
+
+```
+
+#This example prints today’s date and calculates the difference between two different dates.
+#NOTE: Some of the results may change
+```{r}
+#print today's date
+today <- Sys.Date()
+format(today, format = "%B/%d/%Y")
+#[1] "August/13/2023"
+
+# alternate method with specified units
+difftime(Sys.Date(), as.Date("1970-01-01"),units = "days")
+#[1] Time difference of 19582 days
+
+# see the internal integer representation
+unclass(Sys.Date())
+#[1] 19582
+
+mydates <- as.Date (c("2007-06-22", "2004-02-13"))
+days <- mydates[1] - mydates[2]
+#[1] Time difference of 1225 days
+
+```
+
+#This example calculates the time between two dates using ‘difftime’ function.
+
+
+```{r}
+dl <- as.Date("2017-01-01")
+d2 <- as.Date("2018-01-01")
+print(d2 - dl)
+#[1] Time difference of 365 days
+
+difftime(d2, dl, units = "day")
+#[1] Time difference of 365 days
+
+difftime(d2, dl, units = "hour")
+#[1] Time difference of 8760 hours
+
+```
+
+
+#Example: Converts the month (numeric) to month (character)
+
+```{r}
+format(today,format = "%B-%d-%Y")
+
+```
+
+
+#Handling data types
+```{r}
+# Conversion into Character
+char1 <- as.character("hello")
+#[1] "hello"
+char2 <- as.character("1234")
+## [1] "1234"
+# Conversion into Numeric
+number <- as.numeric("1234")
+#[1] 1234
+# Conversion into Integer
+int5 <- as.integer(14.7)
+#[1] 14
+# Conversion into logical : 0 to False; True otherwise
+logi <- as.logical(10)
+#[1] True
+
+```
+
+
+
+
+```{r}
+data <- data.frame (color=c(rep("blue", 5), rep ("red",
+5)))
+is.factor(data)
+#[1] FALSE
+
+data$color <- factor(data$color)
+#[1] blue blue blue blue blue red red red red red
+#[1] Levels: blue red
+
+data$color <- as.integer(data$color)
+#[1] 1 1 1 1 1 2 2 2 2 2
+
+```
+
+
+#This example shows the creation of ordered factor variables.
+```{r}
+ord <- c ("low", "middle", "low", "low", "low", "low",
+"middle", "low", "middle",
+"middle", "middle" ,"middle", "middle", "high
+","high", "low", "middle",
+"middle", "low", "high") 
+
+#[1] "low" "middle" "low" "low" "low" "low"
+#"middle" "low" "middle" "middle" "middle" "
+#middle"  "middle" "high" "high" "low" "
+#middle" "middle" "low" "high"
+
+ord.order <- ordered(ord, levels = c("low","middle","high"))
+#[1] low middle low low low low middle
+#low middle middle middle middle middle high
+#high low middle middle low high
+
+#[1] Levels : low < middle < high
+
+```
+
+
+
+#Question: How can we handle missing values?
+
+```{r}
+Dat1<-read.csv("iris.csv")
+head(Dat1)
+
+unique(Dat1)
+```
+
+```{r}
+names(Dat1)
+
+```
+
+```{r}
+unique(Dat1)
+
+```
+
+```{r}
+summary(Dat1)
+
+```
+#Using Dirty Iris
+```{r}
+Dat1<-read.csv("dirty_iris_1.csv")
+head(Dat1)
+
+
+```
+
+
+```{r}
+#Display Boolean values that contain null values
+#for Petal width
+is.na(Dat1$Petal.Width)
+
+#total value of Petal Length
+sum(is.na(Dat1$Petal.Length))
+
+#total value of Petal Width
+sum(is.na(Dat1$Petal.Width))
+
+```
+
+#Do similiar for the other ones. 
+```{r}
+#total value of Sepal Length
+sum(is.na(Dat1$Sepal.Length))
+
+#total value of Sepal Width
+sum(is.na(Dat1$Sepal.Width))
+
+```
+#Column names in Dirty Iris 1 Dataset. 
+```{r}
+names(Dat1)
+
+```
+
+
+#Dimensions in Dirty Iris 1 Dataset. 
+```{r}
+dim(Dat1)
+
+```
+
+
+#indexing, locating where the column Petal length has null values
+```{r}
+ind<-which(is.na(Dat1$Petal.Length))
+print(ind)
+
+```
+
+
+
+#
+```{r}
+Dat1$Petal.Length[ind]<-1.0
+
+#One method in replacing NA's.
+sum(is.na(Dat1$Petal.Length))
+
+
+```
+
+
+```{r}
+#Here we omit from Dat1 dataset. 
+Dat2 <-na.omit(Dat1)
+print(Dat2)
+
+```
+
+
+```{r}
+names(Dat2)
+dim(Dat2)
+
+```
+
+
+
+```{r}
+ind
+
+```
+
+
+
+#Topic 3: Data Normalisation
+
+```{r}
+Dat10<-read.csv("iris.csv")
+head(Dat10)
+
+```
+
+#Apply the normalisation formula, onto the iris dataset. 
+
+```{r}
+n = function(x) (x-min(x))/(max(x)-min(x))
+
+```
+
+```{r}
+# We take only the numerical values to normalize
+iris_norm <- as.data.frame(apply(Dat10[,1:4],2,n))
+iris_norm$Species <- Dat10$Species
+str(iris_norm)
+#Normalize the dataframe by rows
+iris_norm <- as.data.frame(t(apply(Dat10[1:4],1,n)))
+# Now we see that Sepal Length is always 1 because it
+#is the maximum value in every row
+# At the same time the Petal Width is always the lower
+#value
+summary (iris_norm)
+
+```
+
+
+
+
+
+#Refer back to Topic 1: Data Wrangling using R Page. 
+#Demonstration of the gathering process
+
+```{r}
+data1 <- read.csv("data1.csv")
+gather(data1,'year','cases',2:3)
+
+```
+
+#Demonstration of spreading process
+```{r}
+data2 <- read.csv("data2.csv")
+gather(data2,'year','cases',2:3)
+
+```
+
+
+
+#Seperating and uniting processes
+```{r}
+data3 <- read.csv("data3.csv")
+separate(data3,rate,c('cases','population'),sep="/")
+
+```
+
+
+
+#Demonstration of uniting process
+```{r}
+data4 <- read.csv("data4.csv")
+unite(data4,'year',century,year,sep="")
+
+```
+
+
+
+
+```{r}
+d = c(1,"a",FALSE)
+class(d)
+
+```
+
+
+
+
+
+
+
+
+

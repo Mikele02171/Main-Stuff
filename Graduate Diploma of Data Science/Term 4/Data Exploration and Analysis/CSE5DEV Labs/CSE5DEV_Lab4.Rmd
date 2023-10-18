@@ -1,0 +1,431 @@
+---
+title: "CSE5DEV_Lab4"
+output: word_document
+date: "2023-09-13"
+---
+#Topic 1: Bivariate and multivariate analysis
+##Numerical vs numerical
+
+#difference: checks if there is a significant difference or not
+#relationship: checks if there is a relationship between the variables or not
+#distribution: checks if the two variables have the same distribution or not.
+```{r}
+
+dat<-read.csv("C:/Users/mikel/OneDrive/Desktop/CSE5DEV Labs/d.csv", header = TRUE)
+z=t.test(dat$X, dat$Y, paired = TRUE, alternative = "two.sided") 
+print(z)
+
+
+```
+
+## Categorical vs categorical 
+
+
+
+```{r}
+
+
+dat<-read.csv("C:/Users/mikel/OneDrive/Desktop/CSE5DEV Labs/weatherAUS.csv", header = TRUE)
+chisq <- chisq.test(dat$WindGustDir, dat$RainTomorrow) 
+print (chisq)
+
+
+```
+
+## Categorical vs numerical
+
+
+```{r }
+
+dat<-read.csv("C:/Users/mikel/OneDrive/Desktop/CSE5DEV Labs/weatherAUS.csv", header = TRUE) 
+dat<-na.omit(dat)
+dat$Rainfall <- as.numeric(dat$Rainfall) 
+chisq.test(dat$RainTomorrow, dat$MinTemp)
+```
+
+#We could also summarise all variable statistics in one table as follows:
+```{r }
+#install.packages("vtable")
+library(vtable)
+dat<-read.csv("C:/Users/mikel/OneDrive/Desktop/CSE5DEV Labs/weatherAUS.csv", header = TRUE) 
+st(dat)
+```
+#Multivariate analysis
+#Multivariate analysis can be used to study a more complex set of variables. This type of analysis is almost similar to bivariate analysis where the main difference is that in multivariate analysis we have more than two variables. Statistical test methods can be applied, but there should be several dependent variables. We can perform multivariate analysis using Cluster Analysis, Correlation Analysis or Principal Component Analysis (PCA).
+
+#Note: As we are interested in displaying the relationships among three or more variables, we will use graphical methods for multivariate analysis.
+
+#Numerical and numerical: scatter plot
+```{r }
+diamonds <- read.csv("C:/Users/mikel/OneDrive/Desktop/CSE5DEV Labs/diamonds.csv")
+ggplot(data = diamonds, mapping = aes(x = carat,
+y = price)) + geom_point(color='darkblue')
+```
+
+#we can see that the relationship between the carat size and the price of a diamond is exponential, but it is unclear. This is because when the number of values goes up, we can see there is a lot of overplotting. We can fix this issue by using the alpha aesthetic to add transparency to the plot.
+#Numerical and numerical: scatter plot
+```{r }
+ggplot(data = diamonds, mapping = aes(x = carat,
+y = price)) + geom_point(color='darkblue',
+alpha = 1 / 100)
+```
+
+
+
+
+
+
+
+```{r }
+ggplot(data = diamonds) + geom_bin2d(mapping
+= aes(x = carat, y = price))
+```
+
+
+
+
+#Relationship: There is a positive (exponential) relationship between the two variables. As the carat size increases, the price also increases.
+
+#Outliers: Several outliers appear in the carat size direction. The outliers at the far right of the chart suggest that these carats have a very large size but are sold for average prices.
+
+#Clusters: There is a lot of overplotting. We can see the clustering of data points in the centre of the variable relationship. For example, carat with size between 1 and 2, appears to have a price ceiling of 5 000 or more.
+
+
+#Numerical and Categorical: Bar Chart
+```{r }
+#install.packages("scales")
+library(scales)
+plotdata <- diamonds %>% group_by(cut) %>% dplyr::summarize(mean_price = mean(price))
+
+
+mycols <- c("#CD534CFF", "#EFC400FF", "#0073C2FF", "#E077C2FF", "#A073C2FF")
+
+
+ggplot(plotdata, aes(x = factor(cut, labels = c("Fair", "Good", "Ideal", "Premium", "Very Good")),
+y = mean_price)) + geom_bar(stat = "identity" ,fill = mycols) + geom_text(aes(label = dollar(mean_price)),
+vjust = -0.25) + scale_y_continuous(breaks = seq(0, 130000, 20000),label = dollar) + theme_minimal()+
+labs(title = "Mean Price" , x = "" , y = "")
+```
+
+
+#Numerical and Categorical: Boxplot
+
+
+```{r }
+ggplot(data =diamonds, mapping = aes(x = cut, y = price)) +geom_boxplot(fill='#A4A4A4', color="darkred")
+```
+
+#From the box plot figure, we can observe the following:
+
+#not much information about the distribution
+#better quality diamonds are cheaper on average! We must investigate why.
+#fair is worse than good and good is worse than very good and so on
+#too many outliers in all types of cuts.
+
+
+#Numerical and categorical: Density plot
+```{r }
+ggplot(data = diamonds, mapping = aes(x = price, y =..density..)) + geom_freqpoly(mapping = aes(colour = cut), binwidth = 500)
+```
+
+
+#Categorical and categorical
+#We can count the number of observations that have occurred at each combination of the categorical values. This can be accomplished using geom count() function or grouped bar chart.
+```{r }
+diamonds <- read.csv("diamonds.csv")
+ggplot(data = diamonds) +
+geom_count(mapping = aes(x = cut, y = color))
+
+```
+```{r }
+ggplot(data = diamonds, aes(x = cut, fill = color))+
+  theme_minimal() +
+  geom_bar(position =
+position_dodge(preserve = "single" ))
+
+```
+
+#We could also present the bar charts based on the percentage for each category.
+
+
+```{r }
+plotdata <- diamonds %>% group_by(cut, color) %>%
+dplyr::summarize(n = n()) %>%
+mutate(pct = n/sum(n),
+lbl = scales::percent(pct))
+
+
+ggplot(plotdata,
+aes(x = factor(cut),
+y = pct,
+fill = factor(color))) +
+geom_bar(stat = "identity",
+position = "fill") +
+scale_y_continuous(breaks = seq(0,1, .2),
+label = percent)+
+geom_text(aes(label = lbl),
+size = 3,
+position = position_stack(vjust = 0.5)) +
+scale_fill_brewer(palette = "Set2") +
+theme_minimal() +
+labs(y = "Percent" ,
+fill = "Color",
+X = "") +
+theme_minimal()
+
+```
+
+
+#In multivariate analysis, the graphical exploration method can be used to display the relationships among three or more variables. This can be achieved by using the following methods:
+
+#Grouping: In this method, the values of the first variable is mapped to x axe and the values of the second variable is mapped to y axe. Other variables can be used as colour, transparency size, line type, and shape.
+
+#Faceting: This method displays several separate plots; one for each level of a third variable, or combination of variables.
+
+#3D plot: This method displays three variables as 3D plot.
+
+#Grouping
+```{r }
+ggplot(diamonds, aes(x = price, y =carat, color=cut))+
+  geom_point()
+
+```
+
+
+
+
+
+```{r }
+diamonds <- read.csv("diamonds.csv")
+ggplot(diamonds,
+aes(x = price,
+y = carat,
+color = color,
+shape = cut)) +
+geom_point(size = 3, alpha = .6) +
+theme_minimal() +
+labs(title = " Price by carat, color, and cut")
+
+```
+
+
+
+```{r }
+diamonds <- read.csv("diamonds.csv")
+ggplot(diamonds, aes(x = carat)) +
+geom_histogram(fill = "cornflowerblue",
+               color = "white") +
+facet_wrap(~cut) +theme_minimal() +
+labs(title = "Price histograms by cut")
+
+
+```
+
+
+```{r }
+
+
+ggplot(diamonds, aes(x= carat , y = price)) +
+geom_line(color="black") +
+geom_point(color="blue") +
+facet_wrap(~cut) +
+theme_minimal(base_size = 10)
+
+```
+
+#3d plot
+
+```{r }
+#install.packages("plot3D")
+library("plot3D")
+
+diamonds <- read.csv("diamonds.csv")
+x<-diamonds$carat
+y<-diamonds$price
+z<-diamonds$depth
+scatter3D(x, y, z , phi = 0 , bty ="g" , pch = 16 , cex = 1 , ticktype = "detailed")
+
+```
+
+#Examples of data exploration
+
+#the relationship between WindGust-Speed and MinTemp
+#the relationship between WindSpeed and Pressure9am
+#the relationship between rains today and tomorrow.
+
+
+```{r }
+library(tidyverse)
+library (ggplot2) 
+library (ggpubr) 
+dat <- read.csv("C:/Users/mikel/OneDrive/Desktop/CSE5DEV Labs/weatherAUS.csv", header = TRUE , sep = ",") 
+head(dat)
+
+```
+
+```{r }
+names(dat)
+```
+
+
+
+
+#Print the whole structure of the whole data
+```{r }
+str(dat)
+```
+
+
+
+#Next, check If there are missing values.
+```{r }
+any(is.na(dat))
+```
+
+#And print the number of missing values in each column.
+
+```{r }
+sapply(dat, function(x) sum(is.na(x)))
+
+```
+
+
+
+#Delete column(s)
+```{r }
+# delete Evaporation and RISK_MM columns
+
+df = subset(dat, select = -c(Evaporation,RISK_MM) )
+names(df)
+```
+
+#Then print the summary (not complete due to size limitation).
+```{r }
+summary(dat)
+```
+
+
+
+#Basic analysis: The relationship between WindGust-Speed and MinTemp
+
+#In this next example we will explore the relationship between wind gust speed and minimum temperature. Since both variables are numerical, we can use a scatter plot to find the relationship between two variables.
+
+```{r }
+dat<-read.csv("weatherAUS.csv", header = TRUE) 
+ggplot(data = dat[1:100,], mapping = aes(x = MinTemp , y = WindGustSpeed)) + geom_line(color='darkblue') + 
+  geom_point(color="darkblue")
+
+```
+
+#Basic analysis: The relationship between WindSpeed and Pressure9am
+
+#This example shows analysis of the relationship between wind speed and pressure at 9am. Since both variables are numerical, we can use a scatter plot to find the relationship between two variables.
+```{r }
+dat<-read.csv("weatherAUS.csv", header = TRUE)
+ggplot(data = dat[1:100,], mapping = aes(x = Pressure9am , y = WindSpeed9am, shape = RainTomorrow))+
+  geom_line(color='red')+geom_point(color='darkblue')
+
+```
+
+#Basic analysis: The relationship between rains today and tomorrow
+#In this example you will see an analysis of the relationship between rains today and tomorrow. Since both variables are categorical, we can use bar charts to display the relationship between two variables.
+
+```{r }
+dat<-read.csv("weatherAUS.csv", header = TRUE)
+ggplot(dat, aes(x = RainToday, fill = RainTomorrow, color = RainTomorrow)) +
+geom_bar(aes(y = ((..count..) / sum(..count..))), position = "dodge") +
+scale_y_continuous(breaks = seq(0 , 1 , by = 0.05),
+labels = scales::percent) + 
+labs(x = "Rained Today",
+y = "Percentage" , title = "Bar plot of the distribution of the RainToday variable",
+color = "Rained the next day",
+fill = "Rained the next day"
+)+theme_minimal(base_size = 10)
+
+```
+
+#Basic analysis: The relationship between amount of rainfall and the temperature
+#In this analysis we have three variables: rainfall (numerical), temperature (numerical) and rain tomorrow (categorical).
+
+
+```{r }
+dat<-read.csv("weatherAUS.csv", header = TRUE)
+ggplot(dat, aes(x = MaxTemp, y = Rainfall, color = RainTomorrow)) +scale_x_continuous(breaks = seq(0, 60 , by = 2)) + scale_y_continuous(breaks = seq(0, 100, by = 5)) +
+geom_point(alpha = 0.8) +labs(x = "Max-Temp", y = "Amount of Rainfall (mm)",title = "Max-Temp vs Amount of Rainfall")
+```
+
+
+
+#Basic analysis: The relationship between humidity in the morning and amount of rainfall
+#In this analysis we again have three variables: rainfall (numerical), humidity (numerical) and rain tomorrow (categorical).
+
+```{r }
+dat<-read.csv("weatherAUS.csv" , header = TRUE)
+ggplot(dat, aes(x =  Humidity3pm, y = Rainfall, color = RainTomorrow)) +
+scale_x_continuous(breaks = seq(0, 60, by = 2)) +
+scale_y_continuous(breaks = seq(0, 100, by = 5)) +
+geom_jitter(alpha = 0.8) +
+labs(x = "Humidity at 3PM" ,
+y = "Amount of Rainfall (mm)" ,
+title = "Humidity vs Amount of Rainfall")
+
+```
+
+
+#Activity: Calculate the Chi-square test
+
+```{r }
+library(tidyr)
+library(tidyverse)
+library(ggplot2)
+library(dplyr)
+
+```
+
+
+# Read data
+```{r }
+#read data and saved it in dat
+dat<-read.csv("weatherAUS.csv" , header = TRUE)
+head(dat)
+
+```
+
+
+# Just remove NA from data
+```{r }
+
+any(is.na(dat))
+dat1<-dat
+dat<-na.omit(dat)
+#any(is.na(dat))
+
+
+```
+
+
+## Sunshine vs. WindDir9am: take the first 200 samples based on the following condition: RainTomorrow = Yes
+
+```{r }
+d3<-filter(dat,dat$RainTomorrow == "Yes")
+#head(d3)
+
+#take the first 200 samples
+d3<-d3[1:200,]
+
+#dim(d3)
+#head(d3)
+
+ggplot(data=d3,mapping = aes(x=WindDir9am,y=Sunshine)) + geom_boxplot()
+
+```
+
+
+## Use chi-square to test relationship between "RainTomorrow" yes variable and WindGustDir
+
+```{r }
+chi_s <- table(dat$RainTomorrow,dat$WindGustDir)
+chisq.test(chi_s)
+
+```
+

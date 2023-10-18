@@ -1,0 +1,718 @@
+---
+title: "CSE5DEV_Lab3"
+output: word_document
+date: "2023-09-13"
+---
+#Step 1
+
+```{r}
+pkgs <- c("ggplot2", "dplyr", "tidyr", "mosaicData", "carData", "VIM", "scales", "treemapify", "gapminder", "ggmap", "choroplethr","choroplethrMaps", "CGPfunctions", "ggcorrplot", "visreg", "gcookbook", "forcats")
+
+install.packages("pkgs")
+#setwd("C:/Users/mikel/OneDrive/Desktop/CSE5DEV Labs")
+
+```
+
+
+#Firstly, we need to load the ggplot2 package and read the salary dataset. All ggplot2 plots begin with a call to ggplot(). Here we call ggplot(), supply the data and aesthethic mappings, specified by aes(). Then specify the two columns to x and y axis, x= experience and y = wage and run.
+```{r}
+# load package
+library(ggplot2)
+
+# read salary data and saved it in dat
+dat = read.csv("C:/Users/mikel/OneDrive/Desktop/CSE5DEV Labs/Salary.csv",header=TRUE)
+
+# call ggplot, specify dataset, and mapping
+ggplot(data = dat, mapping = aes (x = exper, y = wage))
+
+```
+
+#Step 2 : Add geoms
+#Geoms are the geometric objects (points, lines, bars, etc.) that can be placed on a graph. We can add geoms using geom objects. In this example, we will add points using the geom point function to create a scatterplot.
+
+
+
+```{r}
+# add points
+ggplot (data = dat, mapping = aes (x = exper,
+y = wage, color = sex)) + geom_point()
+
+```
+
+## Now let's go ahead and customise this by changing the colour, shape and transparency.
+
+
+#Step 3:  Change point colour and shape
+#In this example we will change points colour into blue, make them larger, and semi-transparent. Alpha refers to the opacity of a geom. Values of alpha range from 0 to 1, with lower values corresponding to more transparent colours.
+
+#You can also embed plots, for example:
+
+```{r}
+# make points blue, larger, and semi-transparent
+ggplot (data = dat, mapping = aes (x = exper,
+ y = wage)) + geom_point (color="cornflowerblue",alpha = .7,size=3)
+
+```
+
+#Step 4: Add a line of best fit
+#We can add best fit line using geom smooth function. The line can be linear, quadratic, nonparametric. We can also control the thickness of the line, line’s colour and show the confidence interval. In this example, we use a linear regression line as follows: (method = lm) (where lm stands for linear model).
+
+```{r}
+# add a line of best fit.
+ggplot (data = dat, mapping = aes (x = exper, y = wage)) +
+geom_point (color ="cornflowerblue",
+alpha = .7,
+size=3)+
+geom_smooth(method = "lm")
+
+```
+
+#Step 5: Grouping
+#In grouping, we map variables into colour, shape, size, transparency and other visual characteristics of geometric objects. In this example, we will add gender to the plot and represent it by colour.
+
+```{r}
+# indicate sex using coLor
+ggplot (data = dat, mapping = aes(x = exper, y = wage, 
+color = sex)) + geom_point (alpha = .7, 
+size = 3) + geom_smooth (method = "lm", 
+se = FALSE, size = 1.5)
+
+```
+
+#Step 6: Scales
+#Scale function (scale) is used to control variable ranges. In this example, we will change the x and y axis scaling, and the colours.
+```{r}
+# modify the x and y axes and specify the colors to be used
+g1 <- ggplot(data = dat,mapping = aes(x = exper,y = wage,color = sex))+geom_point(alpha = .7, size = 3) + geom_smooth(method = "lm",se = FALSE,size = 1.5)+scale_x_continuous(breaks = seq(0, 60, 10))
+
+g1<- g1 + scale_y_continuous(breaks = seq(0, 30, 5),label =scales::dollar)+
+  scale_color_manual(values = c("indianred3","cornflowerblue","green")) 
+g1
+
+```
+#Step 7: Facets
+#Facets generate a graph for each variable or a set of variables. We use facet (˜tilde) function to create several graphs based on variable values. In this example, facets will be defined by the eight levels of the sector variable.
+
+```{r}
+# reproduce plot for each level of job sector
+ggplot(data = dat, mapping = aes(x = exper,
+y = wage,color = sex)) + geom_point(alpha = .7) + 
+geom_smooth(method = "lm",
+se = FALSE) + scale_x_continuous(breaks = seq(0, 60, 10)) +
+scale_y_continuous(breaks = seq(0, 30, 5),
+label = scales::dollar) +
+scale_color_manual(values = c("indianred3",
+"cornflowerblue","green")) +
+facet_wrap(~sector)
+
+```
+
+
+#Step 8: Labels
+#Labels make graphs easy to interpret and very informative. In this example, we will use labs function to add labels for the axes and legends a well as title, subtitle, and caption.
+
+```{r}
+# add informative Labels
+ggplot (data = dat,mapping = aes(x = exper,
+y = wage,color = sex)) + geom_point(alpha = .7) + geom_smooth(method = "lm",
+se = FALSE) +
+scale_x_continuous(breaks = seq(0, 60, 10)) +
+scale_y_continuous (breaks = seq(0, 30, 5),
+label = scales::dollar) +
+scale_color_manual (values = c("indianred3",
+"cornflowerblue","green")) +
+facet_wrap(~sector) +
+labs(title = "Relationship between wages and experience",
+subtitle = "Current Population Survey",
+caption = "source: http://mosaic-web.org/",
+x = "Years of Experience",
+y = "Hourly Wage",
+color = "Gender")
+
+```
+
+
+
+
+#Step 9: Add themes
+#We can add themes to change the graph pretension. ggplot2 package has some built-in theme functions all beginning with theme_. In this example, we will use theme_minimal() function to control background colours, fonts, grid-lines, legend placement and other non-data related features of the graph.
+```{r}
+# use a minimalist theme
+ggplot (data = dat,mapping = aes(x = exper,
+y = wage,color = sex)) + geom_point(alpha = .7) + geom_smooth(method = "lm",
+se = FALSE) +
+scale_x_continuous(breaks = seq(0, 60, 10)) +
+scale_y_continuous (breaks = seq(0, 30, 5),
+label = scales::dollar) +
+scale_color_manual (values = c("indianred3",
+"cornflowerblue","green")) +
+facet_wrap(~sector) +
+labs(title = "Relationship between wages and experience",
+subtitle = "Current Population Survey",
+caption = "source: http://mosaic-web.org/",
+x = "Years of Experience",
+y = "Hourly Wage",
+color = "Gender") +
+  theme_minimal()
+
+```
+
+
+
+
+#ggplot2: Examples of plot for diamonds dataset
+```{r}
+names (diamonds)
+
+##  [1]  "carat" "cut" "color" "clarity" "depth" "table" "price"
+##  [8]  "x"    "y"    "z"
+```
+
+```{r}
+ggplot(diamonds, aes (x = carat , y = price, color=cut)) + geom_point() + geom_smooth()
+```
+
+
+#Diamonds dataset: Bar chart
+```{r}
+ggplot ( diamonds, aes (cut)) + geom_bar (fill = "#0073C2FF")
+```
+```{r}
+# create the bar plot
+#ggplot(diamonds, aes(x=cut,y=count,color=sex)) + geom_bar(fill= "#0073C2FF",stat="identity" ) +  geom_text(aes(label = count), vjust=-0.3)
+```
+
+#Diamonds dataset: Histogram chart
+
+```{r}
+ggplot(diamonds, aes(x = price)) + geom_histogram()
+```
+
+
+#Diamonds dataset: Box plot
+```{r}
+ggplot(diamonds, aes (x = color, y = price)) + geom_boxplot()
+```
+
+#ggplot2: Examples of plot for Iris dataset
+#Iris dataset: Scatter plots
+```{r}
+ggplot(data = iris, aes (x = Sepal.Length , y = Sepal.Width, color = Species)) +
+geom_point () + geom_smooth ()
+```
+
+
+```{r}
+ggplot(data = iris, aes(x = Sepal.Length , y = Sepal.Width, color = Species)) +
+geom_point() + geom_line()
+```
+
+
+```{r}
+ggplot(data = iris, aes (x = Sepal.Length , y = Sepal.Width, color = Species)) +
+geom_smooth ( aes (linetype = Species)) +
+geom_point (aes (size= Species, shape = Species))
+```
+
+
+
+```{r}
+ggplot(data = iris, aes (x = Sepal.Length , y = Sepal.Width, color = Species)) +
+geom_point ( aes (shape = Species), size = 3) +
+scale_shape_manual(values = c( 16 , 17 , 18)) +
+scale_color_manual (values = c( "purple" , "black" , "orange"))
+
+
+```
+
+
+#Activity 1
+#1 
+
+
+```{r setup,include=TRUE}
+library(ggplot2)
+data_w <- read.csv("C:/Users/mikel/OneDrive/Desktop/CSE5DEV Labs/data_w.csv")
+
+```
+
+
+#2
+```{r setup,include=TRUE}
+names(data_w)
+
+```
+
+#3
+```{r setup,include=TRUE}
+ggplot(data_w,aes(MinTemp,MaxTemp))+geom_line()
+
+```
+
+
+#4
+```{r setup,include=TRUE}
+ggplot(data_w,aes(MinTemp,MaxTemp))+geom_point(size=1)
+
+```
+
+
+
+
+#5
+```{r setup,include=TRUE}
+library(dplyr)
+data_filter<-filter(data_w,MinTemp<10)
+data_filter
+```
+
+
+
+#6.
+```{r setup,include=TRUE}
+ggplot(data_filter,aes(MinTemp,MaxTemp)) + geom_point(size=1)
+```
+
+
+
+#7.
+```{r setup,include=TRUE}
+ggplot(data_filter,aes(MinTemp,MaxTemp)) + geom_point(size=1)+labs(x="min_temperature",y="max_temperature")
+```
+
+
+#8.
+```{r setup,include=TRUE}
+ggplot(data_filter,aes(MinTemp,MaxTemp)) + geom_point(size=1)+labs(title = "weather data" ,x="min_temperature",y="max_temperature")
+```
+
+
+#9.
+```{r setup,include=TRUE}
+ggplot(data_filter,aes(MinTemp,MaxTemp)) + geom_line()+labs(title = "weather data" ,x="min_temperature",y="max_temperature")
+```
+
+
+#10.
+```{r setup,include=TRUE}
+ggplot(data_filter,aes(MinTemp,MaxTemp)) + geom_line(color="blue")+labs(title = "weather data" ,x="min_temperature",y="max_temperature")+geom_smooth(method="lm",color="red")
+```
+
+#Univariate analysis 
+#DEFINTION: Summary statistics | noun
+#Summary statistics summarise global information, such as central tendency, spread and variations of observations and features.
+
+#To understand the benefits of summary statistics, let’s print the salary of 100 different persons.
+
+
+```{r setup,include=TRUE}
+#To understand the benefits of summary statistics, let’s print the salary of 100 different persons.
+dat <- read.csv( "C:/Users/mikel/OneDrive/Desktop/CSE5DEV Labs/Salary.csv", header=TRUE)
+print (dat$wage[ 1 : 100])
+```
+
+
+#Location measure: Minimum and maximum
+
+```{r setup,include=TRUE}
+print (min (dat$wage))
+
+print (max (dat$wage))
+
+```
+
+
+#Location measure: mean
+```{r setup,include=TRUE}
+print (mean(dat$wage))
+
+
+```
+
+
+
+
+#Location measure: Median
+```{r setup,include=TRUE}
+print(median(dat$wage))
+
+
+```
+
+
+#Location measure: Mode
+```{r setup,include=TRUE}
+library(DescTools)
+print(Mode(dat$wage))
+
+
+```
+
+#Location measure: Frequency 
+
+```{r setup,include=TRUE}
+Frequency<- prop.table( sort(table(dat$wage) , decreasing=TRUE))
+print(Frequency)
+
+
+```
+
+#Location measure: First quartile and Third quartile
+
+```{r setup,include=TRUE}
+median(dat$wage)
+
+quantile(dat$wage,0.25)  # first quartile
+
+quantile(dat$wage,0.75)   # third quartile
+
+```
+
+
+#Distribution measure: Range
+```{r setup,include=TRUE}
+Range= max(dat$wage) - min(dat$wage)
+print(Range)
+
+```
+
+
+
+#Distribution measure: Standard deviation
+```{r setup,include=TRUE}
+print(sd(dat$wage))
+
+```
+
+
+#Distribution measure: Variance 
+
+```{r setup,include=TRUE}
+print (var(dat$wage))
+
+```
+
+
+#Distribution measure: Coefficient of variation
+```{r setup,include=TRUE}
+CV <- sd(dat$wage) / mean(dat $wage)
+print (CV)
+
+```
+
+
+
+
+#Distribution measure: Interquartile range
+```{r setup,include=TRUE}
+print (IQR(dat$wage))
+
+
+```
+
+
+#Summary of statistics
+```{r setup,include=TRUE}
+summary (dat$wage)
+
+print (max (dat$wage) - min (dat $wage))
+
+print (sd (dat$wage) / mean (dat $wage))
+
+print (IQR (dat$wage))
+
+
+
+```
+
+
+
+
+
+#Univariate analysis: Graphical exploration
+#Continuous variables: Histograms
+```{r setup,include=TRUE}
+
+g1<-ggplot (dat, aes(wage)) + geom_histogram (fill ="blue" ) + 
+  scale_x_continuous(breaks = seq( 4 , 25 , 1))
+
+
+g1
+```
+
+```{r setup,include=TRUE}
+
+g2<-ggplot (data = dat, mapping = aes(x =wage)) + geom_freqpoly(colour="red")
+
+g2
+```
+
+#Continuous variables: Dot Chart
+
+```{r setup,include=TRUE}
+
+ggplot (dat, aes(x = wage, fill=sex)) + geom_dotplot (method = "histodot" , bindwidth = 0.5) +
+scale_x_continuous (breaks = seq ( 4 , 25 , 1))
+```
+
+
+#Continuous variables: Box plot
+
+```{r setup,include=TRUE}
+ggplot (dat, aes (x=sex, y=wage, fill=sex)) + geom_boxplot()
+```
+#Examples of data exploration
+#Examples showing basic analysis: Min temperature variable 
+```{r setup,include=TRUE}
+
+library (tidyverse)
+library (ggplot2)
+library(ggpubr)
+
+dat <- read.csv ("C:/Users/mikel/OneDrive/Desktop/CSE5DEV Labs/weatherAUS.csv", header = TRUE, sep = ",") 
+head (dat)
+
+```
+#Next, print the structure of whole data.
+```{r setup,include=TRUE}
+str(dat)
+
+```
+
+
+
+
+#Check if there are missing values.
+```{r setup,include=TRUE}
+any(is.na(dat))
+## [1] TRUE
+
+#Print the number of missing values in each column.
+
+sapply(dat,function(x) sum (is.na(x)))
+
+```
+
+#Delete column(s)
+```{r setup,include=TRUE}
+# delete Evaporation and. RISK_MM columns
+df = subset (dat, select = - c(Evaporation,RISK_MM) )
+ 
+names (df)
+
+```
+
+
+
+#Finally, print summary (not complete due to size limitation).
+
+```{r setup,include=TRUE}
+summary(dat)
+
+```
+
+#Example showing basic analysis: Min temperature variable
+
+```{r setup,include=TRUE}
+min_temp <- dat$MinTemp
+summary (min_temp)
+
+```
+
+#First, print the standard deviation.
+```{r setup,include=TRUE}
+sd (min_temp, na.rm = TRUE)
+
+```
+
+
+
+#Then remove NA from min temp.
+```{r setup,include=TRUE}
+summary (min_temp)
+
+
+min_temp <- na.omit (min_temp)
+summary (min_temp)
+
+
+```
+
+
+
+
+#Now we will create a box plot showing minimum temperature.
+```{r setup,include=TRUE}
+ggplot (data = dat1, mapping = aes (x = Location, y    = MinTemp, fill=Location)) + geom_boxplot () +coord_flip()
+```
+
+#The following shows how to create a density plot showing minimum temperature.
+```{r setup,include=TRUE}
+ggplot (data = dat1, aes (x=MinTemp)) +
+geom_density (color=
+    "darkblue" , fill="#FF6666" ) +
+geom_vline (aes (xintercept=
+        mean (MinTemp)),
+color="blue" , linetype="dashed" , size=
+            1 )
+```
+
+#Basic analysis: max temperature variable
+```{r setup,include=TRUE}
+max_temp <- dat$MaxTemp
+summary(max_temp)
+```
+
+#First, print SD – max temp.
+```{r setup,include=TRUE}
+sd(max_temp, na.rm = TRUE)
+```
+
+#Then remove NAs.
+
+
+```{r setup,include=TRUE}
+
+max_temp_1 <- na.omit(max_temp)
+summary(max_temp_1)
+
+```
+
+
+
+#Next, we will create a histogram showing maximum temperature by location.
+
+```{r }
+
+ggplot(data = dat1, mapping= aes(x = Location, y = MaxTemp,
+fill=Location)) +geom_boxplot () +coord_flip ()
+
+```
+
+#Basic analysis: Temperature variable 
+```{r setup,include=TRUE}
+
+p1 <-ggplot (data = dat1, mapping = aes (x = "MinTemp", y = MinTemp)) + geom_boxplot ()
+
+p2 <- ggplot (data = dat1, mapping = aes (x = "MaxTemp" , y = MaxTemp)) + geom_boxplot()
+ggarrange(p1, p2, ncol = 2 , nrow = 1)
+
+```
+#And next, showing a density plot of max vs min temperature.
+```{r setup,include=TRUE}
+
+pd1 <- ggplot (data = dat1, aes (x=MaxTemp , color=MaxTemp)) +
+geom_density ( color="darkblue" , fill ="lightblue" ) +
+geom_vline (aes (xintercept=mean (MaxTemp)),
+color="blue" , linetype="dashed" , size=1)
+
+pd2 <- ggplot (data = dat1, aes (x=MinTemp , color=MinTemp)) +
+geom_density (color="darkblue" , fill ="#FF6666" ) +
+geom_vline (aes (xintercept=mean (MinTemp)),
+color="red" , linetype="dashed" , size=1)
+ggarrange (pd1 , pd2, ncol = 2 , nrow = 1)
+
+```
+
+#Basic analysis: Wind direction
+#Let's do analysis for the wind direction. By default, wind direction is a categorical variable. So we can use bar chart and pie chart. Let's start with finding the frequency of each wind direction.
+
+#Frequency 
+```{r setup,include=TRUE}
+
+# We can use table () for counting
+table(dat1$WindDir3pm) 
+
+
+```
+
+```{r setup,include=TRUE}
+
+# Frequency percentage
+prop.table(table(dat1$WindDir3pm))
+
+
+```
+#Bar charts
+#Now let’s create bar charts for the wind direction with the count.
+
+```{r setup,include=TRUE}
+
+x <- table (dat1$WindDir3pm)
+x <- as.data.frame (x)
+colnames (x) <- c( "Direction" , "Count" )
+
+ggplot (data=x , aes (x=Direction, y=Count, color=Direction) ) +
+geom_bar (stat= "identity" , fill="white" )+ coord_flip() +
+ggtitle (' Wind Dir 3pm from 2008- 2017 ' )
+
+
+```
+
+
+## Rainfall. You should fix all "NAs" before you start exploring it. All "NAs" should be replaced by MEAN value. You can also make comparison with respect to location. 
+
+#NOTE: You can do the same for other columns/variables.
+#Activity: Apply tabular exploration and graphical exploration methods
+
+```{r setup,include=TRUE}
+
+dat <- read.csv ("C:/Users/mikel/OneDrive/Desktop/CSE5DEV Labs/weatherAUS.csv", header = TRUE, sep = ",")
+##replace all empty cells in NA
+dat$Rainfall[dat$Rainfall== " "]<- NA
+
+##check how many missing values (NAs) in Rainfall
+sum(!complete.cases(dat$Rainfall))
+sum(is.na(dat$Rainfall))
+
+## use which function find the location (index) of missing values 
+ind_r <- which(is.na(dat$Rainfall))
+
+#Calculate the MEAN value. You need to exclude NA values from computations. 
+m_r <- mean(dat$Rainfall,na.rm=TRUE)
+print(m_r)
+
+#Now, we have the indexes of all missing values so we can replace then by MEAN.
+
+#print before you replace
+head(dat$Rainfall[ind_r])
+
+#replace code
+dat$Rainfall[ind_r] <- m_r
+
+#print after you replace
+head(dat$Rainfall[ind_r])
+
+#check if we still have missing values in Rainfall
+any(is.na(dat$Rainfall))
+sum(!complete.cases(dat$Rainfall))
+
+
+```
+
+#Activity 2:
+
+
+```{r setup,include=TRUE}
+x<-table(dat$Evaporation)
+
+x<-as.data.frame(x)
+
+#very long data.. we can take 10 only.
+yy<-x[1:10,]
+colnames(yy) <- c("Direction","Count")
+
+ggplot(data=yy,aes(x=Direction,y=Count,color=Direction)) +geom_bar(stat="identity",fill="white") + coord_flip()+ggtitle("Evaporation")
+
+```
+
+
+
+
+
+
+
+
+
+
+

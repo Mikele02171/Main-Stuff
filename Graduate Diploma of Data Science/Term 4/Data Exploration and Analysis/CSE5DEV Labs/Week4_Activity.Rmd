@@ -1,0 +1,60 @@
+---
+title: "Week4_Activity"
+author: "Nameer"
+date: "2023-08-23"
+output: html_document
+---
+
+
+# Activity: Calculate the Chi-Square test
+
+```{r}
+#install.packages("tidyr")
+#install.packages("tidyverse") 
+library(tidyr)
+library(tidyverse)
+library(ggplot2)
+library(dplyr)
+```
+
+
+## Read Data
+```{r}
+# read data and saved it in dat
+dat <- read.csv("weatherAUS.csv", header=TRUE)
+head(dat)
+```
+
+
+## Just remove NA from data
+```{r}
+any(is.na(dat))
+dat1<-dat
+dat<- na.omit(dat)
+#any(is.na(dat))
+```
+
+
+## Sunshine vs WindDir9am: take the first 200 samples based on the following condition: RainTomorrow = Yes
+
+```{r}
+d3 <- filter(dat, dat$RainTomorrow == "Yes")
+#head(d3)
+
+#take the first 200 samples
+
+d3<-d3[1:200,]
+#dim(d3)
+#head(d3)
+
+ggplot(data = d3, mapping = aes(x =WindDir9am, y =Sunshine)) +  geom_boxplot()
+
+```
+
+## Use chi-square to test relationship between “RainTomorrow” yes variable and WindGustDir
+
+
+```{r}
+chi_s = table(dat$RainTomorrow, dat$WindGustDir)
+chisq.test(chi_s)
+```

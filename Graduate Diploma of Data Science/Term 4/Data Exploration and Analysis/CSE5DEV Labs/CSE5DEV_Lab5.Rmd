@@ -1,0 +1,663 @@
+---
+title: "CSE5DEV_Lab5"
+output: word_document
+date: "2023-09-14"
+---
+
+#How to use R to compute the correlation between variables
+
+#cor() computes the correlation coefficient
+
+#test() test for association/correlation between paired samples. It returns both the correlation coefficient and the significance level (or p-value) of the correlation.
+
+
+#Step 1 – Prerequisites: Install and load packages
+#The first step is to install and load the required packages. For this example, we are using the following packages:
+```{r}
+library (ggpubr)
+library (Hmisc)
+library (PerformanceAnalytics)
+library (corrplot)
+library(tidyr)
+library (tidyverse)
+library (ggplot2)
+library (datasets)
+library (dplyr)
+
+```
+
+
+
+#Step 2-Import data into R
+#The next step is to import the data.
+```{r}
+dat <- mtcars
+head(dat,6)
+
+```
+
+
+#Step 3 – Inspect the data: check data format and missing values
+
+#Missing data is a big problem in real-life scenarios. Therefore, we need to inspect the data before doing further analyses.
+```{r}
+
+str(dat)
+```
+
+
+
+```{r}
+any(is.na(dat))
+```
+#Step 4 – Identify which variables you want to check the correlation between them
+
+#In this example, we will calculate the correlation between mpg and wt variables. We will use ggpubr R package; ggplot2 can also be used.
+
+
+#Step 5 – Visualise the variables using scatter plots
+#Create a scatter plot using ggscatter().
+```{r}
+ggscatter (dat, x = "mpg" , y = "wt" , add = "reg.line" , cont.int = TRUE ,xlab = "Miles/gallon" , ylab = "Weight" ) +geom_smooth(color="red")
+```
+
+
+#We can also use the ggplot.
+
+
+```{r}
+ggplot (dat, aes(x =mpg, y =wt)) + geom_point(color="red" ) + geom_smooth(method = lm)
+
+
+```
+#Step 6 – Implement Pearson correlation, Spearman correlation and Kendall correlation
+```{r}
+ggscatter (dat, x = "mpg" , y = "wt" , add = "reg.line" , conf.int = TRUE ,
+cor.coef = TRUE , cor.method = "pearson" , xlab = "Miles/gallon" , ylab = "Weight" )
+
+```
+
+#Let's do the Shapiro-Wilk test to check the normality of mpg and wt.
+```{r}
+ # Shapiro test for mpg  
+shapiro.test(dat$mpg)
+
+## Shapiro-Wilk normality test
+## data: dat$mpg
+## W = 0.94756, p-value = 0.1229
+
+ # Shapiro test for wt   
+shapiro.test (dat$wt) 
+
+## Shapiro-Wilk normality test
+## data: dat$wt
+## W = 0.94326, p-value = 0.09265
+```
+
+#Step 6.1 – Pearson correlation
+```{r}
+res <- cor.test(dat$wt, dat$mpg, method = "pearson" )
+res
+
+```
+#Step 6.2 – Spearman rank correlation coefficient
+```{r}
+res2 <-cor.test (dat$wt, dat$mpg, method= "spearman")
+res2
+```
+
+#Step 6.3 – Kendall rank correlation test
+```{r}
+res3 <-cor.test (dat$wt, dat $mpg, method="kendall" )
+res3
+```
+
+
+#Now let's compute the correlation between the possible pairs of variables in the data.
+```{r}
+res4 <- cor (dat)
+round (res4, 2 )
+```
+
+
+#Visualisation of the correlation matrix
+```{r}
+
+M <- cor(dat) 
+corrplot(M, method="circle")
+```
+
+
+
+```{r}
+M <- cor(dat) 
+corrplot(M, method="circle", type= "upper")
+```
+
+```{r}
+M <- cor(dat) 
+corrplot(M, method="pie")
+```
+
+
+```{r}
+M <- cor(dat) 
+corrplot(M, method="number")
+```
+
+#Activity: Conduct the correlation test using iris dataset
+```{r}
+
+#1. Import dataframe:
+dat<-read.csv("iris.csv",header=TRUE)
+
+#2. Plot
+plot(dat)
+
+dat<-subset(dat,select=-Species)
+
+#3. Compute the correlations
+pearson_corr <- cor(dat,method="pearson")
+spearman_corr <- cor(dat,method="spearman")
+kendall_corr <- cor(dat,method="kendall")
+
+#NOTE: method is CASE-SENSITIVE
+
+#4. 
+cor.test(dat$Sepal.Length,dat$Sepal.Width,method="pearson")
+```
+
+
+
+#Pattern discovery: Apriori algorithm
+
+
+#Step 1: Install and load **arules** and **arulesVis** packages. Load the dataset that comes along with this package.
+```{r}
+#install.packages("arules")
+library(arules) 
+data("AdultUCI")
+class(AdultUCI)
+
+head(AdultUCI) 
+```
+
+#Step 2: The data format is in ‘data.frame’. We need to convert the AdultUCI dataset into a transactional dataset.
+
+#We will remove the columns that have numerical columns and retain only the columns with the categorical values as the pattern discovery using Apriori works best with a categorical dataset.
+#We convert the other attributes into categorical values. In the following code, we split the defined range of values as per the labels mentioned in the code. Similarly, we convert the other columns into categories.
+
+```{r}
+## remove attributes 
+AdultUCI [["fnlwgt"]] <-NULL
+AdultUCI [["education-num"]] <-NULL
+## map metric attributes
+AdultUCI [["age"]]<-ordered(cut(AdultUCI [["age"]],
+c(15,25,45,65,100)),
+labels= c("Young","Middle-aged","Senior","Old"))
+
+
+AdultUCI [["hours-per-week"]]<-ordered(cut(AdultUCI [["hours-per-week"]],c(0,25,40,60,168)),
+labels= c("Part-time","Full-time","Over-time","Workaholic"))
+
+
+AdultUCI [["capital-gain"]]<-ordered(cut(AdultUCI [["capital-gain"]],
+c(-Inf,0,median(AdultUCI[["capital-gain" ]] [AdultUCI[["capital-gain"]]>0]),Inf)),labels=c(
+"None","Low","High"))
+
+AdultUCI [["capital-loss"]]<-ordered(cut(AdultUCI [["capital-loss"]],
+c(-Inf,0,median(AdultUCI[["capital-loss" ]] [AdultUCI[["capital-loss"]]>0]),Inf,labels=c(
+"None","Low","High"))))
+
+## create transactions 
+Adult <-as(AdultUCI, "transactions")
+class(Adult) 
+
+## [1) "transactions"
+## attr(,"package")
+## [1] "arules"
+```
+
+
+#Step 3: In order to have an outlook of the data, we can use the summary function. Here, we can see the output of the function that shows us the number of transactions, items, average number of items per transaction, and so on.
+```{r}
+
+summary(Adult) 
+## transactions as itemMatrix in sparse format with
+## 48842 rows (elements/itemsets/transactions) and
+## 115 columns (items) and a density of 0.1089939
+## most frequent items:
+##            capital-loss=None                capital-gain=None
+##                        46560                            44807
+## native-country=United-States                       race=White
+##            workclass=Private                          (Other)
+##                        33906                           401333
+## element (itemset/transaction) length distribution:
+## sizes
+##     9  10   ﻿﻿  11    12    13
+##    19  971  2067 15623 30162
+##
+##   Min.  1st Qu.  Median   Mean   3rd Qu.   Max. 
+##   9.00   12.00    13.00  12.53    13.00   13.00 
+## includes extended item information - examples: 
+##            labels variables      levels
+## 1       age=Young       age       Young
+## 2 age=Middle-aged       age Middle-aged
+## 3 age=Senior            age      Senior
+## includes extended transaction information - examples:
+## transactionID
+## 1           1
+## 2           2
+## 3           3
+
+```
+
+#Step 4: This is not a traditional market transaction, and it is not labelled 1 or 0 based on purchased or not purchased. In a market transaction, the items are represented by the column using 0 or 1s, but in this case, the columns are questions in the survey with different categories as measures of representation. For example, income has two categories, small or large. Hours per week has part-time, full-time, and over-time. Therefore, some categories have more than two categories depending on the variable and the available answers each one has.
+
+
+```{r}
+
+itemFrequencyPlot(Adult,support=.10)
+```
+#Step 5: We can also take a look at the structure of the dataset by converting it into a data frame format and visualising it.
+
+```{r}
+Adultdf <-as(Adult,"data.frame")
+head(Adultdf,2)
+
+##
+## 1         {age=Middle-aged, workclass=State-gov, education=Bachelors, martial-status=Never-married,occupation:Ad.m-clerical,relationship:Not-in-family, race:Wbite, sex:Male , capital-gain:Low,capital-loss=None, hours-per-week=Full-time, nati ve-country=Uni tad-States , income=small} 
+## 2   {age=Senior, workclass=Self-emp-not-inc , education=Bachelors, mari tal-status=Married-civ-spouse ,occupation=Exec-managerial, relationship=Husband, race=Whi te, sex=Male, capital -gain=None, capital-loss=None, hours-per-week=Part-time, native-country=Uni tad-States , income=small}
+## transaction ID
+## 1            1
+## 2            2
+```
+
+
+
+#Step 6: Apriori analysis
+
+#Now let us look at how many rules there are with a minimum support of 1 per cent and a confidence of 60 per cent.
+```{r}
+
+rules1<-apriori(Adult,parameter=list(sup=0.01,conf=0.6,target="rules"))
+
+## Apriori
+##
+## Parameter specification:
+## confidence minval smax arem  aval originalSupport maxtime support minlen
+##        0.6    0.1    1 none FALSE            TRUE       5    0.01      1
+## maxlen target  ext
+##     10  rules TRUE
+## 
+## Algorithmic control:
+## filter tree heap memopt load sort verbose
+##    0.1 TRUE TRUE  FALSE TRUE    2    TRUE
+## 
+## Absolute minimum support count: 488 
+##
+## set item appearances ... [O item(s)] done [0.00s].
+## set transactions ... [115 item(s), 48842 transaction(s)] done [0.03s].
+## sorting and recoding items [67 item(s)] done [O.Ols].
+## creating transaction tree done [0.02s].
+## checking subsets of size 1 2 3 4 5 6 7 8 9 10
+
+##   done [O. 51s] .
+## writing ... [276443 rule(s)] done [0.03s].
+## creating S4 object  ... done [0.13s]. 
+```
+
+
+
+#There are 276,443 rules using support 1 per cent and confidence of 60 per cent.
+```{r}
+
+summary(rules1) 
+
+## set of 276443 rules
+##
+## rule length distribution (lhs + rhs): sizes
+##    1      2    3      4     5     6     7     8     9   10
+##    6    432  4981 22127 52669 75104 67198 38094 13244 2588
+##
+##   Min. 1st Qu. Median  Mean 3rd Qu.   Max.
+##  1.000  5.000   6.000 6.289   7.000 10.000
+##
+## summary of quality measures:
+##      support       confidence       coverage            lift
+## Min.   :0.01001  Min.    :0.6000  Min.    :0.01001  Min.   : 0.7171
+## 1st Qu.:0.01253  1st Qu. :0.7691  1st Qu. :0.01474  1st Qu.: 1.0100
+## Median :0.01701  Median  :0.9051  Median  :0.02043  Median : 1.0554
+## Mean   :0.02679  Mean    :0.8600  Mean    :0.03179  Mean   : 1.3109
+## 3rd Qu.:0.02741  3rd Qu. :0.9542  3rd Qu. :0.03288  3rd Qu.: 1.2980
+## Max.   :0.95328  Max.    :1.0000  Max.    :1.00000  Max.   :20.6826
+##    count
+## Min.   :  489
+## 1st Qu.:  612
+## Median :  831
+## Mean   : 1308
+## 3rd Qu.: 1339
+## Max.   :46560
+##
+## mining info :
+##  data ntransactions support confidence
+## Adult         48842    0.01        0.6
+```
+
+
+#Now let’s look at how many rules are there with a minimum support of 5 per cent and a confidence of 90 per cent.
+
+```{r}
+rules <- apriori(Adult,parameter=list(sup=0.5,conf=0.9,target="rules"));
+
+## Apriori
+##
+## Parameter specification:
+## confidence minval smax arem  aval originalSupport maxtime support minlen
+##        0.9    0.1    1 none FALSE            TRUE       5     0.5      1
+## maxlen target ext
+## 10 rules TRUE
+##
+## Algorithmic control:
+## filter tree heap memopt load sort verbose
+##    0.1 TRUE TRUE FALSE  TRUE    2    TRUE
+##
+## Absolute minimum support count: 24421
+##
+## set item appearances ... [O item(s)] done [O.OOs].
+## set transactions ... [115 item(s), 48842 transaction(s)] done [0.03s].
+## sorting and recoding items ... [9 item(s)] done [O.OOs].
+## creating transaction tree ... done [O. Ols] .
+## checking subsets of size 1 2 3 4 done [O. 00s] .
+## vriting ... [52 rule(s)] done [O.OOs].
+## creating S4 object ... done [O.OOs]. 
+```
+
+
+
+
+#From the output, we can see that there are 52 rules in total that are generated. We will explore these parameters in detail but, for now, we have the rules generated based on the inputs. We can then inspect the rules generated using the inspect function as follows:
+```{r}
+inspect(rules1[1:20])
+    
+##     lhs                                  rhs                     support  confidence coverage lift count
+## [1] {}                                => {capital-gain=lfone}           0.91 0.91  1.0 1.0 44807
+## [2] {}                                => {capital-loss=None}            0.95 0.95  1.0 1.0 46560
+## [3] {hours-per-week=Full-time}        => {capital-gain=None}            0.54 0.920 0.5 1.0 26550
+## [4] {hours-per-week=Full-time}        => {capital-loss=None}            0.56 0.95  0.5 1.0 27384
+## [5] {sex=Male}                        => {capital-gain=None}            0.60 0.90  0.6 0.9 29553
+## [6] {sex=Male}                        => {capital-loss=None}            0.63 0.94  0.6 0.9 30922
+## [7] {workclass=Private}               => {capital-gain=None}            0.64 0.92  0.6 1.0 31326
+## [8] {workclass=Private}               => {capital-loss=None}            0.66 0.95  0.6 1.0 32431
+## [9] {race=White}                      => {native-country=United-States} 0.78 0.92  0.8 1.0 38493
+## [10] {race=White}                     => {capital-gain=None}            0.78 0.91  0.8 0.9 38184
+## [11) {race=White}                     => {capital-loss=None}            0.81 0.95  0.8 0.9 39742
+## [12] {native-country=United-States}   => {capital-gain=None}            0.82 0.91  0.8 0.9 40146
+## [13] {native-country=Uni ted-States}  => {capital-loss=None}            0.85 0.95  0.8 0.9 41752
+## [14) {capital-gain=None}              => {capital-loss=None}            0.87 0.94  0.9 0.9 42525
+## [15] {capital-loss=None}              => {capital-gain=None}            0.87 0.91  0.9 0.9 42525
+## (16] {capital-gain=None,
+## hours-per-week=Full-time}             => {capital-loss=None}            0.51 0.95 0.54 1.0 25357
+## [17] {capital-loss=None,
+## hours-per-week=Full-time}             => {capital-gain=None}            0.51 0.92 0.56 1.0 25357
+## [18) {race=Whi te,
+## sex=Male}                             => {native-country=United-States} 0.54 0.92 0.5 1.0 26450
+## [19] {sexzMale,
+## native-country=United-States}         => {race=White}                   0.541 0.90 0.59 1.00 26450
+## [20] {race=Whi te,
+## sexzMale}                             => {capital-gain=None}            0.53 0.90 0.58 0.9 25950
+```
+
+
+
+
+```{r}
+
+inspect(rules1[20:29])
+##      lhs                              rhs                             support confidence coverage
+## [1]  {race=White,
+##      sex=Male}                     => {capital-gain=None}            0.5313050 0.9030799 0.5883256 0.984
+## [2]  {race=White, 
+##      sex=Male}                     => {capital-loss=None}            0.5564268 0.9457804 0.5883256 0.992
+## [3]  {sex=Hale, 
+##      native-country=United-States} => {capital-gain=None}            0.5406003 0.9035349 0.5983170 0.984
+## [4]  {sex=Hale,
+##      native-country=United-States} => {capital-loss=None}            0.5661316 0.9462068 0.5983170 0.992
+## [5]  {sex=Hale,
+##      capital-gain=None}            => {capital-loss=None}            0.5696941 0.9415288 0.6050735 0.987
+## [6]  {workclass-=Private,
+##      race=White}                   => {native-country=United-States} 0.5433848 0.9144157 0.5942427 1.018
+## [7]  {workclass-=Private,
+##      race=Vhite}                   => {capital-gain=None}            0.5472339 0.9208931 0.5942427 1.003
+## [8]  {workclass=Private,
+##      ace=White}                    => {capital-loss=None}            0.5674829 0.9549683 0.5942427 1.001
+## [9]  {workclass=Private,
+##      native-country=United-States} => {capital-gain=None}            0.5689570 0.9218444 0.6171942 1.004
+## [10] {workclass=Private,
+##      native-country=Uni ted-States} => {capital-loss=None}           0.5897179 0.9554818 0.6171942 1.002
+
+
+```
+#This is how we generate the Apriori rules. From the output, we got a frequent set of rules.
+
+#Let’s consider row number [10] workclass=Private, native-country=United-States => capitalgain=
+#None           0.5689570        0.9218444      0.6171942            1.0048592 27789
+
+#In this case, whenever workclass of a user is Private and native-country is United-States then it is most likely the capital-loss is none.
+
+#Let's find all the rules related to the variable income. That is, find the factors that are associated with high income, and the factors associated with low income.
+
+
+
+
+```{r}
+rules_high_income =apriori(Adult,parameter=list(supp=.10,conf=.6,minlen=2),
+appearance=list(default="rhs",lhs="income=large"))
+
+## Apriori
+##
+## Parameter specification:
+## confidence minval smax arem  aval originalSupport maxtime support minlen
+##        0.6    0.1    1 none FALSE            TRUE       5    0.01      2
+## maxlen target  ext
+##     10  rules TRUE
+##
+## Algorithmic control:
+## filter tree heap memopt load sort verbose
+##    0.1 TRUE TRUE FALSE  TRUE    2    TRUE
+##
+## Absolute minimum support count: 488
+##
+## set item appearances ... [1 item(s)] done [O.OOs].
+## set transactions ... [115 item(s), 48842 transaction(s)] done [0.03s].
+## sorting and recoding items ... [67 item(s)] done [0.01s].
+## creating transaction tree ... done [O. 03s] .
+## checking subsets of size 1 2 done [0.01s] .
+## writing ... (8 rule(s)] done [0.00s].
+## creating S4 object ... done [0.01s].
+```
+
+
+
+#For high income, there is a set of eight rules.
+```{r}
+
+rules_low_income=apriori(Adult,parameter=list(supp=.01,conf=.6,minlen=2),
+appearance = list(default="rhs",lhs="income=small"))
+
+## Apriori
+##
+## Parameter specification:
+## confidence minval smax arem  aval originalSupport maxtime support minlen
+##        0.6    0.1    1 none FALSE            TRUE       5    0.01      2
+## maxlen target  ext
+##     10  rules TRUE
+##
+## Algorithmic control:
+## filter tree heap memopt load sort verbose
+##    0.1 TRUE TRUE FALSE  TRUE    2    TRUE
+##
+## Absolute minimum support count: 488
+##
+## set item appearances ... [1 item(s)] done [O.OOs].
+## set transactions ... [115 item(s), 48842 transaction(s)] done [0.03s].
+## sorting and recoding items ... [67 item(s)] done [0.01s].
+## creating transaction tree ... done [O. 03s] .
+## checking subsets of size 1 2 done [0.01s] .
+## writing ... (7 rule(s)] done [0.00s].
+## creating S4 object ... done [0.01s].
+```
+#For low income, there is a set of seven rules.
+
+
+#Plot rules
+
+#In order to plot the rule, we need to load the arulesviz package to the R environment. If this package is not already installed, use the install.packages function to install it.Plot rules
+
+#In order to plot the rule, we need to load the arulesviz package to the R environment. If this package is not already installed, use the install.packages function to install it.
+```{r}
+#install.packages("arulesViz")
+library(arulesViz) 
+library(grid) 
+plot(rules1) 
+
+```
+
+#Let's plot the seven rules of rules low income.
+
+```{r}
+plot(rules_low_income,method="graph")
+
+```
+
+
+
+
+```{r}
+install.packages("arulesSequences")
+library(arulesSequences) 
+data(zaki)    
+summary(zaki) 
+## transactions as itemMatrix in sparse format with
+## 10 rows (elements/itemsets/transactions) and
+## 8 columns (it ems) and a density of 0.3375 
+## most frequent items:
+##      A       B       F       C       D       (Other) 
+##      6       5       5       3       3            5
+## element (itemset/transaction) length distribution:
+## sizes 
+## 1 2 3 4
+## 1 2 6 1 
+##   Min. 1st Qu. Median Mean 3rd Qu. Max. 
+##   1.00    2.25   3.00 2.70   3.00  4.00 
+## includes extended item information - exampl es:
+## labels
+## 1    A
+## 2    B
+## 3    C
+## includes extended transaction information - examples:
+##  sequenceID eventID SIZE
+## 1        1   10    2
+## 2        1   15    3
+
+```
+
+#Let us have a look into the data using the following command:
+
+
+```{r}
+as(zaki, "data.frame")
+
+##       items sequence ID eventID SIZE
+## 1     {C,D}        1         10    2
+## 2   {A,8,C}        1         15    3
+## 3   {A,B,F}        1         20    3
+## 4 {A,C,D,F}        1         25    4
+## 5   {A,B,F}        2         15    3
+## 6       {E}        2         20    1
+## 7   {A,B,F}        3         10    3
+## 8   {D,G,H}        4         10    3
+## 9     {B,F}        4         20    2
+## 10  {A,G,H}        4         25    3 
+
+```
+
+
+
+
+
+```{r}
+seq_rules <- cspade(zaki, parameter=list(support=0.55),
+control=list(verbose=TRUE))
+
+##
+## parameter specification:
+## support : 0.55
+## maxsize :   10
+## maxlen  :   10
+##
+## algorithmic control:
+## bfstype  : FALSE
+## verbose  : TRUE
+## summary  : FALSE
+## tidLists : FALSE
+##
+## preprocessing ... 1 partition(s), O MB [0.09s]
+## mining transactions ... O MB (0. OBs]
+## reading sequences . . . [Os]
+##
+## total elapsed time: 0.17s    
+
+```
+
+
+#Understanding the results
+
+```{r}
+summary(seq_rules) 
+## set of 7 sequences with
+## most frequent items:
+##       A       B       F  (Other) 
+##       4       4       4        4
+## most frequent elements :
+##      {A}    {B}    {F}    {A,F}    {B,F} (Other) 
+##        1      1      1        1        1       2
+## element (sequence) size distribution:
+## sizes
+## 1
+## 7
+## sequence length distribution:
+## lengths
+## 1 2 3
+## 3 3 1
+## summary of quality measures:
+##    support
+## Min.    :0.7500
+## 1st Qu. :0.7500
+## Median  :1.0000
+## Mean    :0.8929
+## 3rd Qu. : 1. 0000
+## Max.    : 1. 0000
+## includes transaction ID lists: FALSE
+## mining info:
+## data ntransactions nsequences support
+## zaki            10          4    0.55
+
+```
+#Sequential dataset
+#We can take a look at the rules generated by converting them into a data frame using the following code. We can check the various sequences along with the support score for each of them. By default, the rules generated are sorted based on the support score.
+
+
+```{r}
+as(seq_rules,"data.frame" ) 
+
+##    sequence   support
+## 1     <{A}>      1.00
+## 2     <{B}>      1.00
+## 3     <{F}>      1.00
+## 4   <{A,F}>      0.75
+## 5   <{B,F}>      1.00
+## 6 <{A,B,F}>      0.75
+## 7   <{A,B}>      0.75
+
+```

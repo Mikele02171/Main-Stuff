@@ -1,0 +1,611 @@
+---
+title: "CSE5DEV_Lab1"
+output: word_document
+date: '2023-08-08'
+---
+
+#More on R Objects
+```{r}
+# numeric
+X <- 5.5
+class (x)
+
+## (1) "numeric"
+
+# integer
+x <- 200L
+class (x)
+
+## (1) "integer"
+
+# compiex
+X <- 6i + 2
+class (x)
+
+## (1) "complex"
+
+# character/string
+x <- "R CSE5DEV"
+class (x)
+
+## (1) "character"
+
+# iogicai/booiean
+x <- TRUE
+class (x)
+
+## (1) "logical"
+
+
+```
+
+## R data type conversion
+##
+##
+##
+
+```{r}
+x < - 2L # integer 
+x < - 4 # numeric 
+
+# convert from integer to numeric:
+a <- as.numeric (x)
+# convert from numeric to integer:
+b <- as.numeric (y)
+# print vaLues of x and y
+print (x) 
+
+## [1] 2
+
+print (y)
+
+## [1] 4
+
+# print the class name of a and b
+class (a) 
+
+## [1] "numeric"
+
+class (b)
+
+## [1] "integer"   
+
+```
+
+## R data structures: vectors
+
+```{r}
+# Vector of numericaL vaLues 
+numbers <-c(1 , 2 , 3 , 4)
+print (numbers) 
+
+## [1] 1 2 3 4
+
+# Vector of strings
+#Fixed those errors
+fruits <-c( "apple","orange","banana")
+print  (fruits) 
+
+## [1] "apple" "orange" ''banana"
+
+# We can create a vector using the CoLon : operator
+#Fixed those errors
+numbers <-c(1:10)
+print  (numbers) 
+
+## [ 1] 1 2 3 4 5 6 7 8 9 10   
+
+```
+
+
+
+## R data structures
+
+```{r}
+# Vector of numericaL vaLues 
+numbers <-c(1 , 2 , 3 , 4)
+print (numbers) 
+
+## [1] 1 2 3 4
+
+# Vector of strings
+#Fixed those errors
+fruits <-c( "apple","orange","banana")
+print  (fruits) 
+
+## [1] "apple" "orange" ''banana"
+
+# We can create a vector using the CoLon : operator
+#Fixed those errors
+numbers <-c(1:10)
+print  (numbers) 
+
+## [ 1] 1 2 3 4 5 6 7 8 9 10   
+
+```
+
+
+
+
+
+
+```{r}
+# Vect:or Lenqth
+fruits <-c("banana","apple","orange")
+length(fruits)
+
+## [1] 3 
+
+fruits <-c("banana","apple","orange","mango","lemon")
+numbers <-c(13, 3, 5, 7, 20, 2)
+# Sort vector
+sort(fruits) # Sort a string
+
+## [1] "apple" "banana" "lemon" "mango" "orange"
+
+sort( numbers) # Sort numbers
+
+## [1] 2 3 S 7 13 20
+
+# Access Vectors 
+fruits <-c("banana","apple","orange")
+# Access the fruits item (banana)
+fruits [1]
+
+## [1] "banana" 
+
+fruits [3]
+
+## [1] "orange" 
+
+#Change an Item
+fruits <-c("banana","apple","orange","mango","lemon")
+# Change "apple" to "pear"
+fruits [2]<-"pear"
+print (fruits) 
+
+## [1] "banana" "pear" "orange" "mango" "lemon"
+
+# Repeat Vector 
+repeat_vec <-rep(c(1,2,3),each = 3)
+print(repeat_vec) 
+
+## [ 1] 1 1 1 2 2 2 3 3 3  
+
+```
+
+
+
+
+
+
+```{r}
+# Make tvo vectors,
+vec1  <- c(1,2,3,4,5)
+vec2  <- c(11,12,13,14,15)   
+
+# Add a number, element-wise
+vec1 + 10
+## [ 1] 11 12 13 14 15
+# Element-wise quadratic:
+vec1^2
+## [1] 1 4 9 16 25 
+# Pair-wise multiplication:
+vec1 * vec2 
+## [1 ] 11 24 39 56 75 
+# Pair-wise division 
+vec1 / vec2 
+## [1] 0.09090909 0.16666667 0.23076923 0.28571429 0.33333333
+# Pair-wise difference:
+vec2 - vec1
+## [1] 10 10 10 10 10 
+# Pair-wise sum:
+vec1 + vec2
+## [ 1] 1 2 14 16 18 20 
+# Compare the pair-wise sum to the sum of both vectors:
+sum(vec1) + sum(vec2)
+## [ 1] 80
+
+```
+
+
+
+##R data structures: matrix
+```{r}
+# Create a matrix
+matr <- matrix(c(1,2,3,5,6), nrow = 3, ncol = 2)
+print(matr) 
+
+##       [,1] [,2] 
+## [1,]    1     4
+## [2']    2     5 
+## [3']    3     6
+```
+
+
+```{r}
+#Access Matrix Items 
+mart <- matrix(c("apple","banana","cherry","orange"),
+nrow = 2, ncol = 2)
+print (mart[1,2])
+
+## [1] "cherry" 
+
+print  (mart[2,])
+## [1] "banana" "orange"
+
+#Access More Than One Row 
+mart <- matrix(c("apple","banana","cherry","orange","grape",
+"pineapple","pear","melon","fig"),
+nrow = 3, ncol = 3)
+print(mart[c(1,2,3)])
+
+##      [,1]     [,2]     [,3] 
+## [1,] "apple"  "orange" "pear" 
+## [2,] "banana" "grape"  "melon" 
+```
+
+
+
+
+```{r}
+# Access More Than One Column
+print(mart [,c(1,2)])
+
+##      [,1]     [,2]
+## [1,] "apple"  "orange"
+## [2,] "banana" "grape"
+## [3,] "cherry" "pineapple"
+
+# Add Rows and Columns
+mart<- matrix(c("apple","banana","cherry","orange","grape",
+"pineapple","pear","melon","fig"), nrow = 3, ncol = 3)
+print(mart) 
+
+##       [,1]    [,2]        [,3]
+## [1,] "apple"  "orange"    "pear"
+## [2,] "banana" "grape"     "melon"
+## [3,] "cherry" "pineapple" "fig"
+```
+
+
+
+```{r}
+newmatrix <- cbind(mart,c("strawberry","blueberry","raspberry"))
+print(newmatrix) 
+
+##      [,1]     [,2]        [,3]    [,4]
+## [1,] "apple"  "orange"    "pear"  "strawberry"
+## [2.] "banana" "grape"     "melon" "blueberry"
+## [3,] "cherry" "pineapple" "fig"   "raspberry"
+
+newmatrix <- rbind(mart, c("strawberry","blueberry","raspberry"))
+print (newmatrix) 
+
+##      [,1]         [,2]        [,3]    
+## [1,] "apple"      "orange"    "pear"  
+## [2.] "banana"     "grape"     "melon" 
+## [3,] "cherry"     "pineapple" "fig"   
+## [,4] "strawberry" "blueberry" "raspberry"
+```
+
+
+
+
+```{r}
+mart <- matrix(c("apple","banana","cherry","orange","mango",
+"pineapple"), nrow= 3,
+ncol = 2)
+#Remove the first row and the first column 
+mart <- mart[- c(1), -c(1)]
+print(mart) 
+
+## [1] "mango" "pineapple"
+
+# Check if an Item Exists 
+mart <- matrix(c("apple","banana","cherry","orange"),nrow = 2,ncol = 2)
+"apple"%in%mart
+
+## [1] TRUE 
+
+# check no of rows and columns 
+mart <- matrix(c("apple","banana","cherry","orange"),
+nrow = 2,ncol = 2)
+dim(mart)
+
+## [1] 2 2 
+
+# Matrix Length 
+mart <- matrix(c("apple","banana","cherry","orange"),
+nrow= 2,ncol = 2)
+length(mart)
+
+## [1] 4
+```
+
+
+
+
+```{r}
+b <- matrix( 10:15, nrow = 2, ncol = 3, byrow = TRUE)
+b
+```
+
+```{r}
+a <- matrix( 10:15, nrow = 2, ncol = 3) 
+a
+```
+
+
+
+```{r}
+a + b 
+```
+
+
+```{r}
+a * b # element - by- element product 
+# The operator%*% is used for matrix multiplication
+```
+
+
+##R data structures: factors
+```{r}
+# Create a factor
+music <- factor(c("Jazz",
+"Rock","Classic","Classic","Pop","Jazz","Rock","Jazz"))
+print (music)
+
+## [1] Jazz    Rock     Classic Classic Pop Jazz Rock Jazz
+## Levels: Classic Jazz Pop Rock
+```
+
+
+
+
+```{r}
+# print levels
+music <- factor(c("Jazz",
+"Rock","Classic","Classic","Pop","Jazz","Rock","Jazz"))
+print (levels(music))
+
+## [1] "Classic" "Jazz" "Pop " "Rock"
+
+# set the levels 
+music <- factor(c("Jazz",
+"Rock","Classic","Classic","Pop","Jazz","Rock","Jazz"))
+levels=c("Classic","Jazz","Pop","Rock","Other")
+print (levels(music))
+
+## [1] "Classic" "Jazz" "Pop" "Rock" "Other"
+
+# Factor length
+length(music)
+
+## [1] 8
+
+# Access factors
+print (music[3])
+
+## [1] Classic
+## Levels: Classic Jazz Pop Rock Other
+
+# Change item value 
+music[4] <-"Pop"
+print(music[4])
+
+## [1] Pop
+## Levels: Classic Jazz Pop Rock Other
+```
+
+##R data structures: data frame
+```{r}
+# Create a data frame
+data_frame <- data.frame(        
+Training = c("Strength","Stamina","Other"),
+ID = c(10,11,13),
+Time = c(6.6,3.2,4.0)
+)
+
+print(data_frame) 
+
+##   Training ID Time
+## 1 Strength 10  6.6
+## 2  Stamina 11  3.2
+## 3    Other 13  4.0
+```
+
+
+
+```{r}
+ # Summarise the Data 
+ # Create a data frame 
+data_frame <- data.frame(        
+Training=c("Strength","Stamina","Other"),
+ID=c(10,11,13),
+Time=c(6.6,3.2,4.0)
+)
+
+print(data_frame) 
+
+##   Training ID Time
+## 1 Strength 10  6.6
+## 2  Stamina 11  3.2
+## 3    Other 13  4.0
+
+```
+```{r}
+summary(data_frame) 
+## Training                 ID           Time
+## Length:3           Min.   :10.00   Min .   :3.2
+## Class :character   1st Qu.:10.50   1st Qu. :3.6
+## Mode  :character   Median :11.00   Median  :4.0
+##                    Mean   :11.33   Mean    :4.6
+##                    3rd Qu.:12.00   3rd Qu. :5.3
+##                    Max .  :13.00    Max .  :6.6
+```
+
+
+
+```{r}
+# Access items  
+data_frame[1]
+
+##   Training
+## 1 Strength
+## 2  Stamina
+## 3    Other
+
+```
+
+
+```{r}
+
+data_frame [["Training"]] 
+
+## [1] "Strength" "Stamina" "0ther"
+
+
+```
+
+```{r}
+
+data_frame$Training 
+
+## [1] "Strength" "Stamina" "Other"
+
+
+```
+
+```{r}
+
+ # Add a new row  
+
+New_row_DF <- rbind(data_frame,c("Strength",110,11.0))
+
+print(New_row_DF) 
+
+##   Training  ID Time
+## 1 Strength  10  6.6
+## 2  Stamina  11  3.2
+## 3    Other  13  4.0
+## 4 Strength 110 11.0
+```
+
+
+```{r}
+# Add a new column 
+New_col_DF <-cbind(data_frame, Steps=c(1000,6000,2000))
+print(New_col_DF) 
+
+##   Training ID Time Steps
+## 1 Strength 10  6.6  1000
+## 2  Stamina 11  3.2  6000
+## 3    Other 13  4.0  2000
+
+
+```
+```{r}
+
+# Remove the first row and column  
+Data_Frame_New <-data_frame[-c(1),-c(1)]
+print(Data_Frame_New) 
+
+##   ID Time
+## 2 11  3.2
+## 3 13  4.0 
+
+
+```
+
+```{r}
+
+# find the number of rows and columns  
+print(dim(data_frame))
+
+## [1] 3 3 
+
+# Data Frame Length  
+print(length(data_frame))
+
+## [1] 3
+```
+
+#Data frame rules
+
+```{r}
+employee <- data.frame(employee_id = c(1:5),
+employee_name= c("A","8","C","D","E"), 
+employee_salary = c(611.3, 512.2, 621.0, 722.0, 343.21),
+start_date = as.Date(c("2014-01-010","2015-08-23","2016-10-15","2016-04-11",
+"2016-04-26")),
+stringsAsFactors= FALSE)
+print(employee) 
+
+##   employee_id employee_name employee_salary start_date
+## 1           1             A         611. 30 2014-01-01
+## 2           2             B         512. 20 2015-08-23
+## 3           3             C         621. 00 2016-10-15
+## 4           4             D         722 .00 2016-04-11
+## 5           5             E         343. 21 2016-04-26  
+```
+
+## Activity: Import data into an R environment
+## Suppose were given a dataset for example we use the 
+## SB1-Products.csv
+#Step 1
+```{r}
+dat <- read.csv("SB1-Products.csv",header =TRUE,sep=",")
+str(dat)
+```
+```{r}
+#Step 2
+#Number of rows
+nrow(dat)
+
+#Number of columns
+ncol(dat)
+
+#Step 3
+class(dat)
+class(dat[[1]])
+class(dat[[2]])
+class(dat[[3]])
+
+```
+```{r}
+print(dat)
+```
+
+```{r}
+summary(dat$ProductID) 
+```
+#Steps 4-5
+
+```{r}
+#To add a new row (Method 1)
+library(tidyverse)
+newdf <- dat %>% add_row(ProductID = 456, ProductName = 'Nintendo Switch',Price = 250)
+
+#Export csv file 
+write.csv(newdf,file ="SB1-Products2.csv", sep = ",")
+
+```
+
+
+```{r}
+#To add a new row (Method 2)
+New_row_DF <- rbind(dat,c(ProductID = 456, ProductName = 'Nintendo Switch',Price = 250))
+print(New_row_DF)
+
+#Save the data as SB1-Products2.csv 
+write.csv(New_row_DF,file ="SB1-Products3.csv", sep = ",") 
+
+```
+
+
+
+```{r}
+
+
+```
