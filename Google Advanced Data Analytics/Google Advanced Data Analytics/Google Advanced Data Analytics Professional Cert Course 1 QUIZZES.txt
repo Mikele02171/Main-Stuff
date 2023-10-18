@@ -1,0 +1,70 @@
+Google Advanced Data Analytics Professional Certificate
+Course 1: Foundations of Data Science 
+
+Explore your data toolbox, Practise Quiz
+
+Fill in the blank: Data professionals use _____ to work efficiently with large datasets.
+
+Answer: programming languages
+Why? Data analytics professionals use programming languages to work efficiently within large datasets.
+
+Assess your readiness for the Advanced Analytics Data Certificate
+Practise Quiz.
+
+1. What is data science?
+Answer: A field of study that uses raw data to create new ways of modeling and understanding the unknown.
+
+
+2. What is the key difference between qualitative and quantitive data?
+Answer: Qualitative data measures qualities and characteristics;
+quantitative data measures numerical facts.
+
+3. Which of the following statements accurately describe wide and long data? Select all that apply. 
+
+Answer(s):
+-Long data subjects can have multiple rows that hold the values of subject attributes.
+-Wide data subjects can have data in multiple columns. 
+
+4.Structured data is likely to be found in which of the following formats? Select all that apply. 
+
+Answer(s):
+-Spreadsheet
+-Database table
+
+5. Fill in the blank: A Boolean data type can have ___ possible value(s).
+
+Answer:
+Two
+
+6. What is the term for the individuals who have invested time and resources in a project and are interested in its outcome? 
+
+Answer:
+Stakeholders
+
+
+7.When collecting data for a study, what are some reasons to consider sample size? Select all that apply. 
+
+Answer(s):
+-To collect data that represents a diverse set of perspectives
+-To make sure a few unusual responses don’t skew results
+
+8. The SMART methodology can be used to ask a question that promotes change. What type of SMART question leads to change?
+
+Answer:
+Action-oriented
+
+9. Which of the following inquires are leading questions? Select all that apply. 
+-
+-
+-
+
+
+
+
+
+
+
+
+
+
+
