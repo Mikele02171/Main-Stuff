@@ -1,0 +1,147 @@
+---
+title: "STM4PSD_Lab6"
+output: word_document
+date: "2023-10-08"
+---
+
+#Question 1.
+```{r}
+#Part a
+#(i)
+pexp(1,2)
+
+#(ii)  (since X is continous random variable)
+pexp(0,2) + pexp(1,2)
+
+#(iii) (since X is continous random variable)
+1-pexp(1,2)
+#(iv)
+pexp(3,2)-pexp(1,2)
+
+
+```
+## 
+
+
+```{r}
+#Part b.
+#(i)
+pgamma(2,4,1)
+
+#(ii) (since X is continuous random variable)
+pgamma(2,4,1)
+
+#(iii)
+1-pgamma(2,4,1)
+
+#(iv)
+pgamma(4,4,1)-pgamma(2,4,1)
+
+```
+
+#Question 2.
+
+```{r}
+f.before <- function ( x ){
+if ( x >= -1 & x <= 2) { (x -1)^2/3 }
+else { 0 }
+}
+
+f <- Vectorize(f.before)
+
+```
+
+#Question 3.
+
+```{r}
+
+f.before <- function(x){
+  ifelse(x>=1&x<=1.5,4*x-4,ifelse(x>=1.5&x<=2,8-4*x,0))
+  
+}
+
+f <- Vectorize( f.before )
+
+
+```
+
+
+#Question 4.
+
+
+```{r}
+ # P ( X <= 1.4):
+integrate (f , lower = - Inf , upper =1.4)
+# P ( X >= 1.7):
+integrate (f , lower =1.7 , upper = Inf )
+# P (1.4 <= X <= 1.6):
+integrate (f , lower =1.4 , upper =1.6)
+# P ( X <= 1.6):
+integrate (f , lower = - Inf , upper =1.6)
+
+
+```
+#EXPECTED VALUE AND VARIANCE IN R.
+
+
+#Question 5.
+```{r}
+#Expectation Value
+used.for.ev <-function( x ) { x*f(x) }
+expected.value <- integrate (used.for.ev , lower = - Inf , upper = Inf )$value
+
+expected.value
+
+
+
+
+```
+
+#Question 6.
+```{r}
+
+#Variance 
+used.for.variance <- function ( x ) {
+  mean <- expected.value
+  ( x - mean )^2 *f(x)
+}
+
+integrate(used.for.variance, lower = - Inf , upper = Inf )$value
+
+```
+
+#Question 7.
+
+```{r}
+my.normal <- function(x,mu,sigma){
+  exp(-((x-mu)/sigma)^2/2)/(sigma*sqrt(2*pi))
+}
+```
+
+
+#Question 8.
+
+```{r}
+#Expected value
+my.ev <- function ( mu , sigma ) {
+integrate ( function ( x ) { x * my.normal (x , mu , sigma ) } ,
+lower = - Inf ,
+upper = Inf ) $value
+}
+
+#Variance
+my.var <- function ( mu , sigma ) {
+ev <- my.ev ( mu , sigma )
+integrate ( function ( x ) {(x - ev )^2* my.normal(x, mu,sigma ) } ,
+lower = - Inf,upper = Inf )$value
+}
+
+```
+
+
+#Question 9 (OPTIONAL)
+
+
+
+
+
