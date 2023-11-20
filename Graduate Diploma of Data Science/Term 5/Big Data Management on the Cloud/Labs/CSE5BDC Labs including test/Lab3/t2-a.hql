@@ -1,0 +1,12 @@
+DROP TABLE orderedtraffic;
+
+CREATE TABLE orderedtraffic AS
+SELECT url, COUNT(1) as count FROM mytraffic
+GROUP BY url
+ORDER BY count DESC;
+
+INSERT OVERWRITE LOCAL DIRECTORY './task2a-out/'
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY '\t'
+STORED AS TEXTFILE
+SELECT * FROM orderedtraffic;
