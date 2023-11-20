@@ -1,0 +1,24 @@
+DROP TABLE mydomains;
+CREATE TABLE mydomains (url STRING, category STRING)
+ROW FORMAT DELIMITED FIELDS TERMINATED BY ',';
+LOAD DATA LOCAL INPATH './Input_data/1/domains.csv'
+INTO TABLE mydomains;
+
+DROP TABLE myips;
+CREATE TABLE myips (ipAddress STRING, intAddress BIGINT)
+ROW FORMAT DELIMITED FIELDS TERMINATED BY ',';
+LOAD DATA LOCAL INPATH './Input_data/1/ips.csv'
+INTO TABLE myips;
+
+DROP TABLE myregions;
+CREATE TABLE myregions (ipMin STRING, ipMax STRING, intMin BIGINT,
+  intMax BIGINT, regionCode STRING, regionName STRING)
+ROW FORMAT DELIMITED FIELDS TERMINATED BY ',';
+LOAD DATA LOCAL INPATH './Input_data/1/regions.csv'
+INTO TABLE myregions;
+
+DROP TABLE mytraffic;
+CREATE TABLE mytraffic (url STRING, ipAddress STRING, time TIMESTAMP)
+ROW FORMAT DELIMITED FIELDS TERMINATED BY ',';
+LOAD DATA LOCAL INPATH './Input_data/1/traffic.csv'
+INTO TABLE mytraffic;
