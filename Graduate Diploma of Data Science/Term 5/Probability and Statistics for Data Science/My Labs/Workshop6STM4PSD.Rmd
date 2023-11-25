@@ -1,0 +1,174 @@
+---
+title: "Workshop6STM4PSD"
+output: word_document
+date: "2023-11-24"
+---
+
+#Question 1.
+```{r}
+#a
+#i
+pexp(1,rate=2)
+#ii, X is continuous
+pexp(1,rate=2)
+#iii
+1-pexp(1,rate=2)
+#iv.
+pexp(3,rate=2)-pexp(1,rate=2)
+
+#b
+#i.
+pgamma(2,shape=4,rate=1)
+#ii, X is continuous 
+pgamma(2,shape=4,rate=1)
+#iii
+1-pgamma(2,shape=4,rate=1)
+#iv.
+pgamma(4,shape=4,rate=1)-pgamma(2,shape=4,rate=1)
+
+```
+
+
+#Question 2.
+#Integration in R.
+```{r}
+f.before <- function ( x ) {
+if ( x >= -1 & x <= 2) { (x -1)^2/3 }
+else { 0 }
+}
+f <- Vectorize(f.before)
+integrate (f , lower = -10 , upper =10)
+integrate(f, lower=-Inf, upper=0)
+integrate(f, lower=5, upper=Inf)
+integrate(f, lower=-Inf, upper=Inf)
+
+
+```
+
+
+#Question 3.
+```{r}
+f.before<- function(x){
+  ifelse(x>=1 & x<=1.5,4*x-4,ifelse(x>=1.5 & x<=2,8-4*x,0))
+}
+f <- Vectorize(f.before)
+
+```
+
+
+#Question 4.
+```{r}
+#P(X<=1.4)
+integrate(f,lower= -Inf,upper=1.4)
+#P(X>=1.7)
+integrate(f,lower= 1.7,upper=Inf)
+#P(1.4<=X<=1.6)
+integrate(f,lower= 1.4,upper=1.6)
+#P(X<=1.6)
+integrate(f,lower= -Inf,upper=1.6)
+
+```
+
+
+#Question 5. Compute Mean 
+```{r}
+#Mean 
+used.for.ev <- function ( x ) { x * f ( x ) }
+integrate ( used.for.ev , lower = - Inf , upper = Inf )
+
+
+```
+
+```{r}
+#Mean with integrate with $value
+mean <- integrate (used.for.ev, lower = - Inf , upper = Inf )$value
+mean
+
+
+
+```
+
+
+#Question 6. Using the methods From Question 4.
+#Compute variance
+```{r}
+#Mean 
+expected.value <- function () {
+integrate ( function ( x ) { x * f ( x ) } , lower = - Inf , upper = Inf ) $value
+}
+
+#Variance 
+used.for.variance <- function ( x ) {
+mean <- expected.value()
+( x - mean )^2 * f ( x )
+}
+integrate ( used.for.variance , lower = - Inf , upper = Inf )$value
+
+
+
+```
+
+
+#Question 7.
+```{r}
+my.normal<-function(x,mu,sigma){
+  exp(-((x-mu)/sigma)^2/2)/(sigma*sqrt(2*pi))
+}
+
+```
+
+
+#Question 8.
+#With the integration function
+```{r}
+#Expectation
+for.ev <-  function ( x ) { x * f ( x ) }
+my.ev<-integrate (for.ev , lower = - Inf , upper = Inf )$value
+my.ev
+
+#Variance
+expected.value <- function () {
+integrate( function ( x ) { x * f ( x ) } , lower = - Inf , upper = Inf )$value
+}
+
+used.for.variance <- function ( x ) {
+mean <- expected.value()
+( x - mean )^2 * f ( x )
+}
+my.var<-integrate ( used.for.variance , lower = - Inf , upper = Inf )$value
+my.var
+```
+#Without the integration function
+```{r}
+my.ev<-function(mu,sigma){mu}
+my.ev
+my.var<-function(mu,sigma){sigma^2}
+my.var
+
+```
+#Acutal solution
+```{r}
+#Use the alternative approach, you can also define functions within other functions
+
+my.ev <- function ( mu , sigma ) {
+  temp.function <- function ( x ) { x * my.normal (x , mu , sigma)}
+  integrate ( temp.function, lower = - Inf , upper = Inf ) $value
+}
+
+my.var <- function ( mu , sigma ) {
+  ev <- my.ev( mu , sigma )
+  temp.function <- function ( x ) { (x - ev )^2* my.normal (x , mu, sigma ) }
+  integrate ( temp.function , lower = - Inf , upper = Inf ) $value
+}
+my.ev
+my.var
+
+```
+
+#Question 9.Optional
+```{r}
+
+
+```
+
+
