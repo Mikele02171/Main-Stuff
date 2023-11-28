@@ -11,6 +11,7 @@ IBM Data Science Professional (Completed) <br/>
 IBM Data Analyst Professional (Completed) <br/>
 Machine Learning Specialisation from DeepLearning.Ai and Stanford Online (Completed) <br/>
 Mathematics for Data Science and Machine Learning from DeepLearning.Ai (Completed) <br/>
+CS50’s Introduction to Computer Science HarvardX and EdX (In Progress) <br/>
 Google Advanced Data Analytics Certification (In Progress) <br/>
 Tableau Business Intelligence Analyst Professional Certificate (On Hold) <br/>
 Microsoft 365 Specialisation (On Hold) <br/>
