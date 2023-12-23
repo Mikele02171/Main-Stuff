@@ -13,12 +13,12 @@ Machine Learning Specialisation from DeepLearning.Ai and Stanford Online (Comple
 Mathematics for Data Science and Machine Learning from DeepLearning.Ai (Completed) <br/>
 CS50x Introduction to Computer Science HarvardX and EdX (In Progress) <br/>
 CS50p Introduction to Programming with Python HarvardX and EdX (In Progress) <br/>
-Google Advanced Data Analytics Certification (In Progress) <br/>
 Tableau Business Intelligence Analyst Professional Certificate (On Hold) <br/>
 Microsoft 365 Specialisation (On Hold) <br/>
 
 DataCamp: <br/>
 Data Analyst with Python (Completed) <br/>
+Data Analyst with SQL (In Progress) <br/>
 
 NOTE: Soon adding content <br/>
 
