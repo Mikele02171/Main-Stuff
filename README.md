@@ -1,5 +1,5 @@
 # All of my Educational Content and Materials
-I am currently in my final year in my Master of Data Science degree at La Trobe University to specialise in Data Analytics and Modelling, completed my studies from the University of Melbourne with Bachelor of Science (Specialising Statistics and Stochastic Processes) with additional online Courses. <br/>
+I am currently in my final year in my Master of Data Science degree at La Trobe University to specialise in Big Data and Cloud Computing, completed my studies from the University of Melbourne with Bachelor of Science (Specialising Statistics and Stochastic Processes) with additional online Courses. <br/>
 
 La Trobe University Master of Data Science (2023-Present)  (In Progress): <br/>
 The Univerisity of Melbourne Bachelor of Science (2018-2022) (Completed)<br/>
