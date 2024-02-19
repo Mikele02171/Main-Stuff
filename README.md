@@ -12,12 +12,12 @@ IBM Data Analyst Professional (Completed) <br/>
 Machine Learning Specialisation from DeepLearning.Ai and Stanford Online (Completed) <br/>
 Mathematics for Data Science and Machine Learning from DeepLearning.Ai (Completed) <br/>
 CS50x Introduction to Computer Science HarvardX and EdX (In Progress) <br/>
-Tableau Business Intelligence Analyst Professional Certificate (On Hold) <br/>
 Microsoft 365 Specialisation Coursera (In Progress) <br/>
 
 DataCamp: <br/>
 Data Analyst with Python (Completed) <br/>
 Data Analyst in SQL (Completed) <br/>
+Data Analyst in Tableau (might consider doing the Data Analyst Tableau Specialization) (In Progress) <br/>
 
 NOTE: Soon adding content <br/>
 
