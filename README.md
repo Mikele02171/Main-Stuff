@@ -17,7 +17,7 @@ Microsoft 365 Specialisation Coursera (In Progress) <br/>
 DataCamp: <br/>
 Data Analyst with Python (Completed) <br/>
 Data Analyst in SQL (Completed) <br/>
-Data Analyst in Tableau (might consider doing the Data Analyst Tableau Specialization) (In Progress) <br/>
+Data Analyst in Tableau (might consider doing the Data Analyst Tableau Specialization Examination) (In Progress) <br/>
 
 NOTE: Soon adding content <br/>
 
