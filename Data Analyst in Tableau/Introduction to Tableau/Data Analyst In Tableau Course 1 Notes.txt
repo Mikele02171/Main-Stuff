@@ -1,0 +1,283 @@
+Data Analyst In Tableau
+Course 1 NOTES
+ENSURE YOU FOLLOWING THE INSTRUCTIONS AND VIDEOS BEFORE PROCEEEDING THE QUESTIONS
+
+1. GETTING STARTED WITH TABLEAU 
+What can('t) you do with Tableau?
+You've seen some examples of what is possible with Tableau. You've also learned about the differences between Tableau Public, the free version you'll be using in the exercises, and Tableau Desktop, which requires a paid license.
+
+Of the following scenarios, which one is possible with Tableau Public?
+
+1_1_loading_workbooks.twbx
+In which year did mobile games overtake console games in terms of revenue?
+
+Answer: 2015
+
+1_2_loading_data.twbx
+What data type is the Neighborhood column?
+Text
+
+Dimensions 
+-Usually color coded blue
+-Qualitative, usually discrete
+-Used to group and segment data
+
+Measures
+-Can be aggregated
+-Quantitative, usally continuous 
+-Usually color coded green
+
+1_3_new_york_neighborhood_prices
+What is the average price of a listing In the Brooklyn Heights neighborhood?
+
+367
+
+1_4_segmenting_by_room_type
+How many days, on average, were private rooms occupied in Bayside?
+116.5
+
+1_5_building_your_first_visualization
+How many days, on average, were private rooms occupied in the Bronxdale neighborhood? 
+
+106.3
+
+1_6_improving_your_first_visualization
+Which neighborhood shows 315 days occupancy in 2019 on average for shared rooms?
+
+Bay Ridge
+
+1_7_bringing_it_all_together
+What is the highest average price for shared rooms?
+1250
+
+2. BUILDING AND CUSTOMIZING VISUALIZATIONS
+In order 
+-Extract filters
+-Data Scource filters 
+-Context filters 
+-Dimension filters
+-Measure filters
+
+2_1_sorting_and_excluding_multiple_fields
+Which country had the highest number of cell phones per 100 people
+in 2017?
+
+Maldives
+
+2_2_comparing_g7_countries
+Which G7 countries have consistently had st least a value of 30
+for "Broadband Subscribers per 100 people" from 2009 and onwards?
+
+France, Germany, and Canada.
+
+2_3_filtering_null_values
+Which country has null values for both "Cell Phones per 100 people" and "Broadband Subscribers per 100 people" in 2010?
+
+Marshall Islands
+
+2_4_top_filters_on_tableau
+Which country has the second lowest average Cell Phones per 100 people?
+
+Cuba
+
+Measures only
+-Sum
+-Variance
+-Average
+
+Either 
+-Count
+-Distinct count
+-Minimum
+
+Dimensions only
+-None
+
+2_5_co2_emissions_and_gdp_in_sub_regions
+Based on your scatter plot, which of the following statements is true?
+The Eastern Asia and Caribbean sub regions share very similar values.
+
+2_6_counting_on_gdp_per_capita
+Which sub-region has been in all six GDP per Capita (Grouped) categories?
+
+Western Asia
+
+2_7_std_dev_of_life_expectancy
+Which country has the highest standard deviation on the "Life Expectancy" measure?
+
+Lebanon
+
+Calculated fields: which one is false?
+Calculated fields allow you to create new data from data that already exists in your data source, and can be used to create more robust visualizations. However, not everything is possible using calculated fields. Can you pick the false statement?
+
+Answer:
+You can change the underlying data source with a calculated field.
+
+
+2_8_calculated_field_for_rounding
+How many countries in 1976 had women in the 25-34 age range spending, on average, ten years or more in school?
+
+Answer: 4
+
+2_9_ratio_between_genders
+What is Russia's Men:Women (25-34) ratio for years spent in school?
+(Use at least two decimal points)
+
+Answer: 0.98
+
+2_10_average_across_genders
+What is the highest "25-34" average for a country (rounded by one decimal points)?
+
+Answer: United States 13.4
+
+3. DIGGING DEEPER
+
+Geocoding in Tableau
+Tableau’s robust internal database recognizes several different types of geographic information and automatically generates coordinates.
+
+Which of the following information is not automatically geocoded in Tableau?
+
+Answer: Territories 
+
+3_1_your_first_symbol_map
+How many people were diagnosed with stomach cancer
+In the country with the highest stomach cancer cases?
+
+Answer: 7224000
+
+3_2_more_symbol_map_options
+Was the population growth of the United Kingdom positive or negative?
+
+Answer: Positive
+
+3_3_world_population
+What was the average population growth of the country with the highest population in 2008?
+
+Answer: 0.56 China
+
+Date hierarchies
+Which of the following accurately summarizes the possible drill-downs in Tableau's built-in date hierarchy?
+
+Answer: Year > Quarter > Month > Day
+
+3_4_your_data_by_year
+What was the total number of births in Spain in 2018?
+
+Answer: 367338
+
+3_5_your_data_by_month
+In what month and year were the most babies born in Spain during the 2014-2018 period?
+
+Answer: September 2014
+
+3_6_birth_seasonality 
+
+During which month were the fewest babies born in Chile during 1995-1999?
+
+Answer: February 1999
+
+Know your lines.
+Forecasting
+-Mathematical models are utillzed to capture the data's 
+evolving pattern or seasonality and extrapolate them into the future.
+-Used for predicting the future value of a measure.
+
+Reference Lines 
+-A line showing the average will visually show the difference of each mark in the chart relative to the average.
+-A line on a chart that represents another measure or standard of comparision. 
+
+Trend Lines
+-Easily visualizes the direction a certain measure is heading in.
+
+3_7_reference_lines
+What was the minimum number of montly births in Denmark during the 2012-2017 period?
+
+Answer: 4225
+
+3_9_trend_lines
+Is there an upward or downward trend in the number of female births in Denmark during the 2012-2017 period?
+
+Answer: Upward
+
+3_9_forcasting
+How many female births do we expect in Demark in August 2018?
+
+Answer: 2890
+
+3_10_natality_forecast
+Is the forcasted number of births in Japan during December 2019 higher than the average over the last five years?
+
+Answer: No
+
+4. PRESENTING YOUR DATA
+The art of formatting
+Which of the following make(s) your visualizations easily readable and understandable?
+1:A lot of colors
+2:A graph title
+3:A legend
+
+Answer: 2 and 3 
+
+4_1_dual_axis
+
+How many video games from "Atari" were sold in the release year 2010?
+
+Answer: 1.44
+
+4_2_expanding_dual_axis
+What is the amount of "Puzzle" (genre) video games sold by "Nintendo"
+(publisher) In North America (NA) that were released in 1989 in a million? (Format XX.XX)
+
+Answer: 26.34
+
+4_3_global_sales_breakdown
+Out of the 3 dimensions (name, genre, release year) you dragged to color, which one was the most useful?
+
+Answer: Genre
+
+Worksheet vs. dashboard vs. story
+Let's see if you remember what you have learned about the three main building blocks of Tableau.
+
+Worksheet
+-Contains a single view, used to create graphs, tables and visualizations.
+-Has the Marks card, which can be used to e.g. change the color of a graph.
+
+Dashboard
+-A collection of views from multiple worksheets to present or monitor data, letting you compare a variety of data simultaneously.
+-Allows you to add interactivity, end users can use it to drill down and do their own analysis in multiple sheets. 
+
+Story
+-Sequence of dashboards and worksheets that work together to convey information. 
+-Best suited to tell a narrative or make a business case.
+
+4_4_first_dashboard
+What is the genre of "GTA San Andreas", the top-selling Playstation video game? Is it equal to the most popular Playstation genre?
+
+Answer: Yes, GTA is an "Action" game and this is also the most popular genre.
+
+4_5_dashboard_filters
+Worksheet vs. dashboard vs. story
+Let's see if you remember what you have learned about the three main building blocks of Tableau.
+
+Answer: 35.41
+
+4_6_first_story
+The best-selling "Shooter" on both the "Playstation (PS)" and "Xbox" was "Call of Duty: Black Ops". On which platform did it have the highest sales? "Playstation" or "Xbox"?
+
+Answer: Xbox
+
+What was the name of the best-selling "Playstation 2 (PS2)" game published by "Electronic Arts" in the "Simulation" genre?
+
+Answer: The Sims
+
+
+
+
+
+
+
+
+
+
+
+
