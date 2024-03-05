@@ -1,0 +1,121 @@
+---
+title: "Untitled"
+output: word_document
+date: "2024-03-04"
+---
+
+#R-session
+```{r}
+pi/2
+sin(pi/2)
+x<-sqrt(2)
+x
+
+
+```
+
+#Classes in R
+
+
+
+```{r}
+plot(sunspots)
+```
+
+```{r}
+summary(sunspots)
+
+```
+
+```{r}
+
+X <- sunspots
+X
+```
+
+
+```{r}
+class(sunspots)
+#NOTE: ts stands for time-series
+
+```
+
+
+```{r}
+typeof(sunspots)
+
+```
+
+
+
+```{r}
+plot(sunspots)
+
+```
+
+
+```{r}
+ plot.ts(sunspots)
+
+```
+
+
+
+#Data-frames
+
+```{r}
+class(cars)
+typeof(cars)
+names(cars)
+summary(cars)
+
+```
+
+
+```{r}
+ str(cars)
+
+```
+
+```{r}
+ cars$speed
+
+```
+
+
+```{r}
+ cars[ , 1]
+
+
+```
+
+
+```{r}
+cars[3, 1]
+
+```
+
+
+#Functions 
+```{r}
+1 + 1
+sin(pi/3)
+
+```
+
+
+
+
+#Formula
+```{r}
+class(dist ~ speed)
+
+
+```
+
+
+```{r}
+lm(dist ~ speed, data = cars)
+
+```
+
