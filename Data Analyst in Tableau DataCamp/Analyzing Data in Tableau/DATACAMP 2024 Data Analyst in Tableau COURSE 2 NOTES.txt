@@ -1,0 +1,298 @@
+DATACAMP 
+DATA ANALYST IN TABLEAU (2024)
+COURSE 2: ANALYZING DATA IN TABLEAU
+
+1. PREPARING FOR ANALYSIS
+Non-aggregating numerical dimensions
+When a numeric value is brought into a Tableau workbook, it's placed by default with the Measures in the Data pane. All Measures are aggregated (e.g., sum, average, count) when they are brought onto the canvas. Rather than taking extra steps to overcome this default behavior, we want to move numbers that are used as labels or descriptions to the Dimensions section of the Data pane.
+
+Which of the following is an example of a numeric field that should be moved to the Dimensions section of the Data pane?
+
+Answer: Serial Numbers
+
+1_1_measures 
+
+How many stations hava an average Tripduration (hrs) of more than 25 hours?
+
+Answer: 3
+
+1_2_highlighter
+Using the Highlighter you added, how many trips started at Adler Planetarium?
+
+Answer: 6120
+
+
+1_3_dateddiff
+What is the smallest average trip duration (in minutes) held by a station?
+
+Answer: 3.0
+
+1_4_week
+Which station has the largest number of weekend trips?
+Refer to: Count of Trips
+Answer: Street Dr & Grand Ave
+
+1_5_multiplerows
+Which statement is true?
+
+More trips begin on the weekday than weekend at the Michigan Ave stations.
+
+Discrete or continuous time analysis?
+When applying dates into a visualization, Tableau offers the ability to show them as Discrete or Continuous.
+
+Discrete
+-All months of serveral years combined into single iterations of the months for trend analysis
+-A daily pattern of customer activity reflected with one axis showing the hours of the day
+
+
+Continuous 
+-Data shown as an unbroken time series
+-Year to date sales reflected in a timeline showing marked on the axis by week
+
+1_6_trends
+Which hour has the lowest total number of rides between 7am and 7pm?
+
+Answer: 10am
+
+1_7_weekly
+What percent of riders are customers on Thursdays?
+
+Answer: 12.13
+
+1_8_weekday
+What percent of Tuesday rides are by female users in the morning? (round to two decimal points)
+
+Answer: 6.88
+
+1_9_bubble
+Hover around the points in the bubble chart. What does each individual bubble represent?
+
+Answer: 
+The number of rides taken by either male or female riders on a specific date and hour.
+
+1_10_promo
+Which days and time blocks should the Two by Two Discount run for customers?
+Answer: Wednesday and Thursday: Morning and Evening rides
+
+
+2. EXPLORING VISUALIZATIONS 
+Missing information
+When exploring data and preparing it for analysis, the diversity of real-world items, such as customers, may result in missing content for certain data fields.
+
+If the cause of the missing information is understood and that item is a significant part of the overall population, what is a reasonable strategy for conveying the meaning in a visualization?
+
+True
+-Edit the null label to provide the known information
+
+False
+-Exclude the missing values from the visualization regardless of what is known
+-Leave null in place as a mystery for readers of the analysis
+
+2_1_users
+Who is the most consistent user of Divvy Bikes over the six months of data provided (gender and user type)?
+
+Answer: Male Subscriber
+
+2_2_filters
+How many Divvy Day Pass Riders started and ended at Chicago's Adler Planetarium during the month of June 2019?
+
+Answer: 155
+
+2_3_kpi
+Which were there more of, Subscribers or Customers, who made the trip from "63rd St Beach" to "Burnham Harbor"?
+
+Answer: Subscribers 
+
+2_4_dashboard 
+What number shows up in the KPI chart when you select the bar related to
+female Subscribers In January 2019?
+
+Answer: 18550
+
+2_5_enhance
+How many total rides that started and ended at Adler Planetarium occurred during the morning on a weekend?
+NOTE: Referring to Female Customers 
+Answer: 36
+
+Of the two user types, Customer and Subscriber, which type of user did the majority of these rides?
+
+Answer: Customer
+
+Choosing the right chart type
+Choosing a chart type is an important part of communicating insights. The number and type of elements being shown on a visualization determine the best selection. For example, scatterplots need a numeric value on each axis to be created.
+
+Let's consider a single field in a dataset with many different, continuous, values. What is the preferred chart type to reveal the distribution of that field?
+
+Answer: Histogram
+
+2_6_histogram
+How many trips were taken by 27-year-old Subscribers?
+
+Answer: 
+71853
+
+2_7_line
+What's the most common age of Divvy Customers that make a trip at night?
+
+Answer: 27
+
+2_8_bins
+How many age bins have more than 250K rides in total?
+
+Answer: 2
+
+2_9_daypassusers
+What is the age interval that far exceeds all the rest for Day Pass Users?
+
+Answer: 24-25
+
+3. MAPPING ANALYSIS
+3_1_concentration
+As time gets closer to the summer season, does activity on the shoreline increase or decrease?
+
+Answer: increase
+
+3_2_density
+As time goes by, does density increase close to the shores or away from the shores?
+
+Answer: Density tends to increase for stations closer to the shores.
+
+3_3_split
+On June 30, 2019, which was the busiest station?
+
+NOTE: Referring to the number of trips
+Answer: Street Dr & Grand Ave
+
+3_4_enhance
+
+What color is the busiest station on May 5, 2019?
+
+Answer: Red 
+(Streeter Dr & Grand Ave)
+
+
+3_5_dual_axis
+As time progresses towards sunnier days, which station regularly seems at risk to be at understocked (not enough bikes available for demand) during the busiest time blocks?
+
+Answer: Streeter Dr & Grand Ave
+
+What goes where?
+As you just saw, Tableau provides built-in formulas called Quick Table Calculations. Let's make sure you know where to find the tools you need. If you want to accomplish one of the following actions, which bucket contains the method allowing you to do so?
+
+Marks Cards
+-Showing customer type in different colors
+-Changing the chart type for the worksheet
+-Showing the total of sales at the end of a barplot
+
+
+Quick Table Calculations 
+-Adding a percent of total to the visualization 
+-Showing the running total of sales
+-Revealing the stations rank
+
+
+Pages or Filter Services
+-Filtering by gender
+-Using dates to put data in motion
+
+
+3_6_quick
+How many stations show rank 608?
+
+Answer: 5 
+(NOTE: The station sizes are very small, must have a keen eye)
+
+3_7_tooltips
+
+What percentage of customers use the Streeter Dr and Grand Ave station?
+Answer: 75.73
+
+3_8_KPIs
+How many docks does the 63rd St Beach station have?
+
+Answer: 15
+
+3_9_donuts
+How many docks does the 63rd St Beach station have?
+
+Answer: 1434
+
+
+3_10_inner_circle
+Which of the following statements is true?
+
+Answer: Most trips from 63rd St Beach station happened in the afternoon, and 454 trips originated from this station.
+
+
+4. GROUPS, SETS, AND PARAMETERS
+4_1_lasso
+What is the order of the regions from most to least amount of trips?
+
+Answer: City Center, North, South
+
+4_2_editgroups
+After your revisions, how many trips were taken in the City Center?
+
+Answer: 988165
+
+4_3_seasons
+Based on the resulting viz. which of the statements is true?
+
+Answer: "Clintion St & Washington Blvd" is the most popular station in Spring and Winter. "Streeter Dr & Grand Ave" Is the most popular station in Summer. 
+
+4_4_ranking
+Filtering for only spring and winter, how many trips occurred at the fourth ranking station?
+
+Answer: 7896
+
+4_5_embed
+How does "Theater on the Lake" rank? 
+
+Answer: 14
+
+How many trips occurred there in Winter?
+
+Answer: 366
+
+
+Parameter characteristics
+Parameters provide new opportunities in Tableau analysis. Before you learn how to create them, let's check your understanding.
+
+Which of the following is NOT TRUE about parameters?
+
+Parameters are members of the source data
+
+4_6_replace
+Toggle between different values for the "Top N Stations" parameter. Which Station is the 12th most visited station?
+
+Answer: Michigan Ave & Oak St
+
+4_7_color
+Set "Top N Station" to be at 310. Which is the 310th most visited station?
+
+Answer: Walsh Park
+
+4_8_set
+
+Out of these top 15, which station achieves almost a 50/50 ratio of usage between "Windiest" and "Not as windy" Months?
+
+Answer: Clinton St & Madison St
+
+4_9_windiness
+Based on the resulting visualization, which of the statements is true?
+
+Answer: The months in the set that are labelled "Windiest" also had the highest average wind speed.
+
+4_10_temperature
+Which week had the lowest number of Divvy trips and the lowest temperature (DD/MM/YYYY)?
+
+Answer: 27/01/2019
+
+
+
+
+
+
+
+
+
