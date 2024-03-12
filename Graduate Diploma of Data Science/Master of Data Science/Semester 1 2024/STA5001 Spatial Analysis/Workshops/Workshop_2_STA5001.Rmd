@@ -1,0 +1,188 @@
+---
+title: "Untitled"
+output: word_document
+date: "2024-03-12"
+---
+
+
+#Slide 4
+```{r}
+library(sp)
+getClass("Spatial")
+
+```
+
+#Slide 5
+```{r}
+getClass("CRS")
+
+```
+
+#Slide 6
+
+```{r}
+m <- matrix(c(0,0,1,1),ncol = 2,dimnames = list(NULL,c("min","max")))
+crs <- CRS(projargs = as.character(NA))
+crs
+
+```
+
+
+```{r}
+S <- Spatial(bbox = m, proj4string = crs)
+S
+
+```
+
+
+
+#Slide 7
+#You get the message ”invalid bbox: max < min”.
+```{r}
+ Spatial(matrix(c(20, 45, 360, 15), ncol=2, dimnames=list(NULL, c("min", "max"))),proj4string=CRS("+proj=longlat +datum=WGS84"))
+```
+
+
+#Slide 8. 
+#SpatialPoints 
+
+```{r}
+#Understand the directory first before proceeding
+CRAN_df <- read.table("CRAN051001a.txt", header = TRUE)
+CRAN_mat <- cbind(CRAN_df$long, CRAN_df$lat)
+row.names(CRAN_mat) <- 1:nrow(CRAN_mat)
+str(CRAN_mat)
+```
+
+#Slide 9
+```{r}
+
+getClass("SpatialPoints")
+llCRS <- CRS("+proj=longlat +ellps=WGS84")
+
+```
+```{r}
+CRAN_sp <- SpatialPoints(CRAN_mat, proj4string = llCRS)
+summary(CRAN_sp)
+
+```
+
+#Slide 10. Methods
+```{r}
+bbox(CRAN_sp)
+
+```
+
+
+
+```{r}
+proj4string(CRAN_sp)
+proj4string(CRAN_sp) <- CRS(as.character(NA))
+proj4string(CRAN_sp)
+proj4string(CRAN_sp) <- llCRS
+
+```
+
+
+#Slide 11
+```{r}
+brazil <- which(CRAN_df$loc == "Brazil")
+brazil
+
+
+```
+
+
+
+
+```{r}
+coordinates(CRAN_sp)[brazil, ]
+```
+
+#Slide 12
+
+
+```{r}
+ summary(CRAN_sp[brazil, ])
+```
+
+
+```{r}
+ print(CRAN_sp[brazil,])
+
+```
+
+```{r}
+#Install ggplot and adding titles for each of the plots
+par(mfrow = c(2,2))
+plot(CRAN_sp) + title("Plot for CRAN_sp")
+plot(CRAN_sp[brazil,]) + title("Plot for CRAN_sp for Basil")
+
+#You can try for other countries too.
+```
+
+#Slide 14. Data Frames for Spartial Point Data
+
+
+```{r}
+str(row.names(CRAN_df))
+```
+#Slide 15. 
+
+```{r}
+CRAN_spdf1 <- SpatialPointsDataFrame(CRAN_mat, CRAN_df,proj4string = llCRS, match.ID = TRUE)
+CRAN_spdf1[4, ]
+
+```
+
+
+#Slide 16
+
+
+```{r}
+ getClass("SpatialPointsDataFrame")
+
+```
+
+
+
+#Slide 19. To load data, run the following the commands
+```{r}
+library(lattice)
+data(meuse.grid)
+
+```
+
+
+
+```{r}
+#Define the coordinates for x and y, NOT MENTIONED IN THE SLIDES
+x = CRAN_df$long
+y = CRAN_df$lat
+coordinates(meuse.grid) <- ~ x + y
+gridded(meuse.grid) = TRUE
+spplot(meuse.grid)
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
