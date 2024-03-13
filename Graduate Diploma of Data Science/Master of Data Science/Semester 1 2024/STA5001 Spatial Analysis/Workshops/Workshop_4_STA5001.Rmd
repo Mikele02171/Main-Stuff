@@ -1,0 +1,134 @@
+---
+title: "Workshop4_STA5001"
+output: word_document
+date: "2024-03-13"
+---
+
+#TOPIC 2: Exploratory spatial data analysis
+
+#Slide 2.
+#geoR
+```{r}
+library(geoR)
+data(s100)
+
+#A quick summary of the data can be obtained typing 
+summary(s100)
+
+```
+
+#Slide 3
+
+
+```{r}
+plot(s100)
+
+```
+
+#Slide 4 and 5.
+
+```{r}
+par(mfrow = c(2,2))
+points(s100, xlab = "Coord X", ylab = "Coord Y")
+points(s100, xlab = "Coord X", ylab = "Coord Y",pt.divide = "rank.prop")
+points(s100, xlab = "Coord X", ylab = "Coord Y",cex.max = 1.7, col = gray(seq(1, 0.1, l=100)),pt.divide = "equal")
+points(s100, pt.divide = "quintile", xlab = "Coord X",ylab = "Coord Y")
+
+
+```
+
+#Slide 6. Basic analysis with sp
+```{r}
+#Use the MEUSE data
+#NOTE: Must run strictly in this order to run the next cell.
+library(lattice)
+library(sp)
+data(meuse)
+?meuse
+
+```
+
+
+
+#Slide 8.
+
+```{r}
+coordinates(meuse) <- c("x", "y")
+
+spplot(meuse, "zinc", do.log = T)
+```
+
+
+```{r}
+
+bubble(meuse, "zinc", do.log = T, key.space = "bottom")
+```
+
+
+#Slide 10. 
+```{r}
+
+xyplot(log(zinc) ~ sqrt(dist), as.data.frame(meuse))
+
+```
+
+#Slide 11. 
+```{r}
+zn.lm <- lm(log(zinc) ~ sqrt(dist), meuse)
+meuse$fitted.s <- predict(zn.lm,meuse)-mean(predict(zn.lm,meuse))
+meuse$residuals <- residuals(zn.lm)
+spplot(meuse, c("fitted.s", "residuals"))
+
+
+
+```
+
+
+#Slide 13. Fitting spatial trends
+```{r}
+ fit <- lm(log(zinc) ~I(x^2)+I(y^2)+I(x*y)+x+y,meuse)
+ fit
+
+
+```
+
+
+#Slide 14.
+#To plot maps with fitted values and residuals, use the commands:
+
+```{r}
+
+ meuse$fitted.s <- predict(fit,meuse) - mean(predict(fit,meuse))
+ meuse$residuals <- residuals(fit)
+ spplot(meuse, c("fitted.s", "residuals"))
+
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
