@@ -1,0 +1,52 @@
+
+#############################
+# GRASS and R
+#############################
+
+g.list rast
+g.list vect
+r.info elevation
+v.info streams
+v.info -c streams
+
+g.region rast=elevation -p
+nviz elevation vect=streams,roadsmajor
+
+g.region res=1
+r.in.gdal -o D:/google.jpg out=google
+g.region rast=google.blue@PERMANENT
+
+g.region vect=precip_30ynormals res=1000 -ap
+Rgui
+C:\Program Files\R\R-4.1.3\bin\x64\Rgui
+
+library(rgrass7)
+library(rgdal)
+use_sp()
+precip30n <- readVECT("precip_30ynormals", ignore.stderr=TRUE)
+nc_state <- readVECT("nc_state", ignore.stderr=TRUE)
+
+class(precip30n)
+summary(precip30n)
+
+plot(nc_state, axes=TRUE)
+plot(precip30n, add=TRUE, lwd=2, col="brown")
+
+ls()
+names(precip30n)
+library(RColorBrewer)
+spplot(precip30n, c("jan", "aug"), col.regions=brewer.pal(5,"Spectral"))
+spplot(precip30n, "annual", col.regions=brewer.pal(5,"Spectral"))
+
+library(sp)
+CRAN_df <- read.table("D:/CRAN051001a.txt", header = TRUE)
+CRAN_mat <- cbind(CRAN_df$long, CRAN_df$lat)
+row.names(CRAN_mat) <- 1:nrow(CRAN_mat)
+str(CRAN_mat)
+llCRS <- CRS("+proj=longlat +ellps=WGS84")
+CRAN_sp <- SpatialPoints(CRAN_mat, proj4string = llCRS)
+summary(CRAN_sp)
+CRAN_spdf1 <- SpatialPointsDataFrame(CRAN_mat, CRAN_df,proj4string = llCRS, match.ID = TRUE)
+?readVECT
+writeVECT(CRAN_spdf1,"newcran", v.in.ogr_flags=c("o", "overwrite"), ignore.stderr=TRUE)
+execGRASS("v.info", parameters=list(map="newcran"))
