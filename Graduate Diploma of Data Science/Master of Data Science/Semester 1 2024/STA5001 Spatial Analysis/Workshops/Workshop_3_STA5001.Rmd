@@ -1,0 +1,290 @@
+---
+title: "STA5001 Workshop 3"
+output: word_document
+date: "2024-03-05"
+---
+#TOPIC 1: SPATIAL objects in package sf
+#Lecture 1. Slide 4
+```{r}
+library(sf)
+p1 <- st_multipoint(matrix(c(0,1/2,0,1/2),ncol=2))
+p2 <- st_multipoint(matrix(c(2/3,1,2/3,1),ncol=2))
+
+# Combine them into a simple feature collection:
+
+sfc <- st_sfc(p1, p2)
+str(sfc)
+
+```
+
+#Lecture 1. Slide 5
+
+
+
+```{r}
+d_sf <- st_sf(sfc, attribute = 1:2)
+str(d_sf)
+
+```
+
+#Lecture 1.Slide 5
+
+
+
+```{r}
+plot(d_sf)
+
+```
+#Lecture 1. Slide 6
+
+```{r}
+outer <- matrix(c(0,0,10,0,10,10,0,10,0,0),ncol=2,byrow=TRUE)
+hole1 <- matrix(c(1,1,1,2,2,2,2,1,1,1),ncol=2, byrow=TRUE)
+hole2 <- matrix(c(5,5,5,6,6,6,6,5,5,5),ncol=2, byrow=TRUE)
+
+#Then we combine them and transform into the st polygon object. 
+pts <- list(outer,hole1,hole2)
+pl <-st_polygon(pts)
+plot(pl,col="grey",border="blue")
+
+```
+#Lecture 1. Slide 7.
+```{r}
+#NOTE: Ensure you follow the directory correctly
+CRAN_df <- read.table("CRAN051001a.txt", header = TRUE)
+str(CRAN_df)
+
+
+```
+
+#Lecture 1. Slide 8.
+```{r}
+CRAN_sf <- st_as_sf(CRAN_df, coords = c("long", "lat"))
+str(CRAN_sf)
+
+```
+#We assign the WGS84 projection, which has the EPSG code 4326:
+```{r}
+st_crs(CRAN_sf)
+st_crs(CRAN_sf) <- 4326
+st_crs(CRAN_sf)
+
+```
+
+#Lecture 1. Slide 9
+#Plotting sf objects.
+```{r}
+plot(st_geometry(CRAN_sf))
+```
+
+#Lecture 1. Slide 10
+```{r}
+CRAN_sf_Brazil = CRAN_sf[CRAN_sf$loc == "Brazil", ]
+
+#MUST add existing plot from Slide 9
+plot(st_geometry(CRAN_sf))
+plot(st_geometry(CRAN_sf_Brazil),add=T,col="red",pch = 1)
+```
+#Lecture 1. Slide 11.
+```{r}
+plot(CRAN_sf)
+```
+
+
+
+#Lecture 1. Slide 12
+```{r}
+plot((CRAN_sf)[4])
+```
+
+#Lecture 1. Slide 13
+#USING THE PACKAGE MAPVIEW
+```{r}
+#NOTE: Ensure to re-install 
+library(mapview)
+mapview(CRAN_sf, col.regions = "red", fgb = FALSE)
+
+```
+
+
+#Lecture 1. Slide 14 
+#Conversion between sf and sp
+```{r}
+library(sp)
+library(lattice)
+
+#install stars to get the st_as_sf() to work.
+library(stars)
+data(meuse.grid)
+coordinates(meuse.grid) <- ~x + y
+m.sf <- st_as_sf(meuse.grid)
+str(m.sf)
+
+```
+#Lecture 1. Slide 15
+```{r}
+plot(m.sf)
+
+```
+#Lecture 1. Slide 16
+```{r}
+CRAN_sp <- as(CRAN_sf, "Spatial")
+str(CRAN_sp)
+
+
+```
+
+#TOPIC 2: USING GEOGRAPHIC MAPS IN R.
+#lecture 2. Slide 2.
+#Geographic maps in R.
+```{r}
+library(maps)
+map("state", interior = FALSE)
+map("state", boundary = FALSE, col = "gray", add = TRUE)
+
+
+```
+
+#Lecture 2. Slide 4
+#GADM is a spatial database of the location of the world’s administrative areas (or administrative boundaries) for use in GIS and similar software.
+```{r}
+library(sp)
+con<-gzcon(url("http://biogeo.ucdavis.edu/data/gadm2.8/rds/AUS_adm1.rds"))
+data <- readRDS(con)
+
+```
+
+#Lecture 2. Slide 5
+```{r}
+library(RColorBrewer)
+col <- rainbow(length(levels(data$NAME_1)))
+data$NAME_1 = as.factor(data$NAME_1)
+spplot(data, "NAME_1", col.regions=col,main="Australia Regions", colorkey = FALSE, lwd=.4)
+col <- rainbow(length(levels(data$NAME_1)))
+spplot(data, "NAME_1", col.regions=col,main="Australia Regions", colorkey = FALSE, lwd=.4)
+
+```
+
+```{r}
+#Ensure you know where to keep the file in your directory
+
+#Get the gadm41_AUS.gpkg" from this site.
+#https://geodata.ucdavis.edu/gadm/gadm4.1/gpkg/gadm41_AUS.gpkg
+
+data <- st_read("gadm41_AUS.gpkg", layer="ADM_ADM_1")
+
+```
+
+
+```{r}
+str(data)
+
+```
+
+#Lecture 2. Slide 9
+#Plotting sp/sf objects using world map
+#using world cities csv.
+```{r}
+#Ensure you know where to keep the file in your directory
+cities <- read.csv("worldcities.csv", header = TRUE)
+str(cities)
+
+```
+
+
+#Lecture 2.Slide 10
+```{r}
+
+cities <-cities[complete.cases(cities), ]
+sum(cities$population > 10000000)
+
+```
+
+```{r}
+
+mcities <- cities[cities$population > 10000000, ]
+mcities <- mcities[, c("lng","lat", "population")]
+mcities
+
+```
+
+
+
+#Lecture 2. Slide 11
+```{r}
+mcities$population <- mcities$population/10000000
+mcities_coor <- cbind(mcities$lng, mcities$lat)
+row.names(mcities_coor) <- 1:nrow(mcities_coor)
+row.names(mcities) <- 1:nrow(mcities)
+str(mcities_coor)
+llCRS <- CRS("+proj=longlat +ellps=WGS84")
+mcities_sp <- SpatialPoints(mcities_coor, proj4string = llCRS)
+summary(mcities_sp)
+
+```
+#Lecture 2. Slide 12
+```{r}
+mcities_spdf <- SpatialPointsDataFrame(mcities_coor,mcities,proj4string = llCRS, match.ID = TRUE)
+summary(mcities_spdf)
+
+```
+```{r}
+
+#OPTIONAL 
+#library(rgrass)
+#library(terra)
+#library(sf)
+#library(sp)
+
+
+#writeVECT(mcities_spdf,"GRASSmcities", v.in.ogr_flags=c("o", "overwrite"), ignore.stderr=TRUE)
+
+
+```
+
+#Lecture 2. Slide 13
+```{r}
+library(maps)
+```
+
+
+```{r}
+map("world", interior = FALSE)
+map("world", boundary = FALSE, col = "gray", add = TRUE)
+plot(mcities_spdf, pch = 16, col = "red", cex = (mcities_spdf$population), add = TRUE)
+
+```
+
+
+#Lecture 2. Slide 14
+```{r}
+mcities_sf <- st_as_sf(mcities_spdf)
+str(mcities_sf)
+```
+
+
+```{r}
+mapview(mcities_sf, col.regions = "red", cex = "population",fgb = FALSE)
+
+```
+
+
+#Lecture 2. Lecture 16
+```{r}
+
+lnstr_sfg2 <- st_linestring(as.matrix(mcities_sf[1:6,c("lng", "lat"), drop = TRUE]))
+lnstr_sfc <- st_sfc(lnstr_sfg2, crs = 4326)
+mapview(lnstr_sfc, alpha.regions = 0, color = "red",lwd = 2, fgb = FALSE)
+
+
+```
+
+
+
+
+
+
+
+
+
+
