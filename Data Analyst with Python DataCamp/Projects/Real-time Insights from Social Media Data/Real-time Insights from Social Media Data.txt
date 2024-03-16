@@ -1,0 +1,118 @@
+Task 1: Instructions
+Load and inspect the data.
+
+Import the json module.
+Open the JSON file using the open() method with 'datasets/WWTrends.json' as input parameter -> call the read() method on the opened file to read its content -> pass the read JSON string to the json.loads() method as input parameter for decoding it -> store the decoded output in WW_trends.
+Repeat the same steps for 'datasets/USTrends.json' and store the output in US_trends.
+Inspect WW_trends and US_trends using the print() method.
+Warning: some of the tweets in the Twitter datasets contain explicit language.
+
+
+
+Good to know
+This Project provides the opportunity to apply the skills covered in DataCamp's Analyzing Social Media Data in Python course.
+If you are familiar with Python and basics of Pandas, you should still be able to complete this Project. It is recommended to take the course as a follow-up for complementary skills like data collection.
+You might find Python's official JSON documentation helpful as well. Also, HINTS are always there!
+
+Helpful links specific to this Task:
+
+Python Open
+Python JSON
+If you experience odd behavior you can reset the Project by clicking the circular arrow in the bottom-right corner of the screen.
+Resetting the Project will discard all code you have written so be sure to save it offline first.
+
+
+Task 2: Instructions
+Pretty-print the output.
+
+Pass the WW_trends object to the json.dumps() method, with an additional input parameter indent set to 1. print the output.
+Repeat the same for US_trends.
+json.dumps() formats data as a JSON string. If you pass 'indent' to the method (a positive integer), then all the elements in the JSON array are printed with that indent level. This makes it easy to read the results — pretty-printed.
+
+
+
+Task 3: Instructions
+Extract the names of common trends.
+
+Extract the name field, trend['name'], from the list of trends in WW_trends and US_trends using list comprehension(*). 
+You can just use WW_trends[0]['trends']and US_trends[0]['trends'] for iterations to get the names because the trends objects are lists with only one element.
+Call the intersection() method on world_trends with us_trends as input parameter to get the common items between the two; store the output in the variable called common_trends.
+(*)List comprehension refresher: [ expression for item in list ]
+
+Helpful links:
+
+sets
+lists
+
+
+
+Task 4: Instructions
+Load and inspect the data.
+
+Just like in Task 1, use theopen() method with 'datasets/WeLoveTheEarth.json' as input parameter to open the file -> call the read() method on the opened file to read its content -> pass the read JSON string to the json.loads() method as input parameter for decoding it -> store the decoded output in tweets.
+
+
+
+Task 5: Instructions
+Extract texts, usernames and hashtags from the tweets.
+
+For each tweet in the tweets object , extract its text field, tweet['text'], using list comprehension. Store all the ouput texts in a list called texts.
+For each tweet in tweets, create an inner loop to iterate through usermentions, tweet['entities']['user_mentions']. From each user_mention extract its screenname field, user_mention['screen_name']. Store the output in names.
+For each tweet in tweets, create an inner loop to iterate through hashtags, tweet['entities']['hashtags']. From each hashtag extract its text field, hashtag['text']. Store the output in hashtags.
+
+
+
+Task 6: Instructions
+Creating frequency distribution.
+
+Import the Counter module from collections.
+Call the Counter() method with item from the for loop as input parameter. (This allows you to keep track of how many times same values are added.)
+Helpful links:
+
+Counter documentation
+
+
+Task 7: Instructions
+Extracting data for retweets.
+
+Get 'retweet_count', 'retweeted_status\favorite_count','retweeted_status\user\followers_count','retweeted_status\user\screen_name', and 'text' fields for each tweet from the given for loop, respecting this order.
+
+
+
+Task 8: Instructions
+Creating a table with insights.
+
+Create a DataFrame using the pd.DataFrame() constructor by passing retweets object as input. Also set the additional input parameter columns to ['Retweets','Favorites', 'Followers', 'ScreenName', 'Text'].
+Call groupby() on the resulting DataFrame with ['ScreenName','Text','Followers'] as input parameter.
+Then call sum() on the results of the groupby to compute an aggregate of the numerical columns.
+Finally call sort_values() with input paramters by set to ['Followers'] and ascending to False to sort the table by decreasing number of followers.
+Helpful links:
+
+DataFrame from a list (Stack Overflow)
+groupby()
+sort_values()
+
+
+Task 9: Instructions
+Extracting languages and plotting their frequency distribution.
+
+For each tweet object get its language field, tweet['lang'], and append it to the list of languages, tweets_languages using the append() method.
+Call matplotlib's plt.hist() method with tweets_languages as input parameter to plot the frequency distribution of languages.
+Helpful links:
+
+append() documentation
+How to plot a histogram using Matplotlib in Python with a list of data? (Stack Overflow answer)
+
+
+Task 10: Instructions
+Congratulations on completing the project!
+
+Twitter data is now all yours to explore… Just remember that "Practice makes perfect!"
+
+Helpful links:
+Twitter API Reference Index
+
+Twitter Developers Docs
+
+
+
