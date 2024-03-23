@@ -1,0 +1,267 @@
+---
+title: "Assignment_1_STA5001_Code"
+output:
+  word_document: default
+  pdf_document: default
+  html_document:
+    df_print: paged
+date: "2024-03-21"
+---
+#If you want to knit into word (then export into pdf from word)
+#Ensure you install packages: webshot and webshot2
+#Part a 
+#Number of observations and variables
+```{r}
+taxi_df <- read.csv("C:/Users/Michael Le/Desktop/Taxi_Data/taxi.csv", header = TRUE)
+
+#Check any null values
+sum(is.na(taxi_df))
+
+
+```
+
+#There are 625134 observations and 9 variables for the taxi dataframe.Assuming the data is cleaned
+
+#Check the head of the taxi dataframe
+```{r}
+head(taxi_df)
+
+```
+
+
+#Part b 
+#Compute values and add to the data frame taxi_df the variable dist with the Euclidean distance between pickup and dropoff locations (use the longitude as the x coordinates and the latitude as the y coordinate).
+
+```{r}
+taxi_df$dist <-  sqrt((taxi_df$dropoff_latitude-taxi_df$pickup_latitude)^2 + (taxi_df$dropoff_longitude -taxi_df$pickup_longitude)^2)
+
+head(taxi_df)
+
+```
+
+
+#What is the minimum distance between pickup and dropoff locations in this dataset(round and enter the answer with 3 decimal places)? What is the number of trips that have this minimum distance? 
+
+```{r}
+sprintf("%.3f",min(taxi_df$dist))
+
+```
+
+```{r}
+library(dplyr)
+library(tidyr)
+taxi_df %>% count(dist == min(taxi_df$dist))
+#There are 2475 trips that has the minimum distance.
+
+```
+
+625134
+
+#Part c
+# Which first row in the data frame taxi_df corresponds to this distance?
+
+
+
+```{r}
+#To extract the first row that corresponds the minimum distance.
+taxi_df[which(taxi_df$dist==0, arr.ind=TRUE)[1],]
+```
+
+#Part d
+#Use the library lubridate. The date 01/01/2016 can be entered in R by using the command ymd(20160101). Subset the data frame taxi_df by selecting trips with pickup_datetime which is smaller or equal to ymd(20160101).
+
+
+```{r}
+#First we need to get the lubricate package in this order.
+library(tidyverse)
+library(timechange)
+library(lubridate)
+library(readr)
+
+newdf <- taxi_df[taxi_df$pickup_datetime <= ymd(20160101),]
+head(newdf)
+
+```
+
+```{r}
+newdf$dist <-  sqrt((newdf $dropoff_latitude-newdf $pickup_latitude)^2 + (newdf$dropoff_longitude -newdf $pickup_longitude)^2)
+
+
+```
+
+#What is the maximum distance between pickup and dropoff locations in this subset (round and enter the answer with 3 decimal places)?What is the number of trips in this subset that have this maximum distance?
+```{r}
+#The maximum distance in this subset.
+sprintf("%.3f",max(newdf$dist))
+
+```
+
+#What is the number of trips in this subset that have this maximum distance?
+```{r}
+#There is only one trip occurring in this subset.
+newdf %>% count(dist == max(newdf$dist))
+
+```
+
+
+
+#Part e
+#Subset the data frame taxi_df and select trips which dropoff longitudes are greater than  -74 and dropoff latitudes are greater than 41. How many such trips are in the data frame? (0.5  mark)
+```{r}
+taxi_df <- read.csv("C:/Users/Michael Le/Desktop/Taxi_Data/taxi.csv", header = TRUE)
+newdf_2<- taxi_df[taxi_df$dropoff_longitude > -74 & taxi_df$dropoff_latitude > 41,]
+head(newdf_2)
+
+
+```
+#There are 94 trips in this dataframe.
+
+#Part f
+#Consider only dropoff longitudes and dropoff latitudes of the subset trips as the spatial coordinates and create a SpatialPoints object.
+
+#  What is the minimum dropoff longitude coordinate in the bounding box (round and enter the answer with 3 decimal places)? What is the minimum dropoff latitude coordinate in the bounding box (round and enter the answer with 3 decimal places)? (1 mark)
+
+```{r}
+newdf_3 <- newdf_2[,c('dropoff_longitude','dropoff_latitude')]
+library(sp)
+#The minimum longitude
+sprintf("%.3f",min(newdf_3$dropoff_longitude))
+
+#The minimum latitude
+sprintf("%.3f",min(newdf_3$dropoff_latitude))
+
+```
+
+
+
+#Part g
+
+# Plot dropoff locations of the subset trips as 2D points. How many points are far away from the group with the majority of points? 
+
+```{r}
+
+library(sp)
+points <- SpatialPoints(newdf_3[,c("dropoff_longitude","dropoff_latitude")])
+str(points)
+```
+
+
+
+```{r}
+#It seems there are 5 points away the group with the majority of points.
+plot(points,pch=19)
+```
+
+#Part hi
+#Scale the variable dist in the data frame taxi_df by multiplying it by 20. Save it with the same name dist.  Create a SpatialPointsDataFrame object using proj4string CRS("+proj=longlat +ellps=WGS84"), the pickup locations and the updated data frame taxi_df.
+
+#Produce spplot of the trips from 101 to 200 for variables "vendor_id","passenger_count", and "dist". For the first interval (range of smallest values) in the plot legend, what are its (round and enter the answer with 3 decimal places) lower and upper bounds (1 mark)
+
+```{r}
+
+#Refer from the additional workshop 
+library(sp)
+taxi_df <- read.csv("C:/Users/Michael Le/Desktop/Taxi_Data/taxi.csv", header = TRUE)
+taxi_df$dist <-  sqrt((taxi_df$dropoff_latitude-taxi_df$pickup_latitude)^2 + (taxi_df$dropoff_longitude -taxi_df$pickup_longitude)^2)
+
+head(taxi_df)
+
+```
+
+```{r}
+#Using the coordinates
+taxi_df1 <- cbind(taxi_df$pickup_latitude,taxi_df$pickup_longitude)
+
+
+```
+
+
+
+```{r}
+
+str(taxi_df1)
+llCRS <- CRS("+proj=longlat +ellps=WGS84")
+df <- SpatialPoints(taxi_df1, proj4string=llCRS)
+summary(df)
+bbox(df)
+
+
+```
+
+```{r}
+l2lon <- which(df$coords.x2 %in% sort(df$coords.x2)[1:2])
+coordinates(df)[l2lon,]
+
+```
+
+```{r}
+
+df1 <- SpatialPointsDataFrame(taxi_df1, taxi_df, proj4string=llCRS, match.ID=TRUE)
+str(df1)
+summary(df1)
+```
+
+
+```{r}
+library(lattice)
+
+proj4string(df1) <- CRS(as.character(NA))
+spplot(df1[101:200,c("vendor_id","passenger_count","dist")], "dist")
+
+```
+### For the first interval (range of smallest values) in the plot legend, the lower and upper bounds are 0 and 0.037 respectively. 
+
+
+
+#Part hii
+#Convert the SpatialPointsDataFrame object into an sf object and use the mapview command to plot the locations of the trips from 101 to 200 on the New York map. Use the option cex = "dist". In the obtained plot how many locations are shown at the bottom right part of the plot (close to Valley Stream)? 
+
+```{r}
+taxi_df <- read.csv("C:/Users/Michael Le/Desktop/Taxi_Data/taxi.csv", header = TRUE)
+taxi_df$dist <-  sqrt((taxi_df$dropoff_latitude-taxi_df$pickup_latitude)^2 + (taxi_df$dropoff_longitude -taxi_df$pickup_longitude)^2)
+str(taxi_df)
+
+```
+
+###NOTE: Pick and run only of the options
+### Pick A) PICKUP LOCATIONS
+### Pick B) DROPOFF LOCATIONS
+
+#A) PICKUP LOCATIONS
+
+```{r}
+library(mapview)
+library(sp)
+library(sf)
+taxi_df <- taxi_df[101:200,]
+taxi_df1 <- taxi_df[101:200, c("vendor_id", "passenger_count", "dist")]
+taxi_coords <- cbind(taxi_df$pickup_longitude, taxi_df$pickup_latitude)
+row.names(taxi_coords) <-  1:nrow(taxi_coords)
+row.names(taxi_df1) <-  1:nrow(taxi_df1)
+llCRS <- CRS("+proj=longlat +ellps=WGS84")
+taxi_df1_sp <- SpatialPoints(taxi_coords, proj4string = llCRS)
+taxi_df1_spdf <-SpatialPointsDataFrame(taxi_coords,taxi_df1,proj4string = llCRS,match.ID = TRUE)
+taxi_df1_sf <-  st_as_sf(taxi_df1_spdf)
+mapview(taxi_df1_sf, col.regions = "red",cex = "dist",fgb = FALSE)
+
+```
+#For the pick-up locations in New York there is only one location near Valley Stream within 101 - 200 trips based on Vendor id,  
+
+# B) DROPOFF LOCATIONS
+```{r}
+library(mapview)
+taxi_df <- taxi_df[101:200,]
+taxi_df1 <- taxi_df[101:200, c("vendor_id", "passenger_count", "dist")]
+taxi_coords_d <- cbind(taxi_df$dropoff_longitude, taxi_df$dropoff_latitude)
+row.names(taxi_coords) <-  1:nrow(taxi_coords)
+row.names(taxi_df1) <-  1:nrow(taxi_df1)
+llCRS <- CRS("+proj=longlat +ellps=WGS84")
+taxi_df1_sp <- SpatialPoints(taxi_coords, proj4string = llCRS)
+taxi_df1_spdf <-SpatialPointsDataFrame(taxi_coords,taxi_df1,proj4string = llCRS,match.ID = TRUE)
+taxi_df1_sf <-  st_as_sf(taxi_df1_spdf)
+mapview(taxi_df1_sf, col.regions = "blue",cex = "dist",fgb = FALSE)
+
+```
+
+#For the drop-off locations in New York there is only one location near Valley Stream within 101 - 200 trips based on Vendor id,  
+
