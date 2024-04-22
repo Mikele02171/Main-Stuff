@@ -1,0 +1,149 @@
+---
+title: "Workshop_6_STA5001"
+output: word_document
+date: "2024-04-08"
+---
+
+#Lecture 1. Slide 3.
+```{r}
+library(geoR)
+?cov.spatial
+```
+
+
+#Lecture 1. Slide 5
+#Example 1. 
+
+
+```{r}
+data(s100)
+ml.n <- likfit(s100, ini = c(1,0.5), nug = 0.5,cov.model = "exponential")
+ml1.n <- likfit(s100, ini = c(1,0.5), nug = 0.5,cov.model = "wave")
+bin1 <- variog(s100, uvec=seq(0,1,l=11))
+ols.n <- variofit(bin1, ini = c(1,0.5),nugget=0.5,weights="equal", cov.model = "exponential")
+ols1.n <- variofit(bin1,ini = c(1,0.5),nugget=0.5,weights="equal", cov.model = "wave")
+```
+
+#Lecture 1. Slide 6
+#Plot the fitted models against the empirical variogram
+```{r }
+plot(bin1)
+lines(ml.n, max.dist = 1)
+lines(ml1.n,lty = 2, max.dist = 1)
+lines(ols.n, lwd = 2, max.dist = 1)
+lines(ols1.n, lty = 2, lwd = 2, max.dist = 1)
+legend(0.5, 0.3, legend=c("ML exponential","ML wave","OLS exponential","OLS wave"),lty=c(1,2,1,2),lwd=c(1,1,2,2), cex=0.7)
+
+```
+
+#Lecture 1. Slide 8
+
+```{r }
+ols.n
+
+```
+
+
+
+
+
+```{r }
+summary(ml.n)
+
+```
+
+
+
+```{r }
+summary(ols.n)
+
+```
+
+#Fitted variograms for Meuse data
+
+```{r }
+ library(gstat)
+ show.vgms()
+ vgm()
+
+```
+
+#lecture 1 Slide 11. 
+#To produce several plots of a specific variogram (in this Matern)
+#for different parameters (in this case kappa.range) one can type.
+```{r }
+show.vgms(model = "Mat", kappa.range = c(0.1, 0.2, 0.5,1, 2, 5, 10), max = 10)
+
+```
+
+#Example 2. 
+#Lecture 1. Slide 12 - 13
+
+
+```{r }
+library(lattice)
+library(sp)
+data(meuse)
+coordinates(meuse)<-c("x","y")
+v <-variogram(log(zinc)~1,meuse)
+plot(v)
+```
+
+
+#Lecture 1. Slide 14
+#However if we choose initial values too far off from reasonable values, the fit will not succeed. 
+```{r }
+fit.variogram(v,vgm(1,"Sph",10,1))
+```
+
+#A better selection of the initial values results in a properly 
+#fitted model:
+```{r }
+fit.variogram(v,vgm(1,"Sph",800,1))
+```
+
+
+
+
+#Lecture 1 Slide 15
+
+```{r }
+ v.fit <- fit.variogram(v, vgm(1, "Sph", 800, 1))
+ plot(v, v.fit, pch = 3)
+```
+
+
+#Lecture 1 Slide 16
+#Residual variograms
+```{r }
+variogram(log(zinc) ~ sqrt(dist), meuse)
+```
+
+
+#Lecture 1 Slide 18
+#Anisotropy
+
+
+```{r }
+ml3.n <- likfit(coords =coordinates(meuse),data =log(meuse$zinc), ini = c(1,800), nug = 0.05,cov.model = "spherical")
+
+ml3.n
+```
+
+#Lecture 1 Slide 19
+
+
+```{r }
+ml4.n<- likfit(coords=coordinates(meuse),data=log(meuse$zinc),ini=c(1,800),fix.psiA=FALSE,fix.psiR =FALSE,nug=0.05,cov.model="spherical")
+
+ml4.n
+```
+
+
+
+
+#Lecture 1 Slide 20
+
+```{r }
+ plot(variogram(log(zinc) ~ 1, meuse, map = TRUE,cutoff = 4000, width = 100))
+```

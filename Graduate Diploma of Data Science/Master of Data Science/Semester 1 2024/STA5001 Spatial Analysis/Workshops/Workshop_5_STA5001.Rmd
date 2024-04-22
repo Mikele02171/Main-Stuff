@@ -1,0 +1,64 @@
+---
+title: "Workshop_5_STA5001"
+output: word_document
+date: "2024-04-08"
+---
+
+#Lecture 2. Slide 5.
+#Sample variogram in R
+```{r }
+
+s100
+
+```
+
+
+```{r }
+library(geoR)
+data(s100)
+cloud1<-variog(s100,option="cloud",max.dist=1)
+cloud2<-variog(s100,option="cloud",estimator.type= "modulus",max.dist=1)
+bin1<-variog(s100,uvec=seq(0,1,l=11))
+bin2 <-variog(s100,uvec=seq(0,1,l=11),estimator.type="modulus")
+
+```
+
+#Lecture 2. Slide 6.
+#To plot the obtained variogram, we 
+# create a matrix of 2 x 2 plots:
+
+
+```{r}
+par(mfrow = c(2,2))
+plot(cloud1, main = "classical estimator")
+plot(cloud2, main = "modulus estimator")
+plot(bin1, main = "classical estimator")
+plot(bin2, main = "modulus estimator")
+
+```
+
+## Theoretical and sample variograms can be plotted and visually compared. FOr example, to plot a figure which shows the theoretical variogram model used to simulate the data s100 and the estimated variogram, type
+```{r }
+plot(bin1)
+lines.variomodel(cov.model = "exp", cov.pars = c(1,0.3),nugget = 0, max.dist = 1, lwd = 3)
+legend(0.4, 0.3, c("exponential model", "empirical"),lty=c(1,0), lwd = c(3,1), pch=c(NA,1))
+
+```
+
+#Directional variogram in R
+
+```{r }
+ vario60 <- variog(s100, max.dist = 1, direction=pi/3)
+ plot(vario60)
+ title(main=expression(paste("directional, angle =",60*degree)))
+
+```
+
+#For a quick computation of variograms in four directions the function var-iog4 can be used.
+
+```{r }
+vario.4 <- variog4(s100, max.dist = 1)
+plot(vario.4, lwd=2)
+
+```
+

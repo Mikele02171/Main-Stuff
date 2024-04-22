@@ -1,0 +1,162 @@
+---
+title: "Workshop_7_STA5001"
+output: word_document
+date: "2024-04-22"
+---
+
+
+# Topic 1: Kriging
+```{r}
+library(geoR)
+data(s100)
+plot(s100$coords,xlim=c(0,1.2),ylim=c(0,1.2),xlab="CoordX",ylab="CoordY")
+loci <- matrix(c(0.2,0.6,0.2,1.1,0.2,0.3,1.0,1.1),ncol=2)
+text(loci,as.character(1:4),col="red")
+polygon(x=c(0,1,1,0),y=c(0,0,1,1),lty=2)
+
+```
+
+## One can apply the commands below to perform the ordinary kriging by using
+# the parameters estimated by ordinary least squares with nugget as.
+
+```{r}
+bin1<-variog(s100,uvec=seq(0,1,l=11))
+ols.n<-variofit(bin1,ini=c(1,0.5),nugget=0.5,weights="equal",cov.model="exponential")
+kc4<-krige.conv(s100,locations=loci,krige=krige.control(obj.m=ols.n))
+
+```
+
+## The predicted values at the four specified locations can be found as 
+
+```{r}
+kc4
+
+```
+
+
+#Topic 1 Lecture 10
+
+```{r}
+ pred.grid<- expand.grid(seq(0,1,l=51),seq(0,1,l=51))
+ kc<-krige.conv(s100,loc=pred.grid,krige=krige.control(obj.m=ols.n))
+ image(kc,loc=pred.grid,col=gray(seq(1,0.1,l=30)),xlab="CoordX",ylab="CoordY")
+
+```
+
+#The grey level indicates values of s100 at the corresponding locations.
+
+#Topic 1: Slide 12
+
+```{r}
+library(gstat)
+library(sp)
+data(meuse)
+data(meuse.grid)
+coordinates(meuse)<-c("x","y")
+coordinates(meuse.grid)<-~x+y
+spplot(meuse,"zinc",do.log=T)
+v <-variogram(log(zinc)~1,meuse)
+v.fit<-fit.variogram(v,vgm(1,"Sph",800,1))
+
+```
+
+
+#Topic 1: Slide 14
+```{r}
+ lz.sk<-krige(log(zinc)~1,meuse,meuse.grid,v.fit,beta=5.9)
+ lz.ok<-krige(log(zinc)~1,meuse,meuse.grid,v.fit)
+
+```
+
+
+```{r}
+lz.sk
+
+```
+
+```{r}
+class(lz.sk)
+
+```
+
+
+#Topic 1: Lecture 14
+
+#For the universal kriging we fit a variogram model to residuals first:
+```{r}
+ vt<-variogram(log(zinc)~sqrt(dist),meuse)
+ vt.fit<-fit.variogram(vt,vgm(1,"Exp",300,1))
+ lz.uk<-krige(log(zinc)~sqrt(dist),meuse,meuse.grid,vt.fit)
+
+```
+
+```{r}
+ lz.uk$var.pred.sk<-lz.sk$var1.pred
+ lz.uk$var.var.sk<-lz.sk$var1.var
+ lz.uk$var.pred.ok<-lz.ok$var1.pred
+ lz.uk$var.var.ok<-lz.ok$var1.var
+ spplot(lz.uk,c("var1.pred","var1.var","var.pred.ok","var.var.ok","var.pred.sk","var.var.sk"),layout=c(2,3))
+
+```
+
+#Topic 2: Model diagnostic 
+#Slide 3 
+```{r}
+library(gstat)
+data(meuse)
+coordinates(meuse)<-c("x","y")
+sel100<-sample(1:155,100)
+m.model<-meuse[sel100,]
+m.valid<-meuse[-sel100,]
+
+```
+
+
+#Slide 4.Then we fit a variogram model and compute the R^2 statistic of the residuals:
+
+```{r}
+v100.fit <- fit.variogram(variogram(log(zinc)~1, m.model),vgm(1, "Sph", 800, 1))
+ m.valid.pr <- krige(log(zinc)~1, m.model,m.valid,v100.fit)
+ resid.kr <- log(m.valid$zinc)- m.valid.pr$var1.pred
+ summary(resid.kr)
+
+```
+
+
+
+
+
+```{r}
+resid.mean <- log(m.valid$zinc)- mean(log(m.valid$zinc))
+R2 <- 1- sum(resid.kr^2)/sum(resid.mean^2)
+R2
+
+```
+
+#A map with cross validation residuals can be obtained by
+```{r}
+m.valid.pr$res <- resid.kr
+bubble(m.valid.pr, "res")
+
+```
+
+
+#Topic 2: Slide 10
+#Leave-one-outcrossvalidation (LOOCV) visits a data point,and
+#predicts the value at that location by leaving out the observed #value, and proceeds with the next data point.
+.
+```{r}
+v.fit <-vgm(.59,"Sph",874,.04)
+cvLOOCV <-krige.cv(log(zinc)~1,meuse,v.fit,nfold=nrow(meuse))
+bubble(cvLOOCV,"residual",main= "log(zinc):LOOCV residuals")
+```
+
+
+
+#N-fold cross validation makes a partition of a data set into N parts.
+#For all observation in a part, predictions are made based on the remaining N −1 parts. This is repeated for each of the N parts.
+```{r}
+cv155 <- krige.cv(log(zinc)~1, meuse, v.fit, nfold=5)
+bubble(cv155, "residual", main = "log(zinc): 5-fold CV residuals")
+```
+
