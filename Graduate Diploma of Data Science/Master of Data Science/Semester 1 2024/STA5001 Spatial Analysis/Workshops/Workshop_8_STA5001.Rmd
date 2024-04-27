@@ -1,0 +1,270 @@
+---
+title: "Workshop_8_STA5001"
+output: word_document
+date: "2024-04-22"
+---
+
+#Topic 1: Monitoriing Network Optimization
+```{r}
+
+ library(gstat)
+ library(sp)
+ data(meuse)
+ data(meuse.grid)
+ coordinates(meuse)<-c("x","y")
+ coordinates(meuse.grid)<-~x+y
+
+```
+
+
+#Example 1:
+```{r}
+
+v <-variogram(log(zinc)~1,meuse)
+v.fit<-fit.variogram(v,vgm(1,"Sph",800,1))
+
+```
+
+
+#A very simple approach towards monitoring network optimization is to find the point whose removal leads to the smallest increase in mean kriging variance:
+```{r}
+m1<-sapply(1:155, function(x)mean(krige(log(zinc)~1,meuse[-x,],meuse.grid,v.fit)$var1.var))
+
+which(m1==min(m1))
+
+```
+
+```{r}
+plot(sort(m1))
+
+```
+
+
+#Example 2. 
+
+```{r}
+  cutoff <- 1000
+  f <- function(x) {
+  kr = krige(log(zinc)~1, meuse[-x,], meuse.grid, v.fit)
+  mean(abs(pnorm((kr$var1.pred- log(cutoff))/
+  sqrt(kr$var1.var))- 0.5))
+  }
+  m2 <- sapply(1:155, f)
+  which(m2 == max(m2))
+  plot(sort(m2))
+
+```
+
+# To compare the obtained results we plot top and bottom 10% candidate points for removal for both criteria:
+```{r}
+ layout(matrix(1:2,1,2))
+ plot(meuse)
+ points(meuse[m1<quantile(m1,.1),],pch=1)
+ points(meuse[m1>quantile(m1,.9),],pch=16)
+ plot(meuse)
+ points(meuse[m2<quantile(m2,.1),],pch=16)
+ points(meuse[m2>quantile(m2,.9),],pch=1)
+
+```
+
+# One can see that different objectives lead to different candidate points.For adding observation points, one could loop over a fixed grid of locations and find the point that increases the objective most.
+
+
+# Topic 2: Spatial Point Processes
+#Investigating intensity in spatstat
+```{r}
+ library(spatstat)
+ data(bei)
+ summary(bei)
+
+```
+
+```{r}
+lamb<-summary(bei)$intensity
+lamb
+
+```
+
+
+```{r}
+plot(bei,cex=0.5,pch="+")
+
+```
+
+
+#Slide 7.
+```{r}
+quadratcount(bei,nx=6,ny=3)
+
+```
+
+
+
+
+#If it is suspected that the intensity may be non stationary,the intensity function or intensity measure can be estimated non parametrically by techniques such as quadrat counting and kernel smoothing. 
+
+```{r}
+ Q<-quadratcount(bei,nx=6,ny=3)
+ plot(bei,cex=0.5,pch="+")
+ plot(Q, add=TRUE,cex=1)
+
+```
+
+#Intensity estimation using an isotropic Gaussian kernel is implemented by
+
+
+```{r}
+ den <- density(bei, sigma = 70)
+ plot(den)
+ plot(bei, add = TRUE, cex = 0.5)
+
+```
+
+#Perspective and contour plots
+```{r}
+ persp(den)
+```
+```{r}
+
+
+ contour(den)
+```
+
+
+
+
+# For example, todivide thestudy region into four zones of equal area according to the terrain slope,we use the quartiles of the slope values:
+
+```{r}
+Z <-bei.extra$grad
+b <-quantile(Z,probs=(0:4)/4)
+Zcut<-cut(Z,breaks=b,labels=1:4)
+V <-tess(image=Zcut)
+plot(V)
+plot(bei,add=TRUE,pch="+")
+
+```
+
+
+
+#We can find the number of trees in each region by
+```{r}
+ qb<-quadratcount(bei,tess=V)
+ qb
+
+```
+
+
+
+
+```{r}
+plot(qb)
+
+```
+
+
+#Slide 18, Creating datasets
+
+```{r}
+library(spatstat)
+a1<-runifpoint(100)
+plot(a1)
+
+```
+
+
+#Marks can be attached to an existing point pattern X using the function
+#marks() or using the binary operator %mark%. These are convenient
+#when you want to assign new marks to a dataset that are computed using another variable.
+
+```{r}
+m1<-rnorm(100)
+marks(a1)<-m1
+a1
+Y1<-a1%mark%m1
+summary(Y1)
+
+```
+```{r}
+plot(Y1)
+
+```
+
+#Topic 2. Slide 21
+#The marks can be extracted using the function marks:
+
+```{r}
+ m<-marks(Y1)
+ m
+
+```
+#Topic 2. Slide 22
+#Converting to/from sp formats
+```{r}
+ library(sp)
+install.packages("maptools", repos = "https://packagemanager.posit.co/cran/2023-10-13")
+ library(maptools)
+ data(bei)
+ bb<-as(bei,"SpatialPoints")
+ summary(bb)
+
+```
+
+
+
+```{r}
+plot(bb)
+
+```
+
+#Topic 2: Slide 24
+#To convert it in the opposite direction to the class ”ppp” one can use:
+
+
+```{r}
+bb1<-as(bb,"ppp")
+summary(bb1)
+
+```
+
+```{r}
+plot(bb1)
+
+```
+#Topic 2: Slide 25
+#Creating spatstat dataset from csv file
+```{r}
+ mydata<-read.csv("worldcities.csv")
+ mydata<-mydata[mydata$country=="Australia",]
+ head(mydata)
+```
+
+
+
+```{r}
+str(mydata)
+```
+
+
+
+```{r}
+range(mydata$lng)
+range(mydata$lat)
+```
+
+#Topic 2: Slide 26
+
+```{r}
+ myppp<-ppp(mydata$lng,mydata$lat,c(113.6501,153.6129),c(-42.9911,-12.4254))
+ plot(myppp)
+```
+
+
+
+
+
+
+
+
+
+
