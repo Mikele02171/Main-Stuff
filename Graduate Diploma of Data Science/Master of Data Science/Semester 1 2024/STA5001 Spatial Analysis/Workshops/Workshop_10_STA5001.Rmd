@@ -1,0 +1,277 @@
+---
+title: "Workshop_10_STA5001"
+output: word_document
+date: "2024-04-28"
+---
+
+
+#Topic 1: Slide 3
+#If you need to compute these distances use the spatstat functions pairdist,nndist and distmap respectively. If X is a point pattern object, then
+```{r}
+
+data(cells)
+emp <- distmap(cells)
+plot(emp, main = "Empty space distances")
+plot(cells, add = TRUE)
+
+
+```
+
+#Topic 1: Slide 5
+
+
+```{r}
+pairdist(cells)
+
+```
+
+#The vector of nearest neighbour distances suggests that there are no points that are too far away from the main cloud of points and each point has at least one closest neighbour at approximately same distance as other points:
+
+
+```{r}
+nndist(cells)
+
+```
+
+
+#Topic 1: Slide 7
+#Plot the empirical function ˆ F(r) against its theoretical expectation F(r). Values ˆ F(r)>FPOI(r) suggest that empty space distances in the point pattern are shorter than for a Poisson process,suggesting a regularly space pattern; while values ˆ F(r)<FPOI(r) suggest a clustered pattern.
+ 
+ 
+#We use rpoispp() to draw the first dataset from a Poisson point process.
+```{r}
+hpp<-rpoispp(30)
+class(hpp)
+hpp$x
+hpp$y
+
+```
+
+
+
+```{r}
+
+plot(hpp)
+```
+
+#Topic 1: Slide 8
+#The second data set is a realization of inhomogeneous Poisson process which is an extension of the stationary Poisson process, where the intensity can vary over space as a function of position.
+
+
+```{r}
+ipp <- rpoispp(function(x,y) {30*(x^2 + y^2)})
+plot(ipp)
+```
+
+
+#Topic 1: Slide 9
+```{r}
+ data(cells)
+ plot(cells)
+
+```
+
+
+
+
+```{r}
+
+ data(japanesepines)
+ plot(japanesepines)
+
+```
+
+
+
+
+```{r}
+
+ data(redwood)
+ plot(redwood)
+```
+
+
+#Topic 1: Slide 10
+#The function Fest computes estimates of ˆ F(r) using several edge corrections,and the benchmark value for the Poisson process.rs, km and raw contain different estimates of the empty space function F(r), namely the reduced sample estimator, the Kaplan-Meier estimator,and the uncorrected empirical distribution function, respectively.
+
+```{r}
+
+plot(Fest(hpp))
+```
+
+
+
+
+```{r}
+
+plot(Fest(ipp))
+```
+
+
+```{r}
+plot(Fest(cells))
+```
+
+
+
+```{r}
+plot(Fest(japanesepines))
+```
+
+
+
+```{r}
+plot(Fest(redwood))
+```
+
+#Topic 1: Slide 15
+#One can compare this theoretical to an empirical estimator and see if there are systematic deviations from the expected values using the function Gest(). The function Gest computes estimates of G(r) using several edge corrections,and the benchmark value for the Poisson process.
+
+```{r}
+plot(Gest(hpp))
+```
+
+
+```{r}
+plot(Gest(ipp))
+```
+
+
+```{r}
+plot(Gest(cells))
+```
+
+
+```{r}
+plot(Gest(japanesepines))
+```
+
+
+
+```{r}
+plot(Gest(redwood))
+```
+
+
+
+
+#Topic 2: Slide 3
+#Point patterns in multi-dimensional space-time;
+
+#Support for multi-dimensional space-time point patterns has been added to spatstat. These points belong to the class "ppx" and are created by the function ppx. There may be any number of dimensions of space.
+
+```{r}
+library(spatstat)
+df <- data.frame(x = runif(100, max = 3), y = runif(100, max = 3), z = runif(100, max = 2), t = runif(100))
+bb <- boxx(c(0, 3), c(0, 3), c(0, 2), c(0, 1))
+X <- ppx(data=df,domain = bb,coord.type=c("s","s","s","t"))
+summary(X)
+
+```
+
+
+#Topic 2: Slide 4
+```{r}
+marks(X)<-1:100
+X
+
+```
+
+
+```{r}
+head(X$data)
+```
+
+
+#Topic 2: Slide 6
+
+#This is followed by a period of rapid increase,as the infected area spreads and there are correspondingly more susceptible farms within the transmission range. Finally, the rate of spread slows down as the epidemic is brought under control through a combination of reactive culling of infected animals and pre-emptive culling of animals at nearby farms.Static display of the data can be obtained by the following R commands.
+
+
+
+```{r}
+ library(stpp)
+ data(fmd)
+ str(fmd)
+ data(northcumbria)
+ fmd<-as.3dpoints(fmd)
+
+```
+
+```{r}
+
+ plot(fmd,s.region=northcumbria,pch=19,mark=TRUE)
+
+```
+
+#Topic 2: Slide 8
+#The function animation provides ananimation of a space-time point pattern.
+```{r}
+
+animation(fmd,runtime=40,cex=0.5,s.region=northcumbria)
+
+```
+
+
+# A two-panels plot showing spatial locations and cumulative times can be obtained using the command
+
+```{r}
+
+plot(fmd)
+
+```
+
+
+
+
+#Topic 2: Slide 9
+#The temporal intensity function estimated from the fmd dataset shows the intensity of foot-and-mouth disease outbreaks in time.
+
+```{r}
+
+plot(density(fmd[,3]))
+
+```
+
+
+
+
+#Topic 2: Slide 10
+#Spatio-temporal Poisson processes can be simulated by the function rpp. Realizations are simulated in a region S × T, where S is a polygon and T is an interval, with default the unit cube. For a homogeneous Poisson process, the intensity is a constant. For example, the sequence of commands
+
+```{r}
+hpp2 <- rpp(npoints = 1000, s.region = northcumbria,t.region = c(1, 500), discrete.time = TRUE)
+animation(hpp2$xyt, runtime=40, s.region = hpp2$s.region)
+
+```
+
+#generates and displays a realization of the Poisson process with 1000 points in the region S ×T, where S is the county of Cumbria and T = [1;500]. The argument npoints specifies the number of events to be generated.The temporal intensity function can be obtain by
+```{r}
+plot(density(hpp2$xyt[,3]))
+
+```
+
+
+
+#Topic 2: Slide 12
+#The function rpp can also generate realizations of inhomogeneous Poisson processes. The intensity is then specified by a function of the coordinates and times. For example, the sequence of commands
+
+```{r}
+lbda1<-function(x,y,t){1000*exp(-4*y)*exp(-2*t)}
+ipp1<-rpp(lambda=lbda1)
+animation(ipp1$xyt,runtime=40)
+
+```
+
+
+
+# The temporal intensity functions can be obtain by the following R command
+
+```{r}
+plot(density(ipp1$xyt[,3]))
+
+```
+
+
+
+
