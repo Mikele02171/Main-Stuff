@@ -1,0 +1,322 @@
+---
+title: "Workshop_9_STA5001"
+output: word_document
+date: "2024-04-27"
+---
+
+#Topic 1: Slide 2
+```{r}
+  a<-rpoispp(100)
+  a
+
+```
+
+```{r}
+
+  plot(a)
+
+```
+
+
+
+#Topic 1: Slide 3
+#We can change the window in which to simulate. For example,
+
+```{r}
+ ho<-owin(poly=list(list(x=c(0,1,1,0),y=c(0,0,1,1)),list(x=c(0.6,0.4,0.4,0.6),y=c(0.2,0.2,0.4,0.4))))
+ plot(ho)
+ plot(rpoispp(100,win=ho))
+
+```
+
+
+
+#Topic 1: Slide 5
+```{r}
+ a1<-runifpoint(100)
+ a1
+
+```
+#If one wants to simulate the Poisson process conditionally on a fixed number of points,use
+```{r}
+
+ plot(a1)
+```
+
+
+#Topic 1: Slide 6
+#To simulate the inhomogeneous Poisson process with the intensity function λ(x,y),use
+```{r}
+lambda<-function(x,y){100*(x+y)}
+plot(rpoispp(lambda))
+```
+
+
+
+#Topic 1: Slide 7
+#Kolmogorov-Smirnov test of CSR
+#We will use the NZ trees dataset nztrees which represents the positions of 86 trees in a forest plot approximately 153 by 95 feet.We discard from our analysis the eight trees at the right-hand edge of the plot (which appear to be part of a planted border) and trim the window by a 5-foot margin accordingly. The result is the nzchop data:
+
+```{r}
+ library(spatstat)
+ data(nztrees)
+ nztrees
+
+
+```
+
+```{r}
+plot(nztrees)
+ chopped <- owin(c(0, 148), c(0, 95))
+ nzchop <- nztrees[chopped]
+
+
+
+```
+
+```{r}
+ plot(nzchop)
+
+```
+
+#Topic 1: Slide 10
+#In spatstat the spatial Kolmogorov-Smirnov test is performed by cdf.test. For example, let the function T be the x coordinate, T(x,y) = x. This means we are simply comparing the observed and expected distributions of the x coordinate:
+
+
+```{r}
+cdf.test(nzchop, function(x, y) {x})
+
+```
+
+
+```{r}
+
+ pval <- KS$p.value
+ pval
+
+```
+
+#Topic 1: Slide 11
+#The result shows that the p-value equals 0.7579. Thus, the test does not reject the hypothesis of CSR. The plot displays the observed and expected distribution functions that also confirm it.
+```{r}
+
+KS <- cdf.test(nzchop, function(x, y) {x})
+plot(KS)
+
+```
+
+
+#Topic 1: Slide 12
+#In the next example the Kolmogorov-Smirnov test gives us evidence against CSR for the simulated non-stationary point process:
+```{r}
+lambda <- function(x, y) {100 * (x + y)}
+KS1 <- cdf.test(rpoispp(lambda), function(x, y) {x})
+plot(KS1)
+```
+
+
+
+#Topic 1: Slide 13
+#We are often interested in testing whether the point pattern intensity depends on covariates. For example, our preliminary analysis of the tropical rainforest pattern bei suggested that the density of trees depends on terrain slope. To test this formally we can apply the Kolmogorov-Smirnov test using the slope covariate:
+
+```{r}
+ data(bei)
+ Z <- bei.extra$grad
+ KS2 <- cdf.test(bei, Z)
+ plot(KS2)
+```
+
+```{r}
+KS2
+```
+
+#Topic 2: Slide 2
+#Fit model for spatial process
+#To fit Poisson processes in spatstat the intensity function λ(u) must be loglinear in the parameter θ:
+
+
+# where S(u) is a real-valued or vector-valued function of location u. The form of S is arbitrary so this is not much of a restriction. In practice S(u) could be a function of the spatial coordinates of u, or an observed covariate, or a mixture of both.To fit the homogeneous Poisson model we use:
+
+
+
+```{r}
+library(spatstat)
+data(bei)
+fit<-ppm(bei, ~1)
+
+```
+
+#Topic 2: Slide 3
+
+```{r}
+fit
+
+```
+
+```{r}
+cdf.test(fit,function(x,y){y})
+
+```
+
+#To fit an inhomogeneous Poisson model with the intensity λθ(x,y) = exp(θ0 +θ1x +θ2y)
+
+#one can use:
+
+```{r}
+fit1 <- ppm(bei, ~x + y)
+plot(fit1, how = "image", se = FALSE)
+
+
+```
+
+
+```{r}
+
+plot(fit1, se=TRUE)
+
+
+```
+
+
+
+
+```{r}
+
+cdf.test(fit1, function(x, y) {y})
+
+```
+
+
+
+
+
+
+#Topic 2: Slide 6
+
+```{r}
+fit2<-ppm(bei, ~polynom(x, y, 2))
+plot(fit2, how = "image", se = FALSE)
+
+
+```
+
+
+```{r}
+cdf.test(fit2, function(x, y) {y})
+
+```
+
+
+
+#Topic 2: Slide 8
+#Residuals from the fitted model are an important diagnostic tool. For a fitted Poisson process model, with fitted intensity ˆ λ(u), the predicted number of points falling in any region B is Bˆ λ(u)du.
+#The residual in each region B is the observed minus predicted number of points in B.A useful way to visualize the residuals is to smooth them:
+
+```{r}
+diagnose.ppm(fit,which="smooth")
+
+```
+
+
+#Topic 2: Slide 9
+#In this example the smoothed residual image contains a visible trend, suggesting that the model is inappropriate. To validate the interaction terms in a point process model,we should plot the distribution of the residuals.The appropriate tool is a Q-Q plot:
+```{r}
+qqplot.ppm(fit)
+
+```
+
+#Topic 2: Slide 10
+#This shows a Q-Q plot of the smoothed residuals for a uniform Poisson model fitted to the cells data,with pointwise 5% critical envelopes from simulations of the fitted model. This indicates that the uniform Poisson model is grossly inappropriate for the data.
+
+
+
+
+#Topic 2: Slide 12
+```{r}
+data(longleaf)
+str(marks(longleaf))
+
+```
+
+
+```{r}
+ d<-marks(longleaf)
+ marks(longleaf)<-(pi/4)*d^2
+ str(marks(longleaf))
+
+```
+
+
+
+#Topic 2: Slide 13
+#A multi type point pattern can be separated into the sub-patterns of points of each type,using the split command:
+
+```{r}
+data(amacrine)
+plot(split(amacrine))
+```
+
+
+#Topic 2: Slide 14
+#For a point pattern with marks that are numeric (real numbers or integers) or logical values,the mark values can be extracted using the marks function and inspected using the histogram or kernel density estimate:
+
+
+```{r}
+data(longleaf)
+hist(marks(longleaf))
+```
+
+#Topic 2: Slide 15
+#To assess spatial trend in the marks,one way is to form a kernel regression smoother.This is computed by
+```{r}
+plot(Smooth(longleaf))
+```
+
+#Topic 2: Slide 16
+#Intensity
+```{r}
+data(lansing)
+plot(split(lansing))
+```
+
+#Topic 2: Slide 18
+#Estimates of the frequency distribution of species and the intensities of species can be obtain by
+```{r}
+summary(lansing)
+
+```
+```{r}
+
+plot(density(split(lansing)))
+```
+
+#Topic 2: Slide 19
+
+```{r}
+
+Y <-density(split(lansing))
+ attach(Y)
+pBlackoak<-eval.im(blackoak/(blackoak+hickory++maple+misc+redoak+whiteoak))
+plot(pBlackoak)
+detach(Y)
+```
+
+
+
+#Topic 2: Slide 20 
+#Marks interaction
+```{r}
+p <- pcfcross(lansing, "blackoak", "redoak")
+plot(p)
+```
+
+```{r}
+
+p1 <- pcfcross(lansing, "blackoak", "maple")
+plot(p1)
+
+
+```
+
+
+
