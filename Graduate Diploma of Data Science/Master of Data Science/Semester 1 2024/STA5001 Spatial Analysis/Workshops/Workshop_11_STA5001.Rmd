@@ -1,0 +1,647 @@
+---
+title: "Workshop_11_STA5001"
+output: word_document
+date: "2024-04-28"
+---
+
+
+#Analysis of Irish Property Prices by using kriging
+
+#Topic 1: Slide 3
+
+```{r}
+library(sp)
+library(geoR)
+library(gstat)
+library(spatstat)
+
+
+```
+
+# The data set is available in the LMS folder Data as the csv flie: ppr_data_encoded.csv
+
+
+#First, we import the data in R:
+
+```{r}
+
+#Ensure you keep the csv in the correct directory.
+MyData <- read.csv("ppr_data_encoded.csv", header=TRUE)
+str(MyData)
+
+```
+
+# Then we remove the cases with missing information:
+
+```{r}
+MyData <- MyData[complete.cases(MyData),]
+
+```
+
+
+#Topic 1: Slide 5
+#From all fields we select only geographic coordinates and sale prices for the following analysis.
+
+
+```{r}
+MyData1<-MyData[,c("latitude","longitude","price")]
+
+```
+
+
+#There are some caseswithduplicated locations. They may impact our analysis and those methods that assumed different spatial points.There are several strategies how to deal with such cases.One of them is to add small amount of random noise to coordinates by using the function jitter. It will displace duplicated points.
+```{r}
+str(MyData1[duplicated(MyData1[1:2]),])
+
+```
+
+
+
+
+
+```{r}
+MyData10<-MyData1
+
+```
+
+
+#Topic 1: Slide 6
+```{r}
+MyData10$latitude<-jitter(MyData10$latitude,1)
+str(MyData10[duplicated(MyData10[1:2]),])
+
+```
+#If one believes that such points were introduced by error, they can be removed by deleting duplicated coordinates.
+
+```{r}
+MyData1<-MyData1[!duplicated(MyData1[1:2]),]
+str(MyData1[duplicated(MyData10[1:2]),])
+
+```
+
+
+#Topic 1: Slide 7
+#Then we rescale coordinatesas their differences are very small and prices because their values are too large. We transform the obtained object to the class ’SpatialPointsDataFrame’:
+
+```{r}
+MyData1$price<-MyData1$price/100000
+MyData1$latitude<- MyData1$latitude*100
+MyData1$longitude<-MyData1$longitude*100
+coordinates(MyData1)<-c("latitude","longitude")
+
+```
+
+
+
+```{r}
+str(MyData1)
+
+```
+
+#Topic 1: Slide 8
+#Finally, we visualise the spatial object MyData1
+```{r}
+spplot(MyData1,"price", do.log = T)
+
+```
+
+#Topic 1: Slide 9
+#The option do.log = T was used to plot prices on the log-linear scale for better color representation. As the plot shows, there are many spatial locations which can slow computations. For example, try to compute the sample covariance function (a rather lengthy process):
+
+```{r}
+length(MyData1)
+v <- variogram(log(price) ~ 1, MyData1, cutoff=100)
+plot(v)
+
+```
+
+#Topic 1: Slide 10
+#One of possible ways to deal with such situations is to consider a representative sub-sample of a smaller size. For example,
+
+```{r}
+MyData0 <- MyData1[sample(1:length(MyData1),10000),]
+v <- variogram(log(price) ~ 1, MyData0, cutoff=100)
+plot(v)
+
+```
+
+#This much smaller sub-sample gives the sample covariance function which is rather similar to the corresponding function for all locations.
+
+
+#Topic 1: Slide 11
+#Also, as the data can be non-stationary applying the same model for all regions can lead to an inadequate model. One of strategies to deal with such situations is to split the area in smaller sub-areas to analyse them separately. For example, we select a smaller sub-area (window), which let us better visualize results:
+
+```{r}
+MyData2 <- MyData1[(MyData1$latitude<=5400)&(MyData1$latitude>=5300)&(MyData1$longitude<=-700)&(MyData1$longitude>=-800),]
+spplot(MyData2,"price", do.log = T)
+
+```
+
+# This process can be repeated for other windows (moving windows approach) to get the full region coverage.
+
+
+#Topic 1: Slide 13
+#For the selected window and data subset we estimate the variogram and fit the Bessel covariance model:
+```{r}
+v <- variogram(log(price) ~ 1, MyData2, cutoff=100)
+plot(v)
+
+
+```
+
+
+
+```{r}
+
+v.fit <- fit.variogram(v, vgm(0.4, "Bes", 1, 1))
+plot(v, v.fit, pch = 3)
+
+```
+
+#Topic 1: Slide 14
+#To spatially predict prices we cover the selected area by a grid 50 x 50 points and perform the ordinary kriging (!!!timelengthycomputations).
+
+```{r}
+pred.grid<- expand.grid(seq(5300,5400,l=51),
+ +seq(-800,-700,l=51))
+colnames(pred.grid)<-c("latitude","longitude")
+coordinates(pred.grid)<-~latitude+longitude
+#lz.uk<-krige(log(price)~1,MyData2,pred.grid,v.fit)
+lz.uk$var1.pred<-exp(lz.uk$var1.pred)*100000
+spplot(lz.uk,c("var1.pred"))
+
+
+```
+
+#Finally we rescale the estimated prices to the original scale and plot a map with the obtained results.
+
+#The plot clearly shows areas with expensive and cheap houses
+
+#Topic 1: Slide 16
+#Analysis of spatial distribution of Irish sold properties:
+
+#Now we continue the analysis of the selected subarea and investigate spatial pattern of the sold properties. First we transform the data to the ppp format and remove all information except the coordinates.
+
+```{r}
+ library(maptools)
+ MyData2p<-as(MyData2,"ppp")
+ MyData2p<-unmark(MyData2p)
+
+```
+
+#Then we compute the estimated intensity of houses and visualise the distribution of their locations.
+```{r}
+summary(MyData2p)$intensity
+
+
+```
+
+
+
+```{r}
+
+plot(MyData2p)
+
+
+```
+
+
+
+```{r}
+
+emp<-distmap(MyData2p)
+plot(emp)
+
+```
+
+#Topic 1: Slide 18
+#Finally we produce plots of the estimated F and G functions
+
+```{r}
+plot(Fest(MyData2p))
+
+
+```
+
+
+
+```{r}
+
+plot(Gest(MyData2p))
+
+```
+
+
+# The plots suggest that the locations of the sold properties have a cluster structure.
+
+
+#Topic 2: Analysis of Noise Complaints
+#Topic 2: Slide 2
+```{r}
+library(sf)
+library(spatstat)
+library(lubridate)
+library(stpp)
+library(mapview)
+
+```
+
+#First, we import the data in R:
+#Download from this link, https://www.kaggle.com/datasets/dbtjdals/noise-complaints-2018
+
+
+```{r}
+MyData<-read.csv("Noise_Complaints.csv",header=TRUE)
+str(MyData)
+
+```
+
+
+
+
+
+#Topic 2: Slide 3
+#Then we subset the data using only the following attributes. 
+
+#Then we subset the data using only the following attributes, by the R command.
+
+# Created.Date-The date that complaint was reported.
+ 
+#Complaint.Type-Type of complaint reported.
+
+#Descriptor-Description of the complaint.
+
+#Latitude-Latitude coordinate where it was reported.
+
+#Longitude-Longitude coordinate where it was reported.
+
+```{r}
+MyData1 <-MyData[,c("Created.Date","Complaint.Type","Descriptor", "Latitude","Longitude")]
+str(MyData1)
+
+
+```
+
+#Topic 2: Slide 4
+#To visualise information about different complaints we use the commands.
+
+```{r}
+table(MyData1$Complaint.Type)
+
+
+```
+
+```{r}
+barplot(table(MyData1$Complaint.Type), las=2)
+```
+#Topic 2: Slide 5
+#Then we remove the cases with missing information:
+
+```{r}
+MyData1<-MyData1[complete.cases(MyData1),]
+MyData1
+
+``` 
+
+#Consider two types of complaints, noise by helicopters and noise recorded in NYC parks:
+
+```{r}
+library(lubridate)
+MyData1<-MyData1[MyData1$Complaint.Type %in% 
+                   c("Noise - Helicopter","Noise - Park"),]
+
+head(MyData1$Created.Date)
+
+
+
+``` 
+
+```{r}
+
+
+library(lubridate)
+time1 <- round_date(mdy_hm(MyData1$Created.Date[1]), unit = "hour")
+time1
+```
+
+
+#Using the function mdy_hms we determine the fist time when such noise was recorded in 2018.
+
+
+#This time (inhours) we will use as an initial time reference moment for subsequent incidents.
+
+#Topic 2: Slide 6
+
+#Next, calculate the time duration in hours between two incidents for each of the following events with respect to the reference moment:
+
+```{r}
+MyData1$Created.Date<-round_date(mdy_hms(MyData1$Created.Date),unit="hour")
+head(MyData1$Created.Date)
+
+
+```
+
+
+
+```{r}
+MyData1$hours_diff<-as.numeric(difftime(MyData1$Created.Date,time1,
+                                        units="hours"))
+head(MyData1$hours_diff)
+```
+
+
+
+#Analysis of complains about noise produced by helicopters.
+
+#First,we restrict our data only to complains about noise produced by helicopters.From all fields we select only geographic coordinates and time of incidents after the first complain in 2018(inhours),i.e. MyData1$hours_diff:
+
+```{r}
+MyData1_Helic<- MyData1[MyData1$Complaint.Type== "Noise - Helicopter",]
+df1<- data.frame(x=MyData1_Helic$Longitude,y=MyData1_Helic$Latitude,
+                 t=MyData1_Helic$hours_diff)
+```
+
+
+
+
+#Topic 2: Slide 7
+#To visualise these spatial data over time by using stppformat,we transform them as.
+
+
+```{r}
+X1 <-as.3dpoints(df1)
+str(X1)
+```
+
+
+```{r}
+
+plot(X1)
+
+```
+
+
+#Topic 2: Slide 8
+#The plot suggests that data are not spatially uniformly distributed over the  area, but as the cumulative plot is close to a strait line it means that the rate over time is almost constant. To visualise their spatial-temporal occurrence we will use the following R code for animation:
+
+```{r}
+
+#ASK TUTOR FOR HELP!
+library(rgl)
+library(animation)
+dev.new()
+# Plot the animation, ask the tutor coordinator!
+tryCatch({
+  animation(X1, runtime = 20)
+}, error = function(e) {
+  cat("Error:", conditionMessage(e), "\n")
+})
+dev.off()
+```
+
+
+#Topic 2: Slide 9
+#Finally,we create a sf object with locations of incidents and visualise it on the NYC map:
+
+```{r}
+ noise_sf1<-st_as_sf(df1[,1:2],coords=c("x","y"))
+ str(noise_sf1)
+
+```
+
+
+
+```{r}
+ st_crs(noise_sf1)<-4326
+ mapview(noise_sf1,col.regions="red")
+
+```
+
+
+
+
+
+#Topic 2: Slide 11
+#There are several instances where spatial locations are duplicated. Some of these cases may have been reported by different persons at the same time,or introduced by a mistake. Others may be related to different incidents reported from the same location, or officers recorded them with a delay.To distinguish between such cases,we first identify them and then plot them using different colours.
+
+```{r}
+
+dupl_id<- which(duplicated(MyData1_Helic[,c("Latitude","Longitude")]))
+dupl_id1<-which(duplicated(MyData1_Helic[,c("Created.Date","Latitude","Longitude")]))
+mapview(noise_sf1[dupl_id,],col.regions="red")+
+mapview(noise_sf1[dupl_id1,],col.regions="green")
+```
+
+
+
+#Topic 2: Slide 12
+#Now, let us create a ppp object with spatial locations only:
+
+```{r}
+ range_lat<-range(MyData1_Helic$Latitude)
+ range_lat
+
+
+```
+
+
+
+
+
+
+```{r}
+range_lon<-range(MyData1_Helic$Longitude)
+range_lon
+
+
+```
+
+```{r}
+myppp1<- ppp(MyData1_Helic$Latitude,MyData1_Helic$Longitude,range_lat,range_lon)
+
+str(myppp1)
+
+
+```
+
+#Topic 2: Slide 14
+#From the previous plots it isobvious that the distribution of incident locations is not uniform in the considered region,which can be confirmed by the quadrat counts and the corresponding plot:
+
+
+```{r}
+quadratcount(myppp1,nx=4,ny=3)
+
+```
+
+
+
+
+
+
+```{r}
+Q<-quadratcount(myppp1,nx=4,ny=3)
+plot(myppp1,cex=0.5,pch="+")
+plot(Q, add=TRUE,cex=2)
+
+```
+
+
+#Topic 2: Slide 15
+#Then, by estimating the intensity of points in the region, one determines that the majority of helicopter noise incidents are expected to occur within a specific subarea:
+
+```{r}
+den1<-density(myppp1,sigma=0.03)
+plot(den1)
+plot(myppp1,add=TRUE,cex=0.5)
+
+```
+
+
+#The plot of empty space distances displays locations that are most affected by noise in dark blue and those that are distant from incidents in yellow:
+
+
+```{r}
+emp1<-distmap(myppp1)
+plot(emp1)
+
+```
+
+
+#Topic 2: Slide 17
+#Finally, as expected, the both F and G functions indicate a clustering pattern of the incidents:
+
+```{r}
+plot(Fest(myppp1))
+
+
+```
+
+
+```{r}
+plot(Gest(myppp1))
+```
+
+#Topic 2: Slide 18
+#Analysis of complains about noise in parks: In this section,we are repeating some of the steps from the previous analysis,but this time focusing on the incidents of noise that were recorded in parks.
+```{r}
+MyData1_Park<-MyData1[MyData1$Complaint.Type=="Noise - Park",]
+df2<-data.frame(x=MyData1_Park$Longitude,y=MyData1_Park$Latitude,t=MyData1_Park$hours_diff,marks1=MyData1_Park$Descriptor)
+X2 <-as.3dpoints(df2)
+plot(X2)
+
+```
+
+
+#Topic 2: Slide 19
+
+#The plots indicate that incidents in parks have a wider spatial distribution compared to helicopter incidents,and their frequency is changing over time. The number of accidents is lower at the beginning and end of the year,while their frequency is much higher during the middle of the year. After creating and plotting an sf object for the two values of the Descriptor, ”LoudMusic/Party”and”LoudTalking,” it appears that there are more instances of noise due to”LoudMusic/Party”.
+```{r}
+noise_sf2<-st_as_sf(df2,coords=c("x","y"))
+st_crs(noise_sf2)<-4326
+str(noise_sf2)
+
+
+```
+```{r}
+
+mapview(noise_sf2[, ],zcol="marks1")
+```
+
+#Topic 2: Slide 22
+#Repeating the analysis of the spatial intensity of the point pattern, it has been discovered that the area with the expected high frequency of events not only encompasses the previously identified region, but has also expanded significantly and is more horizontally stretched. Also, the legend shows that the rate of events is much higher than for the helicopters noise case.
+
+
+```{r}
+ range_lat <- range(MyData1_Park$Latitude)
+ range_lat
+
+```
+
+
+
+
+
+```{r}
+range_lon <- range(MyData1_Park$Longitude)
+range_lon
+
+```
+
+
+```{r}
+
+myppp2 <- ppp(MyData1_Park$Latitude,MyData1_Park$Longitude,range_lat, range_lon )
+den2 <- density(myppp2, sigma = 0.03)
+plot(den2)
+plot(myppp2,add = TRUE, cex=0.5)
+
+```
+
+
+#Topic 2: Slide 24
+#inally, as expected, the both F and G functions indicate a clustering pattern of the incidents:
+```{r}
+plot(Fest(myppp2))
+
+```
+
+```{r}
+
+plot(Gest(myppp2))
+```
+
+#Topic 2: Slide 25
+#Analysis of types of complains:
+
+#In this part we briefly analyse spatial distributions of noise incidents due to their types (”Noise-Helicopter”and”Noise-Park”). First we create a pp object with spatial locations and marks that correspond to the incident types:
+
+```{r}
+range_lat<-range(MyData1$Latitude)
+range_lat
+
+```
+
+
+
+```{r}
+ range_lon<-range(MyData1$Longitude)
+ range_lon
+
+```
+
+
+```{r}
+myppp3<-ppp(MyData1$Latitude,MyData1$Longitude,range_lat,range_lon,marks=factor(MyData1$Complaint.Type))
+
+```
+
+#Then we split and plot complaints locations and their estimated intensities by their types:
+
+#Topic 2: Slide 26
+```{r}
+plot(split(myppp3))
+plot(density(split(myppp3)))
+
+```
+
+
+
+# These plots are similar to those we produced earlier, but they offer better comparison and more informative insights when viewed side-by-side.
+
+
+
+
+#Topic 2: Slide 28
+```{r}
+p <- pcfcross(myppp3,"Noise - Helicopter","Noise - Park")
+plot(p)
+
+```
+
+
+
+
+
+
+
+
