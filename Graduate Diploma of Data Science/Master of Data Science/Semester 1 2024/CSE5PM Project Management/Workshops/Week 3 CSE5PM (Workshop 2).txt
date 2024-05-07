@@ -1,0 +1,355 @@
+Week 3 CSE5PM (Workshop 2)
+-Watch the following video.
+
+https://www.youtube.com/watch?v=CBPwnWULtUU&t=1s
+
+  and analyse and then list the pros and cons of :​
+The traditional project management approach​
+
+Agile Project Management​
+
+Scrum Project Management​
+
+Lean Project Management​
+
+As a group decide, which approach you prefer and why.​
+
+Choose any 2 of the approaches above and discuss and list the conditions which would make each approach ideal. For example, some people believe that the Agile PM approach is suited for environments where small increments of the project are required to demonstrate progress.  ​
+
+
+Answer text Question 1
+The traditional project management approach:
+
+PROS:
+
+Every step in the traditional method has a start and end point hence it's flexible to share progress with stakeholders and customers. 
+
+CONS:
+
+This only suits for projects with a smaller scale/scope of the project.
+
+Agile Project Management: 
+
+PROS: This enables individuals and interactions to use software and technology in business. In terms of faster delivery of products to the customer, an improved ability to manage changing requirements, can produce the product in high value and quality. 
+
+CONS: This approach is less predictable as the flexibility, can easily loss track of time (i.e. ending up spending more time on the product). A poor scope can lead to bad decisions, poor management, less documentation and waste of resources. 
+
+Scrum Project Management:
+
+PROS: This is to ensure close cooperation across all roles and functions and removes barriers that prevent the team from being effective. 
+
+CONS:​ Leads to scope creep due to the missing deadline cooperative and no end-definite date.
+
+Lean Project Management:
+
+PROS:  Lean eliminates waste to create a more efficient workflow, while Agile emphasizes adaptability to meet customer needs.
+
+CONS:  Late orders, long lead times, and quality problems will affect customer relationships and risk loss of revenue can impact their clients and customers.
+
+
+Question 2
+Complete
+Marked out of 1.00
+Flag question
+Question text
+ Populate the below table to compare and contrast the  project management methods.​ ( You can use online and lecture slides as resources)
+
+ 
+
+Considerations​
+
+Phased​
+
+Lean​
+
+Iterative and incremental
+
+​
+
+When is it most appropriate?​
+
+​
+
+​
+
+​
+
+​
+
+What are the risks associated it​
+
+​
+
+​
+
+​
+
+​
+
+How are time and resources allocated​
+
+​
+
+​
+
+​
+
+​
+
+How is project success measured?​
+
+​
+
+​
+
+​
+
+​
+
+Who assumes what risks?​
+
+​
+
+​
+
+​
+
+​
+
+How are variations (changes in requirements) managed?​
+
+​
+
+​
+
+​
+
+​
+
+How is collaboration and communication managed?​
+
+​
+
+​
+
+​
+
+​
+
+Examples of projects (which industry would adopt these approaches for its projects)​
+
+​
+
+
+
+​
+
+​
+
+
+Answer text Question 2
+
+​Considerations
+
+Phased​
+
+Lean​
+
+Iterative and incremental
+
+​
+
+When is it most appropriate?​
+
+​when there is an accurate budget and timelines are fixed requirements,
+
+Clients values and needs​
+
+​Not suitable
+
+​
+
+What are the risks associated it​
+
+Its inflexible in terms of cannot go backwards. Follows series of steps 
+
+​Leads to scoop creep. Do not have a clear budget and timeline.
+
+Management Risk
+
+Operational Risk
+
+Requires the team to tackle on more resources, much harder to produce efficiently such as collaboration and requires more skills for each of the individuals. Both front end and back end.  
+
+​
+
+How are time and resources allocated​?
+
+Allocated at the start of the project. According to the project plan. 
+
+​Trying to distinct the project. Resource done by the client any changes that need to make. Minimize the budget and efficiently.
+
+Throughout the entire phase.  Client would need to allocate that. 
+
+Enable to ​make planning and allocating resources and budgets easier by providing predictable phases.
+
+​
+
+How is project success measured?​
+
+​You measure after each phase is completed.
+
+​If you meet your clients' needs and values you market yourself your success and customer satisfaction. 
+
+​If you're refining the project through feedback and learning, incremental development focuses on progressively building upon the project's success and functionality, until the quality has exceeded. 
+
+​
+
+Who assumes what risks?​
+
+​Project Manager, Team will assume the risk. 
+
+Small risk goes to the client. 
+
+​Assume the team is highly qualified. Assume your consistent and efficient with the project. Project team are they going to delivery what the client wants.
+
+​Scrum masters and team coaches/members. To ensure that participants stay within the agreed agenda and event timebox during the iterative process. 
+
+​
+
+How are variations (changes in requirements) managed?​
+
+​Can not go backwards regardless in any phase. 
+
+​This can be done during management from your team members to ensure the quality is measured. Reduce the number of instances such as resources, errors and continuous improvement.
+
+​This enables the team to make necessity and flexibly adjustments across the entire project on a relatively small scale throughout the project. 
+
+​
+
+How is collaboration and communication managed?​
+
+Extension documentation. Assuming you all of the phases required. 
+
+​Assuming that teams have a higher frequency of communication among members. If they can communicate more with supervisors and Supervisors communicate more amongst themselves and collaborate more pronouncedly. 
+
+​Through SCRUM Management 
+
+​
+
+Examples of projects (which industry would adopt these approaches for its projects)​
+
+
+
+
+
+Examples of projects (which industry would adopt these approaches for its projects)​
+
+-Small scaled projects.  manufacturing, construction, and resource extraction 
+
+-Healthcare, Automotive, Manufacturing, Service sectors
+
+-technology, engineering, software development, design, qualitative research, project management, and other industries
+
+​
+
+
+
+​
+
+​
+
+
+
+Question 3
+Complete
+Marked out of 3.00
+Flag question
+Question text
+Following up the case study from our previous workshop, now suggest a project management approach to address the problem.
+
+
+
+The case study  - 
+
+
+
+Core Electronics is a retailer for electronics in Australia including Arduino, Raspberry Pi, Sparkfun and Adafruit products.
+
+
+
+Established in 2007, this business has rapidly grown since they established their ecommerce store.
+
+Core-electronics delivers electronics and IoT gadets/devices all over Australia.
+
+The company receives more than 1000 orders every week just through their online platform.
+
+Due to their recent business growth and popularity among tech enthuasiasts, the company has decided to expand its operations to other countries such as Singapore, New-Zealand, India, Canada and the UK.
+
+Since the company is undertaking this major step in their business, they have hired you as an consultant to advice them on how they should proceed.
+
+Your responsibility as Project Manager is to advice  them about -
+
+1. Suggest the best suitable approach for this project.
+[To come to a conclusion, you will have to compare and contrast different approaches- Traditional, Lean, Iterative & Incremental and Agile. for this problem]
+
+
+2.  Justify your recommendation and outline any disadvantages or risks they should be aware of in choosing the recommended approach.
+
+3. List the different roles and responsibilities in your project team based on the chosen approach. 
+
+Answer text Question 3
+Suggested Approach: Agile
+
+Comparison:
+
+Traditional Approach: In a traditional approach, the project would be planned extensively upfront, with a detailed project plan, requirements gathering phase, design phase, development phase, testing phase, and finally deployment. This approach tends to be rigid and less adaptable to changes.
+
+Lean Approach: Lean focuses on minimizing waste and maximizing value. It involves delivering the minimum viable product (MVP) quickly and then iterating based on customer feedback. However, it may not provide enough structure for a project of this scale and complexity.
+
+Iterative & Incremental Approach: This approach involves breaking down the project into smaller, manageable parts, and delivering them incrementally. It allows for feedback and adjustments throughout the project lifecycle. However, it may not be as flexible or adaptive as Agile.
+
+Agile Approach: Agile is characterized by iterative and incremental development, where requirements and solutions evolve through collaboration between cross-functional teams. It emphasizes flexibility, adaptability, and customer collaboration.
+
+Recommendation:
+
+Given the dynamic nature of the project, with multiple countries involved and potential variations in regulations, customer preferences, and market conditions, Agile would be the most suitable approach. Agile allows for rapid adaptation to changing circumstances and facilitates collaboration between teams across different locations.
+
+Justification and Risks:
+
+Advantages of Agile:
+
+Flexibility: Agile allows for flexibility in responding to changes, which is crucial when dealing with expansion into multiple countries with different market conditions.
+
+Customer Collaboration: Agile emphasizes customer collaboration, ensuring that the company can tailor its offerings to meet the specific needs and preferences of customers in each new market.
+
+Faster Time-to-Market: By delivering working increments of the product quickly, Agile enables faster time-to-market, allowing the company to establish its presence in new countries more rapidly.
+
+Disadvantages and Risks:
+
+Resource Intensive: Agile requires active involvement from stakeholders and team members, which can be resource-intensive, particularly if teams are distributed across different locations.
+
+Adaptation Challenges: Implementing Agile across different cultural contexts and regulatory environments may present challenges in terms of communication, coordination, and adaptation.
+
+Potential for Scope Creep: Agile's iterative nature may lead to scope creep if not managed effectively, potentially impacting project timelines and budgets.
+
+Roles and Responsibilities:
+
+Based on the Agile approach, the project team roles and responsibilities would include:
+
+Product Owner: Responsible for prioritizing requirements, defining the product vision, and ensuring that the product meets customer needs.
+
+Scrum Master: Facilitates the Agile process, removes impediments, and ensures that the team adheres to Agile principles and practices.
+
+Development Team: Cross-functional team responsible for delivering increments of the product, including developers, testers, designers, etc.
+
+Stakeholders: Individuals or groups with an interest in the project, including customers, investors, regulatory bodies, etc., who provide feedback and guidance throughout the project.
+
+Country Managers/Market Specialists: Responsible for providing market insights, identifying local requirements, and coordinating activities in each target country.
+
+Quality Assurance (QA) Team: Ensures that the product meets quality standards and performs testing throughout the development process.
+
+Deployment and Support Team: Responsible for deploying the product in each target country and providing ongoing support and maintenance.
+
+These roles and responsibilities ensure that there is clear accountability and collaboration throughout the project, enabling the company to successfully expand its operations to new countries.
+

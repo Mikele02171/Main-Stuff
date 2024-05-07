@@ -1,0 +1,91 @@
+1. What do you think the real problem was in this case? 
+
+2. Was Nick a good project manager? Why or why not? 
+
+3. What should top management have done to help Nick? 
+
+4. What could have Nick done to be a better project Manager?
+
+Answer text Question 1
+
+Real Problem: The real problem in this case seems to be a misalignment of expectations and roles. Top management expected Nick to perform the duties of a project manager, such as providing accurate schedules and detailed plans, while Nick focused primarily on technical aspects, acting more as a software integrator and trouble-shooter.
+
+Nick as a Project Manager: Nick's technical skills and dedication are evident, but as a project manager, he fell short in managing all aspects of the project. While he successfully delivered the product on time, his lack of focus on managerial responsibilities led to dissatisfaction from top management.
+
+Support from Top Management: Top management could have provided clearer guidance and support to Nick in his new role as project manager. They should have communicated their expectations more explicitly and provided resources or training to help him fulfill those expectations.
+
+Improvement for Nick: Nick could have improved his project management skills by prioritizing tasks, communicating effectively with stakeholders, and delegating responsibilities. He should have focused on creating accurate schedules and detailed plans to keep all aspects of the project on track.
+
+
+
+
+Question 2
+Complete
+Marked out of 5.00
+Flag question
+Question text
+Create a possible charter that Nick could have created for completing the next-gen DNA-sequencing instrument project.
+
+
+
+Answer text Question 2
+Project Title: Next-Gen DNA Sequencing Instrument Development
+Project Objectives:
+Develop a next-generation DNA sequencing instrument that is smaller, faster, and more cost-effective.
+Deliver the first version of the product within four months and a production version within nine months.
+Ensure the instrument meets quality standards and fulfills the needs of the target market.
+Project Scope:
+Hardware and software development for the DNA sequencing instrument.
+Testing and validation of the instrument's performance and accuracy.
+Documentation and training materials for users.
+Project Deliverables:
+First version of the DNA sequencing instrument.
+Production version of the instrument.
+Documentation and training materials.
+Project Milestones:
+Completion of hardware design and prototyping.
+Completion of software development and integration.
+Testing and validation of the instrument's performance.
+Launch of the first version and production version.
+Project Team:
+Nick Carson - Project Manager
+Hardware Engineers
+Software Engineers
+Quality Assurance Specialists
+Technical Writers
+Project Risks:
+Technical challenges in hardware and software development.
+Delays in testing and validation.
+Changes in market demands or technology.
+Project Stakeholders:
+Top Management
+Investors
+End Users
+Regulatory Authorities
+Project Budget:
+Allocation of resources for hardware and software development, testing, and validation.
+Contingency funds for unforeseen challenges.
+Project Communication Plan:
+Regular progress reports to top management.
+Meetings with stakeholders to gather feedback and address concerns.
+Open communication channels within the project team for collaboration and problem-solving.
+Project Governance:
+Adherence to relevant regulations and standards.
+Compliance with company policies and procedures.
+Escalation process for addressing issues or conflicts.
+
+Question 3
+Complete
+Not graded
+Flag question
+Question text
+Create a mind map of a SWOT analysis for the above case study.
+
+Upload your midmap.
+
+Answer text Question 3
+In the SWOT analysis, strengths could include Nick's technical expertise and the potential of the project for future growth. Weaknesses might involve Nick's inexperience in project management and the lack of clear communication with top management. Opportunities could be the potential for corporate buyouts and advancements in DNA sequencing technology. Threats may include competition from other companies and technical challenges in development.
+
+
+
+(Forgot to add the link for the midmap!)

@@ -1,0 +1,246 @@
+Workshop 1 (Week 2) CSE5PM 
+
+Question 1.
+In the context of Project Management explain the following concepts and how they compromise a project:
+[You can explain these concepts with an example. Restrict your answer to less than 500 words]
+•Scope creep
+•Key person Risk
+•Strategy Risk
+•Operational Risk
+
+2. How can a project manager proactively manage these risks ?
+
+3. Give examples of three other risks/factors you think could pose threat to a project, and how they can be managed.
+
+Answer text Question 1
+Scope Creep: 
+
+Changes happens during the projects all of the time during the scope of a project without any control. Generally, scope creep is when new requirements are added after the project has started. Often these changes are not properly reviewed. The project team is expected to deliver them with the same resources and at the same time as the original scope.
+
+
+
+Key person Risk:
+
+A key person is an Individual whose knowledge, creativity, inspiration, reputation, and/or skills are critical to the viability or growth of an organization, and whose loss may cripple it. 
+
+It is usually seen in small project teams and caused due to over-reliance on one team member. 
+
+To minimize the potential disruption of project schedule, a project manager must consider the implications, and have a key person risk management plan in place.
+
+
+
+Strategy risk:
+
+Strategic risk might arise from making poor business decisions, from the substandard execution of decisions, from inadequate resource allocation, or from a failure to respond well to changes in the business environment. 
+
+Some types of strategy risks include – innovation risk, program risk, marketing risk, project risk, etc.
+
+
+
+Operational risk:
+
+Operational risk focuses on how things are accomplished within an organization and not necessarily what is produced or inherent within an industry. 
+
+These risks are often associated with active decisions relating to how the organization functions and what it prioritizes. 
+
+While the risks are not guaranteed to result in failure, lower production, or higher overall costs, they are seen as higher or lower depending on various internal management decisions. 
+
+
+
+2. How can a project manager proactively manage these risks?
+
+▪ In Project Management, it is widely believed that Time, Quality and Cost are conflicting constraints that it is not possible to agree and lock in these elements individually without compromising each of them. 
+
+ ▪ The Time–Quality–Cost triangle can be used to assist with understanding the interdependencies of each element. In the Time-Quality-Cost triangle, fixing one of the constraints requires and re-adjusting the other two to match and complete the triangle.
+
+
+
+3. Give examples of three other risks/factors you think could pose threat to a project, and how they can be managed.
+
+Communication risk: In project management is the potential for a breakdown in communication between stakeholders, team members, and other parties involved in the project. This can be resolved by following: 
+
+- identifying potential risks
+
+- establish a crisis team
+
+- communicate clearly and concisely,
+
+- monitor and evaluation during development
+
+- Learn and improve
+
+- Build resilience. 
+
+
+
+Performance risks: Performance risk occurs when the project doesn't perform as well as initially expected.
+
+This can be resolved by:
+
+- Building proper training with people with experience in their field.
+
+- Build communication more efficiently with your team members
+
+- Do some extended research and practices on the resources. 
+
+
+
+Technology risks: Technology risks are caused by defects in any of the equipment, systems, or devices used, or by the sudden failure of a service. 
+
+-Establishing scope and risk context.
+
+-Identifying and analyzing risks.
+
+-Designing risk management mitigation strategies.
+
+
+Question 2.
+Case Study:
+
+This is a past scenario:
+
+Then Prime Minister Scott Morrison revealed all Australian major political parties were hacked by a "sophisticated state actor" in a breach of security recently.
+
+
+
+His Chief of Staff has sent you the link
+https://www.sbs.com.au/news/article/australias-political-parties-targeted-in-cyber-hack-of-federal-parliament/9j8ktg485
+
+
+
+You are a part of the Australian Cyber Security Centre (ACSC), and the Prime Minister has given you a strict time window of 6 months to run a project that will beef up cyber resilience for Australia’s Political Parties.
+
+
+
+• In groups of 3-5 identify what distinguishes this project from daily routine Cyber operations? Come up with two points and justify them.
+
+• Explain to the Prime Minister the size and complexity of the project, any constraints you anticipate, and what kind of support you might need to be successful in your efforts.
+
+• Outline any key assumptions you have made in carrying out this exercise.
+
+[Restrict your answers to less than 500 words]
+
+Distinguishing Factors from Daily Routine Cyber Operations:
+
+Political Sensitivity and Public Scrutiny:
+
+The project involves securing political parties, which are highly sensitive entities subject to public scrutiny. Unlike routine cyber operations, any lapses in security could have severe consequences on national trust and political stability. The need for meticulous planning and execution to avoid public panic and maintain confidence in the political system sets this project apart.
+Coordinated Multi-Stakeholder Collaboration:
+
+This project demands extensive collaboration with various stakeholders, including political parties, intelligence agencies, and law enforcement. Unlike routine cyber operations, this initiative requires seamless cooperation among entities with diverse priorities and organizational structures. The coordination challenges in aligning cybersecurity strategies and practices across these distinct groups make this project uniquely complex.
+Size, Complexity, Constraints, and Support:
+
+Size and Complexity:
+
+The project encompasses securing multiple political parties, each with its own infrastructure, processes, and potential vulnerabilities. The sheer size and complexity arise from the need to tailor solutions for different parties, ensuring comprehensive coverage. The intricate nature of political operations, varying threat landscapes, and the necessity for real-time threat intelligence further contribute to the project's enormity.
+Constraints:
+
+Time Constraint: The six-month timeframe poses a significant challenge for such a comprehensive cybersecurity initiative. Quick yet effective implementations, risk assessments, and ongoing monitoring must be conducted simultaneously.
+Resource Limitations: The diverse IT infrastructures of political parties may lack standardization, requiring customized solutions. Resource limitations in terms of skilled personnel, technology, and financial constraints could impede progress.
+Support Needed:
+
+Technical Expertise: Given the sophistication of the state actor involved, specialized technical expertise is crucial. Collaboration with leading cybersecurity experts, both domestic and international, will be necessary to understand and counter evolving cyber threats effectively.
+Legislative Backing: Support in terms of updated legislation and regulations to empower cybersecurity measures is essential. Clear legal frameworks must be established to facilitate information sharing and collaboration between political parties and government agencies.
+Key Assumptions:
+
+Active Participation of Political Parties:
+
+Assuming that political parties will actively engage in the cybersecurity enhancement process, providing necessary information and access to their systems for assessment and improvement.
+Continuous Threat Intelligence Sharing:
+
+Assuming a culture of continuous threat intelligence sharing among political parties, intelligence agencies, and law enforcement to stay ahead of potential threats and vulnerabilities.
+Adaptability to Evolving Threats:
+
+Assuming that the cybersecurity measures implemented will be adaptable to the evolving tactics of the sophisticated state actor, requiring continuous monitoring, updates, and proactive responses.
+Public Understanding and Support:
+
+Assuming that the public will understand the necessity of enhanced cybersecurity measures for political parties and will support the temporary disruptions that may occur during the implementation phase for long-term national security benefits.
+
+
+
+Question 3.
+
+Core Electronics is a retailer for electronics in Australia including Arduino, Raspberry Pi, Sparkfun and Adafruit products.
+
+
+
+Established in 2007, this business has rapidly grown since they established their ecommerce store.
+
+Core-electronics delivers electronics and IoT gadets/devices all over Australia.
+
+The company receives more than 1000 orders every week just through their online platform.
+
+Due to their recent business growth and popularity among tech enthuasiasts, the company has decided to expand its operations to other countries such as Singapore, New-Zealand, India, Canada and the UK.
+
+Since the company is undertaking this major step in their business, they have hired you as an consultant to advice them on how they should proceed.
+
+Your responsibility as Project Manager is to advice them on the following plans -
+
+1. Size and Complexity of the project.
+2. Key Business and Operational Risks involved with this expansion.
+3. Taking into consideration the 3 constraints in Project Management - Time, Quality and Cost. Evaluate each constraint and advice the business owner on which constraint they would have to sacrifice to ensure the success of the project.
+4. Opportunities and Stratergies the business can maximize in these countries.
+
+[Help Resources ] -
+
+Challenges & Opportunities for ecommerce businesses
+
+Core Electronics
+
+Answer text Question 3
+1. Size and complexity of the project:
+
+
+Size: The size of the expansion project is significant, considering the addition of multiple countries like Singapore, New Zealand, India, Canada, and the UK. Each country has its own market dynamics, regulations, and customer behaviors, adding to the overall project size.
+
+Complexity: The complexity arises from dealing with diverse regulatory frameworks, cultural variations, and logistical challenges associated with international shipping. Managing different currencies, tax systems, and compliance requirements in each country adds an extra layer of complexity. Additionally, coordinating the expansion simultaneously across multiple countries increases the intricacy of the project.
+
+
+2. Key Business and Operational Risks involved with this expansion.:
+
+
+Business Risks:
+
+Regulatory Compliance: Adhering to various local regulations and legal requirements in different countries is crucial to avoid legal issues and financial penalties.
+Market Acceptance: Understanding and adapting to the preferences and demands of each new market is essential to ensure product acceptance and customer satisfaction.
+Competition: Analyzing and effectively competing with local and global rivals in each market is vital to gain market share.
+Operational Risks:
+
+Logistics and Supply Chain: Managing the supply chain and logistics for international shipping, including customs clearance and timely delivery, can pose significant operational challenges.
+Currency Fluctuations: Exchange rate variations can impact costs and pricing. Implementing effective strategies to mitigate currency risks is crucial.
+
+3. Taking into consideration the 3 constraints in Project Management - Time, Quality and Cost. Evaluate each constraint and advice the business owner on which constraint they would have to sacrifice to ensure the success of the project.:
+
+
+Time: Given the simultaneous expansion into multiple countries, time constraints are critical. Balancing the need for swift market entry with thorough market research and compliance adherence is essential. Delayed entry may result in losing competitive advantage, so prioritizing a streamlined process is crucial.
+
+Quality: Maintaining product quality and service standards across all regions is non-negotiable. Quality assurance processes must be implemented to ensure consistency, customer satisfaction, and brand reputation.
+
+Cost: Cost constraints are a challenge, particularly with the need for market research, compliance, and initial setup costs. Allocating resources wisely and optimizing operational efficiency is key. The business may need to be prepared for initial financial investments before seeing returns.
+
+
+4. Opportunities and Stratergies the business can maximize in these countries.:
+
+
+Opportunities:
+
+Market Diversity: Leverage the diverse customer base in each country to increase overall sales and reduce dependency on a single market.
+Brand Recognition: Utilize the established reputation in Australia to build brand recognition in new markets.
+Partnerships: Form strategic partnerships with local distributors or retailers to ease market entry.
+Strategies:
+
+Localized Marketing: Tailor marketing strategies to each market's unique preferences and cultural nuances.
+E-commerce Optimization: Optimize the online platform for seamless international transactions, including multiple currency support and efficient shipping options.
+Agile Approach: Adopt an agile project management approach to quickly adapt to changes and market feedback.
+
+
+
+
+
+
+
+
+
+-Implementing the strategies. 
+
+-Monitoring and measuring results.

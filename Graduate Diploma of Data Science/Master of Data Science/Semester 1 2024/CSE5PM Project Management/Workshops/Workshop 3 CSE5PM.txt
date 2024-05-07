@@ -1,0 +1,189 @@
+Question 1.
+You are a project consultant for the ABC Company and are helping to develop an agile method using Scrum. The company has always used predictive project management methods for software development. The company managers understand that if implemented properly Agile can have significant advantages. 
+
+You as a project consultant are asked to prepare a proposal that suggests what roles, documentation, and team management approaches are needed to start a pilot for Agile. 
+
+Justify your recommendations.
+
+
+Answer text Question 1
+
+Proposal for Implementing Agile (Scrum) at ABC Company
+
+Introduction: ABC Company has recognized the potential benefits of adopting Agile methodologies, particularly Scrum, for software development projects. This proposal outlines the roles, documentation, and team management approaches required to initiate a successful Agile pilot within the company.
+
+1. Roles in Scrum:
+
+Product Owner: The Product Owner represents the stakeholders and is responsible for maximizing the value of the product and the work of the Development Team. They prioritize the product backlog and ensure that the team understands the vision and goals.
+
+Scrum Master: The Scrum Master serves as a facilitator for the Scrum Team. They ensure that the team follows Scrum practices and removes any impediments that hinder the team's progress. The Scrum Master also helps the team improve its processes and fosters a collaborative environment.
+
+Development Team: The Development Team consists of professionals who are responsible for delivering potentially shippable increments of the product at the end of each sprint. They self-organize to accomplish the work and are cross-functional, with all the skills necessary to deliver the product increment.
+
+2. Documentation:
+
+Product Backlog: A prioritized list of all desired work on the project. It is the single source of requirements for any changes to be made to the product.
+
+Sprint Backlog: A subset of the product backlog selected for the sprint, along with a plan for delivering the product increment and achieving the sprint goal.
+
+Increment: The sum of all the product backlog items completed during a sprint, plus the value of all previous increments. It represents a step toward the vision of the product.
+
+Sprint Review: A meeting held at the end of each sprint where the Scrum Team and stakeholders inspect the increment and adapt the product backlog if needed.
+
+Sprint Retrospective: A meeting held at the end of each sprint where the Scrum Team reflects on their processes and identifies opportunities for improvement.
+
+3. Team Management Approaches:
+
+Self-Organization: Encourage teams to self-organize and make decisions collectively. This empowers team members, fosters collaboration, and increases ownership of the work.
+
+Iterative Development: Break down the project into smaller, manageable iterations (sprints), allowing for frequent inspection and adaptation. This mitigates risks and enables the team to respond to change quickly.
+
+Cross-Functional Teams: Form cross-functional teams with diverse skills necessary to deliver the product increment. This reduces dependencies and bottlenecks, enabling faster delivery and better quality.
+
+Justification:
+
+Flexibility and Adaptability: Agile methodologies like Scrum offer greater flexibility and adaptability compared to predictive project management methods. This allows ABC Company to respond to changing requirements and market conditions more effectively.
+
+Faster Time to Market: By delivering working increments of the product at the end of each sprint, Agile enables faster time to market, providing a competitive advantage for ABC Company.
+
+Increased Stakeholder Engagement: The iterative and incremental nature of Agile encourages continuous feedback from stakeholders, resulting in a product that better meets their needs and expectations.
+
+Improved Quality: Through regular inspection and adaptation, Agile methodologies promote continuous improvement, leading to higher-quality deliverables and reduced rework.
+
+Employee Empowerment: Agile empowers employees by giving them more autonomy and decision-making authority, leading to higher job satisfaction and productivity.
+
+Conclusion: Implementing Agile, particularly Scrum, at ABC Company holds the potential to revolutionize the way software development projects are managed. By embracing Agile principles and practices, ABC Company can achieve greater flexibility, faster time to market, improved stakeholder satisfaction, and higher-quality deliverables. This proposal outlines the necessary roles, documentation, and team management approaches to kickstart a successful Agile pilot within the organization.
+
+
+Question 2
+Complete
+Marked out of 5.00
+Flag question
+Question text
+Erica Bell is in charge of the Project Management Office (PMO) for her consulting firm, JWD Consulting, which has grown to include more than 200 full-time consultants and even more part-time consultants. JWD Consulting provides a variety of consulting services to assist organizations in selecting and managing IT projects. The firm focuses on finding and managing high-payoff projects and developing strong metrics to measure project performance and benefits to the organization after the project is implemented. The firm’s emphasis on metrics and working collaboratively with its customers gives it an edge over many competitors. Joe Fleming, the CEO, wanted his company to continue to grow and become a world-class consulting organization. Because the core of the business is helping other organizations with project management, he felt it was crucial for JWD Consulting to have an exemplary process for managing its own projects. He asked Erica to work with her team and other consultants in the firm to develop several intranet site applications that would allow them to share their project management knowledge. He also thought that the firm should make some of the information available to the firm’s clients. For example, the firm could provide project management templates, tools, articles, links to other sites, and an Ask the Expert feature to help build relationships with current and future clients. Because JWD Consulting emphasizes the importance of high-payoff projects, Joe also wanted to see a business case for this project before proceeding. Consider that this project is managed using Agile approach.
+
+What are some of the typical challenges project teams face during each of the five process groups? (e.g., the What Went Right? or What Went Wrong? feature).  
+Identify three main scrum roles (Product owner, Scrum Master and Scrum or Development team) and person/people responsible for each of these roles. 
+Case study adapted from Schwalbe, K. (2018). Information Technology Project Management. Cengage.
+
+
+Answer text Question 2
+From Page 86.
+
+1.
+
+Typical challenges project teams face during the five process groups in this case study are:
+
+Initiating: 
+
+Ensuring clear understanding and alignment of project objectives among stakeholders.
+
+Identifying and securing necessary resources and support for the project.
+
+Establishing a solid project vision and scope.
+
+
+
+What may go wrong? 
+
+Unable to identity the timeframe and setting realistic goals. (key deliverables and scope)
+
+
+
+
+
+Planning:
+
+Balancing the need for detailed planning with the Agile principle of adaptability.
+
+Anticipating and managing changes in requirements throughout the project.
+
+Estimating resources and time accurately, especially in dynamic environments.
+
+
+
+What may go wrong? 
+
+Allocating resources
+
+
+
+Executing:
+
+Ensuring effective communication and collaboration among team members.
+
+Managing and resolving conflicts within the team.
+
+Adapting to changing priorities and requirements while staying focused on delivering value.
+
+
+
+What may go wrong? 
+
+Failure to communicate to stakeholders,
+
+
+
+Monitoring and Controlling:
+
+Tracking progress accurately and transparently.
+
+Identifying and addressing issues and risks promptly.
+
+Maintaining alignment with project objectives and stakeholder expectations.
+
+
+
+What may go wrong? 
+
+-Not tracking the process,
+
+-unable to identity the potential risks 
+
+
+
+Closing:
+
+Ensuring all project deliverables are completed to satisfaction.
+
+Conducting thorough project reviews and lessons learned sessions.
+
+Transitioning project outputs to operations or maintenance teams smoothly.
+
+
+
+What may go wrong? 
+
+Proper Documentation, not changing logs during the project, 
+
+
+
+2.
+
+Product Owner: Responsible for defining and prioritizing the product backlog.
+
+Represents the voice of the customer and stakeholders.
+
+Ensures the team is working on the most valuable features.
+
+Joe Fleming 
+
+
+
+Scrum Master: Erica Bell
+
+Acts as a servant-leader for the Scrum team.
+
+Facilitates Scrum events and ensures adherence to Scrum principles and practices.
+
+Helps remove impediments and fosters a productive team environment.
+
+
+
+Scrum/Development Team: Erica's Team and JWD consultants. 
+
+Cross-functional team responsible for delivering increments of working product.
+
+Self-organizing and empowered to determine how to accomplish the work.
+
+Collaborates closely with the Product Owner to understand and deliver on requirements.
