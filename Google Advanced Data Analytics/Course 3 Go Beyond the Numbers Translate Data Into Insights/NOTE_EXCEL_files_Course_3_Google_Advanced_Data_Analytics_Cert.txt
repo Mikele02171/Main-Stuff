@@ -1,4 +1,0 @@
-NOTE regarding EXCEL files
-The following excel files:
-tableau_dataset.csv and tableau_main_2009_to_2018.csv files are moved into 
-Google Advanced Data Analytics Cert Tableau files on Kaggle
