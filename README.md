@@ -11,7 +11,7 @@ IBM Data Science Professional (Completed) <br/>
 IBM Data Analyst Professional (Completed) <br/>
 Machine Learning Specialisation from DeepLearning.Ai and Stanford Online (Completed) <br/>
 Mathematics for Data Science and Machine Learning from DeepLearning.Ai (Completed) <br/>
-CS50x Introduction to Computer Science HarvardX and EdX 2024(On Hold) NOTE: Might redo the course for the 2024 Edition CONTENT MAY CHANGE <br/>
+Google Advanced Data Analytics Certification (Completed) <br/>
 
 DataCamp: <br/>
 Data Analyst with Python (Completed) <br/>
