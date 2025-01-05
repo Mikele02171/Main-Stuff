@@ -1,0 +1,11 @@
+customer_id,first_name,last_name,birth_date,phone,address,city,state,total_money_spent
+100101,Kevin,Malone,1989-04-28,635-573-9754,"1229 Main Street",Scranton,PA,11000
+100102,Charles,Xavier,1965-04-11,729-287-9456,"123 North Hill Drive",Dallas,TX,947
+100103,Finley,Danish,1999-02-07,126-583-7856,"432 Hilly Road",Austin,TX,534
+100104,Obi,Kenobi,1921-04-22,975-357-7663,"101 Alpine Avenue","New York",NY,3567
+100105,Don,Draper,1948-11-07,NULL,"12 South Main Lane","San Francisco",CA,195
+100106,Frodo,Baggins,2001-09-04,NULL,"1 Pastery Lane",Chicago,IL,56
+100107,Michael,Scott,1978-08-20,235-357-3464,"987 Croissant Street",Scranton,PA,2536
+100108,Maggie,Muffin,2001-07-06,906-485-1542,"701 North Street",Sarasota,FL,1009
+100109,Kelly,Kapoor,1987-05-30,674-357-9151,"62810 Julip Lane",Scranton,PA,540
+100110,Anakin,Skywalker,1934-10-15,346-458-3370,"122 South Street",Charleston,SC,36

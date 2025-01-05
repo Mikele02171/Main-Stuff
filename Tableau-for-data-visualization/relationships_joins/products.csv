@@ -1,0 +1,11 @@
+product_id,product_name,units_in_stock,sale_price
+1001,"Chocolate Chip Cookie",200,1.50
+1002,"Banana Nut Muffin",180,2.50
+1003,Croissant,70,1.75
+1004,"Cheese Danish",55,1.85
+1005,Cannoli,112,2.25
+1006,"Sweet Bread Loaf",32,15.50
+1007,"Strawberry Macaron",98,2.00
+1008,"Coffee Cake",25,13.00
+1009,"Carrot Cake",15,14.50
+1010,"Chocolate Covered Doughnut",80,1.00

@@ -1,0 +1,10 @@
+employee_id,first_name,last_name,department,title,salary
+1,Christine,Freberg,Bakery,"Lead Baker",70000
+2,Dwight,Schrute,Bakery,"Assistant to the Lead Baker",45000
+3,Tom,Haveford,Bakery,Chocolatier,45000
+4,Ann,Perkins,Bakery,"Bakery Clerk",30000
+5,Carl,Lorthner,Bakery,"Dough Maker",40000
+6,Ron,Swanson,Marketing,"Director of Marketing",75000
+7,Troy,Barnes,Marketing,"Lead Marketer",60000
+8,Jeff,Winger,Marketing,"Marketing Analyst",60000
+9,Annie,Edison,Marketing,"Social Media Marketer",65000
