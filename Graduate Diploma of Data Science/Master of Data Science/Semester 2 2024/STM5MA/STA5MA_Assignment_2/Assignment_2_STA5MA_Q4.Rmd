@@ -1,0 +1,124 @@
+---
+title: "STA5MA_Assignment_2_Q4"
+output: word_document
+date: "2024-10-12"
+---
+
+
+#PART A
+
+```{r}
+
+library(metafor)
+df <- read.csv('C:/Users/Michael Le/Desktop/STA5MA_Assignment_2/counts_data.csv')
+dat <- escalc(ai = treat.cases, n1i = treat.n, ci = control.cases, 
+              n2i = control.n, data = df, measure = "OR")
+
+#Check for the first study log OR for the first study
+res <- rma(yi = yi, vi = vi, data = dat,method="REML")
+summary(res)
+
+
+
+```
+
+#PART B
+
+```{r}
+
+#LAB 9 Question 1 Part c
+library(metafor)
+
+# Read the data
+df <- read.csv('C:/Users/Michael Le/Desktop/STA5MA_Assignment_2/counts_data.csv')
+
+# Calculate effect sizes (log ORs)
+dat <- escalc(ai = treat.cases, n1i = treat.n, ci = control.cases, 
+              n2i = control.n, data = df, measure = "OR")
+
+# Perform meta-analysis using REML method
+res <- rma(yi = yi, vi = vi, data = dat,slab = Study,method = "REML")
+
+# Forest plot for ODDS RATIO
+forest(res, atransf = exp, xlab = "Odds Ratio")
+
+
+
+```
+
+
+```{r}
+#FINALISED FUNNEL ODDS SCALE (NOT LOG ODDS SCALE)
+funnel(res,atransf = exp, xlab = "Odds Ratio")
+regtest(res)
+```
+
+## Part d
+
+```{r}
+#i.
+library(metafor)
+df <- read.csv('C:/Users/Michael Le/Desktop/STA5MA_Assignment_2/counts_data.csv')
+dat <- escalc(ai = treat.cases, n1i = treat.n, ci = control.cases, n2i = control.n, data = df, measure = "OR")
+
+res <- rma(yi = yi, vi = vi, data = dat,slab = Study,method = "REML",mods = ~age)
+res
+
+```
+
+
+
+
+
+```{r}
+
+#iii. 
+library(metafor)
+df <- read.csv('C:/Users/Michael Le/Desktop/STA5MA_Assignment_2/counts_data.csv')
+dat <- escalc(ai = treat.cases, n1i = treat.n, ci = control.cases, 
+              n2i = control.n, data = df, measure = "OR")
+
+
+
+```
+```{r}
+
+#iv
+res <- rma(yi, vi, mods = ~age , data=dat,method = "REML")
+pred <- predict(res, newmods = 50)
+pred
+```
+
+
+#Part e.
+```{r}
+
+df
+
+```
+
+
+```{r}
+#i
+res <- rma(yi, vi, subset = dose == "high" , data=dat,method = "REML")
+summary(res)
+
+```
+```{r}
+#ii
+res <- rma(yi, vi, subset = dose == "low" , data=dat,method = "REML")
+summary(res)
+
+```
+
+
+
+
+```{r}
+#v
+res <- rma(yi, vi, mods = ~ dose, data=dat,method = "REML")
+res
+
+```
+
+

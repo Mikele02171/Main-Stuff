@@ -1,0 +1,27 @@
+---
+title: "Assignment_2_Q3_Part_2"
+output: word_document
+date: "2024-10-13"
+---
+
+```{r}
+
+# Install and load metafor package
+library(metafor)
+
+# Example data: Ratios of variances and variances of the ratios
+ratio_var <- c(0.74, 0.7, 1.09)  # Example variance ratios from studies
+vi <- c((0.74-0.22)^2,(0.7-0.43)^2,(0.76-0.55)^2)  # Variances of the ratios
+
+# Perform meta-analysis on variance ratios
+res <- rma(yi = log(ratio_var), vi = vi, method = "REML")
+
+# View summary of the meta-analysis
+forest(res)
+
+
+```
+
+
+
+

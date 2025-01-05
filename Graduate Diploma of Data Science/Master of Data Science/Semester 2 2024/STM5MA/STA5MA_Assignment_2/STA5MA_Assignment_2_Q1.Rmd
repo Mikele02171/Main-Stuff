@@ -1,0 +1,158 @@
+---
+title: "Assignment_2"
+output: word_document
+date: "2024-10-11"
+---
+
+#Question 1
+```{r}
+
+#Part a.
+dat <- read.csv('C:/Users/Michael Le/Desktop/STA5MA_Assignment_2/means_data.csv')
+
+dat
+```
+
+
+
+```{r}
+#sample sizes
+n1 <- dat$n1
+n2<- dat$n2
+
+#sample variances
+v1 <- (dat$sd1)^2
+v2 <- (dat$sd2)^2
+
+nu.1<-dat$n1 - 1
+nu.2<-dat$n2 - 1
+
+#log of ratios of variances and variance of log ratios
+log.ratios <- log(v1/v2)
+v.log.ratios <- 2*(nu.1+nu.2 - 2)/nu.1/(nu.2-4)
+
+# The below carries out a bias adjustment so that the expected value
+# is closer to the log ratio of variances.  The adjustment term is
+# obtained from the approximate expression of the mean of the log of 
+# sample variance ratios following Eq. 15 in Prendergast & Staudte (2016).
+log.ratios.adj <- log.ratios - log(nu.2/(nu.2 - 2)) + v.log.ratios/2
+
+# SET METHOD.  NOTE IN THE BELOW WE SELECT THE FIXED EFFECTS ANALYSIS FOR
+# EXAMPLE ONLY.  IT IS USUALLY ADVISABLE TO USE A RANDOM EFFECTS META-ANALYSIS
+library(metafor)
+method <- "REML"
+res <- rma(yi = log.ratios.adj, vi = v.log.ratios, method = method)
+res
+
+
+
+```
+
+
+
+
+```{r}
+meta_data <- read.csv('C:/Users/Michael Le/Desktop/STA5MA_Assignment_2/means_data.csv')
+
+#The log ratio of means for each study
+meta_data$log_r <- log(meta_data$m1 / meta_data$m2)
+
+
+#with the associated variances
+meta_data$log_r_var = meta_data$sd1^2 /(meta_data$n1 * meta_data$m1 ^2) + meta_data$sd2 ^ 2 /
+(meta_data$n2 * meta_data$m2 ^ 2)
+
+
+meta_data$ci_lb = meta_data$log_r - qnorm(0.975) * sqrt(meta_data$log_r_var)
+
+meta_data$ci_ub = meta_data$log_r + qnorm(0.975) * sqrt(meta_data$log_r_var)
+
+meta_data$weight = (1 / meta_data$log_r_var)
+meta_data$weight_prop = (1 / meta_data$log_r_var) / sum(1 / meta_data$log_r_var)
+
+#SOLUTION: Part ai. Meta-estimate for FE. The estimate for the overall mean log ratio of variances
+theta <- sum(meta_data$log_r * meta_data$weight) / sum(meta_data$weight)
+round(theta,5)
+
+# Variance for the Meta-estimate
+var_theta <- 1/sum(meta_data$weight)
+round(var_theta,10)
+
+
+
+
+```
+
+```{r}
+
+#SOLUTION: Part b
+# For the log ratio of means for the last study is 
+# and the associated variance, refer from the 
+meta_data[5,8:9]
+meta_data[5,8]
+meta_data[5,9]
+
+
+
+
+
+```
+
+
+
+
+```{r}
+#Part c
+meta_data <- read.csv('C:/Users/Michael Le/Desktop/STA5MA_Assignment_2/means_data.csv')
+rom.data <- escalc( n1i = dat$n1, n2i = dat$n2, m1i = dat$m1, m2i = dat$m2,
+sd1i = dat$sd1, sd2i = dat$sd2, measure = "ROM",slab = dat$Study,
+data = meta_data)
+
+meta_data_model <- rma(yi = yi, vi = vi,data = rom.data, method = "REML")
+meta_data_model
+
+
+```
+
+
+
+```{r}
+#Part d
+#Convert back to ratio scale
+#Transformed values
+
+#Estimate mean ratio
+est_mu_ratio <- exp(-0.0307)
+est_mu_ratio
+
+#Upper_bound
+est_lb <- exp(-0.3327)
+est_lb
+
+#Lower_bound
+est_ub <- exp( 0.2713)
+est_ub
+
+
+
+```
+
+
+```{r}
+#Continuing Part d
+
+#predict
+predict(meta_data_model)
+
+```
+
+
+
+```{r}
+#Continuing Part d
+#transform back to ratio scale 
+pred_lb<-exp(-0.7635)
+pred_lb 
+pred_ub<-exp(0.7021)
+pred_ub
+```
