@@ -1,0 +1,73 @@
+---
+title: "Quiz_3_Q3"
+output: word_document
+date: "2024-09-27"
+---
+
+```{r }
+#Racap from Lab 7
+library("sp")
+library("spatstat")
+library("metafor")
+dat<-data(dat.normand1999)
+
+
+normand1999 <- data.frame(n1 = dat.normand1999$n1i,n2 =dat.normand1999$n2i,v1 = dat.normand1999$sd1i^2,v2 = dat.normand1999$sd2i^2)
+
+# You will need to enter your own directory path
+#write.csv(normand1999, "C:/Users/Michael Le/Desktop/normand1999.csv", row.names = FALSE)
+
+```
+
+##Now for the Actual Quiz Problem
+
+
+```{r}
+data(dat.bourassa1996)
+dat1 <- escalc(measure="OR", ai = lh.le, bi = lh.re, ci = rh.le, di = rh.re,
+data=dat.bourassa1996)
+
+res <- rma(yi, vi, data = dat1, subset = year > 1981)
+summary(res)
+
+```
+
+## Including Plots
+
+
+
+```{r}
+
+funnel(res)
+```
+
+
+
+```{r}
+
+forest(res)
+```
+
+
+```{r}
+
+#Now to find the value for Egger's test
+res <- rma(yi, vi, data = dat1, subset = year > 1981)
+regtest(res)
+
+```
+
+
+#Question 5
+```{r}
+library("sp")
+library("spatstat")
+library("metafor")
+data <- data.frame(m1 = c(19,22,12,31,29),s1 = c(6,12,9,8,13),n1 = c(15,12,37,23,21), m2 =c(29,23,9,39,35),s2 = c(15,13,15,7,19),n2 = c(30,10,44,31,23))
+
+#Write the data
+#write.csv(data,"C:/Users/Michael Le/Desktop/data.csv", row.names = FALSE)
+
+```
+
+
