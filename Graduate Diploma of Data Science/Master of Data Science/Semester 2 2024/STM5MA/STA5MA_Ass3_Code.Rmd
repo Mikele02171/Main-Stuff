@@ -1,0 +1,318 @@
+---
+title: "STA5MA_Assignment_3_Code"
+output: word_document
+date: "2024-11-06"
+---
+
+## Ruplication of the main findings 
+## Refer from Quiz 4 Q1 assuming this is taking 
+## under random effects model.
+
+
+# NOTE: 
+# a. Global Cognitive function
+# b. Executive function 
+# c. Episodic memory
+```{r}
+#setup the data 
+#estimates 
+d.a <- c(1.382,1.352,0.526,0.072,-0.103,-0.428,0.09)
+d.b <- c(0.413,0.584,0.764,-0.278,-0.234,0.245,0.105,0.867,0.377,0.493,0.219,0)
+d.c <- c(-0.239,-0.273,0.643,0.329,0.392,0.177,0.236,-0.345,0.517,-0.028,0.423)
+
+#standard errors
+dem <- 2* qnorm(1 - ((1-0.95)/2))
+
+se.a <- c(0.817,0.653,1.025,0.779,0.773,0.903,0.558)/dem
+se.b <- c(1.149,1.362,1.044,0.778,1.14,0.931,0.776,1.19,1.146,1.065,0.776,0.588)/dem
+se.c <- c(1.143,0.736,1.034,1.05,0.594,0.898,1.141,0.739,1.06,0.589,1.104)/dem
+
+
+```
+
+
+
+```{r}
+#Creating the data-frame
+aut.dat <- data.frame(study = c("Lever & Gerts, 2016","Torevliet et al. 2022","Powell et al., 2017"
+                                ,"Groot et al., 2021"
+                                ,"Lever & Geurts, 2016"
+                                ,"Harker et al.,2023",
+                                "Torenvliet et.al.,2022",
+                                "Geurts & Vissers, 2012",
+                                "Braden et al., 2017",
+                                "Powell et al., 2017",
+                                "Geurts et al., 2020",
+                                "Geurts & Vissers, 2012",
+                                "Davids et al., 2016",
+                                "Geurts et al., 2020",
+                                "Geurts & Vissers, 2012",
+                                "Spek et al., 2017",
+                                "Tse et al., 2019",
+                                "Geurts et al., 2020",
+                                "Torenvliet et al., 2022",
+                                "Geurts & Vissers, 2012",
+                                "Lever & Geurts, 2016",
+                                "Powell et al., 2017",
+                                "Tse et al., 2019",
+                                "Torenvliet et al., 2022",
+                                "Harker et al., 2023",
+                                "Geurts & Vissers, 2012",
+                                "Lever & Geurts, 2016",
+                                "Tse et al., 2019",
+                                "Torenvliet et al., 2022",
+                                "Walsh et al., 2022") ,
+                      d = c(d.a, d.b, d.c),
+                      v = c(se.a^2, se.b^2, se.c^2),
+                      type = c(rep("Global Cognitive function", length(d.a)),
+                            rep("Executive function", length(d.b)),
+                            rep("Episodic memory", length(d.c))))
+
+head(aut.dat)
+
+```
+
+
+```{r}
+## Computing Inverse Weight Variances percentages 
+aut.dat$weights <- 1 / aut.dat$v
+aut.dat$weight_percent <- round((aut.dat$weights / sum(aut.dat$weights)) * 100, 2)
+
+```
+
+
+#Figure 1.
+```{r}
+#Conduct a meta-regression analysis using Hedges estimator
+
+library(metafor)
+res <- rma(yi = d, vi = v, mods = ~ type, data = aut.dat,method = "HE")
+
+
+forest(res, slab = aut.dat$study,
+       xlab = "SMD",
+       main = "Forest Plot Randrom Effects using Hedges with IVW",
+       ilab=aut.dat$weight_percent,
+       cex = 1)
+
+mtext("Inverse Variance Weight", side = 4, line = 3)
+
+```
+
+#Figure 2. Sub-plots for different cognitive domains 
+```{r}
+#Conduct a meta-regression analysis using DL estimator 
+
+meta_a <- rma(yi = d, vi = v, data = subset(aut.dat, type == "Global Cognitive function"),method = "HE")
+meta_b <- rma(yi = d, vi = v, data = subset(aut.dat, type == "Executive function"), method = "HE")
+meta_c <- rma(yi = d, vi = v, data = subset(aut.dat, type == "Episodic memory"), method = "HE")
+
+par(mfrow = c(2, 2)) 
+
+# Forest plot for Group A Global Cognitive function
+forest(meta_a, 
+       slab= subset(aut.dat, type == "Global Cognitive function")$study, 
+       xlab = "SMD", 
+       main = "Forest Plot - Global Cognitive function (a)",
+       xlim = c(-2, 2),
+       cex = 0.4
+
+)
+
+# Forest plot for Group B Executive function
+forest(meta_b, 
+       slab = subset(aut.dat, type == "Executive function")$study, 
+       xlab = "SMD", 
+       main = "Forest Plot - Executive function (b)",
+       xlim = c(-2, 2),
+       cex = 0.4
+
+)
+
+# Forest plot for Group C Episodic Memory
+forest(meta_c, 
+       slab = subset(aut.dat, type == "Episodic memory")$study, 
+       xlab = "SMD", 
+       main = "Forest Plot - Episodic memory (c)",
+       xlim = c(-2, 2),
+       cex = 0.4
+
+)
+
+
+
+```
+
+
+
+#Figure 3.Funnel Plot and Regression Test
+
+```{r}
+#Conduct a Funnel Plot using Hedges estimator
+
+library(metafor)
+res <- rma(yi = d, vi = v, mods = ~ type, data = aut.dat,method = "HE")
+
+
+funnel(res)
+
+```
+
+
+
+```{r}
+#Conduct a meta-regression analysis using Hedges estimator
+
+regtest(res)
+
+```
+#Extension 
+#Figure 4. Meta-Regression with no moderators using HE
+```{r}
+
+library(metafor)
+res <- rma(yi = d, vi = v, data = aut.dat,method = "HE")
+
+
+summary(res)
+
+```
+#Figure 4. Sensitivity analysis to subgroupings, we conducted three meta-regressions (A),(B) and (C). Using HE as the main estimator
+```{r}
+#Conduct a meta-regression analysis using HE estimator
+
+library(metafor)
+#Conduct a meta-regression analysis using DL estimator 
+
+meta_a <- rma(yi = d, vi = v, data = subset(aut.dat, type == "Global Cognitive function"),method = "HE")
+meta_b <- rma(yi = d, vi = v, data = subset(aut.dat, type == "Executive function"), method = "HE")
+meta_c <- rma(yi = d, vi = v, data = subset(aut.dat, type == "Episodic memory"), method = "HE")
+
+
+
+```
+
+
+#Figure 4A
+```{r}
+summary(meta_a)
+
+
+```
+
+#Figure 4B
+```{r}
+summary(meta_a)
+
+
+```
+
+#Figure 4C
+```{r}
+summary(meta_a)
+
+
+```
+
+
+#Figure 5.Meta-Regression with moderator type using DL
+```{r}
+#Conduct a meta-regression analysis using DL estimator
+
+library(metafor)
+res <- rma(yi = d, vi = v, mods = ~ type, data = aut.dat,method = "DL")
+
+
+summary(res)
+
+```
+
+
+#Figure 6.Meta-Regression with moderator type using REML
+```{r}
+#Conduct a meta-regression analysis using REML estimator
+
+library(metafor)
+res <- rma(yi = d, vi = v, mods = ~ type, data = aut.dat,method = "REML")
+
+
+summary(res)
+
+```
+
+
+
+#Figure 7.Meta-Regression with moderator type using HS
+```{r}
+#Conduct a meta-regression analysis using REML estimator
+
+library(metafor)
+res <- rma(yi = d, vi = v, mods = ~ type, data = aut.dat,method = "HS")
+
+
+summary(res)
+
+```
+
+#Figure 8.Meta-Regression with moderator type using SJ
+```{r}
+#Conduct a meta-regression analysis using SJ estimator
+
+library(metafor)
+res <- rma(yi = d, vi = v, mods = ~ type, data = aut.dat,method = "SJ")
+
+
+summary(res)
+
+```
+
+
+
+#Figure 9.Meta-Regression with moderator type using ML
+```{r}
+#Conduct a meta-regression analysis using SJ estimator
+
+library(metafor)
+res <- rma(yi = d, vi = v, mods = ~ type, data = aut.dat,method = "ML")
+
+
+summary(res)
+
+```
+
+
+#Figure 10.Meta-Regression with moderator type using EB
+```{r}
+#Conduct a meta-regression analysis using EB estimator
+
+library(metafor)
+res <- rma(yi = d, vi = v, mods = ~ type, data = aut.dat,method = "EB")
+
+
+summary(res)
+
+```
+
+
+#Figure 11.Meta-Regression with moderator type using PM
+```{r}
+#Conduct a meta-regression analysis using PM estimator
+
+library(metafor)
+res <- rma(yi = d, vi = v, mods = ~ type, data = aut.dat,method = "PM")
+
+
+summary(res)
+
+```
+
+
+
+
+
+
+
+
+
+
+
