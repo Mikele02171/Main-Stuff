@@ -1,0 +1,340 @@
+---
+title: "EXAMSTA5001"
+output: word_document
+date: "2024-06-10"
+---
+
+
+## Q1
+
+```{r}
+library(sp) 
+library(sf) 
+library(mapview)
+library(geoR)
+
+```
+
+
+```{r}
+data(s100)
+
+#Quick summary of the data
+summary(s100)
+
+
+```
+
+```{r}
+#Visualise the locations of the data in the x-y plane
+library(gstat)
+library(geoR)
+library(sp)
+
+plot(s100)
+
+
+```
+
+
+```{r}
+#Compute and plot a sample variogram.
+bin1 <- variog(s100, uvec=seq(0,1,l=11))
+plot(bin1)
+
+```
+
+```{r}
+#Fit exponential and wave variograms to the data by using ordinary least squares.
+#Hint: use the initial values (1,0.5) and zero nugget.
+
+ols.ne <- variofit(bin1, ini = c(1,0.5), nugget=0, weights="equal", cov.model = "exponential")
+
+ols.nw <- variofit(bin1, ini = c(1,0.5), nugget=0, weights="equal", cov.model = "wave")
+
+```
+
+
+```{r}
+#Plot the fitted variograms against the sample variogram.
+
+
+#For the exponential
+plot(bin1)
+lines(ols.ne, lwd = 2)
+legend(200, 6500,legend=c("OLS"),lty=c(1,1),lwd=c(2,1), cex=0.7)
+```
+
+```{r}
+#For the wave
+plot(bin1)
+lines(ols.nw, lwd = 2)
+legend(200, 6500,legend=c("OLS"),lty=c(1,1),lwd=c(2,1), cex=0.7)
+```
+
+#Compare the fitted exponential and wave models. Which of these models do you think is better? Provide your justification.
+
+#It seems that the exponential variogram is a better fit from the least squares method than the wave model.
+
+
+```{r}
+#Plot the empirical directional variogram for 60 degrees as a line plot.
+vario60 <- variog(sic.100, max.dist = 300, direction=pi/3)
+plot(vario60, type="l")
+```
+
+```{r}
+#Plot a multidirectional variogram (computed for 0, 45, 90, and 135 degrees). What does this plot suggest?
+plot(variog4(sic.100), legend = TRUE)
+
+legend(200, 9000,legend=c("OLS"),lty=c(1,1),lwd=c(2,1), cex=0.5)
+```
+
+
+
+## Q2
+
+```{r}
+#Plot locations of the data (in black colour)  and the two points  (0.2, 0.2) and (1, 1) (in red colour) on the same plot.
+
+plot(s100$coords,xlab="Coord X", ylab="Coord Y",xlim=c(0,2),ylim=c(0,
+1.2))
+loci <- matrix(c(0.2, 0.2), ncol=2) 
+text(loci, as.character(1), col="red")
+
+loci2 <- matrix(c(1, 1), ncol=2) 
+text(loci2, as.character(2), col="red")
+
+
+```
+
+```{r}
+#What are the predicted values by kriging at these points?
+
+kc4 <- krige.conv(s100, locations = loci,krige = krige.control(obj.m = ols.nw)) 
+
+kc4 
+
+```
+
+#The predicted value for the wave model is 0.7218152. 
+
+```{r}
+#For the second one
+
+kc4_2 <- krige.conv(s100, locations = loci2,krige = krige.control(obj.m = ols.nw)) 
+
+kc4_2 
+
+```
+
+#The predicted value for the second loci is 0.9872652
+
+
+```{r}
+#Perform kriging prediction on a grid covering the observation area,  display the result as an image.
+pred.grid <- expand.grid(seq(0,2, l=101), seq(0,3, l=101)) 
+ kc <- krige.conv(s100, loc = pred.grid,krige = krige.control(obj.m = ols.nw)) 
+image(kc, loc = pred.grid) 
+
+
+```
+
+```{r}
+#Cross-validate your model by using the leave-one-out cross-validation. Produce a bubble plot of the result.
+a <- as.data.frame(s100$data)
+s <- SpatialPointsDataFrame(s100$coords, a, 
+proj4string=CRS(projargs=as.character(NA)), match.ID=TRUE)
+v.fit <- as.vgm.variomodel(ols.nw)
+cvLOOCV <- krige.cv(s100.data~1, s, v.fit, nfold=nrow(s))
+bubble(cvLOOCV, "residual", main = "LOOCV residuals") 
+
+```
+
+#Explain the results in the plot.
+#As large circles are approximately uniformly distributed over the region, the cross-validation analysis shows that there are no areas where the model's performance is substantially worse than in other regions. 
+
+```{r}
+#Cross-validate your model by using 5-fold cross-validation.
+cv10 <- krige.cv(s100.data~1, s, v.fit, nfold=5) 
+bubble(cv10, "residual", main = "log(zinc): 5-fold CV residuals") 
+
+```
+
+```{r}
+#Optimize the monitoring network using the criterion of minimum mean kriging variances.  Which data point has the max value of mean kriging variance?
+
+ m1 <- sapply(1:length(s), function(x) mean(krige(s100.data~1,s[-x,], s,v.fit)$var1.var)) 
+
+ which(m1 == max(m1)) 
+
+```
+
+#Answer: 81
+
+```{r}
+#Plot the sorted values of the mean kriging variance.
+
+plot(sort(m1)) 
+
+```
+```{r}
+#Plot points with top and bottom 10%  of values of the mean kriging variance (use different point shapes for top and bottom points). Explain the plot.
+
+layout(matrix(1:2, 1, 2)) 
+plot(s100$coords) 
+points(s100$coords[m1 < quantile(m1,.1),], pch=17) 
+plot(s100$coords) 
+points(s100$coords[m1 > quantile(m1,.9),], pch=16)
+
+
+```
+
+
+
+
+## Q3
+
+```{r}
+#Plot spatial locations of the data.
+library(spatstat)
+data(amacrine)
+summary(amacrine)
+```
+
+```{r}
+plot(amacrine)
+
+```
+
+
+```{r}
+#Produce a contour plot for the estimated intensity.
+den <- density(amacrine)
+contour(den) 
+
+```
+
+```{r}
+#Investigate the intensity of the data set. Do you think that the intensity is constant? Why?
+lambda <- summary(amacrine)$intensity 
+lambda
+```
+#Answer: 183.6113
+#The intensity is constant when the data amacrine is stationary
+
+
+```{r}
+#Perform quadrat counting by dividing the data area into quadrats. Do you think that the point process is stationary? Explain your reasons.
+quadratcount(amacrine, nx = 6, ny = 3)
+
+
+
+```
+
+
+
+```{r}
+Q <- quadratcount(amacrine, nx = 6, ny = 3)
+plot(amacrine, cex = 0.5, pch = "+")
+plot(Q, add = TRUE, cex = 1)
+
+```
+
+#The preceding analysis demonstrates that the intensity of the spatial process is constant. Specifically, it decreases as the y coordinate. However, along the x coordinate, the intensity appears to remain relatively stable and can be assumed to be constant as well.
+
+```{r}
+#Separate the data into the sub-patterns of points of types "on" and "off" and plot their intensities.
+
+
+#Do you think that the intensities are constant? Why? 
+#For the off plot it appears to be constant cross the x and y coordinates. Similarly for the on plot as well.  
+ plot(density(split(amacrine))) 
+
+```
+
+
+```{r}
+#Plot the cross-type pair correlation function for "on" and "off" marks. Explain the plot and findings.
+
+p <- pcfcross(amacrine, "off", "on") 
+plot(p) 
+
+
+#EXPLAINATION: The plot of the cross-type pair correlation function suggests that there is inhibition between "off" and "on" marks at very short distances and no inhibition at all other distances. 
+
+```
+
+
+
+```{r}
+#Remove the marks from the point pattern and perform the spatial Kolmogorov-Smirnov test for the uniform distribution of the x coordinate. Summarize the findings
+
+ testx <- cdf.test(amacrine, function(x, y) {x})
+ plot(testx)
+ legend(200, 9000,legend=c("observed","expected"),lty=c(1,1),lwd=c(2,1), cex=0.5)
+
+```
+
+```{r}
+ cdf.test(amacrine, function(x, y) {x})
+
+```
+#The result shows that the p-value equals 0.973. Thus, the test does not reject the hypothesis of CSR. The plot displays the observed and expected distribution functions that also confirm it.Furthermore, While the Kolmogorov-Smirnov test does not reject complete spatial randomness along the x-axis, it fails to do so along the y-axis. Therefore, this pattern cannot be classified as completely spatially random.
+
+
+```{r}
+#Investigate the obtained point pattern using F and G functions. Explain the results.
+
+
+#data<-data(amacrine) 
+#plot(Fest(data)) 
+
+```
+
+
+```{r}
+ 
+ #plot(Gest(mydata)) 
+
+
+```
+#Both functions suggest clustering behaviour as the theoretical curve G is under empirical estimators and vice versa for the function F.
+
+## Q4
+
+```{r}
+#Write a code to simulate this Poisson process.
+library(stpp)
+data<-data(fmd)
+str(fmd)
+lbda1 <- function(x, y, t) {1000*exp(-4*y)*exp(-2*t)}
+
+ipp <- rpp(lambda = lbda1)
+plot(density(ipp$xyt[,3]))
+
+
+```
+
+
+
+
+
+```{r}
+#Give a static display of the result.
+#df1 <- data.frame( x = mydata$x, y = mydata$y, t = hours_diff ) 
+#df1 <- df1[complete.cases(df1), ] 
+#X1 <- as.3dpoints(df1) 
+#str(X1) 
+#plot(X1) 
+
+
+```
+
+
+
+
+```{r}
+#Produce a two-panels plot showing spatial locations and cumulative times of events.
+#animation(fmd,runtime=40,cex=0.5,s.region = northcumbria)
+```
