@@ -1,0 +1,116 @@
+---
+title: "STA5MA_Quiz4_Q2"
+output: word_document
+date: "2024-10-02"
+---
+
+```{r}
+# setup the data
+d.journals <- c(-0.09, -0.17, 0.61, 0.2, -0.22, -0.25, -0.29, -0.13, 0.31, 
+                0.09, -0.35, -0.36, 0)
+d.dissertations <- c(-0.62, -0.17, -0.15, -0.36, -0.72, -0.44, -0.87)
+d.unpublished <- c(-0.1, -0.1, -0.08, -0.21)
+
+se.journals <- c(0.07, 0.08, 0.09, 0.15, 0.12, 0.15, 0.10, 0.12, 0.08, 0.21, 
+                 0.07, 0.09, 0.28)
+se.dissertations <- c(0.26, 0.19, 0.28, 0.36, 0.24, 0.22, 0.24)
+se.unpublished <- c(0.15, 0.25, 0.20, 0.09)
+
+
+```
+
+
+```{r}
+
+pub.dat <- data.frame(d = c(d.journals, d.dissertations, d.unpublished),
+                      v = c(se.journals^2, se.dissertations^2, se.unpublished^2),
+                      type = c(rep("Journals", length(d.journals)),
+                            rep("Dissertations", length(d.dissertations)),
+                            rep("Unpublished", length(d.unpublished))))
+
+
+
+```
+
+
+
+
+```{r}
+
+pub.dat
+
+
+```
+
+
+```{r}
+
+
+# conduct a meta-regression analysis
+library(metafor)
+
+
+```
+
+```{r}
+
+
+head(pub.dat)
+
+
+```
+
+```{r}
+
+res <- rma(yi = d, vi = v, mods = ~type , data = pub.dat)
+res
+```
+
+
+
+#Lab 9
+#Q1
+```{r}
+library(metafor)
+data(dat.bcg)
+
+
+```
+
+```{r}
+
+dat <- escalc(measure="RR", ai=tpos, bi=tneg, ci=cpos, di=cneg, data=dat.bcg)
+res <- rma(yi, vi, data=dat)
+predict(res)
+```
+
+#Lab 9 Q6
+```{r}
+
+res.2 <- rma(yi, vi, mods = ~ ablat, data=dat)
+res.2
+```
+#Quiz 4 Q3
+```{r}
+
+### convert a regular data frame to an 'escalc' object
+### dataset from Lipsey & Wilson (2001), Table 7.1, page 130
+dat <- data.frame(id = c(100, 308, 1596, 2479, 9021, 9028, 161, 172, 537, 7049),
+                  yi = c(-0.33, 0.32, 0.39, 0.31, 0.17, 0.64, -0.33, 0.15, -0.02, 0.00),
+                  vi = c(0.084, 0.035, 0.017, 0.034, 0.072, 0.117, 0.102, 0.093, 0.012, 0.067),
+                  random = c(0, 0, 0, 0, 0, 0, 1, 1, 1, 1),
+                  intensity = c(7, 3, 7, 5, 7, 7, 4, 4, 5, 6))
+dat <- escalc(measure="SMD", yi=yi, vi=vi, data=dat, slab=paste("Study ID:", id), digits=3)
+res <- rma(yi, vi, mods = ~intensity,data=dat)
+
+```
+
+
+
+```{r}
+
+
+res <- rma(yi, vi, data=dat)
+res
+
+```

@@ -1,0 +1,76 @@
+---
+title: "STA5MA_Quiz_2_Q1"
+output: word_document
+date: "2024-09-02"
+---
+
+```{r}
+
+m1 <- c(8.47, 5, 13.4, 15.47)
+sd1 <- c(3.2714, 4.5, 5.9, 14.43)
+n1 <- c(33, 14, 25, 118)
+m2 <- c(9.51, 12.3, 19.7, 15.04)
+sd2 <- c(3.4406, 11.8, 8.9, 14)
+n2 <- c(33, 16, 26, 120)
+
+```
+
+## R Markdown
+
+
+
+```{r}
+library(metafor)
+data <- escalc(m1i = m1, sd1i = sd1,n1i = n1, m2i =m2, sd2i = sd2, n2i = n2, measure = "SMD")
+
+```
+
+
+
+```{r}
+# REML method
+#res <- rma(yi = yi, vi = vi, data = data, method="REML")
+
+# Hedges method
+res <- rma(yi = yi, vi = vi, data = data, method="HE")
+forest(res)
+
+#In 3 decimal places, your p-values should be 0.018
+
+
+```
+
+
+```{r}
+#Question how to compute their p-values
+summary(res)
+
+```
+
+
+
+```{r}
+res <- rma(yi = yi, vi = vi, data = data, method="DL")
+forest(res)
+
+```
+
+```{r}
+res <- rma(yi = yi, vi = vi, data = data, method="HS")
+forest(res)
+
+```
+
+```{r}
+res <- rma(yi = yi, vi = vi, data = data, method="HE")
+forest(res)
+
+```
+
+
+
+```{r}
+res <- rma(yi = yi, vi = vi, data = data, method="ML")
+forest(res)
+
+```
