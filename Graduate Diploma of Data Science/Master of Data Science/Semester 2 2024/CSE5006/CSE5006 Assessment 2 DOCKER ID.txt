@@ -1,0 +1,5 @@
+CSE5006 Assessment 2
+DOCKER ID
+CONTAINER ID   IMAGE       COMMAND                  CREATED          STATUS          PORTS                                         NAMES
+797bff142e32   blog_api    "/sbin/tini -- npm s…"   36 minutes ago   Up 35 minutes   0.0.0.0:3001->3000/tcp, [::]:3001->3000/tcp   blog_api_1
+038c54493504   mysql:5.7   "docker-entrypoint.s…"   36 minutes ago   Up 35 minutes   3306/tcp, 33060/tcp                           blog_db_1
