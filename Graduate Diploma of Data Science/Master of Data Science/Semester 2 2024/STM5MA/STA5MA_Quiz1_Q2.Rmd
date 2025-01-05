@@ -1,0 +1,54 @@
+---
+title: "Q2_A1_STA5MA"
+output: word_document
+date: "2024-08-24"
+---
+
+
+
+
+
+```{r}
+library(metafor)
+data("dat.gibson2002")
+dat<-escalc(measure="ROM", m1i = m1i, sd1i = sd1i, n1i = n1i,m2i = m2i, sd2i = sd2i, n2i = n2i, data = dat.gibson2002)
+
+meta_dat_model <- rma(data=dat,method="FE",yi=yi,vi=vi)
+
+#Use the forest function on the log-scale
+#Remember to conver to exponential form (this is in log scale form)
+forest(meta_dat_model, transf = exp, refline = 1)
+
+
+summary(meta_dat_model)
+
+#Answer 0.574 Lower Bound, and 0.791 Upper Bound
+```
+
+
+
+
+
+
+```{r}
+#Quiz 1, Question 3.
+
+n_1 <- 40
+n_2 <- 36
+s_1_2 <- 9.04^2
+s_2_2<-9.78^2
+mu_1<-9.3
+mu_2<-7.3
+
+#Answers I could have gotten (Best to do it in R)
+sp <- sqrt(((n_1-1)*s_1_2 + (n_2-1)*s_2_2)/(n_1+n_2-2))
+sp
+
+d <- (mu_1-mu_2)/sp
+d
+
+
+#Q4, It is asking for the number of studies that does not contain 0.
+
+
+```
