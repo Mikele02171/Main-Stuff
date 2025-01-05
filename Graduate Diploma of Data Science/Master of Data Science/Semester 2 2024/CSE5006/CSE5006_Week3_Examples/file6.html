@@ -1,0 +1,39 @@
+<html>
+<body>
+    Simple Calculator<br><br>
+    
+        <input type="text" size=3 id="val1">
+        <select id="operator">
+          <option value="*">*</option>
+          <option value="/">/</option>
+          <option value="+">+</option>
+          <option value="-">-</option>
+		</select>
+        <input type="text" size=3 id="val2"> = 
+        <input type="text" size=3 id="res">    
+        <input type="button" id="calc" onClick=calculate() value="Calculate">
+        
+        <script>
+          function calculate()
+          {
+             //get the first value
+             var val1=document.getElementById("val1").value;
+             var val2=document.getElementById("val2").value;
+             var opr=document.getElementById("operator").value;
+             var res=0;
+             if (opr=="*")
+               res=Number(val1)*Number(val2);
+             if (opr=="/")
+               res=Number(val1)/Number(val2);
+             if (opr=="+")
+               res=Number(val1)+Number(val2);
+             if (opr=="-")
+               res=Number(val1)-Number(val2);
+             document.getElementById("res").value = res;
+          }
+        </script>
+</body>
+</html>
+
+
+

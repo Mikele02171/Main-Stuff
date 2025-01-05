@@ -1,0 +1,32 @@
+<html>
+    <body>
+        Array in JS
+        <p id="output"></p>
+        <button onClick="showAll()">Show Data</button>
+        <button onClick="sortAll()">Sort Data</button>        
+        <button onClick="reverseAll()">reverse Data</button>        
+
+        <script>
+            var data=["Q","W","E","R","T","Y","U","I","O","P"];
+
+            function showAll()
+            {
+                console.log(data);
+                document.getElementById("output").innerHTML =data;
+            }
+
+            function sortAll()
+            {
+				data.sort();
+                document.getElementById("output").innerHTML =data;
+            }
+
+            function reverseAll()
+            {
+				data.reverse();
+                document.getElementById("output").innerHTML =data;
+            }
+
+        </script>
+    </body>
+</html>

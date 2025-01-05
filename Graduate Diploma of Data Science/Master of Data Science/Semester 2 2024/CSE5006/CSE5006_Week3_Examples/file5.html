@@ -1,0 +1,23 @@
+<html>
+<body>
+    <button onClick="loop()">Test Loop</button>
+    <p id="txt"></p>
+    <script>
+    
+        function myFunction(){
+            document.getElementById("txt").innerHTML="Hello World";
+            }
+            
+        function loop()
+        {
+            var s= "hello <br> ";
+            for (i=0;i<10;i++)
+            {                
+                s=s+"hello-"+i+"<br>";
+            }
+                var obj = document.getElementById("txt");
+                obj.innerHTML=s;
+        }
+    </script>
+</body>
+</html>

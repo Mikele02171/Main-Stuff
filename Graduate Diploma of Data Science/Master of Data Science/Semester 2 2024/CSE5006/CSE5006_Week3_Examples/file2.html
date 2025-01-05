@@ -1,0 +1,23 @@
+<html>
+    <body>
+        <p>Unordered List</p>
+        <ul>
+            <li>Coffee</li>
+            <li>Tea</li>
+            <li>Milk</li>
+        </ul>
+
+        <p>Click the button to display the innerHTML of the second l1 element (index 1)</p>
+
+        <button onClick="getIdx()">Try me</button>
+
+        <p id="demo"></p>
+
+        <script>
+            function getIdx(){
+                var x = document.getElementsByTagName("li");
+                document.getElementById("demo").innerHTML = x[1].innerHTML;
+            }
+        </script>
+    </body>
+</html>

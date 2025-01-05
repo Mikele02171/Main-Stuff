@@ -1,0 +1,28 @@
+<html>
+    <body>
+        Variable Scope <br>
+    <button onClick="myFunction()">Click</button>
+        <script>
+            var car="Volvo";
+        	
+            function other()
+            {
+               var car="BMW";
+               vehicle="Holden";
+            }
+        
+            function myFunction()
+            {
+               other();
+               
+               var car="Audi";
+               alert("Global :"+this.car);
+               alert("Local :"+this.car);
+               alert("Auto :"+vehicle);
+            }
+            
+            
+        </script>
+    </body>
+</html>
+

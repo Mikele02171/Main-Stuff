@@ -1,0 +1,49 @@
+<html>
+    <body>
+        <p id="output"></p>
+        <button onClick="loopBreak()">Break Example</button>
+        <button onClick="loopContinue()">Continue Example</button>        
+        <button onClick="loop()">Normal Loop</button>        
+		<p id="result">Result is here</p>
+        <script>
+            var text="";
+
+            function loopBreak()
+            {
+                for (i=0;i<10;i++)
+				{
+					if (i===3) 
+					{
+						alert("The loop will stop ");
+						break;
+					}
+					text += "The number is "+i+"<br>"
+				}
+				document.getElementById("result").innerHTML=text;
+            }
+
+            function loopContinue()
+            {
+                for (i=0;i<10;i++)
+				{
+					if (i===3) 
+					{
+						alert("The loop will continue ");
+						continue;
+					}
+					text += "The number is "+i+"<br>"
+				}
+				document.getElementById("result").innerHTML=text;				
+            }
+
+            function loop()
+            {
+                for (i=0;i<10;i++)
+				{
+					text += "The number is "+i+"<br>"
+				}
+				document.getElementById("result").innerHTML=text;				
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,40 @@
+//dynamically create / remove objects
+
+<html>
+<body>
+    <p>click to add new button</p>
+    <button onClick="summon()">try</button>
+
+    <script>
+        var cnt=1;
+        function summon()
+        {
+            var btn = document.createElement("Button");
+            btn.innerHTML="ClickMe"+cnt;
+            btn.id="newbutton"+cnt;
+            document.body.appendChild(btn);
+            btn = document.getElementById("newbutton"+cnt).addEventListener("click",remove);
+            cnt++;
+        }
+
+        function remove()
+        {
+        	var id="newbutton"+(cnt-1);
+            //alert(id);
+            var x = document.getElementById(id);
+            document.body.removeChild(x);
+            cnt--;
+        }
+        
+        function hello()
+        {
+            alert("Hello");
+        }
+
+    </script>
+
+
+</body>
+
+
+</html>

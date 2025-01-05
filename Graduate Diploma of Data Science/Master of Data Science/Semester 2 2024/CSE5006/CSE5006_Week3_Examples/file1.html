@@ -1,0 +1,25 @@
+document.getElementByID
+
+<html>
+    <body>
+    <h1 id="headline">This is the title</h1>
+    
+        <p id="demo">Click the button to change the text in this paragraph</p>
+
+        <button onClick="myFunction()">Change text</button>
+        <button onClick="myTitle()">check title</button>
+        <br>
+        The title is : <a id="res"></a>
+
+        <script>
+        function myFunction(){
+            document.getElementById("demo").innerHTML="Hello World";
+            }
+
+		function myTitle(){
+            document.getElementById("res").innerHTML = document.getElementsByTagName("h1")[0].innerHTML;
+            }
+
+	</script>
+    </body>
+</html>

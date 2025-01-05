@@ -1,0 +1,62 @@
+<html>
+    <body>
+    <button onClick="myFunction()">Click</button>
+        <script>
+            var car="Volvo";
+			var car1 = {type:"Fiat", model:"500", color:"white"};           
+            function fullName()
+            { return this.firstName+" "+this.lastName;}
+            var emp1={
+              firstName:"Peter",
+              lastName:"Smith",
+              completeName:fullName
+            };
+        	
+            function other()
+            {
+               var car="BMW";
+               vehicle="Holden";
+            }
+        
+            function myFunction()
+            {
+               other();
+               
+               var car="Audi";
+               console.log("Global :"+this.car);
+               console.log("Local :"+this.car);
+               console.log("Auto :"+vehicle);
+               
+               var x=10;
+               if (x<20)
+               {
+                 let x=0;
+                 console.log("in IF ",x);
+               }
+                 console.log("out IF ",x);
+                 
+                 console.log(car1);
+                 console.log(car1.type);
+                 console.log(car1.model);
+                 console.log(car1.color);
+                 
+                 console.log(emp1.firstName);
+                 console.log(emp1.completeName());
+                 
+                 //check object type
+                 console.log(typeof emp1.firstName);
+                 
+                 //delete object attribute
+                 delete car1.color;
+                 console.log("After deletion : "+car1.color);
+                 
+                 
+                 
+               
+            }
+            
+            
+        </script>
+    </body>
+</html>
+

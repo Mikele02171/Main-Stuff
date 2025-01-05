@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <style>
+            .democlass{
+                color:red;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Hello World</h1>
+        <p>Click the button to add a class attribute with the vakue of "democlass" to h1 element</p>
+
+        <button onClick="myFunc()">Try</button>
+
+        <script>
+            function myFunc()
+            {
+                document.getElementsByTagName("h1")[0].setAttribute("class","democlass");
+            }
+        </script>
+    </body>
+</html>

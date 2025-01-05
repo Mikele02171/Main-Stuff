@@ -1,0 +1,16 @@
+<html>
+    <body>
+        Arrow function 5 + 7<br>
+        <input type="text" id="result">
+        <input type="button" id="new" onClick="calc(5,7)" value="Using Arrow">
+        <script>
+			const farrow = (x,y)=>{return x+y;};
+            
+            function calc(v1,v2)
+            {
+                document.getElementById("result").value=farrow(v1,v2);
+            }
+        </script>
+    </body>
+</html>
+
