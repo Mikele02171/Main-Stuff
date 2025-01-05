@@ -1,0 +1,52 @@
+Task 1a.
+
+DROP TABLE bankdata;
+--DROP TABLE bal_500_loan;
+
+-- Create a table for the input data
+CREATE TABLE bankdata (job STRING, marital STRING, education STRING,
+  balance BIGINT, loan STRING) 
+  ROW FORMAT DELIMITED FIELDS TERMINATED BY ';';
+
+-- Load the input data
+LOAD DATA LOCAL INPATH './Data/bank-small.csv' INTO TABLE bankdata;
+
+-- TODO: *** Put your solution here ***
+-- Report the number of clients for each marital status who have a balance above
+-- 500 and has a loan
+
+
+--CREATE TABLE bal_500_loan AS
+--SELECT marital, COUNT(1) as count FROM bankdata 
+--WHERE balance > 500 AND loan = "Yes" 
+--GROUP BY marital;
+
+-- Dump the output to file
+INSERT OVERWRITE LOCAL DIRECTORY './Task_1a-out/'
+ROW FORMAT DELIMITED FIELDS TERMINATED BY ';'
+SELECT marital, COUNT(1) as count FROM bankdata 
+WHERE balance > 500 AND loan = "yes" 
+GROUP BY marital;
+
+Task 1b.
+
+DROP TABLE bankdata;
+
+-- Create a table for the input data
+CREATE TABLE bankdata (job STRING, marital STRING, education STRING,
+  balance BIGINT, loan STRING) 
+  ROW FORMAT DELIMITED FIELDS TERMINATED BY ';';
+
+-- Load the input data
+LOAD DATA LOCAL INPATH './Data/bank-small.csv' INTO TABLE bankdata;
+
+-- TODO: *** Put your solution here ***
+--Report the average yearly balance for all people in each job category in 
+--descending order of average yearly balance.
+
+-- Dump the output to file
+INSERT OVERWRITE LOCAL DIRECTORY './Task_1b-out/'
+ROW FORMAT DELIMITED FIELDS TERMINATED BY ';'
+SELECT job, SUM(balance)/COUNT(job) as average FROM bankdata  
+GROUP BY job ORDER BY average DESC;
+
