@@ -18,6 +18,10 @@ DataCamp: <br/>
 Data Analyst with Python (Completed) <br/>
 Data Analyst in SQL (Completed) <br/>
 
+Builder Analyst: <br/>
+Tableau for Data Visualization (Completed) <br/>
+
+
 NOTE: Soon adding content <br/>
 
 
