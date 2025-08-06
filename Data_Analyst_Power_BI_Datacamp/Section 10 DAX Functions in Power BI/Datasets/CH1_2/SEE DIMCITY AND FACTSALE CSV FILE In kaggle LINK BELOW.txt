@@ -1,0 +1,3 @@
+SEE DIMCITY AND FACTSALE CSV FILE IN KAGGLE.
+
+https://www.kaggle.com/datasets/michaeldle/dimcity-and-factsale-c10-data-analyst-power-bi?select=FactSale.csv
