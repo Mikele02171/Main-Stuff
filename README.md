@@ -16,7 +16,7 @@ Google Advanced Data Analytics Certification (Completed) <br/>
 DataCamp: <br/>
 Data Analyst with Python (Completed) <br/>
 Data Analyst in SQL (Completed) <br/>
-Data Analyst in Power BI (In Progress, 25%) <br/>
+Data Analyst in Power BI (Completed) <br/>
 
 Builder Analyst: <br/>
 Tableau for Data Visualization (Completed) <br/>
