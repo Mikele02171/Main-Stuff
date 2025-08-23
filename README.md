@@ -17,6 +17,7 @@ DataCamp: <br/>
 Data Analyst with Python (Completed) <br/>
 Data Analyst in SQL (Completed) <br/>
 Data Analyst in Power BI (Completed) <br/>
+Data Analyst in Tableau (In Progress) <br/>
 
 Builder Analyst: <br/>
 Tableau for Data Visualization (Completed) <br/>
