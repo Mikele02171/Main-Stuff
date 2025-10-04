@@ -1,0 +1,755 @@
+﻿Path;Order;Location;Hour;Avg hourly visitors per path
+Path B;6;Andy Pearson paintings;8;511
+Path B;6;Andy Pearson paintings;9;857
+Path B;6;Andy Pearson paintings;10;1042
+Path B;6;Andy Pearson paintings;11;2274
+Path B;6;Andy Pearson paintings;12;1472
+Path B;6;Andy Pearson paintings;13;1931
+Path B;6;Andy Pearson paintings;14;3662
+Path B;6;Andy Pearson paintings;15;1204
+Path B;6;Andy Pearson paintings;16;2680
+Path B;6;Andy Pearson paintings;17;2033
+Path B;6;Andy Pearson paintings;18;788
+Path B;6;Andy Pearson paintings;19;1206
+Path B;6;Andy Pearson paintings;20;444
+Path A;5;Ann Fielding expo;8;621
+Path C;8;Ann Fielding expo;8;519
+Path A;5;Ann Fielding expo;9;773
+Path C;8;Ann Fielding expo;9;879
+Path A;5;Ann Fielding expo;10;1604
+Path C;8;Ann Fielding expo;10;1650
+Path A;5;Ann Fielding expo;11;1730
+Path C;8;Ann Fielding expo;11;1315
+Path A;5;Ann Fielding expo;12;1822
+Path C;8;Ann Fielding expo;12;2174
+Path A;5;Ann Fielding expo;13;3908
+Path C;8;Ann Fielding expo;13;3059
+Path A;5;Ann Fielding expo;14;2998
+Path C;8;Ann Fielding expo;14;4256
+Path A;5;Ann Fielding expo;15;692
+Path C;8;Ann Fielding expo;15;804
+Path A;5;Ann Fielding expo;16;2918
+Path C;8;Ann Fielding expo;16;2466
+Path A;5;Ann Fielding expo;17;1418
+Path C;8;Ann Fielding expo;17;1651
+Path A;5;Ann Fielding expo;18;511
+Path C;8;Ann Fielding expo;18;519
+Path A;5;Ann Fielding expo;19;292
+Path C;8;Ann Fielding expo;19;359
+Path A;5;Ann Fielding expo;20;414
+Path C;8;Ann Fielding expo;20;367
+Path A;7;Annie Smith expo;8;256
+Path C;10;Annie Smith expo;8;179
+Path A;7;Annie Smith expo;9;662
+Path C;10;Annie Smith expo;9;684
+Path A;7;Annie Smith expo;10;1007
+Path C;10;Annie Smith expo;10;1398
+Path A;7;Annie Smith expo;11;1357
+Path C;10;Annie Smith expo;11;1248
+Path A;7;Annie Smith expo;12;1294
+Path C;10;Annie Smith expo;12;1635
+Path A;7;Annie Smith expo;13;1764
+Path C;10;Annie Smith expo;13;1796
+Path A;7;Annie Smith expo;14;2393
+Path C;10;Annie Smith expo;14;2093
+Path A;7;Annie Smith expo;15;789
+Path C;10;Annie Smith expo;15;971
+Path A;7;Annie Smith expo;16;646
+Path C;10;Annie Smith expo;16;796
+Path A;7;Annie Smith expo;17;1704
+Path C;10;Annie Smith expo;17;1260
+Path A;7;Annie Smith expo;18;1382
+Path C;10;Annie Smith expo;18;1340
+Path A;7;Annie Smith expo;19;824
+Path C;10;Annie Smith expo;19;1012
+Path A;7;Annie Smith expo;20;227
+Path C;10;Annie Smith expo;20;220
+Path A;8;Cathy Brooks installation;8;872
+Path C;11;Cathy Brooks installation;8;911
+Path A;8;Cathy Brooks installation;9;695
+Path C;11;Cathy Brooks installation;9;646
+Path A;8;Cathy Brooks installation;10;2437
+Path C;11;Cathy Brooks installation;10;2204
+Path A;8;Cathy Brooks installation;11;986
+Path C;11;Cathy Brooks installation;11;831
+Path A;8;Cathy Brooks installation;12;1068
+Path C;11;Cathy Brooks installation;12;1115
+Path A;8;Cathy Brooks installation;13;1636
+Path C;11;Cathy Brooks installation;13;1981
+Path A;8;Cathy Brooks installation;14;4603
+Path C;11;Cathy Brooks installation;14;5161
+Path A;8;Cathy Brooks installation;15;1037
+Path C;11;Cathy Brooks installation;15;874
+Path A;8;Cathy Brooks installation;16;3184
+Path C;11;Cathy Brooks installation;16;3236
+Path A;8;Cathy Brooks installation;17;1167
+Path C;11;Cathy Brooks installation;17;1003
+Path A;8;Cathy Brooks installation;18;1809
+Path C;11;Cathy Brooks installation;18;1421
+Path A;8;Cathy Brooks installation;19;1203
+Path C;11;Cathy Brooks installation;19;1369
+Path A;8;Cathy Brooks installation;20;509
+Path C;11;Cathy Brooks installation;20;643
+Path C;4;Cloakroom;8;456
+Path C;4;Cloakroom;9;821
+Path C;4;Cloakroom;10;1191
+Path C;4;Cloakroom;11;1098
+Path C;4;Cloakroom;12;1425
+Path C;4;Cloakroom;13;1393
+Path C;4;Cloakroom;14;2435
+Path C;4;Cloakroom;15;605
+Path C;4;Cloakroom;16;926
+Path C;4;Cloakroom;17;946
+Path C;4;Cloakroom;18;1076
+Path C;4;Cloakroom;19;835
+Path C;4;Cloakroom;20;404
+Path A;3;Contemporary Art (movie room);8;276
+Path B;14;Contemporary Art (movie room);8;254
+Path A;3;Contemporary Art (movie room);9;1032
+Path B;14;Contemporary Art (movie room);9;698
+Path A;3;Contemporary Art (movie room);10;1252
+Path B;14;Contemporary Art (movie room);10;1211
+Path A;3;Contemporary Art (movie room);11;1456
+Path B;14;Contemporary Art (movie room);11;1406
+Path A;3;Contemporary Art (movie room);12;982
+Path B;14;Contemporary Art (movie room);12;1000
+Path A;3;Contemporary Art (movie room);13;2668
+Path B;14;Contemporary Art (movie room);13;2668
+Path A;3;Contemporary Art (movie room);14;2731
+Path B;14;Contemporary Art (movie room);14;3354
+Path A;3;Contemporary Art (movie room);15;643
+Path B;14;Contemporary Art (movie room);15;624
+Path A;3;Contemporary Art (movie room);16;1525
+Path B;14;Contemporary Art (movie room);16;1695
+Path A;3;Contemporary Art (movie room);17;1463
+Path B;14;Contemporary Art (movie room);17;1637
+Path A;3;Contemporary Art (movie room);18;708
+Path B;14;Contemporary Art (movie room);18;608
+Path A;3;Contemporary Art (movie room);19;356
+Path B;14;Contemporary Art (movie room);19;325
+Path A;3;Contemporary Art (movie room);20;592
+Path B;14;Contemporary Art (movie room);20;664
+Path A;4;Contemporary paintings;8;621
+Path B;13;Contemporary paintings;8;534
+Path A;4;Contemporary paintings;9;712
+Path B;13;Contemporary paintings;9;712
+Path A;4;Contemporary paintings;10;871
+Path B;13;Contemporary paintings;10;752
+Path A;4;Contemporary paintings;11;1402
+Path B;13;Contemporary paintings;11;1224
+Path A;4;Contemporary paintings;12;1595
+Path B;13;Contemporary paintings;12;1728
+Path A;4;Contemporary paintings;13;3582
+Path B;13;Contemporary paintings;13;2913
+Path A;4;Contemporary paintings;14;2778
+Path B;13;Contemporary paintings;14;3209
+Path A;4;Contemporary paintings;15;2217
+Path B;13;Contemporary paintings;15;1738
+Path A;4;Contemporary paintings;16;2328
+Path B;13;Contemporary paintings;16;3077
+Path A;4;Contemporary paintings;17;960
+Path B;13;Contemporary paintings;17;780
+Path A;4;Contemporary paintings;18;1548
+Path B;13;Contemporary paintings;18;1886
+Path A;4;Contemporary paintings;19;868
+Path B;13;Contemporary paintings;19;951
+Path A;4;Contemporary paintings;20;751
+Path B;13;Contemporary paintings;20;663
+Path C;15;Corner bathroom left;8;217
+Path C;15;Corner bathroom left;9;629
+Path C;15;Corner bathroom left;10;719
+Path C;15;Corner bathroom left;11;1422
+Path C;15;Corner bathroom left;12;1162
+Path C;15;Corner bathroom left;13;2270
+Path C;15;Corner bathroom left;14;2138
+Path C;15;Corner bathroom left;15;1110
+Path C;15;Corner bathroom left;16;1745
+Path C;15;Corner bathroom left;17;1297
+Path C;15;Corner bathroom left;18;846
+Path C;15;Corner bathroom left;19;248
+Path C;15;Corner bathroom left;20;509
+Path B;5;Gina Rogers installation;8;724
+Path B;5;Gina Rogers installation;9;804
+Path B;5;Gina Rogers installation;10;1379
+Path B;5;Gina Rogers installation;11;2705
+Path B;5;Gina Rogers installation;12;1674
+Path B;5;Gina Rogers installation;13;1289
+Path B;5;Gina Rogers installation;14;3243
+Path B;5;Gina Rogers installation;15;1824
+Path B;5;Gina Rogers installation;16;1398
+Path B;5;Gina Rogers installation;17;2552
+Path B;5;Gina Rogers installation;18;1588
+Path B;5;Gina Rogers installation;19;1209
+Path B;5;Gina Rogers installation;20;788
+Path A;10;Lecture room;8;263
+Path B;10;Lecture room;8;256
+Path A;10;Lecture room;9;115
+Path B;10;Lecture room;9;119
+Path A;10;Lecture room;10;747
+Path B;10;Lecture room;10;782
+Path A;10;Lecture room;11;402
+Path B;10;Lecture room;11;508
+Path A;10;Lecture room;12;196
+Path B;10;Lecture room;12;260
+Path A;10;Lecture room;13;852
+Path B;10;Lecture room;13;800
+Path A;10;Lecture room;14;414
+Path B;10;Lecture room;14;571
+Path A;10;Lecture room;15;385
+Path B;10;Lecture room;15;427
+Path A;10;Lecture room;16;720
+Path B;10;Lecture room;16;743
+Path A;10;Lecture room;17;647
+Path B;10;Lecture room;17;519
+Path A;10;Lecture room;18;250
+Path B;10;Lecture room;18;288
+Path A;10;Lecture room;19;371
+Path B;10;Lecture room;19;371
+Path A;10;Lecture room;20;180
+Path B;10;Lecture room;20;198
+Path C;12;Library area;8;161
+Path C;12;Library area;9;161
+Path C;12;Library area;10;240
+Path C;12;Library area;11;448
+Path C;12;Library area;12;776
+Path C;12;Library area;13;830
+Path C;12;Library area;14;1437
+Path C;12;Library area;15;581
+Path C;12;Library area;16;286
+Path C;12;Library area;17;558
+Path C;12;Library area;18;631
+Path C;12;Library area;19;100
+Path C;12;Library area;20;132
+Path A;11;Library hallway;8;834
+Path B;9;Library hallway;8;805
+Path C;13;Library hallway;8;939
+Path E;10;Library hallway;8;1028
+Path A;11;Library hallway;9;964
+Path B;9;Library hallway;9;927
+Path C;13;Library hallway;9;1054
+Path E;10;Library hallway;9;909
+Path A;11;Library hallway;10;2138
+Path B;9;Library hallway;10;2207
+Path C;13;Library hallway;10;2380
+Path E;10;Library hallway;10;2035
+Path A;11;Library hallway;11;1559
+Path B;9;Library hallway;11;1603
+Path C;13;Library hallway;11;1471
+Path E;10;Library hallway;11;1230
+Path A;11;Library hallway;12;4024
+Path B;9;Library hallway;12;3628
+Path C;13;Library hallway;12;3628
+Path E;10;Library hallway;12;3061
+Path A;11;Library hallway;13;2763
+Path B;9;Library hallway;13;2403
+Path C;13;Library hallway;13;2763
+Path E;10;Library hallway;13;2964
+Path A;11;Library hallway;14;4173
+Path B;9;Library hallway;14;4330
+Path C;13;Library hallway;14;5511
+Path E;10;Library hallway;14;5905
+Path A;11;Library hallway;15;3150
+Path B;9;Library hallway;15;2352
+Path C;13;Library hallway;15;2352
+Path E;10;Library hallway;15;3239
+Path A;11;Library hallway;16;3090
+Path B;9;Library hallway;16;3408
+Path C;13;Library hallway;16;3044
+Path E;10;Library hallway;16;3044
+Path A;11;Library hallway;17;2069
+Path B;9;Library hallway;17;2172
+Path C;13;Library hallway;17;2000
+Path E;10;Library hallway;17;2241
+Path A;11;Library hallway;18;2556
+Path B;9;Library hallway;18;1880
+Path C;13;Library hallway;18;2631
+Path E;10;Library hallway;18;2443
+Path A;11;Library hallway;19;730
+Path B;9;Library hallway;19;547
+Path C;13;Library hallway;19;579
+Path E;10;Library hallway;19;805
+Path A;11;Library hallway;20;634
+Path B;9;Library hallway;20;646
+Path C;13;Library hallway;20;900
+Path E;10;Library hallway;20;735
+Path A;12;Library terrace;8;441
+Path E;11;Library terrace;8;534
+Path A;12;Library terrace;9;439
+Path E;11;Library terrace;9;499
+Path A;12;Library terrace;10;1218
+Path E;11;Library terrace;10;918
+Path A;12;Library terrace;11;503
+Path E;11;Library terrace;11;594
+Path A;12;Library terrace;12;785
+Path E;11;Library terrace;12;676
+Path A;12;Library terrace;13;2414
+Path E;11;Library terrace;13;1827
+Path A;12;Library terrace;14;928
+Path E;11;Library terrace;14;1183
+Path A;12;Library terrace;15;1544
+Path E;11;Library terrace;15;1501
+Path A;12;Library terrace;16;753
+Path E;11;Library terrace;16;730
+Path A;12;Library terrace;17;403
+Path E;11;Library terrace;17;493
+Path A;12;Library terrace;18;686
+Path E;11;Library terrace;18;661
+Path A;12;Library terrace;19;374
+Path E;11;Library terrace;19;492
+Path A;12;Library terrace;20;305
+Path E;11;Library terrace;20;255
+Path A;1;Main Entrance;8;287
+Path B;1;Main Entrance;8;320
+Path B;16;Main Entrance;8;292
+Path C;2;Main Entrance;8;236
+Path D;2;Main Entrance;8;311
+Path E;1;Main Entrance;8;339
+Path A;1;Main Entrance;9;772
+Path B;1;Main Entrance;9;655
+Path B;16;Main Entrance;9;571
+Path C;2;Main Entrance;9;761
+Path D;2;Main Entrance;9;666
+Path E;1;Main Entrance;9;708
+Path A;1;Main Entrance;10;1298
+Path B;1;Main Entrance;10;1344
+Path B;16;Main Entrance;10;1458
+Path C;2;Main Entrance;10;1481
+Path D;2;Main Entrance;10;1595
+Path E;1;Main Entrance;10;1230
+Path A;1;Main Entrance;11;1516
+Path B;1;Main Entrance;11;2011
+Path B;16;Main Entrance;11;1632
+Path C;2;Main Entrance;11;1807
+Path D;2;Main Entrance;11;2011
+Path E;1;Main Entrance;11;1778
+Path A;1;Main Entrance;12;1331
+Path B;1;Main Entrance;12;1490
+Path B;16;Main Entrance;12;1703
+Path C;2;Main Entrance;12;1331
+Path D;2;Main Entrance;12;1437
+Path E;1;Main Entrance;12;1889
+Path A;1;Main Entrance;13;2428
+Path B;1;Main Entrance;13;2468
+Path B;16;Main Entrance;13;2945
+Path C;2;Main Entrance;13;2070
+Path D;2;Main Entrance;13;2507
+Path E;1;Main Entrance;13;2985
+Path A;1;Main Entrance;14;1901
+Path B;1;Main Entrance;14;1967
+Path B;16;Main Entrance;14;2426
+Path C;2;Main Entrance;14;2098
+Path D;2;Main Entrance;14;1770
+Path E;1;Main Entrance;14;1967
+Path A;1;Main Entrance;15;1336
+Path B;1;Main Entrance;15;1512
+Path B;16;Main Entrance;15;1285
+Path C;2;Main Entrance;15;1386
+Path D;2;Main Entrance;15;1890
+Path E;1;Main Entrance;15;1638
+Path A;1;Main Entrance;16;1057
+Path B;1;Main Entrance;16;1001
+Path B;16;Main Entrance;16;1335
+Path C;2;Main Entrance;16;1372
+Path D;2;Main Entrance;16;1020
+Path E;1;Main Entrance;16;1020
+Path A;1;Main Entrance;17;734
+Path B;1;Main Entrance;17;691
+Path B;16;Main Entrance;17;669
+Path C;2;Main Entrance;17;572
+Path D;2;Main Entrance;17;777
+Path E;1;Main Entrance;17;680
+Path A;1;Main Entrance;18;1014
+Path B;1;Main Entrance;18;915
+Path B;16;Main Entrance;18;1064
+Path C;2;Main Entrance;18;998
+Path D;2;Main Entrance;18;1081
+Path E;1;Main Entrance;18;848
+Path A;1;Main Entrance;19;323
+Path B;1;Main Entrance;19;358
+Path B;16;Main Entrance;19;374
+Path C;2;Main Entrance;19;348
+Path D;2;Main Entrance;19;276
+Path E;1;Main Entrance;19;364
+Path A;1;Main Entrance;20;335
+Path B;1;Main Entrance;20;353
+Path B;16;Main Entrance;20;399
+Path C;2;Main Entrance;20;295
+Path D;2;Main Entrance;20;301
+Path E;1;Main Entrance;20;289
+Path E;2;Main Entrance arcades;8;713
+Path E;2;Main Entrance arcades;9;866
+Path E;2;Main Entrance arcades;10;666
+Path E;2;Main Entrance arcades;11;1573
+Path E;2;Main Entrance arcades;12;1463
+Path E;2;Main Entrance arcades;13;1241
+Path E;2;Main Entrance arcades;14;3263
+Path E;2;Main Entrance arcades;15;2160
+Path E;2;Main Entrance arcades;16;1655
+Path E;2;Main Entrance arcades;17;2005
+Path E;2;Main Entrance arcades;18;863
+Path E;2;Main Entrance arcades;19;1566
+Path E;2;Main Entrance arcades;20;902
+Path B;11;Main Hallway;8;556
+Path C;7;Main Hallway;8;587
+Path E;5;Main Hallway;8;731
+Path B;11;Main Hallway;9;1232
+Path C;7;Main Hallway;9;1339
+Path E;5;Main Hallway;9;982
+Path B;11;Main Hallway;10;741
+Path C;7;Main Hallway;10;719
+Path E;5;Main Hallway;10;741
+Path B;11;Main Hallway;11;1669
+Path C;7;Main Hallway;11;1195
+Path E;5;Main Hallway;11;1150
+Path B;11;Main Hallway;12;2151
+Path C;7;Main Hallway;12;2374
+Path E;5;Main Hallway;12;2708
+Path B;11;Main Hallway;13;3148
+Path C;7;Main Hallway;13;2587
+Path E;5;Main Hallway;13;2156
+Path B;11;Main Hallway;14;2451
+Path C;7;Main Hallway;14;1864
+Path E;5;Main Hallway;14;1830
+Path B;11;Main Hallway;15;2786
+Path C;7;Main Hallway;15;3251
+Path E;5;Main Hallway;15;3297
+Path B;11;Main Hallway;16;1640
+Path C;7;Main Hallway;16;1726
+Path E;5;Main Hallway;16;1525
+Path B;11;Main Hallway;17;1859
+Path C;7;Main Hallway;17;2528
+Path E;5;Main Hallway;17;1971
+Path B;11;Main Hallway;18;1715
+Path C;7;Main Hallway;18;1596
+Path E;5;Main Hallway;18;1572
+Path B;11;Main Hallway;19;1214
+Path C;7;Main Hallway;19;1484
+Path E;5;Main Hallway;19;1596
+Path B;11;Main Hallway;20;812
+Path C;7;Main Hallway;20;797
+Path E;5;Main Hallway;20;983
+Path C;3;Main Staircase;8;956
+Path D;3;Main Staircase;8;1011
+Path E;3;Main Staircase;8;1011
+Path C;3;Main Staircase;9;1336
+Path D;3;Main Staircase;9;1061
+Path E;3;Main Staircase;9;1179
+Path C;3;Main Staircase;10;1820
+Path D;3;Main Staircase;10;1820
+Path E;3;Main Staircase;10;1765
+Path C;3;Main Staircase;11;1779
+Path D;3;Main Staircase;11;1916
+Path E;3;Main Staircase;11;2224
+Path C;3;Main Staircase;12;2621
+Path D;3;Main Staircase;12;2782
+Path E;3;Main Staircase;12;2137
+Path C;3;Main Staircase;13;4329
+Path D;3;Main Staircase;13;5824
+Path E;3;Main Staircase;13;4329
+Path C;3;Main Staircase;14;2777
+Path D;3;Main Staircase;14;2545
+Path E;3;Main Staircase;14;3147
+Path C;3;Main Staircase;15;907
+Path D;3;Main Staircase;15;971
+Path E;3;Main Staircase;15;1050
+Path C;3;Main Staircase;16;4305
+Path D;3;Main Staircase;16;4627
+Path E;3;Main Staircase;16;3856
+Path C;3;Main Staircase;17;1967
+Path D;3;Main Staircase;17;1547
+Path E;3;Main Staircase;17;1626
+Path C;3;Main Staircase;18;785
+Path D;3;Main Staircase;18;1108
+Path E;3;Main Staircase;18;1062
+Path C;3;Main Staircase;19;1374
+Path D;3;Main Staircase;19;1088
+Path E;3;Main Staircase;19;992
+Path C;3;Main Staircase;20;359
+Path D;3;Main Staircase;20;297
+Path E;3;Main Staircase;20;387
+Path E;6;Marc Lennox expo;8;266
+Path E;6;Marc Lennox expo;9;555
+Path E;6;Marc Lennox expo;10;679
+Path E;6;Marc Lennox expo;11;920
+Path E;6;Marc Lennox expo;12;1700
+Path E;6;Marc Lennox expo;13;1934
+Path E;6;Marc Lennox expo;14;2845
+Path E;6;Marc Lennox expo;15;2265
+Path E;6;Marc Lennox expo;16;1951
+Path E;6;Marc Lennox expo;17;1115
+Path E;6;Marc Lennox expo;18;556
+Path E;6;Marc Lennox expo;19;846
+Path E;6;Marc Lennox expo;20;391
+Path B;3;Modern Art (movie room);8;854
+Path B;3;Modern Art (movie room);9;512
+Path B;3;Modern Art (movie room);10;1639
+Path B;3;Modern Art (movie room);11;699
+Path B;3;Modern Art (movie room);12;866
+Path B;3;Modern Art (movie room);13;2139
+Path B;3;Modern Art (movie room);14;4540
+Path B;3;Modern Art (movie room);15;1944
+Path B;3;Modern Art (movie room);16;1929
+Path B;3;Modern Art (movie room);17;1773
+Path B;3;Modern Art (movie room);18;1669
+Path B;3;Modern Art (movie room);19;1135
+Path B;3;Modern Art (movie room);20;363
+Path B;4;Modern Art for kids;8;505
+Path B;4;Modern Art for kids;9;235
+Path B;4;Modern Art for kids;10;763
+Path B;4;Modern Art for kids;11;1687
+Path B;4;Modern Art for kids;12;661
+Path B;4;Modern Art for kids;13;2498
+Path B;4;Modern Art for kids;14;2464
+Path B;4;Modern Art for kids;15;1127
+Path B;4;Modern Art for kids;16;903
+Path B;4;Modern Art for kids;17;1344
+Path B;4;Modern Art for kids;18;695
+Path B;4;Modern Art for kids;19;641
+Path B;4;Modern Art for kids;20;518
+Path C;5;Modern Art Gallery;8;209
+Path C;5;Modern Art Gallery;9;818
+Path C;5;Modern Art Gallery;10;1282
+Path C;5;Modern Art Gallery;11;1879
+Path C;5;Modern Art Gallery;12;595
+Path C;5;Modern Art Gallery;13;1008
+Path C;5;Modern Art Gallery;14;1467
+Path C;5;Modern Art Gallery;15;1277
+Path C;5;Modern Art Gallery;16;2033
+Path C;5;Modern Art Gallery;17;740
+Path C;5;Modern Art Gallery;18;778
+Path C;5;Modern Art Gallery;19;588
+Path C;5;Modern Art Gallery;20;353
+Path A;2;Museum Café;8;644
+Path B;15;Museum Café;8;748
+Path D;1;Museum Café;8;520
+Path A;2;Museum Café;9;540
+Path B;15;Museum Café;9;588
+Path D;1;Museum Café;9;713
+Path A;2;Museum Café;10;2354
+Path B;15;Museum Café;10;2564
+Path D;1;Museum Café;10;2144
+Path A;2;Museum Café;11;3164
+Path B;15;Museum Café;11;3164
+Path D;1;Museum Café;11;3503
+Path A;2;Museum Café;12;2307
+Path B;15;Museum Café;12;1872
+Path D;1;Museum Café;12;2407
+Path A;2;Museum Café;13;2977
+Path B;15;Museum Café;13;3680
+Path D;1;Museum Café;13;3464
+Path A;2;Museum Café;14;1914
+Path B;15;Museum Café;14;1580
+Path D;1;Museum Café;14;2279
+Path A;2;Museum Café;15;1152
+Path B;15;Museum Café;15;1018
+Path D;1;Museum Café;15;1363
+Path A;2;Museum Café;16;2027
+Path B;15;Museum Café;16;1913
+Path D;1;Museum Café;16;2180
+Path A;2;Museum Café;17;2456
+Path B;15;Museum Café;17;1780
+Path D;1;Museum Café;17;2385
+Path A;2;Museum Café;18;1721
+Path B;15;Museum Café;18;2034
+Path D;1;Museum Café;18;1627
+Path A;2;Museum Café;19;1036
+Path B;15;Museum Café;19;1084
+Path D;1;Museum Café;19;1084
+Path A;2;Museum Café;20;591
+Path B;15;Museum Café;20;575
+Path D;1;Museum Café;20;433
+Path B;2;Museum Shop;8;697
+Path C;1;Museum Shop;8;827
+Path D;4;Museum Shop;8;827
+Path B;2;Museum Shop;9;490
+Path C;1;Museum Shop;9;582
+Path D;4;Museum Shop;9;599
+Path B;2;Museum Shop;10;3329
+Path C;1;Museum Shop;10;2626
+Path D;4;Museum Shop;10;3095
+Path B;2;Museum Shop;11;2743
+Path C;1;Museum Shop;11;2011
+Path D;4;Museum Shop;11;1829
+Path B;2;Museum Shop;12;3409
+Path C;1;Museum Shop;12;4186
+Path D;4;Museum Shop;12;3528
+Path B;2;Museum Shop;13;4685
+Path C;1;Museum Shop;13;5955
+Path D;4;Museum Shop;13;4288
+Path B;2;Museum Shop;14;4398
+Path C;1;Museum Shop;14;5835
+Path D;4;Museum Shop;14;4567
+Path B;2;Museum Shop;15;4639
+Path C;1;Museum Shop;15;4863
+Path D;4;Museum Shop;15;5387
+Path B;2;Museum Shop;16;4862
+Path C;1;Museum Shop;16;4862
+Path D;4;Museum Shop;16;4548
+Path B;2;Museum Shop;17;1331
+Path C;1;Museum Shop;17;1065
+Path D;4;Museum Shop;17;1106
+Path B;2;Museum Shop;18;1972
+Path C;1;Museum Shop;18;2629
+Path D;4;Museum Shop;18;2010
+Path B;2;Museum Shop;19;1829
+Path C;1;Museum Shop;19;1539
+Path D;4;Museum Shop;19;2061
+Path B;2;Museum Shop;20;1237
+Path C;1;Museum Shop;20;1117
+Path D;4;Museum Shop;20;1254
+Path A;9;Patio left;8;162
+Path A;9;Patio left;9;186
+Path A;9;Patio left;10;1061
+Path A;9;Patio left;11;940
+Path A;9;Patio left;12;811
+Path A;9;Patio left;13;1353
+Path A;9;Patio left;14;651
+Path A;9;Patio left;15;1153
+Path A;9;Patio left;16;1197
+Path A;9;Patio left;17;733
+Path A;9;Patio left;18;1129
+Path A;9;Patio left;19;272
+Path A;9;Patio left;20;443
+Path E;8;Patio right;8;354
+Path E;8;Patio right;9;257
+Path E;8;Patio right;10;812
+Path E;8;Patio right;11;805
+Path E;8;Patio right;12;979
+Path E;8;Patio right;13;1866
+Path E;8;Patio right;14;2039
+Path E;8;Patio right;15;687
+Path E;8;Patio right;16;1624
+Path E;8;Patio right;17;854
+Path E;8;Patio right;18;532
+Path E;8;Patio right;19;549
+Path E;8;Patio right;20;378
+Path A;6;Peter Dawson paintings;8;828
+Path C;9;Peter Dawson paintings;8;598
+Path A;6;Peter Dawson paintings;9;719
+Path C;9;Peter Dawson paintings;9;868
+Path A;6;Peter Dawson paintings;10;1056
+Path C;9;Peter Dawson paintings;10;971
+Path A;6;Peter Dawson paintings;11;1915
+Path C;9;Peter Dawson paintings;11;1828
+Path A;6;Peter Dawson paintings;12;2258
+Path C;9;Peter Dawson paintings;12;1930
+Path A;6;Peter Dawson paintings;13;3061
+Path C;9;Peter Dawson paintings;13;2429
+Path A;6;Peter Dawson paintings;14;1252
+Path C;9;Peter Dawson paintings;14;1138
+Path A;6;Peter Dawson paintings;15;2874
+Path C;9;Peter Dawson paintings;15;2083
+Path A;6;Peter Dawson paintings;16;2265
+Path C;9;Peter Dawson paintings;16;2948
+Path A;6;Peter Dawson paintings;17;1495
+Path C;9;Peter Dawson paintings;17;1938
+Path A;6;Peter Dawson paintings;18;690
+Path C;9;Peter Dawson paintings;18;713
+Path A;6;Peter Dawson paintings;19;1161
+Path C;9;Peter Dawson paintings;19;1349
+Path A;6;Peter Dawson paintings;20;656
+Path C;9;Peter Dawson paintings;20;814
+Path B;12;Pre-hall;8;616
+Path C;6;Pre-hall;8;496
+Path E;4;Pre-hall;8;599
+Path B;12;Pre-hall;9;967
+Path C;6;Pre-hall;9;874
+Path E;4;Pre-hall;9;1076
+Path B;12;Pre-hall;10;1100
+Path C;6;Pre-hall;10;1050
+Path E;4;Pre-hall;10;1050
+Path B;12;Pre-hall;11;1352
+Path C;6;Pre-hall;11;1541
+Path E;4;Pre-hall;11;1866
+Path B;12;Pre-hall;12;2047
+Path C;6;Pre-hall;12;1706
+Path E;4;Pre-hall;12;2295
+Path B;12;Pre-hall;13;2969
+Path C;6;Pre-hall;13;3448
+Path E;4;Pre-hall;13;2490
+Path B;12;Pre-hall;14;1383
+Path C;6;Pre-hall;14;1573
+Path E;4;Pre-hall;14;1788
+Path B;12;Pre-hall;15;2035
+Path C;6;Pre-hall;15;1935
+Path E;4;Pre-hall;15;2068
+Path B;12;Pre-hall;16;2549
+Path C;6;Pre-hall;16;2023
+Path E;4;Pre-hall;16;2711
+Path B;12;Pre-hall;17;824
+Path C;6;Pre-hall;17;824
+Path E;4;Pre-hall;17;885
+Path B;12;Pre-hall;18;682
+Path C;6;Pre-hall;18;600
+Path E;4;Pre-hall;18;641
+Path B;12;Pre-hall;19;1240
+Path C;6;Pre-hall;19;1398
+Path E;4;Pre-hall;19;1083
+Path B;12;Pre-hall;20;357
+Path C;6;Pre-hall;20;362
+Path E;4;Pre-hall;20;390
+Path B;8;Study corner;8;172
+Path C;14;Study corner;8;230
+Path E;9;Study corner;8;172
+Path B;8;Study corner;9;106
+Path C;14;Study corner;9;144
+Path E;9;Study corner;9;136
+Path B;8;Study corner;10;272
+Path C;14;Study corner;10;342
+Path E;9;Study corner;10;347
+Path B;8;Study corner;11;552
+Path C;14;Study corner;11;431
+Path E;9;Study corner;11;408
+Path B;8;Study corner;12;437
+Path C;14;Study corner;12;491
+Path E;9;Study corner;12;478
+Path B;8;Study corner;13;1038
+Path C;14;Study corner;13;948
+Path E;9;Study corner;13;933
+Path B;8;Study corner;14;626
+Path C;14;Study corner;14;553
+Path E;9;Study corner;14;580
+Path B;8;Study corner;15;642
+Path C;14;Study corner;15;651
+Path E;9;Study corner;15;479
+Path B;8;Study corner;16;582
+Path C;14;Study corner;16;666
+Path E;9;Study corner;16;694
+Path B;8;Study corner;17;163
+Path C;14;Study corner;17;159
+Path E;9;Study corner;17;178
+Path B;8;Study corner;18;222
+Path C;14;Study corner;18;200
+Path E;9;Study corner;18;254
+Path B;8;Study corner;19;246
+Path C;14;Study corner;19;362
+Path E;9;Study corner;19;299
+Path B;8;Study corner;20;130
+Path C;14;Study corner;20;130
+Path E;9;Study corner;20;117
+Path B;7;Tessa Van Hoof expo;8;451
+Path B;7;Tessa Van Hoof expo;9;778
+Path B;7;Tessa Van Hoof expo;10;872
+Path B;7;Tessa Van Hoof expo;11;1278
+Path B;7;Tessa Van Hoof expo;12;1293
+Path B;7;Tessa Van Hoof expo;13;2456
+Path B;7;Tessa Van Hoof expo;14;2099
+Path B;7;Tessa Van Hoof expo;15;1473
+Path B;7;Tessa Van Hoof expo;16;1024
+Path B;7;Tessa Van Hoof expo;17;595
+Path B;7;Tessa Van Hoof expo;18;841
+Path B;7;Tessa Van Hoof expo;19;294
+Path B;7;Tessa Van Hoof expo;20;236
+Path E;7;Toilets right;8;475
+Path E;7;Toilets right;9;406
+Path E;7;Toilets right;10;1277
+Path E;7;Toilets right;11;540
+Path E;7;Toilets right;12;1147
+Path E;7;Toilets right;13;1994
+Path E;7;Toilets right;14;1107
+Path E;7;Toilets right;15;1902
+Path E;7;Toilets right;16;1395
+Path E;7;Toilets right;17;635
+Path E;7;Toilets right;18;1281
+Path E;7;Toilets right;19;1024
+Path E;7;Toilets right;20;369

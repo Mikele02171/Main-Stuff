@@ -1,0 +1,481 @@
+Neighborhood Group,Date,# Incidents
+Ciutat Vella,01/01/2018,4579
+Ciutat Vella,01/02/2018,4189
+Ciutat Vella,01/03/2018,5060
+Ciutat Vella,01/04/2018,5525
+Ciutat Vella,01/05/2018,6111
+Ciutat Vella,01/06/2018,6354
+Ciutat Vella,01/07/2018,6611
+Ciutat Vella,01/08/2018,6438
+Ciutat Vella,01/09/2018,6615
+Ciutat Vella,01/10/2018,5709
+Ciutat Vella,01/11/2018,5130
+Ciutat Vella,01/12/2018,4859
+Ciutat Vella,01/01/2019,4487
+Ciutat Vella,01/02/2019,4566
+Ciutat Vella,01/03/2019,5183
+Ciutat Vella,01/04/2019,5269
+Ciutat Vella,01/05/2019,5751
+Ciutat Vella,01/06/2019,6232
+Ciutat Vella,01/07/2019,6366
+Ciutat Vella,01/08/2019,6091
+Ciutat Vella,01/09/2019,5836
+Ciutat Vella,01/10/2019,5391
+Ciutat Vella,01/11/2019,4386
+Ciutat Vella,01/12/2019,4418
+Ciutat Vella,01/01/2020,4515
+Ciutat Vella,01/02/2020,4591
+Ciutat Vella,01/03/2020,5313
+Ciutat Vella,01/04/2020,3809
+Ciutat Vella,01/05/2020,4734
+Ciutat Vella,01/06/2020,4931
+Ciutat Vella,01/07/2020,5890
+Ciutat Vella,01/08/2020,5295
+Ciutat Vella,01/09/2020,5515
+Ciutat Vella,01/10/2020,5200
+Ciutat Vella,01/11/2020,4604
+Ciutat Vella,01/12/2020,4260
+Ciutat Vella,01/01/2021,4650
+Ciutat Vella,01/02/2021,5495
+Ciutat Vella,01/03/2021,6410
+Ciutat Vella,01/04/2021,6443
+Ciutat Vella,01/05/2021,7845
+Ciutat Vella,01/06/2021,8367
+Ciutat Vella,01/07/2021,8883
+Ciutat Vella,01/08/2021,8732
+Ciutat Vella,01/09/2021,7969
+Ciutat Vella,01/10/2021,7309
+Ciutat Vella,01/11/2021,6155
+Ciutat Vella,01/12/2021,5961
+Eixample,01/01/2018,5158
+Eixample,01/02/2018,4885
+Eixample,01/03/2018,5276
+Eixample,01/04/2018,5422
+Eixample,01/05/2018,5773
+Eixample,01/06/2018,5834
+Eixample,01/07/2018,5861
+Eixample,01/08/2018,5341
+Eixample,01/09/2018,5794
+Eixample,01/10/2018,5768
+Eixample,01/11/2018,5438
+Eixample,01/12/2018,5140
+Eixample,01/01/2019,5152
+Eixample,01/02/2019,5050
+Eixample,01/03/2019,5660
+Eixample,01/04/2019,5280
+Eixample,01/05/2019,5764
+Eixample,01/06/2019,5851
+Eixample,01/07/2019,6617
+Eixample,01/08/2019,5375
+Eixample,01/09/2019,5735
+Eixample,01/10/2019,5904
+Eixample,01/11/2019,5048
+Eixample,01/12/2019,5277
+Eixample,01/01/2020,5378
+Eixample,01/02/2020,5215
+Eixample,01/03/2020,6013
+Eixample,01/04/2020,4242
+Eixample,01/05/2020,5288
+Eixample,01/06/2020,5188
+Eixample,01/07/2020,5671
+Eixample,01/08/2020,4555
+Eixample,01/09/2020,5759
+Eixample,01/10/2020,5624
+Eixample,01/11/2020,5170
+Eixample,01/12/2020,4935
+Eixample,01/01/2021,5276
+Eixample,01/02/2021,6720
+Eixample,01/03/2021,6989
+Eixample,01/04/2021,7011
+Eixample,01/05/2021,8026
+Eixample,01/06/2021,8091
+Eixample,01/07/2021,8529
+Eixample,01/08/2021,7964
+Eixample,01/09/2021,8496
+Eixample,01/10/2021,8118
+Eixample,01/11/2021,7639
+Eixample,01/12/2021,7689
+Gràcia,01/01/2018,1714
+Gràcia,01/02/2018,1618
+Gràcia,01/03/2018,1938
+Gràcia,01/04/2018,1974
+Gràcia,01/05/2018,2074
+Gràcia,01/06/2018,2257
+Gràcia,01/07/2018,2233
+Gràcia,01/08/2018,2114
+Gràcia,01/09/2018,2004
+Gràcia,01/10/2018,2058
+Gràcia,01/11/2018,1747
+Gràcia,01/12/2018,1699
+Gràcia,01/01/2019,1557
+Gràcia,01/02/2019,1624
+Gràcia,01/03/2019,1805
+Gràcia,01/04/2019,1690
+Gràcia,01/05/2019,1901
+Gràcia,01/06/2019,2018
+Gràcia,01/07/2019,2182
+Gràcia,01/08/2019,2153
+Gràcia,01/09/2019,1896
+Gràcia,01/10/2019,1809
+Gràcia,01/11/2019,1626
+Gràcia,01/12/2019,1676
+Gràcia,01/01/2020,1882
+Gràcia,01/02/2020,1731
+Gràcia,01/03/2020,1977
+Gràcia,01/04/2020,1535
+Gràcia,01/05/2020,2383
+Gràcia,01/06/2020,2357
+Gràcia,01/07/2020,2380
+Gràcia,01/08/2020,2021
+Gràcia,01/09/2020,2399
+Gràcia,01/10/2020,2373
+Gràcia,01/11/2020,1998
+Gràcia,01/12/2020,1798
+Gràcia,01/01/2021,2043
+Gràcia,01/02/2021,2528
+Gràcia,01/03/2021,2570
+Gràcia,01/04/2021,2601
+Gràcia,01/05/2021,3239
+Gràcia,01/06/2021,3355
+Gràcia,01/07/2021,3117
+Gràcia,01/08/2021,3174
+Gràcia,01/09/2021,3024
+Gràcia,01/10/2021,2949
+Gràcia,01/11/2021,2551
+Gràcia,01/12/2021,2402
+Horta-Guinardó,01/01/2018,2100
+Horta-Guinardó,01/02/2018,1790
+Horta-Guinardó,01/03/2018,1926
+Horta-Guinardó,01/04/2018,2143
+Horta-Guinardó,01/05/2018,2297
+Horta-Guinardó,01/06/2018,2485
+Horta-Guinardó,01/07/2018,2463
+Horta-Guinardó,01/08/2018,1960
+Horta-Guinardó,01/09/2018,2335
+Horta-Guinardó,01/10/2018,2314
+Horta-Guinardó,01/11/2018,2042
+Horta-Guinardó,01/12/2018,1985
+Horta-Guinardó,01/01/2019,1789
+Horta-Guinardó,01/02/2019,1697
+Horta-Guinardó,01/03/2019,1923
+Horta-Guinardó,01/04/2019,1690
+Horta-Guinardó,01/05/2019,1891
+Horta-Guinardó,01/06/2019,2031
+Horta-Guinardó,01/07/2019,2375
+Horta-Guinardó,01/08/2019,2007
+Horta-Guinardó,01/09/2019,2141
+Horta-Guinardó,01/10/2019,2033
+Horta-Guinardó,01/11/2019,1808
+Horta-Guinardó,01/12/2019,1959
+Horta-Guinardó,01/01/2020,2102
+Horta-Guinardó,01/02/2020,1867
+Horta-Guinardó,01/03/2020,2416
+Horta-Guinardó,01/04/2020,2261
+Horta-Guinardó,01/05/2020,2807
+Horta-Guinardó,01/06/2020,2584
+Horta-Guinardó,01/07/2020,2666
+Horta-Guinardó,01/08/2020,2218
+Horta-Guinardó,01/09/2020,2528
+Horta-Guinardó,01/10/2020,2616
+Horta-Guinardó,01/11/2020,2239
+Horta-Guinardó,01/12/2020,2000
+Horta-Guinardó,01/01/2021,2567
+Horta-Guinardó,01/02/2021,3063
+Horta-Guinardó,01/03/2021,3265
+Horta-Guinardó,01/04/2021,3070
+Horta-Guinardó,01/05/2021,3450
+Horta-Guinardó,01/06/2021,3580
+Horta-Guinardó,01/07/2021,3817
+Horta-Guinardó,01/08/2021,3437
+Horta-Guinardó,01/09/2021,3759
+Horta-Guinardó,01/10/2021,3543
+Horta-Guinardó,01/11/2021,3200
+Horta-Guinardó,01/12/2021,3109
+Les Corts,01/01/2018,1332
+Les Corts,01/02/2018,1238
+Les Corts,01/03/2018,1304
+Les Corts,01/04/2018,1277
+Les Corts,01/05/2018,1309
+Les Corts,01/06/2018,1354
+Les Corts,01/07/2018,1294
+Les Corts,01/08/2018,906
+Les Corts,01/09/2018,1281
+Les Corts,01/10/2018,1403
+Les Corts,01/11/2018,1229
+Les Corts,01/12/2018,1152
+Les Corts,01/01/2019,1153
+Les Corts,01/02/2019,1116
+Les Corts,01/03/2019,1208
+Les Corts,01/04/2019,1155
+Les Corts,01/05/2019,1243
+Les Corts,01/06/2019,1357
+Les Corts,01/07/2019,1430
+Les Corts,01/08/2019,1050
+Les Corts,01/09/2019,1299
+Les Corts,01/10/2019,1323
+Les Corts,01/11/2019,1261
+Les Corts,01/12/2019,1218
+Les Corts,01/01/2020,1220
+Les Corts,01/02/2020,1168
+Les Corts,01/03/2020,1223
+Les Corts,01/04/2020,846
+Les Corts,01/05/2020,1123
+Les Corts,01/06/2020,1178
+Les Corts,01/07/2020,1246
+Les Corts,01/08/2020,903
+Les Corts,01/09/2020,1358
+Les Corts,01/10/2020,1313
+Les Corts,01/11/2020,1094
+Les Corts,01/12/2020,1123
+Les Corts,01/01/2021,1282
+Les Corts,01/02/2021,1472
+Les Corts,01/03/2021,1434
+Les Corts,01/04/2021,1431
+Les Corts,01/05/2021,1696
+Les Corts,01/06/2021,1894
+Les Corts,01/07/2021,1801
+Les Corts,01/08/2021,1551
+Les Corts,01/09/2021,2005
+Les Corts,01/10/2021,1948
+Les Corts,01/11/2021,1707
+Les Corts,01/12/2021,1641
+Nou Barris,01/01/2018,2079
+Nou Barris,01/02/2018,1885
+Nou Barris,01/03/2018,2130
+Nou Barris,01/04/2018,2053
+Nou Barris,01/05/2018,2227
+Nou Barris,01/06/2018,2474
+Nou Barris,01/07/2018,2341
+Nou Barris,01/08/2018,1940
+Nou Barris,01/09/2018,2173
+Nou Barris,01/10/2018,2202
+Nou Barris,01/11/2018,2064
+Nou Barris,01/12/2018,1941
+Nou Barris,01/01/2019,1970
+Nou Barris,01/02/2019,1716
+Nou Barris,01/03/2019,1869
+Nou Barris,01/04/2019,1837
+Nou Barris,01/05/2019,2018
+Nou Barris,01/06/2019,2226
+Nou Barris,01/07/2019,2479
+Nou Barris,01/08/2019,2119
+Nou Barris,01/09/2019,2137
+Nou Barris,01/10/2019,2170
+Nou Barris,01/11/2019,1879
+Nou Barris,01/12/2019,2032
+Nou Barris,01/01/2020,2180
+Nou Barris,01/02/2020,2006
+Nou Barris,01/03/2020,2675
+Nou Barris,01/04/2020,2643
+Nou Barris,01/05/2020,3191
+Nou Barris,01/06/2020,2885
+Nou Barris,01/07/2020,2923
+Nou Barris,01/08/2020,2578
+Nou Barris,01/09/2020,2702
+Nou Barris,01/10/2020,2815
+Nou Barris,01/11/2020,2420
+Nou Barris,01/12/2020,2002
+Nou Barris,01/01/2021,2599
+Nou Barris,01/02/2021,3063
+Nou Barris,01/03/2021,3414
+Nou Barris,01/04/2021,3326
+Nou Barris,01/05/2021,3443
+Nou Barris,01/06/2021,4058
+Nou Barris,01/07/2021,4009
+Nou Barris,01/08/2021,3585
+Nou Barris,01/09/2021,3628
+Nou Barris,01/10/2021,3425
+Nou Barris,01/11/2021,2993
+Nou Barris,01/12/2021,3149
+Sant Andreu,01/01/2018,1843
+Sant Andreu,01/02/2018,1721
+Sant Andreu,01/03/2018,1954
+Sant Andreu,01/04/2018,1999
+Sant Andreu,01/05/2018,2186
+Sant Andreu,01/06/2018,2367
+Sant Andreu,01/07/2018,2190
+Sant Andreu,01/08/2018,1889
+Sant Andreu,01/09/2018,2004
+Sant Andreu,01/10/2018,2032
+Sant Andreu,01/11/2018,1943
+Sant Andreu,01/12/2018,1979
+Sant Andreu,01/01/2019,1731
+Sant Andreu,01/02/2019,1618
+Sant Andreu,01/03/2019,1722
+Sant Andreu,01/04/2019,1655
+Sant Andreu,01/05/2019,1809
+Sant Andreu,01/06/2019,2086
+Sant Andreu,01/07/2019,2194
+Sant Andreu,01/08/2019,1723
+Sant Andreu,01/09/2019,2020
+Sant Andreu,01/10/2019,1817
+Sant Andreu,01/11/2019,1793
+Sant Andreu,01/12/2019,1911
+Sant Andreu,01/01/2020,1951
+Sant Andreu,01/02/2020,1689
+Sant Andreu,01/03/2020,2333
+Sant Andreu,01/04/2020,2052
+Sant Andreu,01/05/2020,2606
+Sant Andreu,01/06/2020,2607
+Sant Andreu,01/07/2020,2539
+Sant Andreu,01/08/2020,2120
+Sant Andreu,01/09/2020,2321
+Sant Andreu,01/10/2020,2226
+Sant Andreu,01/11/2020,1866
+Sant Andreu,01/12/2020,1779
+Sant Andreu,01/01/2021,2104
+Sant Andreu,01/02/2021,2567
+Sant Andreu,01/03/2021,2852
+Sant Andreu,01/04/2021,2778
+Sant Andreu,01/05/2021,3050
+Sant Andreu,01/06/2021,3332
+Sant Andreu,01/07/2021,3143
+Sant Andreu,01/08/2021,2984
+Sant Andreu,01/09/2021,3257
+Sant Andreu,01/10/2021,3162
+Sant Andreu,01/11/2021,2886
+Sant Andreu,01/12/2021,2929
+Sant Martí,01/01/2018,3322
+Sant Martí,01/02/2018,3134
+Sant Martí,01/03/2018,3589
+Sant Martí,01/04/2018,3527
+Sant Martí,01/05/2018,4104
+Sant Martí,01/06/2018,4552
+Sant Martí,01/07/2018,4715
+Sant Martí,01/08/2018,3738
+Sant Martí,01/09/2018,4456
+Sant Martí,01/10/2018,3942
+Sant Martí,01/11/2018,3616
+Sant Martí,01/12/2018,3372
+Sant Martí,01/01/2019,3311
+Sant Martí,01/02/2019,3166
+Sant Martí,01/03/2019,3603
+Sant Martí,01/04/2019,2948
+Sant Martí,01/05/2019,3344
+Sant Martí,01/06/2019,4090
+Sant Martí,01/07/2019,4465
+Sant Martí,01/08/2019,3721
+Sant Martí,01/09/2019,3796
+Sant Martí,01/10/2019,3690
+Sant Martí,01/11/2019,3199
+Sant Martí,01/12/2019,3243
+Sant Martí,01/01/2020,3619
+Sant Martí,01/02/2020,3553
+Sant Martí,01/03/2020,4240
+Sant Martí,01/04/2020,3428
+Sant Martí,01/05/2020,4102
+Sant Martí,01/06/2020,3882
+Sant Martí,01/07/2020,4222
+Sant Martí,01/08/2020,3801
+Sant Martí,01/09/2020,4223
+Sant Martí,01/10/2020,3906
+Sant Martí,01/11/2020,3471
+Sant Martí,01/12/2020,3165
+Sant Martí,01/01/2021,3703
+Sant Martí,01/02/2021,4676
+Sant Martí,01/03/2021,4879
+Sant Martí,01/04/2021,4784
+Sant Martí,01/05/2021,5615
+Sant Martí,01/06/2021,6290
+Sant Martí,01/07/2021,6117
+Sant Martí,01/08/2021,5496
+Sant Martí,01/09/2021,5648
+Sant Martí,01/10/2021,5454
+Sant Martí,01/11/2021,5152
+Sant Martí,01/12/2021,4984
+Sants-Montjuïc,01/01/2018,2916
+Sants-Montjuïc,01/02/2018,2723
+Sants-Montjuïc,01/03/2018,3044
+Sants-Montjuïc,01/04/2018,3263
+Sants-Montjuïc,01/05/2018,3513
+Sants-Montjuïc,01/06/2018,3822
+Sants-Montjuïc,01/07/2018,3871
+Sants-Montjuïc,01/08/2018,3298
+Sants-Montjuïc,01/09/2018,3701
+Sants-Montjuïc,01/10/2018,3556
+Sants-Montjuïc,01/11/2018,3016
+Sants-Montjuïc,01/12/2018,2788
+Sants-Montjuïc,01/01/2019,2614
+Sants-Montjuïc,01/02/2019,2498
+Sants-Montjuïc,01/03/2019,2906
+Sants-Montjuïc,01/04/2019,2730
+Sants-Montjuïc,01/05/2019,3168
+Sants-Montjuïc,01/06/2019,3400
+Sants-Montjuïc,01/07/2019,3798
+Sants-Montjuïc,01/08/2019,3037
+Sants-Montjuïc,01/09/2019,3383
+Sants-Montjuïc,01/10/2019,3049
+Sants-Montjuïc,01/11/2019,2706
+Sants-Montjuïc,01/12/2019,2755
+Sants-Montjuïc,01/01/2020,3202
+Sants-Montjuïc,01/02/2020,2810
+Sants-Montjuïc,01/03/2020,3475
+Sants-Montjuïc,01/04/2020,2792
+Sants-Montjuïc,01/05/2020,3642
+Sants-Montjuïc,01/06/2020,3559
+Sants-Montjuïc,01/07/2020,3565
+Sants-Montjuïc,01/08/2020,3225
+Sants-Montjuïc,01/09/2020,3551
+Sants-Montjuïc,01/10/2020,3539
+Sants-Montjuïc,01/11/2020,2954
+Sants-Montjuïc,01/12/2020,2795
+Sants-Montjuïc,01/01/2021,3191
+Sants-Montjuïc,01/02/2021,4235
+Sants-Montjuïc,01/03/2021,4501
+Sants-Montjuïc,01/04/2021,4309
+Sants-Montjuïc,01/05/2021,5030
+Sants-Montjuïc,01/06/2021,5552
+Sants-Montjuïc,01/07/2021,5534
+Sants-Montjuïc,01/08/2021,5315
+Sants-Montjuïc,01/09/2021,5404
+Sants-Montjuïc,01/10/2021,5088
+Sants-Montjuïc,01/11/2021,4485
+Sants-Montjuïc,01/12/2021,4557
+Sarrià-Sant Gervasi,01/01/2018,2436
+Sarrià-Sant Gervasi,01/02/2018,2234
+Sarrià-Sant Gervasi,01/03/2018,2446
+Sarrià-Sant Gervasi,01/04/2018,2429
+Sarrià-Sant Gervasi,01/05/2018,2349
+Sarrià-Sant Gervasi,01/06/2018,2559
+Sarrià-Sant Gervasi,01/07/2018,2440
+Sarrià-Sant Gervasi,01/08/2018,1556
+Sarrià-Sant Gervasi,01/09/2018,2509
+Sarrià-Sant Gervasi,01/10/2018,2568
+Sarrià-Sant Gervasi,01/11/2018,2533
+Sarrià-Sant Gervasi,01/12/2018,2157
+Sarrià-Sant Gervasi,01/01/2019,2020
+Sarrià-Sant Gervasi,01/02/2019,2029
+Sarrià-Sant Gervasi,01/03/2019,2277
+Sarrià-Sant Gervasi,01/04/2019,2037
+Sarrià-Sant Gervasi,01/05/2019,2218
+Sarrià-Sant Gervasi,01/06/2019,2396
+Sarrià-Sant Gervasi,01/07/2019,2397
+Sarrià-Sant Gervasi,01/08/2019,1683
+Sarrià-Sant Gervasi,01/09/2019,2288
+Sarrià-Sant Gervasi,01/10/2019,2376
+Sarrià-Sant Gervasi,01/11/2019,2064
+Sarrià-Sant Gervasi,01/12/2019,2220
+Sarrià-Sant Gervasi,01/01/2020,2354
+Sarrià-Sant Gervasi,01/02/2020,2176
+Sarrià-Sant Gervasi,01/03/2020,1998
+Sarrià-Sant Gervasi,01/04/2020,1533
+Sarrià-Sant Gervasi,01/05/2020,2385
+Sarrià-Sant Gervasi,01/06/2020,2574
+Sarrià-Sant Gervasi,01/07/2020,2479
+Sarrià-Sant Gervasi,01/08/2020,1600
+Sarrià-Sant Gervasi,01/09/2020,2844
+Sarrià-Sant Gervasi,01/10/2020,2746
+Sarrià-Sant Gervasi,01/11/2020,2326
+Sarrià-Sant Gervasi,01/12/2020,2267
+Sarrià-Sant Gervasi,01/01/2021,2378
+Sarrià-Sant Gervasi,01/02/2021,2901
+Sarrià-Sant Gervasi,01/03/2021,3000
+Sarrià-Sant Gervasi,01/04/2021,2750
+Sarrià-Sant Gervasi,01/05/2021,3415
+Sarrià-Sant Gervasi,01/06/2021,3584
+Sarrià-Sant Gervasi,01/07/2021,3191
+Sarrià-Sant Gervasi,01/08/2021,2283
+Sarrià-Sant Gervasi,01/09/2021,3566
+Sarrià-Sant Gervasi,01/10/2021,3775
+Sarrià-Sant Gervasi,01/11/2021,3192
+Sarrià-Sant Gervasi,01/12/2021,3017

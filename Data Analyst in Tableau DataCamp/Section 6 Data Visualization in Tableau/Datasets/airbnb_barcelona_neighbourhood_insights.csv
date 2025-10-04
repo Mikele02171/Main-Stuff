@@ -1,0 +1,649 @@
+Neighbourhood,Score type,Percentage score
+Baró de Viver,Instant Bookability,0.333333333
+Baró de Viver,Rating,0.937
+Baró de Viver,Accuracy,0.912
+Baró de Viver,Cleanliness,0.947
+Baró de Viver,Check In,0.939
+Baró de Viver,Communication,0.958
+Baró de Viver,Location,0.925
+Baró de Viver,Value,0.912
+Baró de Viver,Availability 365,0.00249863
+Can Baró,Instant Bookability,0.37037037
+Can Baró,Rating,0.935818182
+Can Baró,Accuracy,0.955545455
+Can Baró,Cleanliness,0.942636364
+Can Baró,Check In,0.965818182
+Can Baró,Communication,0.952272727
+Can Baró,Location,0.910454545
+Can Baró,Value,0.917818182
+Can Baró,Availability 365,0.00251457
+Can Peguera,Instant Bookability,1
+Can Peguera,Rating,0
+Can Peguera,Accuracy,0
+Can Peguera,Cleanliness,0
+Can Peguera,Check In,0
+Can Peguera,Communication,0
+Can Peguera,Location,0
+Can Peguera,Value,0
+Can Peguera,Availability 365,0
+Ciutat Meridiana,Instant Bookability,0.333333333
+Ciutat Meridiana,Rating,0.721333333
+Ciutat Meridiana,Accuracy,0.704666667
+Ciutat Meridiana,Cleanliness,0.712666667
+Ciutat Meridiana,Check In,0.712666667
+Ciutat Meridiana,Communication,0.725333333
+Ciutat Meridiana,Location,0.69
+Ciutat Meridiana,Value,0.729333333
+Ciutat Meridiana,Availability 365,0.001998174
+Diagonal Mar i el Front Marítim del Poblenou,Instant Bookability,0.575471698
+Diagonal Mar i el Front Marítim del Poblenou,Rating,0.9068
+Diagonal Mar i el Front Marítim del Poblenou,Accuracy,0.933483146
+Diagonal Mar i el Front Marítim del Poblenou,Cleanliness,0.911168539
+Diagonal Mar i el Front Marítim del Poblenou,Check In,0.945707865
+Diagonal Mar i el Front Marítim del Poblenou,Communication,0.934898876
+Diagonal Mar i el Front Marítim del Poblenou,Location,0.937460674
+Diagonal Mar i el Front Marítim del Poblenou,Value,0.891460674
+Diagonal Mar i el Front Marítim del Poblenou,Availability 365,0.002442358
+el Baix Guinardó,Instant Bookability,0.302752294
+el Baix Guinardó,Rating,0.897445783
+el Baix Guinardó,Accuracy,0.940716049
+el Baix Guinardó,Cleanliness,0.927407407
+el Baix Guinardó,Check In,0.954888889
+el Baix Guinardó,Communication,0.948197531
+el Baix Guinardó,Location,0.954049383
+el Baix Guinardó,Value,0.911407407
+el Baix Guinardó,Availability 365,0.002497007
+el Barri Gòtic,Instant Bookability,0.514322917
+el Barri Gòtic,Rating,0.895708054
+el Barri Gòtic,Accuracy,0.922316865
+el Barri Gòtic,Cleanliness,0.904391156
+el Barri Gòtic,Check In,0.940863946
+el Barri Gòtic,Communication,0.940336735
+el Barri Gòtic,Location,0.96794898
+el Barri Gòtic,Value,0.895585034
+el Barri Gòtic,Availability 365,0.002453658
+el Besòs i el Maresme,Instant Bookability,0.523148148
+el Besòs i el Maresme,Rating,0.917068063
+el Besòs i el Maresme,Accuracy,0.930209424
+el Besòs i el Maresme,Cleanliness,0.912272251
+el Besòs i el Maresme,Check In,0.953602094
+el Besòs i el Maresme,Communication,0.953612565
+el Besòs i el Maresme,Location,0.886848168
+el Besòs i el Maresme,Value,0.900753927
+el Besòs i el Maresme,Availability 365,0.002467819
+el Bon Pastor,Instant Bookability,0.52688172
+el Bon Pastor,Rating,0.871658537
+el Bon Pastor,Accuracy,0.926948718
+el Bon Pastor,Cleanliness,0.911974359
+el Bon Pastor,Check In,0.949974359
+el Bon Pastor,Communication,0.933230769
+el Bon Pastor,Location,0.847846154
+el Bon Pastor,Value,0.894051282
+el Bon Pastor,Availability 365,0.002449456
+el Camp de l'Arpa del Clot,Instant Bookability,0.559471366
+el Camp de l'Arpa del Clot,Rating,0.890893855
+el Camp de l'Arpa del Clot,Accuracy,0.92220339
+el Camp de l'Arpa del Clot,Cleanliness,0.910723164
+el Camp de l'Arpa del Clot,Check In,0.943977401
+el Camp de l'Arpa del Clot,Communication,0.934180791
+el Camp de l'Arpa del Clot,Location,0.926169492
+el Camp de l'Arpa del Clot,Value,0.894327684
+el Camp de l'Arpa del Clot,Availability 365,0.002450213
+el Camp d'en Grassot i Gràcia Nova,Instant Bookability,0.484375
+el Camp d'en Grassot i Gràcia Nova,Rating,0.898
+el Camp d'en Grassot i Gràcia Nova,Accuracy,0.929678392
+el Camp d'en Grassot i Gràcia Nova,Cleanliness,0.921427136
+el Camp d'en Grassot i Gràcia Nova,Check In,0.947768844
+el Camp d'en Grassot i Gràcia Nova,Communication,0.947165829
+el Camp d'en Grassot i Gràcia Nova,Location,0.952361809
+el Camp d'en Grassot i Gràcia Nova,Value,0.892592965
+el Camp d'en Grassot i Gràcia Nova,Availability 365,0.00244546
+el Carmel,Instant Bookability,0.525423729
+el Carmel,Rating,0.899833333
+el Carmel,Accuracy,0.928416667
+el Carmel,Cleanliness,0.92025
+el Carmel,Check In,0.926875
+el Carmel,Communication,0.945791667
+el Carmel,Location,0.86675
+el Carmel,Value,0.892291667
+el Carmel,Availability 365,0.002444635
+el Clot,Instant Bookability,0.367088608
+el Clot,Rating,0.894350877
+el Clot,Accuracy,0.934436364
+el Clot,Cleanliness,0.922327273
+el Clot,Check In,0.951418182
+el Clot,Communication,0.956690909
+el Clot,Location,0.948181818
+el Clot,Value,0.912327273
+el Clot,Availability 365,0.002499527
+el Coll,Instant Bookability,0.409090909
+el Coll,Rating,0.917578947
+el Coll,Accuracy,0.942947368
+el Coll,Cleanliness,0.926526316
+el Coll,Check In,0.967789474
+el Coll,Communication,0.963578947
+el Coll,Location,0.860736842
+el Coll,Value,0.904421053
+el Coll,Availability 365,0.002477866
+el Congrés i els Indians,Instant Bookability,0.289473684
+el Congrés i els Indians,Rating,0.927714286
+el Congrés i els Indians,Accuracy,0.943333333
+el Congrés i els Indians,Cleanliness,0.919714286
+el Congrés i els Indians,Check In,0.974190476
+el Congrés i els Indians,Communication,0.962666667
+el Congrés i els Indians,Location,0.920190476
+el Congrés i els Indians,Value,0.916
+el Congrés i els Indians,Availability 365,0.002509589
+el Fort Pienc,Instant Bookability,0.47592068
+el Fort Pienc,Rating,0.892230769
+el Fort Pienc,Accuracy,0.930947712
+el Fort Pienc,Cleanliness,0.919647059
+el Fort Pienc,Check In,0.939416393
+el Fort Pienc,Communication,0.943
+el Fort Pienc,Location,0.958
+el Fort Pienc,Value,0.897940984
+el Fort Pienc,Availability 365,0.002460112
+el Guinardó,Instant Bookability,0.338582677
+el Guinardó,Rating,0.89246
+el Guinardó,Accuracy,0.920836735
+el Guinardó,Cleanliness,0.904612245
+el Guinardó,Check In,0.949387755
+el Guinardó,Communication,0.946530612
+el Guinardó,Location,0.911714286
+el Guinardó,Value,0.903428571
+el Guinardó,Availability 365,0.002475147
+el Parc i la Llacuna del Poblenou,Instant Bookability,0.346153846
+el Parc i la Llacuna del Poblenou,Rating,0.89688189
+el Parc i la Llacuna del Poblenou,Accuracy,0.921741935
+el Parc i la Llacuna del Poblenou,Cleanliness,0.929354839
+el Parc i la Llacuna del Poblenou,Check In,0.951887097
+el Parc i la Llacuna del Poblenou,Communication,0.957629032
+el Parc i la Llacuna del Poblenou,Location,0.936419355
+el Parc i la Llacuna del Poblenou,Value,0.9045
+el Parc i la Llacuna del Poblenou,Availability 365,0.002478082
+el Poble Sec,Instant Bookability,0.40257649
+el Poble Sec,Rating,0.902110476
+el Poble Sec,Accuracy,0.924832061
+el Poble Sec,Cleanliness,0.915156489
+el Poble Sec,Check In,0.942206501
+el Poble Sec,Communication,0.938030534
+el Poble Sec,Location,0.944780115
+el Poble Sec,Value,0.89242065
+el Poble Sec,Availability 365,0.002444988
+el Poblenou,Instant Bookability,0.351351351
+el Poblenou,Rating,0.913709677
+el Poblenou,Accuracy,0.940987755
+el Poblenou,Cleanliness,0.922677551
+el Poblenou,Check In,0.949918367
+el Poblenou,Communication,0.954612245
+el Poblenou,Location,0.947828571
+el Poblenou,Value,0.907387755
+el Poblenou,Availability 365,0.002485994
+el Putxet i el Farró,Instant Bookability,0.444444444
+el Putxet i el Farró,Rating,0.899230769
+el Putxet i el Farró,Accuracy,0.926948276
+el Putxet i el Farró,Cleanliness,0.90862069
+el Putxet i el Farró,Check In,0.94487931
+el Putxet i el Farró,Communication,0.944482759
+el Putxet i el Farró,Location,0.926844828
+el Putxet i el Farró,Value,0.886448276
+el Putxet i el Farró,Availability 365,0.002428625
+el Raval,Instant Bookability,0.474437628
+el Raval,Rating,0.89722
+el Raval,Accuracy,0.91686398
+el Raval,Cleanliness,0.897267003
+el Raval,Check In,0.944519546
+el Raval,Communication,0.944047859
+el Raval,Location,0.938307692
+el Raval,Value,0.887836066
+el Raval,Availability 365,0.002432428
+el Turó de la Peira,Instant Bookability,0.153846154
+el Turó de la Peira,Rating,0.913826087
+el Turó de la Peira,Accuracy,0.921217391
+el Turó de la Peira,Cleanliness,0.946173913
+el Turó de la Peira,Check In,0.951652174
+el Turó de la Peira,Communication,0.931130435
+el Turó de la Peira,Location,0.897391304
+el Turó de la Peira,Value,0.929043478
+el Turó de la Peira,Availability 365,0.002545325
+Horta,Instant Bookability,0.411764706
+Horta,Rating,0.929333333
+Horta,Accuracy,0.945733333
+Horta,Cleanliness,0.916666667
+Horta,Check In,0.963733333
+Horta,Communication,0.964266667
+Horta,Location,0.905866667
+Horta,Value,0.911733333
+Horta,Availability 365,0.0024979
+Hostafrancs,Instant Bookability,0.641025641
+Hostafrancs,Rating,0.862566667
+Hostafrancs,Accuracy,0.916512821
+Hostafrancs,Cleanliness,0.900290598
+Hostafrancs,Check In,0.926478632
+Hostafrancs,Communication,0.933350427
+Hostafrancs,Location,0.946
+Hostafrancs,Value,0.870888889
+Hostafrancs,Availability 365,0.002385997
+la Barceloneta,Instant Bookability,0.42804428
+la Barceloneta,Rating,0.916058537
+la Barceloneta,Accuracy,0.931004878
+la Barceloneta,Cleanliness,0.8992
+la Barceloneta,Check In,0.946858537
+la Barceloneta,Communication,0.941902439
+la Barceloneta,Location,0.975921951
+la Barceloneta,Value,0.885278049
+la Barceloneta,Availability 365,0.002425419
+la Bordeta,Instant Bookability,0.553719008
+la Bordeta,Rating,0.914366972
+la Bordeta,Accuracy,0.937779817
+la Bordeta,Cleanliness,0.920275229
+la Bordeta,Check In,0.950110092
+la Bordeta,Communication,0.954917431
+la Bordeta,Location,0.902990826
+la Bordeta,Value,0.907027523
+la Bordeta,Availability 365,0.002485007
+la Clota,Instant Bookability,0
+la Clota,Rating,0
+la Clota,Accuracy,0
+la Clota,Cleanliness,0
+la Clota,Check In,0
+la Clota,Communication,0
+la Clota,Location,0
+la Clota,Value,0
+la Clota,Availability 365,0
+la Dreta de l'Eixample,Instant Bookability,0.591277259
+la Dreta de l'Eixample,Rating,0.92057037
+la Dreta de l'Eixample,Accuracy,0.9369375
+la Dreta de l'Eixample,Cleanliness,0.927254464
+la Dreta de l'Eixample,Check In,0.951440476
+la Dreta de l'Eixample,Communication,0.949952381
+la Dreta de l'Eixample,Location,0.97427997
+la Dreta de l'Eixample,Value,0.907810871
+la Dreta de l'Eixample,Availability 365,0.002487153
+la Font de la Guatlla,Instant Bookability,0.390625
+la Font de la Guatlla,Rating,0.923849057
+la Font de la Guatlla,Accuracy,0.941018868
+la Font de la Guatlla,Cleanliness,0.927358491
+la Font de la Guatlla,Check In,0.954981132
+la Font de la Guatlla,Communication,0.956716981
+la Font de la Guatlla,Location,0.947471698
+la Font de la Guatlla,Value,0.914566038
+la Font de la Guatlla,Availability 365,0.00250566
+la Font d'en Fargues,Instant Bookability,0.285714286
+la Font d'en Fargues,Rating,0.9416
+la Font d'en Fargues,Accuracy,0.96
+la Font d'en Fargues,Cleanliness,0.8368
+la Font d'en Fargues,Check In,0.9188
+la Font d'en Fargues,Communication,0.896
+la Font d'en Fargues,Location,0.8736
+la Font d'en Fargues,Value,0.9292
+la Font d'en Fargues,Availability 365,0.002545753
+la Guineueta,Instant Bookability,0.1
+la Guineueta,Rating,0.921
+la Guineueta,Accuracy,0.939666667
+la Guineueta,Cleanliness,0.943333333
+la Guineueta,Check In,0.962
+la Guineueta,Communication,0.995333333
+la Guineueta,Location,0.966666667
+la Guineueta,Value,0.963333333
+la Guineueta,Availability 365,0.002639269
+la Marina de Port,Instant Bookability,0.587412587
+la Marina de Port,Rating,0.913821429
+la Marina de Port,Accuracy,0.925387387
+la Marina de Port,Cleanliness,0.927891892
+la Marina de Port,Check In,0.949675676
+la Marina de Port,Communication,0.947981982
+la Marina de Port,Location,0.905963964
+la Marina de Port,Value,0.901693694
+la Marina de Port,Availability 365,0.002470394
+la Marina del Prat Vermell,Instant Bookability,0.59375
+la Marina del Prat Vermell,Rating,0.907466667
+la Marina del Prat Vermell,Accuracy,0.932066667
+la Marina del Prat Vermell,Cleanliness,0.918666667
+la Marina del Prat Vermell,Check In,0.953433333
+la Marina del Prat Vermell,Communication,0.9475
+la Marina del Prat Vermell,Location,0.901766667
+la Marina del Prat Vermell,Value,0.9004
+la Marina del Prat Vermell,Availability 365,0.002466849
+la Maternitat i Sant Ramon,Instant Bookability,0.535433071
+la Maternitat i Sant Ramon,Rating,0.893043988
+la Maternitat i Sant Ramon,Accuracy,0.916441176
+la Maternitat i Sant Ramon,Cleanliness,0.905052941
+la Maternitat i Sant Ramon,Check In,0.938064706
+la Maternitat i Sant Ramon,Communication,0.932447059
+la Maternitat i Sant Ramon,Location,0.881435294
+la Maternitat i Sant Ramon,Value,0.884652941
+la Maternitat i Sant Ramon,Availability 365,0.002423707
+la Nova Esquerra de l'Eixample,Instant Bookability,0.460743802
+la Nova Esquerra de l'Eixample,Rating,0.883867347
+la Nova Esquerra de l'Eixample,Accuracy,0.922359375
+la Nova Esquerra de l'Eixample,Cleanliness,0.915619792
+la Nova Esquerra de l'Eixample,Check In,0.946817708
+la Nova Esquerra de l'Eixample,Communication,0.941151042
+la Nova Esquerra de l'Eixample,Location,0.944489583
+la Nova Esquerra de l'Eixample,Value,0.893260417
+la Nova Esquerra de l'Eixample,Availability 365,0.002447289
+la Prosperitat,Instant Bookability,0.470588235
+la Prosperitat,Rating,0.909111111
+la Prosperitat,Accuracy,0.929333333
+la Prosperitat,Cleanliness,0.915555556
+la Prosperitat,Check In,0.949333333
+la Prosperitat,Communication,0.919333333
+la Prosperitat,Location,0.883555556
+la Prosperitat,Value,0.907111111
+la Prosperitat,Availability 365,0.002485236
+la Sagrada Família,Instant Bookability,0.51055409
+la Sagrada Família,Rating,0.901716069
+la Sagrada Família,Accuracy,0.927072327
+la Sagrada Família,Cleanliness,0.923025157
+la Sagrada Família,Check In,0.942399371
+la Sagrada Família,Communication,0.941686028
+la Sagrada Família,Location,0.96200314
+la Sagrada Família,Value,0.900910518
+la Sagrada Família,Availability 365,0.002468248
+la Sagrera,Instant Bookability,0.390243902
+la Sagrera,Rating,0.922933333
+la Sagrera,Accuracy,0.931466667
+la Sagrera,Cleanliness,0.923333333
+la Sagrera,Check In,0.957466667
+la Sagrera,Communication,0.940066667
+la Sagrera,Location,0.9252
+la Sagrera,Value,0.9132
+la Sagrera,Availability 365,0.002501918
+la Salut,Instant Bookability,0.322033898
+la Salut,Rating,0.9252
+la Salut,Accuracy,0.960888889
+la Salut,Cleanliness,0.945074074
+la Salut,Check In,0.96862963
+la Salut,Communication,0.958074074
+la Salut,Location,0.928148148
+la Salut,Value,0.924296296
+la Salut,Availability 365,0.002532319
+la Teixonera,Instant Bookability,0.315789474
+la Teixonera,Rating,0.910588235
+la Teixonera,Accuracy,0.945529412
+la Teixonera,Cleanliness,0.917294118
+la Teixonera,Check In,0.956117647
+la Teixonera,Communication,0.966588235
+la Teixonera,Location,0.883411765
+la Teixonera,Value,0.914
+la Teixonera,Availability 365,0.00250411
+la Trinitat Nova,Instant Bookability,0.625
+la Trinitat Nova,Rating,0.9108
+la Trinitat Nova,Accuracy,0.9312
+la Trinitat Nova,Cleanliness,0.908
+la Trinitat Nova,Check In,0.9324
+la Trinitat Nova,Communication,0.9328
+la Trinitat Nova,Location,0.8756
+la Trinitat Nova,Value,0.9068
+la Trinitat Nova,Availability 365,0.002484384
+la Trinitat Vella,Instant Bookability,0.642857143
+la Trinitat Vella,Rating,0.92075
+la Trinitat Vella,Accuracy,0.91625
+la Trinitat Vella,Cleanliness,0.9145
+la Trinitat Vella,Check In,0.9235
+la Trinitat Vella,Communication,0.91425
+la Trinitat Vella,Location,0.8795
+la Trinitat Vella,Value,0.907
+la Trinitat Vella,Availability 365,0.002484932
+la Vall d'Hebron,Instant Bookability,0.25
+la Vall d'Hebron,Rating,0.792
+la Vall d'Hebron,Accuracy,0.8
+la Vall d'Hebron,Cleanliness,0.7895
+la Vall d'Hebron,Check In,0.8
+la Vall d'Hebron,Communication,0.7835
+la Vall d'Hebron,Location,0.746
+la Vall d'Hebron,Value,0.784
+la Vall d'Hebron,Availability 365,0.002147945
+la Verneda i la Pau,Instant Bookability,0.4
+la Verneda i la Pau,Rating,0.883225806
+la Verneda i la Pau,Accuracy,0.9238
+la Verneda i la Pau,Cleanliness,0.946733333
+la Verneda i la Pau,Check In,0.958333333
+la Verneda i la Pau,Communication,0.9716
+la Verneda i la Pau,Location,0.875266667
+la Verneda i la Pau,Value,0.9018
+la Verneda i la Pau,Availability 365,0.002470685
+la Vila de Gràcia,Instant Bookability,0.493702771
+la Vila de Gràcia,Rating,0.909854604
+la Vila de Gràcia,Accuracy,0.934899023
+la Vila de Gràcia,Cleanliness,0.921986971
+la Vila de Gràcia,Check In,0.945667752
+la Vila de Gràcia,Communication,0.947420195
+la Vila de Gràcia,Location,0.966990228
+la Vila de Gràcia,Value,0.90171987
+la Vila de Gràcia,Availability 365,0.002470465
+la Vila Olímpica del Poblenou,Instant Bookability,0.4375
+la Vila Olímpica del Poblenou,Rating,0.927287129
+la Vila Olímpica del Poblenou,Accuracy,0.93439604
+la Vila Olímpica del Poblenou,Cleanliness,0.921425743
+la Vila Olímpica del Poblenou,Check In,0.943267327
+la Vila Olímpica del Poblenou,Communication,0.950574257
+la Vila Olímpica del Poblenou,Location,0.95828
+la Vila Olímpica del Poblenou,Value,0.9084
+la Vila Olímpica del Poblenou,Availability 365,0.002488767
+l'Antiga Esquerra de l'Eixample,Instant Bookability,0.506293706
+l'Antiga Esquerra de l'Eixample,Rating,0.902013841
+l'Antiga Esquerra de l'Eixample,Accuracy,0.930788732
+l'Antiga Esquerra de l'Eixample,Cleanliness,0.921672535
+l'Antiga Esquerra de l'Eixample,Check In,0.948140845
+l'Antiga Esquerra de l'Eixample,Communication,0.947950704
+l'Antiga Esquerra de l'Eixample,Location,0.964795775
+l'Antiga Esquerra de l'Eixample,Value,0.90718662
+l'Antiga Esquerra de l'Eixample,Availability 365,0.002485443
+les Corts,Instant Bookability,0.506756757
+les Corts,Rating,0.9104
+les Corts,Accuracy,0.934083333
+les Corts,Cleanliness,0.913833333
+les Corts,Check In,0.950483333
+les Corts,Communication,0.94755
+les Corts,Location,0.931466667
+les Corts,Value,0.893916667
+les Corts,Availability 365,0.002449087
+les Roquetes,Instant Bookability,0.411764706
+les Roquetes,Rating,0.960307692
+les Roquetes,Accuracy,0.945384615
+les Roquetes,Cleanliness,0.953538462
+les Roquetes,Check In,0.975538462
+les Roquetes,Communication,0.981692308
+les Roquetes,Location,0.886153846
+les Roquetes,Value,0.909076923
+les Roquetes,Availability 365,0.002490622
+les Tres Torres,Instant Bookability,0.642857143
+les Tres Torres,Rating,0.9419
+les Tres Torres,Accuracy,0.9602
+les Tres Torres,Cleanliness,0.9352
+les Tres Torres,Check In,0.9601
+les Tres Torres,Communication,0.9661
+les Tres Torres,Location,0.936
+les Tres Torres,Value,0.9133
+les Tres Torres,Availability 365,0.002502192
+Montbau,Instant Bookability,0.25
+Montbau,Rating,0.857333333
+Montbau,Accuracy,0.911333333
+Montbau,Cleanliness,0.952666667
+Montbau,Check In,0.841333333
+Montbau,Communication,0.766666667
+Montbau,Location,0.863333333
+Montbau,Value,0.881333333
+Montbau,Availability 365,0.002414612
+Navas,Instant Bookability,0.571428571
+Navas,Rating,0.894466667
+Navas,Accuracy,0.947655172
+Navas,Cleanliness,0.931172414
+Navas,Check In,0.952482759
+Navas,Communication,0.956965517
+Navas,Location,0.932689655
+Navas,Value,0.92537931
+Navas,Availability 365,0.002535286
+Pedralbes,Instant Bookability,0.319148936
+Pedralbes,Rating,0.90752
+Pedralbes,Accuracy,0.90824
+Pedralbes,Cleanliness,0.93184
+Pedralbes,Check In,0.94304
+Pedralbes,Communication,0.92944
+Pedralbes,Location,0.9292
+Pedralbes,Value,0.87128
+Pedralbes,Availability 365,0.002387068
+Porta,Instant Bookability,0.25
+Porta,Rating,0.886380952
+Porta,Accuracy,0.9467
+Porta,Cleanliness,0.9382
+Porta,Check In,0.9627
+Porta,Communication,0.9494
+Porta,Location,0.8995
+Porta,Value,0.9286
+Porta,Availability 365,0.00254411
+Provençals del Poblenou,Instant Bookability,0.509433962
+Provençals del Poblenou,Rating,0.896095238
+Provençals del Poblenou,Accuracy,0.940731707
+Provençals del Poblenou,Cleanliness,0.918585366
+Provençals del Poblenou,Check In,0.964292683
+Provençals del Poblenou,Communication,0.950926829
+Provençals del Poblenou,Location,0.909560976
+Provençals del Poblenou,Value,0.912829268
+Provençals del Poblenou,Availability 365,0.002500902
+Sant Andreu,Instant Bookability,0.413043478
+Sant Andreu,Rating,0.8914375
+Sant Andreu,Accuracy,0.9095625
+Sant Andreu,Cleanliness,0.8720625
+Sant Andreu,Check In,0.9336875
+Sant Andreu,Communication,0.932125
+Sant Andreu,Location,0.880875
+Sant Andreu,Value,0.8775625
+Sant Andreu,Availability 365,0.002404281
+Sant Antoni,Instant Bookability,0.496865204
+Sant Antoni,Rating,0.907889094
+Sant Antoni,Accuracy,0.932249534
+Sant Antoni,Cleanliness,0.91843203
+Sant Antoni,Check In,0.94433892
+Sant Antoni,Communication,0.946141527
+Sant Antoni,Location,0.957463687
+Sant Antoni,Value,0.904417132
+Sant Antoni,Availability 365,0.002477855
+Sant Genís dels Agudells,Instant Bookability,0.5
+Sant Genís dels Agudells,Rating,0.9655
+Sant Genís dels Agudells,Accuracy,0.9575
+Sant Genís dels Agudells,Cleanliness,0.978
+Sant Genís dels Agudells,Check In,0.973
+Sant Genís dels Agudells,Communication,0.9755
+Sant Genís dels Agudells,Location,0.9475
+Sant Genís dels Agudells,Value,0.9475
+Sant Genís dels Agudells,Availability 365,0.00259589
+Sant Gervasi - Galvany,Instant Bookability,0.532319392
+Sant Gervasi - Galvany,Rating,0.899573964
+Sant Gervasi - Galvany,Accuracy,0.917928994
+Sant Gervasi - Galvany,Cleanliness,0.901349112
+Sant Gervasi - Galvany,Check In,0.940260355
+Sant Gervasi - Galvany,Communication,0.93783432
+Sant Gervasi - Galvany,Location,0.943218935
+Sant Gervasi - Galvany,Value,0.884011834
+Sant Gervasi - Galvany,Availability 365,0.00242195
+Sant Gervasi - la Bonanova,Instant Bookability,0.34375
+Sant Gervasi - la Bonanova,Rating,0.930166667
+Sant Gervasi - la Bonanova,Accuracy,0.952416667
+Sant Gervasi - la Bonanova,Cleanliness,0.940333333
+Sant Gervasi - la Bonanova,Check In,0.964416667
+Sant Gervasi - la Bonanova,Communication,0.966583333
+Sant Gervasi - la Bonanova,Location,0.919833333
+Sant Gervasi - la Bonanova,Value,0.917166667
+Sant Gervasi - la Bonanova,Availability 365,0.002512785
+Sant Martí de Provençals,Instant Bookability,0.274509804
+Sant Martí de Provençals,Rating,0.926
+Sant Martí de Provençals,Accuracy,0.94405
+Sant Martí de Provençals,Cleanliness,0.93495
+Sant Martí de Provençals,Check In,0.96975
+Sant Martí de Provençals,Communication,0.96625
+Sant Martí de Provençals,Location,0.934
+Sant Martí de Provençals,Value,0.91355
+Sant Martí de Provençals,Availability 365,0.002502877
+"Sant Pere, Santa Caterina i la Ribera",Instant Bookability,0.447902571
+"Sant Pere, Santa Caterina i la Ribera",Rating,0.914727273
+"Sant Pere, Santa Caterina i la Ribera",Accuracy,0.928523236
+"Sant Pere, Santa Caterina i la Ribera",Cleanliness,0.916120482
+"Sant Pere, Santa Caterina i la Ribera",Check In,0.943082759
+"Sant Pere, Santa Caterina i la Ribera",Communication,0.943401033
+"Sant Pere, Santa Caterina i la Ribera",Location,0.96827931
+"Sant Pere, Santa Caterina i la Ribera",Value,0.897003448
+"Sant Pere, Santa Caterina i la Ribera",Availability 365,0.002457544
+Sants,Instant Bookability,0.488372093
+Sants,Rating,0.891848341
+Sants,Accuracy,0.92831068
+Sants,Cleanliness,0.915019417
+Sants,Check In,0.950854369
+Sants,Communication,0.944446602
+Sants,Location,0.93861165
+Sants,Value,0.902359223
+Sants,Availability 365,0.002472217
+Sants - Badal,Instant Bookability,0.519855596
+Sants - Badal,Rating,0.895532787
+Sants - Badal,Accuracy,0.926846473
+Sants - Badal,Cleanliness,0.919178423
+Sants - Badal,Check In,0.937659751
+Sants - Badal,Communication,0.937917012
+Sants - Badal,Location,0.882788382
+Sants - Badal,Value,0.892539419
+Sants - Badal,Availability 365,0.002445313
+Sarrià,Instant Bookability,0.296296296
+Sarrià,Rating,0.952
+Sarrià,Accuracy,0.970875
+Sarrià,Cleanliness,0.96525
+Sarrià,Check In,0.9845
+Sarrià,Communication,0.98725
+Sarrià,Location,0.93075
+Sarrià,Value,0.910125
+Sarrià,Availability 365,0.002493493
+Torre Baró,Instant Bookability,1
+Torre Baró,Rating,0.97
+Torre Baró,Accuracy,0.981
+Torre Baró,Cleanliness,0.989
+Torre Baró,Check In,0.991
+Torre Baró,Communication,0.967
+Torre Baró,Location,0.878
+Torre Baró,Value,0.963
+Torre Baró,Availability 365,0.002638356
+Vallbona,Instant Bookability,0.5
+Vallbona,Rating,0.970666667
+Vallbona,Accuracy,0.976
+Vallbona,Cleanliness,0.967333333
+Vallbona,Check In,0.979333333
+Vallbona,Communication,0.985333333
+Vallbona,Location,0.976
+Vallbona,Value,0.964
+Vallbona,Availability 365,0.002641096
+Vallcarca i els Penitents,Instant Bookability,0.486486486
+Vallcarca i els Penitents,Rating,0.934949153
+Vallcarca i els Penitents,Accuracy,0.943084746
+Vallcarca i els Penitents,Cleanliness,0.940983051
+Vallcarca i els Penitents,Check In,0.964644068
+Vallcarca i els Penitents,Communication,0.949322034
+Vallcarca i els Penitents,Location,0.922813559
+Vallcarca i els Penitents,Value,0.921355932
+Vallcarca i els Penitents,Availability 365,0.002524263
+"Vallvidrera, el Tibidabo i les Planes",Instant Bookability,0.292307692
+"Vallvidrera, el Tibidabo i les Planes",Rating,0.964188679
+"Vallvidrera, el Tibidabo i les Planes",Accuracy,0.970037736
+"Vallvidrera, el Tibidabo i les Planes",Cleanliness,0.953471698
+"Vallvidrera, el Tibidabo i les Planes",Check In,0.983169811
+"Vallvidrera, el Tibidabo i les Planes",Communication,0.985358491
+"Vallvidrera, el Tibidabo i les Planes",Location,0.938754717
+"Vallvidrera, el Tibidabo i les Planes",Value,0.952566038
+"Vallvidrera, el Tibidabo i les Planes",Availability 365,0.00260977
+Verdun,Instant Bookability,0.428571429
+Verdun,Rating,0.817555556
+Verdun,Accuracy,0.92125
+Verdun,Cleanliness,0.92025
+Verdun,Check In,0.95175
+Verdun,Communication,0.96825
+Verdun,Location,0.8795
+Verdun,Value,0.91325
+Verdun,Availability 365,0.002502055
+Vilapicina i la Torre Llobeta,Instant Bookability,0.357142857
+Vilapicina i la Torre Llobeta,Rating,0.901625
+Vilapicina i la Torre Llobeta,Accuracy,0.941096774
+Vilapicina i la Torre Llobeta,Cleanliness,0.935870968
+Vilapicina i la Torre Llobeta,Check In,0.952580645
+Vilapicina i la Torre Llobeta,Communication,0.947870968
+Vilapicina i la Torre Llobeta,Location,0.919677419
+Vilapicina i la Torre Llobeta,Value,0.922967742
+Vilapicina i la Torre Llobeta,Availability 365,0.002528679
