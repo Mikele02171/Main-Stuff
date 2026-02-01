@@ -1,0 +1,5 @@
+Table,Rows,Columns,Null_Count,Duplicate_Count
+DimStore,50,8,0,0
+DimProduct,2000,8,0,0
+DimCustomer,20000,8,0,0
+FactSales,52500,13,6968,2296
