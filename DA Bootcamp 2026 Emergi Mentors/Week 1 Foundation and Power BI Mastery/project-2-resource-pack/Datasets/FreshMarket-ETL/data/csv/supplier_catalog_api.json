@@ -1,0 +1,706 @@
+{
+  "status": "success",
+  "timestamp": "2026-01-01T14:22:35.838235",
+  "data": [
+    {
+      "product_id": "PRD00001",
+      "supplier_name": "King, Garcia and Richardson",
+      "current_price": 69.02,
+      "stock_status": "Out of Stock",
+      "last_updated": "2026-01-01T14:22:35.827040"
+    },
+    {
+      "product_id": "PRD00002",
+      "supplier_name": "Cain Ltd",
+      "current_price": 95.18,
+      "stock_status": "Out of Stock",
+      "last_updated": "2026-01-01T14:22:35.827121"
+    },
+    {
+      "product_id": "PRD00003",
+      "supplier_name": "White, Shelton and Brown",
+      "current_price": 22.96,
+      "stock_status": "In Stock",
+      "last_updated": "2026-01-01T14:22:35.827305"
+    },
+    {
+      "product_id": "PRD00004",
+      "supplier_name": "Morales PLC",
+      "current_price": 93.99,
+      "stock_status": "Out of Stock",
+      "last_updated": "2026-01-01T14:22:35.827364"
+    },
+    {
+      "product_id": "PRD00005",
+      "supplier_name": "Campbell-Richard",
+      "current_price": 53.43,
+      "stock_status": "Out of Stock",
+      "last_updated": "2026-01-01T14:22:35.827468"
+    },
+    {
+      "product_id": "PRD00006",
+      "supplier_name": "Werner-Browning",
+      "current_price": 45.96,
+      "stock_status": "Low Stock",
+      "last_updated": "2026-01-01T14:22:35.827563"
+    },
+    {
+      "product_id": "PRD00007",
+      "supplier_name": "Miller-Gill",
+      "current_price": 30.95,
+      "stock_status": "Out of Stock",
+      "last_updated": "2026-01-01T14:22:35.827658"
+    },
+    {
+      "product_id": "PRD00008",
+      "supplier_name": "Lynch Group",
+      "current_price": 15.66,
+      "stock_status": "In Stock",
+      "last_updated": "2026-01-01T14:22:35.827709"
+    },
+    {
+      "product_id": "PRD00009",
+      "supplier_name": "Harvey and Sons",
+      "current_price": 70.19,
+      "stock_status": "Low Stock",
+      "last_updated": "2026-01-01T14:22:35.827760"
+    },
+    {
+      "product_id": "PRD00010",
+      "supplier_name": "Gilbert, Herring and Guerra",
+      "current_price": 26.95,
+      "stock_status": "Out of Stock",
+      "last_updated": "2026-01-01T14:22:35.827901"
+    },
+    {
+      "product_id": "PRD00011",
+      "supplier_name": "Smith and Sons",
+      "current_price": 5.09,
+      "stock_status": "Low Stock",
+      "last_updated": "2026-01-01T14:22:35.827956"
+    },
+    {
+      "product_id": "PRD00012",
+      "supplier_name": "Willis-Bell",
+      "current_price": 22.76,
+      "stock_status": "Out of Stock",
+      "last_updated": "2026-01-01T14:22:35.828056"
+    },
+    {
+      "product_id": "PRD00013",
+      "supplier_name": "Howard-Jackson",
+      "current_price": 21.13,
+      "stock_status": "Out of Stock",
+      "last_updated": "2026-01-01T14:22:35.828191"
+    },
+    {
+      "product_id": "PRD00014",
+      "supplier_name": "Miller, Carney and Morgan",
+      "current_price": 82.04,
+      "stock_status": "Low Stock",
+      "last_updated": "2026-01-01T14:22:35.828346"
+    },
+    {
+      "product_id": "PRD00015",
+      "supplier_name": "Edwards and Sons",
+      "current_price": 1.61,
+      "stock_status": "Low Stock",
+      "last_updated": "2026-01-01T14:22:35.828410"
+    },
+    {
+      "product_id": "PRD00016",
+      "supplier_name": "Wagner, Davidson and Martinez",
+      "current_price": 50.68,
+      "stock_status": "In Stock",
+      "last_updated": "2026-01-01T14:22:35.828562"
+    },
+    {
+      "product_id": "PRD00017",
+      "supplier_name": "Miller Ltd",
+      "current_price": 4.67,
+      "stock_status": "In Stock",
+      "last_updated": "2026-01-01T14:22:35.828617"
+    },
+    {
+      "product_id": "PRD00018",
+      "supplier_name": "Vazquez-Richardson",
+      "current_price": 32.79,
+      "stock_status": "Low Stock",
+      "last_updated": "2026-01-01T14:22:35.828722"
+    },
+    {
+      "product_id": "PRD00019",
+      "supplier_name": "Greene-Gray",
+      "current_price": 18.86,
+      "stock_status": "Low Stock",
+      "last_updated": "2026-01-01T14:22:35.828866"
+    },
+    {
+      "product_id": "PRD00020",
+      "supplier_name": "Sloan PLC",
+      "current_price": 19.2,
+      "stock_status": "Out of Stock",
+      "last_updated": "2026-01-01T14:22:35.829302"
+    },
+    {
+      "product_id": "PRD00021",
+      "supplier_name": "Kim, Shields and Kent",
+      "current_price": 8.54,
+      "stock_status": "Out of Stock",
+      "last_updated": "2026-01-01T14:22:35.829608"
+    },
+    {
+      "product_id": "PRD00022",
+      "supplier_name": "Smith Inc",
+      "current_price": 67.45,
+      "stock_status": "Low Stock",
+      "last_updated": "2026-01-01T14:22:35.829687"
+    },
+    {
+      "product_id": "PRD00023",
+      "supplier_name": "Vazquez, Wyatt and Howard",
+      "current_price": 47.84,
+      "stock_status": "In Stock",
+      "last_updated": "2026-01-01T14:22:35.829865"
+    },
+    {
+      "product_id": "PRD00024",
+      "supplier_name": "Walker and Sons",
+      "current_price": 30.93,
+      "stock_status": "Out of Stock",
+      "last_updated": "2026-01-01T14:22:35.829926"
+    },
+    {
+      "product_id": "PRD00025",
+      "supplier_name": "Welch LLC",
+      "current_price": 31.17,
+      "stock_status": "Out of Stock",
+      "last_updated": "2026-01-01T14:22:35.829981"
+    },
+    {
+      "product_id": "PRD00026",
+      "supplier_name": "Evans-Johnson",
+      "current_price": 30.14,
+      "stock_status": "Low Stock",
+      "last_updated": "2026-01-01T14:22:35.830086"
+    },
+    {
+      "product_id": "PRD00027",
+      "supplier_name": "Byrd and Sons",
+      "current_price": 96.62,
+      "stock_status": "Low Stock",
+      "last_updated": "2026-01-01T14:22:35.830143"
+    },
+    {
+      "product_id": "PRD00028",
+      "supplier_name": "Harris PLC",
+      "current_price": 28.68,
+      "stock_status": "Out of Stock",
+      "last_updated": "2026-01-01T14:22:35.830200"
+    },
+    {
+      "product_id": "PRD00029",
+      "supplier_name": "Moran, White and Garcia",
+      "current_price": 25.6,
+      "stock_status": "Out of Stock",
+      "last_updated": "2026-01-01T14:22:35.830353"
+    },
+    {
+      "product_id": "PRD00030",
+      "supplier_name": "Silva Group",
+      "current_price": 87.55,
+      "stock_status": "In Stock",
+      "last_updated": "2026-01-01T14:22:35.830410"
+    },
+    {
+      "product_id": "PRD00031",
+      "supplier_name": "Ryan-Moses",
+      "current_price": 32.7,
+      "stock_status": "Low Stock",
+      "last_updated": "2026-01-01T14:22:35.830511"
+    },
+    {
+      "product_id": "PRD00032",
+      "supplier_name": "Stewart and Sons",
+      "current_price": 4.31,
+      "stock_status": "In Stock",
+      "last_updated": "2026-01-01T14:22:35.830565"
+    },
+    {
+      "product_id": "PRD00033",
+      "supplier_name": "Perez, Aguirre and Miranda",
+      "current_price": 93.35,
+      "stock_status": "Out of Stock",
+      "last_updated": "2026-01-01T14:22:35.830736"
+    },
+    {
+      "product_id": "PRD00034",
+      "supplier_name": "Coleman-Bridges",
+      "current_price": 75.76,
+      "stock_status": "In Stock",
+      "last_updated": "2026-01-01T14:22:35.830877"
+    },
+    {
+      "product_id": "PRD00035",
+      "supplier_name": "Morris-Harrison",
+      "current_price": 25.34,
+      "stock_status": "Out of Stock",
+      "last_updated": "2026-01-01T14:22:35.830984"
+    },
+    {
+      "product_id": "PRD00036",
+      "supplier_name": "Brooks Group",
+      "current_price": 51.31,
+      "stock_status": "Low Stock",
+      "last_updated": "2026-01-01T14:22:35.831045"
+    },
+    {
+      "product_id": "PRD00037",
+      "supplier_name": "Hampton-Jackson",
+      "current_price": 73.3,
+      "stock_status": "Out of Stock",
+      "last_updated": "2026-01-01T14:22:35.831154"
+    },
+    {
+      "product_id": "PRD00038",
+      "supplier_name": "Roberts Inc",
+      "current_price": 35.73,
+      "stock_status": "Low Stock",
+      "last_updated": "2026-01-01T14:22:35.831233"
+    },
+    {
+      "product_id": "PRD00039",
+      "supplier_name": "Hall Ltd",
+      "current_price": 66.9,
+      "stock_status": "In Stock",
+      "last_updated": "2026-01-01T14:22:35.831331"
+    },
+    {
+      "product_id": "PRD00040",
+      "supplier_name": "Christian, Butler and Carr",
+      "current_price": 5.16,
+      "stock_status": "In Stock",
+      "last_updated": "2026-01-01T14:22:35.831498"
+    },
+    {
+      "product_id": "PRD00041",
+      "supplier_name": "Wright, Hunter and Gonzalez",
+      "current_price": 67.96,
+      "stock_status": "Low Stock",
+      "last_updated": "2026-01-01T14:22:35.831684"
+    },
+    {
+      "product_id": "PRD00042",
+      "supplier_name": "Andrade Ltd",
+      "current_price": 63.9,
+      "stock_status": "Low Stock",
+      "last_updated": "2026-01-01T14:22:35.831747"
+    },
+    {
+      "product_id": "PRD00043",
+      "supplier_name": "Willis, Harris and Cruz",
+      "current_price": 28.17,
+      "stock_status": "In Stock",
+      "last_updated": "2026-01-01T14:22:35.831900"
+    },
+    {
+      "product_id": "PRD00044",
+      "supplier_name": "Bell, Aguirre and Alvarez",
+      "current_price": 41.73,
+      "stock_status": "Out of Stock",
+      "last_updated": "2026-01-01T14:22:35.832043"
+    },
+    {
+      "product_id": "PRD00045",
+      "supplier_name": "Ferguson-Kramer",
+      "current_price": 65.59,
+      "stock_status": "Out of Stock",
+      "last_updated": "2026-01-01T14:22:35.832169"
+    },
+    {
+      "product_id": "PRD00046",
+      "supplier_name": "Ortiz, Lynn and Williams",
+      "current_price": 28.94,
+      "stock_status": "Low Stock",
+      "last_updated": "2026-01-01T14:22:35.832314"
+    },
+    {
+      "product_id": "PRD00047",
+      "supplier_name": "Osborn-King",
+      "current_price": 47.56,
+      "stock_status": "In Stock",
+      "last_updated": "2026-01-01T14:22:35.832411"
+    },
+    {
+      "product_id": "PRD00048",
+      "supplier_name": "Davis-Evans",
+      "current_price": 90.22,
+      "stock_status": "Low Stock",
+      "last_updated": "2026-01-01T14:22:35.832505"
+    },
+    {
+      "product_id": "PRD00049",
+      "supplier_name": "Smith, Gibbs and Clark",
+      "current_price": 97.54,
+      "stock_status": "Low Stock",
+      "last_updated": "2026-01-01T14:22:35.832644"
+    },
+    {
+      "product_id": "PRD00050",
+      "supplier_name": "Hill Inc",
+      "current_price": 65.05,
+      "stock_status": "Out of Stock",
+      "last_updated": "2026-01-01T14:22:35.832695"
+    },
+    {
+      "product_id": "PRD00051",
+      "supplier_name": "Arnold PLC",
+      "current_price": 30.04,
+      "stock_status": "In Stock",
+      "last_updated": "2026-01-01T14:22:35.832748"
+    },
+    {
+      "product_id": "PRD00052",
+      "supplier_name": "Avery, Stout and Woodward",
+      "current_price": 17.7,
+      "stock_status": "Out of Stock",
+      "last_updated": "2026-01-01T14:22:35.832885"
+    },
+    {
+      "product_id": "PRD00053",
+      "supplier_name": "Holmes LLC",
+      "current_price": 48.48,
+      "stock_status": "Low Stock",
+      "last_updated": "2026-01-01T14:22:35.832998"
+    },
+    {
+      "product_id": "PRD00054",
+      "supplier_name": "Ortiz-Taylor",
+      "current_price": 62.34,
+      "stock_status": "In Stock",
+      "last_updated": "2026-01-01T14:22:35.833141"
+    },
+    {
+      "product_id": "PRD00055",
+      "supplier_name": "Morales-Chang",
+      "current_price": 78.62,
+      "stock_status": "Low Stock",
+      "last_updated": "2026-01-01T14:22:35.833249"
+    },
+    {
+      "product_id": "PRD00056",
+      "supplier_name": "Strickland-Lin",
+      "current_price": 27.19,
+      "stock_status": "Low Stock",
+      "last_updated": "2026-01-01T14:22:35.833350"
+    },
+    {
+      "product_id": "PRD00057",
+      "supplier_name": "Nguyen PLC",
+      "current_price": 38.4,
+      "stock_status": "Out of Stock",
+      "last_updated": "2026-01-01T14:22:35.833405"
+    },
+    {
+      "product_id": "PRD00058",
+      "supplier_name": "Weaver and Sons",
+      "current_price": 41.67,
+      "stock_status": "In Stock",
+      "last_updated": "2026-01-01T14:22:35.833460"
+    },
+    {
+      "product_id": "PRD00059",
+      "supplier_name": "Tran, King and Mccarty",
+      "current_price": 19.63,
+      "stock_status": "In Stock",
+      "last_updated": "2026-01-01T14:22:35.833625"
+    },
+    {
+      "product_id": "PRD00060",
+      "supplier_name": "Thomas-Gregory",
+      "current_price": 33.32,
+      "stock_status": "Low Stock",
+      "last_updated": "2026-01-01T14:22:35.833725"
+    },
+    {
+      "product_id": "PRD00061",
+      "supplier_name": "Fox-Ware",
+      "current_price": 77.21,
+      "stock_status": "In Stock",
+      "last_updated": "2026-01-01T14:22:35.833822"
+    },
+    {
+      "product_id": "PRD00062",
+      "supplier_name": "Carpenter, Bailey and Gross",
+      "current_price": 83.22,
+      "stock_status": "Low Stock",
+      "last_updated": "2026-01-01T14:22:35.833973"
+    },
+    {
+      "product_id": "PRD00063",
+      "supplier_name": "Alexander, Taylor and Brown",
+      "current_price": 60.56,
+      "stock_status": "In Stock",
+      "last_updated": "2026-01-01T14:22:35.834116"
+    },
+    {
+      "product_id": "PRD00064",
+      "supplier_name": "Brown-Simpson",
+      "current_price": 78.27,
+      "stock_status": "Low Stock",
+      "last_updated": "2026-01-01T14:22:35.834211"
+    },
+    {
+      "product_id": "PRD00065",
+      "supplier_name": "Mcintyre-Morales",
+      "current_price": 75.67,
+      "stock_status": "Out of Stock",
+      "last_updated": "2026-01-01T14:22:35.834307"
+    },
+    {
+      "product_id": "PRD00066",
+      "supplier_name": "Thomas Inc",
+      "current_price": 13.31,
+      "stock_status": "In Stock",
+      "last_updated": "2026-01-01T14:22:35.834358"
+    },
+    {
+      "product_id": "PRD00067",
+      "supplier_name": "Long Group",
+      "current_price": 30.87,
+      "stock_status": "In Stock",
+      "last_updated": "2026-01-01T14:22:35.834410"
+    },
+    {
+      "product_id": "PRD00068",
+      "supplier_name": "Caldwell-Gonzalez",
+      "current_price": 32.97,
+      "stock_status": "In Stock",
+      "last_updated": "2026-01-01T14:22:35.834523"
+    },
+    {
+      "product_id": "PRD00069",
+      "supplier_name": "Rhodes-Ford",
+      "current_price": 34.49,
+      "stock_status": "In Stock",
+      "last_updated": "2026-01-01T14:22:35.834618"
+    },
+    {
+      "product_id": "PRD00070",
+      "supplier_name": "Nelson-Pugh",
+      "current_price": 35.89,
+      "stock_status": "Out of Stock",
+      "last_updated": "2026-01-01T14:22:35.834713"
+    },
+    {
+      "product_id": "PRD00071",
+      "supplier_name": "Maldonado and Sons",
+      "current_price": 94.98,
+      "stock_status": "In Stock",
+      "last_updated": "2026-01-01T14:22:35.834773"
+    },
+    {
+      "product_id": "PRD00072",
+      "supplier_name": "Rodriguez, Bell and Stewart",
+      "current_price": 76.38,
+      "stock_status": "Low Stock",
+      "last_updated": "2026-01-01T14:22:35.834910"
+    },
+    {
+      "product_id": "PRD00073",
+      "supplier_name": "Sanders, Cummings and Meza",
+      "current_price": 33.24,
+      "stock_status": "In Stock",
+      "last_updated": "2026-01-01T14:22:35.835049"
+    },
+    {
+      "product_id": "PRD00074",
+      "supplier_name": "Moreno-Norris",
+      "current_price": 45.52,
+      "stock_status": "Out of Stock",
+      "last_updated": "2026-01-01T14:22:35.835146"
+    },
+    {
+      "product_id": "PRD00075",
+      "supplier_name": "Smith, Roberson and Murray",
+      "current_price": 54.76,
+      "stock_status": "In Stock",
+      "last_updated": "2026-01-01T14:22:35.835285"
+    },
+    {
+      "product_id": "PRD00076",
+      "supplier_name": "Vargas PLC",
+      "current_price": 55.91,
+      "stock_status": "In Stock",
+      "last_updated": "2026-01-01T14:22:35.835339"
+    },
+    {
+      "product_id": "PRD00077",
+      "supplier_name": "Hill, Smith and Ballard",
+      "current_price": 64.18,
+      "stock_status": "Low Stock",
+      "last_updated": "2026-01-01T14:22:35.835502"
+    },
+    {
+      "product_id": "PRD00078",
+      "supplier_name": "Gomez, Rowland and Eaton",
+      "current_price": 34.64,
+      "stock_status": "Low Stock",
+      "last_updated": "2026-01-01T14:22:35.835650"
+    },
+    {
+      "product_id": "PRD00079",
+      "supplier_name": "Holden-Becker",
+      "current_price": 88.17,
+      "stock_status": "Low Stock",
+      "last_updated": "2026-01-01T14:22:35.835744"
+    },
+    {
+      "product_id": "PRD00080",
+      "supplier_name": "Carrillo Ltd",
+      "current_price": 94.93,
+      "stock_status": "Low Stock",
+      "last_updated": "2026-01-01T14:22:35.835797"
+    },
+    {
+      "product_id": "PRD00081",
+      "supplier_name": "Chambers Ltd",
+      "current_price": 21.52,
+      "stock_status": "Out of Stock",
+      "last_updated": "2026-01-01T14:22:35.835852"
+    },
+    {
+      "product_id": "PRD00082",
+      "supplier_name": "Rodriguez, Fields and Rangel",
+      "current_price": 21.54,
+      "stock_status": "In Stock",
+      "last_updated": "2026-01-01T14:22:35.836000"
+    },
+    {
+      "product_id": "PRD00083",
+      "supplier_name": "Dixon, Burns and Oconnell",
+      "current_price": 96.99,
+      "stock_status": "Low Stock",
+      "last_updated": "2026-01-01T14:22:35.836144"
+    },
+    {
+      "product_id": "PRD00084",
+      "supplier_name": "Gonzales, Dorsey and Nguyen",
+      "current_price": 88.17,
+      "stock_status": "Out of Stock",
+      "last_updated": "2026-01-01T14:22:35.836282"
+    },
+    {
+      "product_id": "PRD00085",
+      "supplier_name": "Williams, Mccoy and Russell",
+      "current_price": 13.46,
+      "stock_status": "Out of Stock",
+      "last_updated": "2026-01-01T14:22:35.836421"
+    },
+    {
+      "product_id": "PRD00086",
+      "supplier_name": "Ramirez-Harmon",
+      "current_price": 87.64,
+      "stock_status": "In Stock",
+      "last_updated": "2026-01-01T14:22:35.836532"
+    },
+    {
+      "product_id": "PRD00087",
+      "supplier_name": "Anderson, Livingston and Fox",
+      "current_price": 58.5,
+      "stock_status": "Out of Stock",
+      "last_updated": "2026-01-01T14:22:35.836672"
+    },
+    {
+      "product_id": "PRD00088",
+      "supplier_name": "Stephenson, Matthews and Bradford",
+      "current_price": 40.85,
+      "stock_status": "In Stock",
+      "last_updated": "2026-01-01T14:22:35.836825"
+    },
+    {
+      "product_id": "PRD00089",
+      "supplier_name": "Martin-Johnson",
+      "current_price": 93.09,
+      "stock_status": "Low Stock",
+      "last_updated": "2026-01-01T14:22:35.836923"
+    },
+    {
+      "product_id": "PRD00090",
+      "supplier_name": "Santos, Duran and King",
+      "current_price": 89.78,
+      "stock_status": "Out of Stock",
+      "last_updated": "2026-01-01T14:22:35.837074"
+    },
+    {
+      "product_id": "PRD00091",
+      "supplier_name": "Johnson Ltd",
+      "current_price": 68.68,
+      "stock_status": "Low Stock",
+      "last_updated": "2026-01-01T14:22:35.837132"
+    },
+    {
+      "product_id": "PRD00092",
+      "supplier_name": "Dougherty-Scott",
+      "current_price": 21.37,
+      "stock_status": "Out of Stock",
+      "last_updated": "2026-01-01T14:22:35.837231"
+    },
+    {
+      "product_id": "PRD00093",
+      "supplier_name": "Carter LLC",
+      "current_price": 26.46,
+      "stock_status": "Low Stock",
+      "last_updated": "2026-01-01T14:22:35.837285"
+    },
+    {
+      "product_id": "PRD00094",
+      "supplier_name": "Johnson-Lopez",
+      "current_price": 38.03,
+      "stock_status": "Low Stock",
+      "last_updated": "2026-01-01T14:22:35.837392"
+    },
+    {
+      "product_id": "PRD00095",
+      "supplier_name": "Brown-Rodgers",
+      "current_price": 15.34,
+      "stock_status": "Out of Stock",
+      "last_updated": "2026-01-01T14:22:35.837587"
+    },
+    {
+      "product_id": "PRD00096",
+      "supplier_name": "Davis-Stone",
+      "current_price": 77.93,
+      "stock_status": "In Stock",
+      "last_updated": "2026-01-01T14:22:35.837749"
+    },
+    {
+      "product_id": "PRD00097",
+      "supplier_name": "Johnson-Johnson",
+      "current_price": 58.85,
+      "stock_status": "In Stock",
+      "last_updated": "2026-01-01T14:22:35.837890"
+    },
+    {
+      "product_id": "PRD00098",
+      "supplier_name": "Casey-Collins",
+      "current_price": 21.39,
+      "stock_status": "Out of Stock",
+      "last_updated": "2026-01-01T14:22:35.837998"
+    },
+    {
+      "product_id": "PRD00099",
+      "supplier_name": "Rogers-Wright",
+      "current_price": 27.0,
+      "stock_status": "Out of Stock",
+      "last_updated": "2026-01-01T14:22:35.838128"
+    },
+    {
+      "product_id": "PRD00100",
+      "supplier_name": "Patterson-Smith",
+      "current_price": 61.88,
+      "stock_status": "In Stock",
+      "last_updated": "2026-01-01T14:22:35.838233"
+    }
+  ]
+}

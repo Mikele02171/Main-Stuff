@@ -1,0 +1,112 @@
+ID,TableID,Name,Description,DataType,Expression,FormatString,IsHidden,State,ModifiedTime,StructureModifiedTime,KPIID,IsSimpleMeasure,ErrorMessage,DisplayFolder,DetailRowsDefinitionID,DataCategory,LineageTag,SourceLineageTag
+58271,73,Total Revenue,,8,SUM(FactTransactions[Revenue]) // Sum all revenue values,,FALSE,1,1/01/2026 8:47,1/01/2026 8:45,,FALSE,,,,,b3121ee0-f42f-43a5-b01b-0611b09b39a9,
+58458,73,Total Profit,,8,SUM(FactTransactions[Revenue]) - SUM(FactTransactions[CostOfGoods]),,FALSE,1,1/01/2026 9:12,1/01/2026 9:12,,FALSE,,,,,a237374c-5bbd-4f6e-a860-d339db7a5bc2,
+58531,73,Total Profit Row Context,,8,"SUMX(
+ FactTransactions, -- Iterate rows (row context)
+ FactTransactions[Revenue] - FactTransactions[CostOfGoods]
+)",,FALSE,1,1/01/2026 9:20,1/01/2026 9:19,,FALSE,,,,,b46932a2-939d-4cd5-afa5-dd031975cceb,
+58604,73,Total Cost,,8,SUM(FactTransactions[CostOfGoods]),,FALSE,1,1/01/2026 11:42,1/01/2026 11:42,,FALSE,,,,,716636a4-584b-4a2d-9b22-2046771f9f27,
+58749,73,Avg Transaction Value,,8,AVERAGE(FactTransactions[Revenue]),,FALSE,1,1/01/2026 11:43,1/01/2026 11:43,,FALSE,,,,,b4debac7-67e2-499e-b850-8ac5b5ca0534,
+58822,73,Product Count,,6,COUNTA(DimProduct[ProductName]),0,FALSE,1,1/01/2026 11:46,1/01/2026 11:44,,FALSE,,,,,bf35261a-c0e0-4d7b-a6fd-f578df2dcd1d,
+58929,73,Row Count,,6,COUNTROWS(FactTransactions),0,FALSE,1,1/01/2026 11:46,1/01/2026 11:46,,FALSE,,,,,e92dec73-5071-4a67-b92e-60cc8e426ae3,
+59001,73,Unique Customers,,6,DISTINCTCOUNT(FactTransactions[CustomerID]),0,FALSE,1,1/01/2026 11:47,1/01/2026 11:47,,FALSE,,,,,de55aae2-bc87-45d0-ae86-8a1a15b5eb13,
+59073,73,First Order Date,,9,MIN(FactTransactions[TransactionDate]),General Date,FALSE,1,1/01/2026 11:49,1/01/2026 11:49,,FALSE,,,,,b7a8a611-bfcc-4321-bf1c-dc9d0357a0df,
+59145,73,Last Order Date,,9,MAX(FactTransactions[TransactionDate]),General Date,FALSE,1,1/01/2026 11:50,1/01/2026 11:49,,FALSE,,,,,d5999842-e413-4b95-90e8-4618b94d10ff,
+59217,73,Gross Profit,,8,"
+VAR Revenue = SUM(FactTransactions[Revenue])
+VAR Cost = SUM(FactTransactions[CostOfGoods])
+RETURN Revenue - Cost",,FALSE,1,1/01/2026 11:52,1/01/2026 11:50,,FALSE,,,,,48738d5e-86c2-462a-a53d-603c1e1bdd88,
+59290,73,Revenue Ex GST,,8,"DIVIDE(
+    SUM(FactTransactions[Revenue]),
+    1.1 -- Remove GST
+)",,FALSE,1,1/01/2026 11:53,1/01/2026 11:52,,FALSE,,,,,81df68cf-8781-4bbf-b81a-5b41186de5aa,
+59363,73,GST Amount,,8,[Total Revenue] - [Revenue Ex GST],,FALSE,1,1/01/2026 11:53,1/01/2026 11:53,,FALSE,,,,,b2fdccc0-140d-424d-a304-f8745d7349a6,
+59436,73,GST % Check,,8,"DIVIDE([GST Amount], [Total Revenue])",,FALSE,1,1/01/2026 11:54,1/01/2026 11:54,,FALSE,,,,,9ff9d105-8d9a-4726-9d40-085c817f6807,
+59509,73,Gross Margin %,,8,"DIVIDE(
+    [Gross Profit],
+    [Total Revenue]
+)",,FALSE,1,1/01/2026 11:54,1/01/2026 11:54,,FALSE,,,,,09bd1019-670b-4a1f-8125-5959ce1ea262,
+59582,73,-- Revenue % of Grand TotalRevenue % of Total,,8,"DIVIDE(
+    [Total Revenue],
+    CALCULATE(
+        [Total Revenue],
+        ALL(DimProduct) -- Remove product filter
+    )
+)
+",,FALSE,1,1/01/2026 11:56,1/01/2026 11:55,,FALSE,,,,,db30b82b-e72b-44be-9707-83b8b91616a0,
+59655,73,Performance Status,,2,"IF(
+    [Gross Margin %] >= 0.35, ""Excellent"",
+    IF([Gross Margin %] >= 0.30, ""Good"",
+    IF([Gross Margin %] >= 0.25, ""Fair"",
+    ""Poor""
+)))",,FALSE,1,1/01/2026 11:57,1/01/2026 11:56,,FALSE,,,,,5c292c75-3a0b-4bf6-87b1-f211434bddd2,
+59727,73,NSW Revenue,,8,"CALCULATE(
+    [Total Revenue],
+    DimStore[State] = ""NSW""
+)",,FALSE,1,1/01/2026 12:32,1/01/2026 12:32,,FALSE,,,,,20f9ad27-ec48-4657-818e-6af03003e41e,
+59800,73,NSW Dairy Revenue,,8,"CALCULATE(
+    [Total Revenue],
+    DimStore[State] = ""NSW"",
+    DimProduct[Category] = ""Dairy""
+)",,FALSE,1,1/01/2026 12:33,1/01/2026 12:32,,FALSE,,,,,82cbe4c0-9af5-43a8-acf1-436cc19effd5,
+59873,73,Total Revenue All States,,8,"CALCULATE(
+    [Total Revenue],
+    ALL(DimStore[State])
+)",,FALSE,1,1/01/2026 12:33,1/01/2026 12:33,,FALSE,,,,,7416b29e-d333-48ef-aa7b-e4d6cf8df8d8,
+59946,73,Grand Total Revenue,,8,"CALCULATE(
+    [Total Revenue],
+    ALL(DimProduct)
+)",,FALSE,1,1/01/2026 12:45,1/01/2026 12:44,,FALSE,,,,,cfd194c0-277e-4083-b6ff-799f724cb906,
+60054,73,Revenue %,,8,"DIVIDE(
+    [Total Revenue],
+    CALCULATE([Total Revenue], ALL(DimProduct))
+)",,FALSE,1,1/01/2026 12:45,1/01/2026 12:45,,FALSE,,,,,fa1d0584-2e79-4802-a6ed-de27ea55e339,
+60127,73,Revenue % of Category,,8,"
+VAR CategoryTotal = CALCULATE(
+    [Total Revenue],
+    ALLEXCEPT(DimProduct, DimProduct[Category])
+)
+RETURN DIVIDE([Total Revenue], CategoryTotal)",,FALSE,1,1/01/2026 12:46,1/01/2026 12:45,,FALSE,,,,,48545f80-6d9e-45f3-94c2-36abffa45fb2,
+60200,73,Revenue % of Visible,,8,"DIVIDE(
+    [Total Revenue],
+    CALCULATE(
+        [Total Revenue],
+        ALLSELECTED(DimProduct)
+    )
+)
+",,FALSE,1,1/01/2026 12:46,1/01/2026 12:46,,FALSE,,,,,a800810b-97a2-45f4-8059-7a65b511466c,
+60273,73,Revenue % (ALL),,8,"
+DIVIDE(
+    [Total Revenue],
+    CALCULATE(
+        [Total Revenue],
+        ALL ( DimProduct )
+    )
+)",,FALSE,1,1/01/2026 12:47,1/01/2026 12:47,,FALSE,,,,,a007c367-3336-4975-8544-883c8efafe94,
+60346,73,Revenue % (ALLEXCEPT),,8,"
+VAR CategoryTotal =
+    CALCULATE(
+        [Total Revenue],
+        ALLEXCEPT (
+            DimProduct,
+            DimProduct[Category]
+        )
+    )
+RETURN
+    DIVIDE ( [Total Revenue], CategoryTotal )
+",,FALSE,1,1/01/2026 12:47,1/01/2026 12:47,,FALSE,,,,,dbe2e8fe-811b-4088-9ed6-93f7072dbaa4,
+60419,73,Revenue % (ALLSELECTED),,8,"
+DIVIDE(
+    [Total Revenue],
+    CALCULATE(
+        [Total Revenue],
+        ALLSELECTED ( DimProduct )
+    )
+)
+",,FALSE,1,1/01/2026 12:48,1/01/2026 12:48,,FALSE,,,,,24eecace-fac6-4325-acdf-62bb3bd7bc61,
+67451,73,YTD Revenue,,8,"
+TOTALYTD(
+    [Total Revenue],
+    DimDateFY[Date],
+    ""6/30""
+)",,FALSE,1,1/01/2026 13:23,1/01/2026 13:23,,FALSE,,,,,980697f6-cbbc-4bcb-85a4-2a8799e7bc6a,
