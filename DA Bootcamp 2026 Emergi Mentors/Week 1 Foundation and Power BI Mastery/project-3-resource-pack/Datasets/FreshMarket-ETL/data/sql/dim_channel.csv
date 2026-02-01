@@ -1,0 +1,4 @@
+ChannelID,ChannelName,ChannelType
+CH001,In-Store,Physical
+CH002,Online,Digital
+CH003,Click & Collect,Hybrid

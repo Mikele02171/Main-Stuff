@@ -1,0 +1,51 @@
+StoreID,StoreName,State,Postcode,Region,ManagerName,OpenDate,StoreSize
+STR001,FreshMarket North Judithbury Central,NSW,2081,Metro,Noah Rhodes,2017-06-24,Small
+STR002,FreshMarket Johnsonland Mall,NSW,2094,Metro,Jonathan Johnson,2019-05-20,Small
+STR003,FreshMarket Robinsonshire Plaza,NSW,2028,Metro,Sean Blake,2018-09-19,Large
+STR004,FreshMarket Petersonberg Central,NSW,2013,Metro,Phillip Garcia,2022-06-18,Large
+STR005,FreshMarket Lake Melanieview Central,NSW,2054,Metro,Monica Herrera,2022-06-10,Small
+STR006,FreshMarket New Mariastad Plaza,NSW,2011,Metro,Michele Williams,2019-11-17,Small
+STR007,FreshMarket Traciebury Central,NSW,2064,Metro,Jamie Chavez,2022-03-16,Large
+STR008,FreshMarket Lake Michael Square,NSW,2025,Metro,Mia Sutton,2017-03-19,Small
+STR009,FreshMarket South Frank Mall,NSW,2057,Metro,William Bowman,2019-09-26,Small
+STR010,FreshMarket Meganton Plaza,NSW,2097,Metro,Andrew Stewart,2020-07-21,Large
+STR011,FreshMarket South Robinshire Mall,NSW,2054,Metro,Emily Rios,2022-09-24,Medium
+STR012,FreshMarket Thomasberg Plaza,NSW,2019,Metro,Justin Baker,2023-04-16,Medium
+STR013,FreshMarket Coxberg Town,NSW,2552,Regional,Ann Williams,2017-11-12,Medium
+STR014,FreshMarket West Laura Centre,NSW,2549,Regional,Arthur James,2023-12-18,Medium
+STR015,FreshMarket Tashatown Centre,NSW,2809,Regional,Ashley Dyer,2020-07-15,Small
+STR016,FreshMarket Danielchester Centre,NSW,2873,Regional,Aaron Bowen,2020-06-24,Small
+STR017,FreshMarket East Monica Centre,NSW,2998,Regional,Mark Lynch,2018-08-07,Small
+STR018,FreshMarket Kathrynside Centre,NSW,2782,Regional,Tammy Sellers,2021-07-07,Medium
+STR019,FreshMarket Smithstad Town,NSW,2795,Regional,Sandra Parker,2016-12-25,Small
+STR020,FreshMarket East Christopher Market,NSW,2523,Regional,Mr. Philip Cannon,2018-03-08,Small
+STR021,FreshMarket Arroyoburgh Mall,VIC,3098,Metro,Shane Henderson,2019-08-09,Small
+STR022,FreshMarket New Raymond Central,VIC,3029,Metro,Jacqueline Lam,2023-09-06,Medium
+STR023,FreshMarket South Jeffreymouth Square,VIC,3035,Metro,Julian Chapman,2016-02-14,Large
+STR024,FreshMarket North Jeremyton Plaza,VIC,3046,Metro,Andrea Young,2024-04-04,Medium
+STR025,FreshMarket West Jennifer Plaza,VIC,3045,Metro,Laura Sanchez,2024-01-17,Large
+STR026,FreshMarket Leeville Central,VIC,3034,Metro,Heather Jenkins,2016-12-02,Large
+STR027,FreshMarket North Richardmouth Plaza,VIC,3081,Metro,Ashley Lee,2023-08-19,Large
+STR028,FreshMarket Port Isaiah Plaza,VIC,3093,Metro,Shannon Jones,2017-08-31,Small
+STR029,FreshMarket North Tanyabury Square,VIC,3059,Metro,John Lewis,2022-10-27,Medium
+STR030,FreshMarket West Nicholasfurt Plaza,VIC,3081,Metro,Richard Gibson,2023-03-13,Large
+STR031,FreshMarket Mooreport Town,VIC,3666,Regional,Anthony Fitzgerald,2017-01-13,Small
+STR032,FreshMarket Brianshire Town,VIC,3920,Regional,Thomas Schmidt,2016-12-19,Medium
+STR033,FreshMarket West Caseyland Centre,VIC,3705,Regional,Cynthia Wilson,2020-03-09,Small
+STR034,FreshMarket East Robertshire Market,VIC,3608,Regional,Emily Green,2021-05-06,Medium
+STR035,FreshMarket New Randy Market,VIC,3608,Regional,Elizabeth Stewart,2017-03-26,Medium
+STR036,FreshMarket St. Christineshire Market,VIC,3702,Regional,Angel Lewis MD,2021-12-08,Medium
+STR037,FreshMarket South Mikeburgh Centre,VIC,3573,Regional,Joshua Turner,2024-12-30,Small
+STR038,FreshMarket New Sarahville Market,VIC,3626,Regional,Brandy Wilson,2017-10-27,Medium
+STR039,FreshMarket New Juan Square,QLD,4095,Metro,Grant Watts,2020-06-28,Large
+STR040,FreshMarket Kington Mall,QLD,4051,Metro,Jeff Hill,2016-01-23,Small
+STR041,FreshMarket Kellieview Square,QLD,4017,Metro,Jeremy Thornton,2016-03-01,Small
+STR042,FreshMarket East Sierraberg Central,QLD,4096,Metro,Sandra Aguilar,2018-07-09,Small
+STR043,FreshMarket Andersonport Plaza,QLD,4019,Metro,Timothy Stanton,2016-09-04,Large
+STR044,FreshMarket Jasonbury Central,QLD,4054,Metro,Heather Castro,2022-11-30,Medium
+STR045,FreshMarket South Michelle Market,QLD,4695,Regional,Rita Keith,2016-06-03,Medium
+STR046,FreshMarket Lake Kimberly Centre,QLD,4770,Regional,Michael Moss,2020-03-22,Small
+STR047,FreshMarket Erikville Market,QLD,4848,Regional,Andrew Ruiz,2019-05-25,Small
+STR048,FreshMarket Baileybury Market,QLD,4849,Regional,Matthew Ross,2020-09-27,Medium
+STR049,FreshMarket New Michaelhaven Market,QLD,4893,Regional,William Herrera,2016-06-20,Medium
+STR050,FreshMarket New Gregoryview Centre,QLD,4557,Regional,Kyle Reed,2021-05-03,Medium
