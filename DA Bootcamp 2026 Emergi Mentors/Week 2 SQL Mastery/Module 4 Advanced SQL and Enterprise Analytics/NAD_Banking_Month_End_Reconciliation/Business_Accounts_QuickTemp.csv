@@ -1,0 +1,13 @@
+﻿account_id,account_number,customer_name,account_type,opening_balance
+20,NAD-020-BUS,Perth Mining Services,Business,420000
+40,NAD-040-BUS,Newcastle Steel Works,Business,285000
+48,NAD-048-BUS,Wollongong Manufacturing,Business,198000
+7,NAD-007-BUS,Melbourne Retail Group,Business,180000
+31,NAD-031-BUS,Hobart Seafood Exports,Business,165000
+43,NAD-043-BUS,Gold Coast Tourism,Business,155000
+23,NAD-023-BUS,Adelaide Wine Distributors,Business,135000
+3,NAD-003-BUS,TechStart Solutions Pty Ltd,Business,125000
+35,NAD-035-BUS,Darwin Logistics,Business,112000
+28,NAD-028-BUS,Canberra Tech Hub,Business,98000
+11,NAD-011-BUS,Sydney Import Export,Business,95000
+15,NAD-015-BUS,Brisbane Consulting,Business,88000

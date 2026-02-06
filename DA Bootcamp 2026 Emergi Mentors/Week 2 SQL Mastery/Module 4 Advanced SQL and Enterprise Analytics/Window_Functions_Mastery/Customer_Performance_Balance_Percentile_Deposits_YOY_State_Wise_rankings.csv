@@ -1,0 +1,26 @@
+﻿customer_name,state,current_balance,average_balance,difference_from_avg,performance
+William Zhang,VIC,890000,355720,534280,Above Average
+James Chen,NSW,750000,355720,394280,Above Average
+Mason Taylor,VIC,670000,355720,314280,Above Average
+Amelia Lee,QLD,625000,355720,269280,Above Average
+Harper Singh,WA,540000,355720,184280,Above Average
+Isabella Brown,VIC,510000,355720,154280,Above Average
+Sarah Mitchell,NSW,485000,355720,129280,Above Average
+Grace Wilson,NSW,485000,355720,129280,Above Average
+Ava Nguyen,VIC,425000,355720,69280,Above Average
+Sophia Anderson,QLD,380000,355720,24280,Above Average
+Sophie Taylor,VIC,380000,355720,24280,Above Average
+Benjamin Kim,WA,355000,355720,-720,Below Average
+Olivia Patel,NSW,320000,355720,-35720,Below Average
+Daniel Cooper,NSW,320000,355720,-35720,Below Average
+Ryan Martinez,QLD,290000,355720,-65720,Below Average
+Mia Johnson,SA,290000,355720,-65720,Below Average
+Charlotte Garcia,QLD,240000,355720,-115720,Below Average
+Oscar Brown,VIC,240000,355720,-115720,Below Average
+Evelyn Tran,SA,145000,355720,-210720,Below Average
+Emma Thompson,NSW,125000,355720,-230720,Below Average
+Ethan Rodriguez,QLD,105000,355720,-250720,Below Average
+Noah Williams,VIC,95000,355720,-260720,Below Average
+Lucas Martin,QLD,82000,355720,-273720,Below Average
+Alexander Liu,SA,78000,355720,-277720,Below Average
+Liam O'Connor,NSW,68000,355720,-287720,Below Average

@@ -1,0 +1,26 @@
+﻿customer_name,signup_date,current_balance,previous_customer,previous_balance,next_customer,balance_diff_from_prev,days_since_prev_signup
+William Zhang,10/05/2020,890000,NULL,NULL,Amelia Lee,NULL,NULL
+Amelia Lee,15/08/2020,625000,William Zhang,890000,Mason Taylor,-265000,97
+Mason Taylor,12/12/2020,670000,Amelia Lee,625000,Benjamin Kim,45000,119
+Benjamin Kim,12/03/2021,355000,Mason Taylor,670000,James Chen,-315000,90
+James Chen,20/06/2021,750000,Benjamin Kim,355000,Isabella Brown,395000,100
+Isabella Brown,5/09/2021,510000,James Chen,750000,Charlotte Garcia,-240000,77
+Charlotte Garcia,10/10/2021,240000,Isabella Brown,510000,Olivia Patel,-270000,35
+Olivia Patel,20/11/2021,320000,Charlotte Garcia,240000,Mia Johnson,80000,41
+Mia Johnson,5/12/2021,290000,Olivia Patel,320000,Sarah Mitchell,-30000,15
+Sarah Mitchell,15/01/2022,485000,Mia Johnson,290000,Ava Nguyen,195000,41
+Ava Nguyen,28/02/2022,425000,Sarah Mitchell,485000,Daniel Cooper,-60000,44
+Daniel Cooper,18/03/2022,320000,Ava Nguyen,425000,Sophia Anderson,-105000,18
+Sophia Anderson,20/04/2022,380000,Daniel Cooper,320000,Sophie Taylor,60000,33
+Sophie Taylor,22/05/2022,380000,Sophia Anderson,380000,Ryan Martinez,0,32
+Ryan Martinez,30/06/2022,290000,Sophie Taylor,380000,Harper Singh,-90000,39
+Harper Singh,8/07/2022,540000,Ryan Martinez,290000,Grace Wilson,250000,8
+Grace Wilson,11/08/2022,485000,Harper Singh,540000,Liam O'Connor,-55000,34
+Liam O'Connor,15/08/2022,68000,Grace Wilson,485000,Alexander Liu,-417000,4
+Alexander Liu,14/09/2022,78000,Liam O'Connor,68000,Oscar Brown,10000,30
+Oscar Brown,25/09/2022,240000,Alexander Liu,78000,Ethan Rodriguez,162000,11
+Ethan Rodriguez,25/11/2022,105000,Oscar Brown,240000,Evelyn Tran,-135000,61
+Evelyn Tran,20/01/2023,145000,Ethan Rodriguez,105000,Emma Thompson,40000,56
+Emma Thompson,10/03/2023,125000,Evelyn Tran,145000,Lucas Martin,-20000,49
+Lucas Martin,18/05/2023,82000,Emma Thompson,125000,Noah Williams,-43000,69
+Noah Williams,15/07/2023,95000,Lucas Martin,82000,NULL,13000,58

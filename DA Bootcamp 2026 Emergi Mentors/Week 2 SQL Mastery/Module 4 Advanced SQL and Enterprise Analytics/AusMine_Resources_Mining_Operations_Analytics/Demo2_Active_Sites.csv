@@ -1,0 +1,8 @@
+﻿site_id,site_code,site_name,state,resource_type,site_manager,opened_date
+3,QLD-COAL-01,Bowen Basin Coal Mine,QLD,Coal,David Chen,10/05/2010
+5,WA-LITH-01,Greenbushes Lithium Mine,WA,Lithium,Michael O'Brien,15/02/2020
+2,WA-GOLD-01,Kalgoorlie Gold Mine,WA,Gold,James Anderson,20/07/2012
+6,QLD-COPR-01,Mount Isa Copper Mine,QLD,Copper,Lisa Wong,22/09/2008
+1,WA-IRON-01,Pilbara Iron Mine,WA,Iron Ore,Sarah Mitchell,15/03/2015
+7,WA-IRON-02,Port Hedland Iron Mine,WA,Iron Ore,Robert Taylor,30/06/2014
+4,NT-GOLD-01,Tanami Gold Mine,NT,Gold,Emma Thompson,1/11/2018

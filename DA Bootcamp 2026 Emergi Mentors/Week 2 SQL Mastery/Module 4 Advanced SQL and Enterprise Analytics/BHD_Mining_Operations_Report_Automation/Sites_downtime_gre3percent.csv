@@ -1,0 +1,6 @@
+﻿site_name,site_location,state,total_downtime_hours,total_equipment_hours,downtime_percent,status
+Mt Pioneer Coal,"Muswellbrook, NSW",NSW,16.24,313.09,5.19,Warning
+Goldfields Operations,"Kalgoorlie, WA",WA,13.91,305.51,4.55,Normal
+Red Rock Mine,"Roxby Downs, SA",SA,13.5,306.31,4.41,Normal
+Western Ridge,"Pilbara, WA",WA,12.46,295.61,4.22,Normal
+Northern Iron,"Pilbara, WA",WA,11.25,305.34,3.68,Normal

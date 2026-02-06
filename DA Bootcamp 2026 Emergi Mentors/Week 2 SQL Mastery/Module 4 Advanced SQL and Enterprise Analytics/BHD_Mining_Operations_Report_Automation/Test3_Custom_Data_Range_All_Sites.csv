@@ -1,0 +1,41 @@
+﻿site_name,production_date,shift,total_ore,total_waste,avg_efficiency
+Goldfields Operations,2/02/2026,Day,9816.33,13969.11,93.06
+Goldfields Operations,2/02/2026,Night,8235.1,13969.07,93.46
+Goldfields Operations,3/02/2026,Day,9415.31,12322.41,96.7
+Goldfields Operations,3/02/2026,Night,9180.3,12697.21,91.49
+Goldfields Operations,4/02/2026,Day,8979.57,14111.68,95.07
+Goldfields Operations,4/02/2026,Night,9397.2,13405.04,99.78
+Goldfields Operations,5/02/2026,Day,9254.32,14105.96,93.23
+Goldfields Operations,5/02/2026,Night,8275.93,11378.66,92.86
+Mt Pioneer Coal,2/02/2026,Day,9863.33,13789.47,98.05
+Mt Pioneer Coal,2/02/2026,Night,9466.09,12357.4,96.3
+Mt Pioneer Coal,3/02/2026,Day,8537.29,13973.9,91.72
+Mt Pioneer Coal,3/02/2026,Night,8580.35,13206.48,92.27
+Mt Pioneer Coal,4/02/2026,Day,8662.83,12848.06,98.97
+Mt Pioneer Coal,4/02/2026,Night,8150.06,13118.65,94.83
+Mt Pioneer Coal,5/02/2026,Day,8270.01,13742.82,96.45
+Mt Pioneer Coal,5/02/2026,Night,8850.74,13416.48,98.91
+Northern Iron,2/02/2026,Day,8090.68,13088.23,91.85
+Northern Iron,2/02/2026,Night,8317.01,11879.55,100
+Northern Iron,3/02/2026,Day,9701.14,12854.89,99.54
+Northern Iron,3/02/2026,Night,9443.61,13672.17,98.54
+Northern Iron,4/02/2026,Day,9807.93,12423.89,93.64
+Northern Iron,4/02/2026,Night,8684.31,12744.58,96.98
+Northern Iron,5/02/2026,Day,8970.95,12031.65,96.64
+Northern Iron,5/02/2026,Night,8806.91,11015.21,97.8
+Red Rock Mine,2/02/2026,Day,8620.71,12830.56,96.53
+Red Rock Mine,2/02/2026,Night,9280.58,11788.45,91.32
+Red Rock Mine,3/02/2026,Day,8540.26,14618.36,93.99
+Red Rock Mine,3/02/2026,Night,8572.28,11087.29,96.09
+Red Rock Mine,4/02/2026,Day,9650.29,12758.09,93.32
+Red Rock Mine,4/02/2026,Night,8085.6,11928.79,98.2
+Red Rock Mine,5/02/2026,Day,9548.08,13168.23,92.51
+Red Rock Mine,5/02/2026,Night,7975.15,12821.47,99.02
+Western Ridge,2/02/2026,Day,9493.43,13517.22,94.21
+Western Ridge,2/02/2026,Night,8873.69,11889.79,91.75
+Western Ridge,3/02/2026,Day,8548.03,13948.38,95.54
+Western Ridge,3/02/2026,Night,8919.38,13717.61,98.14
+Western Ridge,4/02/2026,Day,9080.49,13105.23,96.87
+Western Ridge,4/02/2026,Night,8126.39,12751.7,92.03
+Western Ridge,5/02/2026,Day,9692.94,13195.48,93.36
+Western Ridge,5/02/2026,Night,7827.38,13195.48,92.82

@@ -1,0 +1,11 @@
+﻿equipment_code,equipment_type,manufacturer,model,site_name,purchase_date,last_maintenance_date
+EQ-012-CON,Conveyor System,Rulmeca,Heavy Duty,Bowen Basin Coal Mine,10/08/2010,28/11/2024
+EQ-011-EXC,Excavator,Liebherr,R9800,Bowen Basin Coal Mine,20/07/2010,2/12/2024
+EQ-010-HAU,Haul Truck,Komatsu,930E,Bowen Basin Coal Mine,15/06/2010,12/11/2024
+EQ-009-HAU,Haul Truck,Komatsu,930E,Bowen Basin Coal Mine,15/06/2010,12/11/2024
+EQ-015-HAU,Haul Truck,Caterpillar,785D,Greenbushes Lithium Mine,10/03/2020,16/11/2024
+EQ-016-PRO,Processing Plant,FLSmidth,Lithium Pro,Greenbushes Lithium Mine,15/04/2020,1/12/2024
+EQ-008-PRO,Processing Plant,Metso,HP400,Kalgoorlie Gold Mine,1/09/2012,5/12/2024
+EQ-007-EXC,Excavator,Hitachi,EX5600,Kalgoorlie Gold Mine,15/08/2012,18/11/2024
+EQ-006-HAU,Haul Truck,Caterpillar,785D,Kalgoorlie Gold Mine,1/08/2012,10/11/2024
+EQ-004-DRL,Drill Rig,Atlas Copco,PV-271,Pilbara Iron Mine,15/05/2015,25/11/2024

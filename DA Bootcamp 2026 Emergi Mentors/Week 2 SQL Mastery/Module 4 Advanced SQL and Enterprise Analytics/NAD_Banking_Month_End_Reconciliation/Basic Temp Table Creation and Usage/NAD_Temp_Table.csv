@@ -1,0 +1,32 @@
+﻿account_id,account_number,customer_name,account_type,opening_balance
+20,NAD-020-BUS,Perth Mining Services,Business,420000
+45,NAD-045-INV,Adam Phillips,Investment,340000
+18,NAD-018-INV,Daniel Martin,Investment,310000
+40,NAD-040-BUS,Newcastle Steel Works,Business,285000
+32,NAD-032-INV,Jason Wright,Investment,280000
+5,NAD-005-INV,Robert Chen,Investment,250000
+25,NAD-025-INV,Rebecca Lewis,Investment,225000
+48,NAD-048-BUS,Wollongong Manufacturing,Business,198000
+38,NAD-038-INV,Samantha Carter,Investment,195000
+7,NAD-007-BUS,Melbourne Retail Group,Business,180000
+12,NAD-012-INV,Jennifer Lee,Investment,175000
+31,NAD-031-BUS,Hobart Seafood Exports,Business,165000
+43,NAD-043-BUS,Gold Coast Tourism,Business,155000
+23,NAD-023-BUS,Adelaide Wine Distributors,Business,135000
+3,NAD-003-BUS,TechStart Solutions Pty Ltd,Business,125000
+35,NAD-035-BUS,Darwin Logistics,Business,112000
+28,NAD-028-BUS,Canberra Tech Hub,Business,98000
+11,NAD-011-BUS,Sydney Import Export,Business,95000
+15,NAD-015-BUS,Brisbane Consulting,Business,88000
+44,NAD-044-SAV,Rachel Turner,Savings,81000
+1,NAD-001-SAV,James Anderson,Savings,75000
+34,NAD-034-SAV,Brandon Baker,Savings,73000
+17,NAD-017-SAV,Amanda Jackson,Savings,71000
+50,NAD-050-SAV,Tyler Edwards,Savings,69000
+27,NAD-027-SAV,Jessica Hall,Savings,67000
+37,NAD-037-SAV,Eric Nelson,Savings,64000
+14,NAD-014-SAV,Patricia Moore,Savings,62000
+24,NAD-024-SAV,Steven Clark,Savings,58000
+47,NAD-047-SAV,Justin Parker,Savings,56000
+8,NAD-008-SAV,David Wilson,Savings,55000
+30,NAD-030-SAV,Lauren King,Savings,52000

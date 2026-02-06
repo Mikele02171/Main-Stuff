@@ -1,0 +1,6 @@
+﻿ViewName,ObjectType
+vw_ActiveSites,View
+vw_EmployeeDirectory,View
+vw_ProductionAnalysis,View
+vw_SiteManagers,View
+vw_SitePerformanceDashboard,View

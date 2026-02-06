@@ -1,0 +1,2 @@
+﻿AlertType,Count,Severity
+Suspicious Transactions,135,Medium Alert (>$5K)

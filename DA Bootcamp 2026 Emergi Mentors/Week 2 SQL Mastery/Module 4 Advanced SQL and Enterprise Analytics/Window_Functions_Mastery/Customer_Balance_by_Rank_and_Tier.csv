@@ -1,0 +1,26 @@
+﻿customer_rank,customer_name,state,city,account_type,current_balance,customer_tier
+1,William Zhang,VIC,Melbourne,Investment Account,890000,VIP Customer
+2,James Chen,NSW,Sydney,Investment Account,750000,VIP Customer
+3,Mason Taylor,VIC,Richmond,Investment Account,670000,VIP Customer
+4,Amelia Lee,QLD,Brisbane,Investment Account,625000,VIP Customer
+5,Harper Singh,WA,Fremantle,Investment Account,540000,VIP Customer
+6,Isabella Brown,VIC,Carlton,Premium Savings,510000,Premium Customer
+7,Sarah Mitchell,NSW,Sydney,Premium Savings,485000,Premium Customer
+8,Grace Wilson,NSW,Newcastle,Premium Savings,485000,Premium Customer
+9,Ava Nguyen,VIC,Melbourne,Premium Savings,425000,Premium Customer
+10,Sophia Anderson,QLD,Brisbane,Premium Savings,380000,Premium Customer
+11,Sophie Taylor,VIC,Melbourne,Premium Savings,380000,Standard Customer
+12,Benjamin Kim,WA,Perth,Premium Savings,355000,Standard Customer
+13,Olivia Patel,NSW,Parramatta,Premium Savings,320000,Standard Customer
+14,Daniel Cooper,NSW,Sydney,Premium Savings,320000,Standard Customer
+15,Ryan Martinez,QLD,Brisbane,Premium Savings,290000,Standard Customer
+16,Mia Johnson,SA,Adelaide,Premium Savings,290000,Standard Customer
+17,Charlotte Garcia,QLD,Cairns,Premium Savings,240000,Standard Customer
+18,Oscar Brown,VIC,Geelong,Premium Savings,240000,Standard Customer
+19,Evelyn Tran,SA,Adelaide,Premium Savings,145000,Standard Customer
+20,Emma Thompson,NSW,Newcastle,Premium Savings,125000,Standard Customer
+21,Ethan Rodriguez,QLD,Townsville,Standard Savings,105000,Standard Customer
+22,Noah Williams,VIC,Geelong,Standard Savings,95000,Standard Customer
+23,Lucas Martin,QLD,Gold Coast,Standard Savings,82000,Standard Customer
+24,Alexander Liu,SA,Adelaide,Standard Savings,78000,Standard Customer
+25,Liam O'Connor,NSW,Wollongong,Standard Savings,68000,Standard Customer

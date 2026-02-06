@@ -1,0 +1,26 @@
+﻿row_number,rank_with_gaps,dense_rank_no_gaps,customer_name,state,rounded_to_50k,actual_balance
+1,1,1,William Zhang,VIC,900000,890000
+2,2,2,James Chen,NSW,750000,750000
+3,3,3,Mason Taylor,VIC,650000,670000
+4,3,3,Amelia Lee,QLD,650000,625000
+5,5,4,Harper Singh,WA,550000,540000
+6,6,5,Isabella Brown,VIC,500000,510000
+7,6,5,Sarah Mitchell,NSW,500000,485000
+8,6,5,Grace Wilson,NSW,500000,485000
+9,9,6,Ava Nguyen,VIC,450000,425000
+10,10,7,Sophia Anderson,QLD,400000,380000
+11,10,7,Sophie Taylor,VIC,400000,380000
+12,12,8,Benjamin Kim,WA,350000,355000
+13,13,9,Olivia Patel,NSW,300000,320000
+14,13,9,Daniel Cooper,NSW,300000,320000
+15,13,9,Ryan Martinez,QLD,300000,290000
+16,13,9,Mia Johnson,SA,300000,290000
+17,17,10,Charlotte Garcia,QLD,250000,240000
+18,17,10,Oscar Brown,VIC,250000,240000
+19,19,11,Evelyn Tran,SA,150000,145000
+20,19,11,Emma Thompson,NSW,150000,125000
+21,21,12,Ethan Rodriguez,QLD,100000,105000
+22,21,12,Noah Williams,VIC,100000,95000
+23,21,12,Lucas Martin,QLD,100000,82000
+24,21,12,Alexander Liu,SA,100000,78000
+25,25,13,Liam O'Connor,NSW,50000,68000

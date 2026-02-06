@@ -1,0 +1,8 @@
+﻿site_name,state,resource_type,total_employees,total_equipment,december_production,avg_grade,december_costs,safety_incidents,cost_per_tonne
+Pilbara Iron Mine,WA,Iron Ore,14,4,63385062935,62.701129,64217197197,2,1.01
+Bowen Basin Coal Mine,QLD,Coal,14,4,47061755898,79.847741,64883668707,2,1.38
+Port Hedland Iron Mine,WA,Iron Ore,14,0,7805377968,62.17387,8038448970,0,1.03
+Mount Isa Copper Mine,QLD,Copper,14,0,76952846.74,2.441451,8004165591,1,104.01
+Greenbushes Lithium Mine,WA,Lithium,14,2,74256089.6,1.76758,16128643517,1,217.2
+Kalgoorlie Gold Mine,WA,Gold,14,3,22943030.88,3.988225,24064724525,1,1048.89
+Tanami Gold Mine,NT,Gold,14,2,15298178.28,3.99629,15878087053,1,1037.91

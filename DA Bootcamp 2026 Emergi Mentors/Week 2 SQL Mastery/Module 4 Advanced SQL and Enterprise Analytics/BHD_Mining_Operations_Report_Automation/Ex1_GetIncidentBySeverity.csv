@@ -1,0 +1,4 @@
+﻿incident_id,incident_date,site_name,state,severity,incident_type,description,status,resolved_date,days_to_resolution
+9,4/02/2026,Northern Iron,WA,Moderate,Fire alarm activation,False alarm from dust accumulation,Resolved,4/02/2026,0
+5,29/01/2026,Mt Pioneer Coal,NSW,Moderate,Equipment damage,Excavator hydraulic line rupture,Open,NULL,7
+3,26/01/2026,Goldfields Operations,WA,Moderate,Near miss - vehicle collision,Haul truck nearly collided with light vehicle,Resolved,28/01/2026,2

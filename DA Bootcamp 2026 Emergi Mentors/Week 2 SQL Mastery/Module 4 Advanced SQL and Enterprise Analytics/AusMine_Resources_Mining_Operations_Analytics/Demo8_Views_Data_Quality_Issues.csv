@@ -1,0 +1,11 @@
+﻿alert_type,affected_entity,alert_message,priority
+Equipment Overdue Maintenance,Bowen Basin Coal Mine,Equipment EQ-012-CON last maintained 435 days ago,Critical
+Equipment Overdue Maintenance,Bowen Basin Coal Mine,Equipment EQ-011-EXC last maintained 431 days ago,Critical
+Equipment Overdue Maintenance,Bowen Basin Coal Mine,Equipment EQ-010-HAU last maintained 451 days ago,Critical
+Equipment Overdue Maintenance,Bowen Basin Coal Mine,Equipment EQ-009-HAU last maintained 451 days ago,Critical
+Equipment Overdue Maintenance,Kalgoorlie Gold Mine,Equipment EQ-008-PRO last maintained 428 days ago,Critical
+Equipment Overdue Maintenance,Kalgoorlie Gold Mine,Equipment EQ-007-EXC last maintained 445 days ago,Critical
+Equipment Overdue Maintenance,Kalgoorlie Gold Mine,Equipment EQ-006-HAU last maintained 453 days ago,Critical
+Equipment Overdue Maintenance,Pilbara Iron Mine,Equipment EQ-004-DRL last maintained 438 days ago,Critical
+Equipment Overdue Maintenance,Pilbara Iron Mine,Equipment EQ-003-EXC last maintained 432 days ago,Critical
+Equipment Overdue Maintenance,Pilbara Iron Mine,Equipment EQ-002-HAU last maintained 443 days ago,Critical

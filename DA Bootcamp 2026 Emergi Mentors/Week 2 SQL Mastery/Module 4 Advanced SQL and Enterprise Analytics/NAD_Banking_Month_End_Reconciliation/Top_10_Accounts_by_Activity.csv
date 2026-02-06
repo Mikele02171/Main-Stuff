@@ -1,0 +1,11 @@
+﻿AccountNumber,CustomerName,AccountType,OpeningBalance,TransactionCount,TotalDeposits,TotalWithdrawals,ClosingBalance
+NAD-048-BUS,Wollongong Manufacturing,Business,"$198,000.00",373,"$417,021.82","$215,115.16","$399,906.66"
+NAD-041-SAV,Heather Perez,Savings,"$49,000.00",371,"$425,426.13","$195,252.66","$279,173.47"
+NAD-006-CHK,Maria Garcia,Checking,"$28,000.00",366,"$406,315.19","$219,489.86","$214,825.33"
+NAD-015-BUS,Brisbane Consulting,Business,"$88,000.00",365,"$427,045.67","$189,843.31","$325,202.36"
+NAD-003-BUS,TechStart Solutions Pty Ltd,Business,"$125,000.00",358,"$395,957.77","$211,637.58","$309,320.19"
+NAD-018-INV,Daniel Martin,Investment,"$310,000.00",357,"$400,835.44","$190,893.19","$519,942.25"
+NAD-011-BUS,Sydney Import Export,Business,"$95,000.00",356,"$372,969.93","$181,159.09","$286,810.84"
+NAD-007-BUS,Melbourne Retail Group,Business,"$180,000.00",355,"$370,252.51","$213,569.72","$336,682.79"
+NAD-047-SAV,Justin Parker,Savings,"$56,000.00",355,"$403,957.08","$203,564.64","$256,392.44"
+NAD-022-CHK,Nicole Robinson,Checking,"$31,000.00",353,"$416,476.75","$214,622.02","$232,854.73"

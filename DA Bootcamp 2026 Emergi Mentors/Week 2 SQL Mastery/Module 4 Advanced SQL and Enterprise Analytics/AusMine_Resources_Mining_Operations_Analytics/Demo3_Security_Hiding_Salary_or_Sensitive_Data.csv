@@ -1,0 +1,11 @@
+﻿employee_code,full_name,email,job_title,department,site_name,state,hire_date,employment_status
+EMP-0101,Mining Engineer1,engineer1@ausmine.com.au,Mining Engineer,Engineering,Pilbara Iron Mine,WA,1/03/2020,Active
+EMP-0201,Mining Engineer1,engineer1@ausmine.com.au,Mining Engineer,Engineering,Kalgoorlie Gold Mine,WA,1/03/2020,Active
+EMP-0301,Mining Engineer1,engineer1@ausmine.com.au,Mining Engineer,Engineering,Bowen Basin Coal Mine,QLD,1/03/2020,Active
+EMP-0401,Mining Engineer1,engineer1@ausmine.com.au,Mining Engineer,Engineering,Tanami Gold Mine,NT,1/03/2020,Active
+EMP-0501,Mining Engineer1,engineer1@ausmine.com.au,Mining Engineer,Engineering,Greenbushes Lithium Mine,WA,1/03/2020,Active
+EMP-0601,Mining Engineer1,engineer1@ausmine.com.au,Mining Engineer,Engineering,Mount Isa Copper Mine,QLD,1/03/2020,Active
+EMP-0701,Mining Engineer1,engineer1@ausmine.com.au,Mining Engineer,Engineering,Port Hedland Iron Mine,WA,1/03/2020,Active
+EMP-0801,Mining Engineer1,engineer1@ausmine.com.au,Mining Engineer,Engineering,Olympic Dam Copper Mine,SA,1/03/2020,Active
+EMP-0802,Mining Engineer2,engineer2@ausmine.com.au,Mining Engineer,Engineering,Olympic Dam Copper Mine,SA,15/06/2020,Active
+EMP-0702,Mining Engineer2,engineer2@ausmine.com.au,Mining Engineer,Engineering,Port Hedland Iron Mine,WA,15/06/2020,Active

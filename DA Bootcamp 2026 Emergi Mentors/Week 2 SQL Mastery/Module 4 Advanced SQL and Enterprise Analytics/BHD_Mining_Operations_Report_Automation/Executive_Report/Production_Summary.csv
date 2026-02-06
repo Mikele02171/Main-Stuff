@@ -1,0 +1,11 @@
+﻿Site,State,Shift,OreProduced_Tonnes,WasteRemoved_Tonnes,OreToWasteRatio,TotalEquipmentHours,TotalDowntimeHours,AvgEfficiency_Percent
+Goldfields Operations,WA,Day,8256.06,13249.4,0.62,21.56,1.09,94.94
+Goldfields Operations,WA,Night,8095.28,11454.43,0.71,21.37,1.47,93.12
+Mt Pioneer Coal,NSW,Day,8663.55,14454.07,0.6,23.43,0,100
+Mt Pioneer Coal,NSW,Night,9248.99,11309.05,0.82,23.64,1.97,91.67
+Northern Iron,WA,Day,8413.4,14518.28,0.58,20.29,0.41,97.98
+Northern Iron,WA,Night,7771.52,12261.84,0.63,23.83,0.38,98.41
+Red Rock Mine,SA,Day,8600.48,14308.88,0.6,23.14,0.45,98.06
+Red Rock Mine,SA,Night,8856.17,11192.72,0.79,20.83,0.76,96.35
+Western Ridge,WA,Day,9236.92,12246.61,0.75,20.17,0.85,95.79
+Western Ridge,WA,Night,8854.06,13929.62,0.64,20.7,0.38,98.16

@@ -1,0 +1,2 @@
+﻿Text
+" -- Create a simple view for active sites CREATE VIEW vw_ActiveSites AS SELECT      site_id,     site_code,     site_name,     state,     resource_type,     site_manager,     opened_date FROM sites WHERE status = 'Active'; "

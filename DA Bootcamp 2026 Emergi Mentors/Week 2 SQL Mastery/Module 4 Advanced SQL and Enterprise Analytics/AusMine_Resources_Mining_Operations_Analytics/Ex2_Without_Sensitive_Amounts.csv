@@ -1,0 +1,11 @@
+﻿site_name,state,cost_date,cost_category,cost_range,description
+Pilbara Iron Mine,WA,31/12/2024,Labour,High (>$150k),Daily labour costs
+Pilbara Iron Mine,WA,31/12/2024,Energy,Medium ($50k-$150k),Daily energy costs
+Kalgoorlie Gold Mine,WA,31/12/2024,Labour,High (>$150k),Daily labour costs
+Kalgoorlie Gold Mine,WA,31/12/2024,Energy,Medium ($50k-$150k),Daily energy costs
+Bowen Basin Coal Mine,QLD,31/12/2024,Labour,High (>$150k),Daily labour costs
+Bowen Basin Coal Mine,QLD,31/12/2024,Energy,Medium ($50k-$150k),Daily energy costs
+Tanami Gold Mine,NT,31/12/2024,Labour,High (>$150k),Daily labour costs
+Tanami Gold Mine,NT,31/12/2024,Energy,Medium ($50k-$150k),Daily energy costs
+Greenbushes Lithium Mine,WA,31/12/2024,Labour,High (>$150k),Daily labour costs
+Greenbushes Lithium Mine,WA,31/12/2024,Energy,Medium ($50k-$150k),Daily energy costs

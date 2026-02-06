@@ -1,0 +1,4 @@
+﻿IncidentID,Date,Site,Severity,Type,Description,DaysOpen
+7,2/02/2026,Red Rock Mine,Severe,Medical treatment injury,"Operator injured, medical treatment required",3
+10,5/02/2026,Mt Pioneer Coal,Severe,Equipment rollover,"Light vehicle rollover, driver injured",0
+5,29/01/2026,Mt Pioneer Coal,Moderate,Equipment damage,Excavator hydraulic line rupture,7

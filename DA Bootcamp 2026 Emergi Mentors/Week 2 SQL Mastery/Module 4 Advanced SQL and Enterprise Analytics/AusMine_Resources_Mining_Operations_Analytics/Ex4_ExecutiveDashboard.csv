@@ -1,0 +1,8 @@
+﻿site_name,resource_type,employees,equipment,production,costs,incidents,rating
+Pilbara Iron Mine,Iron Ore,14,4,"7,349,845","$9,247,868",2,Excellent
+Port Hedland Iron Mine,Iron Ore,14,0,"7,240,610","$9,260,886",0,Excellent
+Bowen Basin Coal Mine,Coal,14,4,"5,457,068","$9,343,846",2,Needs Attention
+Mount Isa Copper Mine,Copper,14,0,"71,385","$9,221,389",1,Average
+Greenbushes Lithium Mine,Lithium,14,2,"34,442","$9,290,693",1,Average
+Tanami Gold Mine,Gold,14,2,"7,096","$9,146,364",1,Average
+Kalgoorlie Gold Mine,Gold,14,3,"7,094","$9,241,446",1,Average

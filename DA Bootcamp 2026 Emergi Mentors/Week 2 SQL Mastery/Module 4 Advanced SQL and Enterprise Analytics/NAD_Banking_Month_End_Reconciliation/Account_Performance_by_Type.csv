@@ -1,0 +1,5 @@
+﻿AccountType,TotalAccounts,AvgOpeningBalance,AvgClosingBalance,TotalDeposits,TotalWithdrawals
+Business,12,"$172,262.41","$172,795.25","$4,531,816.52","$2,342,914.38"
+Checking,15,"$25,810.84","$26,419.27","$5,633,001.45","$2,603,044.16"
+Investment,7,"$251,632.17","$252,182.34","$2,564,575.31","$1,288,740.43"
+Savings,16,"$59,814.63","$60,420.08","$6,152,232.27","$2,915,507.57"

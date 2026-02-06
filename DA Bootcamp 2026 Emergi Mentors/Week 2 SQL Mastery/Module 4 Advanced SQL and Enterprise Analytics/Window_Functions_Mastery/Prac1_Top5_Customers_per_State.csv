@@ -1,0 +1,21 @@
+﻿state,rank_in_state,customer_name,current_balance
+NSW,1,James Chen,750000
+NSW,2,Sarah Mitchell,485000
+NSW,3,Grace Wilson,485000
+NSW,4,Daniel Cooper,320000
+NSW,5,Olivia Patel,320000
+QLD,1,Amelia Lee,625000
+QLD,2,Sophia Anderson,380000
+QLD,3,Ryan Martinez,290000
+QLD,4,Charlotte Garcia,240000
+QLD,5,Ethan Rodriguez,105000
+SA,1,Mia Johnson,290000
+SA,2,Evelyn Tran,145000
+SA,3,Alexander Liu,78000
+VIC,1,William Zhang,890000
+VIC,2,Mason Taylor,670000
+VIC,3,Isabella Brown,510000
+VIC,4,Ava Nguyen,425000
+VIC,5,Sophie Taylor,380000
+WA,1,Harper Singh,540000
+WA,2,Benjamin Kim,355000

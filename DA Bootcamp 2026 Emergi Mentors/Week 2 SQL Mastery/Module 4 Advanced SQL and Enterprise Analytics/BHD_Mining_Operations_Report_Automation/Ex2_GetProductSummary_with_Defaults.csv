@@ -1,0 +1,6 @@
+﻿site_name,state,total_ore,total_waste,ore_to_waste_ratio,shift_count,avg_efficiency,total_downtime
+Western Ridge,WA,142986.94,204203.36,0.7,16,95.725625,14.55
+Mt Pioneer Coal,NSW,141630.62,201274.66,0.7,16,94.705625,18.92
+Northern Iron,WA,140718.01,213047.36,0.66,16,96.33125,12.89
+Red Rock Mine,SA,139729.84,209775.46,0.67,16,95.449375,15.8
+Goldfields Operations,WA,138053.25,213554.99,0.65,16,94.8875,17.73

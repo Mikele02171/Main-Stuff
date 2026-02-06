@@ -1,0 +1,26 @@
+﻿customer_name,current_balance,percentile_rank,percentile_group
+William Zhang,890000,100,Top 10%
+James Chen,750000,95.8,Top 10%
+Mason Taylor,670000,91.7,Top 10%
+Amelia Lee,625000,87.5,Top 25%
+Harper Singh,540000,83.3,Top 25%
+Isabella Brown,510000,79.2,Top 25%
+Sarah Mitchell,485000,70.8,Top 50%
+Grace Wilson,485000,70.8,Top 50%
+Ava Nguyen,425000,66.7,Top 50%
+Sophia Anderson,380000,58.3,Top 50%
+Sophie Taylor,380000,58.3,Top 50%
+Benjamin Kim,355000,54.2,Top 50%
+Daniel Cooper,320000,45.8,Bottom 50%
+Olivia Patel,320000,45.8,Bottom 50%
+Ryan Martinez,290000,37.5,Bottom 50%
+Mia Johnson,290000,37.5,Bottom 50%
+Charlotte Garcia,240000,29.2,Bottom 50%
+Oscar Brown,240000,29.2,Bottom 50%
+Evelyn Tran,145000,25,Bottom 50%
+Emma Thompson,125000,20.8,Bottom 50%
+Ethan Rodriguez,105000,16.7,Bottom 50%
+Noah Williams,95000,12.5,Bottom 50%
+Lucas Martin,82000,8.3,Bottom 50%
+Alexander Liu,78000,4.2,Bottom 50%
+Liam O'Connor,68000,0,Bottom 50%

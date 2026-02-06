@@ -1,0 +1,32 @@
+﻿account_id,account_number,customer_name,opening_balance
+20,NAD-020-BUS,Perth Mining Services,420000
+45,NAD-045-INV,Adam Phillips,340000
+18,NAD-018-INV,Daniel Martin,310000
+40,NAD-040-BUS,Newcastle Steel Works,285000
+32,NAD-032-INV,Jason Wright,280000
+5,NAD-005-INV,Robert Chen,250000
+25,NAD-025-INV,Rebecca Lewis,225000
+48,NAD-048-BUS,Wollongong Manufacturing,198000
+38,NAD-038-INV,Samantha Carter,195000
+7,NAD-007-BUS,Melbourne Retail Group,180000
+12,NAD-012-INV,Jennifer Lee,175000
+31,NAD-031-BUS,Hobart Seafood Exports,165000
+43,NAD-043-BUS,Gold Coast Tourism,155000
+23,NAD-023-BUS,Adelaide Wine Distributors,135000
+3,NAD-003-BUS,TechStart Solutions Pty Ltd,125000
+35,NAD-035-BUS,Darwin Logistics,112000
+28,NAD-028-BUS,Canberra Tech Hub,98000
+11,NAD-011-BUS,Sydney Import Export,95000
+15,NAD-015-BUS,Brisbane Consulting,88000
+44,NAD-044-SAV,Rachel Turner,81000
+1,NAD-001-SAV,James Anderson,75000
+34,NAD-034-SAV,Brandon Baker,73000
+17,NAD-017-SAV,Amanda Jackson,71000
+50,NAD-050-SAV,Tyler Edwards,69000
+27,NAD-027-SAV,Jessica Hall,67000
+37,NAD-037-SAV,Eric Nelson,64000
+14,NAD-014-SAV,Patricia Moore,62000
+24,NAD-024-SAV,Steven Clark,58000
+47,NAD-047-SAV,Justin Parker,56000
+8,NAD-008-SAV,David Wilson,55000
+30,NAD-030-SAV,Lauren King,52000

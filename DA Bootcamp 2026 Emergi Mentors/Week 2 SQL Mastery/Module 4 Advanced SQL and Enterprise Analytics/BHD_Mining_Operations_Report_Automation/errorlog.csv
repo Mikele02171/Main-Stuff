@@ -1,0 +1,5 @@
+﻿error_id,error_message,error_procedure,error_line,logged_date
+3,Site ID does not exist. Check mining_sites table.,GetSafeProductionReport,30,04:34.4
+4,Report date required. Cannot be NULL.,GetSafeProductionReport,22,04:34.4
+2,Report date required. Cannot be NULL.,GetSafeProductionReport,21,04:15.3
+1,Site ID does not exist. Check mining_sites table.,GetSafeProductionReport,29,04:15.3

@@ -1,0 +1,26 @@
+﻿customer_name,state,current_balance,quartile,decile,customer_segment,percentile_group
+William Zhang,VIC,890000,1,1,Top 25% (VIP),Top 10%
+James Chen,NSW,750000,1,1,Top 25% (VIP),Top 10%
+Mason Taylor,VIC,670000,1,1,Top 25% (VIP),Top 10%
+Amelia Lee,QLD,625000,1,2,Top 25% (VIP),Top 30%
+Harper Singh,WA,540000,1,2,Top 25% (VIP),Top 30%
+Isabella Brown,VIC,510000,1,2,Top 25% (VIP),Top 30%
+Sarah Mitchell,NSW,485000,1,3,Top 25% (VIP),Top 30%
+Grace Wilson,NSW,485000,2,3,25-50% (Premium),Top 30%
+Ava Nguyen,VIC,425000,2,3,25-50% (Premium),Top 30%
+Sophia Anderson,QLD,380000,2,4,25-50% (Premium),Top 50%
+Sophie Taylor,VIC,380000,2,4,25-50% (Premium),Top 50%
+Benjamin Kim,WA,355000,2,4,25-50% (Premium),Top 50%
+Olivia Patel,NSW,320000,2,5,25-50% (Premium),Top 50%
+Daniel Cooper,NSW,320000,3,5,50-75% (Standard),Top 50%
+Ryan Martinez,QLD,290000,3,5,50-75% (Standard),Top 50%
+Mia Johnson,SA,290000,3,6,50-75% (Standard),Bottom 50%
+Charlotte Garcia,QLD,240000,3,6,50-75% (Standard),Bottom 50%
+Oscar Brown,VIC,240000,3,7,50-75% (Standard),Bottom 50%
+Evelyn Tran,SA,145000,3,7,50-75% (Standard),Bottom 50%
+Emma Thompson,NSW,125000,4,8,Bottom 25% (Basic),Bottom 50%
+Ethan Rodriguez,QLD,105000,4,8,Bottom 25% (Basic),Bottom 50%
+Noah Williams,VIC,95000,4,9,Bottom 25% (Basic),Bottom 50%
+Lucas Martin,QLD,82000,4,9,Bottom 25% (Basic),Bottom 50%
+Alexander Liu,SA,78000,4,10,Bottom 25% (Basic),Bottom 50%
+Liam O'Connor,NSW,68000,4,10,Bottom 25% (Basic),Bottom 50%
