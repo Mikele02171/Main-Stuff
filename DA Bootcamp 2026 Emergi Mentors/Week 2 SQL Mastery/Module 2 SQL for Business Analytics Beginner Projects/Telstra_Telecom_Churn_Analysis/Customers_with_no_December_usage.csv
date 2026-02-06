@@ -1,0 +1,11 @@
+﻿customer_id,customer_name,plan_tier,monthly_fee,data_used_gb,calls_minutes,status
+108,William Taylor,Gold,99,NULL,NULL,CHURN RISK - No Usage!
+109,Ava Martin,Silver,69,NULL,NULL,CHURN RISK - No Usage!
+110,Lucas Brown,Bronze,49,NULL,NULL,CHURN RISK - No Usage!
+104,James O'Brien,Bronze,49,6.8,100,Active
+107,Sophia Kumar,Bronze,49,9.3,70,Active
+102,Michael Zhang,Silver,69,28.9,200,Active
+106,Noah Anderson,Silver,69,35.7,240,Active
+101,Sarah Williams,Gold,99,52.3,340,Active
+103,Emma Thompson,Gold,99,71.2,450,Active
+105,Olivia Chen,Gold,99,92.5,530,Active

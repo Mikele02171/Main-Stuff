@@ -1,0 +1,7 @@
+﻿state,store_name,suburb,total_transactions,total_revenue,avg_transaction_value,last_transaction_date
+NSW,AusRetail Sydney CBD,Sydney,8,4973.55,621.69375,2/12/2024
+VIC,AusRetail Melbourne CBD,Melbourne,3,1622.25,540.75,1/12/2024
+NSW,AusRetail Bondi Junction,Bondi Junction,3,613.2,204.4,3/12/2024
+QLD,AusRetail Brisbane CBD,Brisbane,2,588,294,2/12/2024
+NSW,AusRetail Parramatta,Parramatta,2,176,88,2/11/2024
+VIC,AusRetail Chadstone,Chadstone,2,98,49,2/11/2024

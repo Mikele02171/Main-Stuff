@@ -1,0 +1,8 @@
+﻿merchant_category,transaction_count,total_revenue,avg_transaction,pct_of_total
+Travel,24,41805,1741.875,43.61
+Electronics,15,25882,1725.466666,27
+Department Store,33,17439,528.454545,18.19
+Supermarket,60,6450,107.5,6.73
+Hardware,10,3614.7,361.47,3.77
+Liquor,2,579.5,289.75,0.6
+Fuel,1,95,95,0.1

@@ -1,0 +1,5 @@
+﻿card_tier,transaction_revenue,total_transactions,avg_transaction_value,active_customers,tier_annual_fee,annual_fee_revenue,total_revenue
+Platinum,70344.3,46,1529.223913,9,599,5391,75735.3
+Gold,18578.6,42,442.347619,10,395,3950,22528.6
+Silver,5210,33,157.878787,8,195,1560,6770
+Bronze,1732.3,24,72.179166,6,0,0,1732.3

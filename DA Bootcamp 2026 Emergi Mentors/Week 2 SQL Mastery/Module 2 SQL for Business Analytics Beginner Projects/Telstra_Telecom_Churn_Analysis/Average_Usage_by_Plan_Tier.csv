@@ -1,0 +1,4 @@
+﻿plan_tier,total_customers,usage_records,avg_data_gb,avg_calls_minutes,avg_monthly_fee
+Gold,4,6,69.7,428,99
+Silver,3,4,29.575,210,69
+Bronze,3,4,7.5,80,49
