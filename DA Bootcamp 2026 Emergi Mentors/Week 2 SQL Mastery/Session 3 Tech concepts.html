@@ -1,0 +1,1208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL Fundamentals - Session 3 Technical Concept Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2c5f8d 100%);
+            color: white;
+            padding: 50px 40px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.8em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .toc {
+            background: #f8f9fa;
+            border-left: 5px solid #2c5f8d;
+            padding: 30px;
+            margin-bottom: 40px;
+            border-radius: 10px;
+        }
+
+        .toc h2 {
+            color: #1e3a5f;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+
+        .toc ul {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 12px;
+        }
+
+        .toc li {
+            padding: 8px 0;
+        }
+
+        .toc a {
+            color: #2c5f8d;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+            display: block;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+
+        .toc a:hover {
+            background: #e3f2fd;
+            color: #1976d2;
+            transform: translateX(5px);
+        }
+
+        .concept-section {
+            margin-bottom: 50px;
+            border-left: 4px solid #ffd700;
+            padding-left: 30px;
+        }
+
+        .concept-section h2 {
+            color: #1e3a5f;
+            font-size: 2em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #ffd700;
+        }
+
+        .concept-box {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-left: 5px solid #2c5f8d;
+        }
+
+        .concept-box h3 {
+            color: #2c5f8d;
+            font-size: 1.4em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .badge {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.7em;
+            margin-left: 10px;
+            font-weight: 600;
+        }
+
+        .definition {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid #4a90e2;
+        }
+
+        .definition strong {
+            color: #1e3a5f;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .why-matters {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid #1976d2;
+        }
+
+        .why-matters strong {
+            color: #0d47a1;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .project-use {
+            background: #f3e5f5;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid #7b1fa2;
+        }
+
+        .project-use strong {
+            color: #4a148c;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .code-example {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-family: 'Consolas', 'Courier New', monospace;
+            font-size: 0.9em;
+            overflow-x: auto;
+            border-left: 4px solid #4a90e2;
+        }
+
+        .code-example pre {
+            margin: 0;
+            white-space: pre-wrap;
+        }
+
+        .code-keyword {
+            color: #569cd6;
+            font-weight: bold;
+        }
+
+        .code-string {
+            color: #ce9178;
+        }
+
+        .code-comment {
+            color: #6a9955;
+            font-style: italic;
+        }
+
+        .interview-note {
+            background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid #f57c00;
+        }
+
+        .interview-note strong {
+            color: #e65100;
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+
+        .interview-note strong::before {
+            content: "💡";
+            margin-right: 8px;
+            font-size: 1.2em;
+        }
+
+        .medallion-badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            font-weight: 600;
+            margin-right: 5px;
+        }
+
+        .badge-bronze {
+            background: #cd7f32;
+            color: white;
+        }
+
+        .badge-silver {
+            background: #c0c0c0;
+            color: #333;
+        }
+
+        .badge-gold {
+            background: #ffd700;
+            color: #333;
+        }
+
+        footer {
+            background: #1e3a5f;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            font-size: 0.95em;
+        }
+
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #2c5f8d;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(44, 95, 141, 0.4);
+            transition: all 0.3s;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .scroll-top:hover {
+            background: #1e3a5f;
+            transform: translateY(-5px);
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            .content {
+                padding: 20px;
+            }
+
+            .concept-section {
+                padding-left: 15px;
+            }
+
+            .toc ul {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📚 SQL Fundamentals Technical Concept Guide</h1>
+            <p>Session 3: SQL for Data Analysis with Medallion Architecture</p>
+        </header>
+
+        <div class="content">
+            <!-- TABLE OF CONTENTS -->
+            <div class="toc">
+                <h2>📋 Table of Contents</h2>
+                <ul>
+                    <li><a href="#sql-basics">1. SQL Server Basics</a></li>
+                    <li><a href="#sql-categories">2. SQL Command Categories (DDL/DML/DCL/TCL)</a></li>
+                    <li><a href="#ddl-commands">3. DDL Commands (CREATE/ALTER/DROP)</a></li>
+                    <li><a href="#dml-insert">4. DML: INSERT Statements</a></li>
+                    <li><a href="#dml-update">5. DML: UPDATE Statements</a></li>
+                    <li><a href="#dml-delete">6. DML: DELETE Statements</a></li>
+                    <li><a href="#select-basics">7. SELECT Fundamentals</a></li>
+                    <li><a href="#aggregations">8. Aggregation Functions</a></li>
+                    <li><a href="#group-by">9. GROUP BY and HAVING</a></li>
+                    <li><a href="#joins">10. JOIN Operations</a></li>
+                    <li><a href="#null-handling">11. NULL Handling</a></li>
+                    <li><a href="#data-types">12. Data Types and Casting</a></li>
+                    <li><a href="#constraints">13. Constraints (PK/FK)</a></li>
+                    <li><a href="#ctes">14. Common Table Expressions (CTEs)</a></li>
+                    <li><a href="#window-functions">15. Window Functions</a></li>
+                    <li><a href="#indexes">16. Performance: Indexes</a></li>
+                    <li><a href="#execution-plans">17. Execution Plans</a></li>
+                    <li><a href="#data-quality">18. Data Quality & Validation</a></li>
+                </ul>
+            </div>
+
+            <!-- CONCEPT 1: SQL SERVER BASICS -->
+            <section id="sql-basics" class="concept-section">
+                <h2>1. SQL Server Basics</h2>
+
+                <div class="concept-box">
+                    <h3>Database, Schema, Table, View</h3>
+
+                    <div class="definition">
+                        <strong>📖 Definition:</strong>
+                        A <strong>database</strong> is a container for all your data objects. A <strong>schema</strong> is a namespace within a database that organizes tables logically. A <strong>table</strong> stores actual data in rows and columns. A <strong>view</strong> is a saved SELECT query that acts like a virtual table.
+                    </div>
+
+                    <div class="why-matters">
+                        <strong>💼 Why It Matters in Real Jobs:</strong>
+                        In production environments, databases separate different applications (e.g., RetailDB vs HRDB). Schemas organize tables by business function (e.g., bronze, silver, gold layers). Tables hold your raw data, while views simplify complex queries for business users who don't write SQL.
+                    </div>
+
+                    <div class="project-use">
+                        <strong>🎯 How It Appears in Session 3 Project:</strong>
+                        We create <code>RetailAnalyticsDB</code> database with 4 schemas:
+                        <span class="medallion-badge badge-bronze">bronze</span> (raw CSVs),
+                        <span class="medallion-badge badge-silver">silver</span> (cleaned data),
+                        <span class="medallion-badge badge-gold">gold</span> (analytics marts),
+                        <span class="medallion-badge" style="background:#e74c3c;color:white;">quarantine</span> (rejected records).
+                    </div>
+
+                    <div class="code-example">
+                        <pre><span class="code-comment">-- Create database and schemas</span>
+<span class="code-keyword">CREATE DATABASE</span> RetailAnalyticsDB;
+<span class="code-keyword">GO</span>
+
+<span class="code-keyword">USE</span> RetailAnalyticsDB;
+
+<span class="code-keyword">CREATE SCHEMA</span> bronze;
+<span class="code-keyword">CREATE SCHEMA</span> silver;
+<span class="code-keyword">CREATE SCHEMA</span> gold;
+<span class="code-keyword">CREATE SCHEMA</span> quarantine;</pre>
+                    </div>
+
+                    <div class="interview-note">
+                        <strong>Interview Question:</strong>
+                        "What's the difference between a schema and a database?" Answer: A database is the top-level container. Schemas organize objects within that database by logical grouping (like folders in a filing cabinet). In our project, we use schemas to separate Bronze/Silver/Gold layers.
+                    </div>
+                </div>
+            </section>
+
+            <!-- CONCEPT 2: SQL COMMAND CATEGORIES -->
+            <section id="sql-categories" class="concept-section">
+                <h2>2. SQL Command Categories</h2>
+
+                <div class="concept-box">
+                    <h3>DDL vs DML vs DCL vs TCL<span class="badge">Focus on DDL/DML</span></h3>
+
+                    <div class="definition">
+                        <strong>📖 Definition:</strong>
+                        <strong>DDL</strong> (Data Definition Language) defines structure: CREATE, ALTER, DROP. <strong>DML</strong> (Data Manipulation Language) modifies data: INSERT, UPDATE, DELETE, SELECT. <strong>DCL</strong> controls permissions: GRANT, REVOKE. <strong>TCL</strong> manages transactions: COMMIT, ROLLBACK.
+                    </div>
+
+                    <div class="why-matters">
+                        <strong>💼 Why It Matters in Real Jobs:</strong>
+                        Data Analysts spend 80% of time on DML (querying/transforming data) and 20% on DDL (creating temp tables). Junior Data Engineers need both. Understanding the categories helps you know when structure changes (DDL) versus when you're just moving data around (DML).
+                    </div>
+
+                    <div class="project-use">
+                        <strong>🎯 How It Appears in Session 3 Project:</strong>
+                        <strong>DDL:</strong> <code>00_create_db_and_schemas.sql</code> creates tables. <strong>DML:</strong> <code>01_bronze_load.sql</code> inserts data, <code>02_silver_transform.sql</code> cleans it. We don't use DCL/TCL in this beginner session.
+                    </div>
+
+                    <div class="code-example">
+                        <pre><span class="code-comment">-- DDL: Define structure</span>
+<span class="code-keyword">CREATE TABLE</span> bronze.Customers (
+    CustomerID <span class="code-keyword">NVARCHAR</span>(50),
+    CustomerName <span class="code-keyword">NVARCHAR</span>(255)
+);
+
+<span class="code-comment">-- DML: Manipulate data</span>
+<span class="code-keyword">INSERT INTO</span> bronze.Customers
+<span class="code-keyword">VALUES</span> (<span class="code-string">'2000'</span>, <span class="code-string">'Customer 2000'</span>);
+
+<span class="code-keyword">SELECT</span> * <span class="code-keyword">FROM</span> bronze.Customers;</pre>
+                    </div>
+
+                    <div class="interview-note">
+                        <strong>Interview Question:</strong>
+                        "Is SELECT a DML or DDL command?" Answer: DML. Even though it doesn't modify data, it's classified as DML because it manipulates (reads) data. Some sources call it DQL (Data Query Language), but most interviewers expect you to say DML.
+                    </div>
+                </div>
+            </section>
+
+            <!-- CONCEPT 3: DDL COMMANDS -->
+            <section id="ddl-commands" class="concept-section">
+                <h2>3. DDL Commands (CREATE/ALTER/DROP)</h2>
+
+                <div class="concept-box">
+                    <h3>CREATE, ALTER, DROP</h3>
+
+                    <div class="definition">
+                        <strong>📖 Definition:</strong>
+                        <strong>CREATE</strong> builds new database objects (tables, views, schemas). <strong>ALTER</strong> modifies existing structures (add columns, change data types). <strong>DROP</strong> permanently deletes objects.
+                    </div>
+
+                    <div class="why-matters">
+                        <strong>💼 Why It Matters in Real Jobs:</strong>
+                        Analysts rarely DROP tables in production (dangerous!), but frequently CREATE temp tables for analysis. Data Engineers ALTER tables to evolve schemas as business requirements change. DROP is used carefully in development environments only.
+                    </div>
+
+                    <div class="project-use">
+                        <strong>🎯 How It Appears in Session 3 Project:</strong>
+                        We CREATE all Bronze tables to land CSVs. We don't ALTER (tables are defined correctly upfront). We use DROP IF EXISTS for clean re-runs during development. In production, ALTER would add new columns as business needs evolve.
+                    </div>
+
+                    <div class="code-example">
+                        <pre><span class="code-comment">-- CREATE: Build structure</span>
+<span class="code-keyword">CREATE TABLE</span> bronze.Products (
+    ProductID <span class="code-keyword">NVARCHAR</span>(50),
+    ProductName <span class="code-keyword">NVARCHAR</span>(255)
+);
+
+<span class="code-comment">-- ALTER: Modify structure</span>
+<span class="code-keyword">ALTER TABLE</span> bronze.Products
+<span class="code-keyword">ADD</span> Category <span class="code-keyword">NVARCHAR</span>(100);
+
+<span class="code-comment">-- DROP: Delete structure (careful!)</span>
+<span class="code-keyword">DROP TABLE IF EXISTS</span> bronze.Products;</pre>
+                    </div>
+
+                    <div class="interview-note">
+                        <strong>Interview Question:</strong>
+                        "What's the difference between DROP and TRUNCATE?" Answer: DROP removes the entire table structure. TRUNCATE keeps the table but deletes all rows (faster than DELETE). TRUNCATE is DDL; DELETE is DML. TRUNCATE can't be rolled back; DELETE can (within a transaction).
+                    </div>
+                </div>
+            </section>
+
+            <!-- CONCEPT 4: INSERT -->
+            <section id="dml-insert" class="concept-section">
+                <h2>4. DML: INSERT Statements</h2>
+
+                <div class="concept-box">
+                    <h3>INSERT INTO</h3>
+
+                    <div class="definition">
+                        <strong>📖 Definition:</strong>
+                        INSERT adds new rows to a table. You can insert single rows with VALUES, or bulk insert from another table using SELECT.
+                    </div>
+
+                    <div class="why-matters">
+                        <strong>💼 Why It Matters in Real Jobs:</strong>
+                        Analysts use INSERT INTO...SELECT to copy data into temp tables for analysis. Data Engineers use it to move data between Bronze/Silver/Gold layers. BULK INSERT loads large CSV files efficiently (what we use for Bronze).
+                    </div>
+
+                    <div class="project-use">
+                        <strong>🎯 How It Appears in Session 3 Project:</strong>
+                        <code>01_bronze_load.sql</code> uses BULK INSERT to load CSVs into Bronze tables. <code>02_silver_transform.sql</code> uses INSERT INTO...SELECT to copy cleaned data from Bronze to Silver.
+                    </div>
+
+                    <div class="code-example">
+                        <pre><span class="code-comment">-- Single row insert</span>
+<span class="code-keyword">INSERT INTO</span> silver.Customers (CustomerID, CustomerName, Segment)
+<span class="code-keyword">VALUES</span> (2000, <span class="code-string">'Customer 2000'</span>, <span class="code-string">'Enterprise'</span>);
+
+<span class="code-comment">-- Bulk insert from another table (Bronze to Silver)</span>
+<span class="code-keyword">INSERT INTO</span> silver.Customers (CustomerID, CustomerName, Segment)
+<span class="code-keyword">SELECT</span> 
+    <span class="code-keyword">TRY_CONVERT</span>(<span class="code-keyword">INT</span>, CustomerID),
+    CustomerName,
+    Segment
+<span class="code-keyword">FROM</span> bronze.Customers;</pre>
+                    </div>
+
+                    <div class="interview-note">
+                        <strong>Interview Question:</strong>
+                        "How would you insert 1 million rows efficiently?" Answer: Use INSERT INTO...SELECT (bulk operation) rather than looping through individual INSERT statements. For external files, use BULK INSERT or SSIS. Always do bulk operations in batches to avoid transaction log overflow.
+                    </div>
+                </div>
+            </section>
+
+            <!-- CONCEPT 5: UPDATE -->
+            <section id="dml-update" class="concept-section">
+                <h2>5. DML: UPDATE Statements</h2>
+
+                <div class="concept-box">
+                    <h3>UPDATE (Safe Patterns)</h3>
+
+                    <div class="definition">
+                        <strong>📖 Definition:</strong>
+                        UPDATE modifies existing rows in a table. You specify which columns to change and which rows to affect using WHERE clause.
+                    </div>
+
+                    <div class="why-matters">
+                        <strong>💼 Why It Matters in Real Jobs:</strong>
+                        Forgetting WHERE clause updates ALL rows (career-ending mistake in production). Always test UPDATE in a transaction first, or use SELECT to preview affected rows. Data warehouses often avoid UPDATE in favor of INSERT-only patterns.
+                    </div>
+
+                    <div class="project-use">
+                        <strong>🎯 How It Appears in Session 3 Project:</strong>
+                        We don't use UPDATE in our Medallion pipeline. We follow INSERT-only pattern: Bronze is immutable (never updated), Silver is rebuilt from Bronze, Gold is rebuilt from Silver. This is safer and easier to debug.
+                    </div>
+
+                    <div class="code-example">
+                        <pre><span class="code-comment">-- ❌ DANGEROUS: No WHERE clause updates ALL rows</span>
+<span class="code-keyword">UPDATE</span> silver.Customers
+<span class="code-keyword">SET</span> Segment = <span class="code-string">'VIP'</span>;
+
+<span class="code-comment">-- ✅ SAFE: Always use WHERE clause</span>
+<span class="code-keyword">UPDATE</span> silver.Customers
+<span class="code-keyword">SET</span> Segment = <span class="code-string">'VIP'</span>
+<span class="code-keyword">WHERE</span> CustomerID = 2000;
+
+<span class="code-comment">-- ✅ SAFEST: Preview with SELECT first</span>
+<span class="code-keyword">SELECT</span> * <span class="code-keyword">FROM</span> silver.Customers <span class="code-keyword">WHERE</span> CustomerID = 2000;</pre>
+                    </div>
+
+                    <div class="interview-note">
+                        <strong>Interview Question:</strong>
+                        "What happens if you forget WHERE in an UPDATE?" Answer: Every row in the table gets updated. In production, this could corrupt millions of records. Best practice: wrap UPDATE in BEGIN TRAN, preview with SELECT, test in dev first, or use INSERT-only patterns in data warehouses.
+                    </div>
+                </div>
+            </section>
+
+            <!-- CONCEPT 6: DELETE -->
+            <section id="dml-delete" class="concept-section">
+                <h2>6. DML: DELETE Statements</h2>
+
+                <div class="concept-box">
+                    <h3>DELETE (Safe Patterns)</h3>
+
+                    <div class="definition">
+                        <strong>📖 Definition:</strong>
+                        DELETE removes rows from a table. Like UPDATE, it requires WHERE clause to specify which rows to delete. Without WHERE, it deletes ALL rows.
+                    </div>
+
+                    <div class="why-matters">
+                        <strong>💼 Why It Matters in Real Jobs:</strong>
+                        DELETE without WHERE is catastrophic. In production, analysts often don't have DELETE permissions for safety. Data Engineers use it to remove old partitions or cleanup temp tables. Modern warehouses archive instead of delete.
+                    </div>
+
+                    <div class="project-use">
+                        <strong>🎯 How It Appears in Session 3 Project:</strong>
+                        We DELETE all rows at the start of each script for clean re-runs during development: <code>DELETE FROM bronze.Customers;</code> (safe because it's local dev). In production, we'd truncate old data or use partitioning instead.
+                    </div>
+
+                    <div class="code-example">
+                        <pre><span class="code-comment">-- ❌ CATASTROPHIC: Deletes all rows</span>
+<span class="code-keyword">DELETE FROM</span> silver.Customers;
+
+<span class="code-comment">-- ✅ SAFE: Delete specific rows</span>
+<span class="code-keyword">DELETE FROM</span> silver.Customers
+<span class="code-keyword">WHERE</span> CustomerID = 2000;
+
+<span class="code-comment">-- ✅ PRODUCTION PATTERN: Soft delete (mark inactive)</span>
+<span class="code-keyword">UPDATE</span> silver.Customers
+<span class="code-keyword">SET</span> IsActive = 0, DeletedDate = <span class="code-keyword">GETDATE</span>()
+<span class="code-keyword">WHERE</span> CustomerID = 2000;</pre>
+                    </div>
+
+                    <div class="interview-note">
+                        <strong>Interview Question:</strong>
+                        "What's the difference between DELETE and TRUNCATE?" Answer: DELETE is DML (row-by-row, can use WHERE, can rollback, slower). TRUNCATE is DDL (deletes all rows at once, faster, can't rollback, can't use WHERE). TRUNCATE resets IDENTITY counters; DELETE doesn't.
+                    </div>
+                </div>
+            </section>
+
+            <!-- CONCEPT 7: SELECT FUNDAMENTALS -->
+            <section id="select-basics" class="concept-section">
+                <h2>7. SELECT Fundamentals</h2>
+
+                <div class="concept-box">
+                    <h3>WHERE, ORDER BY, TOP</h3>
+
+                    <div class="definition">
+                        <strong>📖 Definition:</strong>
+                        <strong>WHERE</strong> filters rows before aggregation. <strong>ORDER BY</strong> sorts results (ascending or descending). <strong>TOP</strong> limits the number of rows returned (often used with ORDER BY to get top N records).
+                    </div>
+
+                    <div class="why-matters">
+                        <strong>💼 Why It Matters in Real Jobs:</strong>
+                        WHERE is how you filter data (90% of business questions need filtering). ORDER BY presents results logically (top products, recent sales). TOP prevents overwhelming Excel exports and improves query performance by limiting output.
+                    </div>
+
+                    <div class="project-use">
+                        <strong>🎯 How It Appears in Session 3 Project:</strong>
+                        In <code>02_silver_transform.sql</code>, we use WHERE to filter valid records: <code>WHERE TRY_CONVERT(INT, ProductID) IS NOT NULL</code>. In validation queries, we use <code>SELECT TOP 20</code> to preview data quickly.
+                    </div>
+
+                    <div class="code-example">
+                        <pre><span class="code-comment">-- WHERE: Filter rows</span>
+<span class="code-keyword">SELECT</span> * <span class="code-keyword">FROM</span> silver.Customers
+<span class="code-keyword">WHERE</span> Segment = <span class="code-string">'Enterprise'</span>;
+
+<span class="code-comment">-- ORDER BY: Sort results</span>
+<span class="code-keyword">SELECT</span> * <span class="code-keyword">FROM</span> gold.CustomerMart
+<span class="code-keyword">ORDER BY</span> TotalRevenue <span class="code-keyword">DESC</span>;
+
+<span class="code-comment">-- TOP: Limit output (top 10 customers)</span>
+<span class="code-keyword">SELECT TOP</span> 10 CustomerID, TotalRevenue
+<span class="code-keyword">FROM</span> gold.CustomerMart
+<span class="code-keyword">ORDER BY</span> TotalRevenue <span class="code-keyword">DESC</span>;</pre>
+                    </div>
+
+                    <div class="interview-note">
+                        <strong>Interview Question:</strong>
+                        "What's the difference between WHERE and HAVING?" Answer: WHERE filters individual rows BEFORE aggregation. HAVING filters grouped results AFTER aggregation. Example: WHERE filters customers before grouping; HAVING filters groups that have SUM(Revenue) > 10000.
+                    </div>
+                </div>
+            </section>
+
+            <!-- CONCEPT 8: AGGREGATIONS -->
+            <section id="aggregations" class="concept-section">
+                <h2>8. Aggregation Functions</h2>
+
+                <div class="concept-box">
+                    <h3>COUNT, SUM, AVG, MIN, MAX</h3>
+
+                    <div class="definition">
+                        <strong>📖 Definition:</strong>
+                        Aggregation functions perform calculations across multiple rows. <strong>COUNT</strong> counts rows. <strong>SUM</strong> totals values. <strong>AVG</strong> calculates average. <strong>MIN/MAX</strong> find smallest/largest values.
+                    </div>
+
+                    <div class="why-matters">
+                        <strong>💼 Why It Matters in Real Jobs:</strong>
+                        80% of business questions need aggregations: "What's our total revenue?" (SUM), "How many customers?" (COUNT), "Average order value?" (AVG). These are the foundation of KPIs and dashboards.
+                    </div>
+
+                    <div class="project-use">
+                        <strong>🎯 How It Appears in Session 3 Project:</strong>
+                        <code>03_gold_marts.sql</code> creates CustomerMart with: <code>COUNT(DISTINCT OrderID) AS TotalOrders</code>, <code>SUM(Revenue) AS TotalRevenue</code>, <code>AVG(Revenue) AS AvgOrderValue</code>. These become reusable metrics for business users.
+                    </div>
+
+                    <div class="code-example">
+                        <pre><span class="code-comment">-- Count customers</span>
+<span class="code-keyword">SELECT COUNT</span>(*) <span class="code-keyword">AS</span> TotalCustomers
+<span class="code-keyword">FROM</span> silver.Customers;
+
+<span class="code-comment">-- Sum revenue</span>
+<span class="code-keyword">SELECT SUM</span>(Revenue) <span class="code-keyword">AS</span> TotalRevenue
+<span class="code-keyword">FROM</span> silver.Orders;
+
+<span class="code-comment">-- Average, min, max order value</span>
+<span class="code-keyword">SELECT</span> 
+    <span class="code-keyword">AVG</span>(Revenue) <span class="code-keyword">AS</span> AvgRevenue,
+    <span class="code-keyword">MIN</span>(Revenue) <span class="code-keyword">AS</span> MinRevenue,
+    <span class="code-keyword">MAX</span>(Revenue) <span class="code-keyword">AS</span> MaxRevenue
+<span class="code-keyword">FROM</span> silver.Orders;</pre>
+                    </div>
+
+                    <div class="interview-note">
+                        <strong>Interview Question:</strong>
+                        "What's the difference between COUNT(*) and COUNT(column)?" Answer: COUNT(*) counts all rows including NULLs. COUNT(column) only counts non-NULL values in that column. COUNT(DISTINCT column) counts unique non-NULL values. Always use COUNT(DISTINCT) when counting customers/products.
+                    </div>
+                </div>
+            </section>
+
+            <!-- CONCEPT 9: GROUP BY and HAVING -->
+            <section id="group-by" class="concept-section">
+                <h2>9. GROUP BY and HAVING</h2>
+
+                <div class="concept-box">
+                    <h3>GROUP BY and HAVING</h3>
+
+                    <div class="definition">
+                        <strong>📖 Definition:</strong>
+                        <strong>GROUP BY</strong> splits data into groups based on column values, then applies aggregation to each group. <strong>HAVING</strong> filters grouped results (WHERE filters rows before grouping, HAVING filters groups after aggregation).
+                    </div>
+
+                    <div class="why-matters">
+                        <strong>💼 Why It Matters in Real Jobs:</strong>
+                        Business users need breakdowns: "Revenue by region" (GROUP BY Region), "Products with more than 100 sales" (HAVING COUNT > 100). This is how you create summary reports and identify patterns.
+                    </div>
+
+                    <div class="project-use">
+                        <strong>🎯 How It Appears in Session 3 Project:</strong>
+                        <code>03_gold_marts.sql</code> uses GROUP BY to create CustomerMart: <code>GROUP BY CustomerID</code> aggregates all orders per customer. We use HAVING to filter out test accounts: <code>HAVING COUNT(OrderID) > 0</code>.
+                    </div>
+
+                    <div class="code-example">
+                        <pre><span class="code-comment">-- Revenue by customer segment</span>
+<span class="code-keyword">SELECT</span> 
+    Segment,
+    <span class="code-keyword">COUNT</span>(*) <span class="code-keyword">AS</span> CustomerCount,
+    <span class="code-keyword">SUM</span>(TotalRevenue) <span class="code-keyword">AS</span> SegmentRevenue
+<span class="code-keyword">FROM</span> gold.CustomerMart
+<span class="code-keyword">GROUP BY</span> Segment;
+
+<span class="code-comment">-- Filter groups: only segments with 100+ customers</span>
+<span class="code-keyword">SELECT</span> Segment, <span class="code-keyword">COUNT</span>(*) <span class="code-keyword">AS</span> CustomerCount
+<span class="code-keyword">FROM</span> gold.CustomerMart
+<span class="code-keyword">GROUP BY</span> Segment
+<span class="code-keyword">HAVING COUNT</span>(*) > 100;</pre>
+                    </div>
+
+                    <div class="interview-note">
+                        <strong>Interview Question:</strong>
+                        "Can you use WHERE and HAVING in the same query?" Answer: Yes. WHERE filters rows BEFORE grouping (e.g., WHERE Year = 2024). HAVING filters groups AFTER aggregation (e.g., HAVING SUM(Revenue) > 10000). Order: WHERE → GROUP BY → HAVING → ORDER BY.
+                    </div>
+                </div>
+            </section>
+
+            <!-- CONCEPT 10: JOINS -->
+            <section id="joins" class="concept-section">
+                <h2>10. JOIN Operations</h2>
+
+                <div class="concept-box">
+                    <h3>INNER JOIN, LEFT JOIN, Anti-Join Pattern</h3>
+
+                    <div class="definition">
+                        <strong>📖 Definition:</strong>
+                        <strong>INNER JOIN</strong> returns only matching rows from both tables. <strong>LEFT JOIN</strong> returns all rows from left table plus matches from right (NULLs where no match). <strong>Anti-join</strong> (LEFT JOIN with WHERE right IS NULL) finds rows in left table with no match in right.
+                    </div>
+
+                    <div class="why-matters">
+                        <strong>💼 Why It Matters in Real Jobs:</strong>
+                        INNER JOIN combines related data (orders + customers). LEFT JOIN preserves all records even if no match (all customers, even those with no orders). Anti-joins find orphaned records (orders with invalid customer IDs) for data quality checks.
+                    </div>
+
+                    <div class="project-use">
+                        <strong>🎯 How It Appears in Session 3 Project:</strong>
+                        <code>02_silver_transform.sql</code> uses anti-join to find orphaned orders: <code>LEFT JOIN silver.Customers... WHERE Customers.CustomerID IS NULL</code>. These go to quarantine tables. <code>03_gold_marts.sql</code> uses INNER JOIN to combine Orders + Products.
+                    </div>
+
+                    <div class="code-example">
+                        <pre><span class="code-comment">-- INNER JOIN: Only matching rows</span>
+<span class="code-keyword">SELECT</span> o.OrderID, c.CustomerName, o.Revenue
+<span class="code-keyword">FROM</span> silver.Orders o
+<span class="code-keyword">INNER JOIN</span> silver.Customers c 
+    <span class="code-keyword">ON</span> o.CustomerID = c.CustomerID;
+
+<span class="code-comment">-- LEFT JOIN: All customers, even without orders</span>
+<span class="code-keyword">SELECT</span> c.CustomerID, <span class="code-keyword">COUNT</span>(o.OrderID) <span class="code-keyword">AS</span> OrderCount
+<span class="code-keyword">FROM</span> silver.Customers c
+<span class="code-keyword">LEFT JOIN</span> silver.Orders o 
+    <span class="code-keyword">ON</span> c.CustomerID = o.CustomerID
+<span class="code-keyword">GROUP BY</span> c.CustomerID;
+
+<span class="code-comment">-- ANTI-JOIN: Find orphaned orders (bad CustomerIDs)</span>
+<span class="code-keyword">SELECT</span> o.*
+<span class="code-keyword">FROM</span> bronze.Orders o
+<span class="code-keyword">LEFT JOIN</span> silver.Customers c 
+    <span class="code-keyword">ON</span> o.CustomerID = c.CustomerID
+<span class="code-keyword">WHERE</span> c.CustomerID <span class="code-keyword">IS NULL</span>;</pre>
+                    </div>
+
+                    <div class="interview-note">
+                        <strong>Interview Question:</strong>
+                        "Explain LEFT JOIN vs RIGHT JOIN." Answer: LEFT JOIN keeps all rows from left table. RIGHT JOIN keeps all rows from right table. They're mirror images. Best practice: always use LEFT JOIN (easier to read). You can rewrite any RIGHT JOIN as LEFT JOIN by swapping table order.
+                    </div>
+                </div>
+            </section>
+
+            <!-- CONCEPT 11: NULL HANDLING -->
+            <section id="null-handling" class="concept-section">
+                <h2>11. NULL Handling</h2>
+
+                <div class="concept-box">
+                    <h3>IS NULL, COALESCE</h3>
+
+                    <div class="definition">
+                        <strong>📖 Definition:</strong>
+                        <strong>NULL</strong> means "unknown" or "missing value" (not zero, not empty string). <strong>IS NULL</strong> checks if a value is NULL. <strong>COALESCE</strong> returns the first non-NULL value from a list (used to replace NULLs with defaults).
+                    </div>
+
+                    <div class="why-matters">
+                        <strong>💼 Why It Matters in Real Jobs:</strong>
+                        NULLs break calculations (SUM ignores NULLs, but COUNT(*) includes them). In reports, NULL shows as blank (confusing for business users). COALESCE replaces NULLs with meaningful defaults: <code>COALESCE(PhoneNumber, 'Not Provided')</code>.
+                    </div>
+
+                    <div class="project-use">
+                        <strong>🎯 How It Appears in Session 3 Project:</strong>
+                        <code>02_silver_transform.sql</code> uses <code>WHERE TRY_CONVERT(...) IS NOT NULL</code> to filter out rows with invalid data. We use COALESCE to handle missing values before inserting to Silver: <code>COALESCE(State, 'Unknown')</code>.
+                    </div>
+
+                    <div class="code-example">
+                        <pre><span class="code-comment">-- Find customers with missing emails</span>
+<span class="code-keyword">SELECT</span> * <span class="code-keyword">FROM</span> silver.Customers
+<span class="code-keyword">WHERE</span> Email <span class="code-keyword">IS NULL</span>;
+
+<span class="code-comment">-- Replace NULLs with default value</span>
+<span class="code-keyword">SELECT</span> 
+    CustomerID,
+    <span class="code-keyword">COALESCE</span>(PhoneNumber, <span class="code-string">'Not Provided'</span>) <span class="code-keyword">AS</span> Phone,
+    <span class="code-keyword">COALESCE</span>(State, <span class="code-string">'Unknown'</span>) <span class="code-keyword">AS</span> State
+<span class="code-keyword">FROM</span> bronze.Customers;
+
+<span class="code-comment">-- ❌ WRONG: Never use = NULL</span>
+<span class="code-keyword">WHERE</span> Email = <span class="code-keyword">NULL</span>  <span class="code-comment">-- Always returns false!</span>
+<span class="code-comment">-- ✅ CORRECT: Use IS NULL</span>
+<span class="code-keyword">WHERE</span> Email <span class="code-keyword">IS NULL</span></pre>
+                    </div>
+
+                    <div class="interview-note">
+                        <strong>Interview Question:</strong>
+                        "What's the difference between NULL and empty string?" Answer: NULL means "unknown/missing". Empty string ('') is a known value (zero-length text). NULL = NULL returns NULL (not true). You must use IS NULL to check. This trips up beginners in WHERE clauses.
+                    </div>
+                </div>
+            </section>
+
+            <!-- CONCEPT 12: DATA TYPES AND CASTING -->
+            <section id="data-types" class="concept-section">
+                <h2>12. Data Types and Casting</h2>
+
+                <div class="concept-box">
+                    <h3>TRY_CONVERT, TRY_CAST (Why "TRY")</h3>
+
+                    <div class="definition">
+                        <strong>📖 Definition:</strong>
+                        <strong>Data types</strong> define what kind of data a column holds (INT, NVARCHAR, DATE, DECIMAL). <strong>Casting</strong> converts one type to another. <strong>TRY_CONVERT/TRY_CAST</strong> safely convert types, returning NULL on failure instead of error (unlike CONVERT/CAST which crash).
+                    </div>
+
+                    <div class="why-matters">
+                        <strong>💼 Why It Matters in Real Jobs:</strong>
+                        Bronze layer stores everything as NVARCHAR (safe for CSVs). Silver layer converts to proper types (INT, DATE, DECIMAL) for calculations. TRY_CONVERT prevents pipeline crashes when source data has "N/A" in numeric columns. Defensive coding is production-quality thinking.
+                    </div>
+
+                    <div class="project-use">
+                        <strong>🎯 How It Appears in Session 3 Project:</strong>
+                        <code>02_silver_transform.sql</code> converts Bronze (all NVARCHAR) to Silver (typed): <code>TRY_CONVERT(INT, ProductID)</code>, <code>TRY_CONVERT(DATE, OrderDate)</code>. Invalid conversions return NULL and get quarantined instead of crashing the pipeline.
+                    </div>
+
+                    <div class="code-example">
+                        <pre><span class="code-comment">-- ❌ DANGEROUS: CONVERT crashes on bad data</span>
+<span class="code-keyword">SELECT CONVERT</span>(<span class="code-keyword">INT</span>, <span class="code-string">'ABC'</span>);  <span class="code-comment">-- Error!</span>
+
+<span class="code-comment">-- ✅ SAFE: TRY_CONVERT returns NULL on failure</span>
+<span class="code-keyword">SELECT TRY_CONVERT</span>(<span class="code-keyword">INT</span>, <span class="code-string">'ABC'</span>);  <span class="code-comment">-- Returns NULL</span>
+
+<span class="code-comment">-- Bronze to Silver transformation</span>
+<span class="code-keyword">INSERT INTO</span> silver.Orders (OrderID, OrderDate, Revenue)
+<span class="code-keyword">SELECT</span> 
+    <span class="code-keyword">TRY_CONVERT</span>(<span class="code-keyword">INT</span>, OrderID),
+    <span class="code-keyword">TRY_CONVERT</span>(<span class="code-keyword">DATE</span>, OrderDate),
+    <span class="code-keyword">TRY_CONVERT</span>(<span class="code-keyword">DECIMAL</span>(18,2), Revenue)
+<span class="code-keyword">FROM</span> bronze.Orders
+<span class="code-keyword">WHERE</span> <span class="code-keyword">TRY_CONVERT</span>(<span class="code-keyword">INT</span>, OrderID) <span class="code-keyword">IS NOT NULL</span>;</pre>
+                    </div>
+
+                    <div class="interview-note">
+                        <strong>Interview Question:</strong>
+                        "Why use TRY_CONVERT instead of CONVERT?" Answer: TRY_CONVERT returns NULL on failure; CONVERT throws error and crashes pipeline. In production ETL, you want pipelines to continue running and quarantine bad records rather than fail completely. Always use TRY_ functions for defensive coding.
+                    </div>
+                </div>
+            </section>
+
+            <!-- CONCEPT 13: CONSTRAINTS -->
+            <section id="constraints" class="concept-section">
+                <h2>13. Constraints (PK/FK)</h2>
+
+                <div class="concept-box">
+                    <h3>Primary Key, Foreign Key (Why Not in Bronze)</h3>
+
+                    <div class="definition">
+                        <strong>📖 Definition:</strong>
+                        <strong>Primary Key (PK)</strong> uniquely identifies each row (no duplicates, no NULLs). <strong>Foreign Key (FK)</strong> links tables by referencing another table's PK (enforces referential integrity). These are constraints that database enforces automatically.
+                    </div>
+
+                    <div class="why-matters">
+                        <strong>💼 Why It Matters in Real Jobs:</strong>
+                        PK/FK constraints prevent bad data at database level. But they also REJECT inserts that violate rules. In Bronze, we intentionally skip constraints to accept all data (even dirty data), then clean in Silver where we can quarantine violations.
+                    </div>
+
+                    <div class="project-use">
+                        <strong>🎯 How It Appears in Session 3 Project:</strong>
+                        <span class="medallion-badge badge-bronze">Bronze</span>: NO constraints (accept all CSV data). 
+                        <span class="medallion-badge badge-silver">Silver</span>: We deduplicate manually (ROW_NUMBER) and validate with queries instead of enforcing PK. 
+                        <span class="medallion-badge badge-gold">Gold</span>: Could add PKs, but not required for analytics marts.
+                    </div>
+
+                    <div class="code-example">
+                        <pre><span class="code-comment">-- ❌ BRONZE: No constraints (accept all data)</span>
+<span class="code-keyword">CREATE TABLE</span> bronze.Customers (
+    CustomerID <span class="code-keyword">NVARCHAR</span>(50),  <span class="code-comment">-- No PK</span>
+    CustomerName <span class="code-keyword">NVARCHAR</span>(255)
+);
+
+<span class="code-comment">-- ✅ SILVER: Could add PK (we validate instead)</span>
+<span class="code-keyword">CREATE TABLE</span> silver.Customers (
+    CustomerID <span class="code-keyword">INT</span> <span class="code-keyword">PRIMARY KEY</span>,  <span class="code-comment">-- Enforces uniqueness</span>
+    CustomerName <span class="code-keyword">NVARCHAR</span>(255)
+);
+
+<span class="code-comment">-- Foreign Key example (if we enforced)</span>
+<span class="code-keyword">CREATE TABLE</span> silver.Orders (
+    OrderID <span class="code-keyword">INT</span> <span class="code-keyword">PRIMARY KEY</span>,
+    CustomerID <span class="code-keyword">INT</span> <span class="code-keyword">FOREIGN KEY REFERENCES</span> silver.Customers(CustomerID)
+);</pre>
+                    </div>
+
+                    <div class="interview-note">
+                        <strong>Interview Question:</strong>
+                        "Why not enforce PK/FK in Bronze layer?" Answer: Bronze is raw landing zone for messy data. Constraints would REJECT dirty records, causing pipeline failures. Instead, we accept all data in Bronze, then validate and clean in Silver. Bad records go to quarantine tables for investigation. This is defensive data engineering.
+                    </div>
+                </div>
+            </section>
+
+            <!-- CONCEPT 14: CTEs -->
+            <section id="ctes" class="concept-section">
+                <h2>14. Common Table Expressions (CTEs)</h2>
+
+                <div class="concept-box">
+                    <h3>WITH Clause (CTEs)</h3>
+
+                    <div class="definition">
+                        <strong>📖 Definition:</strong>
+                        A <strong>CTE (Common Table Expression)</strong> is a temporary named result set defined with WITH clause. It exists only during query execution. CTEs make complex queries readable by breaking them into logical steps.
+                    </div>
+
+                    <div class="why-matters">
+                        <strong>💼 Why It Matters in Real Jobs:</strong>
+                        CTEs replace messy nested subqueries with clear, readable code. Interviewers test CTEs because they reveal your ability to think in steps. Modern SQL style prefers CTEs over subqueries. They're also crucial for recursive queries (org charts, hierarchies).
+                    </div>
+
+                    <div class="project-use">
+                        <strong>🎯 How It Appears in Session 3 Project:</strong>
+                        <code>04_rfm_analysis.sql</code> uses CTEs to calculate RFM scores in steps: First CTE calculates Recency/Frequency/Monetary, second CTE assigns quintile scores, final SELECT derives segments. Each step is clearly named and testable.
+                    </div>
+
+                    <div class="code-example">
+                        <pre><span class="code-comment">-- CTE: Break complex query into readable steps</span>
+<span class="code-keyword">WITH</span> CustomerRevenue <span class="code-keyword">AS</span> (
+    <span class="code-keyword">SELECT</span> 
+        CustomerID,
+        <span class="code-keyword">SUM</span>(Revenue) <span class="code-keyword">AS</span> TotalRevenue
+    <span class="code-keyword">FROM</span> silver.Orders
+    <span class="code-keyword">GROUP BY</span> CustomerID
+),
+TopCustomers <span class="code-keyword">AS</span> (
+    <span class="code-keyword">SELECT TOP</span> 10 *
+    <span class="code-keyword">FROM</span> CustomerRevenue
+    <span class="code-keyword">ORDER BY</span> TotalRevenue <span class="code-keyword">DESC</span>
+)
+<span class="code-keyword">SELECT</span> * <span class="code-keyword">FROM</span> TopCustomers;</pre>
+                    </div>
+
+                    <div class="interview-note">
+                        <strong>Interview Question:</strong>
+                        "What's the difference between CTE and temp table?" Answer: CTE exists only during query (not stored). Temp table persists in tempdb until session ends (can be reused in multiple queries). Use CTE for single-query readability. Use temp table when you need to reuse results multiple times or create indexes.
+                    </div>
+                </div>
+            </section>
+
+            <!-- CONCEPT 15: WINDOW FUNCTIONS -->
+            <section id="window-functions" class="concept-section">
+                <h2>15. Window Functions</h2>
+
+                <div class="concept-box">
+                    <h3>ROW_NUMBER, RANK, DENSE_RANK, Moving Averages</h3>
+
+                    <div class="definition">
+                        <strong>📖 Definition:</strong>
+                        <strong>Window functions</strong> perform calculations across a set of rows related to current row (the "window"). <strong>ROW_NUMBER</strong> assigns unique sequential numbers. <strong>RANK</strong> assigns rank with gaps for ties. <strong>DENSE_RANK</strong> assigns rank without gaps. <strong>OVER()</strong> defines the window.
+                    </div>
+
+                    <div class="why-matters">
+                        <strong>💼 Why It Matters in Real Jobs:</strong>
+                        Window functions solve common business problems: deduplication (ROW_NUMBER), top N per group (RANK), running totals, moving averages. Interviewers LOVE testing window functions because they're advanced SQL that separates juniors from mid-level analysts.
+                    </div>
+
+                    <div class="project-use">
+                        <strong>🎯 How It Appears in Session 3 Project:</strong>
+                        <code>02_silver_transform.sql</code> uses ROW_NUMBER to deduplicate customers: <code>ROW_NUMBER() OVER(PARTITION BY Email ORDER BY CustomerID)</code> keeps first occurrence. <code>04_rfm_analysis.sql</code> uses NTILE for quintile scoring. Could add moving average for trend analysis.
+                    </div>
+
+                    <div class="code-example">
+                        <pre><span class="code-comment">-- ROW_NUMBER: Deduplicate (keep first)</span>
+<span class="code-keyword">WITH</span> Ranked <span class="code-keyword">AS</span> (
+    <span class="code-keyword">SELECT</span> *,
+        <span class="code-keyword">ROW_NUMBER</span>() <span class="code-keyword">OVER</span>(<span class="code-keyword">PARTITION BY</span> Email <span class="code-keyword">ORDER BY</span> CustomerID) <span class="code-keyword">AS</span> RowNum
+    <span class="code-keyword">FROM</span> bronze.Customers
+)
+<span class="code-keyword">SELECT</span> * <span class="code-keyword">FROM</span> Ranked <span class="code-keyword">WHERE</span> RowNum = 1;
+
+<span class="code-comment">-- RANK vs DENSE_RANK</span>
+<span class="code-keyword">SELECT</span> 
+    ProductID, Revenue,
+    <span class="code-keyword">RANK</span>() <span class="code-keyword">OVER</span>(<span class="code-keyword">ORDER BY</span> Revenue <span class="code-keyword">DESC</span>) <span class="code-keyword">AS</span> Rank_WithGaps,
+    <span class="code-keyword">DENSE_RANK</span>() <span class="code-keyword">OVER</span>(<span class="code-keyword">ORDER BY</span> Revenue <span class="code-keyword">DESC</span>) <span class="code-keyword">AS</span> Rank_NoGaps
+<span class="code-keyword">FROM</span> silver.Orders;
+
+<span class="code-comment">-- Moving average (7-day)</span>
+<span class="code-keyword">SELECT</span> SalesDate, Revenue,
+    <span class="code-keyword">AVG</span>(Revenue) <span class="code-keyword">OVER</span>(<span class="code-keyword">ORDER BY</span> SalesDate <span class="code-keyword">ROWS BETWEEN</span> 6 <span class="code-keyword">PRECEDING AND CURRENT ROW</span>) <span class="code-keyword">AS</span> MovingAvg7
+<span class="code-keyword">FROM</span> gold.DailySalesMart;</pre>
+                    </div>
+
+                    <div class="interview-note">
+                        <strong>Interview Question:</strong>
+                        "Explain the difference between RANK and DENSE_RANK." Answer: Both assign rankings. With ties, RANK leaves gaps (1,2,2,4). DENSE_RANK has no gaps (1,2,2,3). Example: If two products tie for 2nd place, RANK shows next as 4th (skips 3). DENSE_RANK shows next as 3rd. Use DENSE_RANK for "top 10" to always get 10 distinct ranks.
+                    </div>
+                </div>
+            </section>
+
+            <!-- CONCEPT 16: INDEXES -->
+            <section id="indexes" class="concept-section">
+                <h2>16. Performance: Indexes</h2>
+
+                <div class="concept-box">
+                    <h3>Non-Clustered Indexes</h3>
+
+                    <div class="definition">
+                        <strong>📖 Definition:</strong>
+                        An <strong>index</strong> is a separate data structure that speeds up queries by creating a sorted lookup (like book index). <strong>Clustered index</strong> determines physical row order (one per table, usually PK). <strong>Non-clustered index</strong> creates separate lookup structure (many per table).
+                    </div>
+
+                    <div class="why-matters">
+                        <strong>💼 Why It Matters in Real Jobs:</strong>
+                        Without indexes, database scans entire table (slow for millions of rows). Indexes make WHERE, JOIN, ORDER BY faster. But they slow down INSERT/UPDATE. Balance: index columns frequently filtered/joined, don't index everything.
+                    </div>
+
+                    <div class="project-use">
+                        <strong>🎯 How It Appears in Session 3 Project:</strong>
+                        <code>05_indexes_and_performance.sql</code> creates indexes on frequently filtered columns: <code>CREATE NONCLUSTERED INDEX IX_Orders_CustomerID ON silver.Orders(CustomerID)</code>. We demonstrate query speed before/after indexes using execution plans.
+                    </div>
+
+                    <div class="code-example">
+                        <pre><span class="code-comment">-- Create non-clustered index on frequently filtered column</span>
+<span class="code-keyword">CREATE NONCLUSTERED INDEX</span> IX_Orders_CustomerID
+<span class="code-keyword">ON</span> silver.Orders(CustomerID);
+
+<span class="code-comment">-- Index on JOIN column (ProductID)</span>
+<span class="code-keyword">CREATE NONCLUSTERED INDEX</span> IX_OrderLines_ProductID
+<span class="code-keyword">ON</span> silver.OrderLines(ProductID);
+
+<span class="code-comment">-- Composite index (multiple columns)</span>
+<span class="code-keyword">CREATE NONCLUSTERED INDEX</span> IX_Orders_Customer_Date
+<span class="code-keyword">ON</span> silver.Orders(CustomerID, OrderDate);</pre>
+                    </div>
+
+                    <div class="interview-note">
+                        <strong>Interview Question:</strong>
+                        "When should you create an index?" Answer: Index columns used in WHERE, JOIN, ORDER BY frequently. Don't index: low-cardinality columns (gender: M/F), columns with frequent updates, small tables (<1000 rows). Too many indexes slow down writes. Typical strategy: index all foreign keys and frequently filtered columns.
+                    </div>
+                </div>
+            </section>
+
+            <!-- CONCEPT 17: EXECUTION PLANS -->
+            <section id="execution-plans" class="concept-section">
+                <h2>17. Execution Plans (Basics)</h2>
+
+                <div class="concept-box">
+                    <h3>Reading Execution Plans</h3>
+
+                    <div class="definition">
+                        <strong>📖 Definition:</strong>
+                        An <strong>execution plan</strong> shows how SQL Server executes a query (scan vs seek, join types, estimated costs). <strong>Table Scan</strong> reads every row (slow). <strong>Index Seek</strong> uses index to jump directly to matching rows (fast).
+                    </div>
+
+                    <div class="why-matters">
+                        <strong>💼 Why It Matters in Real Jobs:</strong>
+                        When queries are slow, execution plans show WHY (missing index, bad join order, inefficient operations). Analysts should understand basics: "Index Seek good, Table Scan bad on large tables". Data Engineers optimize using detailed plans.
+                    </div>
+
+                    <div class="project-use">
+                        <strong>🎯 How It Appears in Session 3 Project:</strong>
+                        <code>05_indexes_and_performance.sql</code> teaches: Run query, click "Display Estimated Execution Plan" (Ctrl+L), look for thick arrows (expensive operations) and yellow warnings (missing index suggestions). Compare scan vs seek.
+                    </div>
+
+                    <div class="code-example">
+                        <pre><span class="code-comment">-- In SSMS: Ctrl+M to enable Actual Execution Plan</span>
+
+<span class="code-comment">-- ❌ SLOW: Table Scan (no index)</span>
+<span class="code-keyword">SELECT</span> * <span class="code-keyword">FROM</span> silver.Orders
+<span class="code-keyword">WHERE</span> CustomerID = 2000;
+<span class="code-comment">-- Execution plan shows: Table Scan (reads all 100K rows)</span>
+
+<span class="code-comment">-- Create index</span>
+<span class="code-keyword">CREATE INDEX</span> IX_Orders_CustomerID <span class="code-keyword">ON</span> silver.Orders(CustomerID);
+
+<span class="code-comment">-- ✅ FAST: Index Seek (with index)</span>
+<span class="code-keyword">SELECT</span> * <span class="code-keyword">FROM</span> silver.Orders
+<span class="code-keyword">WHERE</span> CustomerID = 2000;
+<span class="code-comment">-- Execution plan shows: Index Seek (reads ~50 rows)</span></pre>
+                    </div>
+
+                    <div class="interview-note">
+                        <strong>Interview Question:</strong>
+                        "How do you identify slow queries?" Answer: Use execution plans. Look for: (1) Table Scans on large tables → add index. (2) Thick arrows → expensive operation. (3) Yellow warning icons → missing index suggestion. (4) High estimated cost operations. Always enable "Actual Execution Plan" to see real performance.
+                    </div>
+                </div>
+            </section>
+
+            <!-- CONCEPT 18: DATA QUALITY -->
+            <section id="data-quality" class="concept-section">
+                <h2>18. Data Quality & Validation</h2>
+
+                <div class="concept-box">
+                    <h3>Validation Queries, Quarantine Tables</h3>
+
+                    <div class="definition">
+                        <strong>📖 Definition:</strong>
+                        <strong>Validation queries</strong> check data quality at each pipeline stage (row counts, NULL checks, referential integrity). <strong>Quarantine tables</strong> store records that fail validation rules (orphaned FKs, malformed dates, duplicates) for investigation without blocking the pipeline.
+                    </div>
+
+                    <div class="why-matters">
+                        <strong>💼 Why It Matters in Real Jobs:</strong>
+                        Production pipelines must be observable. Business users ask "Why is revenue down?" You need to answer: "2,000 orders quarantined due to invalid product IDs from source system issue." Quarantine = transparency. Validation = trust.
+                    </div>
+
+                    <div class="project-use">
+                        <strong>🎯 How It Appears in Session 3 Project:</strong>
+                        After each transformation, we run validation: <code>SELECT COUNT(*)</code> from source vs destination. <code>02_silver_transform.sql</code> sends orphaned orders to <code>quarantine.Orders</code>. Every script ends with validation queries that students run to verify success.
+                    </div>
+
+                    <div class="code-example">
+                        <pre><span class="code-comment">-- Validation: Check row counts match</span>
+<span class="code-keyword">SELECT</span> <span class="code-string">'Bronze'</span> <span class="code-keyword">AS</span> Layer, <span class="code-keyword">COUNT</span>(*) <span class="code-keyword">AS</span> RowCount <span class="code-keyword">FROM</span> bronze.Orders
+<span class="code-keyword">UNION ALL</span>
+<span class="code-keyword">SELECT</span> <span class="code-string">'Silver'</span>, <span class="code-keyword">COUNT</span>(*) <span class="code-keyword">FROM</span> silver.Orders
+<span class="code-keyword">UNION ALL</span>
+<span class="code-keyword">SELECT</span> <span class="code-string">'Quarantine'</span>, <span class="code-keyword">COUNT</span>(*) <span class="code-keyword">FROM</span> quarantine.Orders;
+
+<span class="code-comment">-- Find orphaned records (orders with invalid CustomerID)</span>
+<span class="code-keyword">INSERT INTO</span> quarantine.Orders
+<span class="code-keyword">SELECT</span> o.*
+<span class="code-keyword">FROM</span> bronze.Orders o
+<span class="code-keyword">LEFT JOIN</span> silver.Customers c <span class="code-keyword">ON</span> o.CustomerID = c.CustomerID
+<span class="code-keyword">WHERE</span> c.CustomerID <span class="code-keyword">IS NULL</span>;
+
+<span class="code-comment">-- Validation: Check for NULLs in required columns</span>
+<span class="code-keyword">SELECT COUNT</span>(*) <span class="code-keyword">AS</span> NullProductIDs
+<span class="code-keyword">FROM</span> silver.Orders
+<span class="code-keyword">WHERE</span> ProductID <span class="code-keyword">IS NULL</span>;</pre>
+                    </div>
+
+                    <div class="interview-note">
+                        <strong>Interview Question:</strong>
+                        "How do you handle bad data in production pipelines?" Answer: Never discard silently. Use quarantine tables to capture rejected records with rejection reason. This enables: (1) Investigation ("Why did 500 orders fail?"). (2) Fix and reprocess. (3) Reporting to stakeholders. (4) Tracking data quality trends. Modern pattern: Bronze accepts all → Silver validates → Quarantine captures failures.
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <footer>
+            <p><strong>SQL Fundamentals - Session 3 Technical Concept Guide</strong></p>
+            <p>Medallion Architecture: Bronze → Silver → Gold → RFM Analysis</p>
+            <p style="margin-top: 10px; opacity: 0.8;">Production-ready SQL patterns for Data Analysts and Junior Data Engineers</p>
+        </footer>
+    </div>
+
+    <div class="scroll-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</div>
+
+    <script>
+        // Show scroll-to-top button when scrolling
+        window.addEventListener('scroll', function() {
+            const scrollTop = document.querySelector('.scroll-top');
+            if (window.pageYOffset > 300) {
+                scrollTop.classList.add('visible');
+            } else {
+                scrollTop.classList.remove('visible');
+            }
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
