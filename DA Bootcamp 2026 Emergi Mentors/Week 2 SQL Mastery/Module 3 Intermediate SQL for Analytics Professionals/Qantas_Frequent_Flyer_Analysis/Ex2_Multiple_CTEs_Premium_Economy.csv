@@ -1,0 +1,13 @@
+﻿member_id,member_name,current_tier,premium_flights,premium_sc,economy_flights,economy_sc,total_sc,flyer_profile
+1014,Ethan Rodriguez,Platinum,5,1850,0,0,1850,Premium Flyer
+1012,Lucas Martin,Gold,4,1390,0,0,1390,Premium Flyer
+1011,Sophia Anderson,Gold,3,1375,0,0,1375,Premium Flyer
+1013,Charlotte Garcia,Gold,5,950,0,0,950,Premium Flyer
+1007,Ava Nguyen,Silver,3,680,0,0,680,Premium Flyer
+1006,William Zhang,Silver,3,665,0,0,665,Premium Flyer
+1008,Noah Williams,Silver,0,0,4,355,355,Economy Flyer
+1004,Liam O'Connor,Bronze,1,120,2,175,295,Economy Flyer
+1001,Sarah Mitchell,Bronze,0,0,3,280,280,Economy Flyer
+1003,Emma Thompson,Bronze,0,0,4,260,260,Economy Flyer
+1009,Isabella Brown,Silver,2,230,0,0,230,Premium Flyer
+1002,James Chen,Bronze,0,0,2,150,150,Economy Flyer

@@ -1,0 +1,7 @@
+﻿customer_id,customer_name,state,kwh_used,bill_amount,state_avg_bill,amount_over_threshold,percent_of_state_avg
+1003,Emma Thompson,NSW,1850,740,326.611428,250.08,226.6
+1008,Noah Williams,VIC,2100,840,381.714285,267.43,220.1
+1020,Mia Johnson,VIC,1920,768,381.714285,195.43,201.2
+1019,Alexander Liu,NSW,1620,648,326.611428,158.08,198.4
+1013,Charlotte Garcia,QLD,2450,980,499.666666,230.5,196.1
+1018,Evelyn Tran,QLD,2280,912,499.666666,162.5,182.5

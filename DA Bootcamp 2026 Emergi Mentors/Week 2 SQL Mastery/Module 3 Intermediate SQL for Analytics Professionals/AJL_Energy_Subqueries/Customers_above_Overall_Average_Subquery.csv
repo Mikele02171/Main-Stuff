@@ -1,0 +1,7 @@
+﻿customer_id,customer_name,state,suburb,kwh_used,state_average,kwh_over_average,percent_over_avg
+1003,Emma Thompson,NSW,Newcastle,1850,816.528571,1033.47,126.6
+1008,Noah Williams,VIC,Brunswick,2100,954.285714,1145.71,120.1
+1020,Mia Johnson,VIC,Ballarat,1920,954.285714,965.71,101.2
+1019,Alexander Liu,NSW,Wollongong,1620,816.528571,803.47,98.4
+1013,Charlotte Garcia,QLD,Cairns,2450,1249.166666,1200.83,96.1
+1018,Evelyn Tran,QLD,Sunshine Coast,2280,1249.166666,1030.83,82.5

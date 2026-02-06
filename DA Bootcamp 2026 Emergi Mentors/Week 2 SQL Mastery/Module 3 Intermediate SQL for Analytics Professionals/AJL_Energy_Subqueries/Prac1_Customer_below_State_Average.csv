@@ -1,0 +1,7 @@
+﻿customer_id,customer_name,state,kwh_used,state_average,percent_below_avg
+1018,Evelyn Tran,QLD,2280,1249.166666,82.5
+1013,Charlotte Garcia,QLD,2450,1249.166666,96.1
+1019,Alexander Liu,NSW,1620,816.528571,98.4
+1020,Mia Johnson,VIC,1920,954.285714,101.2
+1008,Noah Williams,VIC,2100,954.285714,120.1
+1003,Emma Thompson,NSW,1850,816.528571,126.6

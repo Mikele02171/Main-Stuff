@@ -1,0 +1,10 @@
+﻿customer_id,customer_name,state,kwh_used,rank_in_state
+1003,Emma Thompson,NSW,1850,1
+1019,Alexander Liu,NSW,1620,2
+1005,Olivia Patel,NSW,510,3
+1013,Charlotte Garcia,QLD,2450,1
+1018,Evelyn Tran,QLD,2280,2
+1011,Sophia Anderson,QLD,720,3
+1008,Noah Williams,VIC,2100,1
+1020,Mia Johnson,VIC,1920,2
+1017,Harper Singh,VIC,580,3

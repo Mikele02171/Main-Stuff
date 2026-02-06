@@ -1,0 +1,5 @@
+﻿quarter_label,revenue_millions,transactions_millions,prev_quarter_revenue,qoq_percent,same_quarter_last_year,quarter_yoy_percent,online_percent
+Q1 2024,2510.868623,76,NULL,NULL,NULL,NULL,14.4
+Q2 2024,2485.668719,76,2510.868623,-1,NULL,NULL,14.5
+Q3 2024,2494.441653,77,2485.668719,0.35,NULL,NULL,14.6
+Q4 2024,2774.320274,83,2494.441653,11.22,NULL,NULL,15

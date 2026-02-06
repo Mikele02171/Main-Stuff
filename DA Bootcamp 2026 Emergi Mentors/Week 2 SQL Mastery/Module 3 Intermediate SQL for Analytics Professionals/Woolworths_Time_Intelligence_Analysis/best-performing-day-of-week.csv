@@ -1,0 +1,8 @@
+﻿weekday_number,weekday_name,total_occurrences,avg_revenue_millions,total_revenue_millions,avg_transactions,avg_online_millions,online_percent
+1,Sunday,52,32.52,1691.16,944672,4.1,12.6
+7,Saturday,52,32.48,1689.19,949169,4.12,12.7
+2,Monday,53,26.47,1402.87,825189,4.09,15.4
+3,Tuesday,53,26.42,1400.26,820369,4.15,15.7
+5,Thursday,52,26.27,1365.95,817271,4.1,15.6
+6,Friday,52,26.22,1363.33,823629,4.11,15.7
+4,Wednesday,52,26.01,1352.55,822518,4.07,15.7

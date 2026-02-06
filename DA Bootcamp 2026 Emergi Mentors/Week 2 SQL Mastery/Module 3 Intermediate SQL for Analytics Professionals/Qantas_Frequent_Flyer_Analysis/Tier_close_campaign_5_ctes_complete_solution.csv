@@ -1,0 +1,8 @@
+﻿member_id,member_name,email,current_tier,tier_opportunity,total_sc,sc_needed,eligible_flights,flights_needed,days_since_last,campaign_priority,offer
+1004,Liam O'Connor,liam.oconnor@email.com,Bronze,Close to Silver,295,5,3,1,15,HIGH PRIORITY,Offer 10 bonus points
+1001,Sarah Mitchell,sarah.mitchell@email.com,Bronze,Close to Silver,280,20,3,1,45,HIGH PRIORITY,Offer 40 bonus points
+1007,Ava Nguyen,ava.nguyen@email.com,Silver,Close to Gold,680,20,3,1,10,HIGH PRIORITY,Offer 40 bonus points
+1011,Sophia Anderson,sophia.anderson@email.com,Gold,Close to Platinum,1375,25,3,1,12,MEDIUM PRIORITY,Offer 50 bonus points
+1006,William Zhang,william.zhang@email.com,Silver,Close to Gold,665,35,3,1,25,MEDIUM PRIORITY,Offer 70 bonus points
+1012,Lucas Martin,lucas.martin@email.com,Gold,Close to Platinum,1390,10,4,0,18,STANDARD,Offer 20 bonus points
+1003,Emma Thompson,emma.thompson@email.com,Bronze,Close to Silver,260,40,4,0,20,STANDARD,Offer 80 bonus points

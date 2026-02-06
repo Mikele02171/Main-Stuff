@@ -1,0 +1,15 @@
+﻿customer_id,customer_name,state,kwh_used,state_average,percent_below_avg
+1004,Liam O'Connor,NSW,390.2,816.528571,-52.2
+1007,Ava Nguyen,VIC,490,954.285714,-48.7
+1001,Sarah Mitchell,NSW,420.5,816.528571,-48.5
+1012,Lucas Martin,QLD,650,1249.166666,-48
+1010,Mason Taylor,VIC,505,954.285714,-47.1
+1016,Benjamin Kim,NSW,445,816.528571,-45.5
+1014,Ethan Rodriguez,QLD,690,1249.166666,-44.8
+1009,Isabella Brown,VIC,535,954.285714,-43.9
+1015,Amelia Lee,QLD,705,1249.166666,-43.6
+1006,William Zhang,VIC,550,954.285714,-42.4
+1011,Sophia Anderson,QLD,720,1249.166666,-42.4
+1002,James Chen,NSW,480,816.528571,-41.2
+1017,Harper Singh,VIC,580,954.285714,-39.2
+1005,Olivia Patel,NSW,510,816.528571,-37.5

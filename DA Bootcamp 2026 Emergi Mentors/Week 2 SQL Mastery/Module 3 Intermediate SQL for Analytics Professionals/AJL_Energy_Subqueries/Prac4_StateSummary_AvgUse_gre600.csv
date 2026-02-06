@@ -1,0 +1,4 @@
+﻿state,total_customers,avg_usage_kwh,max_usage_kwh,min_usage_kwh,total_revenue,avg_revenue_per_customer
+QLD,6,1249.17,2450,650,2998,499.67
+VIC,7,954.29,2100,490,2672,381.71
+NSW,7,816.53,1850,390.2,2286.28,326.61
