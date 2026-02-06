@@ -1,0 +1,10 @@
+﻿StoreName,State,TotalTransactions,TotalRevenue,AverageTransaction
+AusRetail Melbourne Central,VIC,5,6480,1296
+AusRetail Sydney CBD,NSW,5,5120,1024
+AusRetail Brisbane City,QLD,3,2785,928.333333
+AusRetail Perth Plaza,WA,2,2247,1123.5
+AusRetail Darwin Mall,NT,0,NULL,NULL
+AusRetail Gold Coast,QLD,0,NULL,NULL
+AusRetail Adelaide Square,SA,0,NULL,NULL
+AusRetail Hobart Hub,TAS,0,NULL,NULL
+AusRetail Canberra Centre,ACT,0,NULL,NULL

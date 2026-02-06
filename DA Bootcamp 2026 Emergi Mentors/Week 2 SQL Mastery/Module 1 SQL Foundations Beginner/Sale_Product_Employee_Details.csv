@@ -1,0 +1,6 @@
+﻿SaleID,SaleDate,StoreName,State,ProductName,Category,EmployeeName,Quantity,UnitPrice,TotalAmount
+15,30:00.0,AusRetail Sydney CBD,NSW,Levi's 501 Jeans,Clothing,Jessica Wang,3,159,477
+14,20:00.0,AusRetail Brisbane City,QLD,Nike Air Max Sneakers,Footwear,Liam Roberts,1,249,249
+13,00:00.0,AusRetail Perth Plaza,WA,Sony WH-1000XM5 Headphones,Electronics,Sophie Thompson,2,549,1098
+12,15:00.0,AusRetail Melbourne Central,VIC,Samsung Galaxy S24,Electronics,David Lee,1,1499,1499
+11,45:00.0,AusRetail Sydney CBD,NSW,iPhone 15 Pro,Electronics,Jessica Wang,1,1799,1799
