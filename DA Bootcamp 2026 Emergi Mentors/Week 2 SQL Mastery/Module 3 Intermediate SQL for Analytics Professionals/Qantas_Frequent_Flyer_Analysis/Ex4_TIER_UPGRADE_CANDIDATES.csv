@@ -1,0 +1,3 @@
+﻿member_id,member_name,email,current_tier,total_sc,sc_needed_for_gold,eligible_flights,days_since_last,campaign_status
+1007,Ava Nguyen,ava.nguyen@email.com,Silver,680,20,3,449,INACTIVE
+1006,William Zhang,william.zhang@email.com,Silver,665,35,3,464,INACTIVE
