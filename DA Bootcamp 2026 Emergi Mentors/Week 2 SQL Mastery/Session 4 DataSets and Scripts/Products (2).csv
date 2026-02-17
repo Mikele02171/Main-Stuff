@@ -1,0 +1,121 @@
+ProductID,ProductCode,ProductName,Category,Subcategory,UnitPrice,UnitCost
+P00001,PROD-10001,Rerum,Furniture,Chairs,86.21,41.35
+P00002,PROD-10002,Totam,Furniture,Storage,144.35,67.88
+P00003,PROD-10003,Minus,Technology,Phones,516.8,247.96
+P00004,PROD-10004,Consequuntur,Furniture,Phones,334.06,201.41
+P00005,PROD-10005,Fugit,Office Supplies,Accessories,450.47,290.4
+P00006,PROD-10006,Nobis,Furniture,Phones,426.4,207.06
+P00007,PROD-10007,Libero,Technology,Storage,94.43,43.45
+P00008,PROD-10008,Iste,Furniture,Storage,38.74,21.09
+P00009,PROD-10009,Aspernatur,Technology,Accessories,298.47,136.55
+P00010,PROD-10010,Nostrum,Technology,Accessories,398.45,270.86
+P00011,PROD-10011,Corrupti,Office Supplies,Chairs,22.38,10.49
+P00012,PROD-10012,Animi,Office Supplies,Storage,157.59,115.62
+P00013,PROD-10013,Necessitatibus,Technology,Storage,361.81,190.72
+P00014,PROD-10014,Saepe,Furniture,Accessories,298.46,157.07
+P00015,PROD-10015,Quia,Technology,Accessories,381.72,212.19
+P00016,PROD-10016,Autem,Office Supplies,Chairs,332.89,202.83
+P00017,PROD-10017,Officia,Office Supplies,Phones,296.11,188.5
+P00018,PROD-10018,Atque,Office Supplies,Storage,146.12,98.12
+P00019,PROD-10019,Autem,Technology,Accessories,245.95,144.85
+P00020,PROD-10020,Laudantium,Office Supplies,Chairs,519.71,240.18
+P00021,PROD-10021,Sunt,Office Supplies,Storage,312.75,201.07
+P00022,PROD-10022,Maxime,Technology,Storage,79.97,37.08
+P00023,PROD-10023,Alias,Technology,Phones,111.16,75.15
+P00024,PROD-10024,Odit,Technology,Accessories,139.94,81.0
+P00025,PROD-10025,Nihil,Technology,Accessories,243.04,130.19
+P00026,PROD-10026,Explicabo,Office Supplies,Phones,233.06,153.37
+P00027,PROD-10027,Eum,Technology,Accessories,557.74,268.87
+P00028,PROD-10028,Ad,Office Supplies,Accessories,148.66,73.46
+P00029,PROD-10029,Recusandae,Technology,Accessories,37.44,24.56
+P00030,PROD-10030,Enim,Office Supplies,Storage,83.62,48.67
+P00031,PROD-10031,Sequi,Office Supplies,Accessories,600.22,285.51
+P00032,PROD-10032,Error,Technology,Accessories,449.83,250.87
+P00033,PROD-10033,Tempore,Office Supplies,Storage,277.75,140.52
+P00034,PROD-10034,Dolor,Office Supplies,Chairs,410.61,232.09
+P00035,PROD-10035,Veniam,Furniture,Chairs,122.77,89.63
+P00036,PROD-10036,Earum,Office Supplies,Phones,140.99,88.8
+P00037,PROD-10037,Porro,Office Supplies,Chairs,75.6,50.13
+P00038,PROD-10038,Dolor,Furniture,Storage,291.74,214.86
+P00039,PROD-10039,Itaque,Technology,Accessories,280.19,167.36
+P00040,PROD-10040,Ratione,Office Supplies,Phones,245.02,122.95
+P00041,PROD-10041,Sint,Furniture,Accessories,514.07,258.45
+P00042,PROD-10042,Nesciunt,Furniture,Accessories,18.93,11.71
+P00043,PROD-10043,Ducimus,Office Supplies,Chairs,325.71,166.08
+P00044,PROD-10044,Incidunt,Furniture,Phones,234.3,151.59
+P00045,PROD-10045,Quia,Furniture,Chairs,233.51,122.77
+P00046,PROD-10046,Ipsa,Office Supplies,Phones,539.88,253.75
+P00047,PROD-10047,Doloribus,Office Supplies,Phones,500.35,273.01
+P00048,PROD-10048,Sed,Furniture,Chairs,57.89,34.34
+P00049,PROD-10049,Recusandae,Technology,Accessories,40.34,24.58
+P00050,PROD-10050,Placeat,Furniture,Storage,208.02,104.79
+P00051,PROD-10051,Consequuntur,Furniture,Phones,467.27,228.08
+P00052,PROD-10052,Dignissimos,Technology,Storage,288.99,146.39
+P00053,PROD-10053,Ab,Office Supplies,Phones,102.16,75.02
+P00054,PROD-10054,Placeat,Technology,Phones,492.83,228.73
+P00055,PROD-10055,Ratione,Furniture,Phones,288.08,190.19
+P00056,PROD-10056,Natus,Office Supplies,Storage,259.66,173.55
+P00057,PROD-10057,Hic,Office Supplies,Phones,337.21,232.4
+P00058,PROD-10058,Ea,Furniture,Phones,340.95,235.56
+P00059,PROD-10059,Odio,Office Supplies,Accessories,379.82,177.82
+P00060,PROD-10060,Deleniti,Technology,Chairs,243.0,125.03
+P00061,PROD-10061,Perferendis,Office Supplies,Phones,78.91,39.55
+P00062,PROD-10062,Vero,Technology,Storage,435.89,240.91
+P00063,PROD-10063,Harum,Technology,Storage,311.79,164.5
+P00064,PROD-10064,Error,Furniture,Phones,22.94,13.67
+P00065,PROD-10065,Animi,Furniture,Chairs,220.68,135.72
+P00066,PROD-10066,Blanditiis,Office Supplies,Storage,267.19,136.29
+P00067,PROD-10067,Dicta,Furniture,Accessories,401.3,188.61
+P00068,PROD-10068,Accusamus,Furniture,Storage,266.9,136.32
+P00069,PROD-10069,Tenetur,Technology,Storage,526.25,257.0
+P00070,PROD-10070,Soluta,Furniture,Accessories,403.68,265.67
+P00071,PROD-10071,Nisi,Furniture,Chairs,187.68,107.56
+P00072,PROD-10072,Earum,Furniture,Storage,245.15,151.39
+P00073,PROD-10073,Quos,Furniture,Phones,167.31,91.1
+P00074,PROD-10074,Cumque,Technology,Accessories,235.25,159.82
+P00075,PROD-10075,Dignissimos,Office Supplies,Accessories,300.7,151.69
+P00076,PROD-10076,Quas,Technology,Phones,343.66,197.31
+P00077,PROD-10077,Ipsum,Technology,Storage,158.63,95.33
+P00078,PROD-10078,Dolore,Office Supplies,Storage,330.59,202.55
+P00079,PROD-10079,Occaecati,Furniture,Storage,262.98,133.4
+P00080,PROD-10080,Temporibus,Furniture,Chairs,330.12,213.83
+P00081,PROD-10081,Esse,Technology,Chairs,66.28,44.99
+P00082,PROD-10082,Saepe,Furniture,Storage,128.79,65.55
+P00083,PROD-10083,Totam,Furniture,Chairs,603.23,294.35
+P00084,PROD-10084,Ipsum,Office Supplies,Chairs,180.25,114.66
+P00085,PROD-10085,Harum,Office Supplies,Storage,194.94,89.55
+P00086,PROD-10086,Earum,Furniture,Phones,300.05,212.25
+P00087,PROD-10087,Perspiciatis,Furniture,Accessories,477.94,263.09
+P00088,PROD-10088,Aut,Technology,Storage,201.92,137.74
+P00089,PROD-10089,Expedita,Technology,Accessories,489.42,282.91
+P00090,PROD-10090,Voluptatem,Office Supplies,Phones,277.65,152.61
+P00091,PROD-10091,Perspiciatis,Furniture,Phones,109.62,54.0
+P00092,PROD-10092,Voluptate,Furniture,Chairs,419.51,298.24
+P00093,PROD-10093,Consequatur,Furniture,Storage,385.87,234.95
+P00094,PROD-10094,Autem,Furniture,Phones,568.46,259.45
+P00095,PROD-10095,Modi,Technology,Chairs,367.24,186.79
+P00096,PROD-10096,Minima,Technology,Chairs,119.11,86.75
+P00097,PROD-10097,Assumenda,Furniture,Accessories,245.06,170.08
+P00098,PROD-10098,Occaecati,Technology,Chairs,361.68,209.92
+P00099,PROD-10099,Vitae,Furniture,Phones,145.42,93.55
+P00100,PROD-10100,Accusamus,Office Supplies,Chairs,446.21,209.34
+P00101,PROD-10101,Eaque,Office Supplies,Chairs,238.6,133.29
+P00102,PROD-10102,Ab,Technology,Phones,558.9,273.44
+P00103,PROD-10103,Illo,Office Supplies,Storage,91.65,58.12
+P00104,PROD-10104,Quod,Furniture,Accessories,236.49,137.35
+P00105,PROD-10105,Temporibus,Furniture,Accessories,496.04,283.38
+P00106,PROD-10106,Quis,Furniture,Storage,44.52,33.33
+P00107,PROD-10107,Eos,Technology,Phones,244.91,185.08
+P00108,PROD-10108,Modi,Furniture,Phones,571.29,299.88
+P00109,PROD-10109,Dicta,Office Supplies,Accessories,337.16,231.3
+P00110,PROD-10110,A,Office Supplies,Accessories,403.38,275.66
+P00111,PROD-10111,Consectetur,Technology,Accessories,338.21,194.09
+P00112,PROD-10112,Debitis,Office Supplies,Phones,177.45,110.91
+P00113,PROD-10113,Repellendus,Office Supplies,Accessories,413.16,258.74
+P00114,PROD-10114,Sapiente,Office Supplies,Phones,201.26,93.58
+P00115,PROD-10115,Deserunt,Furniture,Phones,224.64,141.9
+P00116,PROD-10116,Hic,Office Supplies,Phones,484.74,291.35
+P00117,PROD-10117,Facere,Furniture,Phones,358.95,200.72
+P00118,PROD-10118,Sunt,Furniture,Accessories,104.69,64.4
+P00119,PROD-10119,Ducimus,Office Supplies,Chairs,341.73,230.4
+P00120,PROD-10120,Minima,Office Supplies,Accessories,472.76,279.03
