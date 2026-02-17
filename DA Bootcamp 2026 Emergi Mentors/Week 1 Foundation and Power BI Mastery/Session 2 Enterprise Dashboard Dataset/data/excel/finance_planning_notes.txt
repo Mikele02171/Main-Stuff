@@ -1,0 +1,4 @@
+Planning workbook fallback: xlsxwriter not installed; data written as CSV.
+Notes:
+- Planning workbook for budget and forecast
+- Includes missing values and inconsistent casing for demonstration purposes.

@@ -1,0 +1,206 @@
+ProductID,ProductCode,ProductName,Category,Subcategory
+1000,P1000,Electronic 1000,Electronics,Accessories
+1001,P1001,electronic 1001,Electronics,Accessories
+1002,P1002,Office Supplie 1002,Office Supplies,Writing
+1003,P1003,Office Supplie 1003,Office Supplies,Paper
+1004,P1004,Electronic 1004,Electronics,Accessories
+1005,P1005,Office Supplie 1005,Office Supplies,Binders
+1006,P1006,Clothin 1006,Clothing,Men
+1007,P1007,Electronic 1007,Electronics,Accessories
+1008,P1008,Furnitur 1008,Furniture,Desks
+1009,P1009,furnitur 1009,Furniture,Tables
+1010,P1010,Office Supplie 1010,Office Supplies,Paper
+1011,P1011,Furnitur 1011,Furniture,Desks
+1012,P1012,Electronic 1012,Electronics,Laptops
+1013,P1013,Office Supplie 1013,Office Supplies,Binders
+1014,P1014,Clothin 1014,Clothing,Women
+1015,P1015,Electronic 1015,Electronics,Phones
+1016,P1016,Clothin 1016,Clothing,Women
+1017,P1017,OFFICE SUPPLIE 1017,Office Supplies,Paper
+1018,P1018,Clothin 1018,Clothing,Kids
+1019,P1019,Furnitur 1019,Furniture,Desks
+1020,P1020,Electronic 1020,Electronics,Phones
+1021,P1021,Office Supplie 1021,Office Supplies,Binders
+1022,P1022,Office Supplie 1022,Office Supplies,Binders
+1023,P1023,clothin 1023,Clothing,Men
+1024,P1024,Furnitur 1024,Furniture,Tables
+1025,P1025,CLOTHIN 1025,Clothing,Kids
+1026,P1026,Clothin 1026,Clothing,Men
+1027,P1027,Electronic 1027,Electronics,Laptops
+1028,P1028,Furnitur 1028,Furniture,Tables
+1029,P1029,furnitur 1029,Furniture,Chairs
+1030,P1030,Clothin 1030,Clothing,Kids
+1031,P1031,Clothin 1031,Clothing,Women
+1032,P1032,Furnitur 1032,Furniture,Tables
+1033,P1033,OFFICE SUPPLIE 1033,Office Supplies,Binders
+1034,P1034,Furnitur 1034,Furniture,Chairs
+1035,P1035,Furnitur 1035,Furniture,Desks
+1036,P1036,Furnitur 1036,Furniture,Desks
+1037,P1037,office supplie 1037,Office Supplies,Paper
+1038,P1038,Furnitur 1038,Furniture,Desks
+1039,P1039,Office Supplie 1039,Office Supplies,Paper
+1040,P1040,Furnitur 1040,Furniture,Desks
+1041,P1041,Office Supplie 1041,Office Supplies,Binders
+1042,P1042,electronic 1042,Electronics,Laptops
+1043,P1043,clothin 1043,Clothing,Women
+1044,P1044,Electronic 1044,Electronics,Laptops
+1045,P1045,Office Supplie 1045,Office Supplies,Paper
+1046,P1046,Furnitur 1046,Furniture,Desks
+1047,P1047,office supplie 1047,Office Supplies,Binders
+1048,P1048,Electronic 1048,Electronics,Accessories
+1049,P1049,Electronic 1049,Electronics,Phones
+1050,P1050,Furnitur 1050,Furniture,Desks
+1051,P1051,Clothin 1051,Clothing,Men
+1052,P1052,clothin 1052,Clothing,Women
+1053,P1053,Furnitur 1053,Furniture,Desks
+1054,P1054,Furnitur 1054,Furniture,Tables
+1055,P1055,Electronic 1055,Electronics,Phones
+1056,P1056,Clothin 1056,Clothing,Kids
+1057,P1057,clothin 1057,Clothing,Men
+1058,P1058,Electronic 1058,Electronics,Laptops
+1059,P1059,Furnitur 1059,Furniture,Desks
+1060,P1060,Office Supplie 1060,Office Supplies,Paper
+1061,P1061,CLOTHIN 1061,Clothing,Kids
+1062,P1062,Furnitur 1062,Furniture,Tables
+1063,P1063,Electronic 1063,Electronics,Accessories
+1064,P1064,Electronic 1064,Electronics,Laptops
+1065,P1065,FURNITUR 1065,Furniture,Tables
+1066,P1066,Office Supplie 1066,Office Supplies,Writing
+1067,P1067,Clothin 1067,Clothing,Men
+1068,P1068,Clothin 1068,Clothing,Men
+1069,P1069,Office Supplie 1069,Office Supplies,Writing
+1070,P1070,Clothin 1070,Clothing,Kids
+1071,P1071,furnitur 1071,Furniture,Chairs
+1072,P1072,Electronic 1072,Electronics,Phones
+1073,P1073,Clothin 1073,Clothing,Men
+1074,P1074,Clothin 1074,Clothing,Women
+1075,P1075,Electronic 1075,Electronics,Accessories
+1076,P1076,Furnitur 1076,Furniture,Chairs
+1077,P1077,Clothin 1077,Clothing,Men
+1078,P1078,Furnitur 1078,Furniture,Desks
+1079,P1079,Furnitur 1079,Furniture,Chairs
+1080,P1080,Clothin 1080,Clothing,Men
+1081,P1081,Electronic 1081,Electronics,Accessories
+1082,P1082,Office Supplie 1082,Office Supplies,Writing
+1083,P1083,Clothin 1083,Clothing,Men
+1084,P1084,Furnitur 1084,Furniture,Desks
+1085,P1085,Clothin 1085,Clothing,Women
+1086,P1086,Furnitur 1086,Furniture,Tables
+1087,P1087,Electronic 1087,Electronics,Laptops
+1088,P1088,Office Supplie 1088,Office Supplies,Paper
+1089,P1089,CLOTHIN 1089,Clothing,Kids
+1090,P1090,Furnitur 1090,Furniture,Tables
+1091,P1091,Furnitur 1091,Furniture,Chairs
+1092,P1092,Office Supplie 1092,Office Supplies,Paper
+1093,P1093,furnitur 1093,Furniture,Chairs
+1094,P1094,OFFICE SUPPLIE 1094,Office Supplies,Paper
+1095,P1095,Furnitur 1095,Furniture,Tables
+1096,P1096,Clothin 1096,Clothing,Men
+1097,P1097,clothin 1097,Clothing,Kids
+1098,P1098,Furnitur 1098,Furniture,Chairs
+1099,P1099,OFFICE SUPPLIE 1099,Office Supplies,Binders
+1100,P1100,Electronic 1100,Electronics,Laptops
+1101,P1101,electronic 1101,Electronics,Accessories
+1102,P1102,furnitur 1102,Furniture,Desks
+1103,P1103,Clothin 1103,Clothing,Kids
+1104,P1104,Furnitur 1104,Furniture,Desks
+1105,P1105,Office Supplie 1105,Office Supplies,Writing
+1106,P1106,Furnitur 1106,Furniture,Tables
+1107,P1107,Clothin 1107,Clothing,Women
+1108,P1108,Electronic 1108,Electronics,Phones
+1109,P1109,Office Supplie 1109,Office Supplies,Paper
+1110,P1110,Office Supplie 1110,Office Supplies,Paper
+1111,P1111,Electronic 1111,Electronics,Phones
+1112,P1112,Clothin 1112,Clothing,Women
+1113,P1113,Clothin 1113,Clothing,Kids
+1114,P1114,Office Supplie 1114,Office Supplies,Binders
+1115,P1115,Electronic 1115,Electronics,Accessories
+1116,P1116,Office Supplie 1116,Office Supplies,Writing
+1117,P1117,OFFICE SUPPLIE 1117,Office Supplies,Paper
+1118,P1118,Office Supplie 1118,Office Supplies,Writing
+1119,P1119,Electronic 1119,Electronics,Accessories
+1120,P1120,Clothin 1120,Clothing,Kids
+1121,P1121,office supplie 1121,Office Supplies,Binders
+1122,P1122,Office Supplie 1122,Office Supplies,Binders
+1123,P1123,Electronic 1123,Electronics,Laptops
+1124,P1124,Office Supplie 1124,Office Supplies,Writing
+1125,P1125,Electronic 1125,Electronics,Laptops
+1126,P1126,clothin 1126,Clothing,Men
+1127,P1127,Furnitur 1127,Furniture,Tables
+1128,P1128,Electronic 1128,Electronics,Accessories
+1129,P1129,Clothin 1129,Clothing,Kids
+1130,P1130,Office Supplie 1130,Office Supplies,Paper
+1131,P1131,Electronic 1131,Electronics,Accessories
+1132,P1132,Electronic 1132,Electronics,Accessories
+1133,P1133,Furnitur 1133,Furniture,Desks
+1134,P1134,Office Supplie 1134,Office Supplies,Writing
+1135,P1135,Furnitur 1135,Furniture,Chairs
+1136,P1136,Electronic 1136,Electronics,Phones
+1137,P1137,Office Supplie 1137,Office Supplies,Paper
+1138,P1138,Furnitur 1138,Furniture,Chairs
+1139,P1139,Electronic 1139,Electronics,Phones
+1140,P1140,Office Supplie 1140,Office Supplies,Paper
+1141,P1141,Office Supplie 1141,Office Supplies,Paper
+1142,P1142,Office Supplie 1142,Office Supplies,Writing
+1143,P1143,OFFICE SUPPLIE 1143,Office Supplies,Paper
+1144,P1144,Electronic 1144,Electronics,Phones
+1145,P1145,Clothin 1145,Clothing,Men
+1146,P1146,clothin 1146,Clothing,Men
+1147,P1147,Electronic 1147,Electronics,Phones
+1148,P1148,CLOTHIN 1148,Clothing,Men
+1149,P1149,Office Supplie 1149,Office Supplies,Writing
+1150,P1150,CLOTHIN 1150,Clothing,Kids
+1151,P1151,Furnitur 1151,Furniture,Chairs
+1152,P1152,Office Supplie 1152,Office Supplies,Writing
+1153,P1153,Furnitur 1153,Furniture,Chairs
+1154,P1154,Electronic 1154,Electronics,Phones
+1155,P1155,office supplie 1155,Office Supplies,Binders
+1156,P1156,electronic 1156,Electronics,Laptops
+1157,P1157,Electronic 1157,Electronics,Accessories
+1158,P1158,Furnitur 1158,Furniture,Chairs
+1159,P1159,Office Supplie 1159,Office Supplies,Binders
+1160,P1160,Clothin 1160,Clothing,Women
+1161,P1161,Office Supplie 1161,Office Supplies,Paper
+1162,P1162,Furnitur 1162,Furniture,Tables
+1163,P1163,Furnitur 1163,Furniture,Tables
+1164,P1164,Electronic 1164,Electronics,Phones
+1165,P1165,Electronic 1165,Electronics,Phones
+1166,P1166,Furnitur 1166,Furniture,Tables
+1167,P1167,Clothin 1167,Clothing,Men
+1168,P1168,Clothin 1168,Clothing,Men
+1169,P1169,Electronic 1169,Electronics,Phones
+1170,P1170,Office Supplie 1170,Office Supplies,Writing
+1171,P1171,Office Supplie 1171,Office Supplies,Paper
+1172,P1172,Electronic 1172,Electronics,Laptops
+1173,P1173,Clothin 1173,Clothing,Women
+1174,P1174,Electronic 1174,Electronics,Accessories
+1175,P1175,Furnitur 1175,Furniture,Desks
+1176,P1176,FURNITUR 1176,Furniture,Tables
+1177,P1177,clothin 1177,Clothing,Kids
+1178,P1178,Electronic 1178,Electronics,Phones
+1179,P1179,OFFICE SUPPLIE 1179,Office Supplies,Paper
+1180,P1180,Furnitur 1180,Furniture,Desks
+1181,P1181,Office Supplie 1181,Office Supplies,Paper
+1182,P1182,Office Supplie 1182,Office Supplies,Binders
+1183,P1183,Furnitur 1183,Furniture,Desks
+1184,P1184,Electronic 1184,Electronics,Accessories
+1185,P1185,Furnitur 1185,Furniture,Chairs
+1186,P1186,Furnitur 1186,Furniture,Chairs
+1187,P1187,Clothin 1187,Clothing,Kids
+1188,P1188,Clothin 1188,Clothing,Kids
+1189,P1189,clothin 1189,Clothing,Women
+1190,P1190,Clothin 1190,Clothing,Kids
+1191,P1191,Clothin 1191,Clothing,Men
+1192,P1192,Clothin 1192,Clothing,Men
+1193,P1193,Electronic 1193,Electronics,Laptops
+1194,P1194,Electronic 1194,Electronics,Phones
+1195,P1195,Clothin 1195,Clothing,Women
+1196,P1196,clothin 1196,Clothing,Kids
+1197,P1197,Office Supplie 1197,Office Supplies,Binders
+1198,P1198,Clothin 1198,Clothing,Kids
+1199,P1199,Office Supplie 1199,Office Supplies,Writing
+1059,P1059,Furnitur 1059,Furniture,Desks
+1169,P1169,Electronic 1169,Electronics,Phones
+1076,P1076,Furnitur 1076,Furniture,Chairs
+1023,P1023,clothin 1023,Clothing,Men
+1115,P1115,Electronic 1115,Electronics,Accessories
