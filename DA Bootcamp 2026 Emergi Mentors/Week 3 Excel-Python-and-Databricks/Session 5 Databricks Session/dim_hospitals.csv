@@ -1,0 +1,46 @@
+hospital_id,hospital_name,lhd_code,hospital_tier,has_emergency_dept,total_beds,accreditation_status,last_audit_date
+H0001,Royal Prince Albert Hospital,LHD001,Tertiary,1,557,Accredited,2024-09-22
+H0002,Sydney City Hospital,LHD001,Community,0,25,Conditional,2024-11-16
+H0003,Darlinghurst Medical Centre,LHD001,Major,1,305,Accredited,2024-02-19
+H0004,Westmead Hospital,LHD002,Tertiary,1,866,Accredited,2024-04-17
+H0005,Blacktown Hospital,LHD002,Community,1,64,Conditional,2024-06-11
+H0006,Auburn Hospital,LHD002,District,1,166,Accredited,2024-05-22
+H0007,Liverpool Hospital,LHD003,Tertiary,1,683,Accredited,2024-11-10
+H0008,Campbelltown Hospital,LHD003,Community,1,25,Accredited,2024-01-16
+H0009,Bankstown Hospital,LHD003,Community,1,22,Accredited,2024-07-07
+H0010,Fairfield Hospital,LHD003,Major,1,471,Accredited,2024-04-14
+H0011,Prince of Wales Hospital,LHD004,Tertiary,1,686,Accredited,2024-07-19
+H0012,St George Hospital,LHD004,Community,0,54,Accredited,2024-09-10
+H0013,Sutherland Hospital,LHD004,District,1,243,Accredited,2024-06-19
+H0014,Royal North Shore Hospital,LHD005,Tertiary,1,617,Accredited,2024-05-11
+H0015,Manly Hospital,LHD005,District,1,225,Accredited,2024-08-16
+H0016,Mona Vale Hospital,LHD005,Community,1,49,Accredited,2024-07-20
+H0017,Gosford Hospital,LHD006,Major,1,440,Accredited,2024-02-07
+H0018,Wyong Hospital,LHD006,District,1,172,Accredited,2024-03-17
+H0019,John Hunter Hospital,LHD007,Tertiary,1,546,Accredited,2024-09-15
+H0020,Calvary Mater Newcastle,LHD007,Community,0,24,Conditional,2024-05-21
+H0021,Tamworth Hospital,LHD007,Community,1,75,Accredited,2024-10-05
+H0022,Armidale Hospital,LHD007,Community,1,27,Accredited,2024-04-24
+H0023,Wollongong Hospital,LHD008,Major,1,250,Accredited,2024-03-18
+H0024,Shellharbour Hospital,LHD008,Major,1,326,Accredited,2024-09-15
+H0025,Shoalhaven Hospital,LHD008,District,1,218,Accredited,2024-01-31
+H0026,Nepean Hospital,LHD009,Tertiary,1,750,Accredited,2024-06-28
+H0027,Blue Mountains Hospital,LHD009,Major,1,311,Accredited,2024-10-20
+H0028,Lithgow Hospital,LHD009,Community,1,69,Accredited,2024-09-28
+H0029,Lismore Base Hospital,LHD010,Major,1,492,Accredited,2024-03-07
+H0030,Tweed Hospital,LHD010,Community,1,68,Accredited,2024-06-26
+H0031,Byron District Hospital,LHD010,District,1,175,Conditional,2024-10-02
+H0032,Port Macquarie Hospital,LHD011,Major,1,266,Accredited,2024-02-05
+H0033,Coffs Harbour Hospital,LHD011,Major,1,268,Accredited,2024-10-29
+H0034,Kempsey Hospital,LHD011,Major,1,268,Accredited,2024-03-29
+H0035,Canberra Region Hospital South,LHD012,Major,1,283,Conditional,2024-07-31
+H0036,Batemans Bay Hospital,LHD012,District,1,104,Conditional,2024-06-04
+H0037,Moruya Hospital,LHD012,District,1,93,Accredited,2024-11-01
+H0038,Wagga Wagga Hospital,LHD013,Major,1,336,Accredited,2024-08-27
+H0039,Griffith Hospital,LHD013,Community,1,37,Conditional,2024-07-28
+H0040,Deniliquin Hospital,LHD013,Major,1,456,Accredited,2024-01-04
+H0041,Dubbo Hospital,LHD014,Major,1,498,Accredited,2024-09-08
+H0042,Orange Hospital,LHD014,District,1,134,Conditional,2024-11-02
+H0043,Bathurst Hospital,LHD014,Major,1,250,Conditional,2024-07-09
+H0044,Mudgee Hospital,LHD014,District,1,222,Conditional,2024-09-14
+H0045,Broken Hill Hospital,LHD015,Major,1,305,Accredited,2024-06-25

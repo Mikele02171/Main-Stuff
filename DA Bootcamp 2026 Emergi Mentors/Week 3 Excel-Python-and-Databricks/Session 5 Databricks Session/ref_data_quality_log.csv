@@ -1,0 +1,201 @@
+issue_id,source_table,issue_type,severity,record_count_affected,detected_date,resolution_status,assigned_to
+1,raw_ed_presentations,Missing patient gender,Medium,36,2025-03-14,Accepted,Business Intelligence
+2,raw_ed_presentations,Negative length of stay,Low,381,2025-02-05,Resolved,Data Engineering
+3,raw_ed_presentations,Missing patient gender,Critical,234,2025-02-04,In Progress,IT Operations
+4,raw_ed_presentations,Missing patient gender,Medium,46,2025-01-24,Open,Data Engineering
+5,raw_ed_presentations,Missing DRG code,Medium,19,2025-02-02,In Progress,Business Intelligence
+6,raw_ed_presentations,Negative length of stay,High,335,2025-02-06,In Progress,Data Engineering
+7,raw_ed_presentations,Departure before arrival timestamp,Critical,334,2025-01-21,Resolved,IT Operations
+8,raw_hospital_admissions,Missing patient gender,High,470,2025-02-28,Open,Business Intelligence
+9,raw_ed_presentations,Missing triage category,High,141,2025-02-21,Resolved,Clinical Coding
+10,raw_hospital_admissions,Missing triage category,Medium,276,2025-03-25,Resolved,Data Engineering
+11,raw_ed_presentations,Invalid hospital_id reference,Low,32,2025-03-31,Resolved,Business Intelligence
+12,raw_hospital_admissions,Departure before arrival timestamp,High,417,2025-01-23,Open,Business Intelligence
+13,raw_hospital_admissions,Departure before arrival timestamp,Critical,467,2025-03-08,Accepted,Clinical Coding
+14,raw_ed_presentations,Invalid hospital_id reference,High,500,2025-02-22,In Progress,Clinical Coding
+15,raw_ed_presentations,Missing DRG code,High,442,2025-02-23,Open,Business Intelligence
+16,raw_hospital_admissions,Missing patient gender,Medium,458,2025-01-21,Resolved,Business Intelligence
+17,raw_hospital_admissions,Inconsistent date format,Medium,151,2025-02-23,Resolved,Data Engineering
+18,raw_hospital_admissions,Inconsistent date format,Medium,142,2025-02-28,Resolved,Business Intelligence
+19,raw_hospital_admissions,Departure before arrival timestamp,Medium,88,2025-01-29,Accepted,IT Operations
+20,raw_ed_presentations,Missing DRG code,Low,334,2025-01-09,Resolved,IT Operations
+21,raw_ed_presentations,Future admission date,High,279,2025-03-07,Resolved,Clinical Coding
+22,raw_hospital_admissions,Negative length of stay,Medium,84,2025-01-20,Resolved,Clinical Coding
+23,raw_hospital_admissions,Future admission date,Medium,260,2025-01-16,Accepted,Business Intelligence
+24,raw_ed_presentations,Negative length of stay,Medium,69,2025-02-25,Resolved,IT Operations
+25,raw_hospital_admissions,Missing patient gender,Medium,471,2025-02-19,In Progress,IT Operations
+26,raw_ed_presentations,Negative length of stay,Low,198,2025-01-28,In Progress,Clinical Coding
+27,raw_hospital_admissions,Invalid separation mode,High,471,2025-03-11,Open,Clinical Coding
+28,raw_ed_presentations,Missing DRG code,Low,171,2025-01-21,Open,Business Intelligence
+29,raw_ed_presentations,Invalid hospital_id reference,Low,439,2025-03-02,In Progress,Data Engineering
+30,raw_ed_presentations,Missing triage category,Medium,474,2025-02-25,Open,IT Operations
+31,raw_ed_presentations,Inconsistent date format,High,336,2025-02-26,In Progress,Business Intelligence
+32,raw_hospital_admissions,Invalid separation mode,Medium,480,2025-02-02,Resolved,IT Operations
+33,raw_ed_presentations,Missing patient gender,Medium,151,2025-02-05,Resolved,Data Engineering
+34,raw_hospital_admissions,Inconsistent date format,Low,347,2025-01-18,Resolved,Business Intelligence
+35,raw_hospital_admissions,Invalid hospital_id reference,High,476,2025-01-28,Open,IT Operations
+36,raw_ed_presentations,Missing patient gender,Low,3,2025-01-16,Resolved,IT Operations
+37,raw_hospital_admissions,Invalid separation mode,Low,273,2025-01-15,Open,IT Operations
+38,raw_ed_presentations,Future admission date,Low,118,2025-03-19,Resolved,Data Engineering
+39,raw_hospital_admissions,Inconsistent date format,Medium,497,2025-03-19,Accepted,Data Engineering
+40,raw_hospital_admissions,Inconsistent date format,Medium,43,2025-03-11,Open,Business Intelligence
+41,raw_ed_presentations,Inconsistent date format,Medium,410,2025-01-18,Resolved,IT Operations
+42,raw_hospital_admissions,Duplicate admission record detected,Low,128,2025-03-27,Open,Data Engineering
+43,raw_ed_presentations,Invalid separation mode,Medium,395,2025-01-27,Resolved,IT Operations
+44,raw_hospital_admissions,Inconsistent date format,Medium,324,2025-02-21,Open,Data Engineering
+45,raw_ed_presentations,Departure before arrival timestamp,Medium,138,2025-02-22,Open,Business Intelligence
+46,raw_ed_presentations,Invalid hospital_id reference,Critical,444,2025-02-11,Resolved,Clinical Coding
+47,raw_hospital_admissions,Missing DRG code,Low,255,2025-02-21,In Progress,IT Operations
+48,raw_hospital_admissions,Duplicate admission record detected,Medium,192,2025-02-19,Open,Business Intelligence
+49,raw_hospital_admissions,Missing triage category,Critical,306,2025-03-03,Open,Business Intelligence
+50,raw_hospital_admissions,Future admission date,Critical,342,2025-03-25,Open,Clinical Coding
+51,raw_ed_presentations,Departure before arrival timestamp,Medium,343,2025-01-06,In Progress,Clinical Coding
+52,raw_hospital_admissions,Departure before arrival timestamp,Medium,51,2025-02-21,Accepted,Business Intelligence
+53,raw_hospital_admissions,Missing patient gender,High,89,2025-03-10,In Progress,Data Engineering
+54,raw_hospital_admissions,Duplicate admission record detected,Critical,263,2025-01-14,Open,Clinical Coding
+55,raw_ed_presentations,Missing DRG code,Medium,365,2025-02-11,Resolved,Data Engineering
+56,raw_hospital_admissions,Negative length of stay,Low,167,2025-03-01,Open,Business Intelligence
+57,raw_ed_presentations,Missing DRG code,High,414,2025-01-09,Accepted,Data Engineering
+58,raw_hospital_admissions,Missing DRG code,Low,294,2025-01-04,In Progress,Data Engineering
+59,raw_ed_presentations,Duplicate admission record detected,Low,336,2025-01-25,Open,Data Engineering
+60,raw_ed_presentations,Missing triage category,Medium,94,2025-01-04,In Progress,Business Intelligence
+61,raw_ed_presentations,Inconsistent date format,High,146,2025-02-11,Resolved,Data Engineering
+62,raw_hospital_admissions,Missing DRG code,Critical,305,2025-03-19,Resolved,Clinical Coding
+63,raw_hospital_admissions,Departure before arrival timestamp,High,314,2025-01-03,Resolved,Clinical Coding
+64,raw_ed_presentations,Departure before arrival timestamp,Low,287,2025-01-30,Resolved,Business Intelligence
+65,raw_ed_presentations,Departure before arrival timestamp,Medium,463,2025-03-02,Resolved,IT Operations
+66,raw_ed_presentations,Missing patient gender,Low,448,2025-02-13,Open,IT Operations
+67,raw_ed_presentations,Missing patient gender,Medium,452,2025-02-24,Accepted,Clinical Coding
+68,raw_ed_presentations,Duplicate admission record detected,Critical,92,2025-02-28,Resolved,Data Engineering
+69,raw_ed_presentations,Missing DRG code,Medium,364,2025-01-11,Open,IT Operations
+70,raw_ed_presentations,Negative length of stay,Low,76,2025-03-01,In Progress,Clinical Coding
+71,raw_ed_presentations,Missing DRG code,Medium,226,2025-03-01,Open,Business Intelligence
+72,raw_hospital_admissions,Missing DRG code,Critical,214,2025-03-04,Resolved,Data Engineering
+73,raw_hospital_admissions,Missing patient gender,Low,82,2025-03-19,In Progress,Clinical Coding
+74,raw_hospital_admissions,Missing DRG code,High,234,2025-02-04,In Progress,Clinical Coding
+75,raw_ed_presentations,Invalid hospital_id reference,Medium,118,2025-01-22,Accepted,Business Intelligence
+76,raw_ed_presentations,Invalid hospital_id reference,High,85,2025-02-22,Resolved,IT Operations
+77,raw_hospital_admissions,Duplicate admission record detected,Low,29,2025-02-07,Resolved,Clinical Coding
+78,raw_hospital_admissions,Missing DRG code,Medium,398,2025-01-02,In Progress,IT Operations
+79,raw_ed_presentations,Inconsistent date format,High,160,2025-03-06,Resolved,Data Engineering
+80,raw_hospital_admissions,Negative length of stay,High,460,2025-03-02,In Progress,Data Engineering
+81,raw_hospital_admissions,Missing DRG code,Medium,439,2025-01-18,Open,Data Engineering
+82,raw_hospital_admissions,Departure before arrival timestamp,Critical,251,2025-02-17,Resolved,IT Operations
+83,raw_hospital_admissions,Departure before arrival timestamp,Critical,217,2025-03-04,In Progress,Business Intelligence
+84,raw_hospital_admissions,Negative length of stay,Low,434,2025-03-04,Accepted,Data Engineering
+85,raw_hospital_admissions,Missing patient gender,Medium,318,2025-02-04,Accepted,Business Intelligence
+86,raw_ed_presentations,Missing DRG code,Medium,8,2025-01-20,In Progress,Data Engineering
+87,raw_ed_presentations,Invalid separation mode,Critical,398,2025-02-09,Resolved,Data Engineering
+88,raw_hospital_admissions,Missing triage category,Critical,31,2025-02-25,Open,Business Intelligence
+89,raw_hospital_admissions,Missing patient gender,Low,442,2025-02-21,Open,IT Operations
+90,raw_ed_presentations,Invalid separation mode,Low,151,2025-03-24,Resolved,Data Engineering
+91,raw_hospital_admissions,Invalid hospital_id reference,Medium,371,2025-02-09,Accepted,Data Engineering
+92,raw_ed_presentations,Duplicate admission record detected,Low,2,2025-03-26,Open,IT Operations
+93,raw_hospital_admissions,Invalid hospital_id reference,Medium,16,2025-02-24,Open,IT Operations
+94,raw_ed_presentations,Missing patient gender,Medium,111,2025-03-06,Resolved,Clinical Coding
+95,raw_ed_presentations,Duplicate admission record detected,Critical,333,2025-03-11,Open,IT Operations
+96,raw_ed_presentations,Duplicate admission record detected,Low,466,2025-03-08,In Progress,Clinical Coding
+97,raw_ed_presentations,Departure before arrival timestamp,High,170,2025-02-23,Resolved,Data Engineering
+98,raw_hospital_admissions,Missing triage category,Medium,115,2025-03-02,Open,Clinical Coding
+99,raw_hospital_admissions,Missing patient gender,High,273,2025-03-08,In Progress,Clinical Coding
+100,raw_hospital_admissions,Future admission date,High,441,2025-03-02,Open,Clinical Coding
+101,raw_ed_presentations,Future admission date,Low,156,2025-02-06,Resolved,IT Operations
+102,raw_hospital_admissions,Inconsistent date format,Low,18,2025-01-11,Resolved,Clinical Coding
+103,raw_hospital_admissions,Future admission date,Low,163,2025-03-23,Resolved,Business Intelligence
+104,raw_ed_presentations,Duplicate admission record detected,Medium,187,2025-02-07,In Progress,Data Engineering
+105,raw_hospital_admissions,Future admission date,Low,349,2025-03-11,In Progress,Clinical Coding
+106,raw_hospital_admissions,Negative length of stay,Medium,362,2025-01-27,Open,Clinical Coding
+107,raw_ed_presentations,Invalid separation mode,Medium,439,2025-02-04,Resolved,Clinical Coding
+108,raw_ed_presentations,Duplicate admission record detected,High,60,2025-01-13,In Progress,Data Engineering
+109,raw_hospital_admissions,Missing patient gender,Low,350,2025-02-20,Accepted,Business Intelligence
+110,raw_hospital_admissions,Duplicate admission record detected,High,345,2025-03-03,In Progress,IT Operations
+111,raw_hospital_admissions,Negative length of stay,Critical,79,2025-03-02,In Progress,Clinical Coding
+112,raw_ed_presentations,Negative length of stay,High,265,2025-03-29,Resolved,Clinical Coding
+113,raw_hospital_admissions,Inconsistent date format,Critical,380,2025-01-04,Resolved,Data Engineering
+114,raw_hospital_admissions,Missing DRG code,Medium,422,2025-02-19,In Progress,Clinical Coding
+115,raw_ed_presentations,Departure before arrival timestamp,Medium,346,2025-02-21,Resolved,IT Operations
+116,raw_ed_presentations,Missing triage category,Low,297,2025-02-13,In Progress,IT Operations
+117,raw_ed_presentations,Missing patient gender,Low,115,2025-02-19,Resolved,IT Operations
+118,raw_hospital_admissions,Departure before arrival timestamp,High,26,2025-02-25,Open,Clinical Coding
+119,raw_ed_presentations,Duplicate admission record detected,Low,74,2025-03-30,Accepted,Clinical Coding
+120,raw_ed_presentations,Invalid separation mode,Medium,54,2025-03-28,Accepted,Clinical Coding
+121,raw_hospital_admissions,Invalid separation mode,High,91,2025-01-18,In Progress,IT Operations
+122,raw_hospital_admissions,Departure before arrival timestamp,Low,424,2025-03-14,Open,Business Intelligence
+123,raw_ed_presentations,Duplicate admission record detected,Low,436,2025-02-12,Open,Data Engineering
+124,raw_ed_presentations,Duplicate admission record detected,High,156,2025-02-21,Resolved,Data Engineering
+125,raw_ed_presentations,Missing triage category,Medium,381,2025-03-17,Resolved,IT Operations
+126,raw_ed_presentations,Duplicate admission record detected,Low,220,2025-03-28,Open,Data Engineering
+127,raw_hospital_admissions,Missing patient gender,Low,47,2025-03-21,Resolved,IT Operations
+128,raw_ed_presentations,Missing patient gender,Low,465,2025-03-04,Resolved,IT Operations
+129,raw_ed_presentations,Missing patient gender,Medium,472,2025-03-30,Open,Data Engineering
+130,raw_hospital_admissions,Invalid separation mode,Medium,268,2025-01-10,In Progress,IT Operations
+131,raw_hospital_admissions,Invalid separation mode,Critical,10,2025-02-13,Open,Business Intelligence
+132,raw_hospital_admissions,Departure before arrival timestamp,Low,268,2025-01-03,In Progress,IT Operations
+133,raw_hospital_admissions,Invalid separation mode,High,239,2025-02-10,Accepted,Data Engineering
+134,raw_hospital_admissions,Missing patient gender,Critical,374,2025-01-11,Resolved,Business Intelligence
+135,raw_ed_presentations,Missing patient gender,Critical,303,2025-03-25,Accepted,Business Intelligence
+136,raw_ed_presentations,Duplicate admission record detected,Medium,2,2025-03-03,In Progress,Clinical Coding
+137,raw_hospital_admissions,Invalid hospital_id reference,Critical,67,2025-01-28,Accepted,Data Engineering
+138,raw_ed_presentations,Invalid hospital_id reference,Medium,453,2025-01-14,In Progress,Business Intelligence
+139,raw_ed_presentations,Missing DRG code,Medium,295,2025-02-11,Open,Data Engineering
+140,raw_hospital_admissions,Missing patient gender,High,460,2025-01-30,Accepted,Business Intelligence
+141,raw_hospital_admissions,Invalid hospital_id reference,Medium,192,2025-01-11,Accepted,Data Engineering
+142,raw_ed_presentations,Missing patient gender,Medium,365,2025-01-06,Resolved,Business Intelligence
+143,raw_hospital_admissions,Negative length of stay,Medium,381,2025-03-20,Resolved,Data Engineering
+144,raw_ed_presentations,Future admission date,Medium,196,2025-03-02,Resolved,Business Intelligence
+145,raw_ed_presentations,Future admission date,High,251,2025-02-20,Open,IT Operations
+146,raw_ed_presentations,Missing triage category,Medium,273,2025-01-23,Open,Data Engineering
+147,raw_ed_presentations,Duplicate admission record detected,High,413,2025-01-19,Open,Business Intelligence
+148,raw_ed_presentations,Invalid separation mode,Critical,6,2025-01-03,Resolved,Business Intelligence
+149,raw_hospital_admissions,Missing DRG code,Medium,307,2025-03-26,Resolved,Business Intelligence
+150,raw_ed_presentations,Negative length of stay,Medium,239,2025-01-04,In Progress,Data Engineering
+151,raw_hospital_admissions,Negative length of stay,High,250,2025-02-01,In Progress,Business Intelligence
+152,raw_ed_presentations,Future admission date,Medium,168,2025-01-21,Open,IT Operations
+153,raw_hospital_admissions,Future admission date,Low,404,2025-01-26,Accepted,Business Intelligence
+154,raw_hospital_admissions,Future admission date,High,194,2025-03-05,Open,IT Operations
+155,raw_ed_presentations,Invalid separation mode,Medium,211,2025-01-10,Accepted,Clinical Coding
+156,raw_ed_presentations,Negative length of stay,Critical,206,2025-01-20,In Progress,Business Intelligence
+157,raw_hospital_admissions,Missing triage category,Medium,192,2025-01-04,Resolved,Clinical Coding
+158,raw_ed_presentations,Invalid hospital_id reference,Low,203,2025-02-06,Open,IT Operations
+159,raw_hospital_admissions,Missing DRG code,High,489,2025-03-27,Resolved,Data Engineering
+160,raw_hospital_admissions,Invalid hospital_id reference,Medium,45,2025-02-03,Accepted,Clinical Coding
+161,raw_ed_presentations,Invalid separation mode,Low,469,2025-03-07,Accepted,IT Operations
+162,raw_ed_presentations,Missing patient gender,High,114,2025-02-04,Accepted,Clinical Coding
+163,raw_ed_presentations,Missing DRG code,High,64,2025-03-17,Open,Clinical Coding
+164,raw_hospital_admissions,Future admission date,Low,312,2025-03-31,In Progress,IT Operations
+165,raw_hospital_admissions,Missing patient gender,Low,10,2025-02-15,Accepted,Data Engineering
+166,raw_ed_presentations,Missing patient gender,Medium,201,2025-01-08,In Progress,Business Intelligence
+167,raw_ed_presentations,Invalid hospital_id reference,Low,116,2025-01-17,Accepted,Clinical Coding
+168,raw_hospital_admissions,Duplicate admission record detected,Medium,455,2025-01-07,Accepted,IT Operations
+169,raw_ed_presentations,Inconsistent date format,Medium,93,2025-02-12,Resolved,Clinical Coding
+170,raw_hospital_admissions,Missing triage category,High,30,2025-01-12,Resolved,Clinical Coding
+171,raw_ed_presentations,Missing triage category,Medium,484,2025-02-05,In Progress,IT Operations
+172,raw_hospital_admissions,Missing patient gender,High,13,2025-01-10,Open,Clinical Coding
+173,raw_ed_presentations,Departure before arrival timestamp,Critical,209,2025-03-05,Resolved,Clinical Coding
+174,raw_hospital_admissions,Missing DRG code,Medium,289,2025-03-24,Accepted,Clinical Coding
+175,raw_hospital_admissions,Negative length of stay,High,221,2025-01-03,Resolved,Business Intelligence
+176,raw_hospital_admissions,Invalid hospital_id reference,Low,347,2025-03-01,Open,Data Engineering
+177,raw_ed_presentations,Negative length of stay,Medium,439,2025-03-01,In Progress,IT Operations
+178,raw_hospital_admissions,Missing DRG code,Low,81,2025-02-28,Resolved,IT Operations
+179,raw_ed_presentations,Missing triage category,High,258,2025-01-02,Open,Business Intelligence
+180,raw_ed_presentations,Missing patient gender,Low,357,2025-02-21,In Progress,Data Engineering
+181,raw_hospital_admissions,Duplicate admission record detected,Low,241,2025-01-11,Open,Business Intelligence
+182,raw_hospital_admissions,Inconsistent date format,Medium,269,2025-02-21,In Progress,Clinical Coding
+183,raw_ed_presentations,Future admission date,Medium,34,2025-02-25,In Progress,Data Engineering
+184,raw_ed_presentations,Duplicate admission record detected,High,84,2025-03-31,In Progress,IT Operations
+185,raw_ed_presentations,Invalid hospital_id reference,Medium,325,2025-03-22,Accepted,Data Engineering
+186,raw_hospital_admissions,Missing triage category,High,59,2025-02-23,Open,Business Intelligence
+187,raw_hospital_admissions,Departure before arrival timestamp,High,254,2025-02-15,Resolved,Data Engineering
+188,raw_hospital_admissions,Missing patient gender,High,3,2025-01-20,Accepted,Clinical Coding
+189,raw_hospital_admissions,Future admission date,Low,443,2025-02-27,Accepted,IT Operations
+190,raw_ed_presentations,Missing patient gender,Medium,454,2025-03-13,Open,Business Intelligence
+191,raw_ed_presentations,Missing DRG code,Medium,116,2025-03-20,In Progress,Clinical Coding
+192,raw_hospital_admissions,Invalid separation mode,Low,186,2025-01-17,Open,Clinical Coding
+193,raw_hospital_admissions,Negative length of stay,Medium,457,2025-01-04,In Progress,Clinical Coding
+194,raw_ed_presentations,Invalid separation mode,Low,205,2025-02-25,Accepted,Business Intelligence
+195,raw_ed_presentations,Missing DRG code,Medium,18,2025-03-19,Accepted,Clinical Coding
+196,raw_hospital_admissions,Duplicate admission record detected,Low,447,2025-01-25,Accepted,Clinical Coding
+197,raw_ed_presentations,Missing patient gender,Medium,9,2025-03-14,Open,Clinical Coding
+198,raw_hospital_admissions,Negative length of stay,Critical,114,2025-03-14,Resolved,IT Operations
+199,raw_hospital_admissions,Future admission date,Medium,62,2025-02-24,Open,IT Operations
+200,raw_hospital_admissions,Invalid hospital_id reference,High,348,2025-03-28,Resolved,Business Intelligence
