@@ -1,0 +1,1912 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Power BI Technical Concepts - Complete Reference</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f7fa;
+        }
+
+        .nav-bar {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2c5f8d 100%);
+            color: white;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-title {
+            font-size: 1.5em;
+            font-weight: 700;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background 0.3s;
+            font-size: 0.95em;
+        }
+
+        .nav-links a:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 30px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 40px;
+            border-radius: 20px;
+            text-align: center;
+            margin-bottom: 50px;
+            box-shadow: 0 20px 60px rgba(102, 126, 234, 0.3);
+        }
+
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.3em;
+            opacity: 0.95;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .section {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #2c5f8d;
+        }
+
+        .section-icon {
+            font-size: 3em;
+            margin-right: 20px;
+        }
+
+        .section-header h2 {
+            font-size: 2.2em;
+            color: #1e3a5f;
+        }
+
+        .concept-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .concept-box {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 30px;
+            transition: all 0.3s ease;
+            border-left: 5px solid #2c5f8d;
+        }
+
+        .concept-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            background: #e9ecef;
+        }
+
+        .concept-box h3 {
+            color: #2c5f8d;
+            font-size: 1.6em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .concept-icon {
+            margin-right: 12px;
+            font-size: 1.3em;
+        }
+
+        .concept-definition {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #555;
+            border-left: 4px solid #ffd700;
+        }
+
+        .concept-why {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-size: 1em;
+        }
+
+        .concept-why strong {
+            color: #1976d2;
+        }
+
+        .concept-example {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-family: 'Consolas', 'Courier New', monospace;
+            font-size: 0.95em;
+            overflow-x: auto;
+            border-left: 4px solid #4a90e2;
+        }
+
+        .concept-example code {
+            color: #9cdcfe;
+        }
+
+        .concept-note {
+            background: #fff3cd;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid #ffc107;
+            font-size: 0.95em;
+        }
+
+        .concept-note strong {
+            color: #856404;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .comparison-table th {
+            background: #2c5f8d;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-size: 1.1em;
+        }
+
+        .comparison-table td {
+            padding: 15px;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .comparison-table tr:hover {
+            background: #f8f9fa;
+        }
+
+        .visual-diagram {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin: 25px 0;
+            border: 2px solid #e9ecef;
+            text-align: center;
+        }
+
+        .visual-diagram pre {
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            text-align: left;
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            color: #2c5f8d;
+        }
+
+        .key-point {
+            background: linear-gradient(135deg, #7cb342 0%, #558b2f 100%);
+            color: white;
+            padding: 20px 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+            font-size: 1.1em;
+            display: flex;
+            align-items: center;
+        }
+
+        .key-point::before {
+            content: "💡";
+            font-size: 2em;
+            margin-right: 15px;
+        }
+
+        .warning-box {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+            color: white;
+            padding: 20px 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+            font-size: 1.05em;
+            display: flex;
+            align-items: center;
+        }
+
+        .warning-box::before {
+            content: "⚠️";
+            font-size: 2em;
+            margin-right: 15px;
+        }
+
+        .best-practice {
+            background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
+            color: white;
+            padding: 20px 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+            font-size: 1.05em;
+            display: flex;
+            align-items: center;
+        }
+
+        .best-practice::before {
+            content: "✓";
+            font-size: 2.5em;
+            margin-right: 15px;
+            font-weight: 700;
+        }
+
+        .formula-box {
+            background: #f0f4f8;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            border-left: 4px solid #9370db;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 15px 0;
+        }
+
+        .tag {
+            background: #e3f2fd;
+            color: #1976d2;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 600;
+        }
+
+        .toc {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .toc h2 {
+            color: #1e3a5f;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+
+        .toc ul {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .toc li {
+            background: #f8f9fa;
+            padding: 12px 15px;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+
+        .toc li:hover {
+            background: #e3f2fd;
+            transform: translateX(5px);
+        }
+
+        .toc a {
+            color: #2c5f8d;
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+
+        .toc a::before {
+            content: "→";
+            margin-right: 10px;
+            font-weight: 700;
+        }
+
+        footer {
+            background: #1e3a5f;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 60px;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2em;
+            }
+
+            .concept-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav-links {
+                justify-content: center;
+            }
+        }
+
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #2c5f8d;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(44, 95, 141, 0.4);
+            transition: all 0.3s;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .scroll-top:hover {
+            background: #1e3a5f;
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav-bar">
+        <div class="nav-container">
+            <div class="nav-title">📚 Power BI Technical Reference</div>
+            <div class="nav-links">
+                <a href="#data-warehousing">Data Warehousing</a>
+                <a href="#dimensional-modeling">Dimensional Modeling</a>
+                <a href="#etl">ETL/ELT</a>
+                <a href="#relationships">Relationships</a>
+                <a href="#dax">DAX</a>
+                <a href="#security">Security</a>
+                <a href="#performance">Performance</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="hero">
+            <h1>📖 Complete Technical Concepts Guide</h1>
+            <p>Master the foundational principles of enterprise business intelligence, dimensional modeling, and Power BI development</p>
+        </div>
+
+        <!-- TABLE OF CONTENTS -->
+        <div class="toc">
+            <h2>📑 Table of Contents</h2>
+            <ul>
+                <li><a href="#data-warehousing">Data Warehousing Fundamentals</a></li>
+                <li><a href="#dimensional-modeling">Dimensional Modeling</a></li>
+                <li><a href="#star-schema">Star Schema Architecture</a></li>
+                <li><a href="#fact-tables">Fact Tables</a></li>
+                <li><a href="#dimension-tables">Dimension Tables</a></li>
+                <li><a href="#grain">Data Grain</a></li>
+                <li><a href="#keys">Keys & Relationships</a></li>
+                <li><a href="#etl">ETL vs ELT</a></li>
+                <li><a href="#relationships">Relationship Patterns</a></li>
+                <li><a href="#scd">Slowly Changing Dimensions</a></li>
+                <li><a href="#dax">DAX Fundamentals</a></li>
+                <li><a href="#time-intelligence">Time Intelligence</a></li>
+                <li><a href="#rls">Row-Level Security</a></li>
+                <li><a href="#performance">Performance Optimization</a></li>
+                <li><a href="#best-practices">Best Practices</a></li>
+            </ul>
+        </div>
+
+        <!-- DATA WAREHOUSING FUNDAMENTALS -->
+        <section id="data-warehousing" class="section">
+            <div class="section-header">
+                <span class="section-icon">🏛️</span>
+                <h2>Data Warehousing Fundamentals</h2>
+            </div>
+
+            <div class="concept-grid">
+                <div class="concept-box">
+                    <h3><span class="concept-icon">📊</span>What is a Data Warehouse?</h3>
+                    <div class="concept-definition">
+                        A centralized repository optimized for analysis and reporting, containing historical and current data from multiple sources.
+                    </div>
+                    <div class="concept-why">
+                        <strong>Why it matters:</strong> Separates analytics from operational systems. Enables fast queries on large datasets. Maintains data history. Provides single source of truth.
+                    </div>
+                    <div class="tags">
+                        <span class="tag">OLAP</span>
+                        <span class="tag">Read-Optimized</span>
+                        <span class="tag">Historical</span>
+                    </div>
+                </div>
+
+                <div class="concept-box">
+                    <h3><span class="concept-icon">⚔️</span>OLTP vs OLAP</h3>
+                    <div class="concept-definition">
+                        OLTP = Online Transaction Processing (operational). OLAP = Online Analytical Processing (data warehouse).
+                    </div>
+                    <table class="comparison-table">
+                        <tr>
+                            <th>Aspect</th>
+                            <th>OLTP</th>
+                            <th>OLAP</th>
+                        </tr>
+                        <tr>
+                            <td><strong>Purpose</strong></td>
+                            <td>Run the business</td>
+                            <td>Analyze the business</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Operations</strong></td>
+                            <td>Insert, Update, Delete</td>
+                            <td>Select, Aggregate</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Data Age</strong></td>
+                            <td>Current</td>
+                            <td>Historical + Current</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Design</strong></td>
+                            <td>Normalized (3NF)</td>
+                            <td>Denormalized (Star)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Users</strong></td>
+                            <td>Clerks, operators</td>
+                            <td>Analysts, executives</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="concept-box">
+                    <h3><span class="concept-icon">📐</span>Normalization vs Denormalization</h3>
+                    <div class="concept-definition">
+                        Normalization minimizes redundancy (good for OLTP). Denormalization intentionally adds redundancy (good for OLAP).
+                    </div>
+                    <div class="concept-why">
+                        <strong>Why denormalize for data warehousing:</strong> Fewer joins = faster queries. Business users understand flat structures better. Disk space is cheap, query time is expensive.
+                    </div>
+                    <div class="concept-example">
+Normalized (OLTP):
+ProductCategory table: CategoryID, CategoryName
+Product table: ProductID, ProductName, CategoryID
+
+Denormalized (OLAP):
+DimProduct: ProductID, ProductName, CategoryName
+(CategoryName duplicated, but queries are faster)
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DIMENSIONAL MODELING -->
+        <section id="dimensional-modeling" class="section">
+            <div class="section-header">
+                <span class="section-icon">🎯</span>
+                <h2>Dimensional Modeling</h2>
+            </div>
+
+            <div class="concept-grid">
+                <div class="concept-box">
+                    <h3><span class="concept-icon">⭐</span>Kimball Methodology</h3>
+                    <div class="concept-definition">
+                        Industry-standard approach to data warehouse design focusing on business processes, dimensional modeling, and user accessibility.
+                    </div>
+                    <div class="concept-why">
+                        <strong>Core principles:</strong>
+                        <ul style="margin-top: 10px; padding-left: 20px;">
+                            <li>Focus on business processes (sales, marketing, finance)</li>
+                            <li>Design for understandability and query performance</li>
+                            <li>Build incrementally, deliver value early</li>
+                            <li>Use conformed dimensions across business processes</li>
+                        </ul>
+                    </div>
+                    <div class="best-practice">
+                        Start with one business process (e.g., sales). Perfect it. Then expand to other processes using same dimensions.
+                    </div>
+                </div>
+
+                <div class="concept-box">
+                    <h3><span class="concept-icon">🔢</span>Facts vs Dimensions</h3>
+                    <div class="concept-definition">
+                        Facts = Measurements (what happened). Dimensions = Context (who, what, where, when, why, how).
+                    </div>
+                    <table class="comparison-table">
+                        <tr>
+                            <th>Characteristic</th>
+                            <th>Fact Tables</th>
+                            <th>Dimension Tables</th>
+                        </tr>
+                        <tr>
+                            <td><strong>Content</strong></td>
+                            <td>Numeric measurements</td>
+                            <td>Descriptive text</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Row Count</strong></td>
+                            <td>High (millions+)</td>
+                            <td>Low (thousands)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Width</strong></td>
+                            <td>Narrow (10-20 columns)</td>
+                            <td>Wide (50-100 columns)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Updates</strong></td>
+                            <td>Insert only</td>
+                            <td>Insert + Update</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Purpose</strong></td>
+                            <td>Aggregate, calculate</td>
+                            <td>Filter, group, label</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- STAR SCHEMA -->
+        <section id="star-schema" class="section">
+            <div class="section-header">
+                <span class="section-icon">⭐</span>
+                <h2>Star Schema Architecture</h2>
+            </div>
+
+            <div class="concept-box">
+                <h3><span class="concept-icon">🌟</span>Star Schema Pattern</h3>
+                <div class="concept-definition">
+                    Fact table in center (hub) surrounded by dimension tables (points), forming a star shape.
+                </div>
+                
+                <div class="visual-diagram">
+                    <pre>
+           DimDate
+              |
+              | (1:Many)
+              ↓
+DimProduct → FactSales ← DimCustomer
+              ↑
+              | (1:Many)
+              |
+          DimRegion
+
+Each dimension connects to fact with 1:Many relationship
+Facts aggregate, dimensions filter
+</pre>
+                </div>
+
+                <div class="concept-why">
+                    <strong>Why star schema wins:</strong>
+                    <ul style="margin-top: 10px; padding-left: 20px;">
+                        <li><strong>Query Performance:</strong> Maximum 2 joins for any query (fact → dimension)</li>
+                        <li><strong>Simplicity:</strong> Business users understand it intuitively</li>
+                        <li><strong>Flexibility:</strong> Easy to add dimensions without remodeling</li>
+                        <li><strong>BI Tool Support:</strong> Optimized for tools like Power BI, Tableau</li>
+                    </ul>
+                </div>
+
+                <div class="key-point">
+                    <div>Star schema is denormalized by design. Category and Subcategory both live in DimProduct. This is intentional and correct.</div>
+                </div>
+            </div>
+
+            <div class="concept-box">
+                <h3><span class="concept-icon">❄️</span>Snowflake Schema (Alternative)</h3>
+                <div class="concept-definition">
+                    Normalized version of star schema where dimensions have sub-dimensions.
+                </div>
+                <div class="visual-diagram">
+                    <pre>
+DimProduct → DimCategory → DimCategoryGroup
+    |
+    ↓
+FactSales
+    ↑
+    |
+DimCustomer → DimSegment
+
+Dimensions are normalized (split into multiple tables)
+</pre>
+                </div>
+                <div class="warning-box">
+                    <div><strong>Avoid snowflake in Power BI:</strong> More joins = slower queries. Harder for users to understand. Star schema is almost always better.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FACT TABLES -->
+        <section id="fact-tables" class="section">
+            <div class="section-header">
+                <span class="section-icon">📈</span>
+                <h2>Fact Tables</h2>
+            </div>
+
+            <div class="concept-grid">
+                <div class="concept-box">
+                    <h3><span class="concept-icon">🔢</span>Fact Table Types</h3>
+                    
+                    <div class="concept-definition">
+                        <strong>1. Transaction Facts</strong><br>
+                        One row per business event
+                    </div>
+                    <div class="concept-example">
+Example: FactSales
+Grain: 1 row = 1 sale transaction
+Columns: Date, ProductID, CustomerID, Quantity, Revenue, Cost
+Row count: Millions
+                    </div>
+
+                    <div class="concept-definition" style="margin-top: 20px;">
+                        <strong>2. Periodic Snapshot Facts</strong><br>
+                        One row per time period
+                    </div>
+                    <div class="concept-example">
+Example: FactInventory
+Grain: 1 row = 1 product on 1 day
+Columns: Date, ProductID, OnHandQty, OnOrderQty
+Row count: Products × Days
+                    </div>
+
+                    <div class="concept-definition" style="margin-top: 20px;">
+                        <strong>3. Accumulating Snapshot Facts</strong><br>
+                        One row per process lifecycle
+                    </div>
+                    <div class="concept-example">
+Example: FactOrder
+Grain: 1 row = 1 order lifecycle
+Columns: OrderDate, ShipDate, DeliverDate, OrderID
+Row count: One per order (updates over time)
+                    </div>
+                </div>
+
+                <div class="concept-box">
+                    <h3><span class="concept-icon">🎯</span>Fact Table Characteristics</h3>
+                    <div class="concept-definition">
+                        Facts contain measurements (numbers) and foreign keys to dimensions
+                    </div>
+                    <div class="concept-why">
+                        <strong>Typical structure:</strong>
+                        <ul style="margin-top: 10px; padding-left: 20px;">
+                            <li><strong>Foreign Keys:</strong> 5-10 columns (IDs linking to dimensions)</li>
+                            <li><strong>Measures:</strong> 5-15 columns (numeric values to aggregate)</li>
+                            <li><strong>Degenerate Dimensions:</strong> Optional (transaction IDs, invoice numbers)</li>
+                        </ul>
+                    </div>
+                    <div class="concept-example">
+FactSales Structure:
+├── Date (FK to DimDate)
+├── ProductID (FK to DimProduct)
+├── CustomerID (FK to DimCustomer)
+├── RegionID (FK to DimRegion)
+├── ChannelID (FK to DimChannel)
+├── Quantity (Measure)
+├── UnitPrice (Measure)
+├── Discount (Measure)
+├── Cost (Measure)
+└── Revenue (Measure)
+                    </div>
+                    <div class="best-practice">
+                        <div>Facts should be additive (can be summed across all dimensions). Revenue, Quantity, Cost are additive. Percentages and ratios are not.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DIMENSION TABLES -->
+        <section id="dimension-tables" class="section">
+            <div class="section-header">
+                <span class="section-icon">📚</span>
+                <h2>Dimension Tables</h2>
+            </div>
+
+            <div class="concept-grid">
+                <div class="concept-box">
+                    <h3><span class="concept-icon">📖</span>Dimension Characteristics</h3>
+                    <div class="concept-definition">
+                        Dimensions provide context (the "who, what, where, when") for analyzing facts
+                    </div>
+                    <div class="concept-why">
+                        <strong>Key attributes:</strong>
+                        <ul style="margin-top: 10px; padding-left: 20px;">
+                            <li><strong>Descriptive:</strong> Text, categories, hierarchies</li>
+                            <li><strong>Relatively Static:</strong> Changes are infrequent</li>
+                            <li><strong>Wide:</strong> Many columns (50-100+ attributes)</li>
+                            <li><strong>Denormalized:</strong> Hierarchies flattened into one table</li>
+                        </ul>
+                    </div>
+                    <div class="concept-example">
+DimProduct Structure:
+├── ProductID (Primary Key)
+├── ProductCode
+├── ProductName
+├── Category
+├── Subcategory
+├── Brand
+├── Color
+├── Size
+├── Weight
+├── ListPrice
+├── ProductDescription
+└── IsActive
+                    </div>
+                </div>
+
+                <div class="concept-box">
+                    <h3><span class="concept-icon">📅</span>Date Dimensions (Special)</h3>
+                    <div class="concept-definition">
+                        Every data warehouse needs a date dimension. Contains one row per day with calendar attributes.
+                    </div>
+                    <div class="concept-why">
+                        <strong>Why dedicated date table:</strong>
+                        <ul style="margin-top: 10px; padding-left: 20px;">
+                            <li>Enables time intelligence (YTD, YoY, rolling averages)</li>
+                            <li>Supports fiscal calendar (different from calendar year)</li>
+                            <li>Includes business days, holidays, seasons</li>
+                            <li>Required for proper time-based filtering</li>
+                        </ul>
+                    </div>
+                    <div class="concept-example">
+DimDate Structure:
+├── Date (Primary Key)
+├── DateKey (YYYYMMDD integer)
+├── Year, Quarter, Month, Day
+├── DayOfWeek, WeekOfYear
+├── MonthName, QuarterName
+├── FiscalYear, FiscalQuarter
+├── IsWeekend, IsHoliday
+└── BusinessDayFlag
+                    </div>
+                    <div class="best-practice">
+                        <div>Generate 10+ years of dates. Include 3 years historical minimum. Mark as date table in Power BI for time intelligence functions.</div>
+                    </div>
+                </div>
+
+                <div class="concept-box">
+                    <h3><span class="concept-icon">🔗</span>Conformed Dimensions</h3>
+                    <div class="concept-definition">
+                        Shared dimensions used by multiple fact tables. Same structure, same keys, same values.
+                    </div>
+                    <div class="concept-why">
+                        <strong>Why conform dimensions:</strong> Enables integrated analysis across business processes. "Which products have high marketing spend but low sales?" requires DimProduct conformed across both facts.
+                    </div>
+                    <div class="visual-diagram">
+                        <pre>
+        DimProduct (Conformed)
+              |
+      +-------+-------+
+      |       |       |
+      ↓       ↓       ↓
+FactSales  FactMkt  FactPlanning
+
+Same ProductID = Same Product everywhere
+Enables cross-functional analysis
+</pre>
+                    </div>
+                    <div class="key-point">
+                        <div>Build conformed dimensions once, use them everywhere. This is the key to enterprise data warehousing.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DATA GRAIN -->
+        <section id="grain" class="section">
+            <div class="section-header">
+                <span class="section-icon">🔬</span>
+                <h2>Data Grain</h2>
+            </div>
+
+            <div class="concept-box">
+                <h3><span class="concept-icon">🎯</span>What is Grain?</h3>
+                <div class="concept-definition">
+                    Grain defines what ONE ROW represents in a fact table. Most important modeling decision.
+                </div>
+                <div class="concept-why">
+                    <strong>Why grain matters:</strong> Wrong grain = wrong aggregations. Grain must be atomic (lowest level of detail). All measures must be true at the declared grain.
+                </div>
+
+                <div class="concept-example">
+✓ CORRECT Grain Definitions:
+
+FactSales:
+"One row = one line item on one transaction"
+Grain: Date × Product × Customer × Channel
+
+FactMarketingSpend:
+"One row = one campaign for one product on one date"
+Grain: Date × Product × Campaign
+
+FactFinancePlanning:
+"One row = one product budget for one month"
+Grain: Month × Product
+                </div>
+
+                <div class="warning-box">
+                    <div><strong>❌ WRONG:</strong> Mixing grains in one fact table. Example: Some rows are daily, some are monthly. This breaks aggregations.</div>
+                </div>
+
+                <div class="key-point">
+                    <div>Always ask: "What business event or time period does one row represent?" Answer this before building anything.</div>
+                </div>
+            </div>
+
+            <div class="concept-box">
+                <h3><span class="concept-icon">🌉</span>Grain Mismatches & Bridge Tables</h3>
+                <div class="concept-definition">
+                    When comparing data at different grains (daily sales vs monthly budgets), use bridge tables.
+                </div>
+                <div class="visual-diagram">
+                    <pre>
+Problem:
+FactSales (daily grain) ← → FactPlanning (monthly grain)
+Cannot directly compare
+
+Solution:
+        DimMonth (bridge)
+            |
+            ├─→ DimDate (via MonthStartDate, inactive)
+            └─→ FactPlanning (via MonthKey, active)
+                    
+FactSales → DimDate → DimMonth → FactPlanning
+Now can align daily to monthly
+</pre>
+                </div>
+                <div class="concept-example">
+DimMonth Structure:
+├── MonthKey (202201, 202202...)
+├── MonthStartDate (2022-01-01, 2022-02-01...)
+├── Year, Quarter, Month
+└── MonthName
+
+Relationships:
+- FactPlanning[MonthKey] → DimMonth[MonthKey] (Active)
+- DimMonth[MonthStartDate] → DimDate[Date] (Inactive)
+- Activated with USERELATIONSHIP in DAX
+                </div>
+            </div>
+        </section>
+
+        <!-- KEYS & RELATIONSHIPS -->
+        <section id="keys" class="section">
+            <div class="section-header">
+                <span class="section-icon">🔑</span>
+                <h2>Keys & Relationships</h2>
+            </div>
+
+            <div class="concept-grid">
+                <div class="concept-box">
+                    <h3><span class="concept-icon">🔐</span>Primary Keys vs Foreign Keys</h3>
+                    <div class="concept-definition">
+                        Primary Key (PK) = Unique identifier in dimension. Foreign Key (FK) = Reference to PK in fact.
+                    </div>
+                    <div class="concept-example">
+DimProduct Table:
+ProductID (PK) | ProductName | Category
+1001           | Laptop      | Electronics
+1002           | Mouse       | Electronics
+
+FactSales Table:
+Date      | ProductID (FK) | Revenue
+2024-01-15| 1001          | 1200.00
+2024-01-15| 1001          | 1200.00  ← Same product, multiple sales
+2024-01-16| 1002          | 25.00
+
+ProductID is PK in DimProduct (unique)
+ProductID is FK in FactSales (repeated)
+                    </div>
+                    <div class="key-point">
+                        <div>One-to-Many relationship: One PK value → Many FK values. This is 95% of data warehouse relationships.</div>
+                    </div>
+                </div>
+
+                <div class="concept-box">
+                    <h3><span class="concept-icon">🆔</span>Natural vs Surrogate Keys</h3>
+                    <div class="concept-definition">
+                        Natural Key = Business meaning (ProductCode). Surrogate Key = System-generated (ProductID).
+                    </div>
+                    <table class="comparison-table">
+                        <tr>
+                            <th>Aspect</th>
+                            <th>Natural Key</th>
+                            <th>Surrogate Key</th>
+                        </tr>
+                        <tr>
+                            <td><strong>Source</strong></td>
+                            <td>Business system</td>
+                            <td>Data warehouse</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Example</strong></td>
+                            <td>ProductCode "P1001"</td>
+                            <td>ProductID 1001</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Can Change</strong></td>
+                            <td>Yes (rebranding)</td>
+                            <td>No (immutable)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Type</strong></td>
+                            <td>String</td>
+                            <td>Integer</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Performance</strong></td>
+                            <td>Slower (string joins)</td>
+                            <td>Faster (integer joins)</td>
+                        </tr>
+                    </table>
+                    <div class="best-practice">
+                        <div>Use surrogate keys (integers) for relationships. Keep natural keys as attributes for display/filtering.</div>
+                    </div>
+                </div>
+
+                <div class="concept-box">
+                    <h3><span class="concept-icon">🔗</span>Relationship Cardinality</h3>
+                    <div class="concept-definition">
+                        Cardinality defines how many rows on each side can relate. In Power BI: 1:Many, Many:1, 1:1, Many:Many.
+                    </div>
+                    <div class="concept-example">
+✓ One-to-Many (1:*) - STANDARD
+DimProduct (1) → FactSales (*)
+One product → many sales
+
+✓ Many-to-One (*:1) - SAME AS ABOVE
+FactSales (*) → DimProduct (1)
+Many sales → one product
+
+✓ One-to-One (1:1) - RARE
+DimCustomer (1) → DimCustomerDetail (1)
+Usually means tables should be merged
+
+✗ Many-to-Many (*:*) - AVOID
+Products (*) ↔ Promotions (*)
+Requires bridge/junction table
+                    </div>
+                    <div class="warning-box">
+                        <div><strong>In Power BI:</strong> Many-to-many relationships are allowed but can cause performance issues and unexpected results. Use bridge tables instead.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ETL vs ELT -->
+        <section id="etl" class="section">
+            <div class="section-header">
+                <span class="section-icon">🔄</span>
+                <h2>ETL vs ELT</h2>
+            </div>
+
+            <div class="concept-grid">
+                <div class="concept-box">
+                    <h3><span class="concept-icon">📥</span>Traditional ETL</h3>
+                    <div class="concept-definition">
+                        Extract → Transform → Load. Transform data BEFORE loading to warehouse.
+                    </div>
+                    <div class="concept-example">
+1. EXTRACT: Read from source systems
+2. TRANSFORM: Clean, calculate, join in staging area
+3. LOAD: Write transformed data to warehouse
+
+Tools: SSIS, Informatica, Talend, Azure Data Factory
+                    </div>
+                    <div class="concept-why">
+                        <strong>When to use:</strong> Complex transformations, data cleansing requirements, limited warehouse compute power, need to mask sensitive data before loading.
+                    </div>
+                </div>
+
+                <div class="concept-box">
+                    <h3><span class="concept-icon">📤</span>Modern ELT</h3>
+                    <div class="concept-definition">
+                        Extract → Load → Transform. Load raw data first, transform AFTER in warehouse.
+                    </div>
+                    <div class="concept-example">
+1. EXTRACT: Read from source systems
+2. LOAD: Write raw data to warehouse (fast!)
+3. TRANSFORM: Process using warehouse compute (Power Query, SQL, dbt)
+
+Tools: Power Query, dbt, Snowflake, Databricks
+                    </div>
+                    <div class="concept-why">
+                        <strong>When to use:</strong> Cloud data warehouses (cheap compute), need to preserve raw data, iterative development, self-service analytics.
+                    </div>
+                    <div class="key-point">
+                        <div>Power BI uses ELT pattern. Power Query extracts and loads, then transforms in memory. Fast and flexible.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- RELATIONSHIPS -->
+        <section id="relationships" class="section">
+            <div class="section-header">
+                <span class="section-icon">🔗</span>
+                <h2>Relationship Patterns in Power BI</h2>
+            </div>
+
+            <div class="concept-grid">
+                <div class="concept-box">
+                    <h3><span class="concept-icon">➡️</span>Filter Direction</h3>
+                    <div class="concept-definition">
+                        Controls which direction filters propagate. Single = one way. Both = bidirectional.
+                    </div>
+                    <div class="visual-diagram">
+                        <pre>
+SINGLE DIRECTION (Recommended):
+DimProduct → FactSales
+Filter flows: Dimension → Fact only
+
+User selects "Electronics" in Product filter
+    ↓
+DimProduct filtered to Electronics
+    ↓
+FactSales filtered to Electronics products only
+    ↓
+Report shows Electronics data
+
+FactSales CANNOT filter DimProduct
+</pre>
+                    </div>
+                    <div class="best-practice">
+                        <div><strong>Always use single direction</strong> unless you have a specific reason for bidirectional. Single = predictable, performant. Both = complex, slow.</div>
+                    </div>
+                </div>
+
+                <div class="concept-box">
+                    <h3><span class="concept-icon">❌</span>Inactive Relationships</h3>
+                    <div class="concept-definition">
+                        Relationships that exist but don't filter automatically. Activated manually in DAX with USERELATIONSHIP.
+                    </div>
+                    <div class="concept-why">
+                        <strong>When to use inactive:</strong> Multiple date relationships (OrderDate, ShipDate, DeliverDate), grain mismatch bridges (DimMonth → DimDate), avoiding ambiguous paths.
+                    </div>
+                    <div class="concept-example">
+-- Monthly planning to daily sales bridge
+Budget Revenue YTD = 
+CALCULATE(
+    [Budget Revenue],
+    DATESYTD(DimDate[Date]),
+    USERELATIONSHIP(DimMonth[MonthStartDate], DimDate[Date])
+)
+
+-- Activates the inactive relationship for this calculation only
+                    </div>
+                </div>
+
+                <div class="concept-box">
+                    <h3><span class="concept-icon">⚠️</span>Circular Dependencies</h3>
+                    <div class="concept-definition">
+                        When filter paths create loops. Power BI blocks circular relationships.
+                    </div>
+                    <div class="warning-box">
+                        <div><strong>Example of circular:</strong><br>
+DimProduct → FactSales → DimCustomer → DimRegion → back to DimProduct (if bidirectional)<br><br>
+Solution: Keep all relationships single-direction</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLOWLY CHANGING DIMENSIONS -->
+        <section id="scd" class="section">
+            <div class="section-header">
+                <span class="section-icon">⏳</span>
+                <h2>Slowly Changing Dimensions (SCD)</h2>
+            </div>
+
+            <div class="concept-grid">
+                <div class="concept-box">
+                    <h3><span class="concept-icon">0️⃣</span>Type 0: Fixed</h3>
+                    <div class="concept-definition">
+                        Never changes. Original values retained forever.
+                    </div>
+                    <div class="concept-example">
+Example: Date of Birth, Social Security Number
+Method: No updates allowed
+                    </div>
+                </div>
+
+                <div class="concept-box">
+                    <h3><span class="concept-icon">1️⃣</span>Type 1: Overwrite</h3>
+                    <div class="concept-definition">
+                        Overwrite old value with new. No history preserved.
+                    </div>
+                    <div class="concept-example">
+DimCustomer:
+CustomerID | CustomerName | Address
+100        | John Smith   | 123 Old St
+
+UPDATE: Address changes to "456 New Ave"
+
+CustomerID | CustomerName | Address
+100        | John Smith   | 456 New Ave  ← Overwrote
+
+Old address lost forever
+                    </div>
+                    <div class="concept-why">
+                        <strong>When to use:</strong> Corrections (typos), data that doesn't need history, simplicity preferred.
+                    </div>
+                </div>
+
+                <div class="concept-box">
+                    <h3><span class="concept-icon">2️⃣</span>Type 2: Add New Row</h3>
+                    <div class="concept-definition">
+                        Insert new row with updated value. Preserve full history with effective dates.
+                    </div>
+                    <div class="concept-example">
+DimProduct BEFORE:
+ProductID | ProductKey | ProductName | Price | EffectiveDate | ExpiryDate  | IsCurrent
+1         | ABC        | Widget      | 10.00 | 2020-01-01   | 9999-12-31  | Yes
+
+PRICE CHANGES TO $12.00 on 2024-01-01:
+
+ProductID | ProductKey | ProductName | Price | EffectiveDate | ExpiryDate  | IsCurrent
+1         | ABC        | Widget      | 10.00 | 2020-01-01   | 2023-12-31  | No
+2         | ABC        | Widget      | 12.00 | 2024-01-01   | 9999-12-31  | Yes
+
+New row added, old row expired
+Facts link to correct version based on date
+                    </div>
+                    <div class="key-point">
+                        <div>Type 2 is production standard. Preserves history for accurate trending and auditing. Use ProductKey for business logic, ProductID for relationships.</div>
+                    </div>
+                </div>
+
+                <div class="concept-box">
+                    <h3><span class="concept-icon">3️⃣</span>Type 3: Add New Column</h3>
+                    <div class="concept-definition">
+                        Add column for previous value. Limited history (1-2 prior values only).
+                    </div>
+                    <div class="concept-example">
+DimCustomer:
+CustomerID | Name  | CurrentAddress | PreviousAddress
+100        | John  | 456 New Ave   | 123 Old St
+
+Only tracks current + 1 previous
+Loses history beyond that
+                    </div>
+                    <div class="concept-why">
+                        <strong>When to use:</strong> Rarely. Only when you need exactly one prior value and Type 2 is too complex.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DAX FUNDAMENTALS -->
+        <section id="dax" class="section">
+            <div class="section-header">
+                <span class="section-icon">🧮</span>
+                <h2>DAX Fundamentals</h2>
+            </div>
+
+            <div class="concept-grid">
+                <div class="concept-box">
+                    <h3><span class="concept-icon">📏</span>Measures vs Calculated Columns</h3>
+                    <div class="concept-definition">
+                        Measures = Calculated at query time, context-aware. Calculated Columns = Calculated at refresh time, static.
+                    </div>
+                    <table class="comparison-table">
+                        <tr>
+                            <th>Aspect</th>
+                            <th>Measures</th>
+                            <th>Calculated Columns</th>
+                        </tr>
+                        <tr>
+                            <td><strong>When Calculated</strong></td>
+                            <td>Query time</td>
+                            <td>Refresh time</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Responds to Filters</strong></td>
+                            <td>Yes (dynamic)</td>
+                            <td>No (static)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Storage</strong></td>
+                            <td>In memory only</td>
+                            <td>Stored on disk</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Model Size</strong></td>
+                            <td>No impact</td>
+                            <td>Increases size</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Use For</strong></td>
+                            <td>Aggregations, KPIs</td>
+                            <td>Row-level calculations</td>
+                        </tr>
+                    </table>
+                    <div class="concept-example">
+-- MEASURE (Preferred)
+Total Revenue = SUM(FactSales[Revenue])
+-- Calculates based on current filter context
+
+-- CALCULATED COLUMN (Use sparingly)
+FullName = [FirstName] & " " & [LastName]
+-- Calculated once, stored, doesn't respond to filters
+                    </div>
+                    <div class="best-practice">
+                        <div>Default to measures. Use calculated columns only for row-level logic that needs to be used for grouping/filtering.</div>
+                    </div>
+                </div>
+
+                <div class="concept-box">
+                    <h3><span class="concept-icon">🎯</span>Filter Context</h3>
+                    <div class="concept-definition">
+                        Set of filters applied to data model when evaluating a measure. Created by slicers, rows/columns, visual filters.
+                    </div>
+                    <div class="concept-example">
+User creates matrix:
+Rows: Product Category
+Values: Total Revenue
+
+Filter Context for "Electronics" row:
+- DimProduct[Category] = "Electronics"
+
+Total Revenue measure evaluates with this context:
+= SUM(FactSales[Revenue])  
+-- Only sums sales for Electronics products
+
+Different context = different result
+                    </div>
+                    <div class="key-point">
+                        <div>Measures are powerful because they automatically respond to filter context. No need to write IF statements for every filter combination.</div>
+                    </div>
+                </div>
+
+                <div class="concept-box">
+                    <h3><span class="concept-icon">🔄</span>Row Context</h3>
+                    <div class="concept-definition">
+                        Created when iterating over table rows. Used in calculated columns and iterator functions (SUMX, FILTER).
+                    </div>
+                    <div class="concept-example">
+-- Row context in calculated column
+Profit = FactSales[Revenue] - FactSales[Cost]
+-- Evaluates for EACH row
+
+-- Row context in iterator
+Total Profit = 
+SUMX(
+    FactSales,
+    FactSales[Revenue] - FactSales[Cost]
+)
+-- SUMX creates row context, evaluates expression per row, then sums
+                    </div>
+                    <div class="warning-box">
+                        <div><strong>Important:</strong> Row context does NOT automatically filter related tables. To convert row context to filter context, use CALCULATE or RELATED.</div>
+                    </div>
+                </div>
+
+                <div class="concept-box">
+                    <h3><span class="concept-icon">🛡️</span>Defensive DAX Patterns</h3>
+                    <div class="concept-definition">
+                        Write DAX that handles edge cases gracefully. No errors, no blanks when they shouldn't occur.
+                    </div>
+                    <div class="concept-example">
+-- ✗ BAD: Division by zero causes error
+Margin = [Profit] / [Revenue]
+
+-- ✓ GOOD: DIVIDE handles division by zero
+Margin = DIVIDE([Profit], [Revenue], 0)
+
+-- ✗ BAD: Blank when no data
+Customer Count = DISTINCTCOUNT(FactSales[CustomerID])
+
+-- ✓ GOOD: Return 0 instead of blank
+Customer Count = 
+VAR _Count = DISTINCTCOUNT(FactSales[CustomerID])
+RETURN
+IF(ISBLANK(_Count), 0, _Count)
+
+-- ✗ BAD: Errors when related table empty
+Product Name = RELATED(DimProduct[ProductName])
+
+-- ✓ GOOD: Handle missing relationships
+Product Name = 
+IF(
+    ISBLANK(RELATED(DimProduct[ProductName])),
+    "Unknown",
+    RELATED(DimProduct[ProductName])
+)
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TIME INTELLIGENCE -->
+        <section id="time-intelligence" class="section">
+            <div class="section-header">
+                <span class="section-icon">📅</span>
+                <h2>Time Intelligence</h2>
+            </div>
+
+            <div class="concept-box">
+                <h3><span class="concept-icon">⏰</span>Time Intelligence Requirements</h3>
+                <div class="concept-definition">
+                    Built-in DAX time functions require a properly configured date table.
+                </div>
+                <div class="concept-why">
+                    <strong>Requirements checklist:</strong>
+                    <ul style="margin-top: 10px; padding-left: 20px;">
+                        <li>✓ Date table marked as date table in Power BI</li>
+                        <li>✓ Date column selected as the date identifier</li>
+                        <li>✓ Continuous dates (no gaps in calendar)</li>
+                        <li>✓ Unique dates (one row per day)</li>
+                        <li>✓ Fact table has relationship to date table</li>
+                    </ul>
+                </div>
+                <div class="warning-box">
+                    <div>Without marking date table, functions like SAMEPERIODLASTYEAR, TOTALYTD will error or return unexpected results.</div>
+                </div>
+            </div>
+
+            <div class="concept-grid">
+                <div class="concept-box">
+                    <h3><span class="concept-icon">📊</span>Prior Period Comparisons</h3>
+                    <div class="formula-box">
+Revenue PY = 
+CALCULATE(
+    [Total Revenue],
+    SAMEPERIODLASTYEAR(DimDate[Date])
+)
+
+Revenue YoY Growth = [Total Revenue] - [Revenue PY]
+
+Revenue YoY % = 
+DIVIDE(
+    [Revenue YoY Growth],
+    [Revenue PY],
+    0
+)
+
+Revenue PM = 
+CALCULATE(
+    [Total Revenue],
+    DATEADD(DimDate[Date], -1, MONTH)
+)
+
+Revenue vs Previous Month % =
+DIVIDE(
+    [Total Revenue] - [Revenue PM],
+    [Revenue PM],
+    0
+)
+                    </div>
+                </div>
+
+                <div class="concept-box">
+                    <h3><span class="concept-icon">📈</span>Running Totals</h3>
+                    <div class="formula-box">
+Revenue YTD = 
+TOTALYTD(
+    [Total Revenue],
+    DimDate[Date]
+)
+
+Revenue QTD = 
+TOTALQTD(
+    [Total Revenue],
+    DimDate[Date]
+)
+
+Revenue MTD = 
+TOTALMTD(
+    [Total Revenue],
+    DimDate[Date]
+)
+
+-- Custom period (rolling 12 months)
+Revenue L12M = 
+CALCULATE(
+    [Total Revenue],
+    DATESINPERIOD(
+        DimDate[Date],
+        MAX(DimDate[Date]),
+        -12,
+        MONTH
+    )
+)
+                    </div>
+                </div>
+
+                <div class="concept-box">
+                    <h3><span class="concept-icon">🎯</span>Period-to-Date Patterns</h3>
+                    <div class="formula-box">
+-- Year to Date
+Revenue YTD = 
+CALCULATE(
+    [Total Revenue],
+    DATESYTD(DimDate[Date])
+)
+
+-- YTD vs Prior YTD
+Revenue YTD vs PYTD = 
+VAR CurrentYTD = [Revenue YTD]
+VAR PriorYTD = 
+    CALCULATE(
+        [Revenue YTD],
+        SAMEPERIODLASTYEAR(DimDate[Date])
+    )
+RETURN
+CurrentYTD - PriorYTD
+
+-- Fiscal Year (starts July 1)
+Revenue FYTD = 
+TOTALYTD(
+    [Total Revenue],
+    DimDate[Date],
+    "6/30"  -- Fiscal year ends June 30
+)
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ROW-LEVEL SECURITY -->
+        <section id="rls" class="section">
+            <div class="section-header">
+                <span class="section-icon">🔒</span>
+                <h2>Row-Level Security (RLS)</h2>
+            </div>
+
+            <div class="concept-grid">
+                <div class="concept-box">
+                    <h3><span class="concept-icon">🛡️</span>What is RLS?</h3>
+                    <div class="concept-definition">
+                        Filter data based on who is viewing it. Same report, different data per user. Enforced at dataset level.
+                    </div>
+                    <div class="concept-why">
+                        <strong>Use cases:</strong>
+                        <ul style="margin-top: 10px; padding-left: 20px;">
+                            <li>Regional managers see only their region</li>
+                            <li>Sales reps see only their customers</li>
+                            <li>Multi-tenant applications (customer A can't see customer B's data)</li>
+                            <li>Compliance requirements (GDPR, HIPAA)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="concept-box">
+                    <h3><span class="concept-icon">📝</span>Static RLS (Demo Only)</h3>
+                    <div class="concept-definition">
+                        Hardcode values in DAX filter. Simple but not scalable.
+                    </div>
+                    <div class="concept-example">
+-- Role: NSW Manager
+-- Table: DimRegion
+-- Filter:
+[RegionName] = "New South Wales"
+
+-- Users assigned to this role only see NSW data
+-- Easy to demo, but must create role per region
+                    </div>
+                    <div class="warning-box">
+                        <div>Static RLS doesn't scale. 50 regions = 50 roles. Use dynamic RLS in production.</div>
+                    </div>
+                </div>
+
+                <div class="concept-box">
+                    <h3><span class="concept-icon">🔄</span>Dynamic RLS (Production)</h3>
+                    <div class="concept-definition">
+                        Use security mapping table + USERPRINCIPALNAME() function. Scalable to thousands of users.
+                    </div>
+                    <div class="concept-example">
+-- Create SecurityMap table (not related to model):
+UserEmail               | RegionName
+manager.nsw@co.com     | New South Wales
+manager.vic@co.com     | Victoria
+admin@co.com           | ALL
+
+-- Role: Regional Manager
+-- Table: DimRegion
+-- Filter:
+[RegionName] IN 
+CALCULATETABLE(
+    VALUES(SecurityMap[RegionName]),
+    SecurityMap[UserEmail] = USERPRINCIPALNAME()
+)
+
+-- How it works:
+-- 1. Gets current user's email (USERPRINCIPALNAME)
+-- 2. Looks up their regions in SecurityMap
+-- 3. Filters DimRegion to those regions
+-- 4. Filter propagates to all facts via relationships
+                    </div>
+                    <div class="key-point">
+                        <div>Add new user? Just add row to SecurityMap. No changes to roles or DAX. This is production pattern.</div>
+                    </div>
+                </div>
+
+                <div class="concept-box">
+                    <h3><span class="concept-icon">⚙️</span>RLS Best Practices</h3>
+                    <div class="best-practice">
+                        <div><strong>✓ DO:</strong></div>
+                        <ul style="margin-top: 10px; padding-left: 20px;">
+                            <li>Filter dimensions, not facts (better performance)</li>
+                            <li>Use security mapping tables for dynamic RLS</li>
+                            <li>Test roles using "View as role" before publishing</li>
+                            <li>Document which users/groups are in which roles</li>
+                            <li>Keep SecurityMap table unrelated to model</li>
+                        </ul>
+                    </div>
+                    <div class="warning-box">
+                        <div><strong>✗ DON'T:</strong></div>
+                        <ul style="margin-top: 10px; padding-left: 20px;">
+                            <li>Hardcode user emails in DAX filters</li>
+                            <li>Create separate role for each user</li>
+                            <li>Forget that workspace members bypass RLS</li>
+                            <li>Use complex DAX in filters (performance hit)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PERFORMANCE OPTIMIZATION -->
+        <section id="performance" class="section">
+            <div class="section-header">
+                <span class="section-icon">⚡</span>
+                <h2>Performance Optimization</h2>
+            </div>
+
+            <div class="concept-grid">
+                <div class="concept-box">
+                    <h3><span class="concept-icon">🗄️</span>Model Optimization</h3>
+                    <div class="best-practice">
+                        <div><strong>Remove unused columns:</strong> Every column uses memory. Remove what you don't need.</div>
+                    </div>
+                    <div class="best-practice">
+                        <div><strong>Use integers for keys:</strong> Integer joins are faster than string joins. ProductID (int) better than ProductCode (string).</div>
+                    </div>
+                    <div class="best-practice">
+                        <div><strong>Split datetime columns:</strong> Store Date and Time separately. Date column compresses better.</div>
+                    </div>
+                    <div class="best-practice">
+                        <div><strong>Hide unused columns:</strong> Hidden columns stay in model but don't appear in field list.</div>
+                    </div>
+                    <div class="concept-example">
+-- Power Query: Remove unused columns
+Table.SelectColumns(
+    Source,
+    {"Date", "ProductID", "Revenue"}  // Keep only these
+)
+
+-- Or remove specific columns
+Table.RemoveColumns(
+    Source,
+    {"Column1", "Column2"}  // Remove these
+)
+                    </div>
+                </div>
+
+                <div class="concept-box">
+                    <h3><span class="concept-icon">📊</span>DAX Optimization</h3>
+                    <div class="best-practice">
+                        <div><strong>Use variables (VAR):</strong> Calculate once, reuse multiple times. Avoid recalculation.</div>
+                    </div>
+                    <div class="concept-example">
+-- ✗ BAD: Calculates Total Revenue 3 times
+Gross Margin % = 
+DIVIDE(
+    [Total Revenue] - [Total Cost],
+    [Total Revenue],
+    0
+)
+
+-- ✓ GOOD: Calculates once
+Gross Margin % = 
+VAR _Revenue = [Total Revenue]
+VAR _Cost = [Total Cost]
+VAR _Profit = _Revenue - _Cost
+RETURN
+DIVIDE(_Profit, _Revenue, 0)
+                    </div>
+                    <div class="best-practice">
+                        <div><strong>Filter before iterating:</strong> Reduce rows before SUMX, FILTER operations.</div>
+                    </div>
+                    <div class="concept-example">
+-- ✗ BAD: Iterates all rows then filters
+Total = 
+SUMX(
+    FILTER(
+        FactSales,
+        FactSales[Year] = 2024
+    ),
+    FactSales[Revenue]
+)
+
+-- ✓ GOOD: Use CALCULATE to filter first
+Total = 
+CALCULATE(
+    SUM(FactSales[Revenue]),
+    FactSales[Year] = 2024
+)
+                    </div>
+                </div>
+
+                <div class="concept-box">
+                    <h3><span class="concept-icon">📈</span>Visual Optimization</h3>
+                    <div class="best-practice">
+                        <div><strong>Limit visuals per page:</strong> Max 7-10 visuals. More = slower rendering.</div>
+                    </div>
+                    <div class="best-practice">
+                        <div><strong>Use core visuals:</strong> Custom visuals are slower. Stick to built-in when possible.</div>
+                    </div>
+                    <div class="best-practice">
+                        <div><strong>Limit data in visuals:</strong> Use Top N filters. Don't show 10,000 rows in a table.</div>
+                    </div>
+                    <div class="best-practice">
+                        <div><strong>Reduce cross-filtering:</strong> Edit interactions. Not every visual needs to filter everything.</div>
+                    </div>
+                </div>
+
+                <div class="concept-box">
+                    <h3><span class="concept-icon">🔄</span>Refresh Optimization</h3>
+                    <div class="concept-definition">
+                        Incremental refresh loads only new/changed data. Essential for large datasets.
+                    </div>
+                    <div class="concept-why">
+                        <strong>When to use incremental refresh:</strong>
+                        <ul style="margin-top: 10px; padding-left: 20px;">
+                            <li>Fact tables over 1 million rows</li>
+                            <li>Full refresh takes > 30 minutes</li>
+                            <li>Most data is historical and unchanging</li>
+                        </ul>
+                    </div>
+                    <div class="concept-example">
+Incremental Refresh Policy:
+- Archive data: Older than 2 years (compressed, read-only)
+- Refresh data: Last 2 years (refreshed daily)
+- Detect changes: Use modified date column
+
+Result: 
+- Full: 10 million rows, 2 hour refresh
+- Incremental: 50K new rows, 5 minute refresh
+95% time savings!
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BEST PRACTICES -->
+        <section id="best-practices" class="section">
+            <div class="section-header">
+                <span class="section-icon">⭐</span>
+                <h2>Best Practices Summary</h2>
+            </div>
+
+            <div class="concept-grid">
+                <div class="concept-box">
+                    <h3><span class="concept-icon">📐</span>Modeling</h3>
+                    <ul style="padding-left: 20px;">
+                        <li>✓ Define grain before building fact tables</li>
+                        <li>✓ Use star schema (not snowflake)</li>
+                        <li>✓ One-to-many relationships, single direction</li>
+                        <li>✓ Conformed dimensions across facts</li>
+                        <li>✓ Integer surrogate keys for relationships</li>
+                        <li>✓ Mark date table for time intelligence</li>
+                        <li>✓ Hide foreign keys in fact tables</li>
+                    </ul>
+                </div>
+
+                <div class="concept-box">
+                    <h3><span class="concept-icon">🧮</span>DAX</h3>
+                    <ul style="padding-left: 20px;">
+                        <li>✓ Default to measures (not calculated columns)</li>
+                        <li>✓ Use DIVIDE for division (handles zero)</li>
+                        <li>✓ Use VAR for complex calculations</li>
+                        <li>✓ Filter with CALCULATE, not FILTER + SUMX</li>
+                        <li>✓ Test measures with different filter contexts</li>
+                        <li>✓ Name measures clearly (Total Revenue, not Revenue1)</li>
+                        <li>✓ Organize measures in dedicated table</li>
+                    </ul>
+                </div>
+
+                <div class="concept-box">
+                    <h3><span class="concept-icon">🎨</span>Report Design</h3>
+                    <ul style="padding-left: 20px;">
+                        <li>✓ Maximum 7-10 visuals per page</li>
+                        <li>✓ Executive summary page (high-level KPIs)</li>
+                        <li>✓ Detail pages for drill-down</li>
+                        <li>✓ Consistent color scheme and formatting</li>
+                        <li>✓ Tooltips for additional context</li>
+                        <li>✓ Test on mobile layout</li>
+                        <li>✓ Use bookmarks for navigation</li>
+                    </ul>
+                </div>
+
+                <div class="concept-box">
+                    <h3><span class="concept-icon">🔒</span>Security & Governance</h3>
+                    <ul style="padding-left: 20px;">
+                        <li>✓ Implement RLS from day one</li>
+                        <li>✓ Use dynamic RLS (not static)</li>
+                        <li>✓ Test RLS with "View as role"</li>
+                        <li>✓ Document workspace access roles</li>
+                        <li>✓ Endorse datasets (promote/certify)</li>
+                        <li>✓ Schedule refresh during off-hours</li>
+                        <li>✓ Monitor refresh failures</li>
+                    </ul>
+                </div>
+
+                <div class="concept-box">
+                    <h3><span class="concept-icon">📚</span>Documentation</h3>
+                    <ul style="padding-left: 20px;">
+                        <li>✓ Data dictionary (table/column definitions)</li>
+                        <li>✓ Relationship diagram</li>
+                        <li>✓ Measure library with formulas</li>
+                        <li>✓ Refresh schedule and dependencies</li>
+                        <li>✓ RLS role assignments</li>
+                        <li>✓ Data source connections</li>
+                        <li>✓ Change log for major updates</li>
+                    </ul>
+                </div>
+
+                <div class="concept-box">
+                    <h3><span class="concept-icon">⚡</span>Performance</h3>
+                    <ul style="padding-left: 20px;">
+                        <li>✓ Remove unused columns in Power Query</li>
+                        <li>✓ Use integers for key columns</li>
+                        <li>✓ Implement incremental refresh (large tables)</li>
+                        <li>✓ Limit visuals per page (7-10 max)</li>
+                        <li>✓ Use variables in complex DAX</li>
+                        <li>✓ Filter before iterating (CALCULATE not SUMX)</li>
+                        <li>✓ Monitor dataset size (target < 1GB)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- FINAL SUMMARY -->
+        <div class="key-takeaways" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 50px; border-radius: 20px; margin-top: 40px;">
+            <h3 style="font-size: 2.5em; margin-bottom: 30px; text-align: center;">🎓 Master These Concepts</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 25px; margin-top: 30px;">
+                <div style="background: rgba(255,255,255,0.15); padding: 25px; border-radius: 15px; backdrop-filter: blur(10px);">
+                    <h4 style="font-size: 1.5em; margin-bottom: 15px;">⭐ Star Schema</h4>
+                    <p>Facts in center, dimensions around them. One-to-many relationships, single direction filtering.</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.15); padding: 25px; border-radius: 15px; backdrop-filter: blur(10px);">
+                    <h4 style="font-size: 1.5em; margin-bottom: 15px;">🎯 Data Grain</h4>
+                    <p>What one row represents. Most critical modeling decision. Define before building.</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.15); padding: 25px; border-radius: 15px; backdrop-filter: blur(10px);">
+                    <h4 style="font-size: 1.5em; margin-bottom: 15px;">🧮 Measures First</h4>
+                    <p>Use measures for aggregations. Calculated columns for row-level only. Measures respond to context.</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.15); padding: 25px; border-radius: 15px; backdrop-filter: blur(10px);">
+                    <h4 style="font-size: 1.5em; margin-bottom: 15px;">📅 Mark Date Table</h4>
+                    <p>Required for time intelligence. YTD, YoY, rolling averages all need marked date table.</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.15); padding: 25px; border-radius: 15px; backdrop-filter: blur(10px);">
+                    <h4 style="font-size: 1.5em; margin-bottom: 15px;">🔒 RLS = Governance</h4>
+                    <p>Dynamic RLS with security mapping. Users see only authorized data. Production requirement.</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.15); padding: 25px; border-radius: 15px; backdrop-filter: blur(10px);">
+                    <h4 style="font-size: 1.5em; margin-bottom: 15px;">⚡ Performance Matters</h4>
+                    <p>Remove unused columns. Use integers for keys. Incremental refresh for large datasets.</p>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 40px; font-size: 1.3em; font-weight: 600; padding: 25px; background: rgba(255,255,255,0.2); border-radius: 15px;">
+                These patterns work at scale. From 100K rows to 100M rows. From 5 users to 5,000 users.<br>
+                <span style="font-size: 1.2em; margin-top: 15px; display: block;">Master the fundamentals. Build production-quality from day one.</span>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <h3 style="font-size: 1.8em; margin-bottom: 15px;">📚 Power BI Technical Concepts Reference</h3>
+        <p style="font-size: 1.1em; margin-bottom: 10px;">Data Warehousing | Dimensional Modeling | Star Schema | DAX | RLS | Performance</p>
+        <p style="opacity: 0.8; margin-top: 20px;">Production-ready patterns for enterprise analytics</p>
+    </footer>
+
+    <div class="scroll-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</div>
+
+    <script>
+        // Show scroll-to-top button when scrolling
+        window.addEventListener('scroll', function() {
+            const scrollTop = document.querySelector('.scroll-top');
+            if (window.pageYOffset > 300) {
+                scrollTop.classList.add('visible');
+            } else {
+                scrollTop.classList.remove('visible');
+            }
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

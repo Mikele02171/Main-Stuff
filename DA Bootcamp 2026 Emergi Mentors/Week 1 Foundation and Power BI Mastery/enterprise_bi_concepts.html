@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enterprise Power BI Analytics - Core Concepts</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2c5f8d 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: 1.3em;
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 60px 40px;
+        }
+
+        .section {
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-size: 2.2em;
+            color: #1e3a5f;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 4px solid #ffd700;
+            display: inline-block;
+        }
+
+        .pain-points {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .pain-card {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(238, 90, 111, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .pain-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .pain-card h3 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .pain-card .icon {
+            font-size: 2em;
+            margin-right: 15px;
+        }
+
+        .pain-card p {
+            font-size: 1.1em;
+            line-height: 1.8;
+        }
+
+        .pain-card .stat {
+            font-size: 2.5em;
+            font-weight: 700;
+            margin: 15px 0;
+            display: block;
+        }
+
+        .goals {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .goal-card {
+            background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(74, 144, 226, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .goal-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .goal-card h3 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .goal-card .icon {
+            font-size: 2em;
+            margin-right: 15px;
+        }
+
+        .goal-card p {
+            font-size: 1.1em;
+            line-height: 1.8;
+        }
+
+        .roi-section {
+            background: linear-gradient(135deg, #7cb342 0%, #689f38 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            margin-top: 30px;
+        }
+
+        .roi-section h3 {
+            font-size: 2em;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .roi-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .roi-box {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 25px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        .roi-box h4 {
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .roi-box .metric {
+            font-size: 1.1em;
+            margin: 10px 0;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+        }
+
+        .roi-box .highlight {
+            font-size: 2.5em;
+            font-weight: 700;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .concepts {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .concept-card {
+            background: #f8f9fa;
+            border-left: 6px solid #2c5f8d;
+            padding: 30px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .concept-card:hover {
+            background: #e9ecef;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .concept-card h3 {
+            color: #2c5f8d;
+            font-size: 1.6em;
+            margin-bottom: 15px;
+        }
+
+        .concept-card .definition {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #555;
+            margin-bottom: 15px;
+            padding: 15px;
+            background: white;
+            border-radius: 5px;
+        }
+
+        .concept-card .why {
+            font-size: 1em;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .concept-card .example {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.95em;
+        }
+
+        .key-takeaways {
+            background: linear-gradient(135deg, #9370db 0%, #8a2be2 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            margin-top: 30px;
+        }
+
+        .key-takeaways h3 {
+            font-size: 2em;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .key-takeaways ul {
+            list-style: none;
+        }
+
+        .key-takeaways li {
+            font-size: 1.2em;
+            padding: 15px;
+            margin: 10px 0;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+        }
+
+        .key-takeaways li::before {
+            content: "✓";
+            font-size: 1.5em;
+            margin-right: 15px;
+            font-weight: 700;
+        }
+
+        footer {
+            background: #1e3a5f;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            font-size: 1em;
+        }
+
+        .highlight-box {
+            background: #fff3cd;
+            border-left: 6px solid #ffd700;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 8px;
+        }
+
+        .highlight-box h4 {
+            color: #856404;
+            font-size: 1.4em;
+            margin-bottom: 15px;
+        }
+
+        .highlight-box p {
+            color: #856404;
+            font-size: 1.1em;
+            line-height: 1.8;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            .content {
+                padding: 30px 20px;
+            }
+
+            .section-title {
+                font-size: 1.8em;
+            }
+
+            .roi-comparison {
+                grid-template-columns: 1fr;
+            }
+
+            .concepts {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .timeline {
+            position: relative;
+            padding: 30px 0;
+            margin-top: 30px;
+        }
+
+        .timeline-item {
+            display: flex;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .timeline-number {
+            background: #2c5f8d;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            font-weight: 700;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+
+        .timeline-content {
+            flex-grow: 1;
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .timeline-content h4 {
+            color: #2c5f8d;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .timeline-content p {
+            font-size: 1.05em;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚀 Enterprise Power BI Analytics</h1>
+            <p>Core Concepts, Business Impact & Project Goals</p>
+        </header>
+
+        <div class="content">
+            <!-- BUSINESS PAIN POINTS -->
+            <section class="section">
+                <h2 class="section-title">💥 Business Pain Points</h2>
+                <p style="font-size: 1.2em; color: #555; margin-bottom: 20px;">
+                    Before implementing our enterprise BI solution, organizations face critical challenges that impact decision-making and operational efficiency.
+                </p>
+
+                <div class="pain-points">
+                    <div class="pain-card">
+                        <h3><span class="icon">📊</span> Scattered Data</h3>
+                        <p>Sales data in one system, marketing in spreadsheets, finance in another database. No single source of truth.</p>
+                        <span class="stat">5+ Systems</span>
+                        <p>Average number of disconnected data sources</p>
+                    </div>
+
+                    <div class="pain-card">
+                        <h3><span class="icon">⏰</span> Manual Reporting</h3>
+                        <p>Teams spend 20-40 hours monthly copying data between Excel files, creating reports manually.</p>
+                        <span class="stat">40 Hours/Month</span>
+                        <p>Wasted on manual data consolidation</p>
+                    </div>
+
+                    <div class="pain-card">
+                        <h3><span class="icon">❌</span> Data Quality Issues</h3>
+                        <p>Different teams report different numbers. Which one is correct? Nobody knows for sure.</p>
+                        <span class="stat">30%</span>
+                        <p>Of decisions made on incorrect data</p>
+                    </div>
+
+                    <div class="pain-card">
+                        <h3><span class="icon">🐌</span> Delayed Insights</h3>
+                        <p>Leadership gets last week's data next week. By the time they see it, it's too late to act.</p>
+                        <span class="stat">5-7 Days</span>
+                        <p>Delay between event and insight</p>
+                    </div>
+
+                    <div class="pain-card">
+                        <h3><span class="icon">💰</span> Hidden Costs</h3>
+                        <p>Analyst time, delayed decisions, missed opportunities, compliance risks all add up.</p>
+                        <span class="stat">$50K+</span>
+                        <p>Annual cost of inefficient reporting</p>
+                    </div>
+
+                    <div class="pain-card">
+                        <h3><span class="icon">🔒</span> Security Gaps</h3>
+                        <p>Excel files emailed around. No audit trail. Regional managers see other regions' data.</p>
+                        <span class="stat">High Risk</span>
+                        <p>Data breaches and compliance violations</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PROJECT GOALS -->
+            <section class="section">
+                <h2 class="section-title">🎯 Project Goals</h2>
+                <p style="font-size: 1.2em; color: #555; margin-bottom: 20px;">
+                    Our Power BI enterprise solution addresses each pain point with concrete, measurable improvements.
+                </p>
+
+                <div class="goals">
+                    <div class="goal-card">
+                        <h3><span class="icon">🏗️</span> Centralize Data</h3>
+                        <p>Build a star schema data warehouse consolidating sales, marketing, and finance data into a single, governed model.</p>
+                        <p style="margin-top: 15px; font-weight: 600;">✓ Single source of truth</p>
+                    </div>
+
+                    <div class="goal-card">
+                        <h3><span class="icon">⚡</span> Automate ETL</h3>
+                        <p>Power Query extracts, transforms, and loads data automatically. Daily refresh keeps everything current.</p>
+                        <p style="margin-top: 15px; font-weight: 600;">✓ 80% time savings</p>
+                    </div>
+
+                    <div class="goal-card">
+                        <h3><span class="icon">📈</span> Self-Service Analytics</h3>
+                        <p>Business users slice and dice data themselves. No waiting for IT. Interactive dashboards replace static reports.</p>
+                        <p style="margin-top: 15px; font-weight: 600;">✓ Real-time insights</p>
+                    </div>
+
+                    <div class="goal-card">
+                        <h3><span class="icon">🔐</span> Implement RLS</h3>
+                        <p>Row-level security ensures regional managers only see their territory. Compliance built-in.</p>
+                        <p style="margin-top: 15px; font-weight: 600;">✓ Data governance</p>
+                    </div>
+
+                    <div class="goal-card">
+                        <h3><span class="icon">📊</span> Executive Dashboards</h3>
+                        <p>Leadership gets KPIs at-a-glance. Revenue, margin, trends, forecasts all on one screen.</p>
+                        <p style="margin-top: 15px; font-weight: 600;">✓ Data-driven decisions</p>
+                    </div>
+
+                    <div class="goal-card">
+                        <h3><span class="icon">🌐</span> Cloud Deployment</h3>
+                        <p>Power BI Service enables anywhere access. Mobile support. Scheduled refresh. Enterprise scale.</p>
+                        <p style="margin-top: 15px; font-weight: 600;">✓ Scalable platform</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ROI CALCULATION -->
+            <div class="roi-section">
+                <h3>💵 Return on Investment</h3>
+                <div class="roi-comparison">
+                    <div class="roi-box">
+                        <h4>❌ BEFORE (Manual Excel)</h4>
+                        <div class="metric">Reporting time: 40 hrs/month</div>
+                        <div class="metric">Labor cost: $75/hour</div>
+                        <div class="metric">Decision delay: 5-7 days</div>
+                        <div class="metric">Data errors: Frequent</div>
+                        <div class="highlight">$36,000/year</div>
+                        <p style="text-align: center;">Annual labor cost</p>
+                    </div>
+
+                    <div class="roi-box">
+                        <h4>✅ AFTER (Power BI)</h4>
+                        <div class="metric">Reporting time: 8 hrs/month</div>
+                        <div class="metric">Labor cost: $75/hour</div>
+                        <div class="metric">Decision delay: Real-time</div>
+                        <div class="metric">Data errors: Rare</div>
+                        <div class="highlight">$7,200/year</div>
+                        <p style="text-align: center;">Annual labor cost</p>
+                    </div>
+                </div>
+
+                <div class="highlight-box" style="background: rgba(255,255,255,0.3); border-left-color: white; margin-top: 30px;">
+                    <h4 style="color: white; font-size: 1.8em; text-align: center;">Net Savings: $28,800/year</h4>
+                    <p style="color: white; text-align: center; font-size: 1.2em;">80% reduction in reporting time + Real-time decision capability</p>
+                    <p style="color: white; text-align: center; font-size: 1.1em; margin-top: 10px;">Power BI Premium cost (~$5,000/year) = <strong>5-6 month payback period</strong></p>
+                </div>
+            </div>
+
+            <!-- KEY CONCEPTS -->
+            <section class="section">
+                <h2 class="section-title">🧠 Critical Concepts to Master</h2>
+                <p style="font-size: 1.2em; color: #555; margin-bottom: 20px;">
+                    These foundational concepts are essential for understanding and implementing enterprise BI solutions.
+                </p>
+
+                <div class="concepts">
+                    <div class="concept-card">
+                        <h3>1. Star Schema</h3>
+                        <div class="definition">
+                            Fact table in center (transactions) connected to dimension tables (context) in a star pattern.
+                        </div>
+                        <p class="why"><strong>Why it matters:</strong> Fastest query performance. Business users understand it intuitively. Industry standard for data warehousing.</p>
+                        <div class="example">
+                            FactSales (center)
+                            ├─ DimDate
+                            ├─ DimProduct
+                            ├─ DimCustomer
+                            └─ DimRegion
+                        </div>
+                    </div>
+
+                    <div class="concept-card">
+                        <h3>2. Fact vs Dimension</h3>
+                        <div class="definition">
+                            Facts = Measurements (numbers, metrics). Dimensions = Context (who, what, where, when).
+                        </div>
+                        <p class="why"><strong>Why it matters:</strong> Determines table structure and model design. Facts aggregate, dimensions filter.</p>
+                        <div class="example">
+                            Fact: Revenue, Quantity, Cost
+                            Dimension: Product Name, Region, Date
+                        </div>
+                    </div>
+
+                    <div class="concept-card">
+                        <h3>3. Data Grain</h3>
+                        <div class="definition">
+                            What one row represents. Most important modeling decision.
+                        </div>
+                        <p class="why"><strong>Why it matters:</strong> Wrong grain = wrong analysis. Must be clearly defined before building model.</p>
+                        <div class="example">
+                            FactSales grain:
+                            1 row = 1 transaction
+                            
+                            FactPlanning grain:
+                            1 row = 1 product-month
+                        </div>
+                    </div>
+
+                    <div class="concept-card">
+                        <h3>4. One-to-Many Relationships</h3>
+                        <div class="definition">
+                            One dimension row relates to many fact rows. Always 1:* cardinality.
+                        </div>
+                        <p class="why"><strong>Why it matters:</strong> Foundation of star schema. Enables filtering from dimensions to facts.</p>
+                        <div class="example">
+                            DimProduct[ProductID] (1)
+                                    ↓
+                            FactSales[ProductID] (*)
+                            
+                            One product → many sales
+                        </div>
+                    </div>
+
+                    <div class="concept-card">
+                        <h3>5. Filter Direction</h3>
+                        <div class="definition">
+                            Filters flow from dimensions to facts. Single direction only.
+                        </div>
+                        <p class="why"><strong>Why it matters:</strong> Prevents circular logic. Ensures predictable query results. Performance optimization.</p>
+                        <div class="example">
+                            User selects "NSW" in Region
+                                    ↓
+                            DimRegion filters
+                                    ↓
+                            FactSales shows NSW only
+                        </div>
+                    </div>
+
+                    <div class="concept-card">
+                        <h3>6. ETL Process</h3>
+                        <div class="definition">
+                            Extract data from sources, Transform it (clean, calculate), Load to model.
+                        </div>
+                        <p class="why"><strong>Why it matters:</strong> Data quality starts here. Automated ETL eliminates manual work.</p>
+                        <div class="example">
+                            Extract: CSV, Excel, Database
+                            Transform: Power Query (M)
+                            Load: Power BI Model
+                        </div>
+                    </div>
+
+                    <div class="concept-card">
+                        <h3>7. DAX Measures</h3>
+                        <div class="definition">
+                            Calculations that respond to filter context. Computed at query time, not stored.
+                        </div>
+                        <p class="why"><strong>Why it matters:</strong> Enable dynamic KPIs. More flexible and performant than calculated columns.</p>
+                        <div class="example">
+                            Total Revenue = 
+                              SUM(FactSales[Revenue])
+                            
+                            Gross Margin % = 
+                              DIVIDE([Profit], [Revenue])
+                        </div>
+                    </div>
+
+                    <div class="concept-card">
+                        <h3>8. Row-Level Security</h3>
+                        <div class="definition">
+                            Filter data based on who is viewing it. Same report, different data per user.
+                        </div>
+                        <p class="why"><strong>Why it matters:</strong> Data governance and compliance. Regional managers see only their territory.</p>
+                        <div class="example">
+                            Role: NSW Manager
+                            Filter: [Region] = "NSW"
+                            Result: User only sees NSW data
+                        </div>
+                    </div>
+
+                    <div class="concept-card">
+                        <h3>9. Conformed Dimensions</h3>
+                        <div class="definition">
+                            Same dimension used by multiple fact tables. Shared across business processes.
+                        </div>
+                        <p class="why"><strong>Why it matters:</strong> Enables cross-functional analysis. "Which products have high marketing spend but low sales?"</p>
+                        <div class="example">
+                            DimProduct used by:
+                            - FactSales
+                            - FactMarketingSpend
+                            - FactPlanning
+                        </div>
+                    </div>
+
+                    <div class="concept-card">
+                        <h3>10. Time Intelligence</h3>
+                        <div class="definition">
+                            Built-in DAX functions for year-over-year, YTD, running totals. Requires marked date table.
+                        </div>
+                        <p class="why"><strong>Why it matters:</strong> Business users need trend analysis and comparisons to prior periods.</p>
+                        <div class="example">
+                            Revenue PY = 
+                              CALCULATE([Revenue],
+                                SAMEPERIODLASTYEAR(Date))
+                            
+                            Revenue YTD = 
+                              TOTALYTD([Revenue], Date)
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- IMPLEMENTATION TIMELINE -->
+            <section class="section">
+                <h2 class="section-title">⏱️ Implementation Phases</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-number">1</div>
+                        <div class="timeline-content">
+                            <h4>Power Query - Data Ingestion (10 min)</h4>
+                            <p>Load all sources: dimensions, facts, append marketing files, transform planning data. Foundation stage.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-number">2</div>
+                        <div class="timeline-content">
+                            <h4>Data Modeling - Star Schema (15 min)</h4>
+                            <p>Create 11 relationships, mark date table, hide foreign keys. Clean architecture established.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-number">3</div>
+                        <div class="timeline-content">
+                            <h4>DAX Measures - Business Logic (15 min)</h4>
+                            <p>15 essential measures: core KPIs, time intelligence, marketing ROI. Analytics layer complete.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-number">4</div>
+                        <div class="timeline-content">
+                            <h4>Report Design - Visualizations (20 min)</h4>
+                            <p>2 polished pages: Executive dashboard + Sales detail. User experience optimized.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-number">5</div>
+                        <div class="timeline-content">
+                            <h4>Row-Level Security - Governance (10 min)</h4>
+                            <p>Static RLS implementation, test roles. Data security enforced.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-number">6</div>
+                        <div class="timeline-content">
+                            <h4>Power BI Service - Deployment (15 min)</h4>
+                            <p>Publish, configure refresh, assign users, share reports. Production-ready platform.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- KEY TAKEAWAYS -->
+            <div class="key-takeaways">
+                <h3>🎓 Key Takeaways</h3>
+                <ul>
+                    <li>Star schema is the foundation - Facts in center, dimensions around them</li>
+                    <li>Grain definition is the most critical modeling decision</li>
+                    <li>One-to-many relationships flow from dimensions to facts (single direction)</li>
+                    <li>Measures are more flexible than calculated columns - default to measures</li>
+                    <li>Mark your date table to unlock time intelligence functions</li>
+                    <li>Row-level security enables governed self-service analytics</li>
+                    <li>ETL automation reduces manual reporting time by 80%+</li>
+                    <li>Conformed dimensions enable cross-functional analysis</li>
+                    <li>This pattern scales from 100K rows to 100M rows</li>
+                    <li>Production-quality from day one prevents technical debt</li>
+                </ul>
+            </div>
+
+            <!-- FINAL HIGHLIGHT -->
+            <div class="highlight-box">
+                <h4>🚀 The Transformation</h4>
+                <p><strong>From:</strong> Data scattered, insights delayed, decisions guessed, teams frustrated, costs hidden</p>
+                <p style="margin-top: 15px;"><strong>To:</strong> Data centralized, insights instant, decisions data-driven, teams empowered, ROI proven</p>
+                <p style="margin-top: 20px; font-size: 1.2em;"><strong>You're not just building dashboards. You're building the analytical foundation for business transformation.</strong></p>
+            </div>
+        </div>
+
+        <footer>
+            <p><strong>Enterprise Power BI Analytics Project</strong></p>
+            <p>Star Schema | DAX | RLS | Power BI Service</p>
+            <p style="margin-top: 10px; opacity: 0.8;">Production-ready patterns for enterprise deployment</p>
+        </footer>
+    </div>
+</body>
+</html>

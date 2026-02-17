@@ -1,0 +1,1651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Dictionary - Power BI Enterprise Project</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 50px rgba(0,0,0,0.15);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2c5f8d 100%);
+            color: white;
+            padding: 50px 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.8em;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: 1.3em;
+            opacity: 0.95;
+        }
+
+        .nav-tabs {
+            background: #2c5f8d;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .nav-tabs a {
+            color: white;
+            text-decoration: none;
+            padding: 18px 25px;
+            display: inline-block;
+            transition: all 0.3s;
+            font-weight: 600;
+            border-bottom: 3px solid transparent;
+        }
+
+        .nav-tabs a:hover {
+            background: rgba(255,255,255,0.1);
+            border-bottom-color: #ffd700;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .section {
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            font-size: 2em;
+            color: #1e3a5f;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #ffd700;
+        }
+
+        .overview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .info-box h3 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            opacity: 0.9;
+        }
+
+        .info-box .value {
+            font-size: 2em;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .table-card {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-left: 5px solid #2c5f8d;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .table-card h3 {
+            color: #2c5f8d;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .table-badge {
+            background: #ffd700;
+            color: #1e3a5f;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.6em;
+            font-weight: 700;
+        }
+
+        .table-meta {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+        }
+
+        .meta-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .meta-label {
+            font-weight: 700;
+            color: #666;
+            font-size: 0.85em;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .meta-value {
+            font-size: 1.1em;
+            color: #2c5f8d;
+            font-weight: 600;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .data-table thead {
+            background: #2c5f8d;
+            color: white;
+        }
+
+        .data-table th {
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.95em;
+        }
+
+        .data-table td {
+            padding: 15px;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .data-table tbody tr:hover {
+            background: #f8f9fa;
+        }
+
+        .data-table td:first-child {
+            font-weight: 600;
+            color: #2c5f8d;
+        }
+
+        .sample-values {
+            background: #e3f2fd;
+            padding: 8px 12px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            display: inline-block;
+        }
+
+        .note-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .note-box strong {
+            color: #856404;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .key-box {
+            background: #d1ecf1;
+            border-left: 4px solid #17a2b8;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .key-box strong {
+            color: #0c5460;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .rule-box {
+            background: #d4edda;
+            border-left: 4px solid #28a745;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .usage-box {
+            background: #e7e7f9;
+            border-left: 4px solid #6c63ff;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .relationship-diagram {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin: 25px 0;
+            border: 2px solid #e9ecef;
+            overflow-x: auto;
+        }
+
+        .relationship-diagram pre {
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            line-height: 1.8;
+            color: #2c5f8d;
+            margin: 0;
+        }
+
+        .summary-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .summary-table th {
+            background: #2c5f8d;
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .summary-table td {
+            padding: 12px;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .summary-table tbody tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        footer {
+            background: #1e3a5f;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #2c5f8d;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(44, 95, 141, 0.4);
+            transition: all 0.3s;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .scroll-top:hover {
+            background: #1e3a5f;
+            transform: translateY(-5px);
+        }
+
+        .type-badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            font-weight: 600;
+            margin-right: 5px;
+        }
+
+        .type-integer {
+            background: #e3f2fd;
+            color: #1976d2;
+        }
+
+        .type-text {
+            background: #f3e5f5;
+            color: #7b1fa2;
+        }
+
+        .type-date {
+            background: #e8f5e9;
+            color: #388e3c;
+        }
+
+        .type-decimal {
+            background: #fff3e0;
+            color: #f57c00;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .content {
+                padding: 20px;
+            }
+
+            .nav-tabs {
+                flex-direction: column;
+            }
+
+            .nav-tabs a {
+                width: 100%;
+                text-align: center;
+            }
+
+            .data-table {
+                font-size: 0.85em;
+            }
+
+            .data-table th,
+            .data-table td {
+                padding: 10px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Data Dictionary & Metadata Documentation</h1>
+            <p>Enterprise Power BI Analytics Project</p>
+        </div>
+
+        <nav class="nav-tabs">
+            <a href="#overview">Overview</a>
+            <a href="#dimensions">Dimensions</a>
+            <a href="#facts">Facts</a>
+            <a href="#relationships">Relationships</a>
+            <a href="#rules">Business Rules</a>
+        </nav>
+
+        <div class="content">
+            <!-- OVERVIEW SECTION -->
+            <section id="overview" class="section">
+                <h2 class="section-title">Project Overview</h2>
+                
+                <div class="overview-grid">
+                    <div class="info-box">
+                        <h3>Data Period</h3>
+                        <div class="value">2022-2025</div>
+                        <p>4 years of data</p>
+                    </div>
+                    <div class="info-box">
+                        <h3>Total Records</h3>
+                        <div class="value">142,000+</div>
+                        <p>Across all tables</p>
+                    </div>
+                    <div class="info-box">
+                        <h3>Tables</h3>
+                        <div class="value">8</div>
+                        <p>3 Facts + 5 Dimensions</p>
+                    </div>
+                    <div class="info-box">
+                        <h3>Relationships</h3>
+                        <div class="value">11</div>
+                        <p>Star schema design</p>
+                    </div>
+                </div>
+
+                <div class="note-box">
+                    <strong>Business Purpose:</strong>
+                    Provide integrated analytics across three business functions: operational sales performance, marketing campaign effectiveness, and financial planning accuracy.
+                </div>
+
+                <h3 style="margin-top: 40px; color: #2c5f8d; font-size: 1.5em;">Data Sources Summary</h3>
+                <table class="summary-table">
+                    <thead>
+                        <tr>
+                            <th>Source File</th>
+                            <th>Table Name</th>
+                            <th>Type</th>
+                            <th>Rows</th>
+                            <th>Business Owner</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>fact_sales.csv</td>
+                            <td>FactSales</td>
+                            <td>Fact</td>
+                            <td>100,010</td>
+                            <td>Sales Operations</td>
+                        </tr>
+                        <tr>
+                            <td>marketing_*.csv (6 files)</td>
+                            <td>FactMarketingSpend</td>
+                            <td>Fact</td>
+                            <td>30,000</td>
+                            <td>Marketing</td>
+                        </tr>
+                        <tr>
+                            <td>finance_planning.xlsx</td>
+                            <td>FactFinancePlanning</td>
+                            <td>Fact</td>
+                            <td>9,600</td>
+                            <td>Finance</td>
+                        </tr>
+                        <tr>
+                            <td>dim_date.csv</td>
+                            <td>DimDate</td>
+                            <td>Dimension</td>
+                            <td>1,461</td>
+                            <td>IT / BI Team</td>
+                        </tr>
+                        <tr>
+                            <td>dim_product.csv</td>
+                            <td>DimProduct</td>
+                            <td>Dimension</td>
+                            <td>205</td>
+                            <td>Product Management</td>
+                        </tr>
+                        <tr>
+                            <td>dim_customer.csv</td>
+                            <td>DimCustomer</td>
+                            <td>Dimension</td>
+                            <td>2,000</td>
+                            <td>Sales Operations</td>
+                        </tr>
+                        <tr>
+                            <td>dim_region.csv</td>
+                            <td>DimRegion</td>
+                            <td>Dimension</td>
+                            <td>8</td>
+                            <td>Sales Operations</td>
+                        </tr>
+                        <tr>
+                            <td>dim_channel.csv</td>
+                            <td>DimChannel</td>
+                            <td>Dimension</td>
+                            <td>4</td>
+                            <td>Sales Operations</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="note-box">
+                    <strong>Important Note:</strong>
+                    operations_sales.csv is identical to fact_sales.csv (duplicate file). Only load one of them to avoid data duplication.
+                </div>
+            </section>
+
+            <!-- DIMENSIONS SECTION -->
+            <section id="dimensions" class="section">
+                <h2 class="section-title">Dimension Tables</h2>
+
+                <!-- DimDate -->
+                <div class="table-card">
+                    <h3>
+                        DimDate (Date Dimension)
+                        <span class="table-badge">DIMENSION</span>
+                    </h3>
+                    
+                    <div class="table-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">Purpose</span>
+                            <span class="meta-value">Calendar for time analysis</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Grain</span>
+                            <span class="meta-value">One row per day</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Row Count</span>
+                            <span class="meta-value">1,461 days</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Primary Key</span>
+                            <span class="meta-value">Date</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Date Range</span>
+                            <span class="meta-value">2022-01-01 to 2025-12-31</span>
+                        </div>
+                    </div>
+
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Column Name</th>
+                                <th>Data Type</th>
+                                <th>Description</th>
+                                <th>Sample Values</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>DateKey</td>
+                                <td><span class="type-badge type-integer">Integer</span></td>
+                                <td>Date in YYYYMMDD format</td>
+                                <td><span class="sample-values">20220101, 20220102</span></td>
+                            </tr>
+                            <tr>
+                                <td>Date</td>
+                                <td><span class="type-badge type-date">Date</span></td>
+                                <td>Actual calendar date (PRIMARY KEY)</td>
+                                <td><span class="sample-values">2022-01-01, 2022-01-02</span></td>
+                            </tr>
+                            <tr>
+                                <td>Year</td>
+                                <td><span class="type-badge type-integer">Integer</span></td>
+                                <td>Year number</td>
+                                <td><span class="sample-values">2022, 2023, 2024, 2025</span></td>
+                            </tr>
+                            <tr>
+                                <td>Quarter</td>
+                                <td><span class="type-badge type-integer">Integer</span></td>
+                                <td>Quarter number (1-4)</td>
+                                <td><span class="sample-values">1, 2, 3, 4</span></td>
+                            </tr>
+                            <tr>
+                                <td>Month</td>
+                                <td><span class="type-badge type-integer">Integer</span></td>
+                                <td>Month number (1-12)</td>
+                                <td><span class="sample-values">1, 2, 3...12</span></td>
+                            </tr>
+                            <tr>
+                                <td>Day</td>
+                                <td><span class="type-badge type-integer">Integer</span></td>
+                                <td>Day of month (1-31)</td>
+                                <td><span class="sample-values">1, 2, 3...31</span></td>
+                            </tr>
+                            <tr>
+                                <td>DayOfWeek</td>
+                                <td><span class="type-badge type-integer">Integer</span></td>
+                                <td>Day of week (1=Monday, 7=Sunday)</td>
+                                <td><span class="sample-values">1, 2, 3...7</span></td>
+                            </tr>
+                            <tr>
+                                <td>MonthName</td>
+                                <td><span class="type-badge type-text">Text</span></td>
+                                <td>Full month name</td>
+                                <td><span class="sample-values">January, February, March</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="key-box">
+                        <strong>Critical Requirement:</strong>
+                        This table MUST be marked as "Date Table" in Power BI for time intelligence functions (TOTALYTD, SAMEPERIODLASTYEAR) to work correctly.
+                    </div>
+
+                    <div class="usage-box">
+                        <strong>Usage Examples:</strong>
+                        <ul style="margin-top: 10px; padding-left: 20px;">
+                            <li>Filter reports by Year, Quarter, or Month</li>
+                            <li>Create year-over-year comparisons</li>
+                            <li>Calculate YTD, QTD, MTD totals</li>
+                            <li>Display user-friendly date labels (MonthName)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- DimProduct -->
+                <div class="table-card">
+                    <h3>
+                        DimProduct (Product Dimension)
+                        <span class="table-badge">DIMENSION</span>
+                    </h3>
+                    
+                    <div class="table-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">Purpose</span>
+                            <span class="meta-value">Product catalog with hierarchy</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Grain</span>
+                            <span class="meta-value">One row per product</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Row Count</span>
+                            <span class="meta-value">205 products</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Primary Key</span>
+                            <span class="meta-value">ProductID</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">ID Range</span>
+                            <span class="meta-value">1000 - 1199</span>
+                        </div>
+                    </div>
+
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Column Name</th>
+                                <th>Data Type</th>
+                                <th>Description</th>
+                                <th>Sample Values</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>ProductID</td>
+                                <td><span class="type-badge type-integer">Integer</span></td>
+                                <td>Unique product identifier (PRIMARY KEY)</td>
+                                <td><span class="sample-values">1000, 1001, 1002</span></td>
+                            </tr>
+                            <tr>
+                                <td>ProductCode</td>
+                                <td><span class="type-badge type-text">Text</span></td>
+                                <td>Business product code</td>
+                                <td><span class="sample-values">P1000, P1001, P1002</span></td>
+                            </tr>
+                            <tr>
+                                <td>ProductName</td>
+                                <td><span class="type-badge type-text">Text</span></td>
+                                <td>Product display name</td>
+                                <td><span class="sample-values">Electronic 1000, Office Supplie 1002</span></td>
+                            </tr>
+                            <tr>
+                                <td>Category</td>
+                                <td><span class="type-badge type-text">Text</span></td>
+                                <td>Top-level product category</td>
+                                <td><span class="sample-values">Electronics, Office Supplies, Furniture</span></td>
+                            </tr>
+                            <tr>
+                                <td>Subcategory</td>
+                                <td><span class="type-badge type-text">Text</span></td>
+                                <td>Product subcategory</td>
+                                <td><span class="sample-values">Accessories, Writing, Paper</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="rule-box">
+                        <strong>Business Rules:</strong>
+                        <ul style="margin-top: 10px; padding-left: 20px;">
+                            <li>ProductID is system-generated surrogate key (stable, never changes)</li>
+                            <li>ProductCode is business natural key (could change during rebranding)</li>
+                            <li>Category and Subcategory are denormalized (duplicated by design for performance)</li>
+                            <li>Some product names contain minor spelling variations (realistic data)</li>
+                        </ul>
+                    </div>
+
+                    <div class="note-box">
+                        <strong>Product Categories:</strong>
+                        <ul style="margin-top: 10px; padding-left: 20px;">
+                            <li><strong>Electronics:</strong> Accessories, Computers, Phones</li>
+                            <li><strong>Office Supplies:</strong> Paper, Writing, Organization</li>
+                            <li><strong>Furniture:</strong> Chairs, Desks, Storage</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- DimCustomer -->
+                <div class="table-card">
+                    <h3>
+                        DimCustomer (Customer Dimension)
+                        <span class="table-badge">DIMENSION</span>
+                    </h3>
+                    
+                    <div class="table-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">Purpose</span>
+                            <span class="meta-value">Customer master with segmentation</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Grain</span>
+                            <span class="meta-value">One row per customer</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Row Count</span>
+                            <span class="meta-value">2,000 customers</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Primary Key</span>
+                            <span class="meta-value">CustomerID</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">ID Range</span>
+                            <span class="meta-value">2000 - 3999</span>
+                        </div>
+                    </div>
+
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Column Name</th>
+                                <th>Data Type</th>
+                                <th>Description</th>
+                                <th>Sample Values</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>CustomerID</td>
+                                <td><span class="type-badge type-integer">Integer</span></td>
+                                <td>Unique customer identifier (PRIMARY KEY)</td>
+                                <td><span class="sample-values">2000, 2001, 2002</span></td>
+                            </tr>
+                            <tr>
+                                <td>CustomerName</td>
+                                <td><span class="type-badge type-text">Text</span></td>
+                                <td>Customer display name</td>
+                                <td><span class="sample-values">Customer 2000, Customer 2001</span></td>
+                            </tr>
+                            <tr>
+                                <td>Segment</td>
+                                <td><span class="type-badge type-text">Text</span></td>
+                                <td>Customer business segment</td>
+                                <td><span class="sample-values">Enterprise, Corporate, Small Business</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="note-box">
+                        <strong>Customer Segments:</strong>
+                        <ul style="margin-top: 10px; padding-left: 20px;">
+                            <li><strong>Enterprise:</strong> Large organizations with 500+ employees</li>
+                            <li><strong>Corporate:</strong> Mid-size businesses with 50-500 employees</li>
+                            <li><strong>Small Business:</strong> Small companies and startups with less than 50 employees</li>
+                        </ul>
+                    </div>
+
+                    <div class="rule-box">
+                        <strong>Business Rules:</strong>
+                        <ul style="margin-top: 10px; padding-left: 20px;">
+                            <li>CustomerID is system-generated and stable over time</li>
+                            <li>Segment determines pricing tier and service level</li>
+                            <li>Customer names are anonymized for training purposes</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- DimRegion -->
+                <div class="table-card">
+                    <h3>
+                        DimRegion (Geographic Dimension)
+                        <span class="table-badge">DIMENSION</span>
+                    </h3>
+                    
+                    <div class="table-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">Purpose</span>
+                            <span class="meta-value">Sales territory geography</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Grain</span>
+                            <span class="meta-value">One row per region</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Row Count</span>
+                            <span class="meta-value">8 regions</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Primary Key</span>
+                            <span class="meta-value">RegionID</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Geography</span>
+                            <span class="meta-value">Australia</span>
+                        </div>
+                    </div>
+
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Column Name</th>
+                                <th>Data Type</th>
+                                <th>Description</th>
+                                <th>Sample Values</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>RegionID</td>
+                                <td><span class="type-badge type-integer">Integer</span></td>
+                                <td>Unique region identifier (PRIMARY KEY)</td>
+                                <td><span class="sample-values">1, 2, 3...8</span></td>
+                            </tr>
+                            <tr>
+                                <td>RegionName</td>
+                                <td><span class="type-badge type-text">Text</span></td>
+                                <td>Sales region name</td>
+                                <td><span class="sample-values">New South Wales, Victoria, Queensland</span></td>
+                            </tr>
+                            <tr>
+                                <td>State</td>
+                                <td><span class="type-badge type-text">Text</span></td>
+                                <td>State or territory name</td>
+                                <td><span class="sample-values">New South Wales, Victoria, Western Australia</span></td>
+                            </tr>
+                            <tr>
+                                <td>Country</td>
+                                <td><span class="type-badge type-text">Text</span></td>
+                                <td>Country name</td>
+                                <td><span class="sample-values">Australia</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="note-box">
+                        <strong>Australian Regions (8 total):</strong>
+                        <ul style="margin-top: 10px; padding-left: 20px;">
+                            <li>New South Wales</li>
+                            <li>Victoria</li>
+                            <li>Queensland</li>
+                            <li>Western Australia</li>
+                            <li>South Australia</li>
+                            <li>Tasmania</li>
+                            <li>Australian Capital Territory</li>
+                            <li>Northern Territory</li>
+                        </ul>
+                    </div>
+
+                    <div class="usage-box">
+                        <strong>Usage Examples:</strong>
+                        <ul style="margin-top: 10px; padding-left: 20px;">
+                            <li>Analyze sales performance by state or territory</li>
+                            <li>Compare regional revenue and margins</li>
+                            <li>Implement row-level security by region (regional managers see only their territory)</li>
+                            <li>Create geographic visualizations (maps)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- DimChannel -->
+                <div class="table-card">
+                    <h3>
+                        DimChannel (Sales Channel Dimension)
+                        <span class="table-badge">DIMENSION</span>
+                    </h3>
+                    
+                    <div class="table-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">Purpose</span>
+                            <span class="meta-value">Sales channel classification</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Grain</span>
+                            <span class="meta-value">One row per channel</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Row Count</span>
+                            <span class="meta-value">4 channels</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Primary Key</span>
+                            <span class="meta-value">ChannelID</span>
+                        </div>
+                    </div>
+
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Column Name</th>
+                                <th>Data Type</th>
+                                <th>Description</th>
+                                <th>Sample Values</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>ChannelID</td>
+                                <td><span class="type-badge type-integer">Integer</span></td>
+                                <td>Unique channel identifier (PRIMARY KEY)</td>
+                                <td><span class="sample-values">1, 2, 3, 4</span></td>
+                            </tr>
+                            <tr>
+                                <td>ChannelName</td>
+                                <td><span class="type-badge type-text">Text</span></td>
+                                <td>Sales channel name</td>
+                                <td><span class="sample-values">Online, Store, Wholesale, Partner</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="note-box">
+                        <strong>Sales Channels (4 total):</strong>
+                        <ul style="margin-top: 10px; padding-left: 20px;">
+                            <li><strong>Online:</strong> E-commerce website and mobile app sales</li>
+                            <li><strong>Store:</strong> Physical retail store purchases</li>
+                            <li><strong>Wholesale:</strong> Bulk orders to retailers and distributors</li>
+                            <li><strong>Partner:</strong> Sales through third-party partners and resellers</li>
+                        </ul>
+                    </div>
+
+                    <div class="usage-box">
+                        <strong>Usage Examples:</strong>
+                        <ul style="margin-top: 10px; padding-left: 20px;">
+                            <li>Compare revenue across different sales channels</li>
+                            <li>Analyze channel mix by region or customer segment</li>
+                            <li>Track channel performance trends over time</li>
+                            <li>Calculate channel-specific margins and costs</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FACTS SECTION -->
+            <section id="facts" class="section">
+                <h2 class="section-title">Fact Tables</h2>
+
+                <!-- FactSales -->
+                <div class="table-card">
+                    <h3>
+                        FactSales (Sales Transactions)
+                        <span class="table-badge" style="background: #ff9e4f; color: white;">FACT</span>
+                    </h3>
+                    
+                    <div class="table-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">Purpose</span>
+                            <span class="meta-value">Sales transaction details</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Grain</span>
+                            <span class="meta-value">One row = one transaction</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Row Count</span>
+                            <span class="meta-value">100,010 transactions</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Fact Type</span>
+                            <span class="meta-value">Transaction</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Update Frequency</span>
+                            <span class="meta-value">Daily</span>
+                        </div>
+                    </div>
+
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Column Name</th>
+                                <th>Data Type</th>
+                                <th>Description</th>
+                                <th>Sample Values</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>SalesID</td>
+                                <td><span class="type-badge type-integer">Integer</span></td>
+                                <td>Unique transaction identifier</td>
+                                <td><span class="sample-values">1, 2, 3...100010</span></td>
+                            </tr>
+                            <tr>
+                                <td>Date</td>
+                                <td><span class="type-badge type-date">Date</span></td>
+                                <td>Transaction date (FOREIGN KEY to DimDate)</td>
+                                <td><span class="sample-values">2025-01-25, 2023-02-27</span></td>
+                            </tr>
+                            <tr>
+                                <td>ProductID</td>
+                                <td><span class="type-badge type-integer">Integer</span></td>
+                                <td>Product identifier (FOREIGN KEY to DimProduct)</td>
+                                <td><span class="sample-values">1166, 1101, 1159</span></td>
+                            </tr>
+                            <tr>
+                                <td>CustomerID</td>
+                                <td><span class="type-badge type-integer">Integer</span></td>
+                                <td>Customer identifier (FOREIGN KEY to DimCustomer)</td>
+                                <td><span class="sample-values">2248, 3962, 3927</span></td>
+                            </tr>
+                            <tr>
+                                <td>RegionID</td>
+                                <td><span class="type-badge type-integer">Integer</span></td>
+                                <td>Region identifier (FOREIGN KEY to DimRegion)</td>
+                                <td><span class="sample-values">5, 6, 7</span></td>
+                            </tr>
+                            <tr>
+                                <td>ChannelID</td>
+                                <td><span class="type-badge type-integer">Integer</span></td>
+                                <td>Channel identifier (FOREIGN KEY to DimChannel)</td>
+                                <td><span class="sample-values">1, 2, 3</span></td>
+                            </tr>
+                            <tr>
+                                <td>Quantity</td>
+                                <td><span class="type-badge type-integer">Integer</span></td>
+                                <td>Units sold in transaction (MEASURE)</td>
+                                <td><span class="sample-values">0, 5, 1, 2</span></td>
+                            </tr>
+                            <tr>
+                                <td>UnitPrice</td>
+                                <td><span class="type-badge type-decimal">Decimal</span></td>
+                                <td>Price per unit (MEASURE)</td>
+                                <td><span class="sample-values">121.42, 80.15, 106.69</span></td>
+                            </tr>
+                            <tr>
+                                <td>Discount</td>
+                                <td><span class="type-badge type-decimal">Decimal</span></td>
+                                <td>Total discount amount (MEASURE)</td>
+                                <td><span class="sample-values">7.1, 0.78, 6.15</span></td>
+                            </tr>
+                            <tr>
+                                <td>Cost</td>
+                                <td><span class="type-badge type-decimal">Decimal</span></td>
+                                <td>Total cost of goods sold (MEASURE)</td>
+                                <td><span class="sample-values">104.92, 52.69, 53.97</span></td>
+                            </tr>
+                            <tr>
+                                <td>Revenue</td>
+                                <td><span class="type-badge type-decimal">Decimal</span></td>
+                                <td>Total revenue from transaction (MEASURE)</td>
+                                <td><span class="sample-values">0.0, 396.85, 100.54</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="key-box">
+                        <strong>Critical Understanding:</strong>
+                        This is a transaction fact table. One row represents ONE sales transaction. The grain is atomic (lowest level of detail), which allows for maximum flexibility in aggregation and analysis.
+                    </div>
+
+                    <div class="rule-box">
+                        <strong>Business Rules:</strong>
+                        <ul style="margin-top: 10px; padding-left: 20px;">
+                            <li><strong>Revenue Calculation:</strong> Revenue = (Quantity × UnitPrice) - Discount</li>
+                            <li><strong>Gross Profit:</strong> Gross Profit = Revenue - Cost</li>
+                            <li><strong>Zero Quantity:</strong> Some transactions have Quantity = 0 (returns, cancellations)</li>
+                            <li><strong>All measures are additive:</strong> Can sum across all dimensions</li>
+                        </ul>
+                    </div>
+
+                    <div class="usage-box">
+                        <strong>Common Analysis Patterns:</strong>
+                        <ul style="margin-top: 10px; padding-left: 20px;">
+                            <li>Total Revenue by Product Category, Region, or Time Period</li>
+                            <li>Average Transaction Value = Revenue / Transaction Count</li>
+                            <li>Gross Margin % = (Revenue - Cost) / Revenue</li>
+                            <li>Top Customers by Revenue</li>
+                            <li>Channel Performance Comparison</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- FactMarketingSpend -->
+                <div class="table-card">
+                    <h3>
+                        FactMarketingSpend (Campaign Spending)
+                        <span class="table-badge" style="background: #ff9e4f; color: white;">FACT</span>
+                    </h3>
+                    
+                    <div class="table-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">Purpose</span>
+                            <span class="meta-value">Marketing campaign expenditure</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Grain</span>
+                            <span class="meta-value">One row = one campaign-product-date</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Row Count</span>
+                            <span class="meta-value">30,000 records</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Fact Type</span>
+                            <span class="meta-value">Transaction</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Source Files</span>
+                            <span class="meta-value">6 CSV files (appended)</span>
+                        </div>
+                    </div>
+
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Column Name</th>
+                                <th>Data Type</th>
+                                <th>Description</th>
+                                <th>Sample Values</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Campaign</td>
+                                <td><span class="type-badge type-text">Text</span></td>
+                                <td>Marketing campaign name (DEGENERATE DIMENSION)</td>
+                                <td><span class="sample-values">Spring Sale, EOFY Blast</span></td>
+                            </tr>
+                            <tr>
+                                <td>Date</td>
+                                <td><span class="type-badge type-date">Date</span></td>
+                                <td>Spend date (FOREIGN KEY to DimDate)</td>
+                                <td><span class="sample-values">2022-02-28, 2022-02-03</span></td>
+                            </tr>
+                            <tr>
+                                <td>ProductID</td>
+                                <td><span class="type-badge type-integer">Integer</span></td>
+                                <td>Product promoted (FOREIGN KEY to DimProduct)</td>
+                                <td><span class="sample-values">1058, 1081, 1023</span></td>
+                            </tr>
+                            <tr>
+                                <td>Spend</td>
+                                <td><span class="type-badge type-decimal">Decimal</span></td>
+                                <td>Marketing spend amount (MEASURE)</td>
+                                <td><span class="sample-values">1111.08, 514.35, 163.98</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="note-box">
+                        <strong>Marketing Campaigns (2 types across 4 years):</strong>
+                        <ul style="margin-top: 10px; padding-left: 20px;">
+                            <li><strong>Spring Sale:</strong> Annual spring promotion (2022, 2023)</li>
+                            <li><strong>EOFY Blast:</strong> End of Financial Year campaign (2022, 2023, 2024, 2025)</li>
+                        </ul>
+                    </div>
+
+                    <div class="key-box">
+                        <strong>Data Source Note:</strong>
+                        This fact table is created by appending 6 separate CSV files in Power Query. Each file contains data for one campaign in one year. Total rows = 6 files × 5,000 rows = 30,000 rows.
+                    </div>
+
+                    <div class="usage-box">
+                        <strong>Marketing ROI Analysis:</strong>
+                        <ul style="margin-top: 10px; padding-left: 20px;">
+                            <li><strong>Total Marketing Spend:</strong> Sum of Spend column</li>
+                            <li><strong>Marketing ROI:</strong> (Revenue / Spend) - 1</li>
+                            <li><strong>ROAS (Return on Ad Spend):</strong> Revenue / Spend</li>
+                            <li><strong>Cost per Revenue Dollar:</strong> Spend / Revenue</li>
+                            <li>Compare campaign effectiveness by calculating ROI per campaign</li>
+                            <li>Identify which products benefit most from marketing investment</li>
+                        </ul>
+                    </div>
+
+                    <div class="rule-box">
+                        <strong>Cross-Fact Analysis:</strong>
+                        This table connects to FactSales through the conformed DimProduct dimension. This enables questions like "Which products have high marketing spend but low sales revenue?"
+                    </div>
+                </div>
+
+                <!-- FactFinancePlanning -->
+                <div class="table-card">
+                    <h3>
+                        FactFinancePlanning (Budget & Forecast)
+                        <span class="table-badge" style="background: #ff9e4f; color: white;">FACT</span>
+                    </h3>
+                    
+                    <div class="table-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">Purpose</span>
+                            <span class="meta-value">Monthly budget and forecast</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Grain</span>
+                            <span class="meta-value">One row = one product-month</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Row Count</span>
+                            <span class="meta-value">9,600 records</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Fact Type</span>
+                            <span class="meta-value">Periodic Snapshot</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Update Frequency</span>
+                            <span class="meta-value">Monthly</span>
+                        </div>
+                    </div>
+
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Column Name</th>
+                                <th>Data Type</th>
+                                <th>Description</th>
+                                <th>Sample Values</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>ProductID</td>
+                                <td><span class="type-badge type-integer">Integer</span></td>
+                                <td>Product identifier (FOREIGN KEY to DimProduct)</td>
+                                <td><span class="sample-values">1000, 1001, 1002</span></td>
+                            </tr>
+                            <tr>
+                                <td>Month</td>
+                                <td><span class="type-badge type-text">Text</span></td>
+                                <td>Month in YYYY-MM format (source data)</td>
+                                <td><span class="sample-values">2022-01, 2022-02, 2022-03</span></td>
+                            </tr>
+                            <tr>
+                                <td>MonthKey</td>
+                                <td><span class="type-badge type-integer">Integer</span></td>
+                                <td>Month as integer YYYYMM (FOREIGN KEY to DimMonth)</td>
+                                <td><span class="sample-values">202201, 202202, 202203</span></td>
+                            </tr>
+                            <tr>
+                                <td>MonthStartDate</td>
+                                <td><span class="type-badge type-date">Date</span></td>
+                                <td>First day of month (for date relationships)</td>
+                                <td><span class="sample-values">2022-01-01, 2022-02-01</span></td>
+                            </tr>
+                            <tr>
+                                <td>BudgetUnits</td>
+                                <td><span class="type-badge type-integer">Integer</span></td>
+                                <td>Budgeted unit sales (MEASURE)</td>
+                                <td><span class="sample-values">100, 150, 200</span></td>
+                            </tr>
+                            <tr>
+                                <td>ForecastUnits</td>
+                                <td><span class="type-badge type-decimal">Decimal</span></td>
+                                <td>Forecasted unit sales (MEASURE)</td>
+                                <td><span class="sample-values">95.5, 148.3, 205.7</span></td>
+                            </tr>
+                            <tr>
+                                <td>BudgetRevenue</td>
+                                <td><span class="type-badge type-decimal">Decimal</span></td>
+                                <td>Budgeted revenue (MEASURE)</td>
+                                <td><span class="sample-values">9451.72, 9108.26</span></td>
+                            </tr>
+                            <tr>
+                                <td>ForecastRevenue</td>
+                                <td><span class="type-badge type-decimal">Decimal</span></td>
+                                <td>Forecasted revenue (MEASURE)</td>
+                                <td><span class="sample-values">8317.67, 10012.90</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="key-box">
+                        <strong>Critical Data Transformation:</strong>
+                        The source Excel file contains Month in text format "YYYY-MM". In Power Query, we create two additional columns:
+                        <ul style="margin-top: 10px; padding-left: 20px;">
+                            <li><strong>MonthKey:</strong> Convert "2022-01" to integer 202201 (used for relationship to DimMonth)</li>
+                            <li><strong>MonthStartDate:</strong> Convert "2022-01" to date 2022-01-01 (used for date-based filtering)</li>
+                        </ul>
+                    </div>
+
+                    <div class="note-box">
+                        <strong>Grain Mismatch Challenge:</strong>
+                        FactSales is at DAILY grain, but FactFinancePlanning is at MONTHLY grain. We cannot directly compare them without a bridge table (DimMonth) that connects monthly planning to daily sales through the date dimension.
+                    </div>
+
+                    <div class="usage-box">
+                        <strong>Plan vs Actual Analysis:</strong>
+                        <ul style="margin-top: 10px; padding-left: 20px;">
+                            <li><strong>Variance to Budget:</strong> Actual Revenue - Budget Revenue</li>
+                            <li><strong>Variance %:</strong> (Actual - Budget) / Budget</li>
+                            <li><strong>Forecast Accuracy:</strong> Compare Forecast to Actual</li>
+                            <li><strong>Budget YTD vs Actual YTD:</strong> Requires USERELATIONSHIP in DAX to activate DimMonth bridge</li>
+                            <li>Track which products are over/under budget</li>
+                            <li>Analyze forecast accuracy trends over time</li>
+                        </ul>
+                    </div>
+
+                    <div class="rule-box">
+                        <strong>Business Rules:</strong>
+                        <ul style="margin-top: 10px; padding-left: 20px;">
+                            <li>Budget set annually at beginning of year</li>
+                            <li>Forecast updated monthly based on current trends</li>
+                            <li>BudgetRevenue typically higher than ForecastRevenue (conservative forecasting)</li>
+                            <li>Data covers 48 months (2022-2025) for 200 products = 9,600 rows</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- RELATIONSHIPS SECTION -->
+            <section id="relationships" class="section">
+                <h2 class="section-title">Data Relationships</h2>
+
+                <div class="relationship-diagram">
+                    <h3 style="color: #2c5f8d; margin-bottom: 20px;">Star Schema Relationship Map</h3>
+                    <pre>
+                DimDate (1,461 rows)
+                    ↑
+                    | (1:Many, Active)
+                    |
+    ┌───────────────┼───────────────┐
+    |               |               |
+    |               ↓               |
+    |         FactSales         FactMarketingSpend
+    |        (100,010)             (30,000)
+    |               ↑                   ↑
+    |               |                   |
+    |               └───────┬───────────┘
+    |                       |
+    |                       | (1:Many, Active)
+    |                       |
+    |                   DimProduct (205)
+    |                       |
+    |                       | (1:Many, Active)
+    |                       |
+    |              FactFinancePlanning (9,600)
+    |                       ↑
+    |                       |
+    |                       | (1:Many, Active)
+    |                       |
+    |                   DimMonth (48)
+    |                       ↑
+    |                       |
+    |                       | (1:Many, INACTIVE)
+    |                       |
+    └───────────────────────┘
+                (Bridge connection)
+
+
+Additional FactSales Relationships:
+FactSales ← (1:Many) → DimCustomer (2,000)
+FactSales ← (1:Many) → DimRegion (8)
+FactSales ← (1:Many) → DimChannel (4)
+                    </pre>
+                </div>
+
+                <h3 style="color: #2c5f8d; font-size: 1.5em; margin-top: 40px;">Relationship Details</h3>
+                
+                <table class="summary-table">
+                    <thead>
+                        <tr>
+                            <th>From Table</th>
+                            <th>From Column</th>
+                            <th>To Table</th>
+                            <th>To Column</th>
+                            <th>Cardinality</th>
+                            <th>Direction</th>
+                            <th>Active</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>FactSales</td>
+                            <td>Date</td>
+                            <td>DimDate</td>
+                            <td>Date</td>
+                            <td>Many:1</td>
+                            <td>Single</td>
+                            <td>Yes</td>
+                        </tr>
+                        <tr>
+                            <td>FactSales</td>
+                            <td>ProductID</td>
+                            <td>DimProduct</td>
+                            <td>ProductID</td>
+                            <td>Many:1</td>
+                            <td>Single</td>
+                            <td>Yes</td>
+                        </tr>
+                        <tr>
+                            <td>FactSales</td>
+                            <td>CustomerID</td>
+                            <td>DimCustomer</td>
+                            <td>CustomerID</td>
+                            <td>Many:1</td>
+                            <td>Single</td>
+                            <td>Yes</td>
+                        </tr>
+                        <tr>
+                            <td>FactSales</td>
+                            <td>RegionID</td>
+                            <td>DimRegion</td>
+                            <td>RegionID</td>
+                            <td>Many:1</td>
+                            <td>Single</td>
+                            <td>Yes</td>
+                        </tr>
+                        <tr>
+                            <td>FactSales</td>
+                            <td>ChannelID</td>
+                            <td>DimChannel</td>
+                            <td>ChannelID</td>
+                            <td>Many:1</td>
+                            <td>Single</td>
+                            <td>Yes</td>
+                        </tr>
+                        <tr>
+                            <td>FactMarketingSpend</td>
+                            <td>Date</td>
+                            <td>DimDate</td>
+                            <td>Date</td>
+                            <td>Many:1</td>
+                            <td>Single</td>
+                            <td>Yes</td>
+                        </tr>
+                        <tr>
+                            <td>FactMarketingSpend</td>
+                            <td>ProductID</td>
+                            <td>DimProduct</td>
+                            <td>ProductID</td>
+                            <td>Many:1</td>
+                            <td>Single</td>
+                            <td>Yes</td>
+                        </tr>
+                        <tr>
+                            <td>FactFinancePlanning</td>
+                            <td>MonthKey</td>
+                            <td>DimMonth</td>
+                            <td>MonthKey</td>
+                            <td>Many:1</td>
+                            <td>Single</td>
+                            <td>Yes</td>
+                        </tr>
+                        <tr>
+                            <td>FactFinancePlanning</td>
+                            <td>ProductID</td>
+                            <td>DimProduct</td>
+                            <td>ProductID</td>
+                            <td>Many:1</td>
+                            <td>Single</td>
+                            <td>Yes</td>
+                        </tr>
+                        <tr style="background: #fff3cd;">
+                            <td>DimMonth</td>
+                            <td>MonthStartDate</td>
+                            <td>DimDate</td>
+                            <td>Date</td>
+                            <td>Many:1</td>
+                            <td>Single</td>
+                            <td><strong>No (INACTIVE)</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="key-box" style="margin-top: 30px;">
+                    <strong>Understanding the Inactive Relationship:</strong>
+                    The relationship between DimMonth and DimDate is set to INACTIVE to prevent ambiguous filter paths. This relationship is activated in DAX using the USERELATIONSHIP function when we need to apply time intelligence to planning data.
+                </div>
+
+                <div class="note-box">
+                    <strong>Conformed Dimensions:</strong>
+                    <ul style="margin-top: 10px; padding-left: 20px;">
+                        <li><strong>DimDate:</strong> Shared by FactSales and FactMarketingSpend</li>
+                        <li><strong>DimProduct:</strong> Shared by FactSales, FactMarketingSpend, and FactFinancePlanning</li>
+                    </ul>
+                    This enables integrated analysis. For example: "Which products have high marketing spend but low actual sales?"
+                </div>
+            </section>
+
+            <!-- BUSINESS RULES SECTION -->
+            <section id="rules" class="section">
+                <h2 class="section-title">Business Rules & Data Quality</h2>
+
+                <div class="rule-box">
+                    <strong>Data Integrity Rules:</strong>
+                    <ul style="margin-top: 10px; padding-left: 20px;">
+                        <li>All foreign keys in fact tables must have corresponding primary keys in dimension tables (referential integrity)</li>
+                        <li>No NULL values allowed in foreign key columns</li>
+                        <li>Date values must fall within the DimDate range (2022-01-01 to 2025-12-31)</li>
+                        <li>ProductID values must be in range 1000-1199</li>
+                        <li>CustomerID values must be in range 2000-3999</li>
+                        <li>RegionID values must be 1-8</li>
+                        <li>ChannelID values must be 1-4</li>
+                    </ul>
+                </div>
+
+                <div class="note-box">
+                    <strong>Known Data Quality Notes:</strong>
+                    <ul style="margin-top: 10px; padding-left: 20px;">
+                        <li>Some product names contain minor spelling variations (e.g., "Office Supplie" instead of "Office Supplies") - this is intentional to simulate real-world data</li>
+                        <li>Some FactSales records have Quantity = 0, representing returns or cancellations</li>
+                        <li>Region names in dim_region.csv have inconsistent capitalization (e.g., "western australia" vs "Western Australia") - requires cleaning in Power Query</li>
+                        <li>Customer names are anonymized as "Customer XXXX" for training purposes</li>
+                    </ul>
+                </div>
+
+                <div class="usage-box">
+                    <strong>Calculation Standards:</strong>
+                    <ul style="margin-top: 10px; padding-left: 20px;">
+                        <li><strong>Revenue:</strong> (Quantity × UnitPrice) - Discount</li>
+                        <li><strong>Gross Profit:</strong> Revenue - Cost</li>
+                        <li><strong>Gross Margin %:</strong> (Gross Profit / Revenue) × 100</li>
+                        <li><strong>Average Transaction Value:</strong> Total Revenue / Transaction Count</li>
+                        <li><strong>Marketing ROI:</strong> (Revenue / Marketing Spend) - 1</li>
+                        <li><strong>ROAS:</strong> Revenue / Marketing Spend</li>
+                        <li><strong>Variance to Budget:</strong> Actual Revenue - Budget Revenue</li>
+                        <li><strong>Variance %:</strong> ((Actual - Budget) / Budget) × 100</li>
+                    </ul>
+                </div>
+
+                <div class="key-box">
+                    <strong>Time Intelligence Requirements:</strong>
+                    <ul style="margin-top: 10px; padding-left: 20px;">
+                        <li>DimDate must be marked as a date table in Power BI</li>
+                        <li>Date column must be selected as the date identifier</li>
+                        <li>Continuous dates required (no gaps)</li>
+                        <li>SAMEPERIODLASTYEAR, TOTALYTD, and other time functions will fail without proper date table configuration</li>
+                        <li>For planning data, use USERELATIONSHIP to activate the DimMonth to DimDate bridge</li>
+                    </ul>
+                </div>
+
+                <div class="note-box" style="background: #d4edda; border-left-color: #28a745;">
+                    <strong>Performance Recommendations:</strong>
+                    <ul style="margin-top: 10px; padding-left: 20px;">
+                        <li>Foreign keys in fact tables should be hidden in report view (enforce dimension usage)</li>
+                        <li>Use integer keys for relationships (better performance than text keys)</li>
+                        <li>Measures are preferred over calculated columns (calculated at query time, not stored)</li>
+                        <li>For large models, consider incremental refresh on fact tables</li>
+                        <li>Limit number of visuals per report page (7-10 maximum for best performance)</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- QUICK REFERENCE -->
+            <section class="section">
+                <h2 class="section-title">Quick Reference Summary</h2>
+
+                <div class="overview-grid">
+                    <div class="info-box" style="background: linear-gradient(135deg, #2c5f8d 0%, #1e3a5f 100%);">
+                        <h3>Dimension Tables</h3>
+                        <div class="value">5</div>
+                        <p>Date, Product, Customer, Region, Channel</p>
+                    </div>
+                    <div class="info-box" style="background: linear-gradient(135deg, #ff9e4f 0%, #ff7f2f 100%);">
+                        <h3>Fact Tables</h3>
+                        <div class="value">3</div>
+                        <p>Sales, Marketing, Planning</p>
+                    </div>
+                    <div class="info-box" style="background: linear-gradient(135deg, #7cb342 0%, #558b2f 100%);">
+                        <h3>Relationships</h3>
+                        <div class="value">11</div>
+                        <p>10 Active + 1 Inactive</p>
+                    </div>
+                    <div class="info-box" style="background: linear-gradient(135deg, #9370db 0%, #8a2be2 100%);">
+                        <h3>Total Rows</h3>
+                        <div class="value">142K+</div>
+                        <p>Across all tables</p>
+                    </div>
+                </div>
+
+                <div class="key-box" style="margin-top: 30px;">
+                    <strong>Remember:</strong>
+                    <ul style="margin-top: 10px; padding-left: 20px;">
+                        <li>This is a STAR SCHEMA design - facts in center, dimensions around them</li>
+                        <li>All relationships are ONE-TO-MANY (dimension to fact) with SINGLE direction filtering</li>
+                        <li>DimProduct is a CONFORMED DIMENSION used by all three fact tables</li>
+                        <li>The DimMonth bridge table solves the grain mismatch between daily sales and monthly planning</li>
+                        <li>Always mark DimDate as a date table for time intelligence to work</li>
+                        <li>operations_sales.csv is a duplicate of fact_sales.csv - only load one</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+
+        <footer>
+            <h3>Data Dictionary - Power BI Enterprise Analytics Project</h3>
+            <p style="margin-top: 15px;">Complete metadata documentation for training purposes</p>
+            <p style="opacity: 0.8; margin-top: 10px;">Use this reference guide throughout the training session and for future projects</p>
+        </footer>
+    </div>
+
+    <div class="scroll-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</div>
+
+    <script>
+        // Show scroll-to-top button
+        window.addEventListener('scroll', function() {
+            const scrollTop = document.querySelector('.scroll-top');
+            if (window.pageYOffset > 300) {
+                scrollTop.classList.add('visible');
+            } else {
+                scrollTop.classList.remove('visible');
+            }
+        });
+
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
