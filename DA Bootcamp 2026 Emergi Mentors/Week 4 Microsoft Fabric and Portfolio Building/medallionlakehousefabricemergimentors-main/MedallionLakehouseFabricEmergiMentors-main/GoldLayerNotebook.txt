@@ -1,0 +1,30 @@
+# NOTEBOOK TITLE GOLD LAYER NOTEBOOK: TRANSFORMANTIONS AND AGGREGATIONS SHOPPINGMART DATA
+from pyspark.sql.functions import *
+
+Orders_df = spark.read.parquet("Files/ShoppingMart_Silver_Orders/ShoppingMart_customers_orderdata")
+
+reviews_df = spark.read.parquet("Files/ShoppingMart_Silver_Reviews/ShoppingMart_review")
+social_df = spark.read.parquet("Files/ShoppingMart_Silver_Social_Media/ShoppingMart_social_media")
+weblogs_df = spark.read.parquet("Files/ShoppingMart_Silver_Web_Logs/ShoppingMart_web_logs")
+display(social_df)
+
+# KPI1 : Aggregates web log data to measure engagement per user on each page and action.
+# weblogs_df = spark.read.parquet("Files/ShoppingMart_Silver_Web_Logs/ShoppingMart_web_logs")
+weblogs_df = weblogs_df.groupBy("user_id", "page", "action").count()
+weblogs_df.write.mode("overwrite").parquet("Files/ShoppingMart_Gold_Web_Logs/ShoppingMart_web_logs")
+#display(weblogs_df)
+
+# KPI2 : Aggregates unstructured social media data to track sentiment trends across different platforms.
+#social_df = spark.read.parquet("Files/ShoppingMart_Silver_Social_Media/ShoppingMart_social_media")
+social_df= social_df.groupBy("platform","sentiment" ).count()
+social_df.write.mode("overwrite").parquet("Files/ShoppingMart_Gold_Social_Media/ShoppingMart_social_media")
+# display(social_df)
+
+#KPI3: Aggregates product reviews to calculate the average rating per product.
+#reviews_df = spark.read.parquet("Files/ShoppingMart_Silver_Reviews/ShoppingMart_review")
+reviews_df = reviews_df.groupBy("product_id").agg(avg("rating").alias("AvgRating"))
+reviews_df.write.mode("overwrite").parquet("Files/ShoppingMart_Gold_Reviews/ShoppingMart_review")
+#display(reviews_df)
+
+
+Orders_df.write.mode("overwrite").parquet("Files/ShoppingMart_Gold_Orders/ShoppingMart_customers_orderdata")
