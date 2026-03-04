@@ -1,0 +1,1346 @@
+[
+  {
+    "timestamp": "2024-01-01 00:00:00",
+    "equipment_id": "EXC006",
+    "site_id": "WA001",
+    "sensors": {
+      "temperature": "76.5",
+      "vibration": 21.92,
+      "fault_code": null
+    },
+    "engine_hours": 1008.92,
+    "gps": {
+      "lat": -22.34379014975102,
+      "lon": 117.11403565358964
+    }
+  },
+  {
+    "timestamp": "2024-01-01 00:05:00",
+    "equipment_id": "TRK008",
+    "site_id": "NSW001",
+    "sensors": {
+      "temperature": "93.7",
+      "vibration": 15.49,
+      "fault_code": null
+    },
+    "engine_hours": 1004.99,
+    "gps": {
+      "lat": -32.45051139086644,
+      "lon": 151.22462997519355
+    }
+  },
+  {
+    "timestamp": "2024-01-01 00:10:00",
+    "equipment_id": "CRU002",
+    "site_id": "QLD001",
+    "sensors": {
+      "temperature": "69.3",
+      "vibration": 7.32,
+      "fault_code": null
+    },
+    "engine_hours": 1001.97,
+    "gps": null
+  },
+  {
+    "timestamp": "2024-01-01 00:15:00",
+    "equipment_id": "CNV002",
+    "site_id": "WA001",
+    "sensors": {
+      "temperature": "",
+      "vibration": 95.14,
+      "fault_code": "CRITICAL_ENGINE"
+    },
+    "engine_hours": 1007.02,
+    "gps": null
+  },
+  {
+    "timestamp": "2024-01-01 00:20:00",
+    "equipment_id": "TRK012",
+    "site_id": "NSW001",
+    "sensors": {
+      "temperature": "64.2",
+      "vibration": 29.63,
+      "fault_code": null
+    },
+    "engine_hours": 1010.55,
+    "gps": {
+      "lat": -32.45909747549921,
+      "lon": 151.23356820604735
+    }
+  },
+  {
+    "timestamp": "2024-01-01 00:25:00",
+    "equipment_id": "TRK006",
+    "site_id": "QLD001",
+    "sensors": {
+      "temperature": "100.2",
+      "vibration": 6.79,
+      "fault_code": "WARN_VIB"
+    },
+    "engine_hours": 1008.85,
+    "gps": null
+  },
+  {
+    "timestamp": "2024-01-01 00:30:00",
+    "equipment_id": "TRK006",
+    "site_id": "QLD001",
+    "sensors": {
+      "temperature": "119.4",
+      "vibration": 22.12,
+      "fault_code": null
+    },
+    "engine_hours": 1011.43,
+    "gps": null
+  },
+  {
+    "timestamp": "2024-01-01 00:35:00",
+    "equipment_id": "TRK002",
+    "site_id": "QLD001",
+    "sensors": {
+      "temperature": "64.0",
+      "vibration": 22.95,
+      "fault_code": "WARN_TEMP"
+    },
+    "engine_hours": 1005.63,
+    "gps": null
+  },
+  {
+    "timestamp": "2024-01-01 00:40:00",
+    "equipment_id": "EXC006",
+    "site_id": "QLD001",
+    "sensors": {
+      "temperature": "68.4",
+      "vibration": 23.68,
+      "fault_code": "WARN_VIB"
+    },
+    "engine_hours": 1008.28,
+    "gps": null
+  },
+  {
+    "timestamp": "2024-01-01 00:45:00",
+    "equipment_id": "TRK008",
+    "site_id": "WA001",
+    "sensors": {
+      "temperature": "65.5",
+      "vibration": 20.69,
+      "fault_code": "WARN_TEMP"
+    },
+    "engine_hours": 1012.42,
+    "gps": {
+      "lat": -22.34367181938536,
+      "lon": 117.12109534623349
+    }
+  },
+  {
+    "timestamp": "2024-01-01 00:50:00",
+    "equipment_id": "TRK015",
+    "site_id": "NSW001",
+    "sensors": {
+      "temperature": "93.2",
+      "vibration": 7.86,
+      "fault_code": null
+    },
+    "engine_hours": 1013.85,
+    "gps": {
+      "lat": -32.45132802534685,
+      "lon": 151.23130350946062
+    }
+  },
+  {
+    "timestamp": "2024-01-01 00:55:00",
+    "equipment_id": "TRK006",
+    "site_id": "QLD001",
+    "sensors": {
+      "temperature": "103.3",
+      "vibration": 110.48,
+      "fault_code": null
+    },
+    "engine_hours": 1010.58,
+    "gps": null
+  },
+  {
+    "timestamp": "2024-01-01 01:00:00",
+    "equipment_id": "TRK010",
+    "site_id": "NSW001",
+    "sensors": {
+      "temperature": "71.9",
+      "vibration": 28.84,
+      "fault_code": null
+    },
+    "engine_hours": 1015.22,
+    "gps": {
+      "lat": -32.45472110831079,
+      "lon": 151.23427211416058
+    }
+  },
+  {
+    "timestamp": "2024-01-01 01:05:00",
+    "equipment_id": "TRK012",
+    "site_id": "QLD001",
+    "sensors": {
+      "temperature": "74.5",
+      "vibration": 23.3,
+      "fault_code": "WARN_VIB"
+    },
+    "engine_hours": 1014.66,
+    "gps": null
+  },
+  {
+    "timestamp": "2024-01-01 01:10:00",
+    "equipment_id": "TRK005",
+    "site_id": "NSW001",
+    "sensors": {
+      "temperature": "93.0",
+      "vibration": 15.58,
+      "fault_code": "WARN_VIB"
+    },
+    "engine_hours": 1009.12,
+    "gps": {
+      "lat": -32.45159469606728,
+      "lon": 151.23829735264198
+    }
+  },
+  {
+    "timestamp": "2024-01-01 01:10:00",
+    "equipment_id": "TRK013",
+    "site_id": "NSW001",
+    "sensors": {
+      "temperature": "86.3",
+      "vibration": 10.62,
+      "fault_code": "WARN_VIB"
+    },
+    "engine_hours": 1010.88,
+    "gps": {
+      "lat": -32.45562156955151,
+      "lon": 151.2362688022882
+    }
+  },
+  {
+    "timestamp": "2024-01-01 01:20:00",
+    "equipment_id": "CRU002",
+    "site_id": "NSW001",
+    "sensors": {
+      "temperature": "64.0",
+      "vibration": 17.85,
+      "fault_code": "WARN_TEMP"
+    },
+    "engine_hours": 1010.78,
+    "gps": null
+  },
+  {
+    "timestamp": "2024-01-01 01:25:00",
+    "equipment_id": "TRK005",
+    "site_id": "NSW001",
+    "sensors": {
+      "temperature": "",
+      "vibration": 24.62,
+      "fault_code": null
+    },
+    "engine_hours": 1016.57,
+    "gps": {
+      "lat": -32.46481348407016,
+      "lon": 151.2376796549903
+    }
+  },
+  {
+    "timestamp": "2024-01-01 01:30:00",
+    "equipment_id": "TRK014",
+    "site_id": "QLD001",
+    "sensors": {
+      "temperature": "",
+      "vibration": 21.15,
+      "fault_code": "CRITICAL_ENGINE"
+    },
+    "engine_hours": 1009.61,
+    "gps": null
+  },
+  {
+    "timestamp": "2024-01-01 01:35:00",
+    "equipment_id": "TRK004",
+    "site_id": "WA001",
+    "sensors": {
+      "temperature": "92.2",
+      "vibration": 16.57,
+      "fault_code": null
+    },
+    "engine_hours": 1018.24,
+    "gps": {
+      "lat": -22.346737385098933,
+      "lon": 117.13062698209524
+    }
+  },
+  {
+    "timestamp": "2024-01-01 01:40:00",
+    "equipment_id": "TRK002",
+    "site_id": "NSW001",
+    "sensors": {
+      "temperature": "",
+      "vibration": 117.05,
+      "fault_code": null
+    },
+    "engine_hours": 1018.49,
+    "gps": {
+      "lat": -32.45857171884095,
+      "lon": 151.2341271683594
+    }
+  },
+  {
+    "timestamp": "2024-01-01 01:45:00",
+    "equipment_id": "TRK002",
+    "site_id": "WA001",
+    "sensors": {
+      "temperature": "119.1",
+      "vibration": 16.38,
+      "fault_code": "CRITICAL_ENGINE"
+    },
+    "engine_hours": 1014.73,
+    "gps": {
+      "lat": -22.335691546210146,
+      "lon": 117.12451536646812
+    }
+  },
+  {
+    "timestamp": "2024-01-01 01:50:00",
+    "equipment_id": "TRK005",
+    "site_id": "WA001",
+    "sensors": {
+      "temperature": "118.1",
+      "vibration": 23.7,
+      "fault_code": "WARN_VIB"
+    },
+    "engine_hours": 1011.57,
+    "gps": {
+      "lat": -22.346064229657824,
+      "lon": 117.13178774261665
+    }
+  },
+  {
+    "timestamp": "2024-01-01 01:55:00",
+    "equipment_id": "TRK002",
+    "site_id": "NSW001",
+    "sensors": {
+      "temperature": "71.1",
+      "vibration": 10.88,
+      "fault_code": "WARN_VIB"
+    },
+    "engine_hours": 1012.7,
+    "gps": {
+      "lat": -32.461775693044224,
+      "lon": 151.23639038307067
+    }
+  },
+  {
+    "timestamp": "2024-01-01 02:00:00",
+    "equipment_id": "TRK014",
+    "site_id": "NSW001",
+    "sensors": {
+      "temperature": "91.4",
+      "vibration": 22.9,
+      "fault_code": "WARN_TEMP"
+    },
+    "engine_hours": 1014.39,
+    "gps": {
+      "lat": -32.46408243435745,
+      "lon": 151.23741001577676
+    }
+  },
+  {
+    "timestamp": "2024-01-01 02:05:00",
+    "equipment_id": "CNV001",
+    "site_id": "WA001",
+    "sensors": {
+      "temperature": "97.3",
+      "vibration": 18.44,
+      "fault_code": null
+    },
+    "engine_hours": 1017.56,
+    "gps": null
+  },
+  {
+    "timestamp": "2024-01-01 02:10:00",
+    "equipment_id": "TRK003",
+    "site_id": "WA001",
+    "sensors": {
+      "temperature": "69.5",
+      "vibration": 20.29,
+      "fault_code": "CRITICAL_ENGINE"
+    },
+    "engine_hours": 1022.87,
+    "gps": {
+      "lat": -22.345021186147957,
+      "lon": 117.12675726407426
+    }
+  },
+  {
+    "timestamp": "2024-01-01 02:15:00",
+    "equipment_id": "CRU001",
+    "site_id": "WA001",
+    "sensors": {
+      "temperature": "",
+      "vibration": 7.68,
+      "fault_code": null
+    },
+    "engine_hours": 1019.03,
+    "gps": null
+  },
+  {
+    "timestamp": "2024-01-01 02:20:00",
+    "equipment_id": "TRK007",
+    "site_id": "NSW001",
+    "sensors": {
+      "temperature": "101.2",
+      "vibration": 11.28,
+      "fault_code": null
+    },
+    "engine_hours": 1023.08,
+    "gps": {
+      "lat": -32.464854030645746,
+      "lon": 151.23297151545128
+    }
+  },
+  {
+    "timestamp": "2024-01-01 02:25:00",
+    "equipment_id": "TRK001",
+    "site_id": "QLD001",
+    "sensors": {
+      "temperature": "",
+      "vibration": 23.53,
+      "fault_code": "WARN_TEMP"
+    },
+    "engine_hours": 1020.02,
+    "gps": null
+  },
+  {
+    "timestamp": "2024-01-01 02:30:00",
+    "equipment_id": "TRK004",
+    "site_id": "WA001",
+    "sensors": {
+      "temperature": "",
+      "vibration": 5.9,
+      "fault_code": "WARN_VIB"
+    },
+    "engine_hours": 1018.69,
+    "gps": {
+      "lat": -22.352638124288653,
+      "lon": 117.11594891038564
+    }
+  },
+  {
+    "timestamp": "2024-01-01 02:35:00",
+    "equipment_id": "CNV002",
+    "site_id": "WA001",
+    "sensors": {
+      "temperature": "",
+      "vibration": 7.57,
+      "fault_code": "WARN_TEMP"
+    },
+    "engine_hours": 1023.3,
+    "gps": null
+  },
+  {
+    "timestamp": "2024-01-01 02:40:00",
+    "equipment_id": "CRU003",
+    "site_id": "WA001",
+    "sensors": {
+      "temperature": "",
+      "vibration": 25.0,
+      "fault_code": "WARN_TEMP"
+    },
+    "engine_hours": 1017.77,
+    "gps": null
+  },
+  {
+    "timestamp": "2024-01-01 02:45:00",
+    "equipment_id": "CRU003",
+    "site_id": "QLD001",
+    "sensors": {
+      "temperature": "",
+      "vibration": 23.38,
+      "fault_code": null
+    },
+    "engine_hours": 1018.98,
+    "gps": null
+  },
+  {
+    "timestamp": "2024-01-01 02:50:00",
+    "equipment_id": "TRK004",
+    "site_id": "QLD001",
+    "sensors": {
+      "temperature": "",
+      "vibration": 25.41,
+      "fault_code": null
+    },
+    "engine_hours": 1021.6,
+    "gps": null
+  },
+  {
+    "timestamp": "2024-01-01 02:55:00",
+    "equipment_id": "TRK008",
+    "site_id": "WA001",
+    "sensors": {
+      "temperature": "71.6",
+      "vibration": 29.17,
+      "fault_code": "CRITICAL_ENGINE"
+    },
+    "engine_hours": 1020.29,
+    "gps": {
+      "lat": -22.34541188648944,
+      "lon": 117.12699036236721
+    }
+  },
+  {
+    "timestamp": "2024-01-01 03:00:00",
+    "equipment_id": "TRK011",
+    "site_id": "WA001",
+    "sensors": {
+      "temperature": "118.2",
+      "vibration": 90.62,
+      "fault_code": "WARN_TEMP"
+    },
+    "engine_hours": 1019.08,
+    "gps": {
+      "lat": -22.348686257766406,
+      "lon": 117.12912856356408
+    }
+  },
+  {
+    "timestamp": "2024-01-01 03:05:00",
+    "equipment_id": "EXC002",
+    "site_id": "WA001",
+    "sensors": {
+      "temperature": "94.6",
+      "vibration": 5.04,
+      "fault_code": "WARN_VIB"
+    },
+    "engine_hours": 1027.76,
+    "gps": {
+      "lat": -22.34186285706171,
+      "lon": 117.13220526240795
+    }
+  },
+  {
+    "timestamp": "2024-01-01 03:10:00",
+    "equipment_id": "TRK007",
+    "site_id": "QLD001",
+    "sensors": {
+      "temperature": "116.9",
+      "vibration": 21.58,
+      "fault_code": null
+    },
+    "engine_hours": 1020.25,
+    "gps": null
+  },
+  {
+    "timestamp": "2024-01-01 03:15:00",
+    "equipment_id": "CRU001",
+    "site_id": "QLD001",
+    "sensors": {
+      "temperature": "101.8",
+      "vibration": 21.62,
+      "fault_code": "CRITICAL_ENGINE"
+    },
+    "engine_hours": 1023.29,
+    "gps": null
+  },
+  {
+    "timestamp": "2024-01-01 03:20:00",
+    "equipment_id": "EXC005",
+    "site_id": "NSW001",
+    "sensors": {
+      "temperature": "92.9",
+      "vibration": 15.75,
+      "fault_code": "CRITICAL_ENGINE"
+    },
+    "engine_hours": 1025.8,
+    "gps": {
+      "lat": -32.46025501540527,
+      "lon": 151.23333572033675
+    }
+  },
+  {
+    "timestamp": "2024-01-01 03:25:00",
+    "equipment_id": "EXC002",
+    "site_id": "QLD001",
+    "sensors": {
+      "temperature": "",
+      "vibration": 21.47,
+      "fault_code": "CRITICAL_ENGINE"
+    },
+    "engine_hours": 1023.34,
+    "gps": null
+  },
+  {
+    "timestamp": "2024-01-01 03:30:00",
+    "equipment_id": "TRK011",
+    "site_id": "WA001",
+    "sensors": {
+      "temperature": "",
+      "vibration": 10.62,
+      "fault_code": null
+    },
+    "engine_hours": 1022.99,
+    "gps": {
+      "lat": -22.354675725638145,
+      "lon": 117.13307872045564
+    }
+  },
+  {
+    "timestamp": "2024-01-01 03:35:00",
+    "equipment_id": "CNV001",
+    "site_id": "WA001",
+    "sensors": {
+      "temperature": "113.2",
+      "vibration": 14.6,
+      "fault_code": null
+    },
+    "engine_hours": 1025.5,
+    "gps": null
+  },
+  {
+    "timestamp": "2024-01-01 03:40:00",
+    "equipment_id": "TRK001",
+    "site_id": "WA001",
+    "sensors": {
+      "temperature": "",
+      "vibration": 22.4,
+      "fault_code": "WARN_VIB"
+    },
+    "engine_hours": 1026.65,
+    "gps": {
+      "lat": -22.3506160344068,
+      "lon": 117.13036672694703
+    }
+  },
+  {
+    "timestamp": "2024-01-01 03:45:00",
+    "equipment_id": "CNV002",
+    "site_id": "QLD001",
+    "sensors": {
+      "temperature": "119.3",
+      "vibration": 115.66,
+      "fault_code": "CRITICAL_ENGINE"
+    },
+    "engine_hours": 1028.63,
+    "gps": null
+  },
+  {
+    "timestamp": "2024-01-01 03:50:00",
+    "equipment_id": "TRK014",
+    "site_id": "NSW001",
+    "sensors": {
+      "temperature": "69.5",
+      "vibration": 23.79,
+      "fault_code": null
+    },
+    "engine_hours": 1031.4,
+    "gps": {
+      "lat": -32.451383726314056,
+      "lon": 151.23492599625655
+    }
+  },
+  {
+    "timestamp": "2024-01-01 03:55:00",
+    "equipment_id": "TRK009",
+    "site_id": "QLD001",
+    "sensors": {
+      "temperature": "77.1",
+      "vibration": 18.5,
+      "fault_code": null
+    },
+    "engine_hours": 1024.88,
+    "gps": null
+  },
+  {
+    "timestamp": "2024-01-01 04:00:00",
+    "equipment_id": "TRK005",
+    "site_id": "NSW001",
+    "sensors": {
+      "temperature": "84.9",
+      "vibration": 6.56,
+      "fault_code": "WARN_TEMP"
+    },
+    "engine_hours": 1032.33,
+    "gps": {
+      "lat": -32.44860323043319,
+      "lon": 151.23618158828407
+    }
+  },
+  {
+    "timestamp": "2024-01-01 04:05:00",
+    "equipment_id": "CNV001",
+    "site_id": "NSW001",
+    "sensors": {
+      "temperature": "60.4",
+      "vibration": 26.34,
+      "fault_code": "WARN_TEMP"
+    },
+    "engine_hours": 1034.03,
+    "gps": null
+  },
+  {
+    "timestamp": "2024-01-01 04:10:00",
+    "equipment_id": "CRU003",
+    "site_id": "NSW001",
+    "sensors": {
+      "temperature": "",
+      "vibration": 11.82,
+      "fault_code": "WARN_TEMP"
+    },
+    "engine_hours": 1029.86,
+    "gps": null
+  },
+  {
+    "timestamp": "2024-01-01 04:15:00",
+    "equipment_id": "CRU001",
+    "site_id": "QLD001",
+    "sensors": {
+      "temperature": "",
+      "vibration": 29.52,
+      "fault_code": "WARN_TEMP"
+    },
+    "engine_hours": 1030.84,
+    "gps": null
+  },
+  {
+    "timestamp": "2024-01-01 04:20:00",
+    "equipment_id": "CRU001",
+    "site_id": "WA001",
+    "sensors": {
+      "temperature": "85.7",
+      "vibration": 11.5,
+      "fault_code": "WARN_TEMP"
+    },
+    "engine_hours": 1029.27,
+    "gps": null
+  },
+  {
+    "timestamp": "2024-01-01 04:25:00",
+    "equipment_id": "CNV001",
+    "site_id": "QLD001",
+    "sensors": {
+      "temperature": "117.1",
+      "vibration": 16.76,
+      "fault_code": null
+    },
+    "engine_hours": 1033.99,
+    "gps": null
+  },
+  {
+    "timestamp": "2024-01-01 04:30:00",
+    "equipment_id": "TRK012",
+    "site_id": "WA001",
+    "sensors": {
+      "temperature": "106.9",
+      "vibration": 28.74,
+      "fault_code": null
+    },
+    "engine_hours": 1028.99,
+    "gps": {
+      "lat": -22.34317328686828,
+      "lon": 117.11817089883777
+    }
+  },
+  {
+    "timestamp": "2024-01-01 04:35:00",
+    "equipment_id": "TRK004",
+    "site_id": "NSW001",
+    "sensors": {
+      "temperature": "",
+      "vibration": 14.22,
+      "fault_code": "CRITICAL_ENGINE"
+    },
+    "engine_hours": 1033.56,
+    "gps": {
+      "lat": -32.452332855428075,
+      "lon": 151.2400558377235
+    }
+  },
+  {
+    "timestamp": "2024-01-01 04:40:00",
+    "equipment_id": "TRK010",
+    "site_id": "WA001",
+    "sensors": {
+      "temperature": "115.7",
+      "vibration": 14.38,
+      "fault_code": null
+    },
+    "engine_hours": 1037.41,
+    "gps": {
+      "lat": -22.35408007044314,
+      "lon": 117.12721228831866
+    }
+  },
+  {
+    "timestamp": "2024-01-01 04:45:00",
+    "equipment_id": "TRK004",
+    "site_id": "NSW001",
+    "sensors": {
+      "temperature": "",
+      "vibration": 8.03,
+      "fault_code": null
+    },
+    "engine_hours": 1038.34,
+    "gps": {
+      "lat": -32.45975592469383,
+      "lon": 151.2330675602647
+    }
+  },
+  {
+    "timestamp": "2024-01-01 04:50:00",
+    "equipment_id": "EXC002",
+    "site_id": "NSW001",
+    "sensors": {
+      "temperature": "111.0",
+      "vibration": 29.02,
+      "fault_code": "WARN_TEMP"
+    },
+    "engine_hours": 1035.36,
+    "gps": {
+      "lat": -32.452553827125875,
+      "lon": 151.23320974290016
+    }
+  },
+  {
+    "timestamp": "2024-01-01 04:55:00",
+    "equipment_id": "EXC006",
+    "site_id": "QLD001",
+    "sensors": {
+      "temperature": "115.2",
+      "vibration": 25.64,
+      "fault_code": null
+    },
+    "engine_hours": 1035.42,
+    "gps": null
+  },
+  {
+    "timestamp": "2024-01-01 05:00:00",
+    "equipment_id": "CNV003",
+    "site_id": "WA001",
+    "sensors": {
+      "temperature": "87.0",
+      "vibration": 21.7,
+      "fault_code": "WARN_TEMP"
+    },
+    "engine_hours": 1033.36,
+    "gps": null
+  },
+  {
+    "timestamp": "2024-01-01 05:05:00",
+    "equipment_id": "TRK006",
+    "site_id": "QLD001",
+    "sensors": {
+      "temperature": "107.9",
+      "vibration": 22.53,
+      "fault_code": null
+    },
+    "engine_hours": 1033.26,
+    "gps": null
+  },
+  {
+    "timestamp": "2024-01-01 05:10:00",
+    "equipment_id": "TRK007",
+    "site_id": "WA001",
+    "sensors": {
+      "temperature": "84.4",
+      "vibration": 16.9,
+      "fault_code": "WARN_TEMP"
+    },
+    "engine_hours": 1038.12,
+    "gps": {
+      "lat": -22.339741342637353,
+      "lon": 117.11526106701109
+    }
+  },
+  {
+    "timestamp": "2024-01-01 05:15:00",
+    "equipment_id": "CRU002",
+    "site_id": "WA001",
+    "sensors": {
+      "temperature": "94.9",
+      "vibration": 15.64,
+      "fault_code": null
+    },
+    "engine_hours": 1038.96,
+    "gps": null
+  },
+  {
+    "timestamp": "2024-01-01 05:20:00",
+    "equipment_id": "TRK015",
+    "site_id": "QLD001",
+    "sensors": {
+      "temperature": "73.8",
+      "vibration": 23.57,
+      "fault_code": "CRITICAL_ENGINE"
+    },
+    "engine_hours": 1041.51,
+    "gps": null
+  },
+  {
+    "timestamp": "2024-01-01 05:25:00",
+    "equipment_id": "TRK007",
+    "site_id": "NSW001",
+    "sensors": {
+      "temperature": "103.5",
+      "vibration": 12.07,
+      "fault_code": null
+    },
+    "engine_hours": 1033.51,
+    "gps": {
+      "lat": -32.4607750707347,
+      "lon": 151.23171762138298
+    }
+  },
+  {
+    "timestamp": "2024-01-01 05:30:00",
+    "equipment_id": "CRU002",
+    "site_id": "NSW001",
+    "sensors": {
+      "temperature": "62.7",
+      "vibration": 28.6,
+      "fault_code": "WARN_TEMP"
+    },
+    "engine_hours": 1039.38,
+    "gps": null
+  },
+  {
+    "timestamp": "2024-01-01 05:35:00",
+    "equipment_id": "TRK001",
+    "site_id": "NSW001",
+    "sensors": {
+      "temperature": "88.7",
+      "vibration": 90.1,
+      "fault_code": null
+    },
+    "engine_hours": 1042.12,
+    "gps": {
+      "lat": -32.45025768709401,
+      "lon": 151.23251414884504
+    }
+  },
+  {
+    "timestamp": "2024-01-01 05:40:00",
+    "equipment_id": "EXC006",
+    "site_id": "NSW001",
+    "sensors": {
+      "temperature": "69.0",
+      "vibration": 29.85,
+      "fault_code": "WARN_TEMP"
+    },
+    "engine_hours": 1035.18,
+    "gps": {
+      "lat": -32.45457364697514,
+      "lon": 151.24031481659688
+    }
+  },
+  {
+    "timestamp": "2024-01-01 05:45:00",
+    "equipment_id": "EXC002",
+    "site_id": "QLD001",
+    "sensors": {
+      "temperature": "86.6",
+      "vibration": 92.22,
+      "fault_code": "WARN_VIB"
+    },
+    "engine_hours": 1040.71,
+    "gps": null
+  },
+  {
+    "timestamp": "2024-01-01 05:50:00",
+    "equipment_id": "TRK004",
+    "site_id": "WA001",
+    "sensors": {
+      "temperature": "75.9",
+      "vibration": 18.8,
+      "fault_code": "WARN_TEMP"
+    },
+    "engine_hours": 1036.57,
+    "gps": {
+      "lat": -22.346589925907647,
+      "lon": 117.12527622390239
+    }
+  },
+  {
+    "timestamp": "2024-01-01 05:55:00",
+    "equipment_id": "TRK008",
+    "site_id": "QLD001",
+    "sensors": {
+      "temperature": "",
+      "vibration": 22.18,
+      "fault_code": "CRITICAL_ENGINE"
+    },
+    "engine_hours": 1044.74,
+    "gps": null
+  },
+  {
+    "timestamp": "2024-01-01 06:00:00",
+    "equipment_id": "CNV002",
+    "site_id": "WA001",
+    "sensors": {
+      "temperature": "92.7",
+      "vibration": 25.67,
+      "fault_code": null
+    },
+    "engine_hours": 1036.71,
+    "gps": null
+  },
+  {
+    "timestamp": "2024-01-01 06:05:00",
+    "equipment_id": "EXC005",
+    "site_id": "NSW001",
+    "sensors": {
+      "temperature": "",
+      "vibration": 16.72,
+      "fault_code": "WARN_TEMP"
+    },
+    "engine_hours": 1039.54,
+    "gps": {
+      "lat": -32.447846475185116,
+      "lon": 151.23450944354235
+    }
+  },
+  {
+    "timestamp": "2024-01-01 06:10:00",
+    "equipment_id": "TRK003",
+    "site_id": "NSW001",
+    "sensors": {
+      "temperature": "85.9",
+      "vibration": 7.28,
+      "fault_code": "WARN_VIB"
+    },
+    "engine_hours": 1046.62,
+    "gps": {
+      "lat": -32.4549575413658,
+      "lon": 151.2249149091243
+    }
+  },
+  {
+    "timestamp": "2024-01-01 06:15:00",
+    "equipment_id": "CNV003",
+    "site_id": "QLD001",
+    "sensors": {
+      "temperature": "105.8",
+      "vibration": 16.06,
+      "fault_code": "WARN_VIB"
+    },
+    "engine_hours": 1040.28,
+    "gps": null
+  },
+  {
+    "timestamp": "2024-01-01 06:20:00",
+    "equipment_id": "CNV003",
+    "site_id": "QLD001",
+    "sensors": {
+      "temperature": "",
+      "vibration": 13.03,
+      "fault_code": null
+    },
+    "engine_hours": 1039.05,
+    "gps": null
+  },
+  {
+    "timestamp": "2024-01-01 06:25:00",
+    "equipment_id": "CRU002",
+    "site_id": "QLD001",
+    "sensors": {
+      "temperature": "116.7",
+      "vibration": 16.37,
+      "fault_code": null
+    },
+    "engine_hours": 1041.65,
+    "gps": null
+  },
+  {
+    "timestamp": "2024-01-01 06:30:00",
+    "equipment_id": "CNV001",
+    "site_id": "QLD001",
+    "sensors": {
+      "temperature": "",
+      "vibration": 26.73,
+      "fault_code": null
+    },
+    "engine_hours": 1043.62,
+    "gps": null
+  },
+  {
+    "timestamp": "2024-01-01 06:35:00",
+    "equipment_id": "TRK012",
+    "site_id": "NSW001",
+    "sensors": {
+      "temperature": "",
+      "vibration": 10.09,
+      "fault_code": null
+    },
+    "engine_hours": 1044.99,
+    "gps": {
+      "lat": -32.45793767809855,
+      "lon": 151.23846500058244
+    }
+  },
+  {
+    "timestamp": "2024-01-01 06:40:00",
+    "equipment_id": "EXC006",
+    "site_id": "NSW001",
+    "sensors": {
+      "temperature": "",
+      "vibration": 5.34,
+      "fault_code": null
+    },
+    "engine_hours": 1044.08,
+    "gps": {
+      "lat": -32.446854857212095,
+      "lon": 151.2427585975697
+    }
+  },
+  {
+    "timestamp": "2024-01-01 06:45:00",
+    "equipment_id": "TRK004",
+    "site_id": "NSW001",
+    "sensors": {
+      "temperature": "",
+      "vibration": 17.72,
+      "fault_code": "WARN_TEMP"
+    },
+    "engine_hours": 1043.23,
+    "gps": {
+      "lat": -32.44709510734793,
+      "lon": 151.2293746181215
+    }
+  },
+  {
+    "timestamp": "2024-01-01 06:50:00",
+    "equipment_id": "TRK013",
+    "site_id": "WA001",
+    "sensors": {
+      "temperature": "",
+      "vibration": 26.6,
+      "fault_code": "WARN_TEMP"
+    },
+    "engine_hours": 1043.76,
+    "gps": {
+      "lat": -22.348802495137715,
+      "lon": 117.12915434811529
+    }
+  },
+  {
+    "timestamp": "2024-01-01 06:55:00",
+    "equipment_id": "TRK001",
+    "site_id": "QLD001",
+    "sensors": {
+      "temperature": "",
+      "vibration": 21.5,
+      "fault_code": "WARN_TEMP"
+    },
+    "engine_hours": 1050.15,
+    "gps": null
+  },
+  {
+    "timestamp": "2024-01-01 07:00:00",
+    "equipment_id": "TRK012",
+    "site_id": "QLD001",
+    "sensors": {
+      "temperature": "92.6",
+      "vibration": 9.72,
+      "fault_code": "WARN_VIB"
+    },
+    "engine_hours": 1048.97,
+    "gps": null
+  },
+  {
+    "timestamp": "2024-01-01 07:05:00",
+    "equipment_id": "CNV001",
+    "site_id": "QLD001",
+    "sensors": {
+      "temperature": "104.7",
+      "vibration": 14.65,
+      "fault_code": "CRITICAL_ENGINE"
+    },
+    "engine_hours": 1049.14,
+    "gps": null
+  },
+  {
+    "timestamp": "2024-01-01 07:10:00",
+    "equipment_id": "EXC001",
+    "site_id": "WA001",
+    "sensors": {
+      "temperature": "117.9",
+      "vibration": 26.13,
+      "fault_code": "WARN_TEMP"
+    },
+    "engine_hours": 1044.0,
+    "gps": {
+      "lat": -22.355293048041695,
+      "lon": 117.11628310831934
+    }
+  },
+  {
+    "timestamp": "2024-01-01 07:15:00",
+    "equipment_id": "TRK005",
+    "site_id": "WA001",
+    "sensors": {
+      "temperature": "118.2",
+      "vibration": 21.25,
+      "fault_code": "CRITICAL_ENGINE"
+    },
+    "engine_hours": 1052.02,
+    "gps": {
+      "lat": -22.338413156316637,
+      "lon": 117.12100018795046
+    }
+  },
+  {
+    "timestamp": "2024-01-01 07:20:00",
+    "equipment_id": "CRU002",
+    "site_id": "QLD001",
+    "sensors": {
+      "temperature": "188",
+      "vibration": 22.11,
+      "fault_code": null
+    },
+    "engine_hours": 1046.87,
+    "gps": null
+  },
+  {
+    "timestamp": "2024-01-01 07:25:00",
+    "equipment_id": "TRK014",
+    "site_id": "WA001",
+    "sensors": {
+      "temperature": "",
+      "vibration": 9.16,
+      "fault_code": null
+    },
+    "engine_hours": 1047.49,
+    "gps": {
+      "lat": -22.354680180626456,
+      "lon": 117.12932286930325
+    }
+  },
+  {
+    "timestamp": "2024-01-01 07:30:00",
+    "equipment_id": "TRK012",
+    "site_id": "QLD001",
+    "sensors": {
+      "temperature": "91.9",
+      "vibration": 9.25,
+      "fault_code": "WARN_TEMP"
+    },
+    "engine_hours": 1045.79,
+    "gps": null
+  },
+  {
+    "timestamp": "2024-01-01 07:35:00",
+    "equipment_id": "TRK008",
+    "site_id": "QLD001",
+    "sensors": {
+      "temperature": "",
+      "vibration": 11.35,
+      "fault_code": null
+    },
+    "engine_hours": 1048.05,
+    "gps": null
+  },
+  {
+    "timestamp": "2024-01-01 07:40:00",
+    "equipment_id": "TRK015",
+    "site_id": "QLD001",
+    "sensors": {
+      "temperature": "69.5",
+      "vibration": 19.69,
+      "fault_code": "WARN_TEMP"
+    },
+    "engine_hours": 1052.39,
+    "gps": null
+  },
+  {
+    "timestamp": "2024-01-01 07:45:00",
+    "equipment_id": "TRK015",
+    "site_id": "QLD001",
+    "sensors": {
+      "temperature": "83.1",
+      "vibration": 19.3,
+      "fault_code": "CRITICAL_ENGINE"
+    },
+    "engine_hours": 1052.25,
+    "gps": null
+  },
+  {
+    "timestamp": "2024-01-01 07:50:00",
+    "equipment_id": "CNV003",
+    "site_id": "NSW001",
+    "sensors": {
+      "temperature": "60.5",
+      "vibration": 29.34,
+      "fault_code": "CRITICAL_ENGINE"
+    },
+    "engine_hours": 1056.11,
+    "gps": null
+  },
+  {
+    "timestamp": "2024-01-01 07:55:00",
+    "equipment_id": "TRK010",
+    "site_id": "WA001",
+    "sensors": {
+      "temperature": "81.1",
+      "vibration": 21.94,
+      "fault_code": "CRITICAL_ENGINE"
+    },
+    "engine_hours": 1054.71,
+    "gps": {
+      "lat": -22.34198289811636,
+      "lon": 117.11613558476988
+    }
+  },
+  {
+    "timestamp": "2024-01-01 08:00:00",
+    "equipment_id": "EXC006",
+    "site_id": "NSW001",
+    "sensors": {
+      "temperature": "107.3",
+      "vibration": 8.29,
+      "fault_code": null
+    },
+    "engine_hours": 1057.1,
+    "gps": {
+      "lat": -32.45175038270123,
+      "lon": 151.22801280140888
+    }
+  },
+  {
+    "timestamp": "2024-01-01 08:05:00",
+    "equipment_id": "EXC003",
+    "site_id": "QLD001",
+    "sensors": {
+      "temperature": "114.8",
+      "vibration": 25.62,
+      "fault_code": null
+    },
+    "engine_hours": 1053.32,
+    "gps": null
+  },
+  {
+    "timestamp": "2024-01-01 08:10:00",
+    "equipment_id": "TRK011",
+    "site_id": "WA001",
+    "sensors": {
+      "temperature": "64.5",
+      "vibration": 21.91,
+      "fault_code": "WARN_TEMP"
+    },
+    "engine_hours": 1055.74,
+    "gps": {
+      "lat": -22.336254605054002,
+      "lon": 117.12949175288041
+    }
+  },
+  {
+    "timestamp": "2024-01-01 08:15:00",
+    "equipment_id": "CNV002",
+    "site_id": "QLD001",
+    "sensors": {
+      "temperature": "92.2",
+      "vibration": 21.81,
+      "fault_code": "CRITICAL_ENGINE"
+    },
+    "engine_hours": 1055.35,
+    "gps": null
+  }
+]

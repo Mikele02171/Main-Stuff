@@ -1,0 +1,1001 @@
+event_id,site_id,date_time,event_type,severity,is_lti,near_miss_flag,contributing_factor
+SAFE00001,QLD001,2024-02-22 03:00:00,Near Miss,Medium,false,true,Operator error
+SAFE00002,WA001,2024-01-22 23:00:00,Hazard Reported,High,false,false,Operator error
+SAFE00003,NSW001,2024-07-20 14:00:00,Equipment Collision,high,false,false,Communication breakdown
+SAFE00004,QLD001,2024-11-22 19:00:00,Safety Inspection,LOW,false,false,Inadequate training
+SAFE00005,QLD001,2024-03-15 16:00:00,Incident - Minor Injury,MEDIUM,false,false,Inadequate training
+SAFE00006,WA001,2024-08-30 04:00:00,Equipment Collision,low,false,false,Operator error
+SAFE00007,NSW001,2024-03-19 09:00:00,Incident - Minor Injury,Low,false,false,Environmental conditions
+SAFE00008,QLD001,2024-03-20 01:00:00,Safety Inspection,HIGH,false,false,Operator error
+SAFE00009,QLD001,2024-02-14 22:00:00,Hazard Reported,High,false,false,Operator error
+SAFE00010,QLD001,2024-07-24 09:00:00,Near Miss,Medium,false,true,Environmental conditions
+SAFE00011,WA001,2024-02-28 13:00:00,Fall from Height,low,false,false,Environmental conditions
+SAFE00012,QLD001,2024-11-17 12:00:00,Safety Inspection,low,false,false,Equipment malfunction
+SAFE00013,WA001,2024-03-15 08:00:00,Incident - Minor Injury,Low,false,false,Inadequate training
+SAFE00014,QLD001,2024-12-14 15:00:00,Near Miss,LOW,false,true,Inadequate training
+SAFE00015,WA001,2024-02-01 22:00:00,Near Miss,low,false,true,Equipment malfunction
+SAFE00016,QLD001,2024-12-24 10:00:00,Near Miss,low,false,true,Equipment malfunction
+SAFE00017,WA001,2024-02-21 00:00:00,incident - minor injury,MEDIUM,false,false,Equipment malfunction
+SAFE00018,NSW001,2024-01-13 13:00:00,fall from height,Medium,false,false,Equipment malfunction
+SAFE00019,NSW001,2024-09-07 16:00:00,NEAR MISS,High,false,false,Operator error
+SAFE00020,QLD001,2024-12-04 19:00:00,Fall from Height,high,false,false,Operator error
+SAFE00021,QLD001,2024-07-21 19:00:00,Equipment Collision,high,false,false,Procedure not followed
+SAFE00022,NSW001,2024-07-03 23:00:00,Incident - Minor Injury,low,false,false,Inadequate training
+SAFE00023,WA001,2024-10-22 08:00:00,Hazard Reported,HIGH,false,false,Equipment malfunction
+SAFE00024,WA001,2024-10-17 12:00:00,Equipment Collision,high,false,false,Environmental conditions
+SAFE00025,NSW001,2024-03-13 14:00:00,near miss,Medium,false,false,Procedure not followed
+SAFE00026,NSW001,2024-07-11 20:00:00,Fall from Height,HIGH,false,false,Environmental conditions
+SAFE00027,QLD001,2024-10-12 23:00:00,Equipment Collision,Low,false,false,Operator error
+SAFE00028,NSW001,2024-11-18 11:00:00,near miss,high,false,false,Equipment malfunction
+SAFE00029,WA001,2024-11-04 15:00:00,near miss,Medium,false,false,Operator error
+SAFE00030,WA001,2024-09-04 23:00:00,near miss,LOW,false,false,Communication breakdown
+SAFE00031,NSW001,2024-09-23 13:00:00,Incident - First Aid,Low,false,false,Equipment malfunction
+SAFE00032,NSW001,2024-08-11 12:00:00,equipment collision,low,false,false,Equipment malfunction
+SAFE00033,WA001,2024-05-05 01:00:00,Near Miss,MEDIUM,false,true,Environmental conditions
+SAFE00034,WA001,2024-07-13 01:00:00,Near Miss,low,true,true,Communication breakdown
+SAFE00035,NSW001,2024-09-18 19:00:00,incident - minor injury,low,false,false,Procedure not followed
+SAFE00036,NSW001,2024-12-15 18:00:00,fall from height,MEDIUM,false,false,Equipment malfunction
+SAFE00037,QLD001,2024-09-23 15:00:00,near miss,HIGH,false,false,Equipment malfunction
+SAFE00038,QLD001,2024-04-30 21:00:00,incident - first aid,High,false,false,Operator error
+SAFE00039,QLD001,2024-01-26 04:00:00,EQUIPMENT COLLISION,low,false,false,Procedure not followed
+SAFE00040,NSW001,2024-04-30 04:00:00,Equipment Collision,HIGH,false,false,Operator error
+SAFE00041,QLD001,2024-03-14 06:00:00,Equipment Collision,low,false,false,Operator error
+SAFE00042,QLD001,2024-04-14 00:00:00,Safety Inspection,LOW,false,false,Inadequate training
+SAFE00043,WA001,2024-10-10 05:00:00,safety inspection,High,false,false,Procedure not followed
+SAFE00044,QLD001,2024-09-02 23:00:00,incident - first aid,MEDIUM,false,false,Equipment malfunction
+SAFE00045,QLD001,2024-11-04 21:00:00,fall from height,low,false,false,Equipment malfunction
+SAFE00046,WA001,2024-04-05 12:00:00,Fall from Height,High,false,false,Inadequate training
+SAFE00047,WA001,2024-12-05 08:00:00,incident - minor injury,Low,false,false,Procedure not followed
+SAFE00048,QLD001,2024-05-16 12:00:00,SAFETY INSPECTION,LOW,false,false,Procedure not followed
+SAFE00049,NSW001,2024-04-30 22:00:00,fall from height,Low,false,false,Communication breakdown
+SAFE00050,WA001,2024-03-07 07:00:00,Incident - First Aid,Medium,false,false,Operator error
+SAFE00051,QLD001,2024-12-06 13:00:00,Incident - Minor Injury,LOW,false,false,Communication breakdown
+SAFE00052,QLD001,2024-10-10 14:00:00,Near Miss,High,false,true,Operator error
+SAFE00053,QLD001,2024-11-17 03:00:00,Near Miss,LOW,false,true,Equipment malfunction
+SAFE00054,QLD001,2024-07-24 09:00:00,safety inspection,High,false,false,Equipment malfunction
+SAFE00055,WA001,2024-10-23 22:00:00,Equipment Collision,Low,false,false,Environmental conditions
+SAFE00056,NSW001,2024-07-21 08:00:00,Incident - First Aid,HIGH,false,false,Operator error
+SAFE00057,QLD001,2024-06-03 02:00:00,Incident - Minor Injury,low,false,false,Equipment malfunction
+SAFE00058,NSW001,2024-03-19 12:00:00,incident - first aid,Medium,false,false,Communication breakdown
+SAFE00059,WA001,2024-07-04 17:00:00,HAZARD REPORTED,High,false,false,Equipment malfunction
+SAFE00060,NSW001,2024-10-24 14:00:00,Hazard Reported,low,false,false,Operator error
+SAFE00061,NSW001,2024-02-27 00:00:00,equipment collision,Medium,false,false,Equipment malfunction
+SAFE00062,WA001,2024-11-17 06:00:00,INCIDENT - MINOR INJURY,high,false,false,Procedure not followed
+SAFE00063,WA001,2024-11-20 23:00:00,Equipment Collision,Low,false,false,Operator error
+SAFE00064,WA001,2024-10-21 23:00:00,Hazard Reported,High,false,false,Procedure not followed
+SAFE00065,NSW001,2024-12-24 10:00:00,Safety Inspection,Low,false,false,Communication breakdown
+SAFE00066,QLD001,2024-04-29 22:00:00,Equipment Collision,Low,false,false,Operator error
+SAFE00067,NSW001,2024-09-25 13:00:00,Incident - First Aid,high,false,false,Procedure not followed
+SAFE00068,WA001,2024-04-23 23:00:00,Hazard Reported,high,false,false,Communication breakdown
+SAFE00069,QLD001,2024-10-13 18:00:00,safety inspection,Medium,false,false,Operator error
+SAFE00070,NSW001,2024-03-07 22:00:00,Fall from Height,Medium,false,false,Environmental conditions
+SAFE00071,QLD001,2024-02-10 06:00:00,NEAR MISS,MEDIUM,false,false,Inadequate training
+SAFE00072,WA001,2024-06-26 17:00:00,Incident - Minor Injury,LOW,false,false,Equipment malfunction
+SAFE00073,QLD001,2024-09-19 10:00:00,Hazard Reported,LOW,false,false,Environmental conditions
+SAFE00074,NSW001,2024-11-16 07:00:00,Safety Inspection,Medium,false,false,Equipment malfunction
+SAFE00075,NSW001,2024-01-24 22:00:00,Confined Space Entry,low,false,false,Inadequate training
+SAFE00076,WA001,2024-03-28 10:00:00,Incident - First Aid,Low,false,false,Environmental conditions
+SAFE00077,NSW001,2024-04-16 08:00:00,equipment collision,MEDIUM,false,false,Communication breakdown
+SAFE00078,WA001,2024-09-22 17:00:00,equipment collision,HIGH,false,false,Equipment malfunction
+SAFE00079,NSW001,2024-09-26 05:00:00,Safety Inspection,Medium,false,false,Operator error
+SAFE00080,QLD001,2024-09-15 03:00:00,Near Miss,LOW,false,true,Procedure not followed
+SAFE00081,WA001,2024-03-04 05:00:00,EQUIPMENT COLLISION,Medium,false,false,Procedure not followed
+SAFE00082,NSW001,2024-03-29 21:00:00,Incident - Minor Injury,HIGH,false,false,Equipment malfunction
+SAFE00083,WA001,2024-09-21 14:00:00,Equipment Collision,Medium,false,false,Environmental conditions
+SAFE00084,WA001,2024-04-09 16:00:00,Confined Space Entry,HIGH,false,false,Procedure not followed
+SAFE00085,WA001,2024-12-24 12:00:00,incident - first aid,high,false,false,Equipment malfunction
+SAFE00086,WA001,2024-04-04 00:00:00,Fall from Height,MEDIUM,false,false,Operator error
+SAFE00087,WA001,2024-01-22 20:00:00,hazard reported,Medium,false,false,Environmental conditions
+SAFE00088,WA001,2024-04-03 18:00:00,Equipment Collision,LOW,false,false,Equipment malfunction
+SAFE00089,WA001,2024-03-05 08:00:00,near miss,Medium,false,false,Procedure not followed
+SAFE00090,NSW001,2024-08-07 00:00:00,Hazard Reported,Low,false,false,Communication breakdown
+SAFE00091,NSW001,2024-06-27 14:00:00,Near Miss,MEDIUM,false,true,Procedure not followed
+SAFE00092,QLD001,2024-09-19 18:00:00,Confined Space Entry,LOW,false,false,Environmental conditions
+SAFE00093,WA001,2024-10-22 07:00:00,NEAR MISS,LOW,false,false,Procedure not followed
+SAFE00094,NSW001,2024-10-08 13:00:00,Fall from Height,LOW,false,false,Inadequate training
+SAFE00095,QLD001,2024-06-23 11:00:00,fall from height,high,false,false,Environmental conditions
+SAFE00096,QLD001,2024-11-08 03:00:00,Incident - Minor Injury,HIGH,false,false,Equipment malfunction
+SAFE00097,WA001,2024-10-02 04:00:00,incident - minor injury,low,false,false,Procedure not followed
+SAFE00098,QLD001,2024-04-23 23:00:00,Hazard Reported,MEDIUM,false,false,Inadequate training
+SAFE00099,QLD001,2024-11-19 04:00:00,Near Miss,Medium,false,true,Equipment malfunction
+SAFE00100,NSW001,2024-06-06 19:00:00,safety inspection,HIGH,false,false,Communication breakdown
+SAFE00101,WA001,2024-04-16 21:00:00,safety inspection,low,false,false,Operator error
+SAFE00102,NSW001,2024-05-30 23:00:00,CONFINED SPACE ENTRY,Medium,false,false,Communication breakdown
+SAFE00103,WA001,2024-12-08 00:00:00,Near Miss,LOW,false,true,Communication breakdown
+SAFE00104,NSW001,2024-01-07 10:00:00,confined space entry,low,false,false,Operator error
+SAFE00105,NSW001,2024-04-22 14:00:00,equipment collision,Medium,false,false,Equipment malfunction
+SAFE00106,QLD001,2024-09-23 05:00:00,Confined Space Entry,HIGH,false,false,Procedure not followed
+SAFE00107,NSW001,2024-05-24 13:00:00,hazard reported,low,false,false,Environmental conditions
+SAFE00108,WA001,2024-04-15 06:00:00,near miss,High,false,false,Communication breakdown
+SAFE00109,QLD001,2024-04-14 14:00:00,hazard reported,Low,false,false,Inadequate training
+SAFE00110,NSW001,2024-06-18 10:00:00,safety inspection,MEDIUM,false,false,Environmental conditions
+SAFE00111,NSW001,2024-12-07 00:00:00,Near Miss,Medium,false,true,Equipment malfunction
+SAFE00112,WA001,2024-04-08 21:00:00,near miss,Low,false,false,Procedure not followed
+SAFE00113,QLD001,2024-05-01 01:00:00,Confined Space Entry,MEDIUM,false,false,Environmental conditions
+SAFE00114,NSW001,2024-08-16 11:00:00,Safety Inspection,high,false,false,Environmental conditions
+SAFE00115,QLD001,2024-02-29 22:00:00,Confined Space Entry,high,false,false,Procedure not followed
+SAFE00116,WA001,2024-08-24 03:00:00,HAZARD REPORTED,Medium,false,false,Operator error
+SAFE00117,NSW001,2024-08-27 04:00:00,Hazard Reported,LOW,false,false,Procedure not followed
+SAFE00118,WA001,2024-09-18 11:00:00,Incident - First Aid,low,false,false,Equipment malfunction
+SAFE00119,QLD001,2024-07-20 22:00:00,incident - first aid,MEDIUM,false,false,Operator error
+SAFE00120,QLD001,2024-11-09 11:00:00,Equipment Collision,Medium,false,false,Operator error
+SAFE00121,NSW001,2024-03-30 22:00:00,fall from height,low,false,false,Operator error
+SAFE00122,QLD001,2024-07-23 04:00:00,Equipment Collision,HIGH,false,false,Equipment malfunction
+SAFE00123,QLD001,2024-01-07 12:00:00,Equipment Collision,high,false,false,Communication breakdown
+SAFE00124,NSW001,2024-02-22 04:00:00,incident - first aid,Low,false,false,Communication breakdown
+SAFE00125,QLD001,2024-04-22 18:00:00,Equipment Collision,HIGH,false,false,Communication breakdown
+SAFE00126,QLD001,2024-04-02 18:00:00,Near Miss,HIGH,false,true,Operator error
+SAFE00127,QLD001,2024-12-25 15:00:00,Fall from Height,HIGH,false,false,Inadequate training
+SAFE00128,NSW001,2024-08-12 19:00:00,Near Miss,Medium,false,true,Equipment malfunction
+SAFE00129,WA001,2024-02-06 19:00:00,near miss,Medium,false,false,Procedure not followed
+SAFE00130,NSW001,2024-02-10 15:00:00,Fall from Height,Low,false,false,Operator error
+SAFE00131,NSW001,2024-12-29 00:00:00,Near Miss,Low,false,true,Equipment malfunction
+SAFE00132,WA001,2024-06-12 00:00:00,Incident - First Aid,MEDIUM,false,false,Operator error
+SAFE00133,WA001,2024-07-17 00:00:00,Equipment Collision,MEDIUM,false,false,Inadequate training
+SAFE00134,NSW001,2024-02-08 22:00:00,Incident - Minor Injury,LOW,false,false,Procedure not followed
+SAFE00135,NSW001,2024-03-15 17:00:00,Hazard Reported,MEDIUM,false,false,Inadequate training
+SAFE00136,WA001,2024-03-29 10:00:00,Fall from Height,HIGH,false,false,Operator error
+SAFE00137,NSW001,2024-04-19 15:00:00,INCIDENT - MINOR INJURY,LOW,false,false,Communication breakdown
+SAFE00138,WA001,2024-08-06 12:00:00,Fall from Height,Low,false,false,Operator error
+SAFE00139,WA001,2024-12-26 04:00:00,incident - first aid,HIGH,false,false,Inadequate training
+SAFE00140,QLD001,2024-05-21 06:00:00,near miss,LOW,false,false,Operator error
+SAFE00141,QLD001,2024-04-14 11:00:00,fall from height,Low,false,false,Operator error
+SAFE00142,WA001,2024-04-30 04:00:00,Safety Inspection,High,false,false,Inadequate training
+SAFE00143,WA001,2024-02-27 08:00:00,incident - minor injury,low,false,false,Equipment malfunction
+SAFE00144,QLD001,2024-10-12 07:00:00,INCIDENT - MINOR INJURY,Medium,false,false,Equipment malfunction
+SAFE00145,NSW001,2024-10-28 16:00:00,incident - first aid,low,false,false,Procedure not followed
+SAFE00146,WA001,2024-12-22 12:00:00,Incident - Minor Injury,LOW,false,false,Equipment malfunction
+SAFE00147,NSW001,2024-10-06 16:00:00,confined space entry,low,false,false,Operator error
+SAFE00148,WA001,2024-09-26 00:00:00,Equipment Collision,Medium,false,false,Inadequate training
+SAFE00149,NSW001,2024-04-21 13:00:00,NEAR MISS,High,false,false,Communication breakdown
+SAFE00150,WA001,2024-12-30 22:00:00,Confined Space Entry,LOW,false,false,Inadequate training
+SAFE00151,QLD001,2024-03-30 09:00:00,Fall from Height,Medium,false,false,Environmental conditions
+SAFE00152,WA001,2024-10-10 09:00:00,EQUIPMENT COLLISION,LOW,false,false,Communication breakdown
+SAFE00153,NSW001,2024-12-12 01:00:00,Near Miss,LOW,false,true,Inadequate training
+SAFE00154,WA001,2024-03-04 01:00:00,incident - first aid,Medium,false,false,Environmental conditions
+SAFE00155,NSW001,2024-04-04 00:00:00,near miss,low,false,false,Inadequate training
+SAFE00156,QLD001,2024-01-26 17:00:00,Equipment Collision,LOW,false,false,Environmental conditions
+SAFE00157,NSW001,2024-09-12 16:00:00,incident - first aid,high,true,false,Operator error
+SAFE00158,WA001,2024-09-15 16:00:00,Fall from Height,HIGH,false,false,Procedure not followed
+SAFE00159,NSW001,2024-03-02 14:00:00,Incident - Minor Injury,low,false,false,Operator error
+SAFE00160,QLD001,2024-11-23 16:00:00,fall from height,high,false,false,Operator error
+SAFE00161,QLD001,2024-08-06 20:00:00,Incident - Minor Injury,high,false,false,Inadequate training
+SAFE00162,NSW001,2024-11-16 21:00:00,Incident - First Aid,Medium,false,false,Equipment malfunction
+SAFE00163,NSW001,2024-01-04 05:00:00,EQUIPMENT COLLISION,low,false,false,Equipment malfunction
+SAFE00164,QLD001,2024-05-26 18:00:00,safety inspection,HIGH,false,false,Inadequate training
+SAFE00165,QLD001,2024-05-19 16:00:00,Confined Space Entry,Low,false,false,Equipment malfunction
+SAFE00166,NSW001,2024-02-11 16:00:00,fall from height,High,false,false,Procedure not followed
+SAFE00167,QLD001,2024-09-13 10:00:00,Near Miss,High,false,true,Operator error
+SAFE00168,QLD001,2024-01-11 01:00:00,FALL FROM HEIGHT,Low,true,false,Equipment malfunction
+SAFE00169,WA001,2024-02-08 01:00:00,Fall from Height,High,false,false,Procedure not followed
+SAFE00170,WA001,2024-06-20 17:00:00,Hazard Reported,LOW,false,false,Equipment malfunction
+SAFE00171,NSW001,2024-12-25 01:00:00,Incident - Minor Injury,low,false,false,Communication breakdown
+SAFE00172,NSW001,2024-05-16 10:00:00,equipment collision,Medium,false,false,Environmental conditions
+SAFE00173,QLD001,2024-06-15 21:00:00,Equipment Collision,Low,false,false,Operator error
+SAFE00174,QLD001,2024-07-27 02:00:00,Incident - First Aid,Low,false,false,Environmental conditions
+SAFE00175,NSW001,2024-01-15 06:00:00,Hazard Reported,low,false,false,Operator error
+SAFE00176,NSW001,2024-06-05 15:00:00,safety inspection,Medium,false,false,Equipment malfunction
+SAFE00177,WA001,2024-04-02 08:00:00,Incident - Minor Injury,high,false,false,Communication breakdown
+SAFE00178,NSW001,2024-08-15 18:00:00,fall from height,LOW,false,false,Inadequate training
+SAFE00179,WA001,2024-05-11 14:00:00,Incident - First Aid,high,false,false,Environmental conditions
+SAFE00180,NSW001,2024-11-24 23:00:00,safety inspection,High,false,false,Equipment malfunction
+SAFE00181,WA001,2024-01-17 11:00:00,Near Miss,MEDIUM,false,true,Equipment malfunction
+SAFE00182,NSW001,2024-04-10 04:00:00,Near Miss,LOW,false,true,Communication breakdown
+SAFE00183,QLD001,2024-06-07 13:00:00,incident - first aid,high,false,false,Operator error
+SAFE00184,WA001,2024-02-12 17:00:00,Confined Space Entry,Medium,false,false,Environmental conditions
+SAFE00185,NSW001,2024-09-16 00:00:00,Incident - First Aid,low,false,false,Procedure not followed
+SAFE00186,NSW001,2024-07-12 13:00:00,Safety Inspection,high,false,false,Operator error
+SAFE00187,WA001,2024-08-12 12:00:00,incident - minor injury,low,false,false,Environmental conditions
+SAFE00188,NSW001,2024-05-11 10:00:00,Near Miss,low,false,true,Communication breakdown
+SAFE00189,WA001,2024-08-06 14:00:00,Incident - Minor Injury,HIGH,false,false,Communication breakdown
+SAFE00190,NSW001,2024-10-12 16:00:00,hazard reported,High,false,false,Procedure not followed
+SAFE00191,WA001,2024-09-01 09:00:00,Equipment Collision,high,false,false,Environmental conditions
+SAFE00192,QLD001,2024-08-24 04:00:00,near miss,MEDIUM,false,false,Communication breakdown
+SAFE00193,WA001,2024-04-25 21:00:00,Hazard Reported,MEDIUM,false,false,Operator error
+SAFE00194,WA001,2024-01-19 01:00:00,Fall from Height,high,false,false,Communication breakdown
+SAFE00195,QLD001,2024-11-18 06:00:00,HAZARD REPORTED,LOW,false,false,Operator error
+SAFE00196,QLD001,2024-06-17 08:00:00,Safety Inspection,Low,false,false,Procedure not followed
+SAFE00197,QLD001,2024-03-22 14:00:00,equipment collision,HIGH,false,false,Communication breakdown
+SAFE00198,QLD001,2024-11-28 06:00:00,confined space entry,HIGH,false,false,Inadequate training
+SAFE00199,WA001,2024-07-30 08:00:00,Near Miss,low,false,true,Operator error
+SAFE00200,QLD001,2024-05-31 11:00:00,equipment collision,HIGH,false,false,Procedure not followed
+SAFE00201,WA001,2024-02-12 11:00:00,confined space entry,Medium,false,false,Equipment malfunction
+SAFE00202,WA001,2024-11-30 05:00:00,Confined Space Entry,High,false,false,Operator error
+SAFE00203,QLD001,2024-03-18 11:00:00,EQUIPMENT COLLISION,MEDIUM,false,false,Equipment malfunction
+SAFE00204,QLD001,2024-03-20 10:00:00,EQUIPMENT COLLISION,high,false,false,Procedure not followed
+SAFE00205,NSW001,2024-08-02 10:00:00,Hazard Reported,Medium,false,false,Communication breakdown
+SAFE00206,WA001,2024-08-08 00:00:00,Near Miss,High,false,true,Environmental conditions
+SAFE00207,WA001,2024-12-24 08:00:00,Hazard Reported,MEDIUM,false,false,Communication breakdown
+SAFE00208,NSW001,2024-08-03 11:00:00,Hazard Reported,MEDIUM,false,false,Environmental conditions
+SAFE00209,WA001,2024-07-17 10:00:00,EQUIPMENT COLLISION,Low,false,false,Inadequate training
+SAFE00210,NSW001,2024-04-07 19:00:00,safety inspection,LOW,false,false,Environmental conditions
+SAFE00211,NSW001,2024-03-28 14:00:00,incident - first aid,HIGH,false,false,Inadequate training
+SAFE00212,WA001,2024-04-11 05:00:00,confined space entry,HIGH,false,false,Operator error
+SAFE00213,NSW001,2024-12-20 14:00:00,Equipment Collision,MEDIUM,false,false,Procedure not followed
+SAFE00214,QLD001,2024-03-25 13:00:00,incident - first aid,low,false,false,Equipment malfunction
+SAFE00215,WA001,2024-10-28 15:00:00,Near Miss,High,false,true,Equipment malfunction
+SAFE00216,QLD001,2024-04-04 00:00:00,safety inspection,HIGH,false,false,Procedure not followed
+SAFE00217,QLD001,2024-08-07 11:00:00,Fall from Height,LOW,false,false,Communication breakdown
+SAFE00218,QLD001,2024-05-16 06:00:00,Fall from Height,high,false,false,Environmental conditions
+SAFE00219,NSW001,2024-07-12 02:00:00,confined space entry,High,false,false,Inadequate training
+SAFE00220,WA001,2024-06-24 14:00:00,fall from height,High,false,false,Operator error
+SAFE00221,QLD001,2024-09-27 17:00:00,Near Miss,Low,false,true,Procedure not followed
+SAFE00222,NSW001,2024-10-17 03:00:00,FALL FROM HEIGHT,MEDIUM,false,false,Inadequate training
+SAFE00223,WA001,2024-06-13 03:00:00,Near Miss,High,false,true,Environmental conditions
+SAFE00224,QLD001,2024-12-13 08:00:00,Safety Inspection,HIGH,false,false,Communication breakdown
+SAFE00225,NSW001,2024-09-27 10:00:00,Equipment Collision,High,false,false,Environmental conditions
+SAFE00226,QLD001,2024-01-19 03:00:00,Safety Inspection,high,false,false,Environmental conditions
+SAFE00227,NSW001,2024-07-21 00:00:00,fall from height,HIGH,false,false,Inadequate training
+SAFE00228,WA001,2024-10-17 14:00:00,Fall from Height,HIGH,false,false,Operator error
+SAFE00229,WA001,2024-03-25 22:00:00,Fall from Height,High,false,false,Operator error
+SAFE00230,WA001,2024-02-08 13:00:00,Hazard Reported,Medium,false,false,Equipment malfunction
+SAFE00231,NSW001,2024-12-17 11:00:00,Fall from Height,Medium,false,false,Environmental conditions
+SAFE00232,NSW001,2024-11-21 10:00:00,Incident - Minor Injury,high,false,false,Inadequate training
+SAFE00233,WA001,2024-07-14 08:00:00,Incident - Minor Injury,LOW,false,false,Inadequate training
+SAFE00234,WA001,2024-05-27 10:00:00,safety inspection,MEDIUM,false,false,Communication breakdown
+SAFE00235,WA001,2024-04-22 15:00:00,safety inspection,Low,false,false,Procedure not followed
+SAFE00236,NSW001,2024-08-02 09:00:00,Incident - First Aid,high,false,false,Inadequate training
+SAFE00237,WA001,2024-10-16 01:00:00,Safety Inspection,High,false,false,Communication breakdown
+SAFE00238,QLD001,2024-04-17 09:00:00,Safety Inspection,Low,false,false,Procedure not followed
+SAFE00239,NSW001,2024-02-10 08:00:00,Fall from Height,HIGH,false,false,Communication breakdown
+SAFE00240,QLD001,2024-08-27 10:00:00,Fall from Height,low,false,false,Inadequate training
+SAFE00241,QLD001,2024-11-14 11:00:00,Hazard Reported,high,false,false,Operator error
+SAFE00242,QLD001,2024-01-07 06:00:00,Incident - First Aid,Low,true,false,Equipment malfunction
+SAFE00243,QLD001,2024-08-11 20:00:00,Near Miss,Low,false,true,Communication breakdown
+SAFE00244,WA001,2024-03-31 14:00:00,Incident - First Aid,Medium,false,false,Environmental conditions
+SAFE00245,WA001,2024-05-25 08:00:00,Fall from Height,low,false,false,Equipment malfunction
+SAFE00246,WA001,2024-02-02 15:00:00,Incident - First Aid,LOW,false,false,Inadequate training
+SAFE00247,QLD001,2024-06-16 12:00:00,Hazard Reported,MEDIUM,true,false,Equipment malfunction
+SAFE00248,WA001,2024-10-22 00:00:00,incident - minor injury,low,false,false,Equipment malfunction
+SAFE00249,NSW001,2024-04-21 17:00:00,Hazard Reported,MEDIUM,false,false,Communication breakdown
+SAFE00250,WA001,2024-06-07 17:00:00,Fall from Height,high,false,false,Communication breakdown
+SAFE00251,WA001,2024-10-03 20:00:00,incident - first aid,Medium,false,false,Inadequate training
+SAFE00252,QLD001,2024-12-24 14:00:00,near miss,High,false,false,Communication breakdown
+SAFE00253,NSW001,2024-10-02 22:00:00,Near Miss,HIGH,false,true,Communication breakdown
+SAFE00254,WA001,2024-09-08 09:00:00,incident - first aid,LOW,false,false,Procedure not followed
+SAFE00255,QLD001,2024-09-21 20:00:00,hazard reported,Low,false,false,Inadequate training
+SAFE00256,NSW001,2024-11-09 21:00:00,Equipment Collision,high,false,false,Operator error
+SAFE00257,NSW001,2024-07-20 08:00:00,equipment collision,LOW,false,false,Communication breakdown
+SAFE00258,QLD001,2024-03-05 04:00:00,Confined Space Entry,High,false,false,Environmental conditions
+SAFE00259,WA001,2024-06-11 08:00:00,Incident - First Aid,low,false,false,Equipment malfunction
+SAFE00260,WA001,2024-10-12 22:00:00,Confined Space Entry,LOW,false,false,Equipment malfunction
+SAFE00261,QLD001,2024-01-10 10:00:00,hazard reported,HIGH,false,false,Operator error
+SAFE00262,QLD001,2024-02-19 12:00:00,CONFINED SPACE ENTRY,low,false,false,Communication breakdown
+SAFE00263,NSW001,2024-10-05 07:00:00,Hazard Reported,low,false,false,Inadequate training
+SAFE00264,NSW001,2024-08-28 06:00:00,Equipment Collision,high,false,false,Procedure not followed
+SAFE00265,NSW001,2024-06-30 08:00:00,Hazard Reported,MEDIUM,false,false,Operator error
+SAFE00266,NSW001,2024-04-02 03:00:00,safety inspection,low,false,false,Inadequate training
+SAFE00267,NSW001,2024-10-03 01:00:00,Incident - First Aid,high,false,false,Equipment malfunction
+SAFE00268,QLD001,2024-01-17 13:00:00,near miss,high,false,false,Equipment malfunction
+SAFE00269,QLD001,2024-10-30 06:00:00,confined space entry,low,false,false,Inadequate training
+SAFE00270,QLD001,2024-08-03 13:00:00,Incident - Minor Injury,HIGH,false,false,Operator error
+SAFE00271,NSW001,2024-04-14 16:00:00,Confined Space Entry,Low,false,false,Communication breakdown
+SAFE00272,QLD001,2024-04-27 12:00:00,Confined Space Entry,high,false,false,Procedure not followed
+SAFE00273,NSW001,2024-05-28 15:00:00,near miss,low,false,false,Operator error
+SAFE00274,WA001,2024-01-20 11:00:00,incident - minor injury,High,false,false,Equipment malfunction
+SAFE00275,QLD001,2024-09-11 08:00:00,INCIDENT - FIRST AID,low,false,false,Equipment malfunction
+SAFE00276,WA001,2024-05-31 01:00:00,incident - minor injury,Low,false,false,Operator error
+SAFE00277,WA001,2024-11-19 12:00:00,hazard reported,HIGH,false,false,Environmental conditions
+SAFE00278,QLD001,2024-04-10 01:00:00,Incident - Minor Injury,LOW,false,false,Inadequate training
+SAFE00279,WA001,2024-01-20 13:00:00,Incident - Minor Injury,High,false,false,Inadequate training
+SAFE00280,NSW001,2024-05-31 00:00:00,Confined Space Entry,Medium,false,false,Inadequate training
+SAFE00281,QLD001,2024-03-07 11:00:00,Equipment Collision,low,false,false,Communication breakdown
+SAFE00282,NSW001,2024-09-29 03:00:00,Incident - Minor Injury,MEDIUM,false,false,Environmental conditions
+SAFE00283,WA001,2024-07-11 09:00:00,HAZARD REPORTED,Medium,false,false,Procedure not followed
+SAFE00284,NSW001,2024-01-31 02:00:00,near miss,MEDIUM,false,false,Operator error
+SAFE00285,NSW001,2024-12-18 05:00:00,Fall from Height,MEDIUM,false,false,Inadequate training
+SAFE00286,WA001,2024-06-21 12:00:00,confined space entry,MEDIUM,false,false,Environmental conditions
+SAFE00287,WA001,2024-06-25 18:00:00,Equipment Collision,Low,false,false,Communication breakdown
+SAFE00288,QLD001,2024-02-26 06:00:00,Incident - First Aid,High,false,false,Inadequate training
+SAFE00289,WA001,2024-07-18 00:00:00,Hazard Reported,Medium,false,false,Equipment malfunction
+SAFE00290,WA001,2024-09-25 08:00:00,Fall from Height,MEDIUM,false,false,Procedure not followed
+SAFE00291,WA001,2024-08-18 06:00:00,INCIDENT - MINOR INJURY,MEDIUM,false,false,Procedure not followed
+SAFE00292,QLD001,2024-04-14 15:00:00,Incident - First Aid,LOW,false,false,Operator error
+SAFE00293,NSW001,2024-10-22 15:00:00,Incident - Minor Injury,high,false,false,Equipment malfunction
+SAFE00294,WA001,2024-05-02 14:00:00,Fall from Height,Medium,false,false,Operator error
+SAFE00295,WA001,2024-08-07 10:00:00,Incident - Minor Injury,high,false,false,Inadequate training
+SAFE00296,QLD001,2024-12-11 08:00:00,Incident - First Aid,MEDIUM,false,false,Operator error
+SAFE00297,QLD001,2024-12-06 18:00:00,Safety Inspection,low,false,false,Communication breakdown
+SAFE00298,NSW001,2024-10-22 22:00:00,Safety Inspection,Low,false,false,Equipment malfunction
+SAFE00299,NSW001,2024-06-21 10:00:00,Incident - Minor Injury,MEDIUM,false,false,Procedure not followed
+SAFE00300,WA001,2024-07-02 11:00:00,Incident - First Aid,Medium,false,false,Procedure not followed
+SAFE00301,NSW001,2024-01-21 07:00:00,fall from height,Medium,false,false,Operator error
+SAFE00302,NSW001,2024-12-11 11:00:00,near miss,low,false,false,Environmental conditions
+SAFE00303,WA001,2024-09-17 06:00:00,Hazard Reported,MEDIUM,false,false,Equipment malfunction
+SAFE00304,QLD001,2024-01-19 21:00:00,confined space entry,low,false,false,Operator error
+SAFE00305,QLD001,2024-01-08 11:00:00,HAZARD REPORTED,low,false,false,Equipment malfunction
+SAFE00306,QLD001,2024-07-09 11:00:00,Incident - First Aid,High,false,false,Inadequate training
+SAFE00307,NSW001,2024-07-05 06:00:00,Incident - First Aid,high,false,false,Equipment malfunction
+SAFE00308,NSW001,2024-09-03 21:00:00,safety inspection,High,false,false,Equipment malfunction
+SAFE00309,WA001,2024-04-08 00:00:00,Near Miss,Medium,false,true,Environmental conditions
+SAFE00310,QLD001,2024-11-18 12:00:00,Incident - Minor Injury,Low,false,false,Procedure not followed
+SAFE00311,QLD001,2024-08-28 22:00:00,Safety Inspection,high,false,false,Equipment malfunction
+SAFE00312,QLD001,2024-10-02 00:00:00,HAZARD REPORTED,low,false,false,Communication breakdown
+SAFE00313,WA001,2024-07-30 17:00:00,safety inspection,low,false,false,Environmental conditions
+SAFE00314,QLD001,2024-05-20 09:00:00,Safety Inspection,LOW,false,false,Equipment malfunction
+SAFE00315,NSW001,2024-11-07 08:00:00,Equipment Collision,Medium,false,false,Communication breakdown
+SAFE00316,WA001,2024-03-31 02:00:00,HAZARD REPORTED,LOW,false,false,Inadequate training
+SAFE00317,NSW001,2024-08-02 11:00:00,Fall from Height,high,false,false,Inadequate training
+SAFE00318,QLD001,2024-11-15 10:00:00,Fall from Height,MEDIUM,false,false,Communication breakdown
+SAFE00319,WA001,2024-10-19 12:00:00,FALL FROM HEIGHT,high,false,false,Inadequate training
+SAFE00320,WA001,2024-03-08 20:00:00,safety inspection,LOW,false,false,Environmental conditions
+SAFE00321,WA001,2024-06-15 05:00:00,Confined Space Entry,LOW,false,false,Procedure not followed
+SAFE00322,QLD001,2024-02-23 20:00:00,equipment collision,Medium,false,false,Environmental conditions
+SAFE00323,QLD001,2024-06-22 22:00:00,Safety Inspection,High,false,false,Equipment malfunction
+SAFE00324,QLD001,2024-10-25 15:00:00,Equipment Collision,High,false,false,Equipment malfunction
+SAFE00325,WA001,2024-09-18 09:00:00,safety inspection,High,false,false,Inadequate training
+SAFE00326,WA001,2024-08-05 05:00:00,fall from height,HIGH,false,false,Environmental conditions
+SAFE00327,NSW001,2024-12-27 10:00:00,confined space entry,Low,false,false,Environmental conditions
+SAFE00328,NSW001,2024-09-07 15:00:00,Fall from Height,MEDIUM,false,false,Equipment malfunction
+SAFE00329,NSW001,2024-01-31 10:00:00,Hazard Reported,Medium,false,false,Equipment malfunction
+SAFE00330,WA001,2024-02-07 08:00:00,incident - first aid,MEDIUM,false,false,Procedure not followed
+SAFE00331,QLD001,2024-02-08 14:00:00,Incident - First Aid,Medium,false,false,Operator error
+SAFE00332,NSW001,2024-03-14 00:00:00,INCIDENT - MINOR INJURY,Medium,false,false,Operator error
+SAFE00333,NSW001,2024-10-02 10:00:00,Equipment Collision,LOW,false,false,Communication breakdown
+SAFE00334,WA001,2024-08-18 10:00:00,fall from height,LOW,false,false,Operator error
+SAFE00335,QLD001,2024-06-07 19:00:00,Incident - Minor Injury,High,false,false,Equipment malfunction
+SAFE00336,NSW001,2024-12-18 07:00:00,Equipment Collision,MEDIUM,false,false,Inadequate training
+SAFE00337,NSW001,2024-03-11 03:00:00,Hazard Reported,high,false,false,Procedure not followed
+SAFE00338,WA001,2024-09-04 18:00:00,Confined Space Entry,High,false,false,Operator error
+SAFE00339,QLD001,2024-10-29 15:00:00,Equipment Collision,MEDIUM,false,false,Procedure not followed
+SAFE00340,QLD001,2024-04-14 16:00:00,Incident - First Aid,MEDIUM,false,false,Inadequate training
+SAFE00341,WA001,2024-04-22 22:00:00,Incident - First Aid,Medium,false,false,Equipment malfunction
+SAFE00342,QLD001,2024-10-23 13:00:00,FALL FROM HEIGHT,high,false,false,Operator error
+SAFE00343,QLD001,2024-03-08 05:00:00,INCIDENT - MINOR INJURY,Low,false,false,Equipment malfunction
+SAFE00344,QLD001,2024-11-27 13:00:00,equipment collision,LOW,false,false,Communication breakdown
+SAFE00345,NSW001,2024-08-17 22:00:00,Incident - First Aid,HIGH,false,false,Operator error
+SAFE00346,QLD001,2024-07-09 10:00:00,Incident - First Aid,HIGH,false,false,Inadequate training
+SAFE00347,WA001,2024-10-14 20:00:00,Safety Inspection,High,false,false,Communication breakdown
+SAFE00348,QLD001,2024-01-26 08:00:00,equipment collision,HIGH,false,false,Environmental conditions
+SAFE00349,WA001,2024-04-15 05:00:00,equipment collision,MEDIUM,false,false,Inadequate training
+SAFE00350,WA001,2024-08-21 18:00:00,Near Miss,High,false,true,Communication breakdown
+SAFE00351,WA001,2024-04-06 18:00:00,incident - minor injury,HIGH,false,false,Communication breakdown
+SAFE00352,WA001,2024-07-18 10:00:00,Hazard Reported,low,false,false,Equipment malfunction
+SAFE00353,WA001,2024-07-15 22:00:00,hazard reported,Low,false,false,Environmental conditions
+SAFE00354,QLD001,2024-02-16 18:00:00,Confined Space Entry,HIGH,false,false,Procedure not followed
+SAFE00355,WA001,2024-01-26 05:00:00,Safety Inspection,high,false,false,Environmental conditions
+SAFE00356,QLD001,2024-11-16 02:00:00,Equipment Collision,LOW,false,false,Environmental conditions
+SAFE00357,WA001,2024-03-21 05:00:00,INCIDENT - FIRST AID,high,false,false,Operator error
+SAFE00358,WA001,2024-01-30 18:00:00,Incident - Minor Injury,MEDIUM,false,false,Operator error
+SAFE00359,WA001,2024-11-02 12:00:00,Incident - Minor Injury,Medium,false,false,Communication breakdown
+SAFE00360,QLD001,2024-01-25 08:00:00,safety inspection,Low,false,false,Procedure not followed
+SAFE00361,QLD001,2024-09-17 05:00:00,FALL FROM HEIGHT,Medium,false,false,Inadequate training
+SAFE00362,NSW001,2024-02-29 00:00:00,Fall from Height,low,false,false,Equipment malfunction
+SAFE00363,WA001,2024-11-16 05:00:00,Equipment Collision,Low,false,false,Environmental conditions
+SAFE00364,QLD001,2024-09-15 10:00:00,hazard reported,low,false,false,Inadequate training
+SAFE00365,WA001,2024-07-26 21:00:00,INCIDENT - FIRST AID,Low,false,false,Procedure not followed
+SAFE00366,WA001,2024-05-19 23:00:00,INCIDENT - MINOR INJURY,high,false,false,Environmental conditions
+SAFE00367,WA001,2024-08-26 07:00:00,hazard reported,Low,false,false,Operator error
+SAFE00368,NSW001,2024-04-28 06:00:00,Confined Space Entry,high,false,false,Operator error
+SAFE00369,WA001,2024-02-11 05:00:00,Near Miss,low,false,true,Environmental conditions
+SAFE00370,WA001,2024-02-29 14:00:00,hazard reported,MEDIUM,false,false,Communication breakdown
+SAFE00371,NSW001,2024-07-02 14:00:00,Fall from Height,Medium,false,false,Procedure not followed
+SAFE00372,QLD001,2024-03-27 00:00:00,Equipment Collision,LOW,false,false,Environmental conditions
+SAFE00373,WA001,2024-03-03 16:00:00,Near Miss,MEDIUM,false,true,Inadequate training
+SAFE00374,NSW001,2024-03-22 15:00:00,Near Miss,Low,false,true,Communication breakdown
+SAFE00375,QLD001,2024-01-30 18:00:00,equipment collision,MEDIUM,false,false,Communication breakdown
+SAFE00376,NSW001,2024-10-25 06:00:00,Confined Space Entry,MEDIUM,false,false,Procedure not followed
+SAFE00377,NSW001,2024-12-17 09:00:00,Near Miss,HIGH,false,true,Procedure not followed
+SAFE00378,WA001,2024-02-11 10:00:00,INCIDENT - FIRST AID,High,false,false,Operator error
+SAFE00379,WA001,2024-01-21 09:00:00,Equipment Collision,Medium,false,false,Operator error
+SAFE00380,WA001,2024-01-12 01:00:00,Hazard Reported,high,false,false,Communication breakdown
+SAFE00381,NSW001,2024-12-10 02:00:00,Safety Inspection,LOW,false,false,Environmental conditions
+SAFE00382,NSW001,2024-06-15 13:00:00,Safety Inspection,LOW,false,false,Inadequate training
+SAFE00383,QLD001,2024-04-24 06:00:00,Equipment Collision,low,false,false,Environmental conditions
+SAFE00384,WA001,2024-12-08 10:00:00,Hazard Reported,MEDIUM,false,false,Procedure not followed
+SAFE00385,WA001,2024-03-08 08:00:00,fall from height,Medium,false,false,Operator error
+SAFE00386,WA001,2024-06-12 05:00:00,hazard reported,MEDIUM,false,false,Equipment malfunction
+SAFE00387,QLD001,2024-06-07 20:00:00,Near Miss,high,false,true,Environmental conditions
+SAFE00388,WA001,2024-07-23 01:00:00,safety inspection,low,false,false,Inadequate training
+SAFE00389,WA001,2024-02-19 01:00:00,hazard reported,LOW,false,false,Inadequate training
+SAFE00390,WA001,2024-02-17 22:00:00,Fall from Height,LOW,false,false,Operator error
+SAFE00391,NSW001,2024-09-01 19:00:00,near miss,low,false,false,Communication breakdown
+SAFE00392,WA001,2024-09-30 11:00:00,Fall from Height,LOW,false,false,Communication breakdown
+SAFE00393,QLD001,2024-01-27 19:00:00,fall from height,LOW,false,false,Environmental conditions
+SAFE00394,QLD001,2024-12-29 11:00:00,FALL FROM HEIGHT,LOW,true,false,Communication breakdown
+SAFE00395,WA001,2024-10-14 01:00:00,Incident - First Aid,Low,false,false,Communication breakdown
+SAFE00396,QLD001,2024-07-02 01:00:00,incident - minor injury,Medium,false,false,Operator error
+SAFE00397,WA001,2024-03-10 14:00:00,Near Miss,MEDIUM,false,true,Inadequate training
+SAFE00398,WA001,2024-10-13 20:00:00,Equipment Collision,high,false,false,Environmental conditions
+SAFE00399,WA001,2024-09-01 08:00:00,incident - minor injury,LOW,false,false,Inadequate training
+SAFE00400,QLD001,2024-10-26 19:00:00,Hazard Reported,high,false,false,Procedure not followed
+SAFE00401,QLD001,2024-06-10 18:00:00,Safety Inspection,HIGH,false,false,Equipment malfunction
+SAFE00402,WA001,2024-09-26 06:00:00,Fall from Height,High,false,false,Inadequate training
+SAFE00403,QLD001,2024-02-27 11:00:00,fall from height,HIGH,false,false,Environmental conditions
+SAFE00404,WA001,2024-07-07 12:00:00,Equipment Collision,HIGH,false,false,Equipment malfunction
+SAFE00405,QLD001,2024-10-07 23:00:00,Incident - First Aid,MEDIUM,false,false,Operator error
+SAFE00406,QLD001,2024-03-13 07:00:00,Incident - First Aid,MEDIUM,false,false,Equipment malfunction
+SAFE00407,QLD001,2024-03-20 15:00:00,Confined Space Entry,LOW,false,false,Operator error
+SAFE00408,QLD001,2024-02-19 12:00:00,Near Miss,LOW,false,true,Operator error
+SAFE00409,NSW001,2024-02-20 18:00:00,Equipment Collision,Medium,true,false,Equipment malfunction
+SAFE00410,NSW001,2024-11-14 00:00:00,equipment collision,Low,false,false,Environmental conditions
+SAFE00411,NSW001,2024-06-13 12:00:00,EQUIPMENT COLLISION,HIGH,false,false,Equipment malfunction
+SAFE00412,QLD001,2024-06-30 20:00:00,Confined Space Entry,LOW,false,false,Communication breakdown
+SAFE00413,NSW001,2024-06-12 05:00:00,Incident - First Aid,Low,false,false,Communication breakdown
+SAFE00414,NSW001,2024-05-10 22:00:00,EQUIPMENT COLLISION,LOW,false,false,Inadequate training
+SAFE00415,QLD001,2024-08-18 00:00:00,hazard reported,Medium,false,false,Communication breakdown
+SAFE00416,WA001,2024-05-25 04:00:00,hazard reported,high,false,false,Equipment malfunction
+SAFE00417,NSW001,2024-10-22 00:00:00,incident - minor injury,LOW,false,false,Communication breakdown
+SAFE00418,QLD001,2024-06-19 01:00:00,Hazard Reported,high,false,false,Procedure not followed
+SAFE00419,WA001,2024-08-01 10:00:00,incident - minor injury,LOW,false,false,Operator error
+SAFE00420,WA001,2024-11-25 19:00:00,Fall from Height,High,false,false,Equipment malfunction
+SAFE00421,QLD001,2024-04-08 14:00:00,CONFINED SPACE ENTRY,High,false,false,Environmental conditions
+SAFE00422,WA001,2024-05-13 13:00:00,Fall from Height,MEDIUM,false,false,Inadequate training
+SAFE00423,NSW001,2024-04-29 23:00:00,hazard reported,LOW,false,false,Operator error
+SAFE00424,QLD001,2024-01-12 04:00:00,near miss,Medium,false,false,Equipment malfunction
+SAFE00425,QLD001,2024-07-16 05:00:00,confined space entry,LOW,false,false,Equipment malfunction
+SAFE00426,WA001,2024-10-05 05:00:00,confined space entry,High,false,false,Inadequate training
+SAFE00427,WA001,2024-05-17 06:00:00,Incident - Minor Injury,High,false,false,Equipment malfunction
+SAFE00428,NSW001,2024-08-04 23:00:00,Near Miss,high,false,true,Inadequate training
+SAFE00429,WA001,2024-06-12 22:00:00,CONFINED SPACE ENTRY,Medium,false,false,Inadequate training
+SAFE00430,QLD001,2024-06-24 08:00:00,incident - first aid,LOW,false,false,Communication breakdown
+SAFE00431,NSW001,2024-04-15 07:00:00,safety inspection,high,false,false,Procedure not followed
+SAFE00432,QLD001,2024-01-26 05:00:00,Incident - First Aid,high,false,false,Environmental conditions
+SAFE00433,NSW001,2024-07-23 19:00:00,Equipment Collision,low,false,false,Operator error
+SAFE00434,NSW001,2024-01-29 14:00:00,Incident - First Aid,Low,false,false,Communication breakdown
+SAFE00435,QLD001,2024-11-15 03:00:00,Incident - Minor Injury,MEDIUM,false,false,Procedure not followed
+SAFE00436,WA001,2024-02-05 04:00:00,Incident - Minor Injury,Low,false,false,Procedure not followed
+SAFE00437,WA001,2024-05-30 11:00:00,EQUIPMENT COLLISION,HIGH,false,false,Communication breakdown
+SAFE00438,WA001,2024-07-10 05:00:00,Safety Inspection,MEDIUM,false,false,Equipment malfunction
+SAFE00439,QLD001,2024-04-10 02:00:00,FALL FROM HEIGHT,high,false,false,Procedure not followed
+SAFE00440,QLD001,2024-11-29 07:00:00,Incident - Minor Injury,low,false,false,Inadequate training
+SAFE00441,NSW001,2024-02-25 11:00:00,EQUIPMENT COLLISION,HIGH,false,false,Environmental conditions
+SAFE00442,NSW001,2024-11-16 08:00:00,equipment collision,High,false,false,Environmental conditions
+SAFE00443,QLD001,2024-10-25 13:00:00,safety inspection,HIGH,false,false,Communication breakdown
+SAFE00444,NSW001,2024-03-30 01:00:00,safety inspection,high,false,false,Environmental conditions
+SAFE00445,WA001,2024-01-13 21:00:00,Hazard Reported,High,false,false,Equipment malfunction
+SAFE00446,QLD001,2024-03-20 05:00:00,incident - minor injury,HIGH,false,false,Equipment malfunction
+SAFE00447,NSW001,2024-06-07 04:00:00,hazard reported,Medium,false,false,Communication breakdown
+SAFE00448,WA001,2024-02-02 06:00:00,NEAR MISS,High,false,false,Environmental conditions
+SAFE00449,WA001,2024-03-21 10:00:00,HAZARD REPORTED,HIGH,false,false,Inadequate training
+SAFE00450,QLD001,2024-05-22 08:00:00,Incident - Minor Injury,MEDIUM,false,false,Inadequate training
+SAFE00451,QLD001,2024-04-11 13:00:00,Incident - Minor Injury,HIGH,false,false,Inadequate training
+SAFE00452,NSW001,2024-02-26 08:00:00,confined space entry,high,false,false,Inadequate training
+SAFE00453,WA001,2024-12-27 02:00:00,FALL FROM HEIGHT,Medium,false,false,Environmental conditions
+SAFE00454,QLD001,2024-04-27 13:00:00,Confined Space Entry,Low,false,false,Equipment malfunction
+SAFE00455,QLD001,2024-09-25 08:00:00,Safety Inspection,low,false,false,Equipment malfunction
+SAFE00456,QLD001,2024-09-30 08:00:00,EQUIPMENT COLLISION,Medium,false,false,Inadequate training
+SAFE00457,QLD001,2024-03-21 21:00:00,incident - first aid,Low,false,false,Environmental conditions
+SAFE00458,QLD001,2024-08-07 17:00:00,Confined Space Entry,Medium,false,false,Procedure not followed
+SAFE00459,WA001,2024-01-22 13:00:00,Confined Space Entry,Medium,false,false,Equipment malfunction
+SAFE00460,NSW001,2024-06-30 00:00:00,equipment collision,LOW,false,false,Operator error
+SAFE00461,QLD001,2024-02-04 03:00:00,Incident - First Aid,high,false,false,Communication breakdown
+SAFE00462,WA001,2024-07-17 12:00:00,equipment collision,LOW,false,false,Equipment malfunction
+SAFE00463,WA001,2024-07-19 20:00:00,incident - first aid,Medium,false,false,Procedure not followed
+SAFE00464,NSW001,2024-11-06 00:00:00,Fall from Height,high,false,false,Communication breakdown
+SAFE00465,QLD001,2024-10-17 21:00:00,Safety Inspection,High,false,false,Environmental conditions
+SAFE00466,WA001,2024-04-26 11:00:00,Incident - Minor Injury,low,false,false,Equipment malfunction
+SAFE00467,WA001,2024-07-18 22:00:00,Safety Inspection,Low,false,false,Procedure not followed
+SAFE00468,WA001,2024-04-11 08:00:00,Hazard Reported,HIGH,false,false,Environmental conditions
+SAFE00469,WA001,2024-03-01 20:00:00,Equipment Collision,High,false,false,Inadequate training
+SAFE00470,NSW001,2024-04-28 21:00:00,Safety Inspection,low,false,false,Communication breakdown
+SAFE00471,QLD001,2024-04-20 12:00:00,Fall from Height,Medium,false,false,Equipment malfunction
+SAFE00472,WA001,2024-06-26 22:00:00,INCIDENT - FIRST AID,LOW,false,false,Operator error
+SAFE00473,QLD001,2024-11-10 10:00:00,incident - minor injury,Medium,false,false,Inadequate training
+SAFE00474,NSW001,2024-12-27 14:00:00,Hazard Reported,High,false,false,Equipment malfunction
+SAFE00475,NSW001,2024-02-29 13:00:00,SAFETY INSPECTION,High,false,false,Procedure not followed
+SAFE00476,NSW001,2024-05-01 22:00:00,Safety Inspection,LOW,false,false,Operator error
+SAFE00477,NSW001,2024-10-10 03:00:00,confined space entry,High,false,false,Inadequate training
+SAFE00478,WA001,2024-01-20 20:00:00,Safety Inspection,MEDIUM,true,false,Procedure not followed
+SAFE00479,NSW001,2024-06-26 14:00:00,near miss,Medium,false,false,Communication breakdown
+SAFE00480,WA001,2024-04-14 16:00:00,EQUIPMENT COLLISION,Medium,false,false,Equipment malfunction
+SAFE00481,NSW001,2024-05-25 01:00:00,equipment collision,LOW,false,false,Procedure not followed
+SAFE00482,WA001,2024-07-15 10:00:00,Confined Space Entry,Medium,false,false,Inadequate training
+SAFE00483,QLD001,2024-02-15 01:00:00,Fall from Height,LOW,false,false,Inadequate training
+SAFE00484,NSW001,2024-12-05 11:00:00,Equipment Collision,HIGH,false,false,Environmental conditions
+SAFE00485,NSW001,2024-12-22 21:00:00,SAFETY INSPECTION,Medium,false,false,Equipment malfunction
+SAFE00486,NSW001,2024-06-23 14:00:00,Incident - First Aid,low,false,false,Inadequate training
+SAFE00487,QLD001,2024-03-29 06:00:00,Confined Space Entry,high,false,false,Operator error
+SAFE00488,WA001,2024-09-08 12:00:00,incident - first aid,high,false,false,Inadequate training
+SAFE00489,QLD001,2024-09-04 04:00:00,Equipment Collision,Low,false,false,Environmental conditions
+SAFE00490,QLD001,2024-02-13 04:00:00,Safety Inspection,MEDIUM,false,false,Operator error
+SAFE00491,NSW001,2024-02-10 23:00:00,Equipment Collision,High,false,false,Operator error
+SAFE00492,NSW001,2024-06-22 12:00:00,NEAR MISS,high,false,false,Equipment malfunction
+SAFE00493,QLD001,2024-03-28 15:00:00,Incident - Minor Injury,Low,false,false,Operator error
+SAFE00494,NSW001,2024-11-24 01:00:00,Fall from Height,Medium,false,false,Operator error
+SAFE00495,WA001,2024-12-02 04:00:00,Incident - First Aid,low,false,false,Equipment malfunction
+SAFE00496,QLD001,2024-06-02 11:00:00,CONFINED SPACE ENTRY,High,false,false,Operator error
+SAFE00497,WA001,2024-09-28 06:00:00,SAFETY INSPECTION,MEDIUM,false,false,Operator error
+SAFE00498,WA001,2024-06-15 20:00:00,Near Miss,Low,false,true,Procedure not followed
+SAFE00499,NSW001,2024-04-01 16:00:00,Incident - First Aid,Medium,false,false,Inadequate training
+SAFE00500,NSW001,2024-06-07 20:00:00,CONFINED SPACE ENTRY,low,false,false,Environmental conditions
+SAFE00501,NSW001,2024-08-15 21:00:00,incident - first aid,High,false,false,Operator error
+SAFE00502,QLD001,2024-11-08 21:00:00,Confined Space Entry,LOW,false,false,Inadequate training
+SAFE00503,WA001,2024-07-17 14:00:00,hazard reported,MEDIUM,false,false,Procedure not followed
+SAFE00504,QLD001,2024-02-20 11:00:00,equipment collision,Low,false,false,Equipment malfunction
+SAFE00505,NSW001,2024-05-10 17:00:00,Near Miss,MEDIUM,false,true,Communication breakdown
+SAFE00506,NSW001,2024-12-02 17:00:00,hazard reported,high,false,false,Inadequate training
+SAFE00507,WA001,2024-03-12 15:00:00,safety inspection,High,false,false,Operator error
+SAFE00508,NSW001,2024-02-09 18:00:00,equipment collision,MEDIUM,false,false,Operator error
+SAFE00509,NSW001,2024-04-19 00:00:00,fall from height,MEDIUM,false,false,Communication breakdown
+SAFE00510,WA001,2024-05-05 11:00:00,Fall from Height,High,false,false,Communication breakdown
+SAFE00511,NSW001,2024-02-27 15:00:00,Fall from Height,MEDIUM,false,false,Procedure not followed
+SAFE00512,WA001,2024-12-13 12:00:00,Incident - First Aid,Medium,false,false,Equipment malfunction
+SAFE00513,QLD001,2024-12-14 19:00:00,Incident - First Aid,low,false,false,Operator error
+SAFE00514,WA001,2024-09-28 12:00:00,safety inspection,MEDIUM,false,false,Operator error
+SAFE00515,QLD001,2024-08-19 09:00:00,EQUIPMENT COLLISION,MEDIUM,false,false,Communication breakdown
+SAFE00516,NSW001,2024-10-11 07:00:00,Equipment Collision,low,false,false,Procedure not followed
+SAFE00517,QLD001,2024-11-06 12:00:00,equipment collision,HIGH,false,false,Communication breakdown
+SAFE00518,WA001,2024-10-17 08:00:00,Hazard Reported,low,false,false,Communication breakdown
+SAFE00519,WA001,2024-10-24 18:00:00,near miss,low,false,false,Procedure not followed
+SAFE00520,NSW001,2024-05-20 06:00:00,confined space entry,MEDIUM,false,false,Equipment malfunction
+SAFE00521,WA001,2024-11-04 05:00:00,Near Miss,low,false,true,Operator error
+SAFE00522,NSW001,2024-07-11 03:00:00,Incident - Minor Injury,Medium,false,false,Environmental conditions
+SAFE00523,NSW001,2024-10-27 17:00:00,equipment collision,Medium,false,false,Communication breakdown
+SAFE00524,WA001,2024-10-05 22:00:00,incident - minor injury,Medium,false,false,Inadequate training
+SAFE00525,WA001,2024-04-18 14:00:00,Equipment Collision,HIGH,false,false,Equipment malfunction
+SAFE00526,QLD001,2024-08-02 04:00:00,CONFINED SPACE ENTRY,Medium,false,false,Environmental conditions
+SAFE00527,QLD001,2024-08-04 17:00:00,Equipment Collision,High,false,false,Inadequate training
+SAFE00528,QLD001,2024-10-13 16:00:00,Equipment Collision,low,false,false,Operator error
+SAFE00529,NSW001,2024-07-13 11:00:00,Fall from Height,LOW,false,false,Operator error
+SAFE00530,QLD001,2024-05-20 10:00:00,Hazard Reported,low,false,false,Operator error
+SAFE00531,WA001,2024-01-15 01:00:00,Hazard Reported,Low,false,false,Operator error
+SAFE00532,WA001,2024-03-14 12:00:00,Incident - First Aid,MEDIUM,false,false,Inadequate training
+SAFE00533,QLD001,2024-10-17 23:00:00,Confined Space Entry,low,false,false,Environmental conditions
+SAFE00534,WA001,2024-12-09 11:00:00,Hazard Reported,High,false,false,Procedure not followed
+SAFE00535,QLD001,2024-01-26 09:00:00,Safety Inspection,high,false,false,Equipment malfunction
+SAFE00536,QLD001,2024-12-03 01:00:00,CONFINED SPACE ENTRY,LOW,false,false,Equipment malfunction
+SAFE00537,NSW001,2024-01-14 17:00:00,FALL FROM HEIGHT,Medium,false,false,Environmental conditions
+SAFE00538,QLD001,2024-09-07 07:00:00,CONFINED SPACE ENTRY,Low,false,false,Environmental conditions
+SAFE00539,QLD001,2024-02-17 08:00:00,Equipment Collision,High,false,false,Equipment malfunction
+SAFE00540,QLD001,2024-01-05 18:00:00,Hazard Reported,High,false,false,Procedure not followed
+SAFE00541,NSW001,2024-08-19 22:00:00,Safety Inspection,LOW,false,false,Inadequate training
+SAFE00542,QLD001,2024-12-17 06:00:00,INCIDENT - MINOR INJURY,High,false,false,Equipment malfunction
+SAFE00543,QLD001,2024-03-08 10:00:00,Safety Inspection,high,false,false,Inadequate training
+SAFE00544,NSW001,2024-03-27 11:00:00,Fall from Height,Low,false,false,Equipment malfunction
+SAFE00545,QLD001,2024-08-08 16:00:00,Hazard Reported,low,false,false,Communication breakdown
+SAFE00546,NSW001,2024-12-28 03:00:00,Incident - Minor Injury,High,false,false,Equipment malfunction
+SAFE00547,NSW001,2024-10-28 21:00:00,Confined Space Entry,High,false,false,Environmental conditions
+SAFE00548,NSW001,2024-01-21 09:00:00,incident - minor injury,high,false,false,Operator error
+SAFE00549,WA001,2024-09-23 21:00:00,safety inspection,high,false,false,Equipment malfunction
+SAFE00550,WA001,2024-04-17 01:00:00,Confined Space Entry,low,false,false,Operator error
+SAFE00551,NSW001,2024-12-20 23:00:00,fall from height,Medium,false,false,Communication breakdown
+SAFE00552,NSW001,2024-05-31 02:00:00,Fall from Height,HIGH,false,false,Communication breakdown
+SAFE00553,NSW001,2024-09-13 07:00:00,Near Miss,low,false,true,Procedure not followed
+SAFE00554,QLD001,2024-07-16 09:00:00,EQUIPMENT COLLISION,low,false,false,Procedure not followed
+SAFE00555,WA001,2024-04-07 12:00:00,Confined Space Entry,Low,false,false,Inadequate training
+SAFE00556,NSW001,2024-09-04 01:00:00,Incident - First Aid,low,false,false,Communication breakdown
+SAFE00557,QLD001,2024-10-29 09:00:00,Hazard Reported,Medium,false,false,Procedure not followed
+SAFE00558,WA001,2024-06-13 15:00:00,Fall from Height,MEDIUM,false,false,Inadequate training
+SAFE00559,QLD001,2024-07-25 07:00:00,Incident - First Aid,Medium,false,false,Equipment malfunction
+SAFE00560,QLD001,2024-09-19 17:00:00,Hazard Reported,LOW,false,false,Procedure not followed
+SAFE00561,WA001,2024-04-22 07:00:00,Equipment Collision,LOW,false,false,Procedure not followed
+SAFE00562,WA001,2024-09-21 02:00:00,Incident - Minor Injury,low,false,false,Environmental conditions
+SAFE00563,QLD001,2024-05-05 18:00:00,near miss,low,false,false,Inadequate training
+SAFE00564,WA001,2024-08-25 04:00:00,confined space entry,Low,false,false,Procedure not followed
+SAFE00565,NSW001,2024-02-27 21:00:00,Equipment Collision,high,false,false,Operator error
+SAFE00566,WA001,2024-02-06 09:00:00,hazard reported,Low,false,false,Communication breakdown
+SAFE00567,NSW001,2024-03-27 19:00:00,Safety Inspection,high,false,false,Equipment malfunction
+SAFE00568,WA001,2024-04-13 12:00:00,incident - first aid,Low,false,false,Operator error
+SAFE00569,WA001,2024-08-28 22:00:00,confined space entry,low,false,false,Communication breakdown
+SAFE00570,WA001,2024-08-23 02:00:00,Near Miss,Low,false,true,Environmental conditions
+SAFE00571,NSW001,2024-12-19 03:00:00,Incident - First Aid,MEDIUM,false,false,Procedure not followed
+SAFE00572,NSW001,2024-12-23 11:00:00,Incident - Minor Injury,high,false,false,Environmental conditions
+SAFE00573,WA001,2024-03-28 18:00:00,Near Miss,Medium,false,true,Communication breakdown
+SAFE00574,NSW001,2024-09-20 16:00:00,incident - minor injury,HIGH,false,false,Operator error
+SAFE00575,QLD001,2024-10-14 08:00:00,fall from height,low,false,false,Communication breakdown
+SAFE00576,QLD001,2024-04-04 23:00:00,Incident - First Aid,high,false,false,Equipment malfunction
+SAFE00577,QLD001,2024-07-13 00:00:00,Near Miss,low,false,true,Communication breakdown
+SAFE00578,QLD001,2024-04-03 22:00:00,incident - minor injury,LOW,false,false,Operator error
+SAFE00579,QLD001,2024-03-20 19:00:00,Near Miss,Low,false,true,Environmental conditions
+SAFE00580,NSW001,2024-03-21 19:00:00,fall from height,HIGH,false,false,Environmental conditions
+SAFE00581,WA001,2024-02-06 19:00:00,Near Miss,Low,false,true,Procedure not followed
+SAFE00582,WA001,2024-10-14 10:00:00,fall from height,LOW,false,false,Equipment malfunction
+SAFE00583,NSW001,2024-08-06 21:00:00,Hazard Reported,HIGH,false,false,Procedure not followed
+SAFE00584,WA001,2024-09-29 05:00:00,Incident - First Aid,LOW,false,false,Inadequate training
+SAFE00585,WA001,2024-07-25 11:00:00,Hazard Reported,high,true,false,Equipment malfunction
+SAFE00586,NSW001,2024-05-24 12:00:00,near miss,MEDIUM,false,false,Environmental conditions
+SAFE00587,QLD001,2024-11-24 07:00:00,incident - first aid,high,false,false,Inadequate training
+SAFE00588,NSW001,2024-06-12 07:00:00,NEAR MISS,Medium,false,false,Operator error
+SAFE00589,NSW001,2024-02-14 17:00:00,Equipment Collision,HIGH,false,false,Inadequate training
+SAFE00590,QLD001,2024-10-11 22:00:00,near miss,low,false,false,Environmental conditions
+SAFE00591,NSW001,2024-05-11 23:00:00,fall from height,MEDIUM,false,false,Equipment malfunction
+SAFE00592,QLD001,2024-07-12 15:00:00,FALL FROM HEIGHT,High,false,false,Operator error
+SAFE00593,QLD001,2024-12-17 07:00:00,Confined Space Entry,Low,false,false,Procedure not followed
+SAFE00594,WA001,2024-06-07 11:00:00,Incident - Minor Injury,high,false,false,Communication breakdown
+SAFE00595,NSW001,2024-03-17 12:00:00,equipment collision,high,true,false,Environmental conditions
+SAFE00596,NSW001,2024-07-24 16:00:00,FALL FROM HEIGHT,MEDIUM,false,false,Environmental conditions
+SAFE00597,QLD001,2024-04-01 00:00:00,incident - minor injury,low,false,false,Equipment malfunction
+SAFE00598,WA001,2024-07-13 08:00:00,incident - first aid,Low,false,false,Operator error
+SAFE00599,WA001,2024-09-09 05:00:00,Safety Inspection,low,false,false,Equipment malfunction
+SAFE00600,QLD001,2024-08-22 08:00:00,incident - minor injury,high,false,false,Communication breakdown
+SAFE00601,NSW001,2024-07-17 18:00:00,hazard reported,high,false,false,Equipment malfunction
+SAFE00602,QLD001,2024-11-08 12:00:00,Near Miss,high,false,true,Procedure not followed
+SAFE00603,QLD001,2024-03-25 01:00:00,Confined Space Entry,High,false,false,Inadequate training
+SAFE00604,QLD001,2024-06-05 22:00:00,hazard reported,Medium,false,false,Inadequate training
+SAFE00605,WA001,2024-02-03 09:00:00,confined space entry,LOW,false,false,Environmental conditions
+SAFE00606,NSW001,2024-04-01 12:00:00,Incident - Minor Injury,HIGH,false,false,Operator error
+SAFE00607,WA001,2024-01-04 19:00:00,Safety Inspection,low,false,false,Communication breakdown
+SAFE00608,WA001,2024-10-20 11:00:00,Near Miss,High,false,true,Procedure not followed
+SAFE00609,NSW001,2024-09-20 20:00:00,incident - first aid,MEDIUM,false,false,Environmental conditions
+SAFE00610,QLD001,2024-12-27 00:00:00,SAFETY INSPECTION,LOW,true,false,Communication breakdown
+SAFE00611,QLD001,2024-10-27 16:00:00,incident - minor injury,Low,false,false,Procedure not followed
+SAFE00612,QLD001,2024-07-07 02:00:00,hazard reported,Medium,false,false,Operator error
+SAFE00613,WA001,2024-04-11 18:00:00,Safety Inspection,HIGH,false,false,Procedure not followed
+SAFE00614,QLD001,2024-11-20 17:00:00,Fall from Height,MEDIUM,false,false,Environmental conditions
+SAFE00615,QLD001,2024-12-21 06:00:00,Equipment Collision,low,false,false,Procedure not followed
+SAFE00616,NSW001,2024-03-09 12:00:00,fall from height,high,false,false,Procedure not followed
+SAFE00617,QLD001,2024-08-17 17:00:00,Incident - Minor Injury,low,false,false,Environmental conditions
+SAFE00618,NSW001,2024-12-29 12:00:00,Equipment Collision,MEDIUM,false,false,Environmental conditions
+SAFE00619,QLD001,2024-03-15 19:00:00,Safety Inspection,Low,false,false,Inadequate training
+SAFE00620,QLD001,2024-05-05 12:00:00,Equipment Collision,high,false,false,Inadequate training
+SAFE00621,QLD001,2024-01-10 12:00:00,confined space entry,high,false,false,Environmental conditions
+SAFE00622,QLD001,2024-04-29 23:00:00,Hazard Reported,low,false,false,Operator error
+SAFE00623,WA001,2024-02-12 13:00:00,Equipment Collision,Low,false,false,Inadequate training
+SAFE00624,WA001,2024-12-08 16:00:00,INCIDENT - MINOR INJURY,Low,false,false,Equipment malfunction
+SAFE00625,QLD001,2024-08-17 09:00:00,safety inspection,low,false,false,Inadequate training
+SAFE00626,QLD001,2024-06-26 11:00:00,near miss,LOW,true,false,Operator error
+SAFE00627,WA001,2024-02-09 16:00:00,safety inspection,high,false,false,Inadequate training
+SAFE00628,QLD001,2024-10-25 02:00:00,Fall from Height,HIGH,false,false,Equipment malfunction
+SAFE00629,QLD001,2024-08-21 02:00:00,Fall from Height,HIGH,false,false,Procedure not followed
+SAFE00630,WA001,2024-05-29 13:00:00,safety inspection,high,true,false,Equipment malfunction
+SAFE00631,WA001,2024-10-06 20:00:00,Near Miss,Medium,false,true,Equipment malfunction
+SAFE00632,QLD001,2024-09-12 18:00:00,EQUIPMENT COLLISION,High,false,false,Procedure not followed
+SAFE00633,QLD001,2024-10-17 23:00:00,NEAR MISS,LOW,false,false,Equipment malfunction
+SAFE00634,WA001,2024-11-20 15:00:00,Incident - Minor Injury,Medium,false,false,Procedure not followed
+SAFE00635,NSW001,2024-12-04 23:00:00,Hazard Reported,high,false,false,Operator error
+SAFE00636,WA001,2024-11-22 07:00:00,Incident - Minor Injury,HIGH,false,false,Procedure not followed
+SAFE00637,NSW001,2024-07-05 16:00:00,incident - first aid,low,false,false,Equipment malfunction
+SAFE00638,QLD001,2024-07-29 04:00:00,Hazard Reported,MEDIUM,false,false,Operator error
+SAFE00639,WA001,2024-02-21 15:00:00,Fall from Height,MEDIUM,false,false,Inadequate training
+SAFE00640,NSW001,2024-09-18 07:00:00,Incident - First Aid,LOW,false,false,Procedure not followed
+SAFE00641,NSW001,2024-06-29 06:00:00,Equipment Collision,low,false,false,Procedure not followed
+SAFE00642,NSW001,2024-04-18 09:00:00,INCIDENT - FIRST AID,Medium,false,false,Communication breakdown
+SAFE00643,QLD001,2024-11-28 14:00:00,near miss,Low,false,false,Inadequate training
+SAFE00644,NSW001,2024-04-27 03:00:00,near miss,HIGH,false,false,Communication breakdown
+SAFE00645,QLD001,2024-08-19 11:00:00,hazard reported,MEDIUM,false,false,Procedure not followed
+SAFE00646,QLD001,2024-09-02 10:00:00,safety inspection,MEDIUM,false,false,Environmental conditions
+SAFE00647,QLD001,2024-01-30 07:00:00,Confined Space Entry,high,false,false,Procedure not followed
+SAFE00648,WA001,2024-01-10 17:00:00,Equipment Collision,High,false,false,Environmental conditions
+SAFE00649,NSW001,2024-04-02 01:00:00,Safety Inspection,Medium,false,false,Equipment malfunction
+SAFE00650,WA001,2024-09-14 22:00:00,Equipment Collision,high,false,false,Inadequate training
+SAFE00651,WA001,2024-08-22 15:00:00,incident - minor injury,HIGH,false,false,Operator error
+SAFE00652,NSW001,2024-08-23 19:00:00,Near Miss,high,false,true,Equipment malfunction
+SAFE00653,QLD001,2024-03-13 12:00:00,Confined Space Entry,high,false,false,Inadequate training
+SAFE00654,NSW001,2024-01-06 22:00:00,Hazard Reported,MEDIUM,false,false,Equipment malfunction
+SAFE00655,WA001,2024-09-01 19:00:00,Safety Inspection,Low,false,false,Procedure not followed
+SAFE00656,WA001,2024-04-19 04:00:00,Safety Inspection,High,false,false,Operator error
+SAFE00657,NSW001,2024-10-10 03:00:00,Hazard Reported,LOW,false,false,Inadequate training
+SAFE00658,WA001,2024-05-22 15:00:00,Hazard Reported,LOW,false,false,Environmental conditions
+SAFE00659,WA001,2024-01-30 22:00:00,Safety Inspection,Medium,false,false,Operator error
+SAFE00660,WA001,2024-02-24 07:00:00,INCIDENT - MINOR INJURY,MEDIUM,false,false,Procedure not followed
+SAFE00661,WA001,2024-02-14 08:00:00,Safety Inspection,LOW,false,false,Procedure not followed
+SAFE00662,WA001,2024-10-07 18:00:00,fall from height,low,false,false,Procedure not followed
+SAFE00663,NSW001,2024-04-22 00:00:00,Incident - Minor Injury,high,false,false,Procedure not followed
+SAFE00664,QLD001,2024-08-17 07:00:00,Equipment Collision,low,false,false,Inadequate training
+SAFE00665,QLD001,2024-05-26 02:00:00,Confined Space Entry,High,false,false,Equipment malfunction
+SAFE00666,WA001,2024-01-23 08:00:00,Incident - Minor Injury,HIGH,false,false,Communication breakdown
+SAFE00667,WA001,2024-12-04 01:00:00,Safety Inspection,High,false,false,Inadequate training
+SAFE00668,WA001,2024-05-07 03:00:00,confined space entry,High,false,false,Environmental conditions
+SAFE00669,WA001,2024-01-22 05:00:00,incident - first aid,high,false,false,Procedure not followed
+SAFE00670,NSW001,2024-05-05 13:00:00,Equipment Collision,LOW,false,false,Communication breakdown
+SAFE00671,QLD001,2024-05-28 18:00:00,incident - first aid,low,false,false,Environmental conditions
+SAFE00672,QLD001,2024-10-19 01:00:00,hazard reported,high,false,false,Operator error
+SAFE00673,WA001,2024-01-10 13:00:00,near miss,Medium,false,false,Environmental conditions
+SAFE00674,QLD001,2024-12-20 08:00:00,Near Miss,High,false,true,Communication breakdown
+SAFE00675,QLD001,2024-01-22 12:00:00,equipment collision,MEDIUM,false,false,Environmental conditions
+SAFE00676,WA001,2024-04-25 03:00:00,fall from height,LOW,false,false,Inadequate training
+SAFE00677,WA001,2024-05-26 02:00:00,HAZARD REPORTED,Low,false,false,Environmental conditions
+SAFE00678,QLD001,2024-02-16 11:00:00,Incident - Minor Injury,HIGH,false,false,Environmental conditions
+SAFE00679,NSW001,2024-02-24 16:00:00,Near Miss,Low,false,true,Procedure not followed
+SAFE00680,QLD001,2024-04-30 06:00:00,Fall from Height,low,false,false,Equipment malfunction
+SAFE00681,WA001,2024-04-12 02:00:00,Fall from Height,low,false,false,Inadequate training
+SAFE00682,QLD001,2024-11-30 08:00:00,Confined Space Entry,High,false,false,Environmental conditions
+SAFE00683,WA001,2024-02-12 03:00:00,equipment collision,High,false,false,Equipment malfunction
+SAFE00684,QLD001,2024-09-07 23:00:00,equipment collision,Medium,false,false,Inadequate training
+SAFE00685,QLD001,2024-12-16 17:00:00,near miss,Low,false,false,Procedure not followed
+SAFE00686,WA001,2024-02-27 11:00:00,Incident - Minor Injury,HIGH,false,false,Procedure not followed
+SAFE00687,QLD001,2024-03-17 01:00:00,equipment collision,LOW,false,false,Communication breakdown
+SAFE00688,WA001,2024-05-23 23:00:00,Incident - First Aid,low,false,false,Inadequate training
+SAFE00689,WA001,2024-07-02 23:00:00,incident - minor injury,MEDIUM,false,false,Procedure not followed
+SAFE00690,NSW001,2024-09-11 20:00:00,incident - minor injury,High,false,false,Equipment malfunction
+SAFE00691,NSW001,2024-03-05 13:00:00,safety inspection,LOW,false,false,Environmental conditions
+SAFE00692,NSW001,2024-04-23 13:00:00,Near Miss,LOW,false,true,Inadequate training
+SAFE00693,NSW001,2024-10-15 05:00:00,Fall from Height,Medium,false,false,Environmental conditions
+SAFE00694,NSW001,2024-06-01 17:00:00,Fall from Height,MEDIUM,false,false,Equipment malfunction
+SAFE00695,QLD001,2024-08-31 04:00:00,Safety Inspection,HIGH,false,false,Environmental conditions
+SAFE00696,NSW001,2024-10-01 08:00:00,Equipment Collision,Medium,false,false,Equipment malfunction
+SAFE00697,NSW001,2024-12-23 08:00:00,Near Miss,HIGH,false,true,Environmental conditions
+SAFE00698,NSW001,2024-01-24 09:00:00,Confined Space Entry,Low,false,false,Equipment malfunction
+SAFE00699,WA001,2024-05-08 07:00:00,SAFETY INSPECTION,High,false,false,Communication breakdown
+SAFE00700,NSW001,2024-02-08 23:00:00,NEAR MISS,Low,false,false,Operator error
+SAFE00701,NSW001,2024-03-15 23:00:00,Safety Inspection,HIGH,false,false,Equipment malfunction
+SAFE00702,WA001,2024-05-10 09:00:00,safety inspection,high,false,false,Equipment malfunction
+SAFE00703,WA001,2024-08-24 05:00:00,equipment collision,LOW,false,false,Equipment malfunction
+SAFE00704,QLD001,2024-02-10 01:00:00,incident - first aid,Medium,false,false,Communication breakdown
+SAFE00705,QLD001,2024-03-22 13:00:00,Hazard Reported,high,false,false,Environmental conditions
+SAFE00706,NSW001,2024-07-02 17:00:00,Near Miss,high,false,true,Operator error
+SAFE00707,NSW001,2024-04-08 19:00:00,Safety Inspection,Medium,false,false,Communication breakdown
+SAFE00708,WA001,2024-11-04 06:00:00,equipment collision,Medium,false,false,Operator error
+SAFE00709,WA001,2024-12-15 07:00:00,Hazard Reported,MEDIUM,false,false,Environmental conditions
+SAFE00710,QLD001,2024-09-04 14:00:00,SAFETY INSPECTION,Medium,false,false,Operator error
+SAFE00711,QLD001,2024-07-21 17:00:00,Incident - First Aid,low,true,false,Environmental conditions
+SAFE00712,NSW001,2024-03-29 00:00:00,Hazard Reported,Low,false,false,Environmental conditions
+SAFE00713,WA001,2024-09-10 22:00:00,hazard reported,High,false,false,Inadequate training
+SAFE00714,NSW001,2024-10-02 16:00:00,Incident - First Aid,low,false,false,Inadequate training
+SAFE00715,QLD001,2024-03-11 22:00:00,NEAR MISS,Low,false,false,Procedure not followed
+SAFE00716,QLD001,2024-01-09 07:00:00,hazard reported,Medium,false,false,Environmental conditions
+SAFE00717,WA001,2024-09-21 11:00:00,confined space entry,Low,false,false,Equipment malfunction
+SAFE00718,WA001,2024-04-28 19:00:00,NEAR MISS,MEDIUM,false,false,Inadequate training
+SAFE00719,NSW001,2024-04-28 08:00:00,confined space entry,MEDIUM,false,false,Inadequate training
+SAFE00720,NSW001,2024-04-23 05:00:00,fall from height,Low,false,false,Procedure not followed
+SAFE00721,WA001,2024-10-29 20:00:00,HAZARD REPORTED,HIGH,false,false,Inadequate training
+SAFE00722,WA001,2024-02-17 00:00:00,Fall from Height,HIGH,false,false,Procedure not followed
+SAFE00723,WA001,2024-06-25 14:00:00,Incident - Minor Injury,LOW,false,false,Equipment malfunction
+SAFE00724,QLD001,2024-04-26 04:00:00,safety inspection,MEDIUM,false,false,Procedure not followed
+SAFE00725,QLD001,2024-09-06 07:00:00,INCIDENT - MINOR INJURY,MEDIUM,false,false,Equipment malfunction
+SAFE00726,NSW001,2024-04-18 00:00:00,fall from height,MEDIUM,false,false,Operator error
+SAFE00727,QLD001,2024-09-28 16:00:00,Confined Space Entry,LOW,false,false,Inadequate training
+SAFE00728,WA001,2024-03-04 06:00:00,Incident - First Aid,high,false,false,Operator error
+SAFE00729,WA001,2024-05-02 16:00:00,confined space entry,low,false,false,Environmental conditions
+SAFE00730,QLD001,2024-03-27 12:00:00,Near Miss,LOW,false,true,Environmental conditions
+SAFE00731,NSW001,2024-10-27 03:00:00,SAFETY INSPECTION,LOW,false,false,Equipment malfunction
+SAFE00732,WA001,2024-04-06 04:00:00,Incident - First Aid,Medium,false,false,Operator error
+SAFE00733,WA001,2024-12-10 01:00:00,Near Miss,low,false,true,Operator error
+SAFE00734,WA001,2024-02-21 13:00:00,incident - minor injury,HIGH,false,false,Environmental conditions
+SAFE00735,QLD001,2024-08-28 08:00:00,Near Miss,High,false,true,Equipment malfunction
+SAFE00736,QLD001,2024-03-25 23:00:00,Equipment Collision,MEDIUM,false,false,Operator error
+SAFE00737,QLD001,2024-08-03 14:00:00,Fall from Height,MEDIUM,false,false,Procedure not followed
+SAFE00738,WA001,2024-12-27 11:00:00,Equipment Collision,High,false,false,Procedure not followed
+SAFE00739,QLD001,2024-10-15 11:00:00,Equipment Collision,High,false,false,Inadequate training
+SAFE00740,NSW001,2024-03-03 08:00:00,Near Miss,MEDIUM,false,true,Inadequate training
+SAFE00741,WA001,2024-08-15 06:00:00,INCIDENT - FIRST AID,LOW,true,false,Operator error
+SAFE00742,WA001,2024-09-12 19:00:00,Incident - Minor Injury,HIGH,false,false,Procedure not followed
+SAFE00743,NSW001,2024-09-05 23:00:00,Incident - First Aid,HIGH,false,false,Operator error
+SAFE00744,NSW001,2024-04-30 07:00:00,Fall from Height,HIGH,false,false,Equipment malfunction
+SAFE00745,NSW001,2024-07-05 12:00:00,Fall from Height,low,false,false,Environmental conditions
+SAFE00746,WA001,2024-01-30 20:00:00,Hazard Reported,high,false,false,Environmental conditions
+SAFE00747,NSW001,2024-09-20 19:00:00,Incident - First Aid,HIGH,false,false,Operator error
+SAFE00748,NSW001,2024-07-02 12:00:00,hazard reported,high,false,false,Procedure not followed
+SAFE00749,WA001,2024-06-16 16:00:00,Confined Space Entry,HIGH,false,false,Equipment malfunction
+SAFE00750,WA001,2024-11-19 00:00:00,Safety Inspection,High,false,false,Communication breakdown
+SAFE00751,QLD001,2024-08-06 13:00:00,hazard reported,low,false,false,Procedure not followed
+SAFE00752,QLD001,2024-04-02 03:00:00,Incident - First Aid,MEDIUM,false,false,Communication breakdown
+SAFE00753,WA001,2024-08-22 23:00:00,EQUIPMENT COLLISION,high,false,false,Operator error
+SAFE00754,NSW001,2024-12-23 15:00:00,Incident - Minor Injury,low,false,false,Communication breakdown
+SAFE00755,WA001,2024-01-24 05:00:00,INCIDENT - FIRST AID,high,false,false,Procedure not followed
+SAFE00756,QLD001,2024-11-09 01:00:00,near miss,HIGH,false,false,Inadequate training
+SAFE00757,QLD001,2024-10-22 15:00:00,Near Miss,LOW,false,true,Equipment malfunction
+SAFE00758,WA001,2024-10-05 21:00:00,Safety Inspection,LOW,false,false,Operator error
+SAFE00759,WA001,2024-04-20 08:00:00,near miss,high,false,false,Equipment malfunction
+SAFE00760,WA001,2024-02-08 16:00:00,equipment collision,high,false,false,Inadequate training
+SAFE00761,QLD001,2024-11-17 00:00:00,Near Miss,high,false,true,Equipment malfunction
+SAFE00762,NSW001,2024-07-18 15:00:00,Confined Space Entry,low,false,false,Operator error
+SAFE00763,QLD001,2024-09-19 06:00:00,Near Miss,low,false,true,Equipment malfunction
+SAFE00764,QLD001,2024-06-25 02:00:00,FALL FROM HEIGHT,High,false,false,Operator error
+SAFE00765,WA001,2024-06-24 16:00:00,Equipment Collision,MEDIUM,false,false,Environmental conditions
+SAFE00766,WA001,2024-05-04 18:00:00,Equipment Collision,MEDIUM,false,false,Inadequate training
+SAFE00767,WA001,2024-10-25 22:00:00,Fall from Height,low,false,false,Operator error
+SAFE00768,QLD001,2024-04-24 23:00:00,Near Miss,HIGH,false,true,Procedure not followed
+SAFE00769,NSW001,2024-03-29 00:00:00,INCIDENT - FIRST AID,Medium,false,false,Equipment malfunction
+SAFE00770,QLD001,2024-08-22 11:00:00,Confined Space Entry,Medium,false,false,Environmental conditions
+SAFE00771,QLD001,2024-07-16 14:00:00,hazard reported,Low,false,false,Operator error
+SAFE00772,NSW001,2024-04-14 04:00:00,Confined Space Entry,high,false,false,Procedure not followed
+SAFE00773,QLD001,2024-08-03 16:00:00,Near Miss,High,false,true,Environmental conditions
+SAFE00774,QLD001,2024-01-24 00:00:00,incident - minor injury,HIGH,false,false,Procedure not followed
+SAFE00775,WA001,2024-10-17 00:00:00,Incident - Minor Injury,LOW,false,false,Communication breakdown
+SAFE00776,WA001,2024-04-07 10:00:00,Safety Inspection,high,false,false,Communication breakdown
+SAFE00777,QLD001,2024-12-11 05:00:00,INCIDENT - MINOR INJURY,Low,false,false,Operator error
+SAFE00778,WA001,2024-01-03 03:00:00,Near Miss,high,false,true,Environmental conditions
+SAFE00779,NSW001,2024-04-10 03:00:00,Safety Inspection,high,false,false,Equipment malfunction
+SAFE00780,QLD001,2024-01-11 02:00:00,confined space entry,LOW,false,false,Operator error
+SAFE00781,WA001,2024-06-23 20:00:00,Hazard Reported,Low,false,false,Equipment malfunction
+SAFE00782,WA001,2024-03-02 21:00:00,Incident - First Aid,high,false,false,Inadequate training
+SAFE00783,NSW001,2024-11-01 17:00:00,Confined Space Entry,Low,false,false,Equipment malfunction
+SAFE00784,QLD001,2024-06-19 23:00:00,Incident - Minor Injury,Medium,false,false,Operator error
+SAFE00785,QLD001,2024-05-03 19:00:00,FALL FROM HEIGHT,HIGH,false,false,Environmental conditions
+SAFE00786,QLD001,2024-03-13 10:00:00,safety inspection,high,false,false,Operator error
+SAFE00787,NSW001,2024-01-31 07:00:00,fall from height,high,false,false,Communication breakdown
+SAFE00788,QLD001,2024-10-25 10:00:00,Confined Space Entry,Medium,false,false,Environmental conditions
+SAFE00789,WA001,2024-10-13 17:00:00,Hazard Reported,High,false,false,Inadequate training
+SAFE00790,QLD001,2024-07-05 04:00:00,CONFINED SPACE ENTRY,high,false,false,Communication breakdown
+SAFE00791,WA001,2024-07-21 08:00:00,confined space entry,MEDIUM,false,false,Inadequate training
+SAFE00792,QLD001,2024-03-26 08:00:00,Incident - First Aid,Medium,false,false,Equipment malfunction
+SAFE00793,NSW001,2024-07-10 04:00:00,incident - first aid,MEDIUM,false,false,Procedure not followed
+SAFE00794,WA001,2024-09-21 04:00:00,Incident - Minor Injury,HIGH,false,false,Communication breakdown
+SAFE00795,NSW001,2024-05-15 08:00:00,INCIDENT - FIRST AID,High,false,false,Inadequate training
+SAFE00796,WA001,2024-11-01 07:00:00,Equipment Collision,Low,false,false,Environmental conditions
+SAFE00797,NSW001,2024-01-04 00:00:00,Hazard Reported,Low,false,false,Operator error
+SAFE00798,NSW001,2024-04-28 21:00:00,Equipment Collision,MEDIUM,false,false,Environmental conditions
+SAFE00799,NSW001,2024-09-25 18:00:00,incident - minor injury,Low,false,false,Equipment malfunction
+SAFE00800,NSW001,2024-04-05 05:00:00,Safety Inspection,LOW,false,false,Procedure not followed
+SAFE00801,QLD001,2024-09-08 08:00:00,HAZARD REPORTED,High,false,false,Procedure not followed
+SAFE00802,NSW001,2024-06-22 20:00:00,confined space entry,Medium,false,false,Communication breakdown
+SAFE00803,NSW001,2024-11-12 08:00:00,near miss,MEDIUM,false,false,Procedure not followed
+SAFE00804,NSW001,2024-03-20 14:00:00,Near Miss,high,false,true,Equipment malfunction
+SAFE00805,WA001,2024-08-28 01:00:00,INCIDENT - FIRST AID,HIGH,false,false,Inadequate training
+SAFE00806,WA001,2024-07-20 19:00:00,Fall from Height,Low,false,false,Procedure not followed
+SAFE00807,WA001,2024-03-19 04:00:00,Hazard Reported,high,false,false,Communication breakdown
+SAFE00808,WA001,2024-02-10 13:00:00,Safety Inspection,MEDIUM,false,false,Equipment malfunction
+SAFE00809,QLD001,2024-03-12 15:00:00,near miss,High,false,false,Environmental conditions
+SAFE00810,NSW001,2024-04-22 13:00:00,fall from height,high,false,false,Communication breakdown
+SAFE00811,NSW001,2024-05-11 06:00:00,Fall from Height,MEDIUM,false,false,Communication breakdown
+SAFE00812,NSW001,2024-07-18 17:00:00,Hazard Reported,Medium,false,false,Operator error
+SAFE00813,NSW001,2024-04-10 16:00:00,Safety Inspection,Medium,false,false,Procedure not followed
+SAFE00814,WA001,2024-10-10 12:00:00,Equipment Collision,high,false,false,Environmental conditions
+SAFE00815,WA001,2024-06-21 20:00:00,Safety Inspection,low,false,false,Operator error
+SAFE00816,WA001,2024-09-24 04:00:00,incident - first aid,High,false,false,Communication breakdown
+SAFE00817,QLD001,2024-06-16 18:00:00,Fall from Height,High,false,false,Equipment malfunction
+SAFE00818,QLD001,2024-08-19 01:00:00,HAZARD REPORTED,low,false,false,Inadequate training
+SAFE00819,WA001,2024-06-11 07:00:00,Equipment Collision,LOW,false,false,Environmental conditions
+SAFE00820,WA001,2024-03-03 12:00:00,Fall from Height,MEDIUM,false,false,Environmental conditions
+SAFE00821,WA001,2024-01-25 13:00:00,incident - minor injury,high,false,false,Equipment malfunction
+SAFE00822,QLD001,2024-08-15 02:00:00,Incident - Minor Injury,Low,false,false,Equipment malfunction
+SAFE00823,WA001,2024-08-23 21:00:00,fall from height,High,false,false,Equipment malfunction
+SAFE00824,NSW001,2024-03-17 00:00:00,Safety Inspection,LOW,false,false,Operator error
+SAFE00825,WA001,2024-12-06 14:00:00,Safety Inspection,high,false,false,Procedure not followed
+SAFE00826,NSW001,2024-11-25 01:00:00,Hazard Reported,Medium,false,false,Environmental conditions
+SAFE00827,NSW001,2024-06-02 12:00:00,Incident - Minor Injury,low,false,false,Equipment malfunction
+SAFE00828,QLD001,2024-07-29 05:00:00,Confined Space Entry,LOW,false,false,Inadequate training
+SAFE00829,QLD001,2024-02-10 00:00:00,incident - first aid,Low,false,false,Inadequate training
+SAFE00830,QLD001,2024-08-31 23:00:00,Equipment Collision,LOW,false,false,Operator error
+SAFE00831,NSW001,2024-06-29 11:00:00,Incident - First Aid,low,false,false,Operator error
+SAFE00832,WA001,2024-04-15 21:00:00,INCIDENT - FIRST AID,LOW,false,false,Procedure not followed
+SAFE00833,QLD001,2024-03-10 11:00:00,hazard reported,low,false,false,Environmental conditions
+SAFE00834,NSW001,2024-04-14 20:00:00,Safety Inspection,MEDIUM,false,false,Operator error
+SAFE00835,WA001,2024-03-10 13:00:00,Confined Space Entry,low,false,false,Communication breakdown
+SAFE00836,QLD001,2024-01-29 23:00:00,Near Miss,Medium,false,true,Environmental conditions
+SAFE00837,WA001,2024-07-20 04:00:00,incident - first aid,Low,false,false,Inadequate training
+SAFE00838,QLD001,2024-03-25 07:00:00,Equipment Collision,Medium,false,false,Communication breakdown
+SAFE00839,QLD001,2024-02-29 16:00:00,Confined Space Entry,Low,false,false,Procedure not followed
+SAFE00840,WA001,2024-03-01 23:00:00,Hazard Reported,Low,false,false,Procedure not followed
+SAFE00841,NSW001,2024-07-24 03:00:00,FALL FROM HEIGHT,Medium,false,false,Environmental conditions
+SAFE00842,NSW001,2024-05-04 06:00:00,equipment collision,High,false,false,Operator error
+SAFE00843,QLD001,2024-03-26 22:00:00,Safety Inspection,LOW,false,false,Procedure not followed
+SAFE00844,QLD001,2024-03-10 17:00:00,near miss,Medium,false,false,Inadequate training
+SAFE00845,WA001,2024-01-28 15:00:00,Confined Space Entry,Medium,false,false,Communication breakdown
+SAFE00846,WA001,2024-12-28 15:00:00,hazard reported,High,false,false,Inadequate training
+SAFE00847,QLD001,2024-06-07 00:00:00,Fall from Height,Low,false,false,Environmental conditions
+SAFE00848,NSW001,2024-09-03 10:00:00,Hazard Reported,Medium,false,false,Equipment malfunction
+SAFE00849,NSW001,2024-08-17 21:00:00,HAZARD REPORTED,MEDIUM,false,false,Equipment malfunction
+SAFE00850,QLD001,2024-04-03 02:00:00,Incident - First Aid,Low,false,false,Equipment malfunction
+SAFE00851,QLD001,2024-12-05 03:00:00,NEAR MISS,low,false,false,Communication breakdown
+SAFE00852,WA001,2024-06-05 05:00:00,near miss,Medium,false,false,Equipment malfunction
+SAFE00853,NSW001,2024-02-22 15:00:00,Hazard Reported,LOW,false,false,Procedure not followed
+SAFE00854,NSW001,2024-03-03 09:00:00,equipment collision,MEDIUM,false,false,Equipment malfunction
+SAFE00855,NSW001,2024-03-03 23:00:00,Confined Space Entry,high,false,false,Communication breakdown
+SAFE00856,QLD001,2024-08-22 02:00:00,fall from height,Medium,false,false,Procedure not followed
+SAFE00857,NSW001,2024-10-02 05:00:00,Equipment Collision,HIGH,false,false,Inadequate training
+SAFE00858,QLD001,2024-08-20 23:00:00,HAZARD REPORTED,HIGH,false,false,Environmental conditions
+SAFE00859,WA001,2024-10-22 18:00:00,Near Miss,Low,false,true,Inadequate training
+SAFE00860,WA001,2024-02-14 17:00:00,Fall from Height,high,false,false,Operator error
+SAFE00861,QLD001,2024-02-17 12:00:00,Confined Space Entry,low,false,false,Inadequate training
+SAFE00862,WA001,2024-08-01 07:00:00,EQUIPMENT COLLISION,Low,false,false,Inadequate training
+SAFE00863,QLD001,2024-05-15 12:00:00,Safety Inspection,LOW,false,false,Environmental conditions
+SAFE00864,NSW001,2024-03-06 13:00:00,EQUIPMENT COLLISION,HIGH,false,false,Inadequate training
+SAFE00865,WA001,2024-08-21 03:00:00,NEAR MISS,High,false,false,Environmental conditions
+SAFE00866,WA001,2024-07-19 02:00:00,FALL FROM HEIGHT,HIGH,false,false,Operator error
+SAFE00867,QLD001,2024-04-18 18:00:00,hazard reported,HIGH,false,false,Equipment malfunction
+SAFE00868,QLD001,2024-12-15 06:00:00,Hazard Reported,low,false,false,Environmental conditions
+SAFE00869,QLD001,2024-03-05 22:00:00,incident - first aid,Medium,false,false,Equipment malfunction
+SAFE00870,WA001,2024-11-02 18:00:00,safety inspection,High,false,false,Inadequate training
+SAFE00871,NSW001,2024-08-29 13:00:00,Incident - First Aid,Low,false,false,Inadequate training
+SAFE00872,NSW001,2024-11-01 12:00:00,Confined Space Entry,High,false,false,Inadequate training
+SAFE00873,WA001,2024-03-23 11:00:00,incident - minor injury,Medium,false,false,Communication breakdown
+SAFE00874,NSW001,2024-09-22 21:00:00,near miss,low,false,false,Environmental conditions
+SAFE00875,QLD001,2024-05-13 15:00:00,Incident - Minor Injury,high,false,false,Procedure not followed
+SAFE00876,NSW001,2024-11-15 20:00:00,near miss,LOW,false,false,Inadequate training
+SAFE00877,NSW001,2024-10-14 09:00:00,Incident - Minor Injury,high,false,false,Communication breakdown
+SAFE00878,WA001,2024-12-06 09:00:00,incident - first aid,low,false,false,Environmental conditions
+SAFE00879,NSW001,2024-10-08 17:00:00,Fall from Height,LOW,false,false,Operator error
+SAFE00880,QLD001,2024-01-25 08:00:00,Near Miss,high,false,true,Procedure not followed
+SAFE00881,NSW001,2024-11-06 04:00:00,incident - minor injury,High,false,false,Communication breakdown
+SAFE00882,WA001,2024-01-28 09:00:00,EQUIPMENT COLLISION,Low,false,false,Operator error
+SAFE00883,WA001,2024-01-22 17:00:00,incident - minor injury,MEDIUM,false,false,Environmental conditions
+SAFE00884,NSW001,2024-12-18 11:00:00,Near Miss,MEDIUM,false,true,Procedure not followed
+SAFE00885,QLD001,2024-10-06 03:00:00,Near Miss,HIGH,false,true,Inadequate training
+SAFE00886,QLD001,2024-12-28 09:00:00,Fall from Height,LOW,false,false,Operator error
+SAFE00887,WA001,2024-09-22 17:00:00,EQUIPMENT COLLISION,MEDIUM,false,false,Environmental conditions
+SAFE00888,NSW001,2024-01-23 12:00:00,Near Miss,LOW,false,true,Inadequate training
+SAFE00889,QLD001,2024-11-29 05:00:00,confined space entry,low,false,false,Environmental conditions
+SAFE00890,QLD001,2024-01-23 09:00:00,equipment collision,HIGH,false,false,Operator error
+SAFE00891,WA001,2024-03-15 14:00:00,confined space entry,Medium,false,false,Equipment malfunction
+SAFE00892,NSW001,2024-03-07 00:00:00,Hazard Reported,low,false,false,Equipment malfunction
+SAFE00893,WA001,2024-09-10 07:00:00,hazard reported,Low,false,false,Inadequate training
+SAFE00894,QLD001,2024-09-03 01:00:00,fall from height,Low,false,false,Inadequate training
+SAFE00895,NSW001,2024-07-02 19:00:00,fall from height,High,false,false,Operator error
+SAFE00896,QLD001,2024-12-24 12:00:00,incident - minor injury,HIGH,false,false,Communication breakdown
+SAFE00897,QLD001,2024-07-03 17:00:00,safety inspection,high,false,false,Equipment malfunction
+SAFE00898,NSW001,2024-09-03 18:00:00,Equipment Collision,Medium,false,false,Procedure not followed
+SAFE00899,WA001,2024-04-26 05:00:00,incident - minor injury,MEDIUM,false,false,Communication breakdown
+SAFE00900,NSW001,2024-01-13 04:00:00,incident - minor injury,Low,false,false,Equipment malfunction
+SAFE00901,QLD001,2024-01-27 23:00:00,Fall from Height,LOW,false,false,Environmental conditions
+SAFE00902,QLD001,2024-02-24 18:00:00,near miss,LOW,false,false,Communication breakdown
+SAFE00903,QLD001,2024-11-24 03:00:00,Confined Space Entry,Medium,false,false,Environmental conditions
+SAFE00904,QLD001,2024-10-09 14:00:00,FALL FROM HEIGHT,Low,false,false,Inadequate training
+SAFE00905,QLD001,2024-02-19 10:00:00,hazard reported,high,false,false,Equipment malfunction
+SAFE00906,NSW001,2024-04-18 02:00:00,Equipment Collision,Medium,false,false,Equipment malfunction
+SAFE00907,NSW001,2024-06-15 10:00:00,Safety Inspection,Medium,false,false,Equipment malfunction
+SAFE00908,NSW001,2024-05-17 06:00:00,Safety Inspection,HIGH,false,false,Inadequate training
+SAFE00909,WA001,2024-01-05 12:00:00,fall from height,MEDIUM,false,false,Communication breakdown
+SAFE00910,QLD001,2024-09-24 18:00:00,near miss,Medium,false,false,Equipment malfunction
+SAFE00911,QLD001,2024-02-10 10:00:00,confined space entry,high,false,false,Equipment malfunction
+SAFE00912,WA001,2024-02-29 13:00:00,Safety Inspection,Medium,false,false,Operator error
+SAFE00913,NSW001,2024-02-08 00:00:00,confined space entry,HIGH,false,false,Equipment malfunction
+SAFE00914,WA001,2024-10-22 23:00:00,near miss,MEDIUM,false,false,Equipment malfunction
+SAFE00915,NSW001,2024-03-14 09:00:00,Fall from Height,high,false,false,Environmental conditions
+SAFE00916,WA001,2024-06-02 18:00:00,HAZARD REPORTED,HIGH,false,false,Environmental conditions
+SAFE00917,NSW001,2024-12-24 17:00:00,Safety Inspection,Medium,false,false,Inadequate training
+SAFE00918,NSW001,2024-12-09 07:00:00,Confined Space Entry,MEDIUM,false,false,Communication breakdown
+SAFE00919,NSW001,2024-12-26 12:00:00,Incident - Minor Injury,Low,false,false,Operator error
+SAFE00920,QLD001,2024-01-05 16:00:00,near miss,low,false,false,Inadequate training
+SAFE00921,WA001,2024-02-08 13:00:00,incident - first aid,High,false,false,Equipment malfunction
+SAFE00922,NSW001,2024-04-13 22:00:00,Incident - Minor Injury,low,false,false,Communication breakdown
+SAFE00923,NSW001,2024-10-04 06:00:00,Incident - First Aid,LOW,false,false,Procedure not followed
+SAFE00924,WA001,2024-12-16 17:00:00,Equipment Collision,High,false,false,Procedure not followed
+SAFE00925,WA001,2024-12-11 07:00:00,equipment collision,High,false,false,Operator error
+SAFE00926,QLD001,2024-06-24 06:00:00,incident - first aid,HIGH,false,false,Procedure not followed
+SAFE00927,NSW001,2024-09-15 20:00:00,Hazard Reported,low,false,false,Environmental conditions
+SAFE00928,QLD001,2024-11-04 18:00:00,SAFETY INSPECTION,HIGH,false,false,Operator error
+SAFE00929,NSW001,2024-08-22 07:00:00,Incident - Minor Injury,Medium,false,false,Inadequate training
+SAFE00930,WA001,2024-10-22 16:00:00,fall from height,LOW,false,false,Operator error
+SAFE00931,NSW001,2024-08-04 04:00:00,Confined Space Entry,HIGH,false,false,Inadequate training
+SAFE00932,WA001,2024-10-18 06:00:00,confined space entry,High,false,false,Procedure not followed
+SAFE00933,NSW001,2024-03-28 13:00:00,incident - first aid,HIGH,false,false,Operator error
+SAFE00934,WA001,2024-12-29 18:00:00,fall from height,Medium,false,false,Communication breakdown
+SAFE00935,QLD001,2024-07-12 08:00:00,fall from height,HIGH,false,false,Procedure not followed
+SAFE00936,WA001,2024-11-18 20:00:00,hazard reported,LOW,false,false,Communication breakdown
+SAFE00937,WA001,2024-12-15 05:00:00,Incident - Minor Injury,LOW,false,false,Operator error
+SAFE00938,QLD001,2024-11-05 04:00:00,Incident - First Aid,HIGH,false,false,Inadequate training
+SAFE00939,NSW001,2024-09-16 17:00:00,Near Miss,High,false,true,Equipment malfunction
+SAFE00940,QLD001,2024-01-18 03:00:00,incident - first aid,high,false,false,Environmental conditions
+SAFE00941,QLD001,2024-07-19 19:00:00,hazard reported,Medium,false,false,Operator error
+SAFE00942,QLD001,2024-08-26 01:00:00,near miss,LOW,false,false,Procedure not followed
+SAFE00943,NSW001,2024-02-11 02:00:00,Incident - Minor Injury,MEDIUM,false,false,Inadequate training
+SAFE00944,WA001,2024-03-05 18:00:00,Fall from Height,HIGH,false,false,Equipment malfunction
+SAFE00945,QLD001,2024-02-19 15:00:00,Incident - Minor Injury,LOW,false,false,Inadequate training
+SAFE00946,WA001,2024-03-12 10:00:00,NEAR MISS,HIGH,false,false,Communication breakdown
+SAFE00947,WA001,2024-03-11 04:00:00,incident - first aid,MEDIUM,false,false,Environmental conditions
+SAFE00948,QLD001,2024-12-28 05:00:00,Near Miss,Low,false,true,Procedure not followed
+SAFE00949,NSW001,2024-11-05 08:00:00,Hazard Reported,Low,false,false,Environmental conditions
+SAFE00950,WA001,2024-05-01 02:00:00,Hazard Reported,high,false,false,Communication breakdown
+SAFE00951,WA001,2024-09-19 02:00:00,Fall from Height,MEDIUM,false,false,Communication breakdown
+SAFE00952,QLD001,2024-08-06 09:00:00,HAZARD REPORTED,HIGH,false,false,Inadequate training
+SAFE00953,WA001,2024-09-16 04:00:00,EQUIPMENT COLLISION,Medium,false,false,Environmental conditions
+SAFE00954,WA001,2024-08-29 16:00:00,Equipment Collision,high,false,false,Equipment malfunction
+SAFE00955,WA001,2024-06-09 23:00:00,Incident - First Aid,Medium,false,false,Equipment malfunction
+SAFE00956,WA001,2024-09-27 13:00:00,near miss,MEDIUM,false,false,Procedure not followed
+SAFE00957,NSW001,2024-03-30 18:00:00,near miss,HIGH,false,false,Communication breakdown
+SAFE00958,WA001,2024-06-09 05:00:00,Hazard Reported,LOW,false,false,Environmental conditions
+SAFE00959,NSW001,2024-12-17 20:00:00,Incident - First Aid,Low,false,false,Inadequate training
+SAFE00960,QLD001,2024-03-20 19:00:00,hazard reported,Medium,false,false,Equipment malfunction
+SAFE00961,WA001,2024-11-13 19:00:00,confined space entry,Medium,false,false,Environmental conditions
+SAFE00962,WA001,2024-01-02 04:00:00,Fall from Height,High,false,false,Communication breakdown
+SAFE00963,NSW001,2024-01-15 09:00:00,Hazard Reported,high,false,false,Inadequate training
+SAFE00964,QLD001,2024-12-03 06:00:00,SAFETY INSPECTION,Medium,false,false,Equipment malfunction
+SAFE00965,QLD001,2024-05-11 14:00:00,INCIDENT - MINOR INJURY,LOW,false,false,Environmental conditions
+SAFE00966,NSW001,2024-04-07 06:00:00,incident - first aid,Low,false,false,Environmental conditions
+SAFE00967,WA001,2024-06-04 08:00:00,confined space entry,MEDIUM,false,false,Environmental conditions
+SAFE00968,WA001,2024-12-06 20:00:00,Incident - Minor Injury,HIGH,false,false,Equipment malfunction
+SAFE00969,WA001,2024-08-17 10:00:00,incident - first aid,LOW,false,false,Inadequate training
+SAFE00970,QLD001,2024-05-23 02:00:00,equipment collision,MEDIUM,false,false,Procedure not followed
+SAFE00971,WA001,2024-12-21 13:00:00,Safety Inspection,Low,false,false,Environmental conditions
+SAFE00972,WA001,2024-06-24 19:00:00,Confined Space Entry,High,false,false,Inadequate training
+SAFE00973,NSW001,2024-12-09 21:00:00,Equipment Collision,low,false,false,Equipment malfunction
+SAFE00974,QLD001,2024-09-29 12:00:00,Hazard Reported,HIGH,false,false,Operator error
+SAFE00975,WA001,2024-08-20 13:00:00,hazard reported,Medium,false,false,Inadequate training
+SAFE00976,QLD001,2024-01-21 15:00:00,Safety Inspection,High,false,false,Operator error
+SAFE00977,WA001,2024-09-22 07:00:00,incident - first aid,Medium,false,false,Communication breakdown
+SAFE00978,QLD001,2024-01-24 07:00:00,Incident - Minor Injury,LOW,true,false,Environmental conditions
+SAFE00979,QLD001,2024-10-25 23:00:00,hazard reported,low,false,false,Operator error
+SAFE00980,WA001,2024-06-20 05:00:00,Incident - Minor Injury,Medium,false,false,Inadequate training
+SAFE00981,NSW001,2024-01-20 21:00:00,Safety Inspection,LOW,false,false,Equipment malfunction
+SAFE00982,WA001,2024-03-19 07:00:00,equipment collision,LOW,false,false,Equipment malfunction
+SAFE00983,QLD001,2024-05-13 12:00:00,FALL FROM HEIGHT,High,false,false,Procedure not followed
+SAFE00984,NSW001,2024-01-09 00:00:00,Hazard Reported,HIGH,false,false,Communication breakdown
+SAFE00985,NSW001,2024-01-22 10:00:00,Incident - Minor Injury,Medium,false,false,Procedure not followed
+SAFE00986,QLD001,2024-12-20 17:00:00,Incident - First Aid,LOW,false,false,Equipment malfunction
+SAFE00987,WA001,2024-10-10 16:00:00,equipment collision,High,false,false,Procedure not followed
+SAFE00988,WA001,2024-06-09 08:00:00,Near Miss,low,false,true,Procedure not followed
+SAFE00989,NSW001,2024-08-17 11:00:00,Hazard Reported,HIGH,false,false,Environmental conditions
+SAFE00990,NSW001,2024-08-30 22:00:00,confined space entry,MEDIUM,false,false,Environmental conditions
+SAFE00991,WA001,2024-11-25 15:00:00,Near Miss,low,false,true,Inadequate training
+SAFE00992,QLD001,2024-07-16 13:00:00,FALL FROM HEIGHT,Low,false,false,Procedure not followed
+SAFE00993,WA001,2024-09-30 06:00:00,Hazard Reported,LOW,false,false,Procedure not followed
+SAFE00994,NSW001,2024-10-10 18:00:00,Incident - Minor Injury,High,false,false,Inadequate training
+SAFE00995,NSW001,2024-09-30 19:00:00,Confined Space Entry,Low,false,false,Communication breakdown
+SAFE00996,WA001,2024-05-30 05:00:00,hazard reported,High,false,false,Inadequate training
+SAFE00997,NSW001,2024-08-28 11:00:00,Incident - First Aid,high,false,false,Equipment malfunction
+SAFE00998,QLD001,2024-04-25 10:00:00,Fall from Height,MEDIUM,false,false,Procedure not followed
+SAFE00999,WA001,2024-01-02 18:00:00,Incident - Minor Injury,LOW,false,false,Environmental conditions
+SAFE01000,WA001,2024-04-13 20:00:00,Fall from Height,high,false,false,Procedure not followed

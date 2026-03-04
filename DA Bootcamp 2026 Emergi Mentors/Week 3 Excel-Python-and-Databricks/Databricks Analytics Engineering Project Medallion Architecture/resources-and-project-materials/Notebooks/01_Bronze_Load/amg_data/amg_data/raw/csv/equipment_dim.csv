@@ -1,0 +1,28 @@
+equipment_id,equipment_type,equipment_class,manufacturer,model,site_id,commissioning_date,capacity_tonnes
+TRK001,Haul Truck,Mobile Fleet,Caterpillar,797F,QLD001,2018-05-09,400
+TRK002,Haul Truck,Mobile Fleet,Caterpillar,797F,QLD001,2021-02-07,400
+TRK003,Haul Truck,Mobile Fleet,Caterpillar,797F,QLD001,2021-03-14,400
+TRK004,Haul Truck,Mobile Fleet,Caterpillar,797F,QLD001,2019-06-12,400
+TRK005,Haul Truck,Mobile Fleet,Caterpillar,797F,NSW001,2020-03-02,400
+TRK006,Haul Truck,Mobile Fleet,Caterpillar,797F,QLD001,2021-06-14,400
+TRK007,Haul Truck,Mobile Fleet,Caterpillar,797F,WA001,2022-06-17,400
+TRK008,Haul Truck,Mobile Fleet,Caterpillar,797F,QLD001,2021-09-10,400
+TRK009,Haul Truck,Mobile Fleet,Caterpillar,797F,WA001,2018-07-29,400
+TRK010,Haul Truck,Mobile Fleet,Caterpillar,797F,WA001,2019-06-25,400
+TRK011,Haul Truck,Mobile Fleet,Caterpillar,797F,QLD001,2022-01-22,400
+TRK012,Haul Truck,Mobile Fleet,Caterpillar,797F,NSW001,2018-01-19,400
+TRK013,Haul Truck,Mobile Fleet,Caterpillar,797F,QLD001,2021-03-08,400
+TRK014,Haul Truck,Mobile Fleet,Caterpillar,797F,QLD001,2019-04-17,400
+TRK015,Haul Truck,Mobile Fleet,Caterpillar,797F,WA001,2020-12-07,400
+EXC001,Excavator,Mobile Fleet,Komatsu,PC8000,NSW001,2020-01-06,50
+EXC002,Excavator,Mobile Fleet,Komatsu,PC8000,QLD001,2019-05-11,50
+EXC003,Excavator,Mobile Fleet,Komatsu,PC8000,WA001,2021-02-22,50
+EXC004,Excavator,Mobile Fleet,Komatsu,PC8000,QLD001,2022-01-07,50
+EXC005,Excavator,Mobile Fleet,Komatsu,PC8000,NSW001,2019-12-25,50
+EXC006,Excavator,Mobile Fleet,Komatsu,PC8000,NSW001,2019-12-02,50
+CRU001,Crusher,Fixed Plant,Metso,C160,NSW001,2021-03-23,1200
+CRU002,Crusher,Fixed Plant,Metso,C160,WA001,2019-05-04,1200
+CRU003,Crusher,Fixed Plant,Metso,C160,NSW001,2018-03-14,1200
+CNV001,Conveyor,Fixed Plant,FLSmidth,CB1200,WA001,2019-11-15,800
+CNV002,Conveyor,Fixed Plant,FLSmidth,CB1200,WA001,2020-01-14,800
+CNV003,Conveyor,Fixed Plant,FLSmidth,CB1200,NSW001,2020-02-25,800
