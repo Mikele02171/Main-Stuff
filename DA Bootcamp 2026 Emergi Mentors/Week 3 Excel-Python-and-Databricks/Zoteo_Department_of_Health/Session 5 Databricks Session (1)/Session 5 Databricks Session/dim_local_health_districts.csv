@@ -1,0 +1,16 @@
+lhd_code,lhd_name,region_type,population_served,annual_budget_aud_millions
+LHD001,Sydney Metropolitan,Metropolitan,820000,1850
+LHD002,Western Sydney,Metropolitan,960000,2100
+LHD003,South Western Sydney,Metropolitan,1020000,2250
+LHD004,South Eastern Sydney,Metropolitan,930000,2050
+LHD005,Northern Sydney,Metropolitan,890000,1950
+LHD006,Central Coast,Regional,340000,680
+LHD007,Hunter New England,Regional,920000,1900
+LHD008,Illawarra Shoalhaven,Regional,410000,820
+LHD009,Nepean Blue Mountains,Regional,370000,740
+LHD010,Northern NSW,Rural,310000,610
+LHD011,Mid North Coast,Rural,220000,440
+LHD012,Southern NSW,Rural,210000,420
+LHD013,Murrumbidgee,Rural,240000,480
+LHD014,Western NSW,Remote,280000,560
+LHD015,Far West,Remote,32000,95
