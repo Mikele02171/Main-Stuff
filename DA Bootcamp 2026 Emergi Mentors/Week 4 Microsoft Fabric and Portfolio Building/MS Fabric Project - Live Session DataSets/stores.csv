@@ -1,0 +1,7 @@
+store_id,store_name,city,state,postcode,manager,open_date,store_type
+STR001,Aussie Brew - Sydney CBD,Sydney,NSW,2000,Sarah Mitchell,2020-03-15,Flagship
+STR002,Aussie Brew - Melbourne Central,Melbourne,VIC,3000,James Wong,2020-06-01,Flagship
+STR003,Aussie Brew - Brisbane Queen St,Brisbane,QLD,4000,Emily Davis,2021-01-10,Standard
+STR004,Aussie Brew - Perth City,Perth,WA,6000,Michael Chen,2021-08-20,Standard
+STR005,Aussie Brew - Adelaide Rundle,Adelaide,SA,5000,Lisa Park,2022-02-14,Kiosk
+STR006,Aussie Brew - Canberra Centre,Canberra,ACT,2601,Tom Brown,2022-09-01,Kiosk

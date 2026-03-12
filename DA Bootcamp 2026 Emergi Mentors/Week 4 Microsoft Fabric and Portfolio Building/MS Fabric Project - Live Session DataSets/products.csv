@@ -1,0 +1,16 @@
+product_id,product_name,category,subcategory,unit_price,cost_price,is_active
+PRD001,Flat White,Coffee,Espresso,5.5,1.8,Y
+PRD002,Cappuccino,Coffee,Espresso,5.5,1.8,Y
+PRD003,Long Black,Coffee,Espresso,5.0,1.5,Y
+PRD004,Latte,Coffee,Espresso,5.5,1.8,Y
+PRD005,Mocha,Coffee,Specialty,6.5,2.2,Y
+PRD006,Iced Coffee,Coffee,Cold,7.0,2.5,Y
+PRD007,Chai Latte,Tea,Specialty,5.5,1.6,Y
+PRD008,English Breakfast Tea,Tea,Classic,4.5,0.8,Y
+PRD009,Banana Bread,Food,Bakery,6.0,2.0,Y
+PRD010,Avocado Toast,Food,Breakfast,14.0,5.5,Y
+PRD011,Croissant,Food,Bakery,5.5,1.8,Y
+PRD012,Blueberry Muffin,Food,Bakery,5.5,1.5,Y
+PRD013,Eggs Benedict,Food,Breakfast,18.0,7.0,Y
+PRD014,Smoothie Bowl,Food,Health,12.0,4.0,Y
+PRD015,Matcha Latte,Tea,Specialty,6.5,2.0,Y

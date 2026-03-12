@@ -1,0 +1,51 @@
+customer_id,first_name,last_name,email,phone,suburb,state,loyalty_tier,signup_date,total_lifetime_spend
+CUS0001,Leo,Thomas,customer1@email.com,0439958838,Fortitude Valley,ACT,Silver,2023-01-26,1854.35
+CUS0002,James,Martinez,customer2@email.com,0414265799,Paddington,ACT,Bronze,2023-03-31,279.55
+CUS0003,Oliver,Lewis,customer3@email.com,0436687537,Carlton,VIC,Platinum,2024-09-08,590.08
+CUS0004,Isla,Martinez,customer4@email.com,0455667651,New Farm,SA,Gold,2023-01-07,430.92
+CUS0005,Thomas,Brown,customer5@email.com,0458181396,Fortitude Valley,QLD,Gold,2023-04-05,1529.13
+CUS0006,Amelia,Garcia,customer6@email.com,0420576383,Manly,NSW,Gold,2024-07-03,2082.04
+CUS0007,William,Williams,customer7@email.com,0416150444,New Farm,SA,Silver,2024-08-14,1944.02
+CUS0008,Thomas,White,customer8@email.com,0470855700,Surry Hills,NSW,Gold,2023-04-14,448.5
+CUS0009,Leo,Williams,customer9@email.com,0491756179,West End,QLD,Silver,2024-11-17,1358.64
+CUS0010,Thomas,White,customer10@email.com,0495899313,South Yarra,VIC,Silver,2024-04-18,1727.3
+CUS0011,Henry,Garcia,customer11@email.com,0445935572,Surry Hills,NSW,Bronze,2023-02-02,566.91
+CUS0012,Sophie,Garcia,customer12@email.com,0496282117,New Farm,SA,Platinum,2023-08-06,400.04
+CUS0013,Lily,White,customer13@email.com,0488461803,South Yarra,VIC,Platinum,2024-07-28,2249.67
+CUS0014,Noah,Rodriguez,customer14@email.com,0476238574,New Farm,WA,Bronze,2023-08-13,1901.67
+CUS0015,Isla,Martinez,customer15@email.com,0490048665,Surry Hills,NSW,Bronze,2024-10-04,992.68
+CUS0016,Leo,Lewis,customer16@email.com,0411540956,South Bank,SA,Bronze,2024-06-25,1720.19
+CUS0017,Henry,Brown,customer17@email.com,0449392920,New Farm,SA,Platinum,2024-10-18,437.49
+CUS0018,Isla,Rodriguez,customer18@email.com,0424282218,Newtown,NSW,Gold,2024-05-27,2112.09
+CUS0019,Noah,Thompson,customer19@email.com,0431682744,Paddington,SA,Bronze,2023-07-23,1517.41
+CUS0020,Ava,Harris,customer20@email.com,0442138745,Fortitude Valley,WA,Bronze,2023-04-25,640.14
+CUS0021,Sophie,Williams,customer21@email.com,0481498611,Fortitude Valley,SA,Silver,2023-03-29,364.56
+CUS0022,Leo,Rodriguez,customer22@email.com,0491415657,Paddington,WA,Platinum,2023-06-19,2412.69
+CUS0023,Thomas,Thompson,customer23@email.com,0468800797,West End,SA,Platinum,2023-11-16,346.46
+CUS0024,Oliver,Lee,customer24@email.com,0484346088,Fitzroy,VIC,Silver,2023-12-13,1491.68
+CUS0025,Charlotte,Thomas,customer25@email.com,0419046318,Bondi,NSW,Bronze,2024-10-08,2156.11
+CUS0026,Leo,Clark,customer26@email.com,0438754377,Parramatta,NSW,Silver,2023-09-01,1822.21
+CUS0027,Mia,Clark,customer27@email.com,0464634663,Paddington,SA,Silver,2024-04-29,281.1
+CUS0028,Chloe,Martinez,customer28@email.com,0472682989,South Bank,ACT,Bronze,2023-12-29,1699.74
+CUS0029,Thomas,Martin,customer29@email.com,0424665841,Fortitude Valley,ACT,Silver,2023-03-04,519.4
+CUS0030,Chloe,Taylor,customer30@email.com,0447385696,South Bank,SA,Platinum,2023-05-24,662.03
+CUS0031,Amelia,Jones,customer31@email.com,0497529405,Manly,NSW,Bronze,2024-07-17,2424.04
+CUS0032,Sophie,Clark,customer32@email.com,0438688676,South Yarra,VIC,Platinum,2024-02-21,2260.99
+CUS0033,Thomas,White,customer33@email.com,0471070189,St Kilda,VIC,Gold,2023-01-03,1086.37
+CUS0034,Sophie,Wilson,customer34@email.com,0435487660,Paddington,ACT,Gold,2024-11-08,583.37
+CUS0035,Charlotte,Martin,customer35@email.com,0417672593,Parramatta,NSW,Bronze,2024-07-09,1481.24
+CUS0036,Charlotte,Rodriguez,customer36@email.com,0420752378,Paddington,SA,Silver,2023-06-11,217.88
+CUS0037,Amelia,Lee,customer37@email.com,0443046464,Surry Hills,NSW,Bronze,2024-02-18,1567.48
+CUS0038,Ethan,Martin,customer38@email.com,0444999379,Paddington,WA,Silver,2024-08-01,1690.83
+CUS0039,Thomas,Wilson,customer39@email.com,0496637649,West End,QLD,Gold,2023-09-29,1170.2
+CUS0040,Zoe,Lee,customer40@email.com,0423419256,Bondi,NSW,Bronze,2024-04-14,1367.2
+CUS0041,Ava,Williams,customer41@email.com,0442787299,New Farm,SA,Gold,2023-05-16,748.22
+CUS0042,Zoe,Rodriguez,customer42@email.com,0411049999,Paddington,WA,Gold,2023-11-06,2332.8
+CUS0043,Amelia,Brown,customer43@email.com,0484252420,Surry Hills,NSW,Silver,2023-09-28,717.25
+CUS0044,William,White,customer44@email.com,0477834855,West End,SA,Platinum,2023-12-18,665.25
+CUS0045,Chloe,White,customer45@email.com,0415917225,Bondi,NSW,Bronze,2024-10-11,867.21
+CUS0046,Lucas,Lewis,customer46@email.com,0467403166,Richmond,VIC,Bronze,2023-06-15,324.09
+CUS0047,Charlotte,Thompson,customer47@email.com,0488183110,West End,ACT,Silver,2024-07-12,1102.98
+CUS0048,Charlotte,Thompson,customer48@email.com,0438195995,Newtown,NSW,Silver,2024-01-09,1683.99
+CUS0049,Zoe,Wilson,customer49@email.com,0441774346,Paddington,QLD,Silver,2024-02-21,2441.7
+CUS0050,Isla,Martin,customer50@email.com,0465259205,St Kilda,VIC,Silver,2023-01-26,703.67
