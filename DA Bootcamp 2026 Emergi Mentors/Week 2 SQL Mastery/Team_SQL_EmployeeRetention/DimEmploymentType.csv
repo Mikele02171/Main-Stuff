@@ -1,0 +1,4 @@
+﻿EmploymentTypeKey,EmploymentTypeCode,EmploymentTypeName
+1,CAS,Casual
+2,CON,Contract
+3,PERM,Permanent
