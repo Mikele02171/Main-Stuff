@@ -1,0 +1,26 @@
+[
+  {
+    "product_id":9001,
+    "product_name":"Wireless Mouse",
+    "category":"Accessories",
+    "price":60
+  },
+  {
+    "product_id":9002,
+    "product_name":"Keyboard",
+    "category":"Accessories",
+    "price":70
+  },
+  {
+    "product_id":9003,
+    "product_name":"Monitor",
+    "category":"Electronics",
+    "price":45
+  },
+  {
+    "product_id":9004,
+    "product_name":"Webcam",
+    "category":"Electronics",
+    "price":50
+  }
+]

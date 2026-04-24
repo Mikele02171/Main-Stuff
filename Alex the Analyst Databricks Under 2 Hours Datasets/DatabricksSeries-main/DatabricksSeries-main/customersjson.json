@@ -1,0 +1,37 @@
+[
+  {
+    "customer_id":101,
+    "first_name":"Alice",
+    "last_name":"Morgan",
+    "country":"USA",
+    "signup_date":"2023-02-14"
+  },
+  {
+    "customer_id":102,
+    "first_name":"Ben",
+    "last_name":"Singh",
+    "country":"Canada",
+    "signup_date":"2023-03-22"
+  },
+  {
+    "customer_id":103,
+    "first_name":"Carla",
+    "last_name":"Zhao",
+    "country":"USA",
+    "signup_date":"2023-04-10"
+  },
+  {
+    "customer_id":104,
+    "first_name":"David",
+    "last_name":"Lopez",
+    "country":"UK",
+    "signup_date":"2023-05-02"
+  },
+  {
+    "customer_id":105,
+    "first_name":"Emma",
+    "last_name":"Patel",
+    "country":"USA",
+    "signup_date":"2023-06-18"
+  }
+]
