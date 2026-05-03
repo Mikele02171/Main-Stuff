@@ -12,7 +12,6 @@ IBM Data Analyst Professional (Completed) <br/>
 Machine Learning Specialization from DeepLearning.Ai and Stanford Online (Completed) <br/>
 Mathematics for Data Science and Machine Learning from DeepLearning.Ai (Completed) <br/>
 Google Advanced Data Analytics Certification (Completed) <br/>
-Snowflake Data Engineering Professional Certificate (In Progress) <br/>
 
 DataCamp: <br/>
 Data Analyst with Python (Completed) <br/>
@@ -21,8 +20,12 @@ Data Analyst in Power BI (Completed) <br/>
 Data Analyst in Tableau (Completed) <br/>
 A/B Testing in Python (Completed) <br/>
 
+Udemy: <br/>
+Databricks | Spark ETL and Delta Lake Data Engineering Mastery (Completed) <br/>
+
 Builder Analyst: <br/>
 Tableau for Data Visualization (Completed) <br/>
+AI for Data Professionals (Completed) <br/>
 
 NOTE: Soon adding content <br/>
 
