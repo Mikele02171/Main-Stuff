@@ -81,6 +81,6 @@ data-warehouse-project/
 ## 📂 Social Media including portifolio 
 Let's stay in touch! Feel free to connect with me on the following platforms:
 
-[![Tableau]([https://img.shields.io/badge/YouTube-red?style=for-the-badge&logo=youtube&logoColor=white](https://1000logos.net/wp-content/uploads/2022/03/Tableau-Logo.png))]([http://bit.ly/3GiCVUE](https://public.tableau.com/app/profile/michael.le1398/vizzes))
+[![Tableau]([ttps://1000logos.net/wp-content/uploads/2022/03/Tableau-Logo.png])]([http://bit.ly/3GiCVUE](https://public.tableau.com/app/profile/michael.le1398/vizzes))
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)]([https://linkedin.com/in/baraa-khatib-salkini](https://www.linkedin.com/in/michael-le-data/))
 
