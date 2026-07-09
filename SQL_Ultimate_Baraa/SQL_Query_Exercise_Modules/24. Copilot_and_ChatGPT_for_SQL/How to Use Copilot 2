@@ -1,0 +1,32 @@
+USE SalesDB
+GO
+
+SELECT * FROM Sales.dbo.SalesOrderHeader;
+
+-- Select Top 3 Customers based on Score
+SELECT TOP 3 *, SUM(TotalDue) AS TotalSales FROM Sales.Customers ORDER BY Score DESC
+
+-- Rank Customers based on Total Orders Sales
+SELECT CustomerID, SUM(TotalDue) AS TotalSales,
+       RANK() OVER (ORDER BY SUM(TotalDue) DESC) AS SalesRank
+
+    FROM Sales.Customers c
+    JOIN Sales.Orders o ON c.CustomerID = o.CustomerID
+    GROUP BY c.CustomerID;
+
+
+-- Join Customers with Orders and select relevant fields
+SELECT c.CustomerID, c.FirstName, c.LastName, o.OrderID, o.OrderDate, o.TotalDue
+FROM Sales.Customers c          
+JOIN Sales.Orders o ON c.CustomerID = o.CustomerID
+    
+
+SELECT 
+COUNT(*) AS Score,
+CustomerID
+FROM Sales.Customers
+GROUP BY CustomerID
+ORDER BY Score DESC;
+
+SELECT * FROM SalesDB.dbo.SalesOrderHeader
+WHERE OrderDate BETWEEN '2008-07-01' AND '2008-07-31'

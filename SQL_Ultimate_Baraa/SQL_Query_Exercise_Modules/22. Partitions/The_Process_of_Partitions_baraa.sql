@@ -1,0 +1,4 @@
+-- Step 1: Create a Partition Function
+
+CREATE PARTITION FUNCTION PartitionByYear (DATE)
+AS RANGE LEFT FOR VALUES ('2023-12-31','2024-12-31','2025-12-31')
