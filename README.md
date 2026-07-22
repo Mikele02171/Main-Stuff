@@ -28,6 +28,10 @@ Builder Analyst: <br/>
 Tableau for Data Visualization (Completed) <br/>
 AI for Data Professionals (Completed) <br/>
 
+Data With Baraa Academy: <br/>
+Databricks Bootcamp (Completed) <br/>
+Complete SQL Mastery (Completed) <br/>
+
 NOTE: Soon adding content <br/>
 
 
