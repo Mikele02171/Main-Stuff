@@ -12,6 +12,7 @@ IBM Data Analyst Professional (Completed) <br/>
 Machine Learning Specialization from DeepLearning.Ai and Stanford Online (Completed) <br/>
 Mathematics for Data Science and Machine Learning from DeepLearning.Ai (Completed) <br/>
 Google Advanced Data Analytics Certification (Completed) <br/>
+Deep Learning Specialization from DeepLearning.Ai (Completed) <br/>
 
 DataCamp: <br/>
 Data Analyst with Python (Completed) <br/>
