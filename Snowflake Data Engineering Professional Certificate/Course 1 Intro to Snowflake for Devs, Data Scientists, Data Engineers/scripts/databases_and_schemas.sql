@@ -1,0 +1,36 @@
+-- SQL queries for exploring and managing databases and schemas
+-- Co-authored with CoCo
+SELECT * FROM FROSTBYTE_TASTY_BYTES.RAW_POS.TRUCK;
+SELECT * FROM FROSTBYTE_TASTY_BYTES.INFORMATION_SCHEMA.TABLES;
+CREATE DATABASE test_database;
+SELECT * FROM FROSTBYTE_TASTY_BYTES.INFORMATION_SCHEMA.TABLES;
+SHOW DATABASES;
+DROP DATABASE test_database;
+UNDROP DATABASE test_database;
+SHOW DATABASES;
+USE DATABASE test_database;
+CREATE SCHEMA test_database.test_schema;
+SHOW SCHEMAS;
+DESCRIBE DATABASE TEST_DATABASE;
+DROP SCHEMA test_schema;
+SHOW SCHEMAS;
+UNDROP SCHEMA test_database.test_schema;
+SHOW SCHEMAS;
+
+-- ASSESSMENT 
+CREATE DATABASE test_database;
+SHOW DATABASES;
+
+DROP DATABASE test_database;
+UNDROP DATABASE test_database;
+
+CREATE DATABASE test_database2;
+USE DATABASE test_database;
+
+CREATE SCHEMA test_schema;
+SHOW SCHEMAS;
+
+DESCRIBE DATABASE test_database;
+
+DROP SCHEMA test_schema;
+UNDROP SCHEMA test_schema;
