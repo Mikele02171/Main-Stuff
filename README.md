@@ -13,7 +13,7 @@ Machine Learning Specialization from DeepLearning.Ai and Stanford Online (Comple
 Mathematics for Data Science and Machine Learning from DeepLearning.Ai (Completed) <br/>
 Google Advanced Data Analytics Certification (Completed) <br/>
 Deep Learning Specialization from DeepLearning.Ai (Completed) <br/>
-Snowflake Data Engineering Professional Certificate (In Progress 48.51%) <br/>
+Snowflake Data Engineering Professional Certificate (In Progress 50.49%) <br/>
 Microsoft Azure Fundamentals AZ-900 Exam Prep (Coming Soon) <br/>
 
 DataCamp: <br/>
